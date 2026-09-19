@@ -1,0 +1,44 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.enums;
+
+public final class VkComponentTypeKHR {
+
+    public static final int VK_COMPONENT_TYPE_FLOAT16_KHR = 0;
+    public static final int VK_COMPONENT_TYPE_FLOAT32_KHR = 1;
+    public static final int VK_COMPONENT_TYPE_FLOAT64_KHR = 2;
+    public static final int VK_COMPONENT_TYPE_SINT8_KHR = 3;
+    public static final int VK_COMPONENT_TYPE_SINT16_KHR = 4;
+    public static final int VK_COMPONENT_TYPE_SINT32_KHR = 5;
+    public static final int VK_COMPONENT_TYPE_SINT64_KHR = 6;
+    public static final int VK_COMPONENT_TYPE_UINT8_KHR = 7;
+    public static final int VK_COMPONENT_TYPE_UINT16_KHR = 8;
+    public static final int VK_COMPONENT_TYPE_UINT32_KHR = 9;
+    public static final int VK_COMPONENT_TYPE_UINT64_KHR = 10;
+    public static final int VK_COMPONENT_TYPE_BFLOAT16_KHR = 1000141000;
+    public static final int VK_COMPONENT_TYPE_SINT8_PACKED_NV = 1000491000;
+    public static final int VK_COMPONENT_TYPE_UINT8_PACKED_NV = 1000491001;
+    public static final int VK_COMPONENT_TYPE_FLOAT8_E4M3_EXT = 1000491002;
+    public static final int VK_COMPONENT_TYPE_FLOAT8_E5M2_EXT = 1000491003;
+    public static final int VK_COMPONENT_TYPE_FLOAT6_E2M3_EXT = 1000672000;
+    public static final int VK_COMPONENT_TYPE_FLOAT6_E3M2_EXT = 1000672001;
+    public static final int VK_COMPONENT_TYPE_FLOAT4_E2M1_EXT = 1000672002;
+    public static final int VK_COMPONENT_TYPE_FLOAT8_UNSIGNED_E8M0_EXT = 1000672003;
+    public static final int VK_COMPONENT_TYPE_MXINT8_EXT = 1000672004;
+    public static final int VK_COMPONENT_TYPE_FLOAT16_NV = 0;
+    public static final int VK_COMPONENT_TYPE_FLOAT32_NV = 1;
+    public static final int VK_COMPONENT_TYPE_FLOAT64_NV = 2;
+    public static final int VK_COMPONENT_TYPE_SINT8_NV = 3;
+    public static final int VK_COMPONENT_TYPE_SINT16_NV = 4;
+    public static final int VK_COMPONENT_TYPE_SINT32_NV = 5;
+    public static final int VK_COMPONENT_TYPE_SINT64_NV = 6;
+    public static final int VK_COMPONENT_TYPE_UINT8_NV = 7;
+    public static final int VK_COMPONENT_TYPE_UINT16_NV = 8;
+    public static final int VK_COMPONENT_TYPE_UINT32_NV = 9;
+    public static final int VK_COMPONENT_TYPE_UINT64_NV = 10;
+    public static final int VK_COMPONENT_TYPE_FLOAT_E4M3_NV = 1000491002;
+    public static final int VK_COMPONENT_TYPE_FLOAT_E5M2_NV = 1000491003;
+    public static final int VK_COMPONENT_TYPE_MAX_ENUM_KHR = 2147483647;
+
+}

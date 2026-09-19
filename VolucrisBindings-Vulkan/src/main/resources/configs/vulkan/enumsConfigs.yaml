@@ -1,0 +1,4 @@
+package-name: volucris.bindings.vulkan.enums
+directory: src/main/java/volucris/bindings/vulkan/enums
+generate-all: true
+transform-constants-names: false

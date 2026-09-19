@@ -1,0 +1,309 @@
+class-description:
+  name: VkCommandBuffer
+  package-name: volucris.bindings.vulkan
+  directory: src/main/java/volucris/bindings/vulkan
+  is-static: false
+  parent: 
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+  raw-method-template: 
+  typed-method-template: 
+
+imports:
+  - volucris.bindings.vulkan.structs.*
+  - volucris.bindings.vulkan.handles.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+    - name: vkBeginCommandBuffer
+    - name: vkEndCommandBuffer
+    - name: vkResetCommandBuffer
+    - name: vkCmdBindPipeline
+    - name: vkCmdSetPrimitiveRestartIndexEXT
+    - name: vkCmdSetAttachmentFeedbackLoopEnableEXT
+    - name: vkCmdSetViewport
+    - name: vkCmdSetScissor
+    - name: vkCmdSetLineWidth
+    - name: vkCmdSetDepthBias
+    - name: vkCmdSetBlendConstants
+    - name: vkCmdSetDepthBounds
+    - name: vkCmdSetStencilCompareMask
+    - name: vkCmdSetStencilWriteMask
+    - name: vkCmdSetStencilReference
+    - name: vkCmdBindDescriptorSets
+    - name: vkCmdBindIndexBuffer
+    - name: vkCmdBindVertexBuffers
+    - name: vkCmdDraw
+    - name: vkCmdDrawIndexed
+    - name: vkCmdDrawMultiEXT
+    - name: vkCmdDrawMultiIndexedEXT
+    - name: vkCmdDrawIndirect
+    - name: vkCmdDrawIndexedIndirect
+    - name: vkCmdDispatch
+    - name: vkCmdDispatchIndirect
+    - name: vkCmdSubpassShadingHUAWEI
+    - name: vkCmdDrawClusterHUAWEI
+    - name: vkCmdDrawClusterIndirectHUAWEI
+    - name: vkCmdUpdatePipelineIndirectBufferNV
+    - name: vkCmdCopyBuffer
+    - name: vkCmdCopyImage
+    - name: vkCmdBlitImage
+    - name: vkCmdCopyBufferToImage
+    - name: vkCmdCopyImageToBuffer
+    - name: vkCmdCopyMemoryIndirectNV
+    - name: vkCmdCopyMemoryIndirectKHR
+    - name: vkCmdCopyMemoryToImageIndirectNV
+    - name: vkCmdCopyMemoryToImageIndirectKHR
+    - name: vkCmdUpdateBuffer
+    - name: vkCmdFillBuffer
+    - name: vkCmdClearColorImage
+    - name: vkCmdClearDepthStencilImage
+    - name: vkCmdClearAttachments
+    - name: vkCmdResolveImage
+    - name: vkCmdSetEvent
+    - name: vkCmdResetEvent
+    - name: vkCmdWaitEvents
+    - name: vkCmdPipelineBarrier
+    - name: vkCmdBeginQuery
+    - name: vkCmdEndQuery
+    - name: vkCmdBeginConditionalRenderingEXT
+    - name: vkCmdEndConditionalRenderingEXT
+    - name: vkCmdBeginCustomResolveEXT
+    - name: vkCmdResetQueryPool
+    - name: vkCmdWriteTimestamp
+    - name: vkCmdCopyQueryPoolResults
+    - name: vkCmdPushConstants
+    - name: vkCmdBeginRenderPass
+    - name: vkCmdNextSubpass
+    - name: vkCmdEndRenderPass
+    - name: vkCmdExecuteCommands
+    - name: vkCmdDebugMarkerBeginEXT
+    - name: vkCmdDebugMarkerEndEXT
+    - name: vkCmdDebugMarkerInsertEXT
+    - name: vkCmdExecuteGeneratedCommandsNV
+    - name: vkCmdPreprocessGeneratedCommandsNV
+    - name: vkCmdBindPipelineShaderGroupNV
+    - name: vkCmdExecuteGeneratedCommandsEXT
+    - name: vkCmdPreprocessGeneratedCommandsEXT
+    - name: vkCmdPushDescriptorSet
+    - name: vkCmdSetDeviceMask
+    - name: vkCmdDispatchBase
+    - name: vkCmdPushDescriptorSetWithTemplate
+    - name: vkCmdSetViewportWScalingNV
+    - name: vkCmdSetDiscardRectangleEXT
+    - name: vkCmdSetDiscardRectangleEnableEXT
+    - name: vkCmdSetDiscardRectangleModeEXT
+    - name: vkCmdSetSampleLocationsEXT
+    - name: vkCmdBeginDebugUtilsLabelEXT
+    - name: vkCmdEndDebugUtilsLabelEXT
+    - name: vkCmdInsertDebugUtilsLabelEXT
+    - name: vkCmdWriteBufferMarkerAMD
+    - name: vkCmdBeginRenderPass2
+    - name: vkCmdNextSubpass2
+    - name: vkCmdEndRenderPass2
+    - name: vkCmdDrawIndirectCount
+    - name: vkCmdDrawIndexedIndirectCount
+    - name: vkCmdSetCheckpointNV
+    - name: vkCmdBindTransformFeedbackBuffersEXT
+    - name: vkCmdBeginTransformFeedbackEXT
+    - name: vkCmdEndTransformFeedbackEXT
+    - name: vkCmdBeginQueryIndexedEXT
+    - name: vkCmdEndQueryIndexedEXT
+    - name: vkCmdDrawIndirectByteCountEXT
+    - name: vkCmdSetExclusiveScissorNV
+    - name: vkCmdSetExclusiveScissorEnableNV
+    - name: vkCmdBindShadingRateImageNV
+    - name: vkCmdSetViewportShadingRatePaletteNV
+    - name: vkCmdSetCoarseSampleOrderNV
+    - name: vkCmdDrawMeshTasksNV
+    - name: vkCmdDrawMeshTasksIndirectNV
+    - name: vkCmdDrawMeshTasksIndirectCountNV
+    - name: vkCmdDrawMeshTasksEXT
+    - name: vkCmdDrawMeshTasksIndirectEXT
+    - name: vkCmdDrawMeshTasksIndirectCountEXT
+    - name: vkCmdBindInvocationMaskHUAWEI
+    - name: vkCmdCopyAccelerationStructureNV
+    - name: vkCmdCopyAccelerationStructureKHR
+    - name: vkCmdCopyAccelerationStructureToMemoryKHR
+    - name: vkCmdCopyMemoryToAccelerationStructureKHR
+    - name: vkCmdWriteAccelerationStructuresPropertiesKHR
+    - name: vkCmdWriteAccelerationStructuresPropertiesNV
+    - name: vkCmdBuildAccelerationStructureNV
+    - name: vkCmdTraceRaysKHR
+    - name: vkCmdTraceRaysNV
+    - name: vkCmdTraceRaysIndirectKHR
+    - name: vkCmdTraceRaysIndirect2KHR
+    - name: vkCmdBuildClusterAccelerationStructureIndirectNV
+    - name: vkCmdSetRayTracingPipelineStackSizeKHR
+    - name: vkCmdSetPerformanceMarkerINTEL
+    - name: vkCmdSetPerformanceStreamMarkerINTEL
+    - name: vkCmdSetPerformanceOverrideINTEL
+    - name: vkCmdSetLineStipple
+    - name: vkCmdBuildAccelerationStructuresKHR
+    - name: vkCmdBuildAccelerationStructuresIndirectKHR
+    - name: vkCmdSetCullMode
+    - name: vkCmdSetFrontFace
+    - name: vkCmdSetPrimitiveTopology
+    - name: vkCmdSetViewportWithCount
+    - name: vkCmdSetScissorWithCount
+    - name: vkCmdBindIndexBuffer2
+    - name: vkCmdBindVertexBuffers2
+    - name: vkCmdSetDepthTestEnable
+    - name: vkCmdSetDepthWriteEnable
+    - name: vkCmdSetDepthCompareOp
+    - name: vkCmdSetDepthBoundsTestEnable
+    - name: vkCmdSetStencilTestEnable
+    - name: vkCmdSetStencilOp
+    - name: vkCmdSetPatchControlPointsEXT
+    - name: vkCmdSetRasterizerDiscardEnable
+    - name: vkCmdSetDepthBiasEnable
+    - name: vkCmdSetLogicOpEXT
+    - name: vkCmdSetPrimitiveRestartEnable
+    - name: vkCmdSetTessellationDomainOriginEXT
+    - name: vkCmdSetDepthClampEnableEXT
+    - name: vkCmdSetPolygonModeEXT
+    - name: vkCmdSetRasterizationSamplesEXT
+    - name: vkCmdSetSampleMaskEXT
+    - name: vkCmdSetAlphaToCoverageEnableEXT
+    - name: vkCmdSetAlphaToOneEnableEXT
+    - name: vkCmdSetLogicOpEnableEXT
+    - name: vkCmdSetColorBlendEnableEXT
+    - name: vkCmdSetColorBlendEquationEXT
+    - name: vkCmdSetColorWriteMaskEXT
+    - name: vkCmdSetRasterizationStreamEXT
+    - name: vkCmdSetConservativeRasterizationModeEXT
+    - name: vkCmdSetExtraPrimitiveOverestimationSizeEXT
+    - name: vkCmdSetDepthClipEnableEXT
+    - name: vkCmdSetSampleLocationsEnableEXT
+    - name: vkCmdSetColorBlendAdvancedEXT
+    - name: vkCmdSetProvokingVertexModeEXT
+    - name: vkCmdSetLineRasterizationModeEXT
+    - name: vkCmdSetLineStippleEnableEXT
+    - name: vkCmdSetDepthClipNegativeOneToOneEXT
+    - name: vkCmdSetViewportWScalingEnableNV
+    - name: vkCmdSetViewportSwizzleNV
+    - name: vkCmdSetCoverageToColorEnableNV
+    - name: vkCmdSetCoverageToColorLocationNV
+    - name: vkCmdSetCoverageModulationModeNV
+    - name: vkCmdSetCoverageModulationTableEnableNV
+    - name: vkCmdSetCoverageModulationTableNV
+    - name: vkCmdSetShadingRateImageEnableNV
+    - name: vkCmdSetCoverageReductionModeNV
+    - name: vkCmdSetRepresentativeFragmentTestEnableNV
+    - name: vkCmdCopyBuffer2
+    - name: vkCmdCopyImage2
+    - name: vkCmdBlitImage2
+    - name: vkCmdCopyBufferToImage2
+    - name: vkCmdCopyImageToBuffer2
+    - name: vkCmdResolveImage2
+    - name: vkCmdRefreshObjectsKHR
+    - name: vkCmdSetFragmentShadingRateKHR
+    - name: vkCmdSetFragmentShadingRateEnumNV
+    - name: vkCmdSetVertexInputEXT
+    - name: vkCmdSetColorWriteEnableEXT
+    - name: vkCmdSetEvent2
+    - name: vkCmdResetEvent2
+    - name: vkCmdWaitEvents2
+    - name: vkCmdPipelineBarrier2
+    - name: vkCmdWriteTimestamp2
+    - name: vkCmdWriteBufferMarker2AMD
+    - name: vkCmdDecodeVideoKHR
+    - name: vkCmdBeginVideoCodingKHR
+    - name: vkCmdControlVideoCodingKHR
+    - name: vkCmdEndVideoCodingKHR
+    - name: vkCmdEncodeVideoKHR
+    - name: vkCmdDecompressMemoryNV
+    - name: vkCmdDecompressMemoryIndirectCountNV
+    - name: vkCmdBuildPartitionedAccelerationStructuresNV
+    - name: vkCmdDecompressMemoryEXT
+    - name: vkCmdDecompressMemoryIndirectCountEXT
+    - name: vkCmdCuLaunchKernelNVX
+    - name: vkCmdBindDescriptorBuffersEXT
+    - name: vkCmdSetDescriptorBufferOffsetsEXT
+    - name: vkCmdBindDescriptorBufferEmbeddedSamplersEXT
+    - name: vkCmdCudaLaunchKernelNV
+    - name: vkCmdBeginRendering
+    - name: vkCmdEndRendering
+    - name: vkCmdEndRendering2KHR
+    - name: vkCmdBuildMicromapsEXT
+    - name: vkCmdCopyMicromapEXT
+    - name: vkCmdCopyMicromapToMemoryEXT
+    - name: vkCmdCopyMemoryToMicromapEXT
+    - name: vkCmdWriteMicromapsPropertiesEXT
+    - name: vkCmdBindTileMemoryQCOM
+    - name: vkCmdOpticalFlowExecuteNV
+    - name: vkCmdSetDepthBias2EXT
+    - name: vkCmdBindShadersEXT
+    - name: vkCmdInitializeGraphScratchMemoryAMDX
+    - name: vkCmdDispatchGraphAMDX
+    - name: vkCmdDispatchGraphIndirectAMDX
+    - name: vkCmdDispatchGraphIndirectCountAMDX
+    - name: vkCmdBeginGpaSessionAMD
+    - name: vkCmdEndGpaSessionAMD
+    - name: vkCmdBeginGpaSampleAMD
+    - name: vkCmdEndGpaSampleAMD
+    - name: vkCmdCopyGpaSessionResultsAMD
+    - name: vkCmdBindDescriptorSets2
+    - name: vkCmdPushConstants2
+    - name: vkCmdPushDescriptorSet2
+    - name: vkCmdPushDescriptorSetWithTemplate2
+    - name: vkCmdSetDescriptorBufferOffsets2EXT
+    - name: vkCmdBindDescriptorBufferEmbeddedSamplers2EXT
+    - name: vkCmdSetRenderingAttachmentLocations
+    - name: vkCmdSetRenderingInputAttachmentIndices
+    - name: vkCmdSetDepthClampRangeEXT
+    - name: vkCmdConvertCooperativeVectorMatrixNV
+    - name: vkCmdDispatchTileQCOM
+    - name: vkCmdBeginPerTileExecutionQCOM
+    - name: vkCmdEndPerTileExecutionQCOM
+    - name: vkCmdBeginShaderInstrumentationARM
+    - name: vkCmdEndShaderInstrumentationARM
+    - name: vkCmdCopyTensorARM
+    - name: vkCmdDispatchDataGraphARM
+    - name: vkCmdSetComputeOccupancyPriorityNV
+    - name: vkCmdBindSamplerHeapEXT
+    - name: vkCmdBindResourceHeapEXT
+    - name: vkCmdPushDataEXT
+    - name: vkCmdCopyMemoryKHR
+    - name: vkCmdCopyMemoryToImageKHR
+    - name: vkCmdCopyImageToMemoryKHR
+    - name: vkCmdUpdateMemoryKHR
+    - name: vkCmdFillMemoryKHR
+    - name: vkCmdCopyQueryPoolResultsToMemoryKHR
+    - name: vkCmdBeginConditionalRendering2EXT
+    - name: vkCmdBindTransformFeedbackBuffers2EXT
+    - name: vkCmdBeginTransformFeedback2EXT
+    - name: vkCmdEndTransformFeedback2EXT
+    - name: vkCmdDrawIndirectByteCount2EXT
+    - name: vkCmdWriteMarkerToMemoryAMD
+    - name: vkCmdBindIndexBuffer3KHR
+    - name: vkCmdBindVertexBuffers3KHR
+    - name: vkCmdDrawIndirect2KHR
+    - name: vkCmdDrawIndexedIndirect2KHR
+    - name: vkCmdDrawIndirectCount2KHR
+    - name: vkCmdDrawIndexedIndirectCount2KHR
+    - name: vkCmdDrawMeshTasksIndirect2EXT
+    - name: vkCmdDrawMeshTasksIndirectCount2EXT
+    - name: vkCmdDispatchIndirect2KHR
+    - name: vkCmdSetDispatchParametersARM
+native-function-pointers:

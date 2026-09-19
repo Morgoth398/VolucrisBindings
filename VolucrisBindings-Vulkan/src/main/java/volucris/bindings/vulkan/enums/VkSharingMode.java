@@ -1,0 +1,12 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.enums;
+
+public final class VkSharingMode {
+
+    public static final int VK_SHARING_MODE_EXCLUSIVE = 0;
+    public static final int VK_SHARING_MODE_CONCURRENT = 1;
+    public static final int VK_SHARING_MODE_MAX_ENUM = 2147483647;
+
+}

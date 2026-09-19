@@ -1,0 +1,60 @@
+package volucris.bindings.vulkan.extensions;
+
+public final class VkExtensionsARM {
+
+    public static final int VK_EXT_TEXTURE_COMPRESSION_ASTC_HDR_SPEC_VERSION = 1;
+    public static final String VK_EXT_TEXTURE_COMPRESSION_ASTC_HDR_EXTENSION_NAME = "VK_EXT_texture_compression_astc_hdr";
+    public static final int VK_EXT_ASTC_DECODE_MODE_SPEC_VERSION = 1;
+    public static final String VK_EXT_ASTC_DECODE_MODE_EXTENSION_NAME = "VK_EXT_astc_decode_mode";
+    public static final int VK_ARM_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_SPEC_VERSION = 1;
+    public static final String VK_ARM_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_EXTENSION_NAME = "VK_ARM_rasterization_order_attachment_access";
+    public static final int VK_ARM_EXTENSION_344_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_344_EXTENSION_NAME = "VK_ARM_extension_344";
+    public static final int VK_ARM_SHADER_CORE_PROPERTIES_SPEC_VERSION = 1;
+    public static final String VK_ARM_SHADER_CORE_PROPERTIES_EXTENSION_NAME = "VK_ARM_shader_core_properties";
+    public static final int VK_ARM_SCHEDULING_CONTROLS_SPEC_VERSION = 2;
+    public static final String VK_ARM_SCHEDULING_CONTROLS_EXTENSION_NAME = "VK_ARM_scheduling_controls";
+    public static final int VK_ARM_EXTENSION_424_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_424_EXTENSION_NAME = "VK_ARM_extension_424";
+    public static final int VK_ARM_RENDER_PASS_STRIPED_SPEC_VERSION = 1;
+    public static final String VK_ARM_RENDER_PASS_STRIPED_EXTENSION_NAME = "VK_ARM_render_pass_striped";
+    public static final int VK_ARM_TENSORS_SPEC_VERSION = 2;
+    public static final String VK_ARM_TENSORS_EXTENSION_NAME = "VK_ARM_tensors";
+    public static final int VK_EXT_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_SPEC_VERSION = 1;
+    public static final String VK_EXT_RASTERIZATION_ORDER_ATTACHMENT_ACCESS_EXTENSION_NAME = "VK_EXT_rasterization_order_attachment_access";
+    public static final int VK_ARM_SHADER_CORE_BUILTINS_SPEC_VERSION = 2;
+    public static final String VK_ARM_SHADER_CORE_BUILTINS_EXTENSION_NAME = "VK_ARM_shader_core_builtins";
+    public static final int VK_ARM_DATA_GRAPH_SPEC_VERSION = 1;
+    public static final String VK_ARM_DATA_GRAPH_EXTENSION_NAME = "VK_ARM_data_graph";
+    public static final int VK_ARM_DATA_GRAPH_INSTRUCTION_SET_TOSA_SPEC_VERSION = 1;
+    public static final String VK_ARM_DATA_GRAPH_INSTRUCTION_SET_TOSA_EXTENSION_NAME = "VK_ARM_data_graph_instruction_set_tosa";
+    public static final int VK_ARM_TENSOR_CONTROLS_SPEC_VERSION = 1;
+    public static final String VK_ARM_TENSOR_CONTROLS_EXTENSION_NAME = "VK_ARM_tensor_controls";
+    public static final int VK_ARM_EXTENSION_567_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_567_EXTENSION_NAME = "VK_ARM_extension_567";
+    public static final int VK_ARM_PIPELINE_OPACITY_MICROMAP_SPEC_VERSION = 1;
+    public static final String VK_ARM_PIPELINE_OPACITY_MICROMAP_EXTENSION_NAME = "VK_ARM_pipeline_opacity_micromap";
+    public static final int VK_ARM_PERFORMANCE_COUNTERS_BY_REGION_SPEC_VERSION = 1;
+    public static final String VK_ARM_PERFORMANCE_COUNTERS_BY_REGION_EXTENSION_NAME = "VK_ARM_performance_counters_by_region";
+    public static final int VK_KHR_EXTENSION_607_SPEC_VERSION = 0;
+    public static final String VK_KHR_EXTENSION_607_EXTENSION_NAME = "VK_KHR_extension_607";
+    public static final int VK_ARM_SHADER_INSTRUMENTATION_SPEC_VERSION = 1;
+    public static final String VK_ARM_SHADER_INSTRUMENTATION_EXTENSION_NAME = "VK_ARM_shader_instrumentation";
+    public static final int VK_ARM_FORMAT_PACK_SPEC_VERSION = 1;
+    public static final String VK_ARM_FORMAT_PACK_EXTENSION_NAME = "VK_ARM_format_pack";
+    public static final int VK_ARM_DATA_GRAPH_OPTICAL_FLOW_SPEC_VERSION = 1;
+    public static final String VK_ARM_DATA_GRAPH_OPTICAL_FLOW_EXTENSION_NAME = "VK_ARM_data_graph_optical_flow";
+    public static final int VK_ARM_EXTENSION_655_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_655_EXTENSION_NAME = "VK_ARM_extension_655";
+    public static final int VK_ARM_EXTENSION_656_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_656_EXTENSION_NAME = "VK_ARM_extension_656";
+    public static final int VK_ARM_EXTENSION_657_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_657_EXTENSION_NAME = "VK_ARM_extension_657";
+    public static final int VK_ARM_EXTENSION_659_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_659_EXTENSION_NAME = "VK_ARM_extension_659";
+    public static final int VK_ARM_EXTENSION_671_SPEC_VERSION = 0;
+    public static final String VK_ARM_EXTENSION_671_EXTENSION_NAME = "VK_ARM_extension_671";
+    public static final int VK_ARM_DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_SPEC_VERSION = 1;
+    public static final String VK_ARM_DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_EXTENSION_NAME = "VK_ARM_data_graph_neural_accelerator_statistics";
+    
+}

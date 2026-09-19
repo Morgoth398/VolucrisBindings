@@ -1,0 +1,44 @@
+class-description:
+  name: Msdfgen
+  package-name: volucris.bindings.msdfgen
+  directory: src/main/java/volucris/bindings/msdfgen
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - java.lang.foreign.MemorySegment
+static-imports:
+  - java.lang.foreign.ValueLayout.*
+  - volucris.bindings.core.FFMUtils.*
+
+macro-name-prefixes:
+  - prefix: MSDF_
+    type: int
+excluded-macro-name-prefixes:
+  - MSDF_API
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - msdf_
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: msdf_ft_load_font
+    string-parameters:
+      - filename
+native-function-pointers:

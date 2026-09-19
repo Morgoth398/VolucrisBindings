@@ -1,0 +1,17 @@
+naming:
+  strip-prefixes:
+    - msdf_
+  strip-postfixes:
+  type-renames:
+    msdf_vector2: MsdfVector2
+    msdf_range: MsdfRange
+    msdf_bounds: MsdfBounds
+    msdf_transform: MsdfTransform
+    msdf_config: MsdfConfig
+    msdf_multichannel_config: MsdfMultichannelConfig
+    msdf_bitmap: MsdfBitmap
+    msdf_shape: MsdfShape
+    msdf_contour: MsdfContour
+    msdf_segment: MsdfSegment
+    msdf_ft_font: MsdfFreetypeFont
+    msdf_ft: MsdfFreetype

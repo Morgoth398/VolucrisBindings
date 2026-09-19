@@ -1,0 +1,192 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.structs;
+
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+import volucris.bindings.core.NativeStructArray;
+import volucris.bindings.core.Struct;
+import volucris.bindings.vulkan.*;
+import volucris.bindings.vulkan.handles.*;
+import volucris.bindings.vulkan.unions.*;
+
+import static java.lang.foreign.ValueLayout.*;
+
+public final class VkColorBlendEquationEXT
+		implements Struct<VkColorBlendEquationEXT> {
+
+    public static final StructLayout LAYOUT;
+
+    public static final VarHandle SRC_COLOR_BLEND_FACTOR_HANDLE;
+    public static final VarHandle DST_COLOR_BLEND_FACTOR_HANDLE;
+    public static final VarHandle COLOR_BLEND_OP_HANDLE;
+    public static final VarHandle SRC_ALPHA_BLEND_FACTOR_HANDLE;
+    public static final VarHandle DST_ALPHA_BLEND_FACTOR_HANDLE;
+    public static final VarHandle ALPHA_BLEND_OP_HANDLE;
+
+    public static final long SRC_COLOR_BLEND_FACTOR_BYTE_OFFSET;
+    public static final long DST_COLOR_BLEND_FACTOR_BYTE_OFFSET;
+    public static final long COLOR_BLEND_OP_BYTE_OFFSET;
+    public static final long SRC_ALPHA_BLEND_FACTOR_BYTE_OFFSET;
+    public static final long DST_ALPHA_BLEND_FACTOR_BYTE_OFFSET;
+    public static final long ALPHA_BLEND_OP_BYTE_OFFSET;
+
+    private final MemorySegment segment;
+
+    static {
+        //@formatter:off
+        LAYOUT = MemoryLayout.structLayout(
+            JAVA_INT.withName("srcColorBlendFactor"),
+            JAVA_INT.withName("dstColorBlendFactor"),
+            JAVA_INT.withName("colorBlendOp"),
+            JAVA_INT.withName("srcAlphaBlendFactor"),
+            JAVA_INT.withName("dstAlphaBlendFactor"),
+            JAVA_INT.withName("alphaBlendOp")
+        ).withName("VkColorBlendEquationEXT").withByteAlignment(4);
+        
+        SRC_COLOR_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcColorBlendFactor"));
+        DST_COLOR_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstColorBlendFactor"));
+        COLOR_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorBlendOp"));
+        SRC_ALPHA_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAlphaBlendFactor"));
+        DST_ALPHA_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAlphaBlendFactor"));
+        ALPHA_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaBlendOp"));
+        
+        SRC_COLOR_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcColorBlendFactor"));
+        DST_COLOR_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstColorBlendFactor"));
+        COLOR_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorBlendOp"));
+        SRC_ALPHA_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAlphaBlendFactor"));
+        DST_ALPHA_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAlphaBlendFactor"));
+        ALPHA_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaBlendOp"));
+        //@formatter:on
+    }
+
+    public VkColorBlendEquationEXT() {
+        this(Arena.ofAuto());
+    }
+    
+    public VkColorBlendEquationEXT(Arena arena) {
+        this(arena.allocate(LAYOUT));
+    }
+    
+    public VkColorBlendEquationEXT(MemorySegment segment) {
+        this.segment = segment;
+    
+    }
+
+    /// @see #srcColorBlendFactor()
+    public VkColorBlendEquationEXT srcColorBlendFactor(int srcColorBlendFactor) {
+    	SRC_COLOR_BLEND_FACTOR_HANDLE.set(segment, 0L, srcColorBlendFactor);
+    	return this;
+    }
+    
+    public int srcColorBlendFactor() {
+    	return (int) SRC_COLOR_BLEND_FACTOR_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #dstColorBlendFactor()
+    public VkColorBlendEquationEXT dstColorBlendFactor(int dstColorBlendFactor) {
+    	DST_COLOR_BLEND_FACTOR_HANDLE.set(segment, 0L, dstColorBlendFactor);
+    	return this;
+    }
+    
+    public int dstColorBlendFactor() {
+    	return (int) DST_COLOR_BLEND_FACTOR_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #colorBlendOp()
+    public VkColorBlendEquationEXT colorBlendOp(int colorBlendOp) {
+    	COLOR_BLEND_OP_HANDLE.set(segment, 0L, colorBlendOp);
+    	return this;
+    }
+    
+    public int colorBlendOp() {
+    	return (int) COLOR_BLEND_OP_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #srcAlphaBlendFactor()
+    public VkColorBlendEquationEXT srcAlphaBlendFactor(int srcAlphaBlendFactor) {
+    	SRC_ALPHA_BLEND_FACTOR_HANDLE.set(segment, 0L, srcAlphaBlendFactor);
+    	return this;
+    }
+    
+    public int srcAlphaBlendFactor() {
+    	return (int) SRC_ALPHA_BLEND_FACTOR_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #dstAlphaBlendFactor()
+    public VkColorBlendEquationEXT dstAlphaBlendFactor(int dstAlphaBlendFactor) {
+    	DST_ALPHA_BLEND_FACTOR_HANDLE.set(segment, 0L, dstAlphaBlendFactor);
+    	return this;
+    }
+    
+    public int dstAlphaBlendFactor() {
+    	return (int) DST_ALPHA_BLEND_FACTOR_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #alphaBlendOp()
+    public VkColorBlendEquationEXT alphaBlendOp(int alphaBlendOp) {
+    	ALPHA_BLEND_OP_HANDLE.set(segment, 0L, alphaBlendOp);
+    	return this;
+    }
+    
+    public int alphaBlendOp() {
+    	return (int) ALPHA_BLEND_OP_HANDLE.get(segment, 0L);
+    }
+    
+    @Override
+    public VkColorBlendEquationEXT set(VkColorBlendEquationEXT other) {
+        return set(other.segment);
+    }
+    
+    @Override
+    public VkColorBlendEquationEXT set(MemorySegment src) {
+        MemorySegment.copy(src, 0L, segment, 0L, LAYOUT.byteSize());
+        return this;
+    }
+    
+    @Override
+    public MemorySegment memorySegment() {
+        return segment;
+    }
+    
+    public NativeStructArray<VkColorBlendEquationEXT> asArray() {
+        return new NativeStructArray<>(this);
+    }
+    
+    public static NativeStructArray<VkColorBlendEquationEXT> array(Arena arena, int count) {
+        return new NativeStructArray<>(
+            arena,
+            LAYOUT,
+            segment -> new VkColorBlendEquationEXT(segment),
+            count
+        );
+    }
+    
+    public static NativeStructArray<VkColorBlendEquationEXT> array(Arena arena, VkColorBlendEquationEXT... structs) {
+        NativeStructArray<VkColorBlendEquationEXT> array = new NativeStructArray<>(
+            arena,
+            LAYOUT,
+            segment -> new VkColorBlendEquationEXT(segment),
+            structs.length
+        );
+    
+        for (int i = 0; i < structs.length; i++) {
+            array.set(i, structs[i]);
+        }
+    
+        return array;
+    }
+    
+    public static NativeStructArray<VkColorBlendEquationEXT> array(MemorySegment array) {
+        return new NativeStructArray<>(
+            array,
+            LAYOUT,
+            segment -> new VkColorBlendEquationEXT(segment)
+        );
+    }
+    
+}

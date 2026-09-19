@@ -1,0 +1,64 @@
+class-description:
+  name: VulkanBase
+  package-name: volucris.bindings.vulkan
+  directory: src/main/java/volucris/bindings/vulkan
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: false
+  instance-parameter:
+
+imports:
+  - java.lang.foreign.MemorySegment
+  - java.lang.foreign.Arena
+  - java.lang.foreign.FunctionDescriptor
+  - java.lang.foreign.Linker
+  - java.lang.foreign.MemoryLayout
+  - volucris.bindings.vulkan.glfw.GLFWVulkan
+  - volucris.bindings.vulkan.structs.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: vkCreateInstance
+    add-typed-method: true
+    nullable-parameters:
+      - pAllocator
+  - name: vkEnumerateInstanceExtensionProperties
+    add-typed-method: true
+    nullable-parameters:
+      - pLayerName
+      - pProperties
+    struct-arrays:
+      - pProperties
+    string-parameters:
+      - pLayerName
+  - name: vkEnumerateInstanceLayerProperties
+    add-typed-method: true
+    nullable-parameters:
+      - pProperties
+    struct-arrays:
+      - pProperties
+  - name: vkEnumerateInstanceVersion
+    add-typed-method: true
+    
+
+native-function-pointers:

@@ -1,0 +1,16 @@
+callbacks:
+  - name: YGLogger
+    package-name: volucris.bindings.yoga
+    directory: src/main/java/volucris/bindings/yoga
+  - name: YGMeasureFunc
+    package-name: volucris.bindings.yoga
+    directory: src/main/java/volucris/bindings/yoga
+  - name: YGDirtiedFunc
+    package-name: volucris.bindings.yoga
+    directory: src/main/java/volucris/bindings/yoga
+  - name: YGCloneNodeFunc
+    package-name: volucris.bindings.yoga
+    directory: src/main/java/volucris/bindings/yoga
+  - name: YGBaselineFunc
+    package-name: volucris.bindings.yoga
+    directory: src/main/java/volucris/bindings/yoga

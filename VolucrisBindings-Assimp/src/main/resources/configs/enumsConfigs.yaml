@@ -1,0 +1,5 @@
+package-name: volucris.bindings.assimp.enums
+directory: src/main/java/volucris/bindings/assimp/enums
+generate-all: true
+transform-constants-names: true
+configs:

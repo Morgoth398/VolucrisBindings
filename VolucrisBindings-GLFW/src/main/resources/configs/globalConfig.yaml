@@ -1,0 +1,24 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    GLFWkeyfun: GLFWKeyCallback
+    GLFWcharfun: GLFWCharCallback
+    GLFWcharmodsfun: GLFWCharModsCallback
+    GLFWmousebuttonfun: GLFWMouseButtonCallback
+    GLFWcursorposfun: GLFWCursorPosCallback
+    GLFWcursorenterfun: GLFWCursorEnterCallback
+    GLFWscrollfun: GLFWScrollCallback
+    GLFWdropfun: GLFWDropCallback
+    GLFWjoystickfun: GLFWJoystickCallback
+    GLFWmonitorfun: GLFWMonitorCallback
+    GLFWwindowposfun: GLFWWindowPosCallback
+    GLFWwindowsizefun: GLFWWindowSizeCallback
+    GLFWwindowclosefun: GLFWWindowCloseCallback
+    GLFWwindowrefreshfun: GLFWWindowRefreshCallback
+    GLFWwindowfocusfun: GLFWWindowFocusCallback
+    GLFWwindowiconifyfun: GLFWWindowIconifyCallback
+    GLFWwindowmaximizefun: GLFWWindowMaximizeCallback
+    GLFWframebuffersizefun: GLFWFramebufferSizeCallback
+    GLFWwindowcontentscalefun: GLFWWindowContentScaleCallback
+    GLFWerrorfun: GLFWErrorCallback

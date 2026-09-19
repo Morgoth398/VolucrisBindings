@@ -1,0 +1,9 @@
+naming:
+  strip-prefixes:
+    - PFN_
+  strip-postfixes:
+    - _T
+  type-renames:
+    PFN_vmaAllocateDeviceMemoryFunction: VmaAllocateDeviceMemoryFunction
+    PFN_vmaFreeDeviceMemoryFunction: VmaFreeDeviceMemoryFunction
+    PFN_vmaCheckDefragmentationBreakFunction: VmaCheckDefragmentationBreakFunction

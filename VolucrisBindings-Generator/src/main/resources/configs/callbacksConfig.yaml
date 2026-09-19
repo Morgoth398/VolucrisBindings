@@ -1,0 +1,25 @@
+callbacks:
+  - name: someFunctionPointerName
+    package-name: org.test.bindings # Some valid package
+    directory: src/test/ouput # Some valid folder
+    add-typed-method: true # If a typed method should be generated.
+    imports:
+      - first
+      - second
+    static-imports:
+      - first
+      - second
+    # Allows to specifiy that a parameter is an array of structs. This should only be used when the parameter type is `RECORD_POINTER` (for all other types it will be ignored). 
+    return-type-is-struct-array: false
+    struct-arrays:
+      - someParameterName
+      - anotherParameterName
+    # Allows to specify that a parameter is a string. This should ony be used for parameters where the type is a char pointer (signed and unsigned). For all other types it will be ignored.
+    string-return-type: false
+    string-parameters:
+      - someParameterName
+      - someParameterName
+
+  - name: someOtherFunctionPointerName
+    package-name: org.test.bindings # Some valid package
+    directory: src/test/ouput # Some valid folder

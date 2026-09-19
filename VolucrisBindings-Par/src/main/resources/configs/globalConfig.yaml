@@ -1,0 +1,11 @@
+naming:
+  strip-prefixes:
+    - par_octasphere_
+    - par_shapes__
+    - par_shapes_
+  strip-postfixes:
+  type-renames:
+    par_shapes_mesh_s: ParShapesMesh
+    par_shapes_fn: ParShapesFunction
+    par_octasphere_config: ParOctasphereConfig
+    par_octasphere_mesh: ParOctasphereMesh

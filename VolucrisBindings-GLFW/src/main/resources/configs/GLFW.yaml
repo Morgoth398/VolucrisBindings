@@ -1,0 +1,188 @@
+class-description:
+  name: GLFW
+  package-name: volucris.bindings.glfw
+  directory: src/main/java/volucris/bindings/glfw
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - java.lang.foreign.MemorySegment
+static-imports:
+  - java.lang.foreign.ValueLayout.*
+  - volucris.bindings.core.FFMUtils.*
+
+macro-name-prefixes:
+  - prefix: GLFW_
+    type: int
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+  - name: glfwGetProcAddress
+    type: MemorySegment
+
+function-name-prefixes:
+  - glfw
+excluded-function-name-prefixes:
+  - glfwGetProcAddress
+  - glfwCreateWindowSurface
+  - glfwGetPhysicalDevicePresentationSupport
+  - glfwGetInstanceProcAddress
+  - glfwGetRequiredInstanceExtensions
+  - glfwInitVulkanLoader
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: glfwCreateWindow
+    string-parameters:
+      - title
+    nullable-parameters:
+      - monitor
+      - share
+  - name: glfwSetWindowTitle
+    string-parameters:
+      - title
+  - name: glfwGetWindowPos
+    nullable-parameters:
+      - xpos
+      - ypos
+  - name: glfwGetWindowSize
+    nullable-parameters:
+      - width
+      - height
+  - name: glfwGetFramebufferSize
+    nullable-parameters:
+      - width
+      - height
+  - name: glfwGetWindowFrameSize
+    nullable-parameters:
+      - left
+      - top
+      - right
+      - bottom
+  - name: glfwGetWindowContentScale
+    nullable-parameters:
+      - xscale
+      - yscale
+  - name: glfwSetWindowPosCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowSizeCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowCloseCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowRefreshCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowFocusCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowIconifyCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowMaximizeCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetFramebufferCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowContentScaleCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetWindowMonitor
+    nullable-parameters:
+      - monitor
+  - name: glfwGetMonitorPos
+    nullable-parameters:
+      - xpos
+      - ypos
+  - name: glfwGetMonitorWorkarea
+    nullable-parameters:
+      - xpos
+      - ypos
+      - width
+      - height
+  - name: glfwGetMonitorPhysicalSize
+    nullable-parameters:
+      - widthMM
+      - heightMM
+  - name: glfwGetMonitorContentScale
+    nullable-parameters:
+      - xscale
+      - yscale
+  - name: glfwSetMonitorCallback
+    nullable-parameters:
+      - callback
+  - name: glfwGetCursorPos
+    nullable-parameters:
+      - xpos
+      - ypos
+  - name: glfwSetCursor
+    nullable-parameters:
+      - cursor
+  - name: glfwSetKeyCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetCharCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetCharModsCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetMouseButtonCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetCursorPosCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetCursorEnterCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetScrollCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetDropCallback 	
+    nullable-parameters:
+      - callback
+  - name: glfwSetJoystickCallback
+    nullable-parameters:
+      - callback
+  - name: glfwSetClipboardString
+    nullable-parameters:
+      - window
+  - name: glfwGetClipboardString 	
+    string-return-type: true 
+    nullable-parameters:
+      - window
+  - name: glfwExtensionSupported
+    string-parameters:
+      - extension
+  - name: glfwGetVersionString
+    string-return-type: true
+  - name: glfwGetKeyName
+    string-return-type: true
+  - name: glfwGetJoystickName
+    string-return-type: true
+  - name: glfwGetGamepadName
+    string-return-type: true
+  - name: glfwGetVideoModes
+    return-type-is-struct-array: true
+  - name: glfwSetWindowIcon
+    struct-arrays:
+      - images
+
+native-function-pointers:

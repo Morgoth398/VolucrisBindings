@@ -1,0 +1,14 @@
+naming:
+  strip-prefixes:
+    - YG
+  strip-postfixes:
+  type-renames:
+    YGNode: YGNode
+    YGConfig: YGConfig
+    YGSize: YGSize
+    YGValue: YGValue
+    YGLogger: YGLogger
+    YGMeasureFunc: YGMeasureFunc
+    YGDirtiedFunc: YGDirtiedFunc
+    YGCloneNodeFunc: YGCloneNodeFunc
+    YGBaselineFunc: YGBaselineFunc

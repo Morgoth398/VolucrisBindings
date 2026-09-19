@@ -1,0 +1,9 @@
+#include <assimp/cimport.h>
+#include <assimp/cfileio.h>
+#include <assimp/scene.h>
+#include <assimp/material.h>
+#include <assimp/mesh.h>
+#include <assimp/texture.h>
+#include <assimp/postprocess.h>
+#include <assimp/version.h>
+#include <assimp/GltfMaterial.h>

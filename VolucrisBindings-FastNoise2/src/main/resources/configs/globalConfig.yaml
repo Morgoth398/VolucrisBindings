@@ -1,0 +1,5 @@
+naming:
+  strip-prefixes:
+    - fn
+  strip-postfixes:
+  type-renames:

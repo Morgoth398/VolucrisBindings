@@ -1,0 +1,57 @@
+callbacks:
+  - name: PFN_vkAllocationFunction
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: PFN_vkReallocationFunction
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: PFN_vkFreeFunction
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: PFN_vkInternalAllocationNotification
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: PFN_vkDebugReportCallbackEXT
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    imports:
+    static-imports:
+    string-parameters:
+      - pMessage
+      - pLayerPrefix
+  - name: PFN_vkDebugUtilsMessengerCallbackEXT
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    imports:
+      - volucris.bindings.vulkan.structs.VkDebugUtilsMessengerCallbackDataEXT
+    static-imports:
+  - name: PFN_vkDeviceMemoryReportCallbackEXT
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    imports:
+      - volucris.bindings.vulkan.structs.VkDeviceMemoryReportCallbackDataEXT
+    static-imports:
+  - name: PFN_vkGetInstanceProcAddrLUNARG
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: PFN_vkInternalFreeNotification
+    package-name: volucris.bindings.vulkan
+    directory: src/main/java/volucris/bindings/vulkan
+    add-typed-method: false
+    imports:
+    static-imports:

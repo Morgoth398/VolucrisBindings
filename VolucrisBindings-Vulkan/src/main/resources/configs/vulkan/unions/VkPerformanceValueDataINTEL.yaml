@@ -1,0 +1,41 @@
+class-description:
+  name: VkPerformanceValueDataINTEL
+  package-name: volucris.bindings.vulkan.unions
+  directory: src/main/java/volucris/bindings/vulkan/unions
+  is-static:
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - volucris.bindings.vulkan.*
+  - volucris.bindings.vulkan.handles.*
+  - volucris.bindings.vulkan.structs.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+  name: VkPerformanceValueDataINTEL
+  struct-arrays:
+  string-fields:
+    - valueString
+native-functions:
+native-function-pointers:

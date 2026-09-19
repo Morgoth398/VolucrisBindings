@@ -1,0 +1,12 @@
+callbacks:
+  - name: stbi_io_callbacks_read
+    package-name: volucris.bindings.stb.image
+    directory: src/main/java/volucris/bindings/stb/image
+  - name: stbi_io_callbacks_skip
+    package-name: volucris.bindings.stb.image
+    directory: src/main/java/volucris/bindings/stb/image
+    add-typed-method: false
+  - name: stbi_io_callbacks_eof
+    package-name: volucris.bindings.stb.image
+    directory: src/main/java/volucris/bindings/stb/image
+    add-typed-method: false

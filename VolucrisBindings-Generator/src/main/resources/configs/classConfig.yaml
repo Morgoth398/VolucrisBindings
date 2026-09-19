@@ -1,0 +1,147 @@
+class-description:
+  name: GL
+  package-name: org.test.bindings # Some valid package
+  directory: src/test/ouput # Some valid folder
+  is-static: true # Private constructor, all methods static.
+  static-native-methods: false # Allows to make all native methods static. When the class contains a struct the property 'is-static' is automatically disabled and then this should be used.
+  parent-class: null
+  parent-has-segment-constructor: false # If the parent-class has a constructor that takes a memory segment that needs to be called
+  interfaces: []
+  is-sealed: false
+  permits: []
+  # Only one of the booleans can be true at a time. Everything else will cause a validation error.
+  is-abstract: false
+  is-final: true
+  # For non static methods this parameter will be removed and substituted with `this.segment`.
+  instance-parameter: some_parameter_name
+  additional-instance-parameters: [] #If on instance parameter is not enough.
+  raw-method-template: some/valid/path/ # A custom raw method template
+  typed-method-template: some/valid/path/
+
+imports:
+  - first
+  - second
+
+static-imports:
+  - first
+  - second
+
+# Allows to set prefixes. All macros that start with these prefixes will be added. Can be empty.
+macro-name-prefixes:
+  - prefix: first
+    type: someType # Allowed values: [int, long, float, double, String]
+
+# Allows to set prefixes that should not be included. All macros that start with these prefixes will not be added. Can be empty.
+excluded-macro-name-prefixes:
+  - first
+  - second
+
+# Contains all macros to be added.
+macro-names:
+  - name: some_name
+    type: someType # Allowed values: [int, long, float, double, String]
+
+# Contains all macros that should not be added.
+excluded-macro-names:
+  - first
+  - second
+
+# Allows to set prefixes that should be included. All symbols that start with these prefixes will be added.
+symbol-prefixes:
+  - name: some_name
+    # The type to use for the symbols. Allowed values: [int, long, float, double, String, boolean, int-boolean, MemorySegment]
+    type: some_type 
+
+# Contains all symbols to be added.
+symbols:
+  - name: some_name
+    # The type to use for the symbol. Allowed values: [int, long, float, double, String, boolean, int-boolean, MemorySegment]
+    type: some_type
+
+# Allows to set prefixes. All functions that start with these prefixes will be added. Can be empty.
+function-name-prefixes:
+  - first
+  - second
+# Allows to set prefixes that should not be included. All functions that start with these prefixes will not be added. Can be empty.
+excluded-function-name-prefixes:
+  - first
+  - second
+# Allows to set postfixes. All functions that end with these postfixes will be added. Can be empty.
+function-name-postfixes:
+  - first
+  - second
+# Allows to set postfixes that should not be included. All functions that  end with these postfixes will not be added. Can be empty.
+excluded-function-name-postfixes:
+  - first
+  - second
+
+# If some constructor code cannot be generated because its too complex, it can be added with this.
+# The class must not contain a struct or any other constructor when this is used. The class must be non static.
+custom-constructor-code: some/valid/path/
+# Constructors — native function called during construction, destructor called on arena close. Must return a memorySegment.
+constructors:
+  - native-function: function1
+    destructor: other function
+    template: some/valid/path/ # Allows to set a template to handle the constructor.
+
+# Contains the struct or union to be added. Can be empty.
+# (The name is still struct for backwards compatibility)
+struct:
+  name: struct1
+  var-handles: true
+  template: some/valid/path/ # Allows to specify a custom template to handle the cosntructor generation
+  # Allows to specifiy that a field is an array of structs. This should only be used when the field type is `RECORD_POINTER` (for all other types it will be ignored). 
+  struct-arrays:
+    - someFieldName
+    - anotherFieldName
+  # Allows to specify that a field is a string. This should ony be used for fields where the type is a char pointer (signed and unsigned). For all other types it will be ignored.
+  string-fields:
+    - someFieldName
+    - someFieldName
+  # Allows to specify that a field should not be accessed directly.
+  no-access-fields:
+    - someFieldName
+    - someFieldName
+
+# Contains all functions to be added. Can be empty (useful when using a prefix).
+native-functions:
+  - name: function1
+  - name: function2
+    is-static: true # Opt-in per method when class is not static
+    is-final: true # If a method should not be final. The default is true.
+    add-typed-method: true # Allows to disable the generation of the typed method when not needed
+    return-type-is-struct-array: false
+    # Allows to specifiy that a parameter is an array of structs. This should only be used when the parameter type is `RECORD_POINTER` (for all other types it will be ignored). 
+    struct-arrays:
+      - someParameterName
+      - anotherParameterName
+    # Allows to specify that a parameter/ return type is a string. This should ony be used for parameters where the type is a char pointer (signed and unsigned). For all other types it will be ignored.
+    string-return-type: false
+    string-parameters:
+      - someParameterName
+      - someParameterName
+    nullable-parameters:
+      - someParameterName
+      - someParameterName
+
+# Contains all functions pointers to be added. Can be empty (useful when using a prefix).
+native-function-pointers:
+  - name: function3
+  - name: function4
+    is-static: true # Opt-in per method when class is not static
+    is-final: true # If a method should not be final. The default is true.
+    add-typed-method: true # Allows to disable the generation of the typed method when not needed
+    return-type-is-struct-array: false
+    # Allows to specifiy that a parameter is an array of structs. This should only be used when the parameter type is `RECORD_POINTER` (for all other types it will be ignored). 
+    struct-arrays:
+      - someParameterName
+      - anotherParameterName
+    # Allows to specify that a parameter/ return type is a string. This should ony be used for parameters where the type is a char pointer (signed and unsigned). For all other types it will be ignored.
+    string-return-type: false
+    string-parameters:
+      - someParameterName
+      - someParameterName
+    nullable-parameters:
+      - someParameterName
+      - someParameterName
+

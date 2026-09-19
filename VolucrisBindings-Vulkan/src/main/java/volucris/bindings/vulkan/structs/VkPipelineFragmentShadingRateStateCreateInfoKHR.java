@@ -1,0 +1,178 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.structs;
+
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+import java.util.function.Consumer;
+import org.jspecify.annotations.Nullable;
+import volucris.bindings.core.NativeStructArray;
+import volucris.bindings.core.Struct;
+import volucris.bindings.vulkan.*;
+import volucris.bindings.vulkan.handles.*;
+import volucris.bindings.vulkan.unions.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static volucris.bindings.core.FFMUtils.*;
+
+public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
+		implements Struct<VkPipelineFragmentShadingRateStateCreateInfoKHR> {
+
+    public static final StructLayout LAYOUT;
+
+    public static final VarHandle S_TYPE_HANDLE;
+    public static final VarHandle P_NEXT_HANDLE;
+    public static final VarHandle COMBINER_OPS_HANDLE;
+
+    public static final long S_TYPE_BYTE_OFFSET;
+    public static final long P_NEXT_BYTE_OFFSET;
+    public static final long FRAGMENT_SIZE_BYTE_OFFSET;
+    public static final long COMBINER_OPS_BYTE_OFFSET;
+
+    private final MemorySegment segment;
+
+    private final VkExtent2D fragmentSize;
+
+    static {
+        //@formatter:off
+        LAYOUT = MemoryLayout.structLayout(
+            JAVA_INT.withName("sType"),
+            MemoryLayout.paddingLayout(4),
+            UNBOUNDED_ADDRESS.withName("pNext"),
+            VkExtent2D.LAYOUT.withName("fragmentSize"),
+            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("combinerOps")
+        ).withName("VkPipelineFragmentShadingRateStateCreateInfoKHR").withByteAlignment(8);
+        
+        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+        COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("combinerOps"), PathElement.sequenceElement());
+        
+        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+        FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentSize"));
+        COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("combinerOps"));
+        //@formatter:on
+    }
+
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR() {
+        this(Arena.ofAuto());
+    }
+    
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR(Arena arena) {
+        this(arena.allocate(LAYOUT));
+    }
+    
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR(MemorySegment segment) {
+        this.segment = segment;
+    
+        fragmentSize = new VkExtent2D(segment.asSlice(FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+    }
+
+    /// @see #sType()
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR sType(int sType) {
+    	S_TYPE_HANDLE.set(segment, 0L, sType);
+    	return this;
+    }
+    
+    public int sType() {
+    	return (int) S_TYPE_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #pNext()
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR pNext(MemorySegment pNext) {
+    	P_NEXT_HANDLE.set(segment, 0L, pNext);
+    	return this;
+    }
+    
+    public @Nullable MemorySegment pNext() {
+    	MemorySegment segment = (MemorySegment) P_NEXT_HANDLE.get(this.segment, 0L);
+    
+    	if (segment.equals(MemorySegment.NULL))
+    		return null;
+    	
+    	return segment;
+    }
+    
+    /// @see #combinerOps(int)
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR combinerOps(int combinerOps, int index0) {
+    	COMBINER_OPS_HANDLE.set(segment, 0L, index0, combinerOps);
+    	return this;
+    }
+    
+    public int combinerOps(int index0) {
+    	return (int) COMBINER_OPS_HANDLE.get(segment, 0L, index0);
+    }
+    
+    /// @see #fragmentSize()
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR fragmentSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(fragmentSize);
+    	return this;
+    }
+    
+    /// @see #fragmentSize()
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR fragmentSize(VkExtent2D other) {
+    	fragmentSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D fragmentSize() {
+    	return fragmentSize;
+    }
+    
+    @Override
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR set(VkPipelineFragmentShadingRateStateCreateInfoKHR other) {
+        return set(other.segment);
+    }
+    
+    @Override
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR set(MemorySegment src) {
+        MemorySegment.copy(src, 0L, segment, 0L, LAYOUT.byteSize());
+        return this;
+    }
+    
+    @Override
+    public MemorySegment memorySegment() {
+        return segment;
+    }
+    
+    public NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> asArray() {
+        return new NativeStructArray<>(this);
+    }
+    
+    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(Arena arena, int count) {
+        return new NativeStructArray<>(
+            arena,
+            LAYOUT,
+            segment -> new VkPipelineFragmentShadingRateStateCreateInfoKHR(segment),
+            count
+        );
+    }
+    
+    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(Arena arena, VkPipelineFragmentShadingRateStateCreateInfoKHR... structs) {
+        NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array = new NativeStructArray<>(
+            arena,
+            LAYOUT,
+            segment -> new VkPipelineFragmentShadingRateStateCreateInfoKHR(segment),
+            structs.length
+        );
+    
+        for (int i = 0; i < structs.length; i++) {
+            array.set(i, structs[i]);
+        }
+    
+        return array;
+    }
+    
+    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(MemorySegment array) {
+        return new NativeStructArray<>(
+            array,
+            LAYOUT,
+            segment -> new VkPipelineFragmentShadingRateStateCreateInfoKHR(segment)
+        );
+    }
+    
+}

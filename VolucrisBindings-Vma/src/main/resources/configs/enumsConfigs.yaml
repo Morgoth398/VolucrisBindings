@@ -1,0 +1,28 @@
+package-name: 
+directory:
+generate-all: false
+configs: #Per enum configs
+  - name: VmaAllocatorCreateFlagBits
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaMemoryUsage
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaAllocationCreateFlagBits
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaPoolCreateFlagBits
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaDefragmentationFlagBits
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaDefragmentationMoveOperation
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaVirtualBlockCreateFlagBits
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+  - name: VmaVirtualAllocationCreateFlagBits
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma

@@ -1,0 +1,8 @@
+naming:
+  strip-prefixes:
+    - glad_ # One Prefix
+    - JPH_ # Second Prefix
+  strip-postfixes:
+    - _T # One Postfix
+  type-renames:
+    someOriginalName: someTypeReplacement

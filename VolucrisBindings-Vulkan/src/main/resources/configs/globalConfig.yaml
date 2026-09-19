@@ -1,0 +1,15 @@
+naming:
+  strip-prefixes:
+    - PFN_
+  strip-postfixes:
+    - _T
+  type-renames:
+    PFN_vkAllocationFunction: VkAllocationFunction
+    PFN_vkReallocationFunction: VkReallocationFunction
+    PFN_vkFreeFunction: VkFreeFunction
+    PFN_vkInternalAllocationNotification: VkInternalAllocationNotification
+    PFN_vkDebugReportCallbackEXT: PFNVkDebugReportCallbackEXT
+    PFN_vkDebugUtilsMessengerCallbackEXT: VkDebugUtilsMessengerCallbackEXT
+    PFN_vkDeviceMemoryReportCallbackEXT: VkDeviceMemoryReportCallbackEXT
+    PFN_vkGetInstanceProcAddrLUNARG: VkGetInstanceProcAddrLUNARG
+    PFN_vkInternalFreeNotification: VkInternalFreeNotification

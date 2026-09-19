@@ -1,0 +1,24 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.enums;
+
+public final class VkDeviceFaultAddressTypeKHR {
+
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_NONE_KHR = 0;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_KHR = 1;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_KHR = 2;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_KHR = 3;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_KHR = 4;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_KHR = 5;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_KHR = 6;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_NONE_EXT = 0;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_READ_INVALID_EXT = 1;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_WRITE_INVALID_EXT = 2;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_EXECUTE_INVALID_EXT = 3;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_UNKNOWN_EXT = 4;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_INVALID_EXT = 5;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_INSTRUCTION_POINTER_FAULT_EXT = 6;
+    public static final int VK_DEVICE_FAULT_ADDRESS_TYPE_MAX_ENUM_KHR = 2147483647;
+
+}

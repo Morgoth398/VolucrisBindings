@@ -1,0 +1,146 @@
+class-description:
+  name: VkInstance
+  package-name: volucris.bindings.vulkan
+  directory: src/main/java/volucris/bindings/vulkan
+  is-static: false
+  parent: 
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+  raw-method-template: 
+  typed-method-template: 
+
+imports:
+  - volucris.bindings.vulkan.structs.*
+  - volucris.bindings.vulkan.handles.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+    - name: vkDestroyInstance
+    - name: vkEnumeratePhysicalDevices
+    - name: vkGetPhysicalDeviceProperties
+    - name: vkGetPhysicalDeviceQueueFamilyProperties
+    - name: vkGetPhysicalDeviceMemoryProperties
+    - name: vkGetPhysicalDeviceFeatures
+    - name: vkGetPhysicalDeviceFormatProperties
+    - name: vkGetPhysicalDeviceImageFormatProperties
+    - name: vkCreateDevice
+    - name: vkEnumerateDeviceLayerProperties
+    - name: vkEnumerateDeviceExtensionProperties
+    - name: vkGetPhysicalDeviceSparseImageFormatProperties
+    - name: vkCreateAndroidSurfaceKHR
+    - name: vkCreateSurfaceOHOS
+    - name: vkGetPhysicalDeviceDisplayPropertiesKHR
+    - name: vkGetPhysicalDeviceDisplayPlanePropertiesKHR
+    - name: vkGetDisplayPlaneSupportedDisplaysKHR
+    - name: vkGetDisplayModePropertiesKHR
+    - name: vkCreateDisplayModeKHR
+    - name: vkGetDisplayPlaneCapabilitiesKHR
+    - name: vkCreateDisplayPlaneSurfaceKHR
+    - name: vkDestroySurfaceKHR
+    - name: vkGetPhysicalDeviceSurfaceSupportKHR
+    - name: vkGetPhysicalDeviceSurfaceCapabilitiesKHR
+    - name: vkGetPhysicalDeviceSurfaceFormatsKHR
+    - name: vkGetPhysicalDeviceSurfacePresentModesKHR
+    - name: vkCreateViSurfaceNN
+    - name: vkCreateWaylandSurfaceKHR
+    - name: vkGetPhysicalDeviceWaylandPresentationSupportKHR
+    - name: vkCreateUbmSurfaceSEC
+    - name: vkGetPhysicalDeviceUbmPresentationSupportSEC
+    - name: vkCreateWin32SurfaceKHR
+    - name: vkGetPhysicalDeviceWin32PresentationSupportKHR
+    - name: vkCreateXlibSurfaceKHR
+    - name: vkGetPhysicalDeviceXlibPresentationSupportKHR
+    - name: vkCreateXcbSurfaceKHR
+    - name: vkGetPhysicalDeviceXcbPresentationSupportKHR
+    - name: vkCreateDirectFBSurfaceEXT
+    - name: vkGetPhysicalDeviceDirectFBPresentationSupportEXT
+    - name: vkCreateImagePipeSurfaceFUCHSIA
+    - name: vkCreateStreamDescriptorSurfaceGGP
+    - name: vkCreateScreenSurfaceQNX
+    - name: vkGetPhysicalDeviceScreenPresentationSupportQNX
+    - name: vkCreateDebugReportCallbackEXT
+    - name: vkDestroyDebugReportCallbackEXT
+    - name: vkDebugReportMessageEXT
+    - name: vkGetPhysicalDeviceExternalImageFormatPropertiesNV
+    - name: vkGetPhysicalDeviceFeatures2
+    - name: vkGetPhysicalDeviceProperties2
+    - name: vkGetPhysicalDeviceFormatProperties2
+    - name: vkGetPhysicalDeviceImageFormatProperties2
+    - name: vkGetPhysicalDeviceQueueFamilyProperties2
+    - name: vkGetPhysicalDeviceMemoryProperties2
+    - name: vkGetPhysicalDeviceSparseImageFormatProperties2
+    - name: vkGetPhysicalDeviceExternalBufferProperties
+    - name: vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV
+    - name: vkGetPhysicalDeviceSciBufAttributesNV
+    - name: vkGetPhysicalDeviceExternalSemaphoreProperties
+    - name: vkGetPhysicalDeviceExternalFenceProperties
+    - name: vkGetPhysicalDeviceSciSyncAttributesNV
+    - name: vkReleaseDisplayEXT
+    - name: vkAcquireXlibDisplayEXT
+    - name: vkGetRandROutputDisplayEXT
+    - name: vkAcquireWinrtDisplayNV
+    - name: vkGetWinrtDisplayNV
+    - name: vkGetPhysicalDeviceSurfaceCapabilities2EXT
+    - name: vkEnumeratePhysicalDeviceGroups
+    - name: vkGetPhysicalDevicePresentRectanglesKHR
+    - name: vkCreateIOSSurfaceMVK
+    - name: vkCreateMacOSSurfaceMVK
+    - name: vkCreateMetalSurfaceEXT
+    - name: vkGetPhysicalDeviceMultisamplePropertiesEXT
+    - name: vkGetPhysicalDeviceSurfaceCapabilities2KHR
+    - name: vkGetPhysicalDeviceSurfaceFormats2KHR
+    - name: vkGetPhysicalDeviceDisplayProperties2KHR
+    - name: vkGetPhysicalDeviceDisplayPlaneProperties2KHR
+    - name: vkGetDisplayModeProperties2KHR
+    - name: vkGetDisplayPlaneCapabilities2KHR
+    - name: vkGetPhysicalDeviceCalibrateableTimeDomainsKHR
+    - name: vkCreateDebugUtilsMessengerEXT
+    - name: vkDestroyDebugUtilsMessengerEXT
+    - name: vkSubmitDebugUtilsMessageEXT
+    - name: vkGetPhysicalDeviceCooperativeMatrixPropertiesNV
+    - name: vkGetPhysicalDeviceSurfacePresentModes2EXT
+    - name: vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR
+    - name: vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR
+    - name: vkCreateHeadlessSurfaceEXT
+    - name: vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV
+    - name: vkGetPhysicalDeviceToolProperties
+    - name: vkGetPhysicalDeviceRefreshableObjectTypesKHR
+    - name: vkGetPhysicalDeviceFragmentShadingRatesKHR
+    - name: vkGetPhysicalDeviceVideoCapabilitiesKHR
+    - name: vkGetPhysicalDeviceVideoFormatPropertiesKHR
+    - name: vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR
+    - name: vkAcquireDrmDisplayEXT
+    - name: vkGetDrmDisplayEXT
+    - name: vkGetPhysicalDeviceOpticalFlowImageFormatsNV
+    - name: vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR
+    - name: vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV
+    - name: vkGetPhysicalDeviceCooperativeVectorPropertiesNV
+    - name: vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM
+    - name: vkGetPhysicalDeviceExternalTensorPropertiesARM
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM
+    - name: vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM
+    - name: vkGetPhysicalDeviceDescriptorSizeEXT
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM
+native-function-pointers:

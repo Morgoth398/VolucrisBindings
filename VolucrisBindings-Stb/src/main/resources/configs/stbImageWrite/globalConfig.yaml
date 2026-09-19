@@ -1,0 +1,5 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    stbi_write_func: StbImageWriteFunc

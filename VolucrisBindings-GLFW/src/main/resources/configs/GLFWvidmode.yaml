@@ -1,0 +1,39 @@
+class-description:
+  name: GLFWvidmode
+  package-name: volucris.bindings.glfw
+  directory: src/main/java/volucris/bindings/glfw
+  is-static: false
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - java.lang.foreign.MemorySegment
+static-imports:
+  - java.lang.foreign.ValueLayout.*
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+  name: GLFWvidmode
+  var-handles: true
+
+native-functions:
+native-function-pointers:

@@ -1,0 +1,1 @@
+${fieldName} = downcallHandle<#if !returnType?has_content>Void</#if>(<#if isFunctionPointer>true, </#if>"${functionName}"<#if returnType?has_content>, ${returnType}</#if><#if parameters?has_content>, ${parameters?join(", ")}</#if>);

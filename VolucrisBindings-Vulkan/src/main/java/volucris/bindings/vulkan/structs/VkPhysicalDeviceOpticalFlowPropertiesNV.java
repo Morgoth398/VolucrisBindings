@@ -1,0 +1,306 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.structs;
+
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemoryLayout;
+import java.lang.foreign.MemorySegment;
+import java.lang.foreign.StructLayout;
+import java.lang.invoke.VarHandle;
+import org.jspecify.annotations.Nullable;
+import volucris.bindings.core.NativeStructArray;
+import volucris.bindings.core.Struct;
+import volucris.bindings.vulkan.*;
+import volucris.bindings.vulkan.handles.*;
+import volucris.bindings.vulkan.unions.*;
+
+import static java.lang.foreign.ValueLayout.*;
+import static volucris.bindings.core.FFMUtils.*;
+
+public final class VkPhysicalDeviceOpticalFlowPropertiesNV
+		implements Struct<VkPhysicalDeviceOpticalFlowPropertiesNV> {
+
+    public static final StructLayout LAYOUT;
+
+    public static final VarHandle S_TYPE_HANDLE;
+    public static final VarHandle P_NEXT_HANDLE;
+    public static final VarHandle SUPPORTED_OUTPUT_GRID_SIZES_HANDLE;
+    public static final VarHandle SUPPORTED_HINT_GRID_SIZES_HANDLE;
+    public static final VarHandle HINT_SUPPORTED_HANDLE;
+    public static final VarHandle COST_SUPPORTED_HANDLE;
+    public static final VarHandle BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE;
+    public static final VarHandle GLOBAL_FLOW_SUPPORTED_HANDLE;
+    public static final VarHandle MIN_WIDTH_HANDLE;
+    public static final VarHandle MIN_HEIGHT_HANDLE;
+    public static final VarHandle MAX_WIDTH_HANDLE;
+    public static final VarHandle MAX_HEIGHT_HANDLE;
+    public static final VarHandle MAX_NUM_REGIONS_OF_INTEREST_HANDLE;
+
+    public static final long S_TYPE_BYTE_OFFSET;
+    public static final long P_NEXT_BYTE_OFFSET;
+    public static final long SUPPORTED_OUTPUT_GRID_SIZES_BYTE_OFFSET;
+    public static final long SUPPORTED_HINT_GRID_SIZES_BYTE_OFFSET;
+    public static final long HINT_SUPPORTED_BYTE_OFFSET;
+    public static final long COST_SUPPORTED_BYTE_OFFSET;
+    public static final long BIDIRECTIONAL_FLOW_SUPPORTED_BYTE_OFFSET;
+    public static final long GLOBAL_FLOW_SUPPORTED_BYTE_OFFSET;
+    public static final long MIN_WIDTH_BYTE_OFFSET;
+    public static final long MIN_HEIGHT_BYTE_OFFSET;
+    public static final long MAX_WIDTH_BYTE_OFFSET;
+    public static final long MAX_HEIGHT_BYTE_OFFSET;
+    public static final long MAX_NUM_REGIONS_OF_INTEREST_BYTE_OFFSET;
+
+    private final MemorySegment segment;
+
+    static {
+        //@formatter:off
+        LAYOUT = MemoryLayout.structLayout(
+            JAVA_INT.withName("sType"),
+            MemoryLayout.paddingLayout(4),
+            UNBOUNDED_ADDRESS.withName("pNext"),
+            JAVA_INT.withName("supportedOutputGridSizes"),
+            JAVA_INT.withName("supportedHintGridSizes"),
+            JAVA_INT.withName("hintSupported"),
+            JAVA_INT.withName("costSupported"),
+            JAVA_INT.withName("bidirectionalFlowSupported"),
+            JAVA_INT.withName("globalFlowSupported"),
+            JAVA_INT.withName("minWidth"),
+            JAVA_INT.withName("minHeight"),
+            JAVA_INT.withName("maxWidth"),
+            JAVA_INT.withName("maxHeight"),
+            JAVA_INT.withName("maxNumRegionsOfInterest"),
+            MemoryLayout.paddingLayout(4)
+        ).withName("VkPhysicalDeviceOpticalFlowPropertiesNV").withByteAlignment(8);
+        
+        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+        SUPPORTED_OUTPUT_GRID_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedOutputGridSizes"));
+        SUPPORTED_HINT_GRID_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedHintGridSizes"));
+        HINT_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hintSupported"));
+        COST_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("costSupported"));
+        BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bidirectionalFlowSupported"));
+        GLOBAL_FLOW_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalFlowSupported"));
+        MIN_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minWidth"));
+        MIN_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minHeight"));
+        MAX_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWidth"));
+        MAX_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxHeight"));
+        MAX_NUM_REGIONS_OF_INTEREST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxNumRegionsOfInterest"));
+        
+        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+        SUPPORTED_OUTPUT_GRID_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedOutputGridSizes"));
+        SUPPORTED_HINT_GRID_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedHintGridSizes"));
+        HINT_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hintSupported"));
+        COST_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("costSupported"));
+        BIDIRECTIONAL_FLOW_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bidirectionalFlowSupported"));
+        GLOBAL_FLOW_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalFlowSupported"));
+        MIN_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minWidth"));
+        MIN_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minHeight"));
+        MAX_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWidth"));
+        MAX_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxHeight"));
+        MAX_NUM_REGIONS_OF_INTEREST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxNumRegionsOfInterest"));
+        //@formatter:on
+    }
+
+    public VkPhysicalDeviceOpticalFlowPropertiesNV() {
+        this(Arena.ofAuto());
+    }
+    
+    public VkPhysicalDeviceOpticalFlowPropertiesNV(Arena arena) {
+        this(arena.allocate(LAYOUT));
+    }
+    
+    public VkPhysicalDeviceOpticalFlowPropertiesNV(MemorySegment segment) {
+        this.segment = segment;
+    
+    }
+
+    /// @see #sType()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV sType(int sType) {
+    	S_TYPE_HANDLE.set(segment, 0L, sType);
+    	return this;
+    }
+    
+    public int sType() {
+    	return (int) S_TYPE_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #pNext()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV pNext(MemorySegment pNext) {
+    	P_NEXT_HANDLE.set(segment, 0L, pNext);
+    	return this;
+    }
+    
+    public @Nullable MemorySegment pNext() {
+    	MemorySegment segment = (MemorySegment) P_NEXT_HANDLE.get(this.segment, 0L);
+    
+    	if (segment.equals(MemorySegment.NULL))
+    		return null;
+    	
+    	return segment;
+    }
+    
+    /// @see #supportedOutputGridSizes()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV supportedOutputGridSizes(int supportedOutputGridSizes) {
+    	SUPPORTED_OUTPUT_GRID_SIZES_HANDLE.set(segment, 0L, supportedOutputGridSizes);
+    	return this;
+    }
+    
+    public int supportedOutputGridSizes() {
+    	return (int) SUPPORTED_OUTPUT_GRID_SIZES_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #supportedHintGridSizes()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV supportedHintGridSizes(int supportedHintGridSizes) {
+    	SUPPORTED_HINT_GRID_SIZES_HANDLE.set(segment, 0L, supportedHintGridSizes);
+    	return this;
+    }
+    
+    public int supportedHintGridSizes() {
+    	return (int) SUPPORTED_HINT_GRID_SIZES_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #hintSupported()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV hintSupported(int hintSupported) {
+    	HINT_SUPPORTED_HANDLE.set(segment, 0L, hintSupported);
+    	return this;
+    }
+    
+    public int hintSupported() {
+    	return (int) HINT_SUPPORTED_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #costSupported()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV costSupported(int costSupported) {
+    	COST_SUPPORTED_HANDLE.set(segment, 0L, costSupported);
+    	return this;
+    }
+    
+    public int costSupported() {
+    	return (int) COST_SUPPORTED_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #bidirectionalFlowSupported()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV bidirectionalFlowSupported(int bidirectionalFlowSupported) {
+    	BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE.set(segment, 0L, bidirectionalFlowSupported);
+    	return this;
+    }
+    
+    public int bidirectionalFlowSupported() {
+    	return (int) BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #globalFlowSupported()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV globalFlowSupported(int globalFlowSupported) {
+    	GLOBAL_FLOW_SUPPORTED_HANDLE.set(segment, 0L, globalFlowSupported);
+    	return this;
+    }
+    
+    public int globalFlowSupported() {
+    	return (int) GLOBAL_FLOW_SUPPORTED_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #minWidth()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV minWidth(int minWidth) {
+    	MIN_WIDTH_HANDLE.set(segment, 0L, minWidth);
+    	return this;
+    }
+    
+    public int minWidth() {
+    	return (int) MIN_WIDTH_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #minHeight()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV minHeight(int minHeight) {
+    	MIN_HEIGHT_HANDLE.set(segment, 0L, minHeight);
+    	return this;
+    }
+    
+    public int minHeight() {
+    	return (int) MIN_HEIGHT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #maxWidth()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV maxWidth(int maxWidth) {
+    	MAX_WIDTH_HANDLE.set(segment, 0L, maxWidth);
+    	return this;
+    }
+    
+    public int maxWidth() {
+    	return (int) MAX_WIDTH_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #maxHeight()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV maxHeight(int maxHeight) {
+    	MAX_HEIGHT_HANDLE.set(segment, 0L, maxHeight);
+    	return this;
+    }
+    
+    public int maxHeight() {
+    	return (int) MAX_HEIGHT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #maxNumRegionsOfInterest()
+    public VkPhysicalDeviceOpticalFlowPropertiesNV maxNumRegionsOfInterest(int maxNumRegionsOfInterest) {
+    	MAX_NUM_REGIONS_OF_INTEREST_HANDLE.set(segment, 0L, maxNumRegionsOfInterest);
+    	return this;
+    }
+    
+    public int maxNumRegionsOfInterest() {
+    	return (int) MAX_NUM_REGIONS_OF_INTEREST_HANDLE.get(segment, 0L);
+    }
+    
+    @Override
+    public VkPhysicalDeviceOpticalFlowPropertiesNV set(VkPhysicalDeviceOpticalFlowPropertiesNV other) {
+        return set(other.segment);
+    }
+    
+    @Override
+    public VkPhysicalDeviceOpticalFlowPropertiesNV set(MemorySegment src) {
+        MemorySegment.copy(src, 0L, segment, 0L, LAYOUT.byteSize());
+        return this;
+    }
+    
+    @Override
+    public MemorySegment memorySegment() {
+        return segment;
+    }
+    
+    public NativeStructArray<VkPhysicalDeviceOpticalFlowPropertiesNV> asArray() {
+        return new NativeStructArray<>(this);
+    }
+    
+    public static NativeStructArray<VkPhysicalDeviceOpticalFlowPropertiesNV> array(Arena arena, int count) {
+        return new NativeStructArray<>(
+            arena,
+            LAYOUT,
+            segment -> new VkPhysicalDeviceOpticalFlowPropertiesNV(segment),
+            count
+        );
+    }
+    
+    public static NativeStructArray<VkPhysicalDeviceOpticalFlowPropertiesNV> array(Arena arena, VkPhysicalDeviceOpticalFlowPropertiesNV... structs) {
+        NativeStructArray<VkPhysicalDeviceOpticalFlowPropertiesNV> array = new NativeStructArray<>(
+            arena,
+            LAYOUT,
+            segment -> new VkPhysicalDeviceOpticalFlowPropertiesNV(segment),
+            structs.length
+        );
+    
+        for (int i = 0; i < structs.length; i++) {
+            array.set(i, structs[i]);
+        }
+    
+        return array;
+    }
+    
+    public static NativeStructArray<VkPhysicalDeviceOpticalFlowPropertiesNV> array(MemorySegment array) {
+        return new NativeStructArray<>(
+            array,
+            LAYOUT,
+            segment -> new VkPhysicalDeviceOpticalFlowPropertiesNV(segment)
+        );
+    }
+    
+}

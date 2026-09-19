@@ -1,0 +1,6 @@
+callbacks:
+  - name: GLDEBUGPROC
+    package-name: volucris.bindings.opengl
+    directory: src/main/java/volucris/bindings/opengl
+    string-parameters:
+      - message

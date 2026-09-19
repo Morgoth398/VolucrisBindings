@@ -1,0 +1,8 @@
+naming:
+  strip-prefixes:
+    - glad_
+    - GLAD_
+    - __
+  strip-postfixes:
+  type-renames:
+    GLDEBUGPROC : GLDebugMessageCallback

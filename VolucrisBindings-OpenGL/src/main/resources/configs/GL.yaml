@@ -1,0 +1,158 @@
+class-description:
+  name: GL
+  package-name: volucris.bindings.opengl
+  directory: src/main/java/volucris/bindings/opengl
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - java.lang.foreign.MemorySegment
+static-imports:
+  - java.lang.foreign.ValueLayout.*
+  - volucris.bindings.core.FFMUtils.*
+
+macro-name-prefixes:
+  - prefix: GL_
+    type: int
+excluded-macro-name-prefixes:
+  - GL_VERSION_
+macro-names:
+  - name: GL_TIMEOUT_IGNORED
+    type: long
+excluded-macro-names:
+
+symbol-prefixes:
+  - prefix: GLAD_GL_VERSION_
+    type: int-boolean
+
+symbols:
+
+function-name-prefixes:
+  - glad
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: gladLoadGLLoader
+    is-static: true
+    add-typed-method: false
+    
+native-function-pointers:
+  - name: glad_glDebugMessageCallback
+    is-static: true
+    add-typed-method: true
+  - name: glad_glGetString
+    string-return-type: true
+  - name: glad_glBindAttribLocation
+    string-parameters:
+      - name
+  - name: glad_glGetAttribLocation
+    string-parameters:
+      - name
+  - name: glad_glGetUniformLocation
+    string-parameters:
+      - name
+  - name: glad_glBindFragDataLocation
+    string-parameters:
+      - name
+  - name: glad_glGetFragDataLocation
+    string-parameters:
+      - name
+  - name: glad_glGetStringi
+    string-return-type: true
+  - name: glad_glGetUniformBlockIndex
+    string-parameters:
+      - uniformBlockName
+  - name: glad_glBindFragDataLocationIndexed
+    string-parameters:
+      - name
+  - name: glad_glGetFragDataIndex
+    string-parameters:
+      - name
+  - name: glad_glGetSubroutineUniformLocation
+    string-parameters:
+      - name
+  - name: glad_glGetSubroutineIndex
+    string-parameters:
+      - name  
+  - name: glad_glGetProgramResourceIndex
+    string-parameters:
+      - name  
+  - name: glad_glGetProgramResourceLocation
+    string-parameters:
+      - name    
+  - name: glad_glGetProgramResourceLocationIndex
+    string-parameters:
+      - name    
+  - name: glad_glDebugMessageInsert
+    string-parameters:
+      - buf    
+  - name: glad_glPushDebugGroup
+    string-parameters:
+      - message    
+  - name: glad_glObjectLabel
+    string-parameters:
+      - label    
+  - name: glad_glObjectPtrLabel
+    string-parameters:
+      - label    
+  - name: glad_glSpecializeShader
+    string-parameters:
+      - pEntryPoint    
+
+  - name: glad_glShaderSource
+    nullable-parameters:
+      - length
+  - name: glad_glGetShaderInfoLog
+    nullable-parameters:
+      - length
+  - name: glad_glGetProgramInfoLog
+    nullable-parameters:
+      - length
+  - name: glad_glGetShaderSource
+    nullable-parameters:
+      - length
+  - name: glad_glGetSynciv
+    nullable-parameters:
+      - length
+  - name: glad_glGetActiveUniform
+    nullable-parameters:
+      - length
+  - name: glad_glGetActiveAttrib
+    nullable-parameters:
+      - length
+  - name: glad_glGetActiveUniformBlockName
+    nullable-parameters:
+      - length
+  - name: glad_glGetProgramResourceName
+    nullable-parameters:
+      - length
+  - name: glad_glGetTransformFeedbackVarying
+    nullable-parameters:
+      - length
+  - name: glad_glGetActiveSubroutineName
+    nullable-parameters:
+      - length
+  - name: glad_glGetActiveSubroutineUniformName
+    nullable-parameters:
+      - length
+  - name: glad_glGetDebugMessageLog
+    nullable-parameters:
+      - sources
+      - types
+      - ids
+      - severities
+      - lengths
+      - messageLog
+  - name: glad_glObjectLabel
+    nullable-parameters:
+      - label

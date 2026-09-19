@@ -1,0 +1,4488 @@
+class-description:
+  name: VK
+  package-name: volucris.bindings.vulkan
+  directory: src/main/java/volucris/bindings/vulkan
+  is-static: true
+  parent: VulkanBase
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+  raw-method-template: VKRawMethodTemplate.ftl
+  typed-method-template: VKTypedMethodTemplate.ftl
+
+imports:
+  - volucris.bindings.vulkan.structs.*
+  - volucris.bindings.vulkan.handles.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+    - name: vkDestroyInstance
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - instance
+        - pAllocator
+    - name: vkEnumeratePhysicalDevices
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pPhysicalDevices
+      struct-arrays:
+        - pPhysicalDevices
+    - name: vkGetPhysicalDeviceProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceQueueFamilyProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pQueueFamilyProperties
+      struct-arrays:
+        - pQueueFamilyProperties
+    - name: vkGetPhysicalDeviceMemoryProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceFeatures
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceFormatProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceImageFormatProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCreateDevice
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkEnumerateDeviceLayerProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkEnumerateDeviceExtensionProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pLayerName
+        - pProperties
+      string-parameters:
+        - pLayerName
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceSparseImageFormatProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkCreateAndroidSurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateSurfaceOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceDisplayPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceDisplayPlanePropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetDisplayPlaneSupportedDisplaysKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pDisplays
+      struct-arrays:
+        - pDisplays
+    - name: vkGetDisplayModePropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkCreateDisplayModeKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetDisplayPlaneCapabilitiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateDisplayPlaneSurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroySurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - surface
+        - pAllocator
+    - name: vkGetPhysicalDeviceSurfaceSupportKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSurfaceCapabilitiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSurfaceFormatsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - surface
+        - pSurfaceFormats
+      struct-arrays:
+        - pSurfaceFormats
+    - name: vkGetPhysicalDeviceSurfacePresentModesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - surface
+        - pPresentModes
+      struct-arrays:
+        - pPresentModes
+    - name: vkCreateViSurfaceNN
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateWaylandSurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceWaylandPresentationSupportKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateUbmSurfaceSEC
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceUbmPresentationSupportSEC
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateWin32SurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceWin32PresentationSupportKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateXlibSurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceXlibPresentationSupportKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateXcbSurfaceKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceXcbPresentationSupportKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateDirectFBSurfaceEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceDirectFBPresentationSupportEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateImagePipeSurfaceFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateStreamDescriptorSurfaceGGP
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateScreenSurfaceQNX
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceScreenPresentationSupportQNX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateDebugReportCallbackEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyDebugReportCallbackEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - callback
+        - pAllocator
+    - name: vkDebugReportMessageEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      string-parameters:
+        - pLayerPrefix
+        - pMessage
+    - name: vkGetPhysicalDeviceExternalImageFormatPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+        - externalHandleType
+    - name: vkGetPhysicalDeviceFeatures2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceProperties2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceFormatProperties2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceImageFormatProperties2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceQueueFamilyProperties2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pQueueFamilyProperties
+      struct-arrays:
+        - pQueueFamilyProperties
+    - name: vkGetPhysicalDeviceMemoryProperties2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSparseImageFormatProperties2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceExternalBufferProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceExternalMemorySciBufPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSciBufAttributesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceExternalSemaphoreProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceExternalFenceProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSciSyncAttributesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkReleaseDisplayEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireXlibDisplayEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetRandROutputDisplayEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireWinrtDisplayNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetWinrtDisplayNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSurfaceCapabilities2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkEnumeratePhysicalDeviceGroups
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pPhysicalDeviceGroupProperties
+      struct-arrays:
+        - pPhysicalDeviceGroupProperties
+    - name: vkGetPhysicalDevicePresentRectanglesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pRects
+      struct-arrays:
+        - pRects
+    - name: vkCreateIOSSurfaceMVK
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateMacOSSurfaceMVK
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateMetalSurfaceEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceMultisamplePropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSurfaceCapabilities2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceSurfaceFormats2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSurfaceFormats
+      struct-arrays:
+        - pSurfaceFormats
+    - name: vkGetPhysicalDeviceDisplayProperties2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceDisplayPlaneProperties2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetDisplayModeProperties2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetDisplayPlaneCapabilities2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceCalibrateableTimeDomainsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pTimeDomains
+      struct-arrays:
+        - pTimeDomains
+    - name: vkCreateDebugUtilsMessengerEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyDebugUtilsMessengerEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - messenger
+        - pAllocator
+    - name: vkSubmitDebugUtilsMessageEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceCooperativeMatrixPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceSurfacePresentModes2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pPresentModes
+      struct-arrays:
+        - pPresentModes
+    - name: vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCounters
+        - pCounterDescriptions
+      struct-arrays:
+        - pCounters
+        - pCounterDescriptions
+    - name: vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateHeadlessSurfaceEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCombinations
+      struct-arrays:
+        - pCombinations
+    - name: vkGetPhysicalDeviceToolProperties
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pToolProperties
+      struct-arrays:
+        - pToolProperties
+    - name: vkGetPhysicalDeviceRefreshableObjectTypesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pRefreshableObjectTypes
+      struct-arrays:
+        - pRefreshableObjectTypes
+    - name: vkGetPhysicalDeviceFragmentShadingRatesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pFragmentShadingRates
+      struct-arrays:
+        - pFragmentShadingRates
+    - name: vkGetPhysicalDeviceVideoCapabilitiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceVideoFormatPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pVideoFormatProperties
+      struct-arrays:
+        - pVideoFormatProperties
+    - name: vkGetPhysicalDeviceVideoEncodeQualityLevelPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireDrmDisplayEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDrmDisplayEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceOpticalFlowImageFormatsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pImageFormatProperties
+      struct-arrays:
+        - pImageFormatProperties
+    - name: vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPhysicalDeviceCooperativeVectorPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pDescriptions
+      struct-arrays:
+        - pDescriptions
+    - name: vkGetPhysicalDeviceExternalTensorPropertiesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphPropertiesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pQueueFamilyDataGraphProperties
+      struct-arrays:
+        - pQueueFamilyDataGraphProperties
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphProcessingEnginePropertiesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkEnumeratePhysicalDeviceQueueFamilyPerformanceCountersByRegionARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCounters
+        - pCounterDescriptions
+      struct-arrays:
+        - pCounters
+        - pCounterDescriptions
+    - name: vkGetPhysicalDeviceDescriptorSizeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pImageFormatProperties
+      struct-arrays:
+        - pImageFormatProperties
+    - name: vkDestroyDevice
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - device
+        - pAllocator
+    - name: vkGetDeviceQueue
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueSubmit
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - submitCount
+        - fence
+      struct-arrays:
+        - pSubmits
+    - name: vkQueueWaitIdle
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkDeviceWaitIdle
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAllocateMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkFreeMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - memory
+        - pAllocator
+    - name: vkMapMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkUnmapMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkFlushMappedMemoryRanges
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pMemoryRanges
+    - name: vkInvalidateMappedMemoryRanges
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pMemoryRanges
+    - name: vkGetDeviceMemoryCommitment
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetBufferMemoryRequirements
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBindBufferMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageMemoryRequirements
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBindImageMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageSparseMemoryRequirements
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSparseMemoryRequirements
+      struct-arrays:
+        - pSparseMemoryRequirements
+    - name: vkQueueBindSparse
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - bindInfoCount
+        - fence
+      struct-arrays:
+        - pBindInfo
+    - name: vkCreateFence
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyFence
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - fence
+        - pAllocator
+    - name: vkResetFences
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pFences
+    - name: vkGetFenceStatus
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkWaitForFences
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pFences
+    - name: vkCreateSemaphore
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroySemaphore
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - semaphore
+        - pAllocator
+    - name: vkCreateEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - event
+        - pAllocator
+    - name: vkGetEventStatus
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkResetEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateQueryPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyQueryPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - queryPool
+        - pAllocator
+    - name: vkGetQueryPoolResults
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+      struct-arrays:
+        - pData
+    - name: vkResetQueryPool
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - buffer
+        - pAllocator
+    - name: vkCreateBufferView
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyBufferView
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - bufferView
+        - pAllocator
+    - name: vkCreateImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - image
+        - pAllocator
+    - name: vkGetImageSubresourceLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateImageView
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyImageView
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - imageView
+        - pAllocator
+    - name: vkCreateShaderModule
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyShaderModule
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - shaderModule
+        - pAllocator
+    - name: vkCreatePipelineCache
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyPipelineCache
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineCache
+        - pAllocator
+    - name: vkGetPipelineCacheData
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pData
+      struct-arrays:
+        - pData
+    - name: vkMergePipelineCaches
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pSrcCaches
+    - name: vkCreatePipelineBinariesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyPipelineBinaryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineBinary
+        - pAllocator
+    - name: vkGetPipelineKeyKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pPipelineCreateInfo
+    - name: vkGetPipelineBinaryDataKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pPipelineBinaryData
+      struct-arrays:
+        - pPipelineBinaryData
+    - name: vkReleaseCapturedPipelineDataKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateGraphicsPipelines
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineCache
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateGraphicsPipelines
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateComputePipelines
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineCache
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateComputePipelines
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pMaxWorkgroupSize
+    - name: vkDestroyPipeline
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipeline
+        - pAllocator
+    - name: vkCreatePipelineLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyPipelineLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineLayout
+        - pAllocator
+    - name: vkCreateSampler
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroySampler
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - sampler
+        - pAllocator
+    - name: vkCreateDescriptorSetLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyDescriptorSetLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - descriptorSetLayout
+        - pAllocator
+    - name: vkCreateDescriptorPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyDescriptorPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - descriptorPool
+        - pAllocator
+    - name: vkResetDescriptorPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkAllocateDescriptorSets
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDescriptorSets
+    - name: vkFreeDescriptorSets
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDescriptorSets
+    - name: vkUpdateDescriptorSets
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - descriptorWriteCount
+        - descriptorCopyCount
+      struct-arrays:
+        - pDescriptorWrites
+        - pDescriptorCopies
+    - name: vkCreateFramebuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyFramebuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - framebuffer
+        - pAllocator
+    - name: vkCreateRenderPass
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyRenderPass
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - renderPass
+        - pAllocator
+    - name: vkGetRenderAreaGranularity
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetRenderingAreaGranularity
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateCommandPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyCommandPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - commandPool
+        - pAllocator
+    - name: vkResetCommandPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkAllocateCommandBuffers
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pCommandBuffers
+    - name: vkFreeCommandBuffers
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pCommandBuffers
+    - name: vkBeginCommandBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkEndCommandBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkResetCommandBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdBindPipeline
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPrimitiveRestartIndexEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - primitiveRestartIndex
+    - name: vkCmdSetAttachmentFeedbackLoopEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - aspectMask
+    - name: vkCmdSetViewport
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewports
+    - name: vkCmdSetScissor
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pScissors
+    - name: vkCmdSetLineWidth
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBias
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetBlendConstants
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBounds
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilCompareMask
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilWriteMask
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilReference
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorSets
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dynamicOffsetCount
+      struct-arrays:
+        - pDescriptorSets
+        - pDynamicOffsets
+    - name: vkCmdBindIndexBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - buffer
+    - name: vkCmdBindVertexBuffers
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBuffers
+        - pOffsets
+    - name: vkCmdDraw
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexed
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMultiEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - drawCount
+      struct-arrays:
+        - pVertexInfo
+    - name: vkCmdDrawMultiIndexedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - drawCount
+        - pVertexOffset
+      struct-arrays:
+        - pIndexInfo
+    - name: vkCmdDrawIndirect
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirect
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatch
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchIndirect
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSubpassShadingHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawClusterHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawClusterIndirectHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdUpdatePipelineIndirectBufferNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdBlitImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyBufferToImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyImageToBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyMemoryIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryToImageIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pImageSubresources
+    - name: vkCmdCopyMemoryToImageIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdUpdateBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pData
+    - name: vkCmdFillBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdClearColorImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRanges
+    - name: vkCmdClearDepthStencilImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRanges
+    - name: vkCmdClearAttachments
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAttachments
+        - pRects
+    - name: vkCmdResolveImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdSetEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stageMask
+    - name: vkCmdResetEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stageMask
+    - name: vkCmdWaitEvents
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - srcStageMask
+        - dstStageMask
+        - memoryBarrierCount
+        - bufferMemoryBarrierCount
+        - imageMemoryBarrierCount
+      struct-arrays:
+        - pEvents
+        - pMemoryBarriers
+        - pBufferMemoryBarriers
+        - pImageMemoryBarriers
+    - name: vkCmdPipelineBarrier
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - srcStageMask
+        - dstStageMask
+        - dependencyFlags
+        - memoryBarrierCount
+        - bufferMemoryBarrierCount
+        - imageMemoryBarrierCount
+      struct-arrays:
+        - pMemoryBarriers
+        - pBufferMemoryBarriers
+        - pImageMemoryBarriers
+    - name: vkCmdBeginQuery
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdEndQuery
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginConditionalRenderingEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndConditionalRenderingEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginCustomResolveEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pBeginCustomResolveInfo
+    - name: vkCmdResetQueryPool
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteTimestamp
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyQueryPoolResults
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdPushConstants
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pValues
+    - name: vkCmdBeginRenderPass
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdNextSubpass
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRenderPass
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdExecuteCommands
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pCommandBuffers
+    - name: vkCreateSharedSwapchainsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pCreateInfos
+        - pSwapchains
+    - name: vkCreateSwapchainKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroySwapchainKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - swapchain
+        - pAllocator
+    - name: vkGetSwapchainImagesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSwapchainImages
+      struct-arrays:
+        - pSwapchainImages
+    - name: vkAcquireNextImageKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - semaphore
+        - fence
+    - name: vkQueuePresentKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkDebugMarkerSetObjectNameEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkDebugMarkerSetObjectTagEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDebugMarkerBeginEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDebugMarkerEndEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDebugMarkerInsertEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryWin32HandleNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdExecuteGeneratedCommandsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPreprocessGeneratedCommandsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindPipelineShaderGroupNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetGeneratedCommandsMemoryRequirementsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateIndirectCommandsLayoutNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyIndirectCommandsLayoutNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - indirectCommandsLayout
+        - pAllocator
+    - name: vkCmdExecuteGeneratedCommandsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPreprocessGeneratedCommandsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetGeneratedCommandsMemoryRequirementsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateIndirectCommandsLayoutEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyIndirectCommandsLayoutEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - indirectCommandsLayout
+        - pAllocator
+    - name: vkCreateIndirectExecutionSetEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyIndirectExecutionSetEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - indirectExecutionSet
+        - pAllocator
+    - name: vkUpdateIndirectExecutionSetPipelineEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pExecutionSetWrites
+    - name: vkUpdateIndirectExecutionSetShaderEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pExecutionSetWrites
+    - name: vkCmdPushDescriptorSet
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDescriptorWrites
+    - name: vkTrimCommandPool
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkGetMemoryWin32HandleKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryWin32HandlePropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryFdKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryFdPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryZirconHandleFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryZirconHandlePropertiesFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryRemoteAddressNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemorySciBufNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSemaphoreWin32HandleKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportSemaphoreWin32HandleKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSemaphoreFdKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportSemaphoreFdKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSemaphoreZirconHandleFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportSemaphoreZirconHandleFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetFenceWin32HandleKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportFenceWin32HandleKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetFenceFdKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportFenceFdKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetFenceSciSyncFenceNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetFenceSciSyncObjNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportFenceSciSyncFenceNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportFenceSciSyncObjNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSemaphoreSciSyncObjNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkImportSemaphoreSciSyncObjNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateSemaphoreSciSyncPoolNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroySemaphoreSciSyncPoolNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - semaphorePool
+        - pAllocator
+    - name: vkDisplayPowerControlEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkRegisterDeviceEventEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkRegisterDisplayEventEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetSwapchainCounterEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceGroupPeerMemoryFeatures
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBindBufferMemory2
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindInfos
+    - name: vkBindImageMemory2
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindInfos
+    - name: vkCmdSetDeviceMask
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceGroupPresentCapabilitiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceGroupSurfacePresentModesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireNextImage2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchBase
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateDescriptorUpdateTemplate
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyDescriptorUpdateTemplate
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - descriptorUpdateTemplate
+        - pAllocator
+    - name: vkUpdateDescriptorSetWithTemplate
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSetWithTemplate
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetHdrMetadataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pSwapchains
+        - pMetadata
+    - name: vkGetSwapchainStatusKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetRefreshCycleDurationGOOGLE
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPastPresentationTimingGOOGLE
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pPresentationTimings
+      struct-arrays:
+        - pPresentationTimings
+    - name: vkCmdSetViewportWScalingNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewportWScalings
+    - name: vkCmdSetDiscardRectangleEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDiscardRectangles
+    - name: vkCmdSetDiscardRectangleEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDiscardRectangleModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetSampleLocationsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetBufferMemoryRequirements2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageMemoryRequirements2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageSparseMemoryRequirements2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSparseMemoryRequirements
+      struct-arrays:
+        - pSparseMemoryRequirements
+    - name: vkGetDeviceBufferMemoryRequirements
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceImageMemoryRequirements
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceImageSparseMemoryRequirements
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSparseMemoryRequirements
+      struct-arrays:
+        - pSparseMemoryRequirements
+    - name: vkCreateSamplerYcbcrConversion
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroySamplerYcbcrConversion
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - ycbcrConversion
+        - pAllocator
+    - name: vkGetDeviceQueue2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateValidationCacheEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyValidationCacheEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - validationCache
+        - pAllocator
+    - name: vkGetValidationCacheDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pData
+      struct-arrays:
+        - pData
+    - name: vkMergeValidationCachesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pSrcCaches
+    - name: vkGetDescriptorSetLayoutSupport
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSwapchainGrallocUsageANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSwapchainGrallocUsage2ANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireImageANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - semaphore
+        - fence
+    - name: vkQueueSignalReleaseImageANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pWaitSemaphores
+    - name: vkGetShaderInfoAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pInfo
+      struct-arrays:
+        - pInfo
+    - name: vkSetLocalDimmingAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetCalibratedTimestampsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pTimestampInfos
+        - pTimestamps
+    - name: vkSetDebugUtilsObjectNameEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetDebugUtilsObjectTagEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueBeginDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueEndDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueInsertDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdInsertDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryHostPointerPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteBufferMarkerAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineStage
+    - name: vkCreateRenderPass2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdBeginRenderPass2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdNextSubpass2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRenderPass2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSemaphoreCounterValue
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkWaitSemaphores
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSignalSemaphore
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetAndroidHardwareBufferPropertiesANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryAndroidHardwareBufferANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndirectCount
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirectCount
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCheckpointNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetQueueCheckpointDataNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCheckpointData
+      struct-arrays:
+        - pCheckpointData
+    - name: vkCmdBindTransformFeedbackBuffersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSizes
+      struct-arrays:
+        - pBuffers
+        - pOffsets
+        - pSizes
+    - name: vkCmdBeginTransformFeedbackEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterBufferCount
+        - pCounterBufferOffsets
+      struct-arrays:
+        - pCounterBuffers
+        - pCounterBufferOffsets
+    - name: vkCmdEndTransformFeedbackEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterBufferCount
+        - pCounterBufferOffsets
+      struct-arrays:
+        - pCounterBuffers
+        - pCounterBufferOffsets
+    - name: vkCmdBeginQueryIndexedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdEndQueryIndexedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndirectByteCountEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetExclusiveScissorNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pExclusiveScissors
+    - name: vkCmdSetExclusiveScissorEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pExclusiveScissorEnables
+    - name: vkCmdBindShadingRateImageNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - imageView
+    - name: vkCmdSetViewportShadingRatePaletteNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pShadingRatePalettes
+    - name: vkCmdSetCoarseSampleOrderNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - customSampleOrderCount
+      struct-arrays:
+        - pCustomSampleOrders
+    - name: vkCmdDrawMeshTasksNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectCountNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectCountEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCompileDeferredNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateAccelerationStructureNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdBindInvocationMaskHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - imageView
+    - name: vkDestroyAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - accelerationStructure
+        - pAllocator
+    - name: vkDestroyAccelerationStructureNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - accelerationStructure
+        - pAllocator
+    - name: vkGetAccelerationStructureMemoryRequirementsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBindAccelerationStructureMemoryNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindInfos
+    - name: vkCmdCopyAccelerationStructureNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+    - name: vkCmdCopyAccelerationStructureToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyAccelerationStructureToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+    - name: vkCmdCopyMemoryToAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyMemoryToAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+    - name: vkCmdWriteAccelerationStructuresPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAccelerationStructures
+    - name: vkCmdWriteAccelerationStructuresPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAccelerationStructures
+    - name: vkCmdBuildAccelerationStructureNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - instanceData
+        - src
+    - name: vkWriteAccelerationStructuresPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAccelerationStructures
+        - pData
+    - name: vkCmdTraceRaysKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdTraceRaysNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - missShaderBindingTableBuffer
+        - hitShaderBindingTableBuffer
+        - callableShaderBindingTableBuffer
+    - name: vkGetRayTracingShaderGroupHandlesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pData
+    - name: vkGetRayTracingCaptureReplayShaderGroupHandlesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pData
+    - name: vkGetAccelerationStructureHandleNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pData
+    - name: vkCreateRayTracingPipelinesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineCache
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateRayTracingPipelinesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateRayTracingPipelinesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+        - pipelineCache
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateRayTracingPipelinesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCmdTraceRaysIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdTraceRaysIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetClusterAccelerationStructureBuildSizesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBuildClusterAccelerationStructureIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceAccelerationStructureCompatibilityKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetRayTracingShaderGroupStackSizeKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRayTracingPipelineStackSizeKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageViewHandleNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageViewHandle64NVX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageViewAddressNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceCombinedImageSamplerIndexNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceGroupSurfacePresentModes2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireFullScreenExclusiveModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkReleaseFullScreenExclusiveModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireProfilingLockKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkReleaseProfilingLockKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageDrmFormatModifierPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetBufferOpaqueCaptureAddress
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetBufferDeviceAddress
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkInitializePerformanceApiINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkUninitializePerformanceApiINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPerformanceMarkerINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPerformanceStreamMarkerINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPerformanceOverrideINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquirePerformanceConfigurationINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkReleasePerformanceConfigurationINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - configuration
+    - name: vkQueueSetPerformanceConfigurationINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPerformanceParameterINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceMemoryOpaqueCaptureAddress
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPipelineExecutablePropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetPipelineExecutableStatisticsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pStatistics
+      struct-arrays:
+        - pStatistics
+    - name: vkGetPipelineExecutableInternalRepresentationsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pInternalRepresentations
+      struct-arrays:
+        - pInternalRepresentations
+    - name: vkCmdSetLineStipple
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetFaultData
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pFaults
+      struct-arrays:
+        - pFaults
+    - name: vkCreateAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdBuildAccelerationStructuresKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+        - ppBuildRangeInfos
+    - name: vkCmdBuildAccelerationStructuresIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+        - pIndirectDeviceAddresses
+        - pIndirectStrides
+        - ppMaxPrimitiveCounts
+    - name: vkBuildAccelerationStructuresKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+      struct-arrays:
+        - pInfos
+        - ppBuildRangeInfos
+    - name: vkGetAccelerationStructureDeviceAddressKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateDeferredOperationKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyDeferredOperationKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - operation
+        - pAllocator
+    - name: vkGetDeferredOperationMaxConcurrencyKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeferredOperationResultKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkDeferredOperationJoinKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPipelineIndirectMemoryRequirementsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPipelineIndirectDeviceAddressNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAntiLagUpdateAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCullMode
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - cullMode
+    - name: vkCmdSetFrontFace
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPrimitiveTopology
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportWithCount
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewports
+    - name: vkCmdSetScissorWithCount
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pScissors
+    - name: vkCmdBindIndexBuffer2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - buffer
+    - name: vkCmdBindVertexBuffers2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSizes
+        - pStrides
+      struct-arrays:
+        - pBuffers
+        - pOffsets
+        - pSizes
+        - pStrides
+    - name: vkCmdSetDepthTestEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthWriteEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthCompareOp
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBoundsTestEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilTestEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilOp
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPatchControlPointsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRasterizerDiscardEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBiasEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLogicOpEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPrimitiveRestartEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetTessellationDomainOriginEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClampEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPolygonModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRasterizationSamplesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetSampleMaskEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSampleMask
+      struct-arrays:
+        - pSampleMask
+    - name: vkCmdSetAlphaToCoverageEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetAlphaToOneEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLogicOpEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetColorBlendEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorBlendEnables
+    - name: vkCmdSetColorBlendEquationEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorBlendEquations
+    - name: vkCmdSetColorWriteMaskEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorWriteMasks
+    - name: vkCmdSetRasterizationStreamEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetConservativeRasterizationModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetExtraPrimitiveOverestimationSizeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClipEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetSampleLocationsEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetColorBlendAdvancedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorBlendAdvanced
+    - name: vkCmdSetProvokingVertexModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLineRasterizationModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLineStippleEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClipNegativeOneToOneEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportWScalingEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportSwizzleNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewportSwizzles
+    - name: vkCmdSetCoverageToColorEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageToColorLocationNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageModulationModeNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageModulationTableEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageModulationTableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pCoverageModulationTable
+    - name: vkCmdSetShadingRateImageEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageReductionModeNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRepresentativeFragmentTestEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreatePrivateDataSlot
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyPrivateDataSlot
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - privateDataSlot
+        - pAllocator
+    - name: vkSetPrivateData
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPrivateData
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyBuffer2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBlitImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyBufferToImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyImageToBuffer2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdResolveImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdRefreshObjectsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetFragmentShadingRateKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetFragmentShadingRateEnumNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetAccelerationStructureBuildSizesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pMaxPrimitiveCounts
+      struct-arrays:
+        - pMaxPrimitiveCounts
+    - name: vkCmdSetVertexInputEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - vertexBindingDescriptionCount
+        - vertexAttributeDescriptionCount
+      struct-arrays:
+        - pVertexBindingDescriptions
+        - pVertexAttributeDescriptions
+    - name: vkCmdSetColorWriteEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorWriteEnables
+    - name: vkCmdSetEvent2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdResetEvent2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stageMask
+    - name: vkCmdWaitEvents2
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pEvents
+        - pDependencyInfos
+    - name: vkCmdPipelineBarrier2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueSubmit2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - submitCount
+        - fence
+      struct-arrays:
+        - pSubmits
+    - name: vkCmdWriteTimestamp2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stage
+    - name: vkCmdWriteBufferMarker2AMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stage
+    - name: vkGetQueueCheckpointData2NV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCheckpointData
+      struct-arrays:
+        - pCheckpointData
+    - name: vkCopyMemoryToImage
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyImageToMemory
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyImageToImage
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkTransitionImageLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pTransitions
+    - name: vkGetCommandPoolMemoryConsumption
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - commandBuffer
+    - name: vkCreateVideoSessionKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyVideoSessionKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - videoSession
+        - pAllocator
+    - name: vkCreateVideoSessionParametersKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkUpdateVideoSessionParametersKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetEncodedVideoSessionParametersKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pFeedbackInfo
+        - pData
+      struct-arrays:
+        - pData
+    - name: vkDestroyVideoSessionParametersKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - videoSessionParameters
+        - pAllocator
+    - name: vkGetVideoSessionMemoryRequirementsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pMemoryRequirements
+      struct-arrays:
+        - pMemoryRequirements
+    - name: vkBindVideoSessionMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindSessionMemoryInfos
+    - name: vkCmdDecodeVideoKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginVideoCodingKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdControlVideoCodingKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndVideoCodingKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEncodeVideoKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDecompressMemoryNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDecompressMemoryRegions
+    - name: vkCmdDecompressMemoryIndirectCountNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPartitionedAccelerationStructuresBuildSizesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBuildPartitionedAccelerationStructuresNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDecompressMemoryEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDecompressMemoryIndirectCountEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateCuModuleNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateCuFunctionNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyCuModuleNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyCuFunctionNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdCuLaunchKernelNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDescriptorSetLayoutSizeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDescriptorSetLayoutBindingOffsetEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDescriptorEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDescriptor
+    - name: vkCmdBindDescriptorBuffersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindingInfos
+    - name: vkCmdSetDescriptorBufferOffsetsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBufferIndices
+        - pOffsets
+    - name: vkCmdBindDescriptorBufferEmbeddedSamplersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetBufferOpaqueCaptureDescriptorDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageOpaqueCaptureDescriptorDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageViewOpaqueCaptureDescriptorDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSamplerOpaqueCaptureDescriptorDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetAccelerationStructureOpaqueCaptureDescriptorDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetDeviceMemoryPriorityEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkWaitForPresent2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkWaitForPresentKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateBufferCollectionFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkSetBufferCollectionBufferConstraintsFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetBufferCollectionImageConstraintsFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkDestroyBufferCollectionFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetBufferCollectionPropertiesFUCHSIA
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateCudaModuleNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetCudaModuleCacheNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCacheData
+      struct-arrays:
+        - pCacheData
+    - name: vkCreateCudaFunctionNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyCudaModuleNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyCudaFunctionNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdCudaLaunchKernelNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginRendering
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRendering
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRendering2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pRenderingEndInfo
+    - name: vkGetDescriptorSetLayoutHostMappingInfoVALVE
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDescriptorSetHostMappingVALVE
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdBuildMicromapsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+    - name: vkBuildMicromapsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+      struct-arrays:
+        - pInfos
+    - name: vkDestroyMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - micromap
+        - pAllocator
+    - name: vkCmdCopyMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+    - name: vkCmdCopyMicromapToMemoryEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyMicromapToMemoryEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+    - name: vkCmdCopyMemoryToMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCopyMemoryToMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+    - name: vkCmdWriteMicromapsPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pMicromaps
+    - name: vkWriteMicromapsPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pMicromaps
+        - pData
+    - name: vkGetDeviceMicromapCompatibilityEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMicromapBuildSizesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetShaderModuleIdentifierEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetShaderModuleCreateInfoIdentifierEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageSubresourceLayout2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetPipelinePropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkExportMetalObjectsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindTileMemoryQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pTileMemoryBindInfo
+    - name: vkGetFramebufferTilePropertiesQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetDynamicRenderingTilePropertiesQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateOpticalFlowSessionNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyOpticalFlowSessionNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkBindOpticalFlowSessionImageNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - view
+    - name: vkCmdOpticalFlowExecuteNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceFaultInfoEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pFaultInfo
+    - name: vkGetDeviceFaultReportsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pFaultInfo
+      struct-arrays:
+        - pFaultInfo
+    - name: vkGetDeviceFaultDebugInfoKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBias2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkReleaseSwapchainImagesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetDeviceImageSubresourceLayout
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkMapMemory2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkUnmapMemory2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateShadersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pShaders
+    - name: vkDestroyShaderEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - shader
+        - pAllocator
+    - name: vkGetShaderBinaryDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pData
+      struct-arrays:
+        - pData
+    - name: vkCmdBindShadersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pShaders
+      struct-arrays:
+        - pStages
+        - pShaders
+    - name: vkSetSwapchainPresentTimingQueueSizeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSwapchainTimingPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSwapchainTimingPropertiesCounter
+    - name: vkGetSwapchainTimeDomainPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pTimeDomainsCounter
+    - name: vkGetPastPresentationTimingEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetScreenBufferPropertiesQNX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetExecutionGraphPipelineScratchSizeAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetExecutionGraphPipelineNodeIndexAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateExecutionGraphPipelinesAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineCache
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCmdInitializeGraphScratchMemoryAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchGraphAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchGraphIndirectAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchGraphIndirectCountAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - gpaSession
+        - pAllocator
+    - name: vkSetGpaDeviceClockModeAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetGpaDeviceClockInfoAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginGpaSampleAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndGpaSampleAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetGpaSessionStatusAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetGpaSessionResultsAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pData
+      struct-arrays:
+        - pData
+    - name: vkResetGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyGpaSessionResultsAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorSets2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushConstants2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSet2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSetWithTemplate2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDescriptorBufferOffsets2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorBufferEmbeddedSamplers2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetLatencySleepModeNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkLatencySleepNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetLatencyMarkerNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetLatencyTimingsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueNotifyOutOfBandNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetLatencySleepModeLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkLatencySleepLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkSetLatencyMarkerLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetLatencyTimingsLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueNotifyOutOfBandLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSleepStatusLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkShutdownLatencyDeviceLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRenderingAttachmentLocations
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRenderingInputAttachmentIndices
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClampRangeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pDepthClampRange
+    - name: vkGetMemoryMetalHandleEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryMetalHandlePropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkConvertCooperativeVectorMatrixNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdConvertCooperativeVectorMatrixNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+    - name: vkCmdDispatchTileQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginPerTileExecutionQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndPerTileExecutionQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateExternalComputeQueueNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyExternalComputeQueueNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCreateShaderInstrumentationARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyShaderInstrumentationARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - instrumentation
+        - pAllocator
+    - name: vkCmdBeginShaderInstrumentationARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndShaderInstrumentationARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetShaderInstrumentationValuesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkClearShaderInstrumentationMetricsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateTensorARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyTensorARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - tensor
+        - pAllocator
+    - name: vkCreateTensorViewARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkDestroyTensorViewARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - tensorView
+        - pAllocator
+    - name: vkGetTensorMemoryRequirementsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBindTensorMemoryARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindInfos
+    - name: vkGetDeviceTensorMemoryRequirementsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyTensorARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetTensorOpaqueCaptureDescriptorDataARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetTensorViewOpaqueCaptureDescriptorDataARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateDataGraphPipelinesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - deferredOperation
+        - pipelineCache
+        - pAllocator
+      struct-arrays:
+        - pCreateInfos
+        - pPipelines
+    - name: vkCreateDataGraphPipelineSessionARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkGetDataGraphPipelineSessionBindPointRequirementsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pBindPointRequirements
+      struct-arrays:
+        - pBindPointRequirements
+    - name: vkGetDataGraphPipelineSessionMemoryRequirementsARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBindDataGraphPipelineSessionMemoryARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindInfos
+    - name: vkDestroyDataGraphPipelineSessionARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdDispatchDataGraphARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pInfo
+    - name: vkGetDataGraphPipelineAvailablePropertiesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
+    - name: vkGetDataGraphPipelinePropertiesARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pProperties
+    - name: vkGetNativeBufferPropertiesOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetMemoryNativeBufferOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetSwapchainGrallocUsageOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkAcquireImageOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - semaphore
+        - fence
+    - name: vkQueueSignalReleaseImageOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pWaitSemaphores
+    - name: vkQueueSetPerfHintQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetComputeOccupancyPriorityNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkWriteSamplerDescriptorsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pSamplers
+        - pDescriptors
+    - name: vkWriteResourceDescriptorsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pResources
+        - pDescriptors
+    - name: vkCmdBindSamplerHeapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindResourceHeapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkRegisterCustomBorderColorEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkUnregisterCustomBorderColorEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetImageOpaqueCaptureDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pImages
+        - pDatas
+    - name: vkGetTensorOpaqueCaptureDataARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pTensors
+        - pDatas
+    - name: vkCmdCopyMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCopyMemoryInfo
+    - name: vkCmdCopyMemoryToImageKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCopyMemoryInfo
+    - name: vkCmdCopyImageToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCopyMemoryInfo
+    - name: vkCmdUpdateMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dstFlags
+      struct-arrays:
+        - pData
+    - name: vkCmdFillMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dstFlags
+    - name: vkCmdCopyQueryPoolResultsToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dstFlags
+        - queryResultFlags
+    - name: vkCmdBeginConditionalRendering2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindTransformFeedbackBuffers2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pBindingInfos
+      struct-arrays:
+        - pBindingInfos
+    - name: vkCmdBeginTransformFeedback2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterRangeCount
+        - pCounterInfos
+      struct-arrays:
+        - pCounterInfos
+    - name: vkCmdEndTransformFeedback2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterRangeCount
+        - pCounterInfos
+      struct-arrays:
+        - pCounterInfos
+    - name: vkCmdDrawIndirectByteCount2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteMarkerToMemoryAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindIndexBuffer3KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindVertexBuffers3KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindingInfos
+    - name: vkCmdDrawIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndirectCount2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirectCount2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirect2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectCount2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCreateAccelerationStructure2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pAllocator
+    - name: vkCmdSetDispatchParametersARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueSubmit
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - submitCount
+        - fence
+      struct-arrays:
+        - pSubmits
+    - name: vkQueueWaitIdle
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueBindSparse
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - bindInfoCount
+        - fence
+      struct-arrays:
+        - pBindInfo
+    - name: vkQueuePresentKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueSignalReleaseImageANDROID
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pWaitSemaphores
+    - name: vkQueueBeginDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueEndDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueInsertDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkGetQueueCheckpointDataNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCheckpointData
+      struct-arrays:
+        - pCheckpointData
+    - name: vkQueueSetPerformanceConfigurationINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueSubmit2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - submitCount
+        - fence
+      struct-arrays:
+        - pSubmits
+    - name: vkGetQueueCheckpointData2NV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCheckpointData
+      struct-arrays:
+        - pCheckpointData
+    - name: vkQueueNotifyOutOfBandNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueNotifyOutOfBandLegacyNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkQueueSignalReleaseImageOHOS
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pWaitSemaphores
+    - name: vkQueueSetPerfHintQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkBeginCommandBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkEndCommandBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkResetCommandBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdBindPipeline
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPrimitiveRestartIndexEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - primitiveRestartIndex
+    - name: vkCmdSetAttachmentFeedbackLoopEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - aspectMask
+    - name: vkCmdSetViewport
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewports
+    - name: vkCmdSetScissor
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pScissors
+    - name: vkCmdSetLineWidth
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBias
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetBlendConstants
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBounds
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilCompareMask
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilWriteMask
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilReference
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorSets
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dynamicOffsetCount
+      struct-arrays:
+        - pDescriptorSets
+        - pDynamicOffsets
+    - name: vkCmdBindIndexBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - buffer
+    - name: vkCmdBindVertexBuffers
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBuffers
+        - pOffsets
+    - name: vkCmdDraw
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexed
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMultiEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - drawCount
+      struct-arrays:
+        - pVertexInfo
+    - name: vkCmdDrawMultiIndexedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - drawCount
+        - pVertexOffset
+      struct-arrays:
+        - pIndexInfo
+    - name: vkCmdDrawIndirect
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirect
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatch
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchIndirect
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSubpassShadingHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawClusterHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawClusterIndirectHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdUpdatePipelineIndirectBufferNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdBlitImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyBufferToImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyImageToBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdCopyMemoryIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryToImageIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pImageSubresources
+    - name: vkCmdCopyMemoryToImageIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdUpdateBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pData
+    - name: vkCmdFillBuffer
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdClearColorImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRanges
+    - name: vkCmdClearDepthStencilImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRanges
+    - name: vkCmdClearAttachments
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAttachments
+        - pRects
+    - name: vkCmdResolveImage
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pRegions
+    - name: vkCmdSetEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stageMask
+    - name: vkCmdResetEvent
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stageMask
+    - name: vkCmdWaitEvents
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - srcStageMask
+        - dstStageMask
+        - memoryBarrierCount
+        - bufferMemoryBarrierCount
+        - imageMemoryBarrierCount
+      struct-arrays:
+        - pEvents
+        - pMemoryBarriers
+        - pBufferMemoryBarriers
+        - pImageMemoryBarriers
+    - name: vkCmdPipelineBarrier
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - srcStageMask
+        - dstStageMask
+        - dependencyFlags
+        - memoryBarrierCount
+        - bufferMemoryBarrierCount
+        - imageMemoryBarrierCount
+      struct-arrays:
+        - pMemoryBarriers
+        - pBufferMemoryBarriers
+        - pImageMemoryBarriers
+    - name: vkCmdBeginQuery
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdEndQuery
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginConditionalRenderingEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndConditionalRenderingEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginCustomResolveEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pBeginCustomResolveInfo
+    - name: vkCmdResetQueryPool
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteTimestamp
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyQueryPoolResults
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdPushConstants
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pValues
+    - name: vkCmdBeginRenderPass
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdNextSubpass
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRenderPass
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdExecuteCommands
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pCommandBuffers
+    - name: vkCmdDebugMarkerBeginEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDebugMarkerEndEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDebugMarkerInsertEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdExecuteGeneratedCommandsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPreprocessGeneratedCommandsNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindPipelineShaderGroupNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdExecuteGeneratedCommandsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPreprocessGeneratedCommandsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSet
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDescriptorWrites
+    - name: vkCmdSetDeviceMask
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchBase
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSetWithTemplate
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportWScalingNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewportWScalings
+    - name: vkCmdSetDiscardRectangleEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDiscardRectangles
+    - name: vkCmdSetDiscardRectangleEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDiscardRectangleModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetSampleLocationsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdInsertDebugUtilsLabelEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteBufferMarkerAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pipelineStage
+    - name: vkCmdBeginRenderPass2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdNextSubpass2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRenderPass2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndirectCount
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirectCount
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCheckpointNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindTransformFeedbackBuffersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSizes
+      struct-arrays:
+        - pBuffers
+        - pOffsets
+        - pSizes
+    - name: vkCmdBeginTransformFeedbackEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterBufferCount
+        - pCounterBufferOffsets
+      struct-arrays:
+        - pCounterBuffers
+        - pCounterBufferOffsets
+    - name: vkCmdEndTransformFeedbackEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterBufferCount
+        - pCounterBufferOffsets
+      struct-arrays:
+        - pCounterBuffers
+        - pCounterBufferOffsets
+    - name: vkCmdBeginQueryIndexedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - flags
+    - name: vkCmdEndQueryIndexedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndirectByteCountEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetExclusiveScissorNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pExclusiveScissors
+    - name: vkCmdSetExclusiveScissorEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pExclusiveScissorEnables
+    - name: vkCmdBindShadingRateImageNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - imageView
+    - name: vkCmdSetViewportShadingRatePaletteNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pShadingRatePalettes
+    - name: vkCmdSetCoarseSampleOrderNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - customSampleOrderCount
+      struct-arrays:
+        - pCustomSampleOrders
+    - name: vkCmdDrawMeshTasksNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectCountNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectCountEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindInvocationMaskHUAWEI
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - imageView
+    - name: vkCmdCopyAccelerationStructureNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyAccelerationStructureToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryToAccelerationStructureKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteAccelerationStructuresPropertiesKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAccelerationStructures
+    - name: vkCmdWriteAccelerationStructuresPropertiesNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pAccelerationStructures
+    - name: vkCmdBuildAccelerationStructureNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - instanceData
+        - src
+    - name: vkCmdTraceRaysKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdTraceRaysNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - missShaderBindingTableBuffer
+        - hitShaderBindingTableBuffer
+        - callableShaderBindingTableBuffer
+    - name: vkCmdTraceRaysIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdTraceRaysIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBuildClusterAccelerationStructureIndirectNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRayTracingPipelineStackSizeKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPerformanceMarkerINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPerformanceStreamMarkerINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPerformanceOverrideINTEL
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLineStipple
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBuildAccelerationStructuresKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+        - ppBuildRangeInfos
+    - name: vkCmdBuildAccelerationStructuresIndirectKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+        - pIndirectDeviceAddresses
+        - pIndirectStrides
+        - ppMaxPrimitiveCounts
+    - name: vkCmdSetCullMode
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - cullMode
+    - name: vkCmdSetFrontFace
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPrimitiveTopology
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportWithCount
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewports
+    - name: vkCmdSetScissorWithCount
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pScissors
+    - name: vkCmdBindIndexBuffer2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - buffer
+    - name: vkCmdBindVertexBuffers2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSizes
+        - pStrides
+      struct-arrays:
+        - pBuffers
+        - pOffsets
+        - pSizes
+        - pStrides
+    - name: vkCmdSetDepthTestEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthWriteEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthCompareOp
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBoundsTestEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilTestEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetStencilOp
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPatchControlPointsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRasterizerDiscardEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBiasEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLogicOpEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPrimitiveRestartEnable
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetTessellationDomainOriginEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClampEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetPolygonModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRasterizationSamplesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetSampleMaskEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pSampleMask
+      struct-arrays:
+        - pSampleMask
+    - name: vkCmdSetAlphaToCoverageEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetAlphaToOneEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLogicOpEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetColorBlendEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorBlendEnables
+    - name: vkCmdSetColorBlendEquationEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorBlendEquations
+    - name: vkCmdSetColorWriteMaskEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorWriteMasks
+    - name: vkCmdSetRasterizationStreamEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetConservativeRasterizationModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetExtraPrimitiveOverestimationSizeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClipEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetSampleLocationsEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetColorBlendAdvancedEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorBlendAdvanced
+    - name: vkCmdSetProvokingVertexModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLineRasterizationModeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetLineStippleEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClipNegativeOneToOneEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportWScalingEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetViewportSwizzleNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pViewportSwizzles
+    - name: vkCmdSetCoverageToColorEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageToColorLocationNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageModulationModeNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageModulationTableEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageModulationTableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pCoverageModulationTable
+    - name: vkCmdSetShadingRateImageEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetCoverageReductionModeNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRepresentativeFragmentTestEnableNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyBuffer2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBlitImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyBufferToImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyImageToBuffer2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdResolveImage2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdRefreshObjectsKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetFragmentShadingRateKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetFragmentShadingRateEnumNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetVertexInputEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - vertexBindingDescriptionCount
+        - vertexAttributeDescriptionCount
+      struct-arrays:
+        - pVertexBindingDescriptions
+        - pVertexAttributeDescriptions
+    - name: vkCmdSetColorWriteEnableEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pColorWriteEnables
+    - name: vkCmdSetEvent2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdResetEvent2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stageMask
+    - name: vkCmdWaitEvents2
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pEvents
+        - pDependencyInfos
+    - name: vkCmdPipelineBarrier2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteTimestamp2
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stage
+    - name: vkCmdWriteBufferMarker2AMD
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - stage
+    - name: vkCmdDecodeVideoKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginVideoCodingKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdControlVideoCodingKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndVideoCodingKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEncodeVideoKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDecompressMemoryNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pDecompressMemoryRegions
+    - name: vkCmdDecompressMemoryIndirectCountNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBuildPartitionedAccelerationStructuresNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDecompressMemoryEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDecompressMemoryIndirectCountEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCuLaunchKernelNVX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorBuffersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindingInfos
+    - name: vkCmdSetDescriptorBufferOffsetsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBufferIndices
+        - pOffsets
+    - name: vkCmdBindDescriptorBufferEmbeddedSamplersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCudaLaunchKernelNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginRendering
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRendering
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndRendering2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pRenderingEndInfo
+    - name: vkCmdBuildMicromapsEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+    - name: vkCmdCopyMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMicromapToMemoryEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryToMicromapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteMicromapsPropertiesEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pMicromaps
+    - name: vkCmdBindTileMemoryQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pTileMemoryBindInfo
+    - name: vkCmdOpticalFlowExecuteNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthBias2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindShadersEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pShaders
+      struct-arrays:
+        - pStages
+        - pShaders
+    - name: vkCmdInitializeGraphScratchMemoryAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchGraphAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchGraphIndirectAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchGraphIndirectCountAMDX
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndGpaSessionAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginGpaSampleAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndGpaSampleAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyGpaSessionResultsAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorSets2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushConstants2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSet2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDescriptorSetWithTemplate2
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDescriptorBufferOffsets2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindDescriptorBufferEmbeddedSamplers2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRenderingAttachmentLocations
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetRenderingInputAttachmentIndices
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDepthClampRangeEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pDepthClampRange
+    - name: vkCmdConvertCooperativeVectorMatrixNV
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pInfos
+    - name: vkCmdDispatchTileQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginPerTileExecutionQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndPerTileExecutionQCOM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBeginShaderInstrumentationARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdEndShaderInstrumentationARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyTensorARM
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchDataGraphARM
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pInfo
+    - name: vkCmdSetComputeOccupancyPriorityNV
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindSamplerHeapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindResourceHeapEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdPushDataEXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdCopyMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCopyMemoryInfo
+    - name: vkCmdCopyMemoryToImageKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCopyMemoryInfo
+    - name: vkCmdCopyImageToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pCopyMemoryInfo
+    - name: vkCmdUpdateMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dstFlags
+      struct-arrays:
+        - pData
+    - name: vkCmdFillMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dstFlags
+    - name: vkCmdCopyQueryPoolResultsToMemoryKHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - dstFlags
+        - queryResultFlags
+    - name: vkCmdBeginConditionalRendering2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindTransformFeedbackBuffers2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pBindingInfos
+      struct-arrays:
+        - pBindingInfos
+    - name: vkCmdBeginTransformFeedback2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterRangeCount
+        - pCounterInfos
+      struct-arrays:
+        - pCounterInfos
+    - name: vkCmdEndTransformFeedback2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - counterRangeCount
+        - pCounterInfos
+      struct-arrays:
+        - pCounterInfos
+    - name: vkCmdDrawIndirectByteCount2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdWriteMarkerToMemoryAMD
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindIndexBuffer3KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdBindVertexBuffers3KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+      struct-arrays:
+        - pBindingInfos
+    - name: vkCmdDrawIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndirectCount2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawIndexedIndirectCount2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirect2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDrawMeshTasksIndirectCount2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdDispatchIndirect2KHR
+      return-type-is-struct-array: false
+      string-return-type: false
+    - name: vkCmdSetDispatchParametersARM
+      return-type-is-struct-array: false
+      string-return-type: false
+native-function-pointers:

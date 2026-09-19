@@ -1,0 +1,5 @@
+callbacks:
+  - name: stbi_write_func
+    package-name: volucris.bindings.stb.imageWrite
+    directory: src/main/java/volucris/bindings/stb/imageWrite
+    add-typed-method: false

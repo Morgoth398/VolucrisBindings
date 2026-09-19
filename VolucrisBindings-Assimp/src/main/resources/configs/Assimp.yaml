@@ -1,0 +1,143 @@
+class-description:
+  name: Assimp
+  package-name: volucris.bindings.assimp
+  directory: src/main/java/volucris/bindings/assimp
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - java.lang.foreign.MemorySegment
+  - volucris.bindings.assimp.structs.*
+static-imports:
+  - java.lang.foreign.ValueLayout.*
+  - volucris.bindings.core.FFMUtils.*
+
+macro-name-prefixes:
+  - prefix: _AI_MATKEY_
+    type: String
+  - prefix: AI_MAX_
+    type: int
+  - prefix: AI_CONFIG_
+    type: String
+  - prefix: AI_METADATA_
+    type: String
+  - prefix: AI_SCENE_FLAGS_
+    type: int
+  - prefix: ASSIMP_CFLAGS_
+    type: int
+excluded-macro-name-prefixes:
+  - AI_MATKEY_BASE_COLOR_TEXTURE
+  - AI_MATKEY_METALLIC_TEXTURE
+  - AI_MATKEY_ROUGHNESS_TEXTURE
+  - AI_MATKEY_SHEEN_COLOR_TEXTURE
+  - AI_MATKEY_SHEEN_ROUGHNESS_TEXTURE
+  - AI_MATKEY_CLEARCOAT_TEXTURE
+  - AI_MATKEY_CLEARCOAT_ROUGHNESS_TEXTURE
+  - AI_MATKEY_CLEARCOAT_NORMAL_TEXTURE
+  - AI_MATKEY_TRANSMISSION_TEXTURE
+  - AI_MATKEY_VOLUME_THICKNESS_TEXTURE
+  - AI_MATKEY_GLTF_PBRMETALLICROUGHNESS_METALLICROUGHNESS_TEXTURE
+  - AI_MATKEY_ANISOTROPY_TEXTURE
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - ai
+excluded-function-name-prefixes:
+  - aiLogStreamCallback
+  - aiFileWriteProc
+  - aiFileReadProc
+  - aiFileTellProc
+  - aiFileFlushProc
+  - aiFileSeek
+  - aiFileOpenProc
+  - aiFileCloseProc
+  - aiGetMaterialFloat
+  - aiGetMaterialInteger
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: aiGetImporterDesc
+    string-parameters:
+      - extension
+  - name: aiImportFile
+    string-parameters:
+      - pFile
+  - name: aiImportFileEx
+    string-parameters:
+      - pFile
+  - name: aiImportFileExWithProperties
+    string-parameters:
+       - pFile
+  - name: aiImportFileFromMemory
+    string-parameters:
+      - pHint
+  - name: aiImportFileFromMemoryWithProperties
+    string-parameters:
+      - pHint
+  - name: aiGetErrorString
+    string-return-type: true
+  - name: aiIsExtensionSupported
+    string-parameters:
+      - szExtension
+  - name: aiGetEmbeddedTexture
+    string-parameters:
+      - filename
+  - name: aiSetImportPropertyInteger
+    string-parameters:
+      - szName
+  - name: aiSetImportPropertyFloat
+    string-parameters:
+      - szName
+  - name: aiSetImportPropertyString
+    string-parameters:
+      - szName
+  - name: aiSetImportPropertyMatrix
+    string-parameters:
+      - szName
+  - name: aiTextureTypeToString
+    string-return-type: true
+  - name: aiGetMaterialProperty
+    string-parameters:
+      - pKey
+  - name: aiGetMaterialColor
+    string-parameters:
+       - pKey
+  - name: aiGetMaterialUVTransform
+    string-parameters:
+      - pKey
+  - name: aiGetMaterialString
+    string-parameters:
+       - pKey
+  - name: aiGetMaterialTexture
+    nullable-parameters:
+      - mapping
+      - uvindex
+      - blend
+      - op
+      - mapmode
+      - flags
+  - name: aiGetLegalString
+    string-return-type: true
+  - name: aiGetBranchName
+    string-return-type: true
+  - name: aiGetMaterialFloatArray
+    string-parameters:
+      - pKey
+  - name: aiGetMaterialIntegerArray
+    string-parameters:
+      - pKey
+native-function-pointers:

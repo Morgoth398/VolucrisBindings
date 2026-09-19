@@ -1,0 +1,42 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.fastNoise2.metadata;
+
+import volucris.bindings.fastNoise2.Metadata;
+import volucris.bindings.fastNoise2.Variable;
+
+public final class CellularDistance extends Metadata {
+
+    public static final Variable.Float FEATURE_SCALE = new Variable.Float("FEATURE_SCALE", 0);
+    public static final Variable.Int SEED_OFFSET = new Variable.Int("SEED_OFFSET", 1);
+    public static final Variable.Float OUTPUT_MIN = new Variable.Float("OUTPUT_MIN", 2);
+    public static final Variable.Float OUTPUT_MAX = new Variable.Float("OUTPUT_MAX", 3);
+    public static final Variable.Enum DISTANCE_FUNCTION = new Variable.Enum("DISTANCE_FUNCTION", 4);
+    public static final Variable.Int DISTANCE_INDEX_0 = new Variable.Int("DISTANCE_INDEX_0", 5);
+    public static final Variable.Int DISTANCE_INDEX_1 = new Variable.Int("DISTANCE_INDEX_1", 6);
+    public static final Variable.Enum RETURN_TYPE = new Variable.Enum("RETURN_TYPE", 7);
+    public static final Variable.Hybrid MINKOWSKI_P = new Variable.Hybrid("MINKOWSKI_P", 0);
+    public static final Variable.Hybrid GRID_JITTER = new Variable.Hybrid("GRID_JITTER", 1);
+    public static final Variable.Hybrid SIZE_JITTER = new Variable.Hybrid("SIZE_JITTER", 2);
+
+    public static final class DISTANCE_FUNCTION_ENUMS {
+        public static final int EUCLIDEAN = 0;
+        public static final int EUCLIDEAN_SQUARED = 1;
+        public static final int MANHATTAN = 2;
+        public static final int HYBRID = 3;
+        public static final int MAX_AXIS = 4;
+        public static final int MINKOWSKI = 5;
+    }
+    public static final class RETURN_TYPE_ENUMS {
+        public static final int INDEX0 = 0;
+        public static final int INDEX0_ADD1 = 1;
+        public static final int INDEX0_SUB1 = 2;
+        public static final int INDEX0_MUL1 = 3;
+        public static final int INDEX0_DIV1 = 4;
+    }
+
+    public CellularDistance() {
+        super("CellularDistance", 11);
+    }
+}

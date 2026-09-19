@@ -1,0 +1,21 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.enums;
+
+public final class VkDescriptorMappingSourceEXT {
+
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_HEAP_WITH_CONSTANT_OFFSET_EXT = 0;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_HEAP_WITH_PUSH_INDEX_EXT = 1;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_HEAP_WITH_INDIRECT_INDEX_EXT = 2;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_HEAP_WITH_INDIRECT_INDEX_ARRAY_EXT = 3;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_RESOURCE_HEAP_DATA_EXT = 4;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_PUSH_DATA_EXT = 5;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_PUSH_ADDRESS_EXT = 6;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_INDIRECT_ADDRESS_EXT = 7;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_HEAP_WITH_SHADER_RECORD_INDEX_EXT = 8;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_SHADER_RECORD_DATA_EXT = 9;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_SHADER_RECORD_ADDRESS_EXT = 10;
+    public static final int VK_DESCRIPTOR_MAPPING_SOURCE_MAX_ENUM_EXT = 2147483647;
+
+}

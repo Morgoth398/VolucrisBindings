@@ -1,0 +1,10 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    _iobuf: StbImageFile
+    stbi_io_callbacks: StbImageIoCallbacks
+    stbi_io_callbacks_read: StbImageReadCallback
+    stbi_io_callbacks_skip: StbImageSkipCallback
+    stbi_io_callbacks_eof: StbImageSkipEofCallback
+    stbi_write_func: StbImageWriteFunc

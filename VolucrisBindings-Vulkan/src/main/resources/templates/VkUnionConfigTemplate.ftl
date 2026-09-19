@@ -1,0 +1,46 @@
+class-description:
+  name: ${struct.name}
+  package-name: volucris.bindings.vulkan.unions
+  directory: src/main/java/volucris/bindings/vulkan/unions
+  is-static:
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - volucris.bindings.vulkan.*
+  - volucris.bindings.vulkan.handles.*
+  - volucris.bindings.vulkan.structs.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+  name: ${struct.name}
+  struct-arrays:
+  <#list struct.structArrays as structArray>
+    - ${structArray}
+  </#list>
+  string-fields:
+  <#list struct.stringFields as stringField>
+    - ${stringField}
+  </#list>
+native-functions:
+native-function-pointers:

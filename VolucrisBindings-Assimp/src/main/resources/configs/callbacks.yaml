@@ -1,0 +1,50 @@
+callbacks:
+  - name: aiLogStreamCallback
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+    static-imports:
+  - name: aiFileReadProc
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:
+  - name: aiFileWriteProc
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:
+  - name: aiFileTellProc
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:
+  - name: aiFileSeek
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:
+  - name: aiFileFlushProc
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:
+  - name: aiFileOpenProc
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:
+    string-parameters:
+      - param1
+  - name: aiFileCloseProc
+    package-name: volucris.bindings.assimp.callbacks
+    directory: src/main/java/volucris/bindings/assimp/callbacks
+    imports:
+      - volucris.bindings.assimp.structs.*
+    static-imports:

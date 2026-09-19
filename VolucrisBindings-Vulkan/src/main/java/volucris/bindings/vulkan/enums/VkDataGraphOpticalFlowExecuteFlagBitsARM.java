@@ -1,0 +1,15 @@
+/*
+ * MACHINE GENERATED FILE, DO NOT EDIT.
+ */
+package volucris.bindings.vulkan.enums;
+
+public final class VkDataGraphOpticalFlowExecuteFlagBitsARM {
+
+    public static final int VK_DATA_GRAPH_OPTICAL_FLOW_EXECUTE_DISABLE_TEMPORAL_HINTS_BIT_ARM = 1;
+    public static final int VK_DATA_GRAPH_OPTICAL_FLOW_EXECUTE_INPUT_UNCHANGED_BIT_ARM = 2;
+    public static final int VK_DATA_GRAPH_OPTICAL_FLOW_EXECUTE_REFERENCE_UNCHANGED_BIT_ARM = 4;
+    public static final int VK_DATA_GRAPH_OPTICAL_FLOW_EXECUTE_INPUT_IS_PREVIOUS_REFERENCE_BIT_ARM = 8;
+    public static final int VK_DATA_GRAPH_OPTICAL_FLOW_EXECUTE_REFERENCE_IS_PREVIOUS_INPUT_BIT_ARM = 16;
+    public static final int VK_DATA_GRAPH_OPTICAL_FLOW_EXECUTE_FLAG_BITS_MAX_ENUM_ARM = 2147483647;
+
+}

@@ -1,0 +1,54 @@
+class-description:
+  name: StbImage
+  package-name: volucris.bindings.stb.image
+  directory: src/main/java/volucris/bindings/stb/image
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+static-imports:
+  - java.lang.foreign.ValueLayout.*
+  - volucris.bindings.core.FFMUtils.*
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - stbi_
+excluded-function-name-prefixes:
+  - stbi_load_from_file
+  - stbi_load_from_file_16
+  - stbi_loadf_from_file
+  - stbi_is_hdr_from_file
+  - stbi_info_from_file
+  - stbi_is_16_bit_from_file
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:  
+  - name: stbi_failure_reason
+    string-return-type: true
+  - name: stbi_load
+    string-parameters:
+      - filename
+  - name: stbi_info
+    string-parameters:
+      - filename
+  - name: stbi_is_16_bit
+    string-parameters:
+      - filename
+native-function-pointers:

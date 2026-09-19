@@ -1,0 +1,40 @@
+class-description:
+  name: VkMemoryDedicatedAllocateInfoTensorARM
+  package-name: volucris.bindings.vulkan.structs
+  directory: src/main/java/volucris/bindings/vulkan/structs
+  is-static:
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - volucris.bindings.vulkan.*
+  - volucris.bindings.vulkan.handles.*
+  - volucris.bindings.vulkan.unions.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+  name: VkMemoryDedicatedAllocateInfoTensorARM
+  struct-arrays:
+  string-fields:
+native-functions:
+native-function-pointers:

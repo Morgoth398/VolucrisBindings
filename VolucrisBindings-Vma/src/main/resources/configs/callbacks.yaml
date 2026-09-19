@@ -1,0 +1,15 @@
+callbacks:
+  - name: PFN_vmaAllocateDeviceMemoryFunction
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+    imports:
+      - volucris.bindings.vulkan.handles.VkDeviceMemory
+  - name: PFN_vmaFreeDeviceMemoryFunction
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+    imports:
+      - volucris.bindings.vulkan.handles.VkDeviceMemory
+  - name: PFN_vmaCheckDefragmentationBreakFunction
+    package-name: volucris.bindings.vma
+    directory: src/main/java/volucris/bindings/vma
+    add-typed-method: false

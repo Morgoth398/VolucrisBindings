@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 4.0)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+project(yoga CXX)
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+file(GLOB_RECURSE YOGA_SOURCES CONFIGURE_DEPENDS
+        **/*.cpp
+)
+
+add_library(yoga SHARED ${YOGA_SOURCES})
+
+target_include_directories(yoga PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
+install(TARGETS yoga
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+    ARCHIVE DESTINATION lib
+)

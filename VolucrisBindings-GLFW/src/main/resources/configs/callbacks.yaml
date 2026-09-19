@@ -1,0 +1,122 @@
+callbacks:
+  - name: GLFWmonitorfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWerrorfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+    string-parameters:
+      - description
+  - name: GLFWwindowposfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowsizefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowclosefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowrefreshfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowfocusfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowiconifyfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowmaximizefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWframebuffersizefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWwindowcontentscalefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWkeyfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWcharfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWcharmodsfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWmousebuttonfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWcursorposfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWcursorenterfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWscrollfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWdropfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    imports:
+    static-imports:
+  - name: GLFWjoystickfun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: GLFWallocatefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: GLFWreallocatefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    add-typed-method: false
+    imports:
+    static-imports:
+  - name: GLFWdeallocatefun
+    package-name: volucris.bindings.glfw
+    directory: src/main/java/volucris/bindings/glfw
+    add-typed-method: false
+    imports:
+    static-imports:

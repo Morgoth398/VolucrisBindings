@@ -1,0 +1,9 @@
+package-name: a/name #Only used when all enums are generated in one directory
+directory: a/valid/directory #Only used when all enums are generated
+generate-all: true # All enums are generated into the same directory
+transform-constants-names: true # All enum constants are converted to uppercase, with underscores between words.
+configs: #Per enum configs
+  - name: someName
+    package-name: a_name
+    directory: output_directory
+    transform-constants-names: true

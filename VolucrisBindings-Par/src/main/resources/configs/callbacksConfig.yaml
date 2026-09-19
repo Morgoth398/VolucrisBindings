@@ -1,0 +1,4 @@
+callbacks:
+  - name: par_shapes_fn
+    package-name: volucris.bindings.par
+    directory: src/main/java/volucris/bindings/par
