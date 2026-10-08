@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.jspecify.annotations.Nullable;
 import org.lwjgl.llvm.CXCursor;
 import org.lwjgl.llvm.CXCursorVisitor;
 import org.lwjgl.llvm.CXString;
@@ -49,6 +50,29 @@ public class NativeEnum {
 		visitor.free();
 
 		this.constants = Collections.unmodifiableList(constants);
+		
+		/// Works around a libclang bug where an enumerator without its own doc
+		/// comment inherits the comment of the closest preceding enumerator.
+		///
+		/// Since the first enumerator after a comment is always its real owner,
+		/// any following enumerator that reports the same comment is cleared.
+		///
+		/// Limitation: comments are compared by text, so two enumerators with
+		/// identical, separately written comments are wrongly treated as duplicates.
+		@Nullable String lastComment = null;
+		
+		for (NativeEnumConstant constant : constants) {
+			String currentComment = constant.getComment();
+			
+			if (currentComment == null)
+				continue;
+			
+			if (currentComment.equals(lastComment)) {
+				constant.comment = null;
+			} else {
+				lastComment = currentComment;
+			}
+		}
 	}
 
 	@Override
@@ -74,7 +98,7 @@ public class NativeEnum {
 	public static class NativeEnumConstant extends NativeType {
 
 		private String name;
-		private String comment;
+		private @Nullable String comment;
 
 		private int value;
 
@@ -87,8 +111,8 @@ public class NativeEnum {
 				ClangIndex.clang_getCursorSpelling(cursor, cxString);
 				name = ClangIndex.clang_getCString(cxString);
 
-				ClangIndex.clang_Cursor_getBriefCommentText(cursor, cxString);
-				comment = ClangIndex.clang_getCString(cxString);
+				ClangIndex.clang_Cursor_getRawCommentText(cursor, cxString);
+				comment = ParsingUtils.getCommentText(cxString);
 			}
 
 			value = (int) ClangIndex.clang_getEnumConstantDeclValue(cursor);
@@ -103,7 +127,7 @@ public class NativeEnum {
 			return name;
 		}
 
-		public String getComment() {
+		public @Nullable String getComment() {
 			return comment;
 		}
 

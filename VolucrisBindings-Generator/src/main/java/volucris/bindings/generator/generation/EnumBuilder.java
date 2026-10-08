@@ -54,15 +54,25 @@ public class EnumBuilder {
 			name = name.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2").toUpperCase();
 		}
 
-		String javadoc = null;
-
-		if (constant.getComment() != null) {
-			javadoc = "/// ```" + constant.getComment() + "```";
-		}
+		String javadoc = getJavadoc(constant.getComment());
 
 		return new ConstantInfo(name, javadoc, constant.getValue());
 	}
 
+	private @Nullable String getJavadoc(String nativeComment) {
+		if (nativeComment == null)
+			return null;
+
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("/// ```\n");
+		nativeComment.lines().forEach(line -> {
+			stringBuilder.append("/// ").append(line).append("\n");
+		});
+		stringBuilder.append("/// ```");
+
+		return stringBuilder.toString();
+	}
+	
 	public String build(Template template) {
 		Map<String, Object> dataModel = new HashMap<String, Object>();
 		dataModel.put("packageName", packageName);
