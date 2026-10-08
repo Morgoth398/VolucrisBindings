@@ -51,7 +51,9 @@ public class EnumBuilder {
 		name = GeneratorUtils.transformName(globalConfig, name, false);
 
 		if (transformName) {
-			name = name.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2").toUpperCase();
+			name = name.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2")
+					.replaceAll("(\\p{Lu})(\\p{Lu}\\p{Ll})", "$1_$2")
+					.toUpperCase();
 		}
 
 		String javadoc = getJavadoc(constant.getComment());
@@ -72,7 +74,7 @@ public class EnumBuilder {
 
 		return stringBuilder.toString();
 	}
-	
+
 	public String build(Template template) {
 		Map<String, Object> dataModel = new HashMap<String, Object>();
 		dataModel.put("packageName", packageName);

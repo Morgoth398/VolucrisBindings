@@ -1,0 +1,136 @@
+class-description:
+  name: ClangIndex
+  package-name: volucris.bindings.libclang
+  directory: src/main/java/volucris/bindings/libclang
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+ - volucris.bindings.libclang.structs.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - clang_
+excluded-function-name-prefixes:
+  - clang_findIncludesInFileWithBlock
+  - clang_executeOnThread
+  - clang_visitChildrenWithBlock
+  - clang_findReferencesInFileWithBlock
+
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: clang_getCString
+    string-return-type: true
+  - name: clang_VirtualFileOverlay_addFileMapping
+    string-parameters:
+      - virtualPath
+  - name: clang_ModuleMapDescriptor_setFrameworkModuleName
+    string-parameters:
+      - name
+  - name: clang_ModuleMapDescriptor_setUmbrellaHeader
+    string-parameters:
+      - name
+  - name: clang_ModuleCache_prune
+    string-parameters:
+      - Path
+  - name: clang_ModuleCache_pruneWithCallback
+    string-parameters:
+      - Path
+  - name: clang_loadDiagnostics
+    string-parameters:
+      - file
+  - name: clang_CXIndex_setInvocationEmissionPathOption
+    string-parameters:
+      - path
+  - name: clang_getFile
+    string-parameters:
+      - file_name
+  - name: clang_createTranslationUnitFromSourceFile
+    string-parameters:
+      - source_filename
+  - name: clang_createTranslationUnit
+    string-parameters:
+      - ast_filename
+  - name: clang_createTranslationUnit2
+    string-parameters:
+      - ast_filename
+  - name: clang_parseTranslationUnit
+    string-parameters:
+      - source_filename
+    nullable-parameters:
+      - unsaved_files
+      - command_line_args
+  - name: clang_parseTranslationUnit2
+    string-parameters:
+      - source_filename
+    nullable-parameters:
+      - unsaved_files
+      - command_line_args
+  - name: clang_parseTranslationUnit2FullArgv
+    string-parameters:
+      - source_filename
+    nullable-parameters:
+      - unsaved_files
+      - command_line_args
+  - name: clang_saveTranslationUnit
+    string-parameters:
+      - FileName
+  - name: clang_getTUResourceUsageName
+    string-return-type: true
+  - name: clang_Type_getOffsetOf
+    string-parameters:
+      - S
+  - name: clang_constructUSR_ObjCClass
+    string-parameters:
+      - class_name
+  - name: clang_constructUSR_ObjCCategory
+    string-parameters:
+      - class_name
+      - category_name
+  - name: clang_constructUSR_ObjCProtocol
+    string-parameters:
+      - protocol_name
+  - name: clang_constructUSR_ObjCIvar
+    string-parameters:
+      - name
+  - name: clang_constructUSR_ObjCMethod
+    string-parameters:
+      - name
+  - name: clang_codeCompleteAt
+    string-parameters:
+      - complete_filename
+  - name: clang_EvalResult_getAsStr
+    string-return-type: true
+  - name: clang_indexSourceFile
+    string-parameters:
+      - source_filename
+    nullable-parameters:
+      - command_line_args
+      - unsaved_files
+  - name: clang_indexSourceFileFullArgv
+    string-parameters:
+      - source_filename
+    nullable-parameters:
+      - command_line_args
+      - unsaved_files
+
+native-function-pointers:

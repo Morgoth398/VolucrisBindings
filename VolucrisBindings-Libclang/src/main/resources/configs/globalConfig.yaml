@@ -1,0 +1,18 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    CXCursorAndRangeVisitor_visit : CXCursorAndRangeVisitorFunction
+    IndexerCallbacks_abortQuery : AbortQueryFunction
+    IndexerCallbacks_diagnostic : DiagnosticFunction
+    IndexerCallbacks_enteredMainFile : EnteredMainFileFunction
+    IndexerCallbacks_ppIncludedFile : PpIncludedFileFunction
+    IndexerCallbacks_importedASTFile : ImportedASTFileFunction
+    IndexerCallbacks_startedTranslationUnit : StartedTranslationUnitFunction
+    IndexerCallbacks_indexDeclaration : IndexDeclarationFunction
+    IndexerCallbacks_indexEntityReference : IndexEntityReferenceFunction
+    CXVirtualFileOverlayImpl : CXVirtualFileOverlay
+    CXModuleMapDescriptorImpl : CXModuleMapDescriptor
+    CXTranslationUnitImpl : CXTranslationUnit
+    CXTargetInfoImpl : CXTargetInfo
+    CXCursorSetImpl: CXCursorSet

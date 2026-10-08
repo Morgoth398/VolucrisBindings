@@ -1,0 +1,4 @@
+package-name: volucris.bindings.libclang.enums
+directory: src/main/java/volucris/bindings/libclang/enums
+generate-all: true
+configs:

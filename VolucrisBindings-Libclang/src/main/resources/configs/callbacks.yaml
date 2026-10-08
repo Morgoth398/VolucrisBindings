@@ -1,0 +1,57 @@
+callbacks:
+  - name: CXModuleCachePruneCallback
+    package-name: volucris.bindings.libclang
+    directory: src/main/java/volucris/bindings/libclang
+  - name: CXCursorVisitor
+    package-name: volucris.bindings.libclang
+    directory: src/main/java/volucris/bindings/libclang
+    imports:
+      - volucris.bindings.libclang.structs.CXCursor
+  - name: CXInclusionVisitor
+    package-name: volucris.bindings.libclang
+    directory: src/main/java/volucris/bindings/libclang
+    imports:
+      - volucris.bindings.libclang.structs.CXSourceLocation
+  - name: CXFieldVisitor
+    package-name: volucris.bindings.libclang
+    directory: src/main/java/volucris/bindings/libclang
+    imports:
+      - volucris.bindings.libclang.structs.CXCursor
+      
+  - name: CXCursorAndRangeVisitor_visit
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:
+      
+  - name: IndexerCallbacks_abortQuery
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_diagnostic
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_enteredMainFile
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_ppIncludedFile
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_importedASTFile
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_startedTranslationUnit
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_indexDeclaration
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:    
+  - name: IndexerCallbacks_indexEntityReference
+    package-name: volucris.bindings.libclang.structs
+    directory: src/main/java/volucris/bindings/libclang/structs
+    imports:
