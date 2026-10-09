@@ -108,13 +108,15 @@ public class VarHandleMethod extends Method {
 					dataModel.put("isStructArray", isStructArray);
 				}
 				case FUNCTION_POINTER -> {
-					FunctionPointerField functionPointerField = (FunctionPointerField) recordField;
-					
-					NativeFunctionPointer functionPointer = functionPointerField.getFunctionPointer();
-					
-					String typeName = GeneratorUtils.transformName(globalConfig, functionPointer.getName(), false);
-
-					dataModel.put("pointerType", typeName);
+					if (recordField instanceof FunctionPointerField functionPointerField) {
+						NativeFunctionPointer functionPointer = functionPointerField.getFunctionPointer();
+						
+						String typeName = GeneratorUtils.transformName(globalConfig, functionPointer.getName(), false);
+						dataModel.put("pointerType", typeName);
+					} else {
+						String typeName = GeneratorUtils.transformName(globalConfig, recordField.getType().typeName(), false);
+						dataModel.put("pointerType", typeName);
+					}
 					dataModel.put("isFunctionPointer", true);
 				}
 				default -> {

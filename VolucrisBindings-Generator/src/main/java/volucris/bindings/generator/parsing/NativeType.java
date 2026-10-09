@@ -1,10 +1,11 @@
 package volucris.bindings.generator.parsing;
 
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.CXType;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
+import java.lang.foreign.Arena;
+
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.enums.CXTypeKind;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXType;
 
 public class NativeType {
 
@@ -13,143 +14,140 @@ public class NativeType {
 
 	protected final TypeResult type;
 
-	protected final String cursorType;
-	protected final String canonicalType;
+	protected final String cursorTypeSpelling;
+	protected final String canonicalTypeSpelling;
 
 	private boolean platformSpecific;
 
 	public NativeType(CXCursor cursor) {
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			CXType cursorType = CXType.calloc(stack);
-			CXType canonicalType = CXType.calloc(stack);
+		try (Arena arena = Arena.ofConfined()) {
+			CXType cursorType = ClangIndex.clang_getCursorType(arena, cursor);
+			CXType canonicalType = ClangIndex.clang_getCanonicalType(arena, cursorType);
 
-			ClangIndex.clang_getCursorType(cursor, cursorType);
-			ClangIndex.clang_getCanonicalType(cursorType, canonicalType);
+			this.cursorTypeSpelling = ParsingUtils.getTypeSpelling(cursorType);
+			this.canonicalTypeSpelling = ParsingUtils.getTypeSpelling(canonicalType);
 
-			CXString cxString = CXString.calloc(stack);
-			this.cursorType = ClangIndex.clang_getCString(ClangIndex.clang_getTypeSpelling(cursorType, cxString));
-			this.canonicalType = ClangIndex.clang_getCString(ClangIndex.clang_getTypeSpelling(canonicalType, cxString));
-
-			type = getType(cursorType, canonicalType, CXCursor.calloc(stack), cxString, NativeTypeKind.UNKNOWN, 0);
+			type = getType(arena, cursorType, new CXCursor(arena).set(cursor), NativeTypeKind.UNKNOWN, 0);
 		}
 	}
 
 	public NativeType(CXType cursorType) {
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			CXType canonicalType = CXType.calloc(stack);
+		try (Arena arena = Arena.ofConfined()) {
+			CXType canonicalType = ClangIndex.clang_getCanonicalType(arena, cursorType);
 
-			ClangIndex.clang_getCanonicalType(cursorType, canonicalType);
+			this.cursorTypeSpelling = ParsingUtils.getTypeSpelling(cursorType);
+			this.canonicalTypeSpelling = ParsingUtils.getTypeSpelling(canonicalType);
 
-			CXString cxString = CXString.calloc(stack);
-			this.cursorType = ClangIndex.clang_getCString(ClangIndex.clang_getTypeSpelling(cursorType, cxString));
-			this.canonicalType = ClangIndex.clang_getCString(ClangIndex.clang_getTypeSpelling(canonicalType, cxString));
-
-			type = getType(cursorType, canonicalType, CXCursor.calloc(stack), cxString, NativeTypeKind.UNKNOWN, 0);
+			type = getType(
+					arena,
+					cursorType,
+					new CXCursor(arena).set(ClangIndex.clang_getTypeDeclaration(arena, cursorType)),
+					NativeTypeKind.UNKNOWN, 0
+			);
 		}
 	}
 
 	public NativeType(NativeType nativeType) {
 		this.type = nativeType.type;
-		this.cursorType = nativeType.cursorType;
-		this.canonicalType = nativeType.canonicalType;
-		
+		this.cursorTypeSpelling = nativeType.cursorTypeSpelling;
+		this.canonicalTypeSpelling = nativeType.canonicalTypeSpelling;
+
 		this.platformSpecific = nativeType.platformSpecific;
 	}
-	
+
 	private TypeResult getType(
+			Arena arena,
 			CXType type,
-			CXType tmpType,
 			CXCursor cursor,
-			CXString string,
 			NativeTypeKind prevKind,
 			int pointerDepth
 	) {
 
-		while (type.kind() == ClangIndex.CXType_Elaborated) {
-			ClangIndex.clang_Type_getNamedType(type, tmpType);
-
-			CXType swap = type;
-			type = tmpType;
-			tmpType = swap;
+		while (type.kind() == CXTypeKind.CX_TYPE_ELABORATED) {
+			type = ClangIndex.clang_Type_getNamedType(arena, type);
 		}
 
 		switch (type.kind()) {
-			case ClangIndex.CXType_LValueReference,
-					ClangIndex.CXType_RValueReference,
-					ClangIndex.CXType_Pointer,
-					ClangIndex.CXType_MemberPointer -> {
-				ClangIndex.clang_getPointeeType(type, tmpType);
-				return getType(tmpType, type, cursor, string, NativeTypeKind.POINTER, pointerDepth + 1);
+			case CXTypeKind.CX_TYPE_L_VALUE_REFERENCE,
+					CXTypeKind.CX_TYPE_R_VALUE_REFERENCE,
+					CXTypeKind.CX_TYPE_POINTER,
+					CXTypeKind.CX_TYPE_MEMBER_POINTER -> {
+				CXType pointeeType = ClangIndex.clang_getPointeeType(arena, type);
+				return getType(arena, pointeeType, cursor, NativeTypeKind.POINTER, pointerDepth + 1);
 			}
-			case ClangIndex.CXType_Typedef -> {
-				CXCursor declaration = ClangIndex.clang_getTypeDeclaration(type, cursor);
-				ClangIndex.clang_getTypedefDeclUnderlyingType(declaration, tmpType);
-				return getType(tmpType, type, cursor, string, prevKind, pointerDepth);
+			case CXTypeKind.CX_TYPE_TYPEDEF -> {
+				CXCursor typeDeclaration = ClangIndex.clang_getTypeDeclaration(arena, type);
+				cursor.set(typeDeclaration);
+				
+				CXType underlyingType = ClangIndex.clang_getTypedefDeclUnderlyingType(arena, typeDeclaration);
+				return getType(arena, underlyingType, cursor, prevKind, pointerDepth);
 			}
-			case ClangIndex.CXType_IncompleteArray,
-					ClangIndex.CXType_ConstantArray,
-					ClangIndex.CXType_VariableArray,
-					ClangIndex.CXType_DependentSizedArray -> {
+			case CXTypeKind.CX_TYPE_INCOMPLETE_ARRAY,
+					CXTypeKind.CX_TYPE_CONSTANT_ARRAY,
+					CXTypeKind.CX_TYPE_VARIABLE_ARRAY,
+					CXTypeKind.CX_TYPE_DEPENDENT_SIZED_ARRAY -> {
 				long arrayCount = ClangIndex.clang_getArraySize(type);
-				ClangIndex.clang_getArrayElementType(type, tmpType);
-				TypeResult typeResult = getType(tmpType, type, cursor, string, NativeTypeKind.ARRAY, pointerDepth);
+
+				CXType arrayElementType = ClangIndex.clang_getArrayElementType(arena, type);
+				TypeResult typeResult = getType(arena, arrayElementType, cursor, NativeTypeKind.ARRAY, pointerDepth);
+
 				return new ArrayType(typeResult.typeKind(), typeResult, typeResult.typeName(), arrayCount);
 			}
-			case ClangIndex.CXType_Record -> {
+			case CXTypeKind.CX_TYPE_RECORD -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.RECORD_POINTER
 						: NativeTypeKind.RECORD;
-				String typeName = getCursorSpelling(type, cursor, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getTypeDeclarationCursorSpelling(type));
 			}
-			case ClangIndex.CXType_Enum -> {
+			case CXTypeKind.CX_TYPE_ENUM -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.INT_POINTER
 						: NativeTypeKind.ENUM;
-				String typeName = getCursorSpelling(type, cursor, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getTypeDeclarationCursorSpelling(type));
 			}
-			case ClangIndex.CXType_Void -> {
+			case CXTypeKind.CX_TYPE_VOID -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.VOID_POINTER
 						: NativeTypeKind.VOID;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_Bool -> {
+			case CXTypeKind.CX_TYPE_BOOL -> {
 				NativeTypeKind typeKind = NativeTypeKind.BOOLEAN;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_Char_U,
-					ClangIndex.CXType_Char_S,
-					ClangIndex.CXType_UChar,
-					ClangIndex.CXType_SChar -> {
+			case CXTypeKind.CX_TYPE_CHAR_U,
+					CXTypeKind.CX_TYPE_CHAR_S,
+					CXTypeKind.CX_TYPE_U_CHAR,
+					CXTypeKind.CX_TYPE_S_CHAR -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.BYTE_POINTER
 						: NativeTypeKind.BYTE;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_UShort,
-					ClangIndex.CXType_Short -> {
+			case CXTypeKind.CX_TYPE_U_SHORT,
+					CXTypeKind.CX_TYPE_SHORT -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.SHORT_POINTER
 						: NativeTypeKind.SHORT;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_UInt,
-					ClangIndex.CXType_Int,
-					ClangIndex.CXType_Char32 -> {
+			case CXTypeKind.CX_TYPE_U_INT,
+					CXTypeKind.CX_TYPE_INT,
+					CXTypeKind.CX_TYPE_CHAR32 -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.INT_POINTER
 						: NativeTypeKind.INT;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_Long,
-					ClangIndex.CXType_ULong -> {
+			case CXTypeKind.CX_TYPE_LONG,
+					CXTypeKind.CX_TYPE_U_LONG -> {
 				platformSpecific = true;
 
 				NativeTypeKind typeKind = IS_WINDOWS
@@ -159,34 +157,34 @@ public class NativeType {
 						: prevKind == NativeTypeKind.POINTER
 								? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.LONG_POINTER
 								: NativeTypeKind.LONG;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_ULongLong,
-					ClangIndex.CXType_LongLong -> {
+			case CXTypeKind.CX_TYPE_U_LONG_LONG,
+					CXTypeKind.CX_TYPE_LONG_LONG -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.LONG_POINTER
 						: NativeTypeKind.LONG;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_Half,
-					ClangIndex.CXType_Float -> {
+			case CXTypeKind.CX_TYPE_HALF,
+					CXTypeKind.CX_TYPE_FLOAT -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.FLOAT_POINTER
 						: NativeTypeKind.FLOAT;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_Double,
-					ClangIndex.CXType_LongDouble -> {
+			case CXTypeKind.CX_TYPE_DOUBLE,
+					CXTypeKind.CX_TYPE_LONG_DOUBLE -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.DOUBLE_POINTER
 						: NativeTypeKind.DOUBLE;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_WChar -> {
+			case CXTypeKind.CX_TYPE_W_CHAR -> {
 				platformSpecific = true;
 
 				NativeTypeKind typeKind = IS_WINDOWS
@@ -196,42 +194,29 @@ public class NativeType {
 						: prevKind == NativeTypeKind.POINTER
 								? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.INT_POINTER
 								: NativeTypeKind.INT;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_Char16 -> {
+			case CXTypeKind.CX_TYPE_CHAR16 -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
 						? pointerDepth > 1 ? NativeTypeKind.POINTER_TO_POINTERS : NativeTypeKind.STRING
 						: NativeTypeKind.CHAR;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
-			case ClangIndex.CXType_FunctionProto,
-					ClangIndex.CXType_FunctionNoProto -> {
+			case CXTypeKind.CX_TYPE_FUNCTION_PROTO,
+					CXTypeKind.CX_TYPE_FUNCTION_NO_PROTO -> {
 				NativeTypeKind typeKind = NativeTypeKind.FUNCTION_POINTER;
-//				String typeName = getTypeSpelling(type, tmpType, string);
-				String typeName = ParsingUtils.getFunctionPointerName(cursor, null);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getFunctionPointerName(cursor, null));
 			}
 			default -> {
 				NativeTypeKind typeKind = prevKind != null ? prevKind : NativeTypeKind.UNKNOWN;
-				String typeName = getTypeSpelling(type, tmpType, string);
-				return new SimpleType(typeKind, typeName);
+
+				return new SimpleType(typeKind, ParsingUtils.getUnqualifiedTypeSpelling(type));
 			}
 		}
 
-	}
-
-	private String getTypeSpelling(CXType type, CXType tmpType, CXString cxString) {
-		ClangIndex.clang_getUnqualifiedType(type, tmpType);
-		ClangIndex.clang_getTypeSpelling(tmpType, cxString);
-		return ClangIndex.clang_getCString(cxString);
-	}
-
-	private String getCursorSpelling(CXType type, CXCursor cursor, CXString cxString) {
-		ClangIndex.clang_getTypeDeclaration(type, cursor);
-		ClangIndex.clang_getCursorSpelling(cursor, cxString);
-		return ClangIndex.clang_getCString(cxString);
 	}
 
 	@Override
@@ -244,17 +229,17 @@ public class NativeType {
 	}
 
 	public String getCursorType() {
-		return cursorType;
+		return cursorTypeSpelling;
 	}
 
 	public String getCanonicalType() {
-		return canonicalType;
+		return canonicalTypeSpelling;
 	}
 
 	public boolean isPlatformSpecific() {
 		return platformSpecific;
 	}
-	
+
 	public sealed interface TypeResult permits SimpleType, ArrayType {
 		NativeTypeKind typeKind();
 

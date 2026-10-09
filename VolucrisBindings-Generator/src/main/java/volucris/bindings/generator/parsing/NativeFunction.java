@@ -1,17 +1,17 @@
 package volucris.bindings.generator.parsing;
 
+import java.lang.foreign.Arena;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.CXType;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
-
 import org.jspecify.annotations.Nullable;
+
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXString;
+import volucris.bindings.libclang.structs.CXType;
 
 public class NativeFunction implements AbstractNativeFunction {
 
@@ -24,48 +24,71 @@ public class NativeFunction implements AbstractNativeFunction {
 	private final boolean isInlined;
 
 	private String comment;
-	
-	public NativeFunction(CXCursor functionCursor, String name, boolean reportPlatformSpecificity) {
+
+	public NativeFunction(String name, CXCursor cursor, boolean reportPlatformSpecificity) {
 		this.name = name;
+		this.isInlined = ClangIndex.clang_Cursor_isFunctionInlined(cursor) != 0;
 
-		isInlined = ClangIndex.clang_Cursor_isFunctionInlined(functionCursor);
+		int numParameters = ClangIndex.clang_Cursor_getNumArguments(cursor);
+		this.parameters = new ArrayList<NativeParameter>(numParameters);
 
-		int numParameters = ClangIndex.clang_Cursor_getNumArguments(functionCursor);
-		List<NativeParameter> parameters = new ArrayList<NativeParameter>(numParameters);
-
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			CXCursor parameterCursor = CXCursor.calloc(stack);
-
-			CXString cxString = CXString.calloc(stack);
-			ClangIndex.clang_Cursor_getRawCommentText(functionCursor, cxString);
-			comment = ParsingUtils.getCommentText(cxString);
+		try (Arena arena = Arena.ofConfined()) {
+			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+			comment = ParsingUtils.getCommentText(rawCommentText);
+			ClangIndex.clang_disposeString(rawCommentText);
 
 			for (int i = 0; i < numParameters; i++) {
-				ClangIndex.clang_Cursor_getArgument(functionCursor, i, parameterCursor);
+				CXCursor argumentCursor = ClangIndex.clang_Cursor_getArgument(arena, cursor, i);
 
-				ClangIndex.clang_getCursorSpelling(parameterCursor, cxString);
-				String parameterName = ClangIndex.clang_getCString(cxString);
-				
+				String parameterName = ParsingUtils.getCursorSpelling(argumentCursor);
+
 				if (parameterName == null || parameterName.isBlank())
 					parameterName = "param" + i;
-				
-				NativeParameter parameter = new NativeParameter(parameterCursor, parameterName);
-				parameters.add(parameter);
 
-				if (parameter.isPlatformSpecific() && reportPlatformSpecificity) {
-					System.out.println(
-							"Function (" + name + ") parameter is platform specific: " + parameter.toString()
-					);
+				CXCursor cursorResult = new CXCursor(arena);
+				CXType typeResult = new CXType(arena);
+
+				final boolean isFunctionPointer = ParsingUtils.isFunctionPointer(argumentCursor, cursorResult, typeResult);
+
+				if (isFunctionPointer) {
+					if (ParsingUtils.isFunctionPointerInlined(cursorResult)) {
+						parameters.add(
+								new FunctionPointerParameter(
+										cursorResult,
+										typeResult,
+										ParsingUtils.getFunctionPointerName(cursorResult, name),
+										parameterName,
+										reportPlatformSpecificity
+								)
+						);
+					} else {
+						parameters.add(new NativeParameter(argumentCursor, parameterName));
+					}
+				} else {
+					parameters.add(new NativeParameter(argumentCursor, parameterName));
 				}
 			}
 
-			CXType cxType = CXType.calloc(stack);
-			ClangIndex.clang_getCursorResultType(functionCursor, cxType);
+			CXType resultType = ClangIndex.clang_getCursorResultType(arena, cursor);
 
-			returnType = new NativeType(cxType);
+			returnType = new NativeType(resultType);
+
+			if (reportPlatformSpecificity) {
+				parameters.stream()
+						.filter(NativeParameter::isPlatformSpecific)
+						.forEach(parameter -> {
+							System.out.println(
+									"Function (" + name + ") parameter is platform specific: " + parameter.toString()
+							);
+						});
+
+				if (returnType.isPlatformSpecific()) {
+					System.out.println(
+							"Function (" + name + ") return type is platform specific: " + returnType.toString()
+					);
+				}
+			}
 		}
-		
-		this.parameters = Collections.unmodifiableList(parameters);
 	}
 
 	@Override
@@ -89,10 +112,10 @@ public class NativeFunction implements AbstractNativeFunction {
 	public void setComment(@Nullable String comment) {
 		if (this.comment != null)
 			return;
-		
+
 		this.comment = comment;
 	}
-	
+
 	@Override
 	public Optional<NativeType> getReturnType() {
 		return returnType.type.typeKind() == NativeTypeKind.VOID ? Optional.empty() : Optional.of(returnType);
@@ -100,7 +123,7 @@ public class NativeFunction implements AbstractNativeFunction {
 
 	@Override
 	public List<NativeParameter> getParameters() {
-		return parameters;
+		return Collections.unmodifiableList(parameters);
 	}
 
 	public boolean isInlined() {

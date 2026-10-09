@@ -22,6 +22,8 @@ import volucris.bindings.generator.generation.GeneratorUtils;
 import volucris.bindings.generator.generation.Modifier;
 import volucris.bindings.generator.generation.fields.FunctionField;
 import volucris.bindings.generator.parsing.AbstractNativeFunction;
+import volucris.bindings.generator.parsing.FunctionPointerParameter;
+import volucris.bindings.generator.parsing.NativeFunctionPointer;
 import volucris.bindings.generator.parsing.NativeParameter;
 import volucris.bindings.generator.parsing.NativeType;
 import volucris.bindings.generator.parsing.NativeType.SimpleType;
@@ -178,8 +180,14 @@ public class NativeFunctionMethod extends Method {
 					typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
 				} else if (typeKind == NativeTypeKind.FUNCTION_POINTER) {
 					isFunctionPointer = true;
-
-					typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
+					
+					if (nativeParameter instanceof FunctionPointerParameter functionPointerParameter) {
+						NativeFunctionPointer functionPointer = functionPointerParameter.getFunctionPointer();
+						
+						typeName = GeneratorUtils.transformName(globalConfig, functionPointer.getName(), false);
+					} else {
+						typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
+					}
 				} else {
 					typeName = NativeTypeKind.getPointerTypeClass(typeKind, typedMethodRequiredImports);
 				}

@@ -1,14 +1,13 @@
 package generation;
 
-import org.lwjgl.llvm.ClangIndex;
-
 import volucris.bindings.generator.generation.Generator;
 import volucris.bindings.generator.parsing.HeaderFile;
+import volucris.bindings.libclang.enums.CXTranslationUnit_Flags;
 
 public class GLFWGeneration {
 
 	public static void main(String[] args) {
-		int options = ClangIndex.CXTranslationUnit_DetailedPreprocessingRecord;
+		int options = CXTranslationUnit_Flags.CX_TRANSLATION_UNIT_DETAILED_PREPROCESSING_RECORD;
 
 		HeaderFile headerFile = new HeaderFile(
 				"src/main/resources/nativeSources/glfw-3.4/include/GLFW/glfw.h",

@@ -1,15 +1,19 @@
 package volucris.bindings.generator.parsing;
 
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.jspecify.annotations.Nullable;
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXCursorVisitor;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
+
+import volucris.bindings.libclang.CXCursorVisitor;
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.enums.CXCursorKind;
+import volucris.bindings.libclang.enums.CXVisitorResult;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXString;
 
 public class NativeEnum {
 
@@ -18,39 +22,35 @@ public class NativeEnum {
 
 	private final List<NativeEnumConstant> constants;
 
-	public NativeEnum(CXCursor cursor, String name) {
+	public NativeEnum(String name, CXCursor cursor) {
 		this.name = name;
+		this.constants = new ArrayList<NativeEnumConstant>();
 
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			CXString cxString = CXString.calloc(stack);
-			ClangIndex.clang_Cursor_getRawCommentText(cursor, cxString);
-			comment = ParsingUtils.getCommentText(cxString);
+		try (Arena arena = Arena.ofConfined()) {
+			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+			comment = ParsingUtils.getCommentText(rawCommentText);
+			ClangIndex.clang_disposeString(rawCommentText);
+
+			CXCursorVisitor visitor = new CXCursorVisitor(arena) {
+				@Override
+				public int invoke(CXCursor cursor, CXCursor parent, MemorySegment client_data) {
+					int cursorKind = ClangIndex.clang_getCursorKind(cursor);
+
+					if (cursorKind == CXCursorKind.CX_CURSOR_ENUM_CONSTANT_DECL) {
+						NativeEnumConstant constant = new NativeEnumConstant(cursor);
+						constants.add(constant);
+
+						if (constant.isPlatformSpecific())
+							System.out.println("Enum (" + name + ") constant is platform specific: " + constant);
+					}
+
+					return CXVisitorResult.CX_VISIT_CONTINUE;
+				}
+			};
+
+			ClangIndex.clang_visitChildren(cursor, visitor, MemorySegment.NULL);
 		}
 
-		List<NativeEnumConstant> constants = new ArrayList<NativeEnumConstant>();
-
-		CXCursorVisitor visitor = new CXCursorVisitor() {
-			@Override
-			public int invoke(CXCursor cursor, CXCursor parent, long client_data) {
-				int cursorKind = ClangIndex.clang_getCursorKind(cursor);
-				if (cursorKind == ClangIndex.CXCursor_EnumConstantDecl) {
-					NativeEnumConstant constant = new NativeEnumConstant(cursor);
-					constants.add(constant);
-
-					if (constant.isPlatformSpecific())
-						System.out.println("Enum (" + name + ") constant is platform specific: " + constant);
-				}
-
-				return ClangIndex.CXChildVisit_Continue;
-			}
-		};
-
-		ClangIndex.clang_visitChildren(cursor, visitor, 0);
-
-		visitor.free();
-
-		this.constants = Collections.unmodifiableList(constants);
-		
 		/// Works around a libclang bug where an enumerator without its own doc
 		/// comment inherits the comment of the closest preceding enumerator.
 		///
@@ -59,14 +59,15 @@ public class NativeEnum {
 		///
 		/// Limitation: comments are compared by text, so two enumerators with
 		/// identical, separately written comments are wrongly treated as duplicates.
-		@Nullable String lastComment = null;
-		
+		@Nullable
+		String lastComment = null;
+
 		for (NativeEnumConstant constant : constants) {
 			String currentComment = constant.getComment();
-			
+
 			if (currentComment == null)
 				continue;
-			
+
 			if (currentComment.equals(lastComment)) {
 				constant.comment = null;
 			} else {
@@ -92,7 +93,7 @@ public class NativeEnum {
 	}
 
 	public List<NativeEnumConstant> getConstants() {
-		return constants;
+		return Collections.unmodifiableList(constants);
 	}
 
 	public static class NativeEnumConstant extends NativeType {
@@ -105,17 +106,16 @@ public class NativeEnum {
 		public NativeEnumConstant(CXCursor cursor) {
 			super(cursor);
 
-			try (MemoryStack stack = MemoryStack.stackPush()) {
-				CXString cxString = CXString.calloc(stack);
+			try (Arena arena = Arena.ofConfined()) {
+				name = ParsingUtils.getCursorSpelling(cursor);
 
-				ClangIndex.clang_getCursorSpelling(cursor, cxString);
-				name = ClangIndex.clang_getCString(cxString);
+				CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+				comment = ParsingUtils.getCommentText(rawCommentText);
+				ClangIndex.clang_disposeString(rawCommentText);
 
-				ClangIndex.clang_Cursor_getRawCommentText(cursor, cxString);
-				comment = ParsingUtils.getCommentText(cxString);
+				value = (int) ClangIndex.clang_getEnumConstantDeclValue(cursor);
 			}
 
-			value = (int) ClangIndex.clang_getEnumConstantDeclValue(cursor);
 		}
 
 		@Override

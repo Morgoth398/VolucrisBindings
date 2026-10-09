@@ -1,7 +1,7 @@
 package volucris.bindings.generator.parsing;
 
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXType;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXType;
 
 public class NativeParameter extends NativeType {
 	

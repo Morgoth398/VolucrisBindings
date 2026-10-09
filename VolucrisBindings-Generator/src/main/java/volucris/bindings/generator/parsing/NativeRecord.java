@@ -1,17 +1,20 @@
 package volucris.bindings.generator.parsing;
 
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXCursorVisitor;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.CXType;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
-
 import org.jspecify.annotations.Nullable;
+
+import volucris.bindings.libclang.CXCursorVisitor;
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.enums.CXChildVisitResult;
+import volucris.bindings.libclang.enums.CXCursorKind;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXString;
+import volucris.bindings.libclang.structs.CXType;
 
 public class NativeRecord {
 
@@ -25,60 +28,61 @@ public class NativeRecord {
 	private final long alignment;
 	private final long size;
 
-	public NativeRecord(CXCursor cursor, String name, boolean isUnion, boolean reportPlatformSpecificity) {
+	public NativeRecord(String name, CXCursor cursor, boolean isUnion, boolean reportPlatformSpecificity) {
 		this.name = name;
 		this.isUnion = isUnion;
 
-		final List<NativeField> fields = new ArrayList<NativeField>();
+		List<NativeField> fields = new ArrayList<NativeField>();
 
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			final CXString cxString = CXString.calloc(stack);
+		try (Arena arena = Arena.ofConfined()) {
+			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+			comment = ParsingUtils.getCommentText(rawCommentText);
+			ClangIndex.clang_disposeString(rawCommentText);
 
-			final CXType cxType = CXType.calloc(stack);
-			final CXType result = CXType.calloc(stack);
-
-			ClangIndex.clang_Cursor_getRawCommentText(cursor, cxString);
-			this.comment = ParsingUtils.getCommentText(cxString);
-
-			final CXCursorVisitor visitor = new CXCursorVisitor() {
-				public int invoke(CXCursor cursor, CXCursor parent, long client_data) {
+			CXCursorVisitor visitor = new CXCursorVisitor(arena) {
+				@Override
+				public int invoke(CXCursor cursor, CXCursor parent, MemorySegment client_data) {
 					int cursorKind = ClangIndex.clang_getCursorKind(cursor);
 
-					if (cursorKind != ClangIndex.CXCursor_FieldDecl)
-						return ClangIndex.CXChildVisit_Continue;
+					if (cursorKind != CXCursorKind.CX_CURSOR_FIELD_DECL)
+						return CXChildVisitResult.CX_CHILD_VISIT_CONTINUE;
 
-					final boolean isBitField = ClangIndex.clang_Cursor_isBitField(cursor);
+					final boolean isBitField = ClangIndex.clang_Cursor_isBitField(cursor) != 0;
 
-					/// The argument for parameter `cursorResult` must be null as the current cursor
-					/// can already be used for creating a [NativeFunctionPointer]. But why this is the case
-					/// I do not know. For function pointers outside of records (see [HeaderFile] for `ClangIndex.CXCursor_VarDecl`
-					/// or `ClangIndex.CXCursor_TypedefDecl`) the parameter `cursorResult` is
-					/// necessary and must under no circumstances be nullified.
-					final boolean isFunctionPointer = ParsingUtils.isFunctionPointer(cursor, null, result);
+					CXCursor cursorResult = new CXCursor(arena);
+					CXType typeResult = new CXType(arena);
+
+					final boolean isFunctionPointer = ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult);
 
 					if (isBitField) {
 						fields.add(new BitField(cursor));
 					} else if (isFunctionPointer) {
-						String functionPointerName = ParsingUtils.getFunctionPointerName(cursor, name);
-
-						fields.add(
-								new FunctionPointerField(cursor, result, functionPointerName, reportPlatformSpecificity)
-						);
+						if (ParsingUtils.isFunctionPointerInlined(cursorResult)) {
+							fields.add(
+									new FunctionPointerField(
+											cursorResult,
+											typeResult,
+											ParsingUtils.getFunctionPointerName(cursorResult, name),
+											reportPlatformSpecificity
+									)
+							);
+						} else {
+							fields.add(new RecordField(cursor));
+						}
 					} else {
 						fields.add(new RecordField(cursor));
 					}
 
-					return ClangIndex.CXChildVisit_Continue;
-				};
+					return CXChildVisitResult.CX_CHILD_VISIT_CONTINUE;
+				}
 			};
 
-			ClangIndex.clang_visitChildren(cursor, visitor, 0);
+			ClangIndex.clang_visitChildren(cursor, visitor, MemorySegment.NULL);
 
-			visitor.free();
+			CXType cursorType = ClangIndex.clang_getCursorType(arena, cursor);
 
-			ClangIndex.clang_getCursorType(cursor, cxType);
-			this.size = ClangIndex.clang_Type_getSizeOf(cxType);
-			this.alignment = ClangIndex.clang_Type_getAlignOf(cxType);
+			this.size = ClangIndex.clang_Type_getSizeOf(cursorType);
+			this.alignment = ClangIndex.clang_Type_getAlignOf(cursorType);
 
 			if (fields.size() == 0) {
 				this.fields = List.of();
@@ -87,20 +91,38 @@ public class NativeRecord {
 
 			boolean containsBitFields = fields.stream().filter(BitField.class::isInstance).count() > 0;
 
-			if (containsBitFields && !isUnion) {
+			if (containsBitFields) {
 				List<NativeField> updatedFields = handleBitFields(fields);
 
-				handlePadding(updatedFields);
+				if (!isUnion) {
+					handleStructPadding(updatedFields);
+				} else {
+					handleUnionPadding(updatedFields);
+				}
 
 				this.fields = Collections.unmodifiableList(updatedFields);
 			} else {
-				if (!isUnion)
-					handlePadding(fields);
-
+				if (!isUnion) {
+					handleStructPadding(fields);
+				} else {
+					handleUnionPadding(fields);
+				}
+					
 				this.fields = Collections.unmodifiableList(fields);
 			}
-		}
 
+			if (reportPlatformSpecificity) {
+				this.fields.stream()
+						.filter(NativeType.class::isInstance)
+						.map(NativeType.class::cast)
+						.filter(NativeType::isPlatformSpecific)
+						.forEach(field -> {
+							System.out.println(
+									"Struct (" + name + ") field is platform specific: " + field.toString()
+							);
+						});
+			}
+		}
 	}
 
 	private List<NativeField> handleBitFields(List<NativeField> fields) {
@@ -177,7 +199,7 @@ public class NativeRecord {
 		return (value / align) * align;
 	}
 
-	private void handlePadding(List<NativeField> fields) {
+	private void handleStructPadding(List<NativeField> fields) {
 		for (int i = 0; i < fields.size() - 1; i++) {
 			TypedField currentField = (TypedField) fields.get(i);
 			TypedField nextField = (TypedField) fields.get(i + 1);
@@ -198,6 +220,20 @@ public class NativeRecord {
 			fields.add(new PaddingField(padding));
 	}
 
+	/// The size of an union is rounded up to a multiple of its alignment in C,
+	/// so it can actually be larger than its largest member.
+	/// 
+	/// As a union layout is only as large as its largest member in the FFM API
+	/// one padding field with the full size of the union is added to avoid
+	/// a memory mismatch.
+	private void handleUnionPadding(List<NativeField> fields) {
+		long maxFieldSize = fields.stream().mapToLong(NativeField::getSize).max().getAsLong();
+
+		if (size > maxFieldSize) {
+			fields.add(new PaddingField(size));
+		}
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
@@ -295,21 +331,19 @@ public class NativeRecord {
 		public RecordField(CXCursor cursor) {
 			super(cursor);
 
-			try (MemoryStack stack = MemoryStack.stackPush()) {
-				CXType cursorType = CXType.calloc(stack);
-				CXString cxString = CXString.calloc(stack);
+			try (Arena arena = Arena.ofConfined()) {
+				CXType cursorType = ClangIndex.clang_getCursorType(arena, cursor);
 
-				ClangIndex.clang_getCursorSpelling(cursor, cxString);
-				ClangIndex.clang_getCursorType(cursor, cursorType);
+				this.name = ParsingUtils.getCursorSpelling(cursor);
 
-				this.name = ClangIndex.clang_getCString(cxString);
 				this.offset = ClangIndex.clang_Cursor_getOffsetOfField(cursor) / 8; // Method returns offset in bits.
 																					// Must be converted to bytes.
 				this.size = ClangIndex.clang_Type_getSizeOf(cursorType);
 				this.alignment = ClangIndex.clang_Type_getAlignOf(cursorType);
 
-				ClangIndex.clang_Cursor_getRawCommentText(cursor, cxString);
-				this.comment = ParsingUtils.getCommentText(cxString);
+				CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+				this.comment = ParsingUtils.getCommentText(rawCommentText);
+				ClangIndex.clang_disposeString(rawCommentText);
 			}
 		}
 
@@ -358,20 +392,24 @@ public class NativeRecord {
 		}
 	}
 
+	/// This class represents a field that is an inlined function pointer.
 	public static class FunctionPointerField extends RecordField {
 
-		private NativeFunctionPointer functionPointer;
+		private final NativeFunctionPointer functionPointer;
 
 		public FunctionPointerField(
-				CXCursor cursor,
+				CXCursor functionPointerCursor,
 				CXType functionPointerType,
 				String functionPointerName,
 				boolean reportPlatformSpecificity
 		) {
-			super(cursor);
+			super(functionPointerCursor);
 
 			this.functionPointer = new NativeFunctionPointer(
-					functionPointerType, cursor, functionPointerName, reportPlatformSpecificity
+					functionPointerName,
+					functionPointerType,
+					functionPointerCursor,
+					reportPlatformSpecificity
 			);
 		}
 

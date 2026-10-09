@@ -1,30 +1,35 @@
 package volucris.bindings.generator.parsing;
 
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXCursorVisitor;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.CXType;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
-
 import org.jspecify.annotations.Nullable;
+
 import volucris.bindings.core.NativeLibraryLoader;
+import volucris.bindings.core.NativePointerArray;
+import volucris.bindings.libclang.CXCursorVisitor;
+import volucris.bindings.libclang.CXTranslationUnit;
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.enums.CXChildVisitResult;
+import volucris.bindings.libclang.enums.CXCursorKind;
+import volucris.bindings.libclang.enums.CXErrorCode;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXString;
+import volucris.bindings.libclang.structs.CXType;
 
 public class HeaderFile {
 
-	private Map<String, NativeEnum> enums;
-	private Map<String, NativeMacro> macros;
-	private Map<String, NativeRecord> records;
-	private Map<String, NativeFunction> functions;
-	private Map<String, NativeVariable> variables;
-	private Map<String, NativeFunctionPointer> functionPointers;
+	private final Map<String, NativeEnum> enums;
+	private final Map<String, NativeMacro> macros;
+	private final Map<String, NativeRecord> records;
+	private final Map<String, NativeFunction> functions;
+	private final Map<String, NativeVariable> variables;
+	private final Map<String, NativeFunctionPointer> functionPointers;
 
 	static {
 		NativeLibraryLoader.loadLibrary("natives/clang", "clang");
@@ -52,88 +57,117 @@ public class HeaderFile {
 		variables = new LinkedHashMap<String, NativeVariable>();
 		functionPointers = new LinkedHashMap<String, NativeFunctionPointer>();
 
-		try (MemoryStack stack = MemoryStack.stackPush()) {
+		try (Arena arena = Arena.ofConfined()) {
+			MemorySegment index = ClangIndex.clang_createIndex(0, 0);
 
-			long index = ClangIndex.clang_createIndex(false, false);
+			NativePointerArray arguments = new NativePointerArray(arena, commandLineArguments.length)
+					.setStrings(arena, 0, List.of(commandLineArguments));
 
-			PointerBuffer arguments = stack.callocPointer(commandLineArguments.length);
-			for (int i = 0; i < commandLineArguments.length; i++)
-				arguments.put(i, stack.UTF8(commandLineArguments[i]));
+			NativePointerArray out = new NativePointerArray(arena, 1);
 
-			PointerBuffer out = stack.callocPointer(1);
+			int error = ClangIndex.clang_parseTranslationUnit2(
+					index, headerFile, arguments, commandLineArguments.length, null, 0, options, out
+			);
 
-			int error = ClangIndex.clang_parseTranslationUnit2(index, headerFile, arguments, null, options, out);
-
-			if (error != 0) {
-				ClangIndex.clang_disposeIndex(index);
-				throw new RuntimeException("Cannot parse header file. Error: " + error);
+			if (error != CXErrorCode.CX_ERROR_SUCCESS) {
+				try {
+					if (error == CXErrorCode.CX_ERROR_AST_READ_ERROR) {
+						throw new RuntimeException("Cannot parse header file. An AST Read Error occured.");
+					} else if (error == CXErrorCode.CX_ERROR_CRASHED) {
+						throw new RuntimeException("Cannot parse header file. A crash occured.");
+					} else if (error == CXErrorCode.CX_ERROR_FAILURE) {
+						throw new RuntimeException("Cannot parse header file. No further details are available.");
+					} else if (error == CXErrorCode.CX_ERROR_INVALID_ARGUMENTS) {
+						throw new RuntimeException("Cannot parse header file. Invalid arguments.");
+					}
+				} finally {
+					ClangIndex.clang_disposeIndex(index);
+				}
 			}
 
-			long translationUnit = out.get(0);
+			CXTranslationUnit translationUnit = new CXTranslationUnit(out.get(0));
 
-			CXString cxString = CXString.calloc(stack);
-			int diagnostics = ClangIndex.clang_getNumDiagnostics(out.get(0));
-			for (int i = 0; i < diagnostics; i++) {
-				long diagnostic = ClangIndex.clang_getDiagnostic(out.get(0), i);
-				ClangIndex.clang_formatDiagnostic(
-						diagnostic, ClangIndex.clang_defaultDiagnosticDisplayOptions(),
-						cxString
+			int numDiagnostics = ClangIndex.clang_getNumDiagnostics(translationUnit);
+			for (int i = 0; i < numDiagnostics; i++) {
+				MemorySegment diagnostic = ClangIndex.clang_getDiagnostic(out.get(0), i);
+
+				CXString cxString = ClangIndex.clang_formatDiagnostic(
+						arena,
+						diagnostic,
+						ClangIndex.clang_defaultDiagnosticDisplayOptions()
 				);
+
 				System.err.println(ClangIndex.clang_getCString(cxString));
+
+				ClangIndex.clang_disposeString(cxString);
 				ClangIndex.clang_disposeDiagnostic(diagnostic);
 			}
 
-			CXType typeResult = CXType.calloc(stack);
-			CXCursor cursorResult = CXCursor.calloc(stack);
-
-			CXCursorVisitor visitor = new CXCursorVisitor() {
+			CXCursorVisitor visitor = new CXCursorVisitor(arena) {
 				@Override
-				public int invoke(CXCursor cursor, CXCursor parent, long client_data) {
-					int cursorKind = ClangIndex.clang_getCursorKind(cursor);
+				public int invoke(CXCursor cursor, CXCursor parent, MemorySegment client_data) {
+					try (Arena arena = Arena.ofConfined()) {
+						int cursorKind = ClangIndex.clang_getCursorKind(cursor);
 
-					ClangIndex.clang_getCursorSpelling(cursor, cxString);
-					String name = ClangIndex.clang_getCString(cxString);
+						CXString cursorSpelling = ClangIndex.clang_getCursorSpelling(arena, cursor);
+						String cursorName = ClangIndex.clang_getCString(cursorSpelling);
+						ClangIndex.clang_disposeString(cursorSpelling);
 
-					if (cursorKind == ClangIndex.CXCursor_FunctionDecl) {
-						functions.put(name, new NativeFunction(cursor, name, reportPlatformSpecificity));
-					} else if (cursorKind == ClangIndex.CXCursor_StructDecl) {
-						records.put(name, new NativeRecord(cursor, name, false, reportPlatformSpecificity));
-					} else if (cursorKind == ClangIndex.CXCursor_UnionDecl) {
-						records.put(name, new NativeRecord(cursor, name, true, reportPlatformSpecificity));
-					} else if (cursorKind == ClangIndex.CXCursor_EnumDecl) {
-						enums.put(name, new NativeEnum(cursor, name));
-					} else if (cursorKind == ClangIndex.CXCursor_VarDecl) {
-						if (ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult)) {
-							functionPointers.put(
-									name,
-									new NativeFunctionPointer(typeResult, cursorResult, name, reportPlatformSpecificity)
+						if (cursorKind == CXCursorKind.CX_CURSOR_FUNCTION_DECL) {
+							functions.put(
+									cursorName, new NativeFunction(cursorName, cursor, reportPlatformSpecificity)
 							);
-						} else {
-							variables.put(name, new NativeVariable(name));
-						}
-					} else if (cursorKind == ClangIndex.CXCursor_TypedefDecl) {
-						if (ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult)) {
-							functionPointers.put(
-									name,
-									new NativeFunctionPointer(typeResult, cursorResult, name, reportPlatformSpecificity)
+						} else if (cursorKind == CXCursorKind.CX_CURSOR_STRUCT_DECL) {
+							records.put(
+									cursorName, new NativeRecord(cursorName, cursor, false, reportPlatformSpecificity)
 							);
+						} else if (cursorKind == CXCursorKind.CX_CURSOR_UNION_DECL) {
+							records.put(
+									cursorName, new NativeRecord(cursorName, cursor, true, reportPlatformSpecificity)
+							);
+						} else if (cursorKind == CXCursorKind.CX_CURSOR_ENUM_DECL) {
+							enums.put(cursorName, new NativeEnum(cursorName, cursor));
+						} else if (cursorKind == CXCursorKind.CX_CURSOR_VAR_DECL) {
+							CXType typeResult = new CXType(arena);
+							CXCursor cursorResult = new CXCursor(arena);
+
+							if (ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult)) {
+								functionPointers.put(
+										cursorName,
+										new NativeFunctionPointer(
+												cursorName, typeResult, cursorResult, reportPlatformSpecificity
+										)
+								);
+							} else {
+								variables.put(cursorName, new NativeVariable(cursorName));
+							}
+						} else if (cursorKind == CXCursorKind.CX_CURSOR_TYPEDEF_DECL) {
+							CXType typeResult = new CXType(arena);
+							CXCursor cursorResult = new CXCursor(arena);
+
+							if (ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult)) {
+								functionPointers.put(
+										cursorName,
+										new NativeFunctionPointer(
+												cursorName, typeResult, cursorResult, reportPlatformSpecificity
+										)
+								);
+							}
+						} else if (cursorKind == CXCursorKind.CX_CURSOR_MACRO_DEFINITION) {
+							if (ClangIndex.clang_Cursor_isMacroFunctionLike(cursor) == 0)
+								macros.put(cursorName, new NativeMacro(cursorName, cursor, translationUnit));
 						}
-					} else if (cursorKind == ClangIndex.CXCursor_MacroDefinition) {
-						if (!ClangIndex.clang_Cursor_isMacroFunctionLike(cursor))
-							macros.put(name, new NativeMacro(name, cursor, translationUnit));
 					}
-					return ClangIndex.CXChildVisit_Continue;
+
+					return CXChildVisitResult.CX_CHILD_VISIT_CONTINUE;
 				}
 			};
 
-			CXCursor cursor = CXCursor.calloc(stack);
+			CXCursor translationUnitCursor = ClangIndex.clang_getTranslationUnitCursor(arena, translationUnit);
 
-			ClangIndex.clang_getTranslationUnitCursor(translationUnit, cursor);
-			ClangIndex.clang_visitChildren(cursor, visitor, 0);
+			ClangIndex.clang_visitChildren(translationUnitCursor, visitor, MemorySegment.NULL);
 			ClangIndex.clang_disposeTranslationUnit(translationUnit);
 			ClangIndex.clang_disposeIndex(index);
-
-			visitor.free();
 		}
 	}
 

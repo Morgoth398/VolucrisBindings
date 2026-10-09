@@ -7,10 +7,9 @@ import java.nio.file.Path;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 
-import org.lwjgl.llvm.ClangIndex;
-
 import volucris.bindings.generator.generation.Generator;
 import volucris.bindings.generator.parsing.HeaderFile;
+import volucris.bindings.libclang.enums.CXTranslationUnit_Flags;
 
 public class OpenGLGeneration {
 
@@ -25,7 +24,7 @@ public class OpenGLGeneration {
 				"-Isrc/main/resources/nativeSources/glad_no_extensions/include"
 		};
 
-		int options = ClangIndex.CXTranslationUnit_DetailedPreprocessingRecord;
+		int options = CXTranslationUnit_Flags.CX_TRANSLATION_UNIT_DETAILED_PREPROCESSING_RECORD;
 		
 		HeaderFile headerFile = new HeaderFile("src/main/resources/nativeSources/glad_no_extensions/include/glad/glad.h", options, arguments);
 		
@@ -39,7 +38,7 @@ public class OpenGLGeneration {
 				"-Isrc/main/resources/nativeSources/glad_extensions/include"
 		};
 
-		int options = ClangIndex.CXTranslationUnit_DetailedPreprocessingRecord;
+		int options = CXTranslationUnit_Flags.CX_TRANSLATION_UNIT_DETAILED_PREPROCESSING_RECORD;
 		
 		HeaderFile headerFile = new HeaderFile("src/main/resources/nativeSources/glad_extensions/include/glad/glad.h", options, arguments);
 		

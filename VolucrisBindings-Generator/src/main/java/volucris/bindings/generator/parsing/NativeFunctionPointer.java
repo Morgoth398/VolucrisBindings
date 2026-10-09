@@ -1,16 +1,19 @@
 package volucris.bindings.generator.parsing;
 
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXCursorVisitor;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.CXType;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
+import volucris.bindings.libclang.CXCursorVisitor;
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.enums.CXChildVisitResult;
+import volucris.bindings.libclang.enums.CXCursorKind;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXString;
+import volucris.bindings.libclang.structs.CXType;
 
 public class NativeFunctionPointer implements AbstractNativeFunction {
 
@@ -21,61 +24,85 @@ public class NativeFunctionPointer implements AbstractNativeFunction {
 
 	private final NativeType returnType;
 
-	public NativeFunctionPointer(CXType type, CXCursor cursor, String name, boolean reportPlatformSpecificity) {
+	public NativeFunctionPointer(String name, CXType type, CXCursor cursor, boolean reportPlatformSpecificity) {
 		this.name = name;
+		this.parameters = new ArrayList<NativeParameter>();
 
-		List<NativeParameter> parameters = new ArrayList<NativeParameter>();
+		try (Arena arena = Arena.ofConfined()) {
+			List<String> parameterNames = new ArrayList<String>();
 
-		ArrayList<String> parameterNames = new ArrayList<>();
-
-		CXCursorVisitor visitor = new CXCursorVisitor() {
-			@Override
-			public int invoke(CXCursor cursor, CXCursor parent, long client_data) {
-				if (ClangIndex.clang_getCursorKind(cursor) == ClangIndex.CXCursor_ParmDecl) {
-					try (MemoryStack stack = MemoryStack.stackPush()) {
-						CXString cxString = CXString.calloc(stack);
-						ClangIndex.clang_getCursorSpelling(cursor, cxString);
-						parameterNames.add(ClangIndex.clang_getCString(cxString));
+			CXCursorVisitor visitor = new CXCursorVisitor(arena) {
+				@Override
+				public int invoke(CXCursor cursor, CXCursor parent, MemorySegment client_data) {
+					if (ClangIndex.clang_getCursorKind(cursor) == CXCursorKind.CX_CURSOR_PARM_DECL) {
+						CXString cursorSpelling = ClangIndex.clang_getCursorSpelling(arena, cursor);
+						parameterNames.add(ClangIndex.clang_getCString(cursorSpelling));
+						ClangIndex.clang_disposeString(cursorSpelling);
 					}
+					return CXChildVisitResult.CX_CHILD_VISIT_CONTINUE;
 				}
-				return ClangIndex.CXChildVisit_Continue;
-			}
-		};
+			};
 
-		ClangIndex.clang_visitChildren(cursor, visitor, 0);
-		
-		visitor.free();
+			ClangIndex.clang_visitChildren(cursor, visitor, MemorySegment.NULL);
 
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			CXString cxString = CXString.calloc(stack);
-			ClangIndex.clang_Cursor_getRawCommentText(cursor, cxString);
-			comment = ParsingUtils.getCommentText(cxString);
+			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+			comment = ParsingUtils.getCommentText(rawCommentText);
+			ClangIndex.clang_disposeString(rawCommentText);
 
-			int numParameters = ClangIndex.clang_getNumArgTypes(type);
-			CXType argType = CXType.calloc(stack);
+			int numArguments = ClangIndex.clang_getNumArgTypes(type);
+			for (int i = 0; i < numArguments; i++) {
+				CXType argumentType = ClangIndex.clang_getArgType(arena, type, i);
 
-			for (int i = 0; i < numParameters; i++) {
-				ClangIndex.clang_getArgType(type, i, argType);
-				String paramName = i < parameterNames.size() 
-						? parameterNames.get(i).isBlank() ? "param" + i :  parameterNames.get(i) 
+				String parameterName = i < parameterNames.size() && !parameterNames.get(i).isBlank()
+						? parameterNames.get(i)
 						: "param" + i;
 
-				NativeParameter parameter = new NativeParameter(argType, paramName);
-				parameters.add(parameter);
+				CXCursor cursorResult = new CXCursor(arena);
+				CXType typeResult = new CXType(arena);
 
-				if (parameter.isPlatformSpecific() && reportPlatformSpecificity)
-					System.err.println(
-							"Function pointer (" + name + ") parameter is platform specific: " + parameter.toString()
-					);
+				final boolean isFunctionPointer = ParsingUtils
+						.isFunctionPointer(argumentType, cursorResult, typeResult);
+
+				if (isFunctionPointer) {
+					if (ParsingUtils.isFunctionPointerInlined(cursorResult)) {
+						parameters.add(
+								new FunctionPointerParameter(
+										cursorResult,
+										typeResult,
+										ParsingUtils.getFunctionPointerName(cursorResult, name),
+										parameterName,
+										reportPlatformSpecificity
+								)
+						);
+					} else {
+						parameters.add(new NativeParameter(argumentType, parameterName));
+					}
+				} else {
+					parameters.add(new NativeParameter(argumentType, parameterName));
+				}
 			}
 
-			CXType resultType = CXType.calloc(stack);
-			ClangIndex.clang_getResultType(type, resultType);
-			
+			CXType resultType = ClangIndex.clang_getResultType(arena, type);
+
 			returnType = new NativeType(resultType);
+
+			if (reportPlatformSpecificity) {
+				parameters.stream()
+						.filter(NativeParameter::isPlatformSpecific)
+						.forEach(parameter -> {
+							System.out.println(
+									"Function pointer (" + name + ") parameter is platform specific: "
+											+ parameter.toString()
+							);
+						});
+
+				if (returnType.isPlatformSpecific()) {
+					System.out.println(
+							"Function pointer (" + name + ") return type is platform specific: " + returnType.toString()
+					);
+				}
+			}
 		}
-		
-		this.parameters = Collections.unmodifiableList(parameters);
 	}
 
 	@Override
@@ -103,7 +130,7 @@ public class NativeFunctionPointer implements AbstractNativeFunction {
 
 	@Override
 	public List<NativeParameter> getParameters() {
-		return parameters;
+		return Collections.unmodifiableList(parameters);
 	}
 
 }

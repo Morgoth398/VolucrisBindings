@@ -1,14 +1,15 @@
 package volucris.bindings.generator.parsing;
 
-import java.nio.IntBuffer;
+import java.lang.foreign.Arena;
 
-import org.lwjgl.PointerBuffer;
-import org.lwjgl.llvm.CXCursor;
-import org.lwjgl.llvm.CXSourceRange;
-import org.lwjgl.llvm.CXString;
-import org.lwjgl.llvm.CXToken;
-import org.lwjgl.llvm.ClangIndex;
-import org.lwjgl.system.MemoryStack;
+import volucris.bindings.core.NativeIntArray;
+import volucris.bindings.core.NativePointerArray;
+import volucris.bindings.core.NativeStructArray;
+import volucris.bindings.libclang.CXTranslationUnit;
+import volucris.bindings.libclang.ClangIndex;
+import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXSourceRange;
+import volucris.bindings.libclang.structs.CXToken;
 
 public class NativeMacro {
 
@@ -16,40 +17,35 @@ public class NativeMacro {
 
 	private final String value;
 	
-	public NativeMacro(String name, CXCursor cursor, long translationUnit) {
+	public NativeMacro(String name, CXCursor cursor, CXTranslationUnit translationUnit) {
 		this.name = name;
 
-		try (MemoryStack stack = MemoryStack.stackPush()) {
-			CXSourceRange sourceRange = CXSourceRange.calloc(stack);
+		try (Arena arena = Arena.ofConfined()) {
+			CXSourceRange cursorExtent = ClangIndex.clang_getCursorExtent(arena, cursor);
 			
-			ClangIndex.clang_getCursorExtent(cursor, sourceRange);
+			NativePointerArray tokensAddr = new NativePointerArray(arena, 1);
+			NativeIntArray numTokens = new NativeIntArray(arena, 1);
 			
-			PointerBuffer pointerBuffer = stack.callocPointer(1);
-			IntBuffer numTokens = stack.callocInt(1);
+			ClangIndex.clang_tokenize(translationUnit, cursorExtent, tokensAddr, numTokens);
 			
-			ClangIndex.clang_tokenize(translationUnit, sourceRange, pointerBuffer, numTokens);
-			
-			CXToken.Buffer tokens = CXToken.create(pointerBuffer.get(0), numTokens.get(0));
+			NativeStructArray<CXToken> tokens = CXToken.array(tokensAddr.get(0));
 			
 			if (numTokens.get(0) < 2) {
 				value = null;
-				ClangIndex.clang_disposeTokens(translationUnit, tokens);
+				
+				ClangIndex.clang_disposeTokens(translationUnit.memorySegment(), tokens.memorySegment(), numTokens.get(0));
 				return;
 			}
 			
-			CXString cxString = CXString.calloc(stack);
-			
 			StringBuilder stringBuilder = new StringBuilder();
 			for (int i = 1; i < numTokens.get(0); i++) {
-				ClangIndex.clang_getTokenSpelling(translationUnit, tokens.get(i), cxString);
-				stringBuilder.append(ClangIndex.clang_getCString(cxString));
+				stringBuilder.append(ParsingUtils.getTokenSpelling(translationUnit, tokens.get(i)));
 			}
 			
-			ClangIndex.clang_disposeTokens(translationUnit, tokens);
+			ClangIndex.clang_disposeTokens(translationUnit.memorySegment(), tokens.memorySegment(), numTokens.get(0));
 			
 			value = stringBuilder.toString();
 		}
-
 	}
 
 	@Override
