@@ -7,8 +7,8 @@ import volucris.bindings.generator.generation.Modifier;
 
 public class MemorySegmentField extends Field {
 
-	public MemorySegmentField(String name, Modifier... modifiers) {
-		super(name, modifiers);
+	public MemorySegmentField(Modifier... modifiers) {
+		super("segment", modifiers);
 	}
 
 	@Override
@@ -19,6 +19,11 @@ public class MemorySegmentField extends Field {
 	@Override
 	public List<String> getRequiredImports() {
 		return List.of(MemorySegment.class.getCanonicalName());
+	}
+	
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.MEMORY_SEGMENT_FIELD;
 	}
 	
 }

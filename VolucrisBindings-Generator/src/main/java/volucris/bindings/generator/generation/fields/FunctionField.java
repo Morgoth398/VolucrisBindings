@@ -17,10 +17,15 @@ public class FunctionField extends Field {
 	public String getType() {
 		return "LazyConstant<MethodHandle>";
 	}
-	
+
 	@Override
 	public List<String> getRequiredImports() {
 		return List.of(MethodHandle.class.getCanonicalName());
 	}
-	
+
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.FUNCTION_FIELD;
+	}
+
 }

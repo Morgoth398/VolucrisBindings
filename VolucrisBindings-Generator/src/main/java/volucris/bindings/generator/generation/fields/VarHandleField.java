@@ -7,13 +7,13 @@ import volucris.bindings.generator.generation.Modifier;
 
 public class VarHandleField extends Field {
 
-	public VarHandleField(String structFieldName) {
-		String varHandleFieldName = String.join(
+	public VarHandleField(String memberName) {
+		String fieldName = String.join(
 				"",
-				structFieldName.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2").toUpperCase(),
+				memberName.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2").toUpperCase(),
 				"_HANDLE"
 		);
-		super(varHandleFieldName, Modifier.PUBLIC, Modifier.STATIC, Modifier.FINAL);
+		super(fieldName, Modifier.PUBLIC, Modifier.STATIC, Modifier.FINAL);
 	}
 
 	@Override
@@ -26,4 +26,9 @@ public class VarHandleField extends Field {
 		return List.of(VarHandle.class.getCanonicalName());
 	}
 
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.VAR_HANDLE_FIELD;
+	}
+	
 }

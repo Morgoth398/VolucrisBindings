@@ -29,4 +29,9 @@ public class StringField extends Field {
 		return List.of();
 	}
 
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.OTHER_FIELD;
+	}
+	
 }

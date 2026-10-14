@@ -119,11 +119,11 @@ public class HeaderFile {
 							);
 						} else if (cursorKind == CXCursorKind.CX_CURSOR_STRUCT_DECL) {
 							records.put(
-									cursorName, new NativeRecord(cursorName, cursor, false, reportPlatformSpecificity)
+									cursorName, new NativeRecord(cursorName, cursor, reportPlatformSpecificity)
 							);
 						} else if (cursorKind == CXCursorKind.CX_CURSOR_UNION_DECL) {
 							records.put(
-									cursorName, new NativeRecord(cursorName, cursor, true, reportPlatformSpecificity)
+									cursorName, new NativeRecord(cursorName, cursor, reportPlatformSpecificity)
 							);
 						} else if (cursorKind == CXCursorKind.CX_CURSOR_ENUM_DECL) {
 							enums.put(cursorName, new NativeEnum(cursorName, cursor));

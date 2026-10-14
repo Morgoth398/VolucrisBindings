@@ -102,14 +102,14 @@ public final class GeneratorUtils {
 		return stripPrefixesAndPostfixes(config, name, lowerCamelCase);
 	}
 
-	public static @Nullable String getJavadoc(String comment) {
-		if (comment == null) {
+	public static @Nullable String getJavadoc(@Nullable String nativeComment) {
+		if (nativeComment == null) {
 			return null;
 		}
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("/// ```\n");
-		comment.lines().forEach(line -> {
+		nativeComment.lines().forEach(line -> {
 			stringBuilder.append("/// ").append(line).append("\n");
 		});
 		stringBuilder.append("/// ```");
@@ -117,4 +117,8 @@ public final class GeneratorUtils {
 		return stringBuilder.toString();
 	}
 
+	public static String makeFirstCharacterLowerCase(String string) {
+		return Character.toLowerCase(string.charAt(0)) + string.substring(1);
+	}
+	
 }

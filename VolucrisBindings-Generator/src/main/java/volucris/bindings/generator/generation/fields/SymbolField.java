@@ -48,5 +48,9 @@ public class SymbolField extends Field {
 		return requiredImports;
 	}
 	
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.SYMBOL_FIELD;
+	}
 	
 }

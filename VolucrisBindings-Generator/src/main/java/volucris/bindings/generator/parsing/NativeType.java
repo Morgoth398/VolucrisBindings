@@ -78,7 +78,7 @@ public class NativeType {
 			case CXTypeKind.CX_TYPE_TYPEDEF -> {
 				CXCursor typeDeclaration = ClangIndex.clang_getTypeDeclaration(arena, type);
 				cursor.set(typeDeclaration);
-				
+
 				CXType underlyingType = ClangIndex.clang_getTypedefDeclUnderlyingType(arena, typeDeclaration);
 				return getType(arena, underlyingType, cursor, prevKind, pointerDepth);
 			}
@@ -86,12 +86,12 @@ public class NativeType {
 					CXTypeKind.CX_TYPE_CONSTANT_ARRAY,
 					CXTypeKind.CX_TYPE_VARIABLE_ARRAY,
 					CXTypeKind.CX_TYPE_DEPENDENT_SIZED_ARRAY -> {
-				long arrayCount = ClangIndex.clang_getArraySize(type);
+				long elementCount = ClangIndex.clang_getArraySize(type);
 
 				CXType arrayElementType = ClangIndex.clang_getArrayElementType(arena, type);
 				TypeResult typeResult = getType(arena, arrayElementType, cursor, NativeTypeKind.ARRAY, pointerDepth);
 
-				return new ArrayType(typeResult.typeKind(), typeResult, typeResult.typeName(), arrayCount);
+				return new ArrayType(typeResult.typeKind(), typeResult, typeResult.typeName(), elementCount);
 			}
 			case CXTypeKind.CX_TYPE_RECORD -> {
 				NativeTypeKind typeKind = prevKind == NativeTypeKind.POINTER
@@ -249,8 +249,9 @@ public class NativeType {
 	public record SimpleType(NativeTypeKind typeKind, String typeName) implements TypeResult {
 	}
 
-	public record ArrayType(NativeTypeKind elementKind, TypeResult elementType, String typeName, long count)
-			implements TypeResult {
+	public record ArrayType(
+			NativeTypeKind elementKind, TypeResult elementType, String typeName, long elementCount
+	) implements TypeResult {
 
 		public NativeTypeKind typeKind() {
 			return NativeTypeKind.ARRAY;

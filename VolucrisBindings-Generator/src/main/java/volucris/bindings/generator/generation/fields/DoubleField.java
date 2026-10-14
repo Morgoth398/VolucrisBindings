@@ -10,7 +10,7 @@ public class DoubleField extends Field {
 
 	public DoubleField(String name, String value, Modifier... modifiers) {
 		super(name, modifiers);
-		
+
 		this.value = value;
 	}
 
@@ -27,6 +27,11 @@ public class DoubleField extends Field {
 	@Override
 	public List<String> getRequiredImports() {
 		return List.of();
+	}
+
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.OTHER_FIELD;
 	}
 
 }

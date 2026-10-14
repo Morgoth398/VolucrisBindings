@@ -18,43 +18,33 @@ ${clazz.javadoc}
 <#assign modifiers = clazz.modifiers?join(" ")>
 ${modifiers} class ${desc.name}${clazz.classHeader} {
 
-    <#list clazz.fields as field>
-    <#if field.blankLineBefore>
+	<#list clazz.fields as fieldGroup>
+	<#list fieldGroup as field>
+	${field.modifiers?join(" ")} ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
+	</#list>
+	<#sep>
 
-    </#if>
-    ${field.modifiers?join(" ")} ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
-    <#if field.blankLineAfter>
+	</#sep>
+	</#list>
 
-    </#if>
-    </#list> 
-    <#list clazz.nestedStructureFields as field>
-    <#if field.blankLineBefore>
+	static {
+		//@formatter:off
+		<#list clazz.staticBlock.elements as element>
+		${element}
+		</#list>
+		//@formatter:on
+	}
 
-    </#if>
-    ${field.modifiers?join(" ")} ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
-    <#if field.blankLineAfter>
+	<#list clazz.constructors as constructor>
+	<#list constructor.source as line>
+	${line}
+	</#list>
+	<#sep>
 
-    </#if>
-    </#list>
+	</#sep>
+	</#list>
 
-    static {
-        //@formatter:off
-        <#list clazz.staticBlock.elements as element>
-        ${element}
-        </#list>
-        //@formatter:on
-    }
-
-    <#list clazz.constructors as constructor>
-    <#list constructor.source as line>
-    ${line}
-    </#list>
-    <#sep>
-    
-    </#sep>
-    </#list>
-
-    <#list clazz.methods as method>
+	<#list clazz.methods as method>
     <#list method.source as line>
     ${line}
     </#list>
@@ -62,5 +52,13 @@ ${modifiers} class ${desc.name}${clazz.classHeader} {
     
     </#sep>
     </#list>
+
+	<#list clazz.nestedClasses as nestedClass>
+	<#list nestedClass?lines as line>
+	${line}
+	</#list>
+    <#sep>
     
+    </#sep>
+	</#list>
 }

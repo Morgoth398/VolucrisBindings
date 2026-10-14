@@ -30,4 +30,9 @@ public class RecordLayoutField extends Field {
 		);
 	}
 
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.RECORD_LAYOUT_FIELD;
+	}
+	
 }

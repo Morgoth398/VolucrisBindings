@@ -6,13 +6,10 @@ import org.jspecify.annotations.Nullable;
 import volucris.bindings.generator.generation.Modifier;
 
 public abstract class Field {
-
+	
 	private final List<Modifier> modifiers;
-
+	
 	private final String name;
-
-	private boolean blankLineBefore;
-	private boolean blankLineAfter;
 
 	public Field(String name, Modifier... modifiers) {
 		this.name = name;
@@ -39,21 +36,11 @@ public abstract class Field {
 	public abstract String getType();
 
 	public abstract List<String> getRequiredImports();
-
-	public void setBlankLineBefore(boolean value) {
-		blankLineBefore = value;
-	}
-
-	public boolean getBlankLineBefore() {
-		return blankLineBefore;
-	}
-
-	public void setBlankLineAfter(boolean value) {
-		blankLineAfter = value;
-	}
-
-	public boolean getBlankLineAfter() {
-		return blankLineAfter;
+	
+	public abstract FieldCategory getFieldCategory();
+	
+	public List<String> getRequiredStaticImports() {
+		return List.of();
 	}
 
 }

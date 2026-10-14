@@ -8,17 +8,20 @@ import java.util.List;
 
 import org.jspecify.annotations.Nullable;
 
-import volucris.bindings.libclang.CXCursorVisitor;
+import volucris.bindings.core.NativeIntArray;
+import volucris.bindings.core.NativePointerArray;
+import volucris.bindings.libclang.CXFieldVisitor;
 import volucris.bindings.libclang.ClangIndex;
-import volucris.bindings.libclang.enums.CXChildVisitResult;
 import volucris.bindings.libclang.enums.CXCursorKind;
+import volucris.bindings.libclang.enums.CXVisitorResult;
 import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXSourceLocation;
 import volucris.bindings.libclang.structs.CXString;
 import volucris.bindings.libclang.structs.CXType;
 
 public class NativeRecord {
 
-	private final List<NativeField> fields;
+	private final List<NativeMember> members;
 
 	private final String name;
 	private final String comment;
@@ -28,71 +31,82 @@ public class NativeRecord {
 	private final long alignment;
 	private final long size;
 
-	public NativeRecord(String name, CXCursor cursor, boolean isUnion, boolean reportPlatformSpecificity) {
+	public NativeRecord(String name, CXCursor recordCursor, boolean reportPlatformSpecificity) {
 		this.name = name;
-		this.isUnion = isUnion;
+		this.isUnion = ClangIndex.clang_getCursorKind(recordCursor) == CXCursorKind.CX_CURSOR_UNION_DECL;
 
-		List<NativeField> fields = new ArrayList<NativeField>();
+		List<NativeMember> members = new ArrayList<NativeMember>();
 
 		try (Arena arena = Arena.ofConfined()) {
-			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
+			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, recordCursor);
 			comment = ParsingUtils.getCommentText(rawCommentText);
 			ClangIndex.clang_disposeString(rawCommentText);
 
-			CXCursorVisitor visitor = new CXCursorVisitor(arena) {
+			CXFieldVisitor visitor = new CXFieldVisitor(arena) {
 				@Override
-				public int invoke(CXCursor cursor, CXCursor parent, MemorySegment client_data) {
+				public int invoke(CXCursor cursor, MemorySegment client_data) {
 					int cursorKind = ClangIndex.clang_getCursorKind(cursor);
 
-					if (cursorKind != CXCursorKind.CX_CURSOR_FIELD_DECL)
-						return CXChildVisitResult.CX_CHILD_VISIT_CONTINUE;
+					if (cursorKind == CXCursorKind.CX_CURSOR_FIELD_DECL) {
+						CXCursor cursorResult = new CXCursor(arena);
+						CXType typeResult = new CXType(arena);
 
-					final boolean isBitField = ClangIndex.clang_Cursor_isBitField(cursor) != 0;
-
-					CXCursor cursorResult = new CXCursor(arena);
-					CXType typeResult = new CXType(arena);
-
-					final boolean isFunctionPointer = ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult);
-
-					if (isBitField) {
-						fields.add(new BitField(cursor));
-					} else if (isFunctionPointer) {
-						if (ParsingUtils.isFunctionPointerInlined(cursorResult)) {
-							fields.add(
-									new FunctionPointerField(
+						if (ClangIndex.clang_Cursor_isBitField(cursor) != 0) {
+							members.add(new BitField(cursor));
+						} else if (ParsingUtils.isFunctionPointer(cursor, cursorResult, typeResult)) {
+							if (ParsingUtils.isFunctionPointerInlined(cursorResult)) {
+								members.add(
+										new FunctionPointerField(
+												cursorResult,
+												typeResult,
+												ParsingUtils.getFunctionPointerName(cursorResult, name),
+												reportPlatformSpecificity
+										)
+								);
+							} else {
+								members.add(new NativeField(cursor));
+							}
+						} else if (ParsingUtils.isUnnamedRecordField(cursor, cursorResult)) {
+							members.add(
+									new UnnamedRecordField(cursor, cursorResult, reportPlatformSpecificity)
+							);
+						} else if (ParsingUtils.isAnonymousRecordField(cursor, cursorResult)) {
+							members.add(
+									new AnonymousRecord(
+											cursor,
 											cursorResult,
-											typeResult,
-											ParsingUtils.getFunctionPointerName(cursorResult, name),
 											reportPlatformSpecificity
 									)
 							);
 						} else {
-							fields.add(new RecordField(cursor));
+							members.add(new NativeField(cursor));
 						}
-					} else {
-						fields.add(new RecordField(cursor));
 					}
 
-					return CXChildVisitResult.CX_CHILD_VISIT_CONTINUE;
+					return CXVisitorResult.CX_VISIT_CONTINUE;
 				}
 			};
 
-			ClangIndex.clang_visitChildren(cursor, visitor, MemorySegment.NULL);
+			ClangIndex.clang_Type_visitFields(
+					ClangIndex.clang_getCursorType(arena, recordCursor),
+					visitor,
+					MemorySegment.NULL
+			);
 
-			CXType cursorType = ClangIndex.clang_getCursorType(arena, cursor);
+			CXType cursorType = ClangIndex.clang_getCursorType(arena, recordCursor);
 
 			this.size = ClangIndex.clang_Type_getSizeOf(cursorType);
 			this.alignment = ClangIndex.clang_Type_getAlignOf(cursorType);
 
-			if (fields.size() == 0) {
-				this.fields = List.of();
+			if (members.size() == 0) {
+				this.members = List.of();
 				return;
 			}
 
-			boolean containsBitFields = fields.stream().filter(BitField.class::isInstance).count() > 0;
+			boolean containsBitFields = members.stream().filter(BitField.class::isInstance).count() > 0;
 
 			if (containsBitFields) {
-				List<NativeField> updatedFields = handleBitFields(fields);
+				List<NativeMember> updatedFields = handleBitFields(members);
 
 				if (!isUnion) {
 					handleStructPadding(updatedFields);
@@ -100,19 +114,19 @@ public class NativeRecord {
 					handleUnionPadding(updatedFields);
 				}
 
-				this.fields = Collections.unmodifiableList(updatedFields);
+				this.members = Collections.unmodifiableList(updatedFields);
 			} else {
 				if (!isUnion) {
-					handleStructPadding(fields);
+					handleStructPadding(members);
 				} else {
-					handleUnionPadding(fields);
+					handleUnionPadding(members);
 				}
-					
-				this.fields = Collections.unmodifiableList(fields);
+
+				this.members = Collections.unmodifiableList(members);
 			}
 
 			if (reportPlatformSpecificity) {
-				this.fields.stream()
+				this.members.stream()
 						.filter(NativeType.class::isInstance)
 						.map(NativeType.class::cast)
 						.filter(NativeType::isPlatformSpecific)
@@ -125,17 +139,17 @@ public class NativeRecord {
 		}
 	}
 
-	private List<NativeField> handleBitFields(List<NativeField> fields) {
-		List<NativeField> updatedFields = new ArrayList<NativeField>(fields.size());
+	private List<NativeMember> handleBitFields(List<NativeMember> members) {
+		List<NativeMember> updatedFields = new ArrayList<NativeMember>(members.size());
 
 		List<BitField> bitFieldGroup = new ArrayList<BitField>();
 
 		int bitFieldIndex = 0;
 
-		for (int i = 0; i < fields.size(); i++) {
-			NativeField field = fields.get(i);
+		for (int i = 0; i < members.size(); i++) {
+			NativeMember member = members.get(i);
 
-			if (field instanceof BitField bitField) {
+			if (member instanceof BitField bitField) {
 				boolean zeroWidth = bitField.width == 0;
 
 				boolean createNewGroup;
@@ -169,7 +183,7 @@ public class NativeRecord {
 					bitFieldGroup.clear();
 				}
 
-				updatedFields.add(field);
+				updatedFields.add(member);
 			}
 		}
 
@@ -181,8 +195,8 @@ public class NativeRecord {
 		return updatedFields;
 	}
 
-	private RecordField getBitFieldGroupField(List<BitField> bitFieldGroup, int bitFieldIndex) {
-		RecordField field = new RecordField(bitFieldGroup.getFirst(), "bitFields" + bitFieldIndex);
+	private NativeField getBitFieldGroupField(List<BitField> bitFieldGroup, int bitFieldIndex) {
+		NativeField field = new NativeField(bitFieldGroup.getFirst(), "bitFields" + bitFieldIndex);
 
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("All bit fields contained in this field with their bit width:\n");
@@ -199,25 +213,28 @@ public class NativeRecord {
 		return (value / align) * align;
 	}
 
-	private void handleStructPadding(List<NativeField> fields) {
-		for (int i = 0; i < fields.size() - 1; i++) {
-			TypedField currentField = (TypedField) fields.get(i);
-			TypedField nextField = (TypedField) fields.get(i + 1);
+	private void handleStructPadding(List<NativeMember> members) {
+		if (members.stream().anyMatch(Padding.class::isInstance))
+			throw new RuntimeException("No padding memebers should be present at this point.");
+
+		for (int i = 0; i < members.size() - 1; i++) {
+			NativeMember currentField = members.get(i);
+			NativeMember nextField = members.get(i + 1);
 
 			long padding = nextField.getOffset() - (currentField.getOffset() + currentField.getSize());
 
 			if (padding > 0) {
-				fields.add(i + 1, new PaddingField(padding));
+				members.add(i + 1, new Padding(padding, currentField.getOffset() + currentField.getSize()));
 				i += 1;
 			}
 		}
 
-		TypedField lastField = (TypedField) fields.getLast();
+		NativeMember lastField = members.getLast();
 
 		long padding = size - (lastField.getOffset() + lastField.getSize());
 
 		if (padding > 0)
-			fields.add(new PaddingField(padding));
+			members.add(new Padding(padding, lastField.getOffset() + lastField.getSize()));
 	}
 
 	/// The size of an union is rounded up to a multiple of its alignment in C,
@@ -226,14 +243,17 @@ public class NativeRecord {
 	/// As a union layout is only as large as its largest member in the FFM API
 	/// one padding field with the full size of the union is added to avoid
 	/// a memory mismatch.
-	private void handleUnionPadding(List<NativeField> fields) {
-		long maxFieldSize = fields.stream().mapToLong(NativeField::getSize).max().getAsLong();
+	private void handleUnionPadding(List<NativeMember> members) {
+		if (members.stream().anyMatch(Padding.class::isInstance))
+			throw new RuntimeException("No padding memebers should be present at this point.");
+
+		long maxFieldSize = members.stream().mapToLong(NativeMember::getSize).max().getAsLong();
 
 		if (size > maxFieldSize) {
-			fields.add(new PaddingField(size));
+			members.add(new Padding(size, 0));
 		}
 	}
-	
+
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
@@ -242,22 +262,26 @@ public class NativeRecord {
 		stringBuilder.append(", Size: ").append(size);
 		stringBuilder.append(", Alignment: ").append(alignment);
 		stringBuilder.append(", Fields: ");
-		fields.forEach(field -> stringBuilder.append(field).append(", "));
+		members.forEach(field -> stringBuilder.append(field).append(", "));
 		return stringBuilder.toString();
 	}
 
-	public List<NativeField> getFields() {
-		return fields;
+	public int getMembersCount() {
+		return members.size();
+	}
+
+	public List<NativeMember> getMembers() {
+		return members;
 	}
 
 	public int getFunctionPointerFieldsCount() {
-		return (int) fields.stream()
+		return (int) members.stream()
 				.filter(FunctionPointerField.class::isInstance)
 				.count();
 	}
 
 	public List<FunctionPointerField> getFunctionPointerFields() {
-		return fields.stream()
+		return members.stream()
 				.filter(FunctionPointerField.class::isInstance)
 				.map(FunctionPointerField.class::cast)
 				.toList();
@@ -283,27 +307,31 @@ public class NativeRecord {
 		return isUnion;
 	}
 
-	public static interface NativeField {
+	/// Anything occupying space in a record.
+	public static sealed interface NativeMember permits Padding, AnonymousRecord, NamedNativeMember {
 		long getSize();
+
+		long getOffset();
 	}
 
-	public static interface TypedField extends NativeField {
+	/// A [NativeMember] that has a name.
+	public static sealed interface NamedNativeMember extends NativeMember permits NativeField {
 		String getName();
 
 		@Nullable
 		String getComment();
 
 		long getAlignment();
-
-		long getOffset();
 	}
 
-	public static class PaddingField implements NativeField {
+	public static final class Padding implements NativeMember {
 
 		private final long size;
+		private final long offset;
 
-		public PaddingField(long size) {
+		public Padding(long size, long offset) {
 			this.size = size;
+			this.offset = offset;
 		}
 
 		@Override
@@ -316,9 +344,72 @@ public class NativeRecord {
 			return size;
 		}
 
+		@Override
+		public long getOffset() {
+			return offset;
+		}
+
 	}
 
-	public static class RecordField extends NativeType implements TypedField {
+	/// @see ParsingUtils#isAnonymousRecordField(CXCursor, CXCursor)
+	public static final class AnonymousRecord implements NativeMember {
+
+		private final NativeRecord nativeRecord;
+
+		private final String name;
+
+		private final long offset;
+
+		public AnonymousRecord(
+				CXCursor fieldCursor, CXCursor anonymousRecordCursor, boolean reportPlatformSpecificity
+		) {
+			try (Arena arena = Arena.ofConfined()) {
+				CXSourceLocation sourceLocation = ClangIndex.clang_getCursorLocation(arena, fieldCursor);
+
+				NativePointerArray file = new NativePointerArray(arena, 1);
+
+				NativeIntArray line = new NativeIntArray(arena, 1);
+				NativeIntArray column = new NativeIntArray(arena, 1);
+				NativeIntArray offset = new NativeIntArray(arena, 1);
+
+				ClangIndex.clang_getSpellingLocation(sourceLocation, file, line, column, offset);
+
+				this.name = "$anon$" + line.get(0) + ":" + column.get(0);
+
+				this.nativeRecord = new NativeRecord(name, anonymousRecordCursor, reportPlatformSpecificity);
+
+				this.offset = ClangIndex.clang_Cursor_getOffsetOfField(fieldCursor) / 8;
+			}
+		}
+
+		@Override
+		public String toString() {
+			return "Anonymous Record( Offset: " + offset + ", " + nativeRecord.toString() + ")";
+		}
+
+		/// This return an artificial name for this anonymous record.
+		public String getArtificalName() {
+			return name;
+		}
+
+		@Override
+		public long getSize() {
+			return nativeRecord.getSize();
+		}
+
+		@Override
+		public long getOffset() {
+			return offset;
+		}
+
+		public NativeRecord getNativeRecord() {
+			return nativeRecord;
+		}
+
+	}
+
+	public static sealed class NativeField extends NativeType implements NamedNativeMember
+			permits FunctionPointerField, UnnamedRecordField, BitField {
 
 		private final String name;
 
@@ -328,7 +419,7 @@ public class NativeRecord {
 
 		private String comment;
 
-		public RecordField(CXCursor cursor) {
+		public NativeField(CXCursor cursor) {
 			super(cursor);
 
 			try (Arena arena = Arena.ofConfined()) {
@@ -347,7 +438,7 @@ public class NativeRecord {
 			}
 		}
 
-		public RecordField(BitField bitField, String name) {
+		public NativeField(BitField bitField, String name) {
 			super(bitField);
 
 			this.name = name;
@@ -393,7 +484,7 @@ public class NativeRecord {
 	}
 
 	/// This class represents a field that is an inlined function pointer.
-	public static class FunctionPointerField extends RecordField {
+	public static final class FunctionPointerField extends NativeField {
 
 		private final NativeFunctionPointer functionPointer;
 
@@ -424,7 +515,37 @@ public class NativeRecord {
 
 	}
 
-	private static class BitField extends RecordField {
+	/// @see ParsingUtils#isUnnamedRecordField(CXCursor, CXCursor)
+	public static final class UnnamedRecordField extends NativeField {
+
+		private final NativeRecord nativeRecord;
+
+		public UnnamedRecordField(
+				CXCursor fieldCursor,
+				CXCursor unnamedRecordCursor,
+				boolean reportPlatformSpecificity
+		) {
+			super(fieldCursor);
+
+			this.nativeRecord = new NativeRecord(
+					Character.toUpperCase(getName().charAt(0)) + getName().substring(1),
+					unnamedRecordCursor,
+					reportPlatformSpecificity
+			);
+		}
+
+		public NativeRecord getNativeRecord() {
+			return nativeRecord;
+		}
+
+		@Override
+		public String toString() {
+			return super.toString() + ", " + nativeRecord.toString();
+		}
+
+	}
+
+	private static final class BitField extends NativeField {
 
 		private final long bitOffset;
 		private final long typeSize; // in bits

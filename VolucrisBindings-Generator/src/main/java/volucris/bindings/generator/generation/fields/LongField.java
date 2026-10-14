@@ -10,7 +10,7 @@ public class LongField extends Field {
 
 	public LongField(String name, String value, Modifier... modifiers) {
 		super(name, modifiers);
-		
+
 		this.value = value;
 	}
 
@@ -20,13 +20,18 @@ public class LongField extends Field {
 	}
 
 	@Override
-	public String getValue() {		
+	public String getValue() {
 		return value.isEmpty() ? value : value + "L";
 	}
 
 	@Override
 	public List<String> getRequiredImports() {
 		return List.of();
+	}
+
+	@Override
+	public FieldCategory getFieldCategory() {
+		return FieldCategory.OTHER_FIELD;
 	}
 
 }

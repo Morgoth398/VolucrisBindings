@@ -35,7 +35,7 @@ public final class ParsingUtils {
 	public static @Nullable String getCursorSpelling(CXCursor cursor) {
 		try (Arena arena = Arena.ofConfined()) {
 			CXString cursorSpelling = ClangIndex.clang_getCursorSpelling(arena, cursor);
-			
+
 			try {
 				return ClangIndex.clang_getCString(cursorSpelling);
 			} finally {
@@ -43,11 +43,11 @@ public final class ParsingUtils {
 			}
 		}
 	}
-	
+
 	public static @Nullable String getTypeSpelling(CXType type) {
 		try (Arena arena = Arena.ofConfined()) {
 			CXString typeSpelling = ClangIndex.clang_getTypeSpelling(arena, type);
-			
+
 			try {
 				return ClangIndex.clang_getCString(typeSpelling);
 			} finally {
@@ -55,11 +55,11 @@ public final class ParsingUtils {
 			}
 		}
 	}
-	
+
 	public static @Nullable String getTokenSpelling(CXTranslationUnit translationUnit, CXToken token) {
 		try (Arena arena = Arena.ofConfined()) {
 			CXString tokenSpelling = ClangIndex.clang_getTokenSpelling(arena, translationUnit, token);
-			
+
 			try {
 				return ClangIndex.clang_getCString(tokenSpelling);
 			} finally {
@@ -67,7 +67,7 @@ public final class ParsingUtils {
 			}
 		}
 	}
-	
+
 	/// Returns the spelling for the type with its top-level qualifiers removed.
 	/// 
 	/// For example:
@@ -79,7 +79,7 @@ public final class ParsingUtils {
 		try (Arena arena = Arena.ofConfined()) {
 			CXType unqualifiedType = ClangIndex.clang_getUnqualifiedType(arena, type);
 			CXString typeSpelling = ClangIndex.clang_getTypeSpelling(arena, unqualifiedType);
-			
+
 			try {
 				return ClangIndex.clang_getCString(typeSpelling);
 			} finally {
@@ -87,13 +87,13 @@ public final class ParsingUtils {
 			}
 		}
 	}
-	
+
 	/// Fetches the cursor for the types declaration and returns its spelling.
 	public static @Nullable String getTypeDeclarationCursorSpelling(CXType type) {
 		try (Arena arena = Arena.ofConfined()) {
 			CXCursor typeDeclaration = ClangIndex.clang_getTypeDeclaration(arena, type);
 			CXString cursorSpelling = ClangIndex.clang_getCursorSpelling(arena, typeDeclaration);
-			
+
 			try {
 				return ClangIndex.clang_getCString(cursorSpelling);
 			} finally {
@@ -101,7 +101,7 @@ public final class ParsingUtils {
 			}
 		}
 	}
-	
+
 	/// Checks if the given cursor represents a function pointer.
 	/// 
 	/// If true, the type of the function pointer will be stored in `typeResult`
@@ -133,7 +133,7 @@ public final class ParsingUtils {
 			);
 		}
 	}
-	
+
 	private static boolean isFunctionPointer(Arena arena, CXType type, CXCursor cursorResult, CXType typeResult) {
 		while (type.kind() == CXTypeKind.CX_TYPE_ELABORATED) {
 			type = ClangIndex.clang_Type_getNamedType(arena, type);
@@ -173,7 +173,7 @@ public final class ParsingUtils {
 	public static boolean isFunctionPointerInlined(CXCursor functionPointerCursor) {
 		return ClangIndex.clang_getCursorKind(functionPointerCursor) != CXCursorKind.CX_CURSOR_TYPEDEF_DECL;
 	}
-	
+
 	/// Returns the name for the given function pointer cursor.
 	/// 
 	/// This method should only be called when [#isFunctionPointer(CXCursor, CXCursor, CXType)]
@@ -183,7 +183,7 @@ public final class ParsingUtils {
 	public static String getFunctionPointerName(CXCursor functionPointerCursor, @Nullable String prefix) {
 		if (prefix != null && !isFunctionPointerInlined(functionPointerCursor))
 			throw new RuntimeException("Prefix passed for naming a function pointer that is not inlined.");
-		
+
 		try (Arena arena = Arena.ofConfined()) {
 			CXString cursorSpelling = ClangIndex.clang_getCursorSpelling(arena, functionPointerCursor);
 			try {
@@ -194,6 +194,137 @@ public final class ParsingUtils {
 				ClangIndex.clang_disposeString(cursorSpelling);
 			}
 		}
+	}
+
+	/// Checks if the given cursor is a field whose type is an unnamed record.
+	/// (A struct or union with no tag, declared inline with a declarator).
+	/// 
+	/// If true, the declaration cursor of the record is copied into `cursorResult`.
+	/// 
+	/// ```
+	/// struct Example {
+	///     struct {
+	///         int a;
+	///         int b;
+	///     } named;  	// Unnamed record field
+	///
+	///     struct {
+	///         int x;
+	///         int y;
+	///     };         	// Anonymous record field
+	/// };
+	/// ```
+	public static boolean isUnnamedRecordField(CXCursor cursor, CXCursor cursorResult) {
+		try (Arena arena = Arena.ofConfined()) {
+
+			if (ClangIndex.clang_getCursorKind(cursor) != CXCursorKind.CX_CURSOR_FIELD_DECL)
+				return false;
+
+			CXType cursorType = ClangIndex.clang_getCursorType(arena, cursor);
+			CXCursor typeDeclaration = ClangIndex.clang_getTypeDeclaration(arena, cursorType);
+
+			if (ClangIndex.clang_Cursor_isAnonymous(typeDeclaration) == 0)
+				return false;
+			if (ClangIndex.clang_Cursor_isAnonymousRecordDecl(typeDeclaration) != 0)
+				return false;
+
+			int cursorKind = ClangIndex.clang_getCursorKind(typeDeclaration);
+
+			boolean isStruct = cursorKind == CXCursorKind.CX_CURSOR_STRUCT_DECL;
+			boolean isUnion = cursorKind == CXCursorKind.CX_CURSOR_UNION_DECL;
+
+			if (!isStruct && !isUnion)
+				return false;
+
+			cursorResult.set(typeDeclaration);
+			return true;
+		}
+	}
+
+	/// Checks if the given cursor is a field whose type is an anonymous record.
+	/// (a struct or union with no tag and no declarator).
+	///
+	/// If true, the declaration cursor of the record is copied into `cursorResult`.
+	/// 
+	/// ```
+	/// struct Example {
+	///     struct {
+	///         int a;
+	///         int b;
+	///     } named;  	// Unnamed record field
+	///
+	///     struct {
+	///         int x;
+	///         int y;
+	///     };         	// Anonymous record field
+	/// };
+	/// ```
+	public static boolean isAnonymousRecordField(CXCursor cursor, CXCursor cursorResult) {
+		try (Arena arena = Arena.ofConfined()) {
+
+			if (ClangIndex.clang_getCursorKind(cursor) != CXCursorKind.CX_CURSOR_FIELD_DECL) {
+				if (isAnonymousRecord(cursorResult)) {
+					cursorResult.set(cursor);
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+			CXType cursorType = ClangIndex.clang_getCursorType(arena, cursor);
+			CXCursor typeDeclaration = ClangIndex.clang_getTypeDeclaration(arena, cursorType);
+
+			if (ClangIndex.clang_Cursor_isAnonymous(typeDeclaration) == 0)
+				return false;
+			if (ClangIndex.clang_Cursor_isAnonymousRecordDecl(typeDeclaration) == 0)
+				return false;
+
+			int cursorKind = ClangIndex.clang_getCursorKind(typeDeclaration);
+
+			boolean isStruct = cursorKind == CXCursorKind.CX_CURSOR_STRUCT_DECL;
+			boolean isUnion = cursorKind == CXCursorKind.CX_CURSOR_UNION_DECL;
+
+			if (!isStruct && !isUnion)
+				return false;
+
+			cursorResult.set(typeDeclaration);
+			return true;
+		}
+	}
+
+	/// Checks if the given cursor is the declaration of an anonymous record.
+	/// (a struct or union with no tag and no declarator).
+	///
+	/// If true, the declaration cursor of the record is copied into `cursorResult`.
+	/// 
+	/// 
+	/// ```
+	/// struct Example {
+	///     struct {
+	///         int a;
+	///         int b;
+	///     } named;  	// Unnamed record field
+	///
+	///     struct {
+	///         int x;
+	///         int y;
+	///     };         	// Anonymous record field
+	/// };
+	/// ```
+	private static boolean isAnonymousRecord(CXCursor cursor) {
+
+		if (ClangIndex.clang_Cursor_isAnonymous(cursor) == 0)
+			return false;
+
+		int cursorKind = ClangIndex.clang_getCursorKind(cursor);
+
+		boolean isStruct = cursorKind == CXCursorKind.CX_CURSOR_STRUCT_DECL;
+		boolean isUnion = cursorKind == CXCursorKind.CX_CURSOR_UNION_DECL;
+
+		if (!isStruct && !isUnion)
+			return false;
+
+		return ClangIndex.clang_Cursor_isAnonymousRecordDecl(cursor) != 0;
 	}
 
 }

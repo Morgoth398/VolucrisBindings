@@ -2,15 +2,11 @@ package volucris.bindings.generator.generation;
 
 import java.io.IOException;
 import java.io.StringWriter;
-import java.lang.foreign.Arena;
-import java.lang.foreign.MemorySegment;
-import java.lang.foreign.ValueLayout;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +18,6 @@ import com.github.javaparser.ast.CompilationUnit;
 import org.jspecify.annotations.Nullable;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
-import volucris.bindings.core.NativeStructArray;
 import volucris.bindings.generator.config.CallbacksConfig;
 import volucris.bindings.generator.config.ClassConfig;
 import volucris.bindings.generator.config.EnumsConfig;
@@ -38,24 +33,19 @@ import volucris.bindings.generator.config.ClassConfig.SymbolPrefix;
 import volucris.bindings.generator.config.EnumsConfig.EnumConfig;
 import volucris.bindings.generator.generation.constructors.MemorySegmentConstructor;
 import volucris.bindings.generator.generation.constructors.PrivateConstructor;
-import volucris.bindings.generator.generation.fields.DoubleField;
-import volucris.bindings.generator.generation.fields.Field;
-import volucris.bindings.generator.generation.fields.FloatField;
 import volucris.bindings.generator.generation.fields.FunctionField;
-import volucris.bindings.generator.generation.fields.RecordLayoutField;
-import volucris.bindings.generator.generation.fields.IntField;
-import volucris.bindings.generator.generation.fields.LongField;
 import volucris.bindings.generator.generation.fields.MemorySegmentField;
-import volucris.bindings.generator.generation.fields.StringField;
 import volucris.bindings.generator.generation.fields.SymbolField;
+import volucris.bindings.generator.generation.fields.macro.MacroDoubleField;
+import volucris.bindings.generator.generation.fields.macro.MacroFloatField;
+import volucris.bindings.generator.generation.fields.macro.MacroIntField;
+import volucris.bindings.generator.generation.fields.macro.MacroLongField;
+import volucris.bindings.generator.generation.fields.macro.MacroStringField;
 import volucris.bindings.generator.generation.methods.FunctionLoadingBuilder;
 import volucris.bindings.generator.generation.methods.MemorySegmentMethod;
-import volucris.bindings.generator.generation.methods.Method;
 import volucris.bindings.generator.generation.methods.NativeFunctionMethodsBuilder;
 import volucris.bindings.generator.generation.methods.SymbolMethod;
-import volucris.bindings.generator.generation.record.NestedStructureFieldAccessorsBuilder;
-import volucris.bindings.generator.generation.record.RecordLayoutBuilder;
-import volucris.bindings.generator.generation.record.ScalarFieldAccessorsBuilder;
+import volucris.bindings.generator.generation.record.NativeRecordHandler;
 import volucris.bindings.generator.parsing.AbstractNativeFunction;
 import volucris.bindings.generator.parsing.HeaderFile;
 import volucris.bindings.generator.parsing.NativeEnum;
@@ -63,11 +53,6 @@ import volucris.bindings.generator.parsing.NativeFunction;
 import volucris.bindings.generator.parsing.NativeFunctionPointer;
 import volucris.bindings.generator.parsing.NativeMacro;
 import volucris.bindings.generator.parsing.NativeRecord;
-import volucris.bindings.generator.parsing.NativeRecord.RecordField;
-import volucris.bindings.generator.parsing.NativeRecord.TypedField;
-import volucris.bindings.generator.parsing.NativeType.ArrayType;
-import volucris.bindings.generator.parsing.NativeType.TypeResult;
-import volucris.bindings.generator.parsing.NativeTypeKind;
 
 public class Generator {
 
@@ -77,14 +62,8 @@ public class Generator {
 	private static final Template RAW_METHOD_TEMPLATE;
 	private static final Template TYPED_METHOD_TEMPLATE;
 	private static final Template SYMBOL_METHOD_TEMPLATE;
-	private static final Template RECORD_LAYOUT_TEMPLATE;
 	private static final Template FUNCTION_LOADING_TEMPLATE;
-	private static final Template VAR_HANDLE_METHOD_TEMPLATE;
-	private static final Template RECORD_CONSTRUCTOR_TEMPLATE;
 	private static final Template FUNCTION_CONSTRUCTOR_TEMPLATE;
-	private static final Template STRUCT_UTILITY_METHODS_TEMPLATE;
-	private static final Template NESTED_STRUCTURE_FIELD_METHOD_TEMPLATE;
-
 	private static final Configuration CONFIG;
 
 	private final GlobalConfig globalConfig;
@@ -92,7 +71,7 @@ public class Generator {
 	private final HeaderFile headerFile;
 
 	static {
-		CONFIG = new Configuration(Configuration.VERSION_2_3_34);
+		CONFIG = new Configuration(Configuration.VERSION_2_3_35);
 		CONFIG.setDefaultEncoding("UTF-8");
 		CONFIG.setClassForTemplateLoading(Generator.class, "/templates");
 
@@ -108,19 +87,9 @@ public class Generator {
 
 			SYMBOL_METHOD_TEMPLATE = CONFIG.getTemplate("SymbolMethodTemplate.ftl");
 
-			RECORD_LAYOUT_TEMPLATE = CONFIG.getTemplate("StructLayoutLoadingTemplate.ftl");
-
 			FUNCTION_LOADING_TEMPLATE = CONFIG.getTemplate("FunctionLoadingTemplate.ftl");
 
-			VAR_HANDLE_METHOD_TEMPLATE = CONFIG.getTemplate("VarHandleMethodTemplate.ftl");
-
-			RECORD_CONSTRUCTOR_TEMPLATE = CONFIG.getTemplate("RecordConstructorTemplate.ftl");
-
 			FUNCTION_CONSTRUCTOR_TEMPLATE = CONFIG.getTemplate("FunctionConstructorTemplate.ftl");
-
-			STRUCT_UTILITY_METHODS_TEMPLATE = CONFIG.getTemplate("StructUtilityMethodsTemplate.ftl");
-
-			NESTED_STRUCTURE_FIELD_METHOD_TEMPLATE = CONFIG.getTemplate("NestedStructureFieldMethodTemplate.ftl");
 		} catch (Exception e) {
 			throw new RuntimeException(e.getMessage());
 		}
@@ -168,7 +137,7 @@ public class Generator {
 			classConfig.getClassDescription().setIsStatic(false);
 		}
 
-		Clazz clazz = new Clazz(classConfig.getClassDescription(), classHasStruct);
+		TopLevelClazz clazz = new TopLevelClazz(classConfig.getClassDescription(), classHasStruct);
 		clazz.addImports(classConfig.getImports());
 		clazz.addStaticImports(classConfig.getStaticImports());
 
@@ -181,24 +150,30 @@ public class Generator {
 		handleSymbols(clazz, classConfig);
 		handleFunctions(clazz, classConfig);
 
-		boolean recordAdded = handleRecord(clazz, classConfig);
+		StructDescription structDescription = classConfig.getStructDescription();
 
-		if (clazz.getDescription().getIsStatic()) {
-			clazz.addConstructor(new PrivateConstructor(clazz.getDescription().getName()));
-		}
+		if (structDescription != null && structDescription.getName() != null) {
+			NativeRecord nativeRecord = headerFile.getRecord(structDescription.getName());
 
-		if (!clazz.getDescription().getIsStatic() && !recordAdded) {
-			clazz.updateLastField(field -> field.setBlankLineAfter(true));
-			clazz.addField(new MemorySegmentField("segment", Modifier.PRIVATE, Modifier.FINAL));
+			if (nativeRecord == null)
+				throw new RuntimeException("Record not found: " + structDescription.getName());
 
-			clazz.addConstructor(
-					new MemorySegmentConstructor(
-							clazz.getDescription().getName(),
-							clazz.getDescription().getParentHasSegmentConstructor()
-					)
-			);
+			new NativeRecordHandler(clazz, structDescription, nativeRecord, globalConfig);
+		} else {
+			if (!clazz.getDescription().getIsStatic()) {
+				clazz.addField(new MemorySegmentField(Modifier.PRIVATE, Modifier.FINAL));
 
-			clazz.addMethod(new MemorySegmentMethod());
+				clazz.addConstructor(
+						new MemorySegmentConstructor(
+								clazz.getDescription().getName(),
+								clazz.getDescription().getParentHasSegmentConstructor()
+						)
+				);
+
+				clazz.addMethod(new MemorySegmentMethod());
+			} else {
+				clazz.addConstructor(new PrivateConstructor(clazz.getDescription().getName()));
+			}
 		}
 
 		try {
@@ -258,7 +233,7 @@ public class Generator {
 		}
 	}
 
-	private void handleMacros(Clazz clazz, ClassConfig classConfig) {
+	private void handleMacros(TopLevelClazz clazz, ClassConfig classConfig) {
 		List<MacroNamePrefix> macroPrefixes = classConfig.getMacroNamePrefixes();
 		List<MacroName> macroNames = classConfig.getMacroNames();
 
@@ -294,34 +269,32 @@ public class Generator {
 		});
 	}
 
-	private void addMacroField(Clazz clazz, String type, NativeMacro macro) {
+	private void addMacroField(TopLevelClazz clazz, String type, NativeMacro macro) {
 		Modifier[] modifiers = { Modifier.PUBLIC, Modifier.STATIC, Modifier.FINAL };
 
 		String name = GeneratorUtils.stripPrefixesAndPostfixes(globalConfig, macro.getName(), false);
 
 		if (type.equals("int")) {
-			clazz.addField(new IntField(name, macro.getValue(), modifiers));
+			clazz.addField(new MacroIntField(name, macro.getValue(), modifiers));
 		} else if (type.equals("long")) {
-			clazz.addField(new LongField(name, macro.getValue(), modifiers));
+			clazz.addField(new MacroLongField(name, macro.getValue(), modifiers));
 		} else if (type.equals("float")) {
-			clazz.addField(new FloatField(name, macro.getValue(), modifiers));
+			clazz.addField(new MacroFloatField(name, macro.getValue(), modifiers));
 		} else if (type.equals("double")) {
-			clazz.addField(new DoubleField(name, macro.getValue(), modifiers));
+			clazz.addField(new MacroDoubleField(name, macro.getValue(), modifiers));
 		} else if (type.equals("String")) {
-			clazz.addField(new StringField(name, macro.getValue(), modifiers));
+			clazz.addField(new MacroStringField(name, macro.getValue(), modifiers));
 		} else {
 			throw new RuntimeException("Invalid macro type: " + type);
 		}
 	}
 
-	private void handleSymbols(Clazz clazz, ClassConfig classConfig) {
+	private void handleSymbols(TopLevelClazz clazz, ClassConfig classConfig) {
 		List<Symbol> symbols = classConfig.getSymbols();
 		List<SymbolPrefix> symbolPrefixes = classConfig.getSymbolPrefixes();
 
 		if (symbols.isEmpty() && symbolPrefixes.isEmpty())
 			return;
-
-		clazz.updateLastField(field -> field.setBlankLineAfter(true));
 
 		headerFile.forEachVariable(variable -> {
 			for (SymbolPrefix prefix : symbolPrefixes) {
@@ -338,23 +311,20 @@ public class Generator {
 		}
 	}
 
-	private void addSymbol(Clazz clazz, Symbol symbol) {
+	private void addSymbol(TopLevelClazz clazz, Symbol symbol) {
 		String symbolName = GeneratorUtils.stripPrefixesAndPostfixes(globalConfig, symbol.getName(), false);
 		String symbolType = symbol.getType();
 
 		SymbolField field = new SymbolField(symbolName, symbolType);
 
 		clazz.addField(field);
-		clazz.getStaticBlock().addSymbolLoading(field, symbol);
+		clazz.getStaticBlock().addSymbolFieldInitialization(field, symbol);
 		clazz.addMethod(new SymbolMethod(SYMBOL_METHOD_TEMPLATE, field, symbol, symbolName));
 	}
 
-	private void handleFunctions(Clazz clazz, ClassConfig classConfig) {
+	private void handleFunctions(TopLevelClazz clazz, ClassConfig classConfig) {
 		List<NativeFunction> functions = getFunctions(classConfig);
 		List<NativeFunctionPointer> functionPointers = getFunctionPointers(classConfig);
-
-		if (!functions.isEmpty() || !functionPointers.isEmpty())
-			clazz.updateLastField(field -> field.setBlankLineAfter(true));
 
 		HashMap<String, NativeFunctionDescription> functionDescriptions = new HashMap<>();
 		HashMap<String, NativeFunctionDescription> functionPointerDescriptions = new HashMap<>();
@@ -441,7 +411,7 @@ public class Generator {
 	}
 
 	private void handleFunction(
-			Clazz clazz,
+			TopLevelClazz clazz,
 			ClassConfig classConfig,
 			AbstractNativeFunction nativeFunction,
 			NativeFunctionDescription functionDescription
@@ -533,129 +503,6 @@ public class Generator {
 				throw new RuntimeException(e);
 			}
 		}
-	}
-
-	private boolean handleRecord(Clazz clazz, ClassConfig classConfig) {
-		StructDescription structDescription = classConfig.getStructDescription();
-
-		if (structDescription == null || structDescription.getName() == null)
-			return false;
-
-		NativeRecord nativeRecord = headerFile.getRecord(structDescription.getName());
-
-		if (nativeRecord == null)
-			throw new RuntimeException("Record not found: " + structDescription.getName());
-
-		clazz.updateLastField(field -> field.setBlankLineAfter(true));
-
-		RecordLayoutField layoutField = new RecordLayoutField(nativeRecord.isUnion());
-		layoutField.setBlankLineAfter(true);
-
-		clazz.addField(layoutField);
-
-		RecordLayoutBuilder layoutBuilder = new RecordLayoutBuilder(globalConfig, layoutField, nativeRecord);
-
-		clazz.getStaticBlock().addRecordLayout(
-				layoutBuilder.getLayout(RECORD_LAYOUT_TEMPLATE)
-		);
-		clazz.addStaticImports(layoutBuilder.getRequiredStaticImports());
-
-		clazz.setJavadoc(nativeRecord.getComment());
-
-		ScalarFieldAccessorsBuilder scalarFieldAccessorsBuilder = new ScalarFieldAccessorsBuilder(
-				globalConfig, nativeRecord, structDescription
-		);
-
-		String className = clazz.getDescription().getName();
-
-		clazz.addFields(scalarFieldAccessorsBuilder.getVarHandleFields());
-		clazz.addMethods(scalarFieldAccessorsBuilder.getMethods(className, VAR_HANDLE_METHOD_TEMPLATE));
-		clazz.getStaticBlock().addVarHandleLoading(scalarFieldAccessorsBuilder.getVarHandleLoading());
-		clazz.updateLastField(field -> field.setBlankLineAfter(true));
-
-		Map<String, Field> fieldOffsetsFields = new LinkedHashMap<String, Field>();
-		nativeRecord.getFields().forEach(field -> {
-			if (field instanceof TypedField typedField) {
-				String offsetFieldName = String.join(
-						"",
-						typedField.getName().replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2").toUpperCase(),
-						"_BYTE_OFFSET"
-				);
-				LongField longField = new LongField(
-						offsetFieldName, "", Modifier.PUBLIC, Modifier.STATIC, Modifier.FINAL
-				);
-
-				clazz.getStaticBlock().addFieldOffsetLoading(longField, typedField);
-				clazz.addField(longField);
-				clazz.addStaticImport(ValueLayout.class.getCanonicalName() + ".*");
-
-				fieldOffsetsFields.put(typedField.getName(), longField);
-			}
-		});
-
-		NestedStructureFieldAccessorsBuilder nestedStructureFieldAccessorsBuilder = new NestedStructureFieldAccessorsBuilder(
-				globalConfig, nativeRecord, fieldOffsetsFields
-		);
-
-		clazz.updateLastField(field -> field.setBlankLineAfter(true));
-		clazz.addField(new MemorySegmentField("segment", Modifier.PRIVATE, Modifier.FINAL));
-
-		List<Field> fields = nestedStructureFieldAccessorsBuilder.getNestedStructureFields();
-
-		if (!fields.isEmpty())
-			clazz.updateLastField(field -> field.setBlankLineAfter(true));
-
-		clazz.addNestedStructureFields(fields);
-
-		try {
-			Template constructorTemplate = structDescription.getTemplate() == null
-					? RECORD_CONSTRUCTOR_TEMPLATE
-					: CONFIG.getTemplate(structDescription.getTemplate());
-
-			clazz.addConstructor(
-					nestedStructureFieldAccessorsBuilder.getConstructor(className, constructorTemplate)
-			);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-
-		clazz.addMethods(
-				nestedStructureFieldAccessorsBuilder.getMethods(className, NESTED_STRUCTURE_FIELD_METHOD_TEMPLATE)
-		);
-
-		nativeRecord.getFields().forEach(field -> {
-			if (field instanceof RecordField recordField) {
-				TypeResult typeResult = recordField.getType();
-
-				if (typeResult.typeKind() != NativeTypeKind.ARRAY)
-					return;
-
-				ArrayType arrayType = (ArrayType) typeResult;
-
-				if (arrayType.elementKind() != NativeTypeKind.BYTE)
-					return;
-
-				if (!structDescription.getStringFields().contains(recordField.getName()))
-					return;
-
-				Field offsetField = fieldOffsetsFields.get(recordField.getName());
-
-				String method = """
-						public String %s() {
-						    return segment.getString(%s);
-						}
-						""".formatted(recordField.getName(), offsetField.getName());
-
-				clazz.addMethod(new Method(method, List.of()));
-			}
-		});
-
-		clazz.addMethod(new Method(STRUCT_UTILITY_METHODS_TEMPLATE, Map.of("className", className)));
-		clazz.addImport(Arena.class.getCanonicalName());
-		clazz.addImport(NativeStructArray.class.getCanonicalName());
-		clazz.addImport(MemorySegment.class.getCanonicalName());
-
-		return true;
 	}
 
 	public void generateCallbacks(String callbacksConfigPath) {
