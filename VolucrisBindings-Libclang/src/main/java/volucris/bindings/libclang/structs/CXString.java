@@ -27,44 +27,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXString
 		implements Struct<CXString> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_HANDLE;
-    public static final VarHandle PRIVATE_FLAGS_HANDLE;
+	public static final VarHandle DATA_HANDLE;
+	public static final VarHandle PRIVATE_FLAGS_HANDLE;
 
-    public static final long DATA_BYTE_OFFSET;
-    public static final long PRIVATE_FLAGS_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
+	public static final long PRIVATE_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("data"),
-            JAVA_INT.withName("private_flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXString").withByteAlignment(8);
-        
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
-        PRIVATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("private_flags"));
-        
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        PRIVATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("private_flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("data"),
+		    JAVA_INT.withName("private_flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXString").withByteAlignment(8);
+		
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
+		PRIVATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("private_flags"));
+		
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		PRIVATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("private_flags"));
+		//@formatter:on
+	}
 
-    public CXString() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXString(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXString(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXString() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXString(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXString(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #data()
     public CXString data(MemorySegment data) {
@@ -142,5 +142,5 @@ public final class CXString
             segment -> new CXString(segment)
         );
     }
-    
+
 }

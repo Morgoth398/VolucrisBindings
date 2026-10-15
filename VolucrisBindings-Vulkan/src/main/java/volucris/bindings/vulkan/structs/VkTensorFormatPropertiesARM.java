@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTensorFormatPropertiesARM
 		implements Struct<VkTensorFormatPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OPTIMAL_TILING_TENSOR_FEATURES_HANDLE;
-    public static final VarHandle LINEAR_TILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OPTIMAL_TILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle LINEAR_TILING_TENSOR_FEATURES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OPTIMAL_TILING_TENSOR_FEATURES_BYTE_OFFSET;
-    public static final long LINEAR_TILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OPTIMAL_TILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long LINEAR_TILING_TENSOR_FEATURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("optimalTilingTensorFeatures"),
-            JAVA_LONG.withName("linearTilingTensorFeatures")
-        ).withName("VkTensorFormatPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OPTIMAL_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingTensorFeatures"));
-        LINEAR_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("linearTilingTensorFeatures"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OPTIMAL_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingTensorFeatures"));
-        LINEAR_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("linearTilingTensorFeatures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("optimalTilingTensorFeatures"),
+		    JAVA_LONG.withName("linearTilingTensorFeatures")
+		).withName("VkTensorFormatPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OPTIMAL_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingTensorFeatures"));
+		LINEAR_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("linearTilingTensorFeatures"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OPTIMAL_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingTensorFeatures"));
+		LINEAR_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("linearTilingTensorFeatures"));
+		//@formatter:on
+	}
 
-    public VkTensorFormatPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTensorFormatPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTensorFormatPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTensorFormatPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTensorFormatPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTensorFormatPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkTensorFormatPropertiesARM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkTensorFormatPropertiesARM
             segment -> new VkTensorFormatPropertiesARM(segment)
         );
     }
-    
+
 }

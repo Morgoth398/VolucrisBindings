@@ -22,86 +22,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderingAttachmentInfo
 		implements Struct<VkRenderingAttachmentInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_VIEW_HANDLE;
-    public static final VarHandle IMAGE_LAYOUT_HANDLE;
-    public static final VarHandle RESOLVE_MODE_HANDLE;
-    public static final VarHandle RESOLVE_IMAGE_VIEW_HANDLE;
-    public static final VarHandle RESOLVE_IMAGE_LAYOUT_HANDLE;
-    public static final VarHandle LOAD_OP_HANDLE;
-    public static final VarHandle STORE_OP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_VIEW_HANDLE;
+	public static final VarHandle IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle RESOLVE_MODE_HANDLE;
+	public static final VarHandle RESOLVE_IMAGE_VIEW_HANDLE;
+	public static final VarHandle RESOLVE_IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle LOAD_OP_HANDLE;
+	public static final VarHandle STORE_OP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_VIEW_BYTE_OFFSET;
-    public static final long IMAGE_LAYOUT_BYTE_OFFSET;
-    public static final long RESOLVE_MODE_BYTE_OFFSET;
-    public static final long RESOLVE_IMAGE_VIEW_BYTE_OFFSET;
-    public static final long RESOLVE_IMAGE_LAYOUT_BYTE_OFFSET;
-    public static final long LOAD_OP_BYTE_OFFSET;
-    public static final long STORE_OP_BYTE_OFFSET;
-    public static final long CLEAR_VALUE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_VIEW_BYTE_OFFSET;
+	public static final long IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long RESOLVE_MODE_BYTE_OFFSET;
+	public static final long RESOLVE_IMAGE_VIEW_BYTE_OFFSET;
+	public static final long RESOLVE_IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long LOAD_OP_BYTE_OFFSET;
+	public static final long STORE_OP_BYTE_OFFSET;
+	public static final long CLEAR_VALUE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkClearValue clearValue;
+	private final VkClearValue clearValue;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("imageView"),
-            JAVA_INT.withName("imageLayout"),
-            JAVA_INT.withName("resolveMode"),
-            UNBOUNDED_ADDRESS.withName("resolveImageView"),
-            JAVA_INT.withName("resolveImageLayout"),
-            JAVA_INT.withName("loadOp"),
-            JAVA_INT.withName("storeOp"),
-            VkClearValue.LAYOUT.withName("clearValue"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkRenderingAttachmentInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
-        RESOLVE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveMode"));
-        RESOLVE_IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveImageView"));
-        RESOLVE_IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveImageLayout"));
-        LOAD_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loadOp"));
-        STORE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storeOp"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
-        RESOLVE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveMode"));
-        RESOLVE_IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveImageView"));
-        RESOLVE_IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveImageLayout"));
-        LOAD_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loadOp"));
-        STORE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storeOp"));
-        CLEAR_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clearValue"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("imageView"),
+		    JAVA_INT.withName("imageLayout"),
+		    JAVA_INT.withName("resolveMode"),
+		    UNBOUNDED_ADDRESS.withName("resolveImageView"),
+		    JAVA_INT.withName("resolveImageLayout"),
+		    JAVA_INT.withName("loadOp"),
+		    JAVA_INT.withName("storeOp"),
+		    VkClearValue.LAYOUT.withName("clearValue"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkRenderingAttachmentInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
+		RESOLVE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveMode"));
+		RESOLVE_IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveImageView"));
+		RESOLVE_IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveImageLayout"));
+		LOAD_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loadOp"));
+		STORE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storeOp"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
+		RESOLVE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveMode"));
+		RESOLVE_IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveImageView"));
+		RESOLVE_IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveImageLayout"));
+		LOAD_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loadOp"));
+		STORE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storeOp"));
+		CLEAR_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clearValue"));
+		//@formatter:on
+	}
 
-    public VkRenderingAttachmentInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderingAttachmentInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderingAttachmentInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        clearValue = new VkClearValue(segment.asSlice(CLEAR_VALUE_BYTE_OFFSET, VkClearValue.LAYOUT));
-    }
+	public VkRenderingAttachmentInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderingAttachmentInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderingAttachmentInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    clearValue = new VkClearValue(segment.asSlice(CLEAR_VALUE_BYTE_OFFSET, VkClearValue.LAYOUT));
+	}
 
     /// @see #sType()
     public VkRenderingAttachmentInfo sType(int sType) {
@@ -275,5 +275,5 @@ public final class VkRenderingAttachmentInfo
             segment -> new VkRenderingAttachmentInfo(segment)
         );
     }
-    
+
 }

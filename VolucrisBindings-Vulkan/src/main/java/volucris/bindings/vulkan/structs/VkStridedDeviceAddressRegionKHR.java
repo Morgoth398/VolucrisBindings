@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkStridedDeviceAddressRegionKHR
 		implements Struct<VkStridedDeviceAddressRegionKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DEVICE_ADDRESS_HANDLE;
-    public static final VarHandle STRIDE_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle DEVICE_ADDRESS_HANDLE;
+	public static final VarHandle STRIDE_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long DEVICE_ADDRESS_BYTE_OFFSET;
-    public static final long STRIDE_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long DEVICE_ADDRESS_BYTE_OFFSET;
+	public static final long STRIDE_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("deviceAddress"),
-            JAVA_LONG.withName("stride"),
-            JAVA_LONG.withName("size")
-        ).withName("VkStridedDeviceAddressRegionKHR").withByteAlignment(8);
-        
-        DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceAddress"));
-        STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceAddress"));
-        STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("deviceAddress"),
+		    JAVA_LONG.withName("stride"),
+		    JAVA_LONG.withName("size")
+		).withName("VkStridedDeviceAddressRegionKHR").withByteAlignment(8);
+		
+		DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceAddress"));
+		STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceAddress"));
+		STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkStridedDeviceAddressRegionKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkStridedDeviceAddressRegionKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkStridedDeviceAddressRegionKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkStridedDeviceAddressRegionKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkStridedDeviceAddressRegionKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkStridedDeviceAddressRegionKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #deviceAddress()
     public VkStridedDeviceAddressRegionKHR deviceAddress(long deviceAddress) {
@@ -143,5 +143,5 @@ public final class VkStridedDeviceAddressRegionKHR
             segment -> new VkStridedDeviceAddressRegionKHR(segment)
         );
     }
-    
+
 }

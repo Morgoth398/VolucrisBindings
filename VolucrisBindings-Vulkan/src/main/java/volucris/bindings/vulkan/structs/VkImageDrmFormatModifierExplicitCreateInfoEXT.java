@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageDrmFormatModifierExplicitCreateInfoEXT
 		implements Struct<VkImageDrmFormatModifierExplicitCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DRM_FORMAT_MODIFIER_HANDLE;
-    public static final VarHandle DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE;
-    public static final VarHandle P_PLANE_LAYOUTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE;
+	public static final VarHandle P_PLANE_LAYOUTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DRM_FORMAT_MODIFIER_BYTE_OFFSET;
-    public static final long DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET;
-    public static final long P_PLANE_LAYOUTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET;
+	public static final long P_PLANE_LAYOUTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("drmFormatModifier"),
-            JAVA_INT.withName("drmFormatModifierPlaneCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPlaneLayouts")
-        ).withName("VkImageDrmFormatModifierExplicitCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DRM_FORMAT_MODIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifier"));
-        DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierPlaneCount"));
-        P_PLANE_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPlaneLayouts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DRM_FORMAT_MODIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifier"));
-        DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierPlaneCount"));
-        P_PLANE_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPlaneLayouts"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("drmFormatModifier"),
+		    JAVA_INT.withName("drmFormatModifierPlaneCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPlaneLayouts")
+		).withName("VkImageDrmFormatModifierExplicitCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DRM_FORMAT_MODIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifier"));
+		DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierPlaneCount"));
+		P_PLANE_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPlaneLayouts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DRM_FORMAT_MODIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifier"));
+		DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierPlaneCount"));
+		P_PLANE_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPlaneLayouts"));
+		//@formatter:on
+	}
 
-    public VkImageDrmFormatModifierExplicitCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageDrmFormatModifierExplicitCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageDrmFormatModifierExplicitCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageDrmFormatModifierExplicitCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageDrmFormatModifierExplicitCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageDrmFormatModifierExplicitCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkImageDrmFormatModifierExplicitCreateInfoEXT sType(int sType) {
@@ -187,5 +187,5 @@ public final class VkImageDrmFormatModifierExplicitCreateInfoEXT
             segment -> new VkImageDrmFormatModifierExplicitCreateInfoEXT(segment)
         );
     }
-    
+
 }

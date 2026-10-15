@@ -18,44 +18,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxObjCContainerDeclInfo
 		implements Struct<CXIdxObjCContainerDeclInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DECL_INFO_HANDLE;
-    public static final VarHandle KIND_HANDLE;
+	public static final VarHandle DECL_INFO_HANDLE;
+	public static final VarHandle KIND_HANDLE;
 
-    public static final long DECL_INFO_BYTE_OFFSET;
-    public static final long KIND_BYTE_OFFSET;
+	public static final long DECL_INFO_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("declInfo"),
-            JAVA_INT.withName("kind"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxObjCContainerDeclInfo").withByteAlignment(8);
-        
-        DECL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declInfo"));
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        
-        DECL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declInfo"));
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("declInfo"),
+		    JAVA_INT.withName("kind"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxObjCContainerDeclInfo").withByteAlignment(8);
+		
+		DECL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declInfo"));
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		
+		DECL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declInfo"));
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		//@formatter:on
+	}
 
-    public CXIdxObjCContainerDeclInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxObjCContainerDeclInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxObjCContainerDeclInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIdxObjCContainerDeclInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxObjCContainerDeclInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxObjCContainerDeclInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #declInfo()
     public CXIdxObjCContainerDeclInfo declInfo(CXIdxDeclInfo declInfo) {
@@ -133,5 +133,5 @@ public final class CXIdxObjCContainerDeclInfo
             segment -> new CXIdxObjCContainerDeclInfo(segment)
         );
     }
-    
+
 }

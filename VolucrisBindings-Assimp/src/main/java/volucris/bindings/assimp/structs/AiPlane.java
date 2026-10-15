@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiPlane
 		implements Struct<AiPlane> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle A_HANDLE;
-    public static final VarHandle B_HANDLE;
-    public static final VarHandle C_HANDLE;
-    public static final VarHandle D_HANDLE;
+	public static final VarHandle A_HANDLE;
+	public static final VarHandle B_HANDLE;
+	public static final VarHandle C_HANDLE;
+	public static final VarHandle D_HANDLE;
 
-    public static final long A_BYTE_OFFSET;
-    public static final long B_BYTE_OFFSET;
-    public static final long C_BYTE_OFFSET;
-    public static final long D_BYTE_OFFSET;
+	public static final long A_BYTE_OFFSET;
+	public static final long B_BYTE_OFFSET;
+	public static final long C_BYTE_OFFSET;
+	public static final long D_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("a"),
-            JAVA_FLOAT.withName("b"),
-            JAVA_FLOAT.withName("c"),
-            JAVA_FLOAT.withName("d")
-        ).withName("aiPlane").withByteAlignment(4);
-        
-        A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
-        B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
-        C_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c"));
-        D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d"));
-        
-        A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
-        B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
-        C_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c"));
-        D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("a"),
+		    JAVA_FLOAT.withName("b"),
+		    JAVA_FLOAT.withName("c"),
+		    JAVA_FLOAT.withName("d")
+		).withName("aiPlane").withByteAlignment(4);
+		
+		A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
+		B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
+		C_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c"));
+		D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d"));
+		
+		A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
+		B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
+		C_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c"));
+		D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d"));
+		//@formatter:on
+	}
 
-    public AiPlane() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiPlane(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiPlane(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiPlane() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiPlane(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiPlane(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #a()
     public AiPlane a(float a) {
@@ -170,5 +170,5 @@ public final class AiPlane
             segment -> new AiPlane(segment)
         );
     }
-    
+
 }

@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphPipelineSingleNodeCreateInfoARM
 		implements Struct<VkDataGraphPipelineSingleNodeCreateInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NODE_TYPE_HANDLE;
-    public static final VarHandle CONNECTION_COUNT_HANDLE;
-    public static final VarHandle P_CONNECTIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NODE_TYPE_HANDLE;
+	public static final VarHandle CONNECTION_COUNT_HANDLE;
+	public static final VarHandle P_CONNECTIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NODE_TYPE_BYTE_OFFSET;
-    public static final long CONNECTION_COUNT_BYTE_OFFSET;
-    public static final long P_CONNECTIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NODE_TYPE_BYTE_OFFSET;
+	public static final long CONNECTION_COUNT_BYTE_OFFSET;
+	public static final long P_CONNECTIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("nodeType"),
-            JAVA_INT.withName("connectionCount"),
-            UNBOUNDED_ADDRESS.withName("pConnections")
-        ).withName("VkDataGraphPipelineSingleNodeCreateInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NODE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nodeType"));
-        CONNECTION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("connectionCount"));
-        P_CONNECTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pConnections"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NODE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nodeType"));
-        CONNECTION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("connectionCount"));
-        P_CONNECTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pConnections"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("nodeType"),
+		    JAVA_INT.withName("connectionCount"),
+		    UNBOUNDED_ADDRESS.withName("pConnections")
+		).withName("VkDataGraphPipelineSingleNodeCreateInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NODE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nodeType"));
+		CONNECTION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("connectionCount"));
+		P_CONNECTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pConnections"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NODE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nodeType"));
+		CONNECTION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("connectionCount"));
+		P_CONNECTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pConnections"));
+		//@formatter:on
+	}
 
-    public VkDataGraphPipelineSingleNodeCreateInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphPipelineSingleNodeCreateInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphPipelineSingleNodeCreateInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphPipelineSingleNodeCreateInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphPipelineSingleNodeCreateInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphPipelineSingleNodeCreateInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphPipelineSingleNodeCreateInfoARM sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkDataGraphPipelineSingleNodeCreateInfoARM
             segment -> new VkDataGraphPipelineSingleNodeCreateInfoARM(segment)
         );
     }
-    
+
 }

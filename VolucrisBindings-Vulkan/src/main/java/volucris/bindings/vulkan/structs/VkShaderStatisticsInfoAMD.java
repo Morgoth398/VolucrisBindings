@@ -20,71 +20,71 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkShaderStatisticsInfoAMD
 		implements Struct<VkShaderStatisticsInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SHADER_STAGE_MASK_HANDLE;
-    public static final VarHandle NUM_PHYSICAL_VGPRS_HANDLE;
-    public static final VarHandle NUM_PHYSICAL_SGPRS_HANDLE;
-    public static final VarHandle NUM_AVAILABLE_VGPRS_HANDLE;
-    public static final VarHandle NUM_AVAILABLE_SGPRS_HANDLE;
-    public static final VarHandle COMPUTE_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle SHADER_STAGE_MASK_HANDLE;
+	public static final VarHandle NUM_PHYSICAL_VGPRS_HANDLE;
+	public static final VarHandle NUM_PHYSICAL_SGPRS_HANDLE;
+	public static final VarHandle NUM_AVAILABLE_VGPRS_HANDLE;
+	public static final VarHandle NUM_AVAILABLE_SGPRS_HANDLE;
+	public static final VarHandle COMPUTE_WORK_GROUP_SIZE_HANDLE;
 
-    public static final long SHADER_STAGE_MASK_BYTE_OFFSET;
-    public static final long RESOURCE_USAGE_BYTE_OFFSET;
-    public static final long NUM_PHYSICAL_VGPRS_BYTE_OFFSET;
-    public static final long NUM_PHYSICAL_SGPRS_BYTE_OFFSET;
-    public static final long NUM_AVAILABLE_VGPRS_BYTE_OFFSET;
-    public static final long NUM_AVAILABLE_SGPRS_BYTE_OFFSET;
-    public static final long COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long SHADER_STAGE_MASK_BYTE_OFFSET;
+	public static final long RESOURCE_USAGE_BYTE_OFFSET;
+	public static final long NUM_PHYSICAL_VGPRS_BYTE_OFFSET;
+	public static final long NUM_PHYSICAL_SGPRS_BYTE_OFFSET;
+	public static final long NUM_AVAILABLE_VGPRS_BYTE_OFFSET;
+	public static final long NUM_AVAILABLE_SGPRS_BYTE_OFFSET;
+	public static final long COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkShaderResourceUsageAMD resourceUsage;
+	private final VkShaderResourceUsageAMD resourceUsage;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("shaderStageMask"),
-            MemoryLayout.paddingLayout(4),
-            VkShaderResourceUsageAMD.LAYOUT.withName("resourceUsage"),
-            JAVA_INT.withName("numPhysicalVgprs"),
-            JAVA_INT.withName("numPhysicalSgprs"),
-            JAVA_INT.withName("numAvailableVgprs"),
-            JAVA_INT.withName("numAvailableSgprs"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("computeWorkGroupSize"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkShaderStatisticsInfoAMD").withByteAlignment(8);
-        
-        SHADER_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStageMask"));
-        NUM_PHYSICAL_VGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numPhysicalVgprs"));
-        NUM_PHYSICAL_SGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numPhysicalSgprs"));
-        NUM_AVAILABLE_VGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAvailableVgprs"));
-        NUM_AVAILABLE_SGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAvailableSgprs"));
-        COMPUTE_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeWorkGroupSize"), PathElement.sequenceElement());
-        
-        SHADER_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStageMask"));
-        RESOURCE_USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceUsage"));
-        NUM_PHYSICAL_VGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numPhysicalVgprs"));
-        NUM_PHYSICAL_SGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numPhysicalSgprs"));
-        NUM_AVAILABLE_VGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAvailableVgprs"));
-        NUM_AVAILABLE_SGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAvailableSgprs"));
-        COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeWorkGroupSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("shaderStageMask"),
+		    MemoryLayout.paddingLayout(4),
+		    VkShaderResourceUsageAMD.LAYOUT.withName("resourceUsage"),
+		    JAVA_INT.withName("numPhysicalVgprs"),
+		    JAVA_INT.withName("numPhysicalSgprs"),
+		    JAVA_INT.withName("numAvailableVgprs"),
+		    JAVA_INT.withName("numAvailableSgprs"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("computeWorkGroupSize"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkShaderStatisticsInfoAMD").withByteAlignment(8);
+		
+		SHADER_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStageMask"));
+		NUM_PHYSICAL_VGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numPhysicalVgprs"));
+		NUM_PHYSICAL_SGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numPhysicalSgprs"));
+		NUM_AVAILABLE_VGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAvailableVgprs"));
+		NUM_AVAILABLE_SGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAvailableSgprs"));
+		COMPUTE_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeWorkGroupSize"), PathElement.sequenceElement());
+		
+		SHADER_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStageMask"));
+		RESOURCE_USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceUsage"));
+		NUM_PHYSICAL_VGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numPhysicalVgprs"));
+		NUM_PHYSICAL_SGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numPhysicalSgprs"));
+		NUM_AVAILABLE_VGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAvailableVgprs"));
+		NUM_AVAILABLE_SGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAvailableSgprs"));
+		COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeWorkGroupSize"));
+		//@formatter:on
+	}
 
-    public VkShaderStatisticsInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkShaderStatisticsInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkShaderStatisticsInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-        resourceUsage = new VkShaderResourceUsageAMD(segment.asSlice(RESOURCE_USAGE_BYTE_OFFSET, VkShaderResourceUsageAMD.LAYOUT));
-    }
+	public VkShaderStatisticsInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkShaderStatisticsInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkShaderStatisticsInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    resourceUsage = new VkShaderResourceUsageAMD(segment.asSlice(RESOURCE_USAGE_BYTE_OFFSET, VkShaderResourceUsageAMD.LAYOUT));
+	}
 
     /// @see #shaderStageMask()
     public VkShaderStatisticsInfoAMD shaderStageMask(int shaderStageMask) {
@@ -94,6 +94,22 @@ public final class VkShaderStatisticsInfoAMD
     
     public int shaderStageMask() {
     	return (int) SHADER_STAGE_MASK_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #resourceUsage()
+    public VkShaderStatisticsInfoAMD resourceUsage(Consumer<VkShaderResourceUsageAMD> consumer) {
+    	consumer.accept(resourceUsage);
+    	return this;
+    }
+    
+    /// @see #resourceUsage()
+    public VkShaderStatisticsInfoAMD resourceUsage(VkShaderResourceUsageAMD other) {
+    	resourceUsage.set(other);
+    	return this;
+    }
+    
+    public VkShaderResourceUsageAMD resourceUsage() {
+    	return resourceUsage;
     }
     
     /// @see #numPhysicalVgprs()
@@ -144,22 +160,6 @@ public final class VkShaderStatisticsInfoAMD
     
     public int computeWorkGroupSize(int index0) {
     	return (int) COMPUTE_WORK_GROUP_SIZE_HANDLE.get(segment, 0L, index0);
-    }
-    
-    /// @see #resourceUsage()
-    public VkShaderStatisticsInfoAMD resourceUsage(Consumer<VkShaderResourceUsageAMD> consumer) {
-    	consumer.accept(resourceUsage);
-    	return this;
-    }
-    
-    /// @see #resourceUsage()
-    public VkShaderStatisticsInfoAMD resourceUsage(VkShaderResourceUsageAMD other) {
-    	resourceUsage.set(other);
-    	return this;
-    }
-    
-    public VkShaderResourceUsageAMD resourceUsage() {
-    	return resourceUsage;
     }
     
     @Override
@@ -213,5 +213,5 @@ public final class VkShaderStatisticsInfoAMD
             segment -> new VkShaderStatisticsInfoAMD(segment)
         );
     }
-    
+
 }

@@ -22,69 +22,69 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineRenderingCreateInfo
 		implements Struct<VkPipelineRenderingCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIEW_MASK_HANDLE;
-    public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_COLOR_ATTACHMENT_FORMATS_HANDLE;
-    public static final VarHandle DEPTH_ATTACHMENT_FORMAT_HANDLE;
-    public static final VarHandle STENCIL_ATTACHMENT_FORMAT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIEW_MASK_HANDLE;
+	public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_COLOR_ATTACHMENT_FORMATS_HANDLE;
+	public static final VarHandle DEPTH_ATTACHMENT_FORMAT_HANDLE;
+	public static final VarHandle STENCIL_ATTACHMENT_FORMAT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIEW_MASK_BYTE_OFFSET;
-    public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_COLOR_ATTACHMENT_FORMATS_BYTE_OFFSET;
-    public static final long DEPTH_ATTACHMENT_FORMAT_BYTE_OFFSET;
-    public static final long STENCIL_ATTACHMENT_FORMAT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIEW_MASK_BYTE_OFFSET;
+	public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_COLOR_ATTACHMENT_FORMATS_BYTE_OFFSET;
+	public static final long DEPTH_ATTACHMENT_FORMAT_BYTE_OFFSET;
+	public static final long STENCIL_ATTACHMENT_FORMAT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("viewMask"),
-            JAVA_INT.withName("colorAttachmentCount"),
-            UNBOUNDED_ADDRESS.withName("pColorAttachmentFormats"),
-            JAVA_INT.withName("depthAttachmentFormat"),
-            JAVA_INT.withName("stencilAttachmentFormat")
-        ).withName("VkPipelineRenderingCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIEW_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewMask"));
-        COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENT_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachmentFormats"));
-        DEPTH_ATTACHMENT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthAttachmentFormat"));
-        STENCIL_ATTACHMENT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilAttachmentFormat"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIEW_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewMask"));
-        COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENT_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachmentFormats"));
-        DEPTH_ATTACHMENT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthAttachmentFormat"));
-        STENCIL_ATTACHMENT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilAttachmentFormat"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("viewMask"),
+		    JAVA_INT.withName("colorAttachmentCount"),
+		    UNBOUNDED_ADDRESS.withName("pColorAttachmentFormats"),
+		    JAVA_INT.withName("depthAttachmentFormat"),
+		    JAVA_INT.withName("stencilAttachmentFormat")
+		).withName("VkPipelineRenderingCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIEW_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewMask"));
+		COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENT_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachmentFormats"));
+		DEPTH_ATTACHMENT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthAttachmentFormat"));
+		STENCIL_ATTACHMENT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilAttachmentFormat"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIEW_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewMask"));
+		COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENT_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachmentFormats"));
+		DEPTH_ATTACHMENT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthAttachmentFormat"));
+		STENCIL_ATTACHMENT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilAttachmentFormat"));
+		//@formatter:on
+	}
 
-    public VkPipelineRenderingCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineRenderingCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineRenderingCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineRenderingCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineRenderingCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineRenderingCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineRenderingCreateInfo sType(int sType) {
@@ -217,5 +217,5 @@ public final class VkPipelineRenderingCreateInfo
             segment -> new VkPipelineRenderingCreateInfo(segment)
         );
     }
-    
+
 }

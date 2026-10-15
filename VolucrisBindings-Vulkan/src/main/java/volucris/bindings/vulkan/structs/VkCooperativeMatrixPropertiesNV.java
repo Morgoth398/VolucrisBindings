@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCooperativeMatrixPropertiesNV
 		implements Struct<VkCooperativeMatrixPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MSIZE_HANDLE;
-    public static final VarHandle NSIZE_HANDLE;
-    public static final VarHandle KSIZE_HANDLE;
-    public static final VarHandle ATYPE_HANDLE;
-    public static final VarHandle BTYPE_HANDLE;
-    public static final VarHandle CTYPE_HANDLE;
-    public static final VarHandle DTYPE_HANDLE;
-    public static final VarHandle SCOPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MSIZE_HANDLE;
+	public static final VarHandle NSIZE_HANDLE;
+	public static final VarHandle KSIZE_HANDLE;
+	public static final VarHandle ATYPE_HANDLE;
+	public static final VarHandle BTYPE_HANDLE;
+	public static final VarHandle CTYPE_HANDLE;
+	public static final VarHandle DTYPE_HANDLE;
+	public static final VarHandle SCOPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MSIZE_BYTE_OFFSET;
-    public static final long NSIZE_BYTE_OFFSET;
-    public static final long KSIZE_BYTE_OFFSET;
-    public static final long ATYPE_BYTE_OFFSET;
-    public static final long BTYPE_BYTE_OFFSET;
-    public static final long CTYPE_BYTE_OFFSET;
-    public static final long DTYPE_BYTE_OFFSET;
-    public static final long SCOPE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MSIZE_BYTE_OFFSET;
+	public static final long NSIZE_BYTE_OFFSET;
+	public static final long KSIZE_BYTE_OFFSET;
+	public static final long ATYPE_BYTE_OFFSET;
+	public static final long BTYPE_BYTE_OFFSET;
+	public static final long CTYPE_BYTE_OFFSET;
+	public static final long DTYPE_BYTE_OFFSET;
+	public static final long SCOPE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("MSize"),
-            JAVA_INT.withName("NSize"),
-            JAVA_INT.withName("KSize"),
-            JAVA_INT.withName("AType"),
-            JAVA_INT.withName("BType"),
-            JAVA_INT.withName("CType"),
-            JAVA_INT.withName("DType"),
-            JAVA_INT.withName("scope")
-        ).withName("VkCooperativeMatrixPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("MSize"));
-        NSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("NSize"));
-        KSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("KSize"));
-        ATYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("AType"));
-        BTYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("BType"));
-        CTYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CType"));
-        DTYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DType"));
-        SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scope"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("MSize"));
-        NSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("NSize"));
-        KSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("KSize"));
-        ATYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("AType"));
-        BTYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("BType"));
-        CTYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CType"));
-        DTYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DType"));
-        SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scope"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("MSize"),
+		    JAVA_INT.withName("NSize"),
+		    JAVA_INT.withName("KSize"),
+		    JAVA_INT.withName("AType"),
+		    JAVA_INT.withName("BType"),
+		    JAVA_INT.withName("CType"),
+		    JAVA_INT.withName("DType"),
+		    JAVA_INT.withName("scope")
+		).withName("VkCooperativeMatrixPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("MSize"));
+		NSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("NSize"));
+		KSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("KSize"));
+		ATYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("AType"));
+		BTYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("BType"));
+		CTYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CType"));
+		DTYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DType"));
+		SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scope"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("MSize"));
+		NSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("NSize"));
+		KSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("KSize"));
+		ATYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("AType"));
+		BTYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("BType"));
+		CTYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CType"));
+		DTYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DType"));
+		SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scope"));
+		//@formatter:on
+	}
 
-    public VkCooperativeMatrixPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCooperativeMatrixPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCooperativeMatrixPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCooperativeMatrixPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCooperativeMatrixPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCooperativeMatrixPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCooperativeMatrixPropertiesNV sType(int sType) {
@@ -256,5 +256,5 @@ public final class VkCooperativeMatrixPropertiesNV
             segment -> new VkCooperativeMatrixPropertiesNV(segment)
         );
     }
-    
+
 }

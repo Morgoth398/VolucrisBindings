@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderFmaFeaturesKHR
 		implements Struct<VkPhysicalDeviceShaderFmaFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_FMA_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_FMA_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_FMA_FLOAT64_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_FMA_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_FMA_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_FMA_FLOAT64_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_FMA_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_FMA_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_FMA_FLOAT64_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_FMA_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_FMA_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_FMA_FLOAT64_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderFmaFloat16"),
-            JAVA_INT.withName("shaderFmaFloat32"),
-            JAVA_INT.withName("shaderFmaFloat64"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderFmaFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_FMA_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFmaFloat16"));
-        SHADER_FMA_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFmaFloat32"));
-        SHADER_FMA_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFmaFloat64"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_FMA_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFmaFloat16"));
-        SHADER_FMA_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFmaFloat32"));
-        SHADER_FMA_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFmaFloat64"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderFmaFloat16"),
+		    JAVA_INT.withName("shaderFmaFloat32"),
+		    JAVA_INT.withName("shaderFmaFloat64"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderFmaFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_FMA_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFmaFloat16"));
+		SHADER_FMA_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFmaFloat32"));
+		SHADER_FMA_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFmaFloat64"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_FMA_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFmaFloat16"));
+		SHADER_FMA_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFmaFloat32"));
+		SHADER_FMA_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFmaFloat64"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderFmaFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderFmaFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderFmaFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderFmaFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderFmaFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderFmaFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderFmaFeaturesKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceShaderFmaFeaturesKHR
             segment -> new VkPhysicalDeviceShaderFmaFeaturesKHR(segment)
         );
     }
-    
+
 }

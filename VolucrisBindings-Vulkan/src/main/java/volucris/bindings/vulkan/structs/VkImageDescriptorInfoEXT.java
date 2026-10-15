@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageDescriptorInfoEXT
 		implements Struct<VkImageDescriptorInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_VIEW_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_VIEW_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_VIEW_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_VIEW_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pView"),
-            JAVA_INT.withName("layout"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkImageDescriptorInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pView"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pView"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pView"),
+		    JAVA_INT.withName("layout"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkImageDescriptorInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pView"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pView"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		//@formatter:on
+	}
 
-    public VkImageDescriptorInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageDescriptorInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageDescriptorInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageDescriptorInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageDescriptorInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageDescriptorInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkImageDescriptorInfoEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkImageDescriptorInfoEXT
             segment -> new VkImageDescriptorInfoEXT(segment)
         );
     }
-    
+
 }

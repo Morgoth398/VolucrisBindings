@@ -19,63 +19,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPerformanceCounterResultKHR
 		implements Struct<VkPerformanceCounterResultKHR> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle INT32_HANDLE;
-    public static final VarHandle INT64_HANDLE;
-    public static final VarHandle UINT32_HANDLE;
-    public static final VarHandle UINT64_HANDLE;
-    public static final VarHandle FLOAT32_HANDLE;
-    public static final VarHandle FLOAT64_HANDLE;
+	public static final VarHandle INT32_HANDLE;
+	public static final VarHandle INT64_HANDLE;
+	public static final VarHandle UINT32_HANDLE;
+	public static final VarHandle UINT64_HANDLE;
+	public static final VarHandle FLOAT32_HANDLE;
+	public static final VarHandle FLOAT64_HANDLE;
 
-    public static final long INT32_BYTE_OFFSET;
-    public static final long INT64_BYTE_OFFSET;
-    public static final long UINT32_BYTE_OFFSET;
-    public static final long UINT64_BYTE_OFFSET;
-    public static final long FLOAT32_BYTE_OFFSET;
-    public static final long FLOAT64_BYTE_OFFSET;
+	public static final long INT32_BYTE_OFFSET;
+	public static final long INT64_BYTE_OFFSET;
+	public static final long UINT32_BYTE_OFFSET;
+	public static final long UINT64_BYTE_OFFSET;
+	public static final long FLOAT32_BYTE_OFFSET;
+	public static final long FLOAT64_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            JAVA_INT.withName("int32"),
-            JAVA_LONG.withName("int64"),
-            JAVA_INT.withName("uint32"),
-            JAVA_LONG.withName("uint64"),
-            JAVA_FLOAT.withName("float32"),
-            JAVA_DOUBLE.withName("float64")
-        ).withName("VkPerformanceCounterResultKHR").withByteAlignment(8);
-        
-        INT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int32"));
-        INT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int64"));
-        UINT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uint32"));
-        UINT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uint64"));
-        FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("float32"));
-        FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("float64"));
-        
-        INT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int32"));
-        INT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int64"));
-        UINT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uint32"));
-        UINT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uint64"));
-        FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("float32"));
-        FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("float64"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    JAVA_INT.withName("int32"),
+		    JAVA_LONG.withName("int64"),
+		    JAVA_INT.withName("uint32"),
+		    JAVA_LONG.withName("uint64"),
+		    JAVA_FLOAT.withName("float32"),
+		    JAVA_DOUBLE.withName("float64")
+		).withName("VkPerformanceCounterResultKHR").withByteAlignment(8);
+		
+		INT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int32"));
+		INT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int64"));
+		UINT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uint32"));
+		UINT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uint64"));
+		FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("float32"));
+		FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("float64"));
+		
+		INT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int32"));
+		INT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int64"));
+		UINT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uint32"));
+		UINT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uint64"));
+		FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("float32"));
+		FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("float64"));
+		//@formatter:on
+	}
 
-    public VkPerformanceCounterResultKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerformanceCounterResultKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerformanceCounterResultKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPerformanceCounterResultKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerformanceCounterResultKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerformanceCounterResultKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #int32()
     public VkPerformanceCounterResultKHR int32(int int32) {
@@ -188,5 +188,5 @@ public final class VkPerformanceCounterResultKHR
             segment -> new VkPerformanceCounterResultKHR(segment)
         );
     }
-    
+
 }

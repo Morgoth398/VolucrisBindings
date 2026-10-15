@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceClusterAccelerationStructurePropertiesNV
 		implements Struct<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_VERTICES_PER_CLUSTER_HANDLE;
-    public static final VarHandle MAX_TRIANGLES_PER_CLUSTER_HANDLE;
-    public static final VarHandle CLUSTER_SCRATCH_BYTE_ALIGNMENT_HANDLE;
-    public static final VarHandle CLUSTER_BYTE_ALIGNMENT_HANDLE;
-    public static final VarHandle CLUSTER_TEMPLATE_BYTE_ALIGNMENT_HANDLE;
-    public static final VarHandle CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_HANDLE;
-    public static final VarHandle CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_CLUSTER_GEOMETRY_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_VERTICES_PER_CLUSTER_HANDLE;
+	public static final VarHandle MAX_TRIANGLES_PER_CLUSTER_HANDLE;
+	public static final VarHandle CLUSTER_SCRATCH_BYTE_ALIGNMENT_HANDLE;
+	public static final VarHandle CLUSTER_BYTE_ALIGNMENT_HANDLE;
+	public static final VarHandle CLUSTER_TEMPLATE_BYTE_ALIGNMENT_HANDLE;
+	public static final VarHandle CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_HANDLE;
+	public static final VarHandle CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_CLUSTER_GEOMETRY_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_VERTICES_PER_CLUSTER_BYTE_OFFSET;
-    public static final long MAX_TRIANGLES_PER_CLUSTER_BYTE_OFFSET;
-    public static final long CLUSTER_SCRATCH_BYTE_ALIGNMENT_BYTE_OFFSET;
-    public static final long CLUSTER_BYTE_ALIGNMENT_BYTE_OFFSET;
-    public static final long CLUSTER_TEMPLATE_BYTE_ALIGNMENT_BYTE_OFFSET;
-    public static final long CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_BYTE_OFFSET;
-    public static final long CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_CLUSTER_GEOMETRY_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_VERTICES_PER_CLUSTER_BYTE_OFFSET;
+	public static final long MAX_TRIANGLES_PER_CLUSTER_BYTE_OFFSET;
+	public static final long CLUSTER_SCRATCH_BYTE_ALIGNMENT_BYTE_OFFSET;
+	public static final long CLUSTER_BYTE_ALIGNMENT_BYTE_OFFSET;
+	public static final long CLUSTER_TEMPLATE_BYTE_ALIGNMENT_BYTE_OFFSET;
+	public static final long CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_BYTE_OFFSET;
+	public static final long CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_CLUSTER_GEOMETRY_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxVerticesPerCluster"),
-            JAVA_INT.withName("maxTrianglesPerCluster"),
-            JAVA_INT.withName("clusterScratchByteAlignment"),
-            JAVA_INT.withName("clusterByteAlignment"),
-            JAVA_INT.withName("clusterTemplateByteAlignment"),
-            JAVA_INT.withName("clusterBottomLevelByteAlignment"),
-            JAVA_INT.withName("clusterTemplateBoundsByteAlignment"),
-            JAVA_INT.withName("maxClusterGeometryIndex")
-        ).withName("VkPhysicalDeviceClusterAccelerationStructurePropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_VERTICES_PER_CLUSTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVerticesPerCluster"));
-        MAX_TRIANGLES_PER_CLUSTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTrianglesPerCluster"));
-        CLUSTER_SCRATCH_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterScratchByteAlignment"));
-        CLUSTER_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterByteAlignment"));
-        CLUSTER_TEMPLATE_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateByteAlignment"));
-        CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterBottomLevelByteAlignment"));
-        CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateBoundsByteAlignment"));
-        MAX_CLUSTER_GEOMETRY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterGeometryIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_VERTICES_PER_CLUSTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVerticesPerCluster"));
-        MAX_TRIANGLES_PER_CLUSTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTrianglesPerCluster"));
-        CLUSTER_SCRATCH_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterScratchByteAlignment"));
-        CLUSTER_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterByteAlignment"));
-        CLUSTER_TEMPLATE_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateByteAlignment"));
-        CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterBottomLevelByteAlignment"));
-        CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateBoundsByteAlignment"));
-        MAX_CLUSTER_GEOMETRY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterGeometryIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxVerticesPerCluster"),
+		    JAVA_INT.withName("maxTrianglesPerCluster"),
+		    JAVA_INT.withName("clusterScratchByteAlignment"),
+		    JAVA_INT.withName("clusterByteAlignment"),
+		    JAVA_INT.withName("clusterTemplateByteAlignment"),
+		    JAVA_INT.withName("clusterBottomLevelByteAlignment"),
+		    JAVA_INT.withName("clusterTemplateBoundsByteAlignment"),
+		    JAVA_INT.withName("maxClusterGeometryIndex")
+		).withName("VkPhysicalDeviceClusterAccelerationStructurePropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_VERTICES_PER_CLUSTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVerticesPerCluster"));
+		MAX_TRIANGLES_PER_CLUSTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTrianglesPerCluster"));
+		CLUSTER_SCRATCH_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterScratchByteAlignment"));
+		CLUSTER_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterByteAlignment"));
+		CLUSTER_TEMPLATE_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateByteAlignment"));
+		CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterBottomLevelByteAlignment"));
+		CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateBoundsByteAlignment"));
+		MAX_CLUSTER_GEOMETRY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterGeometryIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_VERTICES_PER_CLUSTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVerticesPerCluster"));
+		MAX_TRIANGLES_PER_CLUSTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTrianglesPerCluster"));
+		CLUSTER_SCRATCH_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterScratchByteAlignment"));
+		CLUSTER_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterByteAlignment"));
+		CLUSTER_TEMPLATE_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateByteAlignment"));
+		CLUSTER_BOTTOM_LEVEL_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterBottomLevelByteAlignment"));
+		CLUSTER_TEMPLATE_BOUNDS_BYTE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateBoundsByteAlignment"));
+		MAX_CLUSTER_GEOMETRY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterGeometryIndex"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV sType(int sType) {
@@ -256,5 +256,5 @@ public final class VkPhysicalDeviceClusterAccelerationStructurePropertiesNV
             segment -> new VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePrivateDataFeatures
 		implements Struct<VkPhysicalDevicePrivateDataFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRIVATE_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRIVATE_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRIVATE_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRIVATE_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("privateData"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePrivateDataFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRIVATE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("privateData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRIVATE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("privateData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("privateData"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePrivateDataFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRIVATE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("privateData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRIVATE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("privateData"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePrivateDataFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePrivateDataFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePrivateDataFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePrivateDataFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePrivateDataFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePrivateDataFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePrivateDataFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePrivateDataFeatures
             segment -> new VkPhysicalDevicePrivateDataFeatures(segment)
         );
     }
-    
+
 }

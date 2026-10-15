@@ -23,85 +23,101 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoAV1TileInfo
 		implements Struct<StdVideoAV1TileInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TILE_COLS_HANDLE;
-    public static final VarHandle TILE_ROWS_HANDLE;
-    public static final VarHandle CONTEXT_UPDATE_TILE_ID_HANDLE;
-    public static final VarHandle TILE_SIZE_BYTES_MINUS_1_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_MI_COL_STARTS_HANDLE;
-    public static final VarHandle P_MI_ROW_STARTS_HANDLE;
-    public static final VarHandle P_WIDTH_IN_SBS_MINUS1_HANDLE;
-    public static final VarHandle P_HEIGHT_IN_SBS_MINUS1_HANDLE;
+	public static final VarHandle TILE_COLS_HANDLE;
+	public static final VarHandle TILE_ROWS_HANDLE;
+	public static final VarHandle CONTEXT_UPDATE_TILE_ID_HANDLE;
+	public static final VarHandle TILE_SIZE_BYTES_MINUS_1_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_MI_COL_STARTS_HANDLE;
+	public static final VarHandle P_MI_ROW_STARTS_HANDLE;
+	public static final VarHandle P_WIDTH_IN_SBS_MINUS1_HANDLE;
+	public static final VarHandle P_HEIGHT_IN_SBS_MINUS1_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long TILE_COLS_BYTE_OFFSET;
-    public static final long TILE_ROWS_BYTE_OFFSET;
-    public static final long CONTEXT_UPDATE_TILE_ID_BYTE_OFFSET;
-    public static final long TILE_SIZE_BYTES_MINUS_1_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_MI_COL_STARTS_BYTE_OFFSET;
-    public static final long P_MI_ROW_STARTS_BYTE_OFFSET;
-    public static final long P_WIDTH_IN_SBS_MINUS1_BYTE_OFFSET;
-    public static final long P_HEIGHT_IN_SBS_MINUS1_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long TILE_COLS_BYTE_OFFSET;
+	public static final long TILE_ROWS_BYTE_OFFSET;
+	public static final long CONTEXT_UPDATE_TILE_ID_BYTE_OFFSET;
+	public static final long TILE_SIZE_BYTES_MINUS_1_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_MI_COL_STARTS_BYTE_OFFSET;
+	public static final long P_MI_ROW_STARTS_BYTE_OFFSET;
+	public static final long P_WIDTH_IN_SBS_MINUS1_BYTE_OFFSET;
+	public static final long P_HEIGHT_IN_SBS_MINUS1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoAV1TileInfoFlags flags;
+	private final StdVideoAV1TileInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoAV1TileInfoFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("TileCols"),
-            JAVA_BYTE.withName("TileRows"),
-            JAVA_SHORT.withName("context_update_tile_id"),
-            JAVA_BYTE.withName("tile_size_bytes_minus_1"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pMiColStarts"),
-            UNBOUNDED_ADDRESS.withName("pMiRowStarts"),
-            UNBOUNDED_ADDRESS.withName("pWidthInSbsMinus1"),
-            UNBOUNDED_ADDRESS.withName("pHeightInSbsMinus1")
-        ).withName("StdVideoAV1TileInfo").withByteAlignment(8);
-        
-        TILE_COLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TileCols"));
-        TILE_ROWS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TileRows"));
-        CONTEXT_UPDATE_TILE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("context_update_tile_id"));
-        TILE_SIZE_BYTES_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tile_size_bytes_minus_1"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
-        P_MI_COL_STARTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMiColStarts"));
-        P_MI_ROW_STARTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMiRowStarts"));
-        P_WIDTH_IN_SBS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWidthInSbsMinus1"));
-        P_HEIGHT_IN_SBS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHeightInSbsMinus1"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        TILE_COLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TileCols"));
-        TILE_ROWS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TileRows"));
-        CONTEXT_UPDATE_TILE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("context_update_tile_id"));
-        TILE_SIZE_BYTES_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tile_size_bytes_minus_1"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_MI_COL_STARTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMiColStarts"));
-        P_MI_ROW_STARTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMiRowStarts"));
-        P_WIDTH_IN_SBS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWidthInSbsMinus1"));
-        P_HEIGHT_IN_SBS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHeightInSbsMinus1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoAV1TileInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("TileCols"),
+		    JAVA_BYTE.withName("TileRows"),
+		    JAVA_SHORT.withName("context_update_tile_id"),
+		    JAVA_BYTE.withName("tile_size_bytes_minus_1"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pMiColStarts"),
+		    UNBOUNDED_ADDRESS.withName("pMiRowStarts"),
+		    UNBOUNDED_ADDRESS.withName("pWidthInSbsMinus1"),
+		    UNBOUNDED_ADDRESS.withName("pHeightInSbsMinus1")
+		).withName("StdVideoAV1TileInfo").withByteAlignment(8);
+		
+		TILE_COLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TileCols"));
+		TILE_ROWS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TileRows"));
+		CONTEXT_UPDATE_TILE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("context_update_tile_id"));
+		TILE_SIZE_BYTES_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tile_size_bytes_minus_1"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
+		P_MI_COL_STARTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMiColStarts"));
+		P_MI_ROW_STARTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMiRowStarts"));
+		P_WIDTH_IN_SBS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWidthInSbsMinus1"));
+		P_HEIGHT_IN_SBS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHeightInSbsMinus1"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		TILE_COLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TileCols"));
+		TILE_ROWS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TileRows"));
+		CONTEXT_UPDATE_TILE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("context_update_tile_id"));
+		TILE_SIZE_BYTES_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tile_size_bytes_minus_1"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_MI_COL_STARTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMiColStarts"));
+		P_MI_ROW_STARTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMiRowStarts"));
+		P_WIDTH_IN_SBS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWidthInSbsMinus1"));
+		P_HEIGHT_IN_SBS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHeightInSbsMinus1"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1TileInfo() {
-        this(Arena.ofAuto());
+	public StdVideoAV1TileInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1TileInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1TileInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoAV1TileInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1TileInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoAV1TileInfo flags(Consumer<StdVideoAV1TileInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoAV1TileInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoAV1TileInfo flags(StdVideoAV1TileInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoAV1TileInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoAV1TileInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1TileInfoFlags.LAYOUT));
+    public StdVideoAV1TileInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #tileCols()
     public StdVideoAV1TileInfo tileCols(byte tileCols) {
     	TILE_COLS_HANDLE.set(segment, 0L, tileCols);
@@ -212,22 +228,6 @@ public final class StdVideoAV1TileInfo
     	return new NativeShortArray(segment);
     }
     
-    /// @see #flags()
-    public StdVideoAV1TileInfo flags(Consumer<StdVideoAV1TileInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1TileInfo flags(StdVideoAV1TileInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoAV1TileInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoAV1TileInfo set(StdVideoAV1TileInfo other) {
         return set(other.segment);
@@ -279,5 +279,5 @@ public final class StdVideoAV1TileInfo
             segment -> new StdVideoAV1TileInfo(segment)
         );
     }
-    
+
 }

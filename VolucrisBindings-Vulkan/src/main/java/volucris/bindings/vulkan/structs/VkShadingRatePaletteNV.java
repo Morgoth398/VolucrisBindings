@@ -22,44 +22,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkShadingRatePaletteNV
 		implements Struct<VkShadingRatePaletteNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SHADING_RATE_PALETTE_ENTRY_COUNT_HANDLE;
-    public static final VarHandle P_SHADING_RATE_PALETTE_ENTRIES_HANDLE;
+	public static final VarHandle SHADING_RATE_PALETTE_ENTRY_COUNT_HANDLE;
+	public static final VarHandle P_SHADING_RATE_PALETTE_ENTRIES_HANDLE;
 
-    public static final long SHADING_RATE_PALETTE_ENTRY_COUNT_BYTE_OFFSET;
-    public static final long P_SHADING_RATE_PALETTE_ENTRIES_BYTE_OFFSET;
+	public static final long SHADING_RATE_PALETTE_ENTRY_COUNT_BYTE_OFFSET;
+	public static final long P_SHADING_RATE_PALETTE_ENTRIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("shadingRatePaletteEntryCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pShadingRatePaletteEntries")
-        ).withName("VkShadingRatePaletteNV").withByteAlignment(8);
-        
-        SHADING_RATE_PALETTE_ENTRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRatePaletteEntryCount"));
-        P_SHADING_RATE_PALETTE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShadingRatePaletteEntries"));
-        
-        SHADING_RATE_PALETTE_ENTRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRatePaletteEntryCount"));
-        P_SHADING_RATE_PALETTE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShadingRatePaletteEntries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("shadingRatePaletteEntryCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pShadingRatePaletteEntries")
+		).withName("VkShadingRatePaletteNV").withByteAlignment(8);
+		
+		SHADING_RATE_PALETTE_ENTRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRatePaletteEntryCount"));
+		P_SHADING_RATE_PALETTE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShadingRatePaletteEntries"));
+		
+		SHADING_RATE_PALETTE_ENTRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRatePaletteEntryCount"));
+		P_SHADING_RATE_PALETTE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShadingRatePaletteEntries"));
+		//@formatter:on
+	}
 
-    public VkShadingRatePaletteNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkShadingRatePaletteNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkShadingRatePaletteNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkShadingRatePaletteNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkShadingRatePaletteNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkShadingRatePaletteNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #shadingRatePaletteEntryCount()
     public VkShadingRatePaletteNV shadingRatePaletteEntryCount(int shadingRatePaletteEntryCount) {
@@ -137,5 +137,5 @@ public final class VkShadingRatePaletteNV
             segment -> new VkShadingRatePaletteNV(segment)
         );
     }
-    
+
 }

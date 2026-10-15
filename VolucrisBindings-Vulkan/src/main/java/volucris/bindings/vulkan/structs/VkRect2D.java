@@ -19,42 +19,42 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkRect2D
 		implements Struct<VkRect2D> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long EXTENT_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkOffset2D offset;
-    private final VkExtent2D extent;
+	private final VkOffset2D offset;
+	private final VkExtent2D extent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkOffset2D.LAYOUT.withName("offset"),
-            VkExtent2D.LAYOUT.withName("extent")
-        ).withName("VkRect2D").withByteAlignment(4);
-        
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkOffset2D.LAYOUT.withName("offset"),
+		    VkExtent2D.LAYOUT.withName("extent")
+		).withName("VkRect2D").withByteAlignment(4);
+		
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
+		//@formatter:on
+	}
 
-    public VkRect2D() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRect2D(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRect2D(MemorySegment segment) {
-        this.segment = segment;
-    
-        offset = new VkOffset2D(segment.asSlice(OFFSET_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        extent = new VkExtent2D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkRect2D() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRect2D(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRect2D(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    offset = new VkOffset2D(segment.asSlice(OFFSET_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    extent = new VkExtent2D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #offset()
     public VkRect2D offset(Consumer<VkOffset2D> consumer) {
@@ -139,5 +139,5 @@ public final class VkRect2D
             segment -> new VkRect2D(segment)
         );
     }
-    
+
 }

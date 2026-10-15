@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerYcbcrConversionInfo
 		implements Struct<VkSamplerYcbcrConversionInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle CONVERSION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle CONVERSION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CONVERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CONVERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("conversion")
-        ).withName("VkSamplerYcbcrConversionInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        CONVERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("conversion"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CONVERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conversion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("conversion")
+		).withName("VkSamplerYcbcrConversionInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		CONVERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("conversion"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CONVERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conversion"));
+		//@formatter:on
+	}
 
-    public VkSamplerYcbcrConversionInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerYcbcrConversionInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerYcbcrConversionInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSamplerYcbcrConversionInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerYcbcrConversionInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerYcbcrConversionInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSamplerYcbcrConversionInfo sType(int sType) {
@@ -156,5 +156,5 @@ public final class VkSamplerYcbcrConversionInfo
             segment -> new VkSamplerYcbcrConversionInfo(segment)
         );
     }
-    
+
 }

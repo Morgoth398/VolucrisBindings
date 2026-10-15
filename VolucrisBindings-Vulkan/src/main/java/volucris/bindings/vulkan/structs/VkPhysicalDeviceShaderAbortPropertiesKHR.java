@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderAbortPropertiesKHR
 		implements Struct<VkPhysicalDeviceShaderAbortPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_SHADER_ABORT_MESSAGE_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_SHADER_ABORT_MESSAGE_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_SHADER_ABORT_MESSAGE_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_SHADER_ABORT_MESSAGE_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("maxShaderAbortMessageSize")
-        ).withName("VkPhysicalDeviceShaderAbortPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_SHADER_ABORT_MESSAGE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderAbortMessageSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_SHADER_ABORT_MESSAGE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderAbortMessageSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("maxShaderAbortMessageSize")
+		).withName("VkPhysicalDeviceShaderAbortPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_SHADER_ABORT_MESSAGE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderAbortMessageSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_SHADER_ABORT_MESSAGE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderAbortMessageSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderAbortPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderAbortPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderAbortPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderAbortPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderAbortPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderAbortPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderAbortPropertiesKHR sType(int sType) {
@@ -151,5 +151,5 @@ public final class VkPhysicalDeviceShaderAbortPropertiesKHR
             segment -> new VkPhysicalDeviceShaderAbortPropertiesKHR(segment)
         );
     }
-    
+
 }

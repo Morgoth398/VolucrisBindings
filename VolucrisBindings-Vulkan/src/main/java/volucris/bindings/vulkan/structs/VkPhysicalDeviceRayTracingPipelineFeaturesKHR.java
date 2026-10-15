@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRayTracingPipelineFeaturesKHR
 		implements Struct<VkPhysicalDeviceRayTracingPipelineFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RAY_TRACING_PIPELINE_HANDLE;
-    public static final VarHandle RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_HANDLE;
-    public static final VarHandle RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_HANDLE;
-    public static final VarHandle RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE;
-    public static final VarHandle RAY_TRAVERSAL_PRIMITIVE_CULLING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RAY_TRACING_PIPELINE_HANDLE;
+	public static final VarHandle RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_HANDLE;
+	public static final VarHandle RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_HANDLE;
+	public static final VarHandle RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE;
+	public static final VarHandle RAY_TRAVERSAL_PRIMITIVE_CULLING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RAY_TRACING_PIPELINE_BYTE_OFFSET;
-    public static final long RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BYTE_OFFSET;
-    public static final long RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_BYTE_OFFSET;
-    public static final long RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET;
-    public static final long RAY_TRAVERSAL_PRIMITIVE_CULLING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RAY_TRACING_PIPELINE_BYTE_OFFSET;
+	public static final long RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BYTE_OFFSET;
+	public static final long RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_BYTE_OFFSET;
+	public static final long RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET;
+	public static final long RAY_TRAVERSAL_PRIMITIVE_CULLING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rayTracingPipeline"),
-            JAVA_INT.withName("rayTracingPipelineShaderGroupHandleCaptureReplay"),
-            JAVA_INT.withName("rayTracingPipelineShaderGroupHandleCaptureReplayMixed"),
-            JAVA_INT.withName("rayTracingPipelineTraceRaysIndirect"),
-            JAVA_INT.withName("rayTraversalPrimitiveCulling"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRayTracingPipelineFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RAY_TRACING_PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipeline"));
-        RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplay"));
-        RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplayMixed"));
-        RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect"));
-        RAY_TRAVERSAL_PRIMITIVE_CULLING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTraversalPrimitiveCulling"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RAY_TRACING_PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipeline"));
-        RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplay"));
-        RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplayMixed"));
-        RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect"));
-        RAY_TRAVERSAL_PRIMITIVE_CULLING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTraversalPrimitiveCulling"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rayTracingPipeline"),
+		    JAVA_INT.withName("rayTracingPipelineShaderGroupHandleCaptureReplay"),
+		    JAVA_INT.withName("rayTracingPipelineShaderGroupHandleCaptureReplayMixed"),
+		    JAVA_INT.withName("rayTracingPipelineTraceRaysIndirect"),
+		    JAVA_INT.withName("rayTraversalPrimitiveCulling"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRayTracingPipelineFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RAY_TRACING_PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipeline"));
+		RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplay"));
+		RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplayMixed"));
+		RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect"));
+		RAY_TRAVERSAL_PRIMITIVE_CULLING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTraversalPrimitiveCulling"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RAY_TRACING_PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipeline"));
+		RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplay"));
+		RAY_TRACING_PIPELINE_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_MIXED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineShaderGroupHandleCaptureReplayMixed"));
+		RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect"));
+		RAY_TRAVERSAL_PRIMITIVE_CULLING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTraversalPrimitiveCulling"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRayTracingPipelineFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRayTracingPipelineFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRayTracingPipelineFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRayTracingPipelineFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRayTracingPipelineFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRayTracingPipelineFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRayTracingPipelineFeaturesKHR sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceRayTracingPipelineFeaturesKHR
             segment -> new VkPhysicalDeviceRayTracingPipelineFeaturesKHR(segment)
         );
     }
-    
+
 }

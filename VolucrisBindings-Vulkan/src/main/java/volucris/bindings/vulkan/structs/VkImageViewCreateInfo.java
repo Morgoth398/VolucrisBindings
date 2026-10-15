@@ -22,77 +22,77 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageViewCreateInfo
 		implements Struct<VkImageViewCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle IMAGE_HANDLE;
-    public static final VarHandle VIEW_TYPE_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle IMAGE_HANDLE;
+	public static final VarHandle VIEW_TYPE_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long IMAGE_BYTE_OFFSET;
-    public static final long VIEW_TYPE_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long COMPONENTS_BYTE_OFFSET;
-    public static final long SUBRESOURCE_RANGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long IMAGE_BYTE_OFFSET;
+	public static final long VIEW_TYPE_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long COMPONENTS_BYTE_OFFSET;
+	public static final long SUBRESOURCE_RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkComponentMapping components;
-    private final VkImageSubresourceRange subresourceRange;
+	private final VkComponentMapping components;
+	private final VkImageSubresourceRange subresourceRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("image"),
-            JAVA_INT.withName("viewType"),
-            JAVA_INT.withName("format"),
-            VkComponentMapping.LAYOUT.withName("components"),
-            VkImageSubresourceRange.LAYOUT.withName("subresourceRange"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkImageViewCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
-        VIEW_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewType"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
-        VIEW_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewType"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("components"));
-        SUBRESOURCE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresourceRange"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("image"),
+		    JAVA_INT.withName("viewType"),
+		    JAVA_INT.withName("format"),
+		    VkComponentMapping.LAYOUT.withName("components"),
+		    VkImageSubresourceRange.LAYOUT.withName("subresourceRange"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkImageViewCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
+		VIEW_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewType"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
+		VIEW_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewType"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("components"));
+		SUBRESOURCE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresourceRange"));
+		//@formatter:on
+	}
 
-    public VkImageViewCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageViewCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageViewCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        components = new VkComponentMapping(segment.asSlice(COMPONENTS_BYTE_OFFSET, VkComponentMapping.LAYOUT));
-        subresourceRange = new VkImageSubresourceRange(segment.asSlice(SUBRESOURCE_RANGE_BYTE_OFFSET, VkImageSubresourceRange.LAYOUT));
-    }
+	public VkImageViewCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageViewCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageViewCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    components = new VkComponentMapping(segment.asSlice(COMPONENTS_BYTE_OFFSET, VkComponentMapping.LAYOUT));
+	    subresourceRange = new VkImageSubresourceRange(segment.asSlice(SUBRESOURCE_RANGE_BYTE_OFFSET, VkImageSubresourceRange.LAYOUT));
+	}
 
     /// @see #sType()
     public VkImageViewCreateInfo sType(int sType) {
@@ -247,5 +247,5 @@ public final class VkImageViewCreateInfo
             segment -> new VkImageViewCreateInfo(segment)
         );
     }
-    
+
 }

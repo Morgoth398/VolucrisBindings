@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkIndirectCommandsVertexBufferTokenEXT
 		implements Struct<VkIndirectCommandsVertexBufferTokenEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle VERTEX_BINDING_UNIT_HANDLE;
+	public static final VarHandle VERTEX_BINDING_UNIT_HANDLE;
 
-    public static final long VERTEX_BINDING_UNIT_BYTE_OFFSET;
+	public static final long VERTEX_BINDING_UNIT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("vertexBindingUnit")
-        ).withName("VkIndirectCommandsVertexBufferTokenEXT").withByteAlignment(4);
-        
-        VERTEX_BINDING_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingUnit"));
-        
-        VERTEX_BINDING_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingUnit"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("vertexBindingUnit")
+		).withName("VkIndirectCommandsVertexBufferTokenEXT").withByteAlignment(4);
+		
+		VERTEX_BINDING_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingUnit"));
+		
+		VERTEX_BINDING_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingUnit"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsVertexBufferTokenEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsVertexBufferTokenEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsVertexBufferTokenEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsVertexBufferTokenEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsVertexBufferTokenEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsVertexBufferTokenEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #vertexBindingUnit()
     public VkIndirectCommandsVertexBufferTokenEXT vertexBindingUnit(int vertexBindingUnit) {
@@ -113,5 +113,5 @@ public final class VkIndirectCommandsVertexBufferTokenEXT
             segment -> new VkIndirectCommandsVertexBufferTokenEXT(segment)
         );
     }
-    
+
 }

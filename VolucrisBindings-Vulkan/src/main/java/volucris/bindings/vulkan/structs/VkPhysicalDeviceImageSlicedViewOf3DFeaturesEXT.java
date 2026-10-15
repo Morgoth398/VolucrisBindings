@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT
 		implements Struct<VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_SLICED_VIEW_OF3_D_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_SLICED_VIEW_OF3_D_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_SLICED_VIEW_OF3_D_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_SLICED_VIEW_OF3_D_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("imageSlicedViewOf3D"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_SLICED_VIEW_OF3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageSlicedViewOf3D"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_SLICED_VIEW_OF3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSlicedViewOf3D"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("imageSlicedViewOf3D"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_SLICED_VIEW_OF3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageSlicedViewOf3D"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_SLICED_VIEW_OF3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSlicedViewOf3D"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT
             segment -> new VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRayTracingMotionBlurFeaturesNV
 		implements Struct<VkPhysicalDeviceRayTracingMotionBlurFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RAY_TRACING_MOTION_BLUR_HANDLE;
-    public static final VarHandle RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RAY_TRACING_MOTION_BLUR_HANDLE;
+	public static final VarHandle RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RAY_TRACING_MOTION_BLUR_BYTE_OFFSET;
-    public static final long RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RAY_TRACING_MOTION_BLUR_BYTE_OFFSET;
+	public static final long RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rayTracingMotionBlur"),
-            JAVA_INT.withName("rayTracingMotionBlurPipelineTraceRaysIndirect")
-        ).withName("VkPhysicalDeviceRayTracingMotionBlurFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RAY_TRACING_MOTION_BLUR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingMotionBlur"));
-        RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingMotionBlurPipelineTraceRaysIndirect"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RAY_TRACING_MOTION_BLUR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingMotionBlur"));
-        RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingMotionBlurPipelineTraceRaysIndirect"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rayTracingMotionBlur"),
+		    JAVA_INT.withName("rayTracingMotionBlurPipelineTraceRaysIndirect")
+		).withName("VkPhysicalDeviceRayTracingMotionBlurFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RAY_TRACING_MOTION_BLUR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingMotionBlur"));
+		RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingMotionBlurPipelineTraceRaysIndirect"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RAY_TRACING_MOTION_BLUR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingMotionBlur"));
+		RAY_TRACING_MOTION_BLUR_PIPELINE_TRACE_RAYS_INDIRECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingMotionBlurPipelineTraceRaysIndirect"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRayTracingMotionBlurFeaturesNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceRayTracingMotionBlurFeaturesNV
             segment -> new VkPhysicalDeviceRayTracingMotionBlurFeaturesNV(segment)
         );
     }
-    
+
 }

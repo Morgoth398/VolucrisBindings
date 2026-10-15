@@ -20,60 +20,50 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkRectLayerKHR
 		implements Struct<VkRectLayerKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LAYER_HANDLE;
+	public static final VarHandle LAYER_HANDLE;
 
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long EXTENT_BYTE_OFFSET;
-    public static final long LAYER_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long EXTENT_BYTE_OFFSET;
+	public static final long LAYER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkOffset2D offset;
-    private final VkExtent2D extent;
+	private final VkOffset2D offset;
+	private final VkExtent2D extent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkOffset2D.LAYOUT.withName("offset"),
-            VkExtent2D.LAYOUT.withName("extent"),
-            JAVA_INT.withName("layer")
-        ).withName("VkRectLayerKHR").withByteAlignment(4);
-        
-        LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layer"));
-        
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
-        LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layer"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkOffset2D.LAYOUT.withName("offset"),
+		    VkExtent2D.LAYOUT.withName("extent"),
+		    JAVA_INT.withName("layer")
+		).withName("VkRectLayerKHR").withByteAlignment(4);
+		
+		LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layer"));
+		
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
+		LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layer"));
+		//@formatter:on
+	}
 
-    public VkRectLayerKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRectLayerKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRectLayerKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        offset = new VkOffset2D(segment.asSlice(OFFSET_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        extent = new VkExtent2D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkRectLayerKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRectLayerKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRectLayerKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    offset = new VkOffset2D(segment.asSlice(OFFSET_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    extent = new VkExtent2D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
-    /// @see #layer()
-    public VkRectLayerKHR layer(int layer) {
-    	LAYER_HANDLE.set(segment, 0L, layer);
-    	return this;
-    }
-    
-    public int layer() {
-    	return (int) LAYER_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #offset()
     public VkRectLayerKHR offset(Consumer<VkOffset2D> consumer) {
     	consumer.accept(offset);
@@ -104,6 +94,16 @@ public final class VkRectLayerKHR
     
     public VkExtent2D extent() {
     	return extent;
+    }
+    
+    /// @see #layer()
+    public VkRectLayerKHR layer(int layer) {
+    	LAYER_HANDLE.set(segment, 0L, layer);
+    	return this;
+    }
+    
+    public int layer() {
+    	return (int) LAYER_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -157,5 +157,5 @@ public final class VkRectLayerKHR
             segment -> new VkRectLayerKHR(segment)
         );
     }
-    
+
 }

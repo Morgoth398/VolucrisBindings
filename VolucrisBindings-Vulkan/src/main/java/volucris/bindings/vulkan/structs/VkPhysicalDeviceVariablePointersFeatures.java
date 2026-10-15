@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVariablePointersFeatures
 		implements Struct<VkPhysicalDeviceVariablePointersFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VARIABLE_POINTERS_STORAGE_BUFFER_HANDLE;
-    public static final VarHandle VARIABLE_POINTERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VARIABLE_POINTERS_STORAGE_BUFFER_HANDLE;
+	public static final VarHandle VARIABLE_POINTERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VARIABLE_POINTERS_STORAGE_BUFFER_BYTE_OFFSET;
-    public static final long VARIABLE_POINTERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VARIABLE_POINTERS_STORAGE_BUFFER_BYTE_OFFSET;
+	public static final long VARIABLE_POINTERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("variablePointersStorageBuffer"),
-            JAVA_INT.withName("variablePointers")
-        ).withName("VkPhysicalDeviceVariablePointersFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VARIABLE_POINTERS_STORAGE_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variablePointersStorageBuffer"));
-        VARIABLE_POINTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variablePointers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VARIABLE_POINTERS_STORAGE_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variablePointersStorageBuffer"));
-        VARIABLE_POINTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variablePointers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("variablePointersStorageBuffer"),
+		    JAVA_INT.withName("variablePointers")
+		).withName("VkPhysicalDeviceVariablePointersFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VARIABLE_POINTERS_STORAGE_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variablePointersStorageBuffer"));
+		VARIABLE_POINTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variablePointers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VARIABLE_POINTERS_STORAGE_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variablePointersStorageBuffer"));
+		VARIABLE_POINTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variablePointers"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVariablePointersFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVariablePointersFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVariablePointersFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVariablePointersFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVariablePointersFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVariablePointersFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVariablePointersFeatures sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceVariablePointersFeatures
             segment -> new VkPhysicalDeviceVariablePointersFeatures(segment)
         );
     }
-    
+
 }

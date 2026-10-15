@@ -20,71 +20,87 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeAV1OperatingPointInfo
 		implements Struct<StdVideoEncodeAV1OperatingPointInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OPERATING_POINT_IDC_HANDLE;
-    public static final VarHandle SEQ_LEVEL_IDX_HANDLE;
-    public static final VarHandle SEQ_TIER_HANDLE;
-    public static final VarHandle DECODER_BUFFER_DELAY_HANDLE;
-    public static final VarHandle ENCODER_BUFFER_DELAY_HANDLE;
-    public static final VarHandle INITIAL_DISPLAY_DELAY_MINUS_1_HANDLE;
+	public static final VarHandle OPERATING_POINT_IDC_HANDLE;
+	public static final VarHandle SEQ_LEVEL_IDX_HANDLE;
+	public static final VarHandle SEQ_TIER_HANDLE;
+	public static final VarHandle DECODER_BUFFER_DELAY_HANDLE;
+	public static final VarHandle ENCODER_BUFFER_DELAY_HANDLE;
+	public static final VarHandle INITIAL_DISPLAY_DELAY_MINUS_1_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long OPERATING_POINT_IDC_BYTE_OFFSET;
-    public static final long SEQ_LEVEL_IDX_BYTE_OFFSET;
-    public static final long SEQ_TIER_BYTE_OFFSET;
-    public static final long DECODER_BUFFER_DELAY_BYTE_OFFSET;
-    public static final long ENCODER_BUFFER_DELAY_BYTE_OFFSET;
-    public static final long INITIAL_DISPLAY_DELAY_MINUS_1_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long OPERATING_POINT_IDC_BYTE_OFFSET;
+	public static final long SEQ_LEVEL_IDX_BYTE_OFFSET;
+	public static final long SEQ_TIER_BYTE_OFFSET;
+	public static final long DECODER_BUFFER_DELAY_BYTE_OFFSET;
+	public static final long ENCODER_BUFFER_DELAY_BYTE_OFFSET;
+	public static final long INITIAL_DISPLAY_DELAY_MINUS_1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeAV1OperatingPointInfoFlags flags;
+	private final StdVideoEncodeAV1OperatingPointInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeAV1OperatingPointInfoFlags.LAYOUT.withName("flags"),
-            JAVA_SHORT.withName("operating_point_idc"),
-            JAVA_BYTE.withName("seq_level_idx"),
-            JAVA_BYTE.withName("seq_tier"),
-            JAVA_INT.withName("decoder_buffer_delay"),
-            JAVA_INT.withName("encoder_buffer_delay"),
-            JAVA_BYTE.withName("initial_display_delay_minus_1"),
-            MemoryLayout.paddingLayout(3)
-        ).withName("StdVideoEncodeAV1OperatingPointInfo").withByteAlignment(4);
-        
-        OPERATING_POINT_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("operating_point_idc"));
-        SEQ_LEVEL_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_level_idx"));
-        SEQ_TIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_tier"));
-        DECODER_BUFFER_DELAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decoder_buffer_delay"));
-        ENCODER_BUFFER_DELAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("encoder_buffer_delay"));
-        INITIAL_DISPLAY_DELAY_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initial_display_delay_minus_1"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        OPERATING_POINT_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("operating_point_idc"));
-        SEQ_LEVEL_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_level_idx"));
-        SEQ_TIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_tier"));
-        DECODER_BUFFER_DELAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decoder_buffer_delay"));
-        ENCODER_BUFFER_DELAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("encoder_buffer_delay"));
-        INITIAL_DISPLAY_DELAY_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initial_display_delay_minus_1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeAV1OperatingPointInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_SHORT.withName("operating_point_idc"),
+		    JAVA_BYTE.withName("seq_level_idx"),
+		    JAVA_BYTE.withName("seq_tier"),
+		    JAVA_INT.withName("decoder_buffer_delay"),
+		    JAVA_INT.withName("encoder_buffer_delay"),
+		    JAVA_BYTE.withName("initial_display_delay_minus_1"),
+		    MemoryLayout.paddingLayout(3)
+		).withName("StdVideoEncodeAV1OperatingPointInfo").withByteAlignment(4);
+		
+		OPERATING_POINT_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("operating_point_idc"));
+		SEQ_LEVEL_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_level_idx"));
+		SEQ_TIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_tier"));
+		DECODER_BUFFER_DELAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decoder_buffer_delay"));
+		ENCODER_BUFFER_DELAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("encoder_buffer_delay"));
+		INITIAL_DISPLAY_DELAY_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initial_display_delay_minus_1"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		OPERATING_POINT_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("operating_point_idc"));
+		SEQ_LEVEL_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_level_idx"));
+		SEQ_TIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_tier"));
+		DECODER_BUFFER_DELAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decoder_buffer_delay"));
+		ENCODER_BUFFER_DELAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("encoder_buffer_delay"));
+		INITIAL_DISPLAY_DELAY_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initial_display_delay_minus_1"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeAV1OperatingPointInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeAV1OperatingPointInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeAV1OperatingPointInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeAV1OperatingPointInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeAV1OperatingPointInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeAV1OperatingPointInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeAV1OperatingPointInfo flags(Consumer<StdVideoEncodeAV1OperatingPointInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeAV1OperatingPointInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeAV1OperatingPointInfo flags(StdVideoEncodeAV1OperatingPointInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeAV1OperatingPointInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeAV1OperatingPointInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeAV1OperatingPointInfoFlags.LAYOUT));
+    public StdVideoEncodeAV1OperatingPointInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #operating_point_idc()
     public StdVideoEncodeAV1OperatingPointInfo operating_point_idc(short operating_point_idc) {
     	OPERATING_POINT_IDC_HANDLE.set(segment, 0L, operating_point_idc);
@@ -145,22 +161,6 @@ public final class StdVideoEncodeAV1OperatingPointInfo
     	return (byte) INITIAL_DISPLAY_DELAY_MINUS_1_HANDLE.get(segment, 0L);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeAV1OperatingPointInfo flags(Consumer<StdVideoEncodeAV1OperatingPointInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeAV1OperatingPointInfo flags(StdVideoEncodeAV1OperatingPointInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeAV1OperatingPointInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeAV1OperatingPointInfo set(StdVideoEncodeAV1OperatingPointInfo other) {
         return set(other.segment);
@@ -212,5 +212,5 @@ public final class StdVideoEncodeAV1OperatingPointInfo
             segment -> new StdVideoEncodeAV1OperatingPointInfo(segment)
         );
     }
-    
+
 }

@@ -22,70 +22,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkClusterAccelerationStructureInputInfoNV
 		implements Struct<VkClusterAccelerationStructureInputInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_ACCELERATION_STRUCTURE_COUNT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle OP_TYPE_HANDLE;
-    public static final VarHandle OP_MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_ACCELERATION_STRUCTURE_COUNT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle OP_TYPE_HANDLE;
+	public static final VarHandle OP_MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_ACCELERATION_STRUCTURE_COUNT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long OP_TYPE_BYTE_OFFSET;
-    public static final long OP_MODE_BYTE_OFFSET;
-    public static final long OP_INPUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_ACCELERATION_STRUCTURE_COUNT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long OP_TYPE_BYTE_OFFSET;
+	public static final long OP_MODE_BYTE_OFFSET;
+	public static final long OP_INPUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkClusterAccelerationStructureOpInputNV opInput;
+	private final VkClusterAccelerationStructureOpInputNV opInput;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxAccelerationStructureCount"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("opType"),
-            JAVA_INT.withName("opMode"),
-            VkClusterAccelerationStructureOpInputNV.LAYOUT.withName("opInput")
-        ).withName("VkClusterAccelerationStructureInputInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_ACCELERATION_STRUCTURE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxAccelerationStructureCount"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        OP_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opType"));
-        OP_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opMode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_ACCELERATION_STRUCTURE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxAccelerationStructureCount"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        OP_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opType"));
-        OP_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opMode"));
-        OP_INPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opInput"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxAccelerationStructureCount"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("opType"),
+		    JAVA_INT.withName("opMode"),
+		    VkClusterAccelerationStructureOpInputNV.LAYOUT.withName("opInput")
+		).withName("VkClusterAccelerationStructureInputInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_ACCELERATION_STRUCTURE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxAccelerationStructureCount"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		OP_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opType"));
+		OP_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opMode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_ACCELERATION_STRUCTURE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxAccelerationStructureCount"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		OP_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opType"));
+		OP_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opMode"));
+		OP_INPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opInput"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureInputInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureInputInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureInputInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        opInput = new VkClusterAccelerationStructureOpInputNV(segment.asSlice(OP_INPUT_BYTE_OFFSET, VkClusterAccelerationStructureOpInputNV.LAYOUT));
-    }
+	public VkClusterAccelerationStructureInputInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureInputInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureInputInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    opInput = new VkClusterAccelerationStructureOpInputNV(segment.asSlice(OP_INPUT_BYTE_OFFSET, VkClusterAccelerationStructureOpInputNV.LAYOUT));
+	}
 
     /// @see #sType()
     public VkClusterAccelerationStructureInputInfoNV sType(int sType) {
@@ -219,5 +219,5 @@ public final class VkClusterAccelerationStructureInputInfoNV
             segment -> new VkClusterAccelerationStructureInputInfoNV(segment)
         );
     }
-    
+
 }

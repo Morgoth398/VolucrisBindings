@@ -21,87 +21,87 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorUpdateTemplateCreateInfo
 		implements Struct<VkDescriptorUpdateTemplateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DESCRIPTOR_UPDATE_ENTRY_COUNT_HANDLE;
-    public static final VarHandle P_DESCRIPTOR_UPDATE_ENTRIES_HANDLE;
-    public static final VarHandle TEMPLATE_TYPE_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_LAYOUT_HANDLE;
-    public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
-    public static final VarHandle PIPELINE_LAYOUT_HANDLE;
-    public static final VarHandle SET_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DESCRIPTOR_UPDATE_ENTRY_COUNT_HANDLE;
+	public static final VarHandle P_DESCRIPTOR_UPDATE_ENTRIES_HANDLE;
+	public static final VarHandle TEMPLATE_TYPE_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_LAYOUT_HANDLE;
+	public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
+	public static final VarHandle PIPELINE_LAYOUT_HANDLE;
+	public static final VarHandle SET_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DESCRIPTOR_UPDATE_ENTRY_COUNT_BYTE_OFFSET;
-    public static final long P_DESCRIPTOR_UPDATE_ENTRIES_BYTE_OFFSET;
-    public static final long TEMPLATE_TYPE_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET;
-    public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
-    public static final long PIPELINE_LAYOUT_BYTE_OFFSET;
-    public static final long SET_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DESCRIPTOR_UPDATE_ENTRY_COUNT_BYTE_OFFSET;
+	public static final long P_DESCRIPTOR_UPDATE_ENTRIES_BYTE_OFFSET;
+	public static final long TEMPLATE_TYPE_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET;
+	public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
+	public static final long PIPELINE_LAYOUT_BYTE_OFFSET;
+	public static final long SET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("descriptorUpdateEntryCount"),
-            UNBOUNDED_ADDRESS.withName("pDescriptorUpdateEntries"),
-            JAVA_INT.withName("templateType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("descriptorSetLayout"),
-            JAVA_INT.withName("pipelineBindPoint"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pipelineLayout"),
-            JAVA_INT.withName("set"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDescriptorUpdateTemplateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DESCRIPTOR_UPDATE_ENTRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorUpdateEntryCount"));
-        P_DESCRIPTOR_UPDATE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorUpdateEntries"));
-        TEMPLATE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("templateType"));
-        DESCRIPTOR_SET_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetLayout"));
-        PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
-        PIPELINE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineLayout"));
-        SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("set"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DESCRIPTOR_UPDATE_ENTRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorUpdateEntryCount"));
-        P_DESCRIPTOR_UPDATE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorUpdateEntries"));
-        TEMPLATE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("templateType"));
-        DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetLayout"));
-        PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
-        PIPELINE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineLayout"));
-        SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("set"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("descriptorUpdateEntryCount"),
+		    UNBOUNDED_ADDRESS.withName("pDescriptorUpdateEntries"),
+		    JAVA_INT.withName("templateType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("descriptorSetLayout"),
+		    JAVA_INT.withName("pipelineBindPoint"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pipelineLayout"),
+		    JAVA_INT.withName("set"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDescriptorUpdateTemplateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DESCRIPTOR_UPDATE_ENTRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorUpdateEntryCount"));
+		P_DESCRIPTOR_UPDATE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorUpdateEntries"));
+		TEMPLATE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("templateType"));
+		DESCRIPTOR_SET_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetLayout"));
+		PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
+		PIPELINE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineLayout"));
+		SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("set"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DESCRIPTOR_UPDATE_ENTRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorUpdateEntryCount"));
+		P_DESCRIPTOR_UPDATE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorUpdateEntries"));
+		TEMPLATE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("templateType"));
+		DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetLayout"));
+		PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
+		PIPELINE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineLayout"));
+		SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("set"));
+		//@formatter:on
+	}
 
-    public VkDescriptorUpdateTemplateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorUpdateTemplateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorUpdateTemplateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorUpdateTemplateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorUpdateTemplateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorUpdateTemplateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorUpdateTemplateCreateInfo sType(int sType) {
@@ -274,5 +274,5 @@ public final class VkDescriptorUpdateTemplateCreateInfo
             segment -> new VkDescriptorUpdateTemplateCreateInfo(segment)
         );
     }
-    
+
 }

@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectExecutionSetShaderLayoutInfoEXT
 		implements Struct<VkIndirectExecutionSetShaderLayoutInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SET_LAYOUT_COUNT_HANDLE;
-    public static final VarHandle P_SET_LAYOUTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SET_LAYOUT_COUNT_HANDLE;
+	public static final VarHandle P_SET_LAYOUTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SET_LAYOUT_COUNT_BYTE_OFFSET;
-    public static final long P_SET_LAYOUTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SET_LAYOUT_COUNT_BYTE_OFFSET;
+	public static final long P_SET_LAYOUTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("setLayoutCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSetLayouts")
-        ).withName("VkIndirectExecutionSetShaderLayoutInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SET_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setLayoutCount"));
-        P_SET_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayouts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SET_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setLayoutCount"));
-        P_SET_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayouts"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("setLayoutCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSetLayouts")
+		).withName("VkIndirectExecutionSetShaderLayoutInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SET_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setLayoutCount"));
+		P_SET_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayouts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SET_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setLayoutCount"));
+		P_SET_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayouts"));
+		//@formatter:on
+	}
 
-    public VkIndirectExecutionSetShaderLayoutInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectExecutionSetShaderLayoutInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectExecutionSetShaderLayoutInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectExecutionSetShaderLayoutInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectExecutionSetShaderLayoutInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectExecutionSetShaderLayoutInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectExecutionSetShaderLayoutInfoEXT sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkIndirectExecutionSetShaderLayoutInfoEXT
             segment -> new VkIndirectExecutionSetShaderLayoutInfoEXT(segment)
         );
     }
-    
+
 }

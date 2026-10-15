@@ -22,49 +22,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMicromapVersionInfoEXT
 		implements Struct<VkMicromapVersionInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_VERSION_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_VERSION_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_VERSION_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_VERSION_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pVersionData")
-        ).withName("VkMicromapVersionInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_VERSION_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVersionData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_VERSION_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVersionData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pVersionData")
+		).withName("VkMicromapVersionInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_VERSION_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVersionData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_VERSION_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVersionData"));
+		//@formatter:on
+	}
 
-    public VkMicromapVersionInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMicromapVersionInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMicromapVersionInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMicromapVersionInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMicromapVersionInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMicromapVersionInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMicromapVersionInfoEXT sType(int sType) {
@@ -157,5 +157,5 @@ public final class VkMicromapVersionInfoEXT
             segment -> new VkMicromapVersionInfoEXT(segment)
         );
     }
-    
+
 }

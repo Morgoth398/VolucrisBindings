@@ -20,130 +20,90 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDescriptorMappingSourceDataEXT
 		implements Struct<VkDescriptorMappingSourceDataEXT> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle PUSH_DATA_OFFSET_HANDLE;
-    public static final VarHandle PUSH_ADDRESS_OFFSET_HANDLE;
-    public static final VarHandle SHADER_RECORD_DATA_OFFSET_HANDLE;
-    public static final VarHandle SHADER_RECORD_ADDRESS_OFFSET_HANDLE;
+	public static final VarHandle PUSH_DATA_OFFSET_HANDLE;
+	public static final VarHandle PUSH_ADDRESS_OFFSET_HANDLE;
+	public static final VarHandle SHADER_RECORD_DATA_OFFSET_HANDLE;
+	public static final VarHandle SHADER_RECORD_ADDRESS_OFFSET_HANDLE;
 
-    public static final long CONSTANT_OFFSET_BYTE_OFFSET;
-    public static final long PUSH_INDEX_BYTE_OFFSET;
-    public static final long INDIRECT_INDEX_BYTE_OFFSET;
-    public static final long INDIRECT_INDEX_ARRAY_BYTE_OFFSET;
-    public static final long HEAP_DATA_BYTE_OFFSET;
-    public static final long PUSH_DATA_OFFSET_BYTE_OFFSET;
-    public static final long PUSH_ADDRESS_OFFSET_BYTE_OFFSET;
-    public static final long INDIRECT_ADDRESS_BYTE_OFFSET;
-    public static final long SHADER_RECORD_INDEX_BYTE_OFFSET;
-    public static final long SHADER_RECORD_DATA_OFFSET_BYTE_OFFSET;
-    public static final long SHADER_RECORD_ADDRESS_OFFSET_BYTE_OFFSET;
+	public static final long CONSTANT_OFFSET_BYTE_OFFSET;
+	public static final long PUSH_INDEX_BYTE_OFFSET;
+	public static final long INDIRECT_INDEX_BYTE_OFFSET;
+	public static final long INDIRECT_INDEX_ARRAY_BYTE_OFFSET;
+	public static final long HEAP_DATA_BYTE_OFFSET;
+	public static final long PUSH_DATA_OFFSET_BYTE_OFFSET;
+	public static final long PUSH_ADDRESS_OFFSET_BYTE_OFFSET;
+	public static final long INDIRECT_ADDRESS_BYTE_OFFSET;
+	public static final long SHADER_RECORD_INDEX_BYTE_OFFSET;
+	public static final long SHADER_RECORD_DATA_OFFSET_BYTE_OFFSET;
+	public static final long SHADER_RECORD_ADDRESS_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDescriptorMappingSourceConstantOffsetEXT constantOffset;
-    private final VkDescriptorMappingSourcePushIndexEXT pushIndex;
-    private final VkDescriptorMappingSourceIndirectIndexEXT indirectIndex;
-    private final VkDescriptorMappingSourceIndirectIndexArrayEXT indirectIndexArray;
-    private final VkDescriptorMappingSourceHeapDataEXT heapData;
-    private final VkDescriptorMappingSourceIndirectAddressEXT indirectAddress;
-    private final VkDescriptorMappingSourceShaderRecordIndexEXT shaderRecordIndex;
+	private final VkDescriptorMappingSourceConstantOffsetEXT constantOffset;
+	private final VkDescriptorMappingSourcePushIndexEXT pushIndex;
+	private final VkDescriptorMappingSourceIndirectIndexEXT indirectIndex;
+	private final VkDescriptorMappingSourceIndirectIndexArrayEXT indirectIndexArray;
+	private final VkDescriptorMappingSourceHeapDataEXT heapData;
+	private final VkDescriptorMappingSourceIndirectAddressEXT indirectAddress;
+	private final VkDescriptorMappingSourceShaderRecordIndexEXT shaderRecordIndex;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            VkDescriptorMappingSourceConstantOffsetEXT.LAYOUT.withName("constantOffset"),
-            VkDescriptorMappingSourcePushIndexEXT.LAYOUT.withName("pushIndex"),
-            VkDescriptorMappingSourceIndirectIndexEXT.LAYOUT.withName("indirectIndex"),
-            VkDescriptorMappingSourceIndirectIndexArrayEXT.LAYOUT.withName("indirectIndexArray"),
-            VkDescriptorMappingSourceHeapDataEXT.LAYOUT.withName("heapData"),
-            JAVA_INT.withName("pushDataOffset"),
-            JAVA_INT.withName("pushAddressOffset"),
-            VkDescriptorMappingSourceIndirectAddressEXT.LAYOUT.withName("indirectAddress"),
-            VkDescriptorMappingSourceShaderRecordIndexEXT.LAYOUT.withName("shaderRecordIndex"),
-            JAVA_INT.withName("shaderRecordDataOffset"),
-            JAVA_INT.withName("shaderRecordAddressOffset")
-        ).withName("VkDescriptorMappingSourceDataEXT").withByteAlignment(8);
-        
-        PUSH_DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDataOffset"));
-        PUSH_ADDRESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushAddressOffset"));
-        SHADER_RECORD_DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRecordDataOffset"));
-        SHADER_RECORD_ADDRESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRecordAddressOffset"));
-        
-        CONSTANT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantOffset"));
-        PUSH_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushIndex"));
-        INDIRECT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectIndex"));
-        INDIRECT_INDEX_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectIndexArray"));
-        HEAP_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapData"));
-        PUSH_DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDataOffset"));
-        PUSH_ADDRESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushAddressOffset"));
-        INDIRECT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectAddress"));
-        SHADER_RECORD_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordIndex"));
-        SHADER_RECORD_DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordDataOffset"));
-        SHADER_RECORD_ADDRESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordAddressOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    VkDescriptorMappingSourceConstantOffsetEXT.LAYOUT.withName("constantOffset"),
+		    VkDescriptorMappingSourcePushIndexEXT.LAYOUT.withName("pushIndex"),
+		    VkDescriptorMappingSourceIndirectIndexEXT.LAYOUT.withName("indirectIndex"),
+		    VkDescriptorMappingSourceIndirectIndexArrayEXT.LAYOUT.withName("indirectIndexArray"),
+		    VkDescriptorMappingSourceHeapDataEXT.LAYOUT.withName("heapData"),
+		    JAVA_INT.withName("pushDataOffset"),
+		    JAVA_INT.withName("pushAddressOffset"),
+		    VkDescriptorMappingSourceIndirectAddressEXT.LAYOUT.withName("indirectAddress"),
+		    VkDescriptorMappingSourceShaderRecordIndexEXT.LAYOUT.withName("shaderRecordIndex"),
+		    JAVA_INT.withName("shaderRecordDataOffset"),
+		    JAVA_INT.withName("shaderRecordAddressOffset")
+		).withName("VkDescriptorMappingSourceDataEXT").withByteAlignment(8);
+		
+		PUSH_DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDataOffset"));
+		PUSH_ADDRESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushAddressOffset"));
+		SHADER_RECORD_DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRecordDataOffset"));
+		SHADER_RECORD_ADDRESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRecordAddressOffset"));
+		
+		CONSTANT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantOffset"));
+		PUSH_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushIndex"));
+		INDIRECT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectIndex"));
+		INDIRECT_INDEX_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectIndexArray"));
+		HEAP_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapData"));
+		PUSH_DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDataOffset"));
+		PUSH_ADDRESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushAddressOffset"));
+		INDIRECT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectAddress"));
+		SHADER_RECORD_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordIndex"));
+		SHADER_RECORD_DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordDataOffset"));
+		SHADER_RECORD_ADDRESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordAddressOffset"));
+		//@formatter:on
+	}
 
-    public VkDescriptorMappingSourceDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorMappingSourceDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorMappingSourceDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        constantOffset = new VkDescriptorMappingSourceConstantOffsetEXT(segment.asSlice(CONSTANT_OFFSET_BYTE_OFFSET, VkDescriptorMappingSourceConstantOffsetEXT.LAYOUT));
-        pushIndex = new VkDescriptorMappingSourcePushIndexEXT(segment.asSlice(PUSH_INDEX_BYTE_OFFSET, VkDescriptorMappingSourcePushIndexEXT.LAYOUT));
-        indirectIndex = new VkDescriptorMappingSourceIndirectIndexEXT(segment.asSlice(INDIRECT_INDEX_BYTE_OFFSET, VkDescriptorMappingSourceIndirectIndexEXT.LAYOUT));
-        indirectIndexArray = new VkDescriptorMappingSourceIndirectIndexArrayEXT(segment.asSlice(INDIRECT_INDEX_ARRAY_BYTE_OFFSET, VkDescriptorMappingSourceIndirectIndexArrayEXT.LAYOUT));
-        heapData = new VkDescriptorMappingSourceHeapDataEXT(segment.asSlice(HEAP_DATA_BYTE_OFFSET, VkDescriptorMappingSourceHeapDataEXT.LAYOUT));
-        indirectAddress = new VkDescriptorMappingSourceIndirectAddressEXT(segment.asSlice(INDIRECT_ADDRESS_BYTE_OFFSET, VkDescriptorMappingSourceIndirectAddressEXT.LAYOUT));
-        shaderRecordIndex = new VkDescriptorMappingSourceShaderRecordIndexEXT(segment.asSlice(SHADER_RECORD_INDEX_BYTE_OFFSET, VkDescriptorMappingSourceShaderRecordIndexEXT.LAYOUT));
-    }
+	public VkDescriptorMappingSourceDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorMappingSourceDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorMappingSourceDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    constantOffset = new VkDescriptorMappingSourceConstantOffsetEXT(segment.asSlice(CONSTANT_OFFSET_BYTE_OFFSET, VkDescriptorMappingSourceConstantOffsetEXT.LAYOUT));
+	    pushIndex = new VkDescriptorMappingSourcePushIndexEXT(segment.asSlice(PUSH_INDEX_BYTE_OFFSET, VkDescriptorMappingSourcePushIndexEXT.LAYOUT));
+	    indirectIndex = new VkDescriptorMappingSourceIndirectIndexEXT(segment.asSlice(INDIRECT_INDEX_BYTE_OFFSET, VkDescriptorMappingSourceIndirectIndexEXT.LAYOUT));
+	    indirectIndexArray = new VkDescriptorMappingSourceIndirectIndexArrayEXT(segment.asSlice(INDIRECT_INDEX_ARRAY_BYTE_OFFSET, VkDescriptorMappingSourceIndirectIndexArrayEXT.LAYOUT));
+	    heapData = new VkDescriptorMappingSourceHeapDataEXT(segment.asSlice(HEAP_DATA_BYTE_OFFSET, VkDescriptorMappingSourceHeapDataEXT.LAYOUT));
+	    indirectAddress = new VkDescriptorMappingSourceIndirectAddressEXT(segment.asSlice(INDIRECT_ADDRESS_BYTE_OFFSET, VkDescriptorMappingSourceIndirectAddressEXT.LAYOUT));
+	    shaderRecordIndex = new VkDescriptorMappingSourceShaderRecordIndexEXT(segment.asSlice(SHADER_RECORD_INDEX_BYTE_OFFSET, VkDescriptorMappingSourceShaderRecordIndexEXT.LAYOUT));
+	}
 
-    /// @see #pushDataOffset()
-    public VkDescriptorMappingSourceDataEXT pushDataOffset(int pushDataOffset) {
-    	PUSH_DATA_OFFSET_HANDLE.set(segment, 0L, pushDataOffset);
-    	return this;
-    }
-    
-    public int pushDataOffset() {
-    	return (int) PUSH_DATA_OFFSET_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #pushAddressOffset()
-    public VkDescriptorMappingSourceDataEXT pushAddressOffset(int pushAddressOffset) {
-    	PUSH_ADDRESS_OFFSET_HANDLE.set(segment, 0L, pushAddressOffset);
-    	return this;
-    }
-    
-    public int pushAddressOffset() {
-    	return (int) PUSH_ADDRESS_OFFSET_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #shaderRecordDataOffset()
-    public VkDescriptorMappingSourceDataEXT shaderRecordDataOffset(int shaderRecordDataOffset) {
-    	SHADER_RECORD_DATA_OFFSET_HANDLE.set(segment, 0L, shaderRecordDataOffset);
-    	return this;
-    }
-    
-    public int shaderRecordDataOffset() {
-    	return (int) SHADER_RECORD_DATA_OFFSET_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #shaderRecordAddressOffset()
-    public VkDescriptorMappingSourceDataEXT shaderRecordAddressOffset(int shaderRecordAddressOffset) {
-    	SHADER_RECORD_ADDRESS_OFFSET_HANDLE.set(segment, 0L, shaderRecordAddressOffset);
-    	return this;
-    }
-    
-    public int shaderRecordAddressOffset() {
-    	return (int) SHADER_RECORD_ADDRESS_OFFSET_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #constantOffset()
     public VkDescriptorMappingSourceDataEXT constantOffset(Consumer<VkDescriptorMappingSourceConstantOffsetEXT> consumer) {
     	consumer.accept(constantOffset);
@@ -224,6 +184,26 @@ public final class VkDescriptorMappingSourceDataEXT
     	return heapData;
     }
     
+    /// @see #pushDataOffset()
+    public VkDescriptorMappingSourceDataEXT pushDataOffset(int pushDataOffset) {
+    	PUSH_DATA_OFFSET_HANDLE.set(segment, 0L, pushDataOffset);
+    	return this;
+    }
+    
+    public int pushDataOffset() {
+    	return (int) PUSH_DATA_OFFSET_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #pushAddressOffset()
+    public VkDescriptorMappingSourceDataEXT pushAddressOffset(int pushAddressOffset) {
+    	PUSH_ADDRESS_OFFSET_HANDLE.set(segment, 0L, pushAddressOffset);
+    	return this;
+    }
+    
+    public int pushAddressOffset() {
+    	return (int) PUSH_ADDRESS_OFFSET_HANDLE.get(segment, 0L);
+    }
+    
     /// @see #indirectAddress()
     public VkDescriptorMappingSourceDataEXT indirectAddress(Consumer<VkDescriptorMappingSourceIndirectAddressEXT> consumer) {
     	consumer.accept(indirectAddress);
@@ -254,6 +234,26 @@ public final class VkDescriptorMappingSourceDataEXT
     
     public VkDescriptorMappingSourceShaderRecordIndexEXT shaderRecordIndex() {
     	return shaderRecordIndex;
+    }
+    
+    /// @see #shaderRecordDataOffset()
+    public VkDescriptorMappingSourceDataEXT shaderRecordDataOffset(int shaderRecordDataOffset) {
+    	SHADER_RECORD_DATA_OFFSET_HANDLE.set(segment, 0L, shaderRecordDataOffset);
+    	return this;
+    }
+    
+    public int shaderRecordDataOffset() {
+    	return (int) SHADER_RECORD_DATA_OFFSET_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #shaderRecordAddressOffset()
+    public VkDescriptorMappingSourceDataEXT shaderRecordAddressOffset(int shaderRecordAddressOffset) {
+    	SHADER_RECORD_ADDRESS_OFFSET_HANDLE.set(segment, 0L, shaderRecordAddressOffset);
+    	return this;
+    }
+    
+    public int shaderRecordAddressOffset() {
+    	return (int) SHADER_RECORD_ADDRESS_OFFSET_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -307,5 +307,5 @@ public final class VkDescriptorMappingSourceDataEXT
             segment -> new VkDescriptorMappingSourceDataEXT(segment)
         );
     }
-    
+
 }

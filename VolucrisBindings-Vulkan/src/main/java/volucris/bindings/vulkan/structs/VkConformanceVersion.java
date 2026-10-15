@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkConformanceVersion
 		implements Struct<VkConformanceVersion> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MAJOR_HANDLE;
-    public static final VarHandle MINOR_HANDLE;
-    public static final VarHandle SUBMINOR_HANDLE;
-    public static final VarHandle PATCH_HANDLE;
+	public static final VarHandle MAJOR_HANDLE;
+	public static final VarHandle MINOR_HANDLE;
+	public static final VarHandle SUBMINOR_HANDLE;
+	public static final VarHandle PATCH_HANDLE;
 
-    public static final long MAJOR_BYTE_OFFSET;
-    public static final long MINOR_BYTE_OFFSET;
-    public static final long SUBMINOR_BYTE_OFFSET;
-    public static final long PATCH_BYTE_OFFSET;
+	public static final long MAJOR_BYTE_OFFSET;
+	public static final long MINOR_BYTE_OFFSET;
+	public static final long SUBMINOR_BYTE_OFFSET;
+	public static final long PATCH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_BYTE.withName("major"),
-            JAVA_BYTE.withName("minor"),
-            JAVA_BYTE.withName("subminor"),
-            JAVA_BYTE.withName("patch")
-        ).withName("VkConformanceVersion").withByteAlignment(1);
-        
-        MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("major"));
-        MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minor"));
-        SUBMINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subminor"));
-        PATCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("patch"));
-        
-        MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("major"));
-        MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minor"));
-        SUBMINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subminor"));
-        PATCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("patch"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_BYTE.withName("major"),
+		    JAVA_BYTE.withName("minor"),
+		    JAVA_BYTE.withName("subminor"),
+		    JAVA_BYTE.withName("patch")
+		).withName("VkConformanceVersion").withByteAlignment(1);
+		
+		MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("major"));
+		MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minor"));
+		SUBMINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subminor"));
+		PATCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("patch"));
+		
+		MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("major"));
+		MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minor"));
+		SUBMINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subminor"));
+		PATCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("patch"));
+		//@formatter:on
+	}
 
-    public VkConformanceVersion() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkConformanceVersion(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkConformanceVersion(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkConformanceVersion() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkConformanceVersion(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkConformanceVersion(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #major()
     public VkConformanceVersion major(byte major) {
@@ -158,5 +158,5 @@ public final class VkConformanceVersion
             segment -> new VkConformanceVersion(segment)
         );
     }
-    
+
 }

@@ -35,76 +35,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiSkeletonBone
 		implements Struct<AiSkeletonBone> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_PARENT_HANDLE;
-    public static final VarHandle M_ARMATURE_HANDLE;
-    public static final VarHandle M_NODE_HANDLE;
-    public static final VarHandle M_NUMN_WEIGHTS_HANDLE;
-    public static final VarHandle M_MESH_ID_HANDLE;
-    public static final VarHandle M_WEIGHTS_HANDLE;
+	public static final VarHandle M_PARENT_HANDLE;
+	public static final VarHandle M_ARMATURE_HANDLE;
+	public static final VarHandle M_NODE_HANDLE;
+	public static final VarHandle M_NUMN_WEIGHTS_HANDLE;
+	public static final VarHandle M_MESH_ID_HANDLE;
+	public static final VarHandle M_WEIGHTS_HANDLE;
 
-    public static final long M_PARENT_BYTE_OFFSET;
-    public static final long M_ARMATURE_BYTE_OFFSET;
-    public static final long M_NODE_BYTE_OFFSET;
-    public static final long M_NUMN_WEIGHTS_BYTE_OFFSET;
-    public static final long M_MESH_ID_BYTE_OFFSET;
-    public static final long M_WEIGHTS_BYTE_OFFSET;
-    public static final long M_OFFSET_MATRIX_BYTE_OFFSET;
-    public static final long M_LOCAL_MATRIX_BYTE_OFFSET;
+	public static final long M_PARENT_BYTE_OFFSET;
+	public static final long M_ARMATURE_BYTE_OFFSET;
+	public static final long M_NODE_BYTE_OFFSET;
+	public static final long M_NUMN_WEIGHTS_BYTE_OFFSET;
+	public static final long M_MESH_ID_BYTE_OFFSET;
+	public static final long M_WEIGHTS_BYTE_OFFSET;
+	public static final long M_OFFSET_MATRIX_BYTE_OFFSET;
+	public static final long M_LOCAL_MATRIX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiMatrix4x4 mOffsetMatrix;
-    private final AiMatrix4x4 mLocalMatrix;
+	private final AiMatrix4x4 mOffsetMatrix;
+	private final AiMatrix4x4 mLocalMatrix;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mParent"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mArmature"),
-            UNBOUNDED_ADDRESS.withName("mNode"),
-            JAVA_INT.withName("mNumnWeights"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mMeshId"),
-            UNBOUNDED_ADDRESS.withName("mWeights"),
-            AiMatrix4x4.LAYOUT.withName("mOffsetMatrix"),
-            AiMatrix4x4.LAYOUT.withName("mLocalMatrix")
-        ).withName("aiSkeletonBone").withByteAlignment(8);
-        
-        M_PARENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mParent"));
-        M_ARMATURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mArmature"));
-        M_NODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNode"));
-        M_NUMN_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumnWeights"));
-        M_MESH_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMeshId"));
-        M_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeights"));
-        
-        M_PARENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mParent"));
-        M_ARMATURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mArmature"));
-        M_NODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNode"));
-        M_NUMN_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumnWeights"));
-        M_MESH_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMeshId"));
-        M_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeights"));
-        M_OFFSET_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mOffsetMatrix"));
-        M_LOCAL_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mLocalMatrix"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mParent"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mArmature"),
+		    UNBOUNDED_ADDRESS.withName("mNode"),
+		    JAVA_INT.withName("mNumnWeights"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mMeshId"),
+		    UNBOUNDED_ADDRESS.withName("mWeights"),
+		    AiMatrix4x4.LAYOUT.withName("mOffsetMatrix"),
+		    AiMatrix4x4.LAYOUT.withName("mLocalMatrix")
+		).withName("aiSkeletonBone").withByteAlignment(8);
+		
+		M_PARENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mParent"));
+		M_ARMATURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mArmature"));
+		M_NODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNode"));
+		M_NUMN_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumnWeights"));
+		M_MESH_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMeshId"));
+		M_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeights"));
+		
+		M_PARENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mParent"));
+		M_ARMATURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mArmature"));
+		M_NODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNode"));
+		M_NUMN_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumnWeights"));
+		M_MESH_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMeshId"));
+		M_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeights"));
+		M_OFFSET_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mOffsetMatrix"));
+		M_LOCAL_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mLocalMatrix"));
+		//@formatter:on
+	}
 
-    public AiSkeletonBone() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiSkeletonBone(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiSkeletonBone(MemorySegment segment) {
-        this.segment = segment;
-    
-        mOffsetMatrix = new AiMatrix4x4(segment.asSlice(M_OFFSET_MATRIX_BYTE_OFFSET, AiMatrix4x4.LAYOUT));
-        mLocalMatrix = new AiMatrix4x4(segment.asSlice(M_LOCAL_MATRIX_BYTE_OFFSET, AiMatrix4x4.LAYOUT));
-    }
+	public AiSkeletonBone() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiSkeletonBone(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiSkeletonBone(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mOffsetMatrix = new AiMatrix4x4(segment.asSlice(M_OFFSET_MATRIX_BYTE_OFFSET, AiMatrix4x4.LAYOUT));
+	    mLocalMatrix = new AiMatrix4x4(segment.asSlice(M_LOCAL_MATRIX_BYTE_OFFSET, AiMatrix4x4.LAYOUT));
+	}
 
     /// @see #mParent()
     public AiSkeletonBone mParent(int mParent) {
@@ -304,5 +304,5 @@ public final class AiSkeletonBone
             segment -> new AiSkeletonBone(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSharedPresentSurfaceCapabilitiesKHR
 		implements Struct<VkSharedPresentSurfaceCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("sharedPresentSupportedUsageFlags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSharedPresentSurfaceCapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharedPresentSupportedUsageFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharedPresentSupportedUsageFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("sharedPresentSupportedUsageFlags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSharedPresentSurfaceCapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharedPresentSupportedUsageFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHARED_PRESENT_SUPPORTED_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharedPresentSupportedUsageFlags"));
+		//@formatter:on
+	}
 
-    public VkSharedPresentSurfaceCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSharedPresentSurfaceCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSharedPresentSurfaceCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSharedPresentSurfaceCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSharedPresentSurfaceCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSharedPresentSurfaceCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSharedPresentSurfaceCapabilitiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkSharedPresentSurfaceCapabilitiesKHR
             segment -> new VkSharedPresentSurfaceCapabilitiesKHR(segment)
         );
     }
-    
+
 }

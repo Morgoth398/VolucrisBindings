@@ -22,51 +22,51 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkExternalTensorPropertiesARM
 		implements Struct<VkExternalTensorPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXTERNAL_MEMORY_PROPERTIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXTERNAL_MEMORY_PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExternalMemoryProperties externalMemoryProperties;
+	private final VkExternalMemoryProperties externalMemoryProperties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExternalMemoryProperties.LAYOUT.withName("externalMemoryProperties"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkExternalTensorPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXTERNAL_MEMORY_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalMemoryProperties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExternalMemoryProperties.LAYOUT.withName("externalMemoryProperties"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkExternalTensorPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXTERNAL_MEMORY_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalMemoryProperties"));
+		//@formatter:on
+	}
 
-    public VkExternalTensorPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkExternalTensorPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkExternalTensorPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-        externalMemoryProperties = new VkExternalMemoryProperties(segment.asSlice(EXTERNAL_MEMORY_PROPERTIES_BYTE_OFFSET, VkExternalMemoryProperties.LAYOUT));
-    }
+	public VkExternalTensorPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkExternalTensorPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkExternalTensorPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    externalMemoryProperties = new VkExternalMemoryProperties(segment.asSlice(EXTERNAL_MEMORY_PROPERTIES_BYTE_OFFSET, VkExternalMemoryProperties.LAYOUT));
+	}
 
     /// @see #sType()
     public VkExternalTensorPropertiesARM sType(int sType) {
@@ -160,5 +160,5 @@ public final class VkExternalTensorPropertiesARM
             segment -> new VkExternalTensorPropertiesARM(segment)
         );
     }
-    
+
 }

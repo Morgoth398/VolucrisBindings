@@ -19,47 +19,47 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAccelerationStructureGeometryDataKHR
 		implements Struct<VkAccelerationStructureGeometryDataKHR> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final long TRIANGLES_BYTE_OFFSET;
-    public static final long AABBS_BYTE_OFFSET;
-    public static final long INSTANCES_BYTE_OFFSET;
+	public static final long TRIANGLES_BYTE_OFFSET;
+	public static final long AABBS_BYTE_OFFSET;
+	public static final long INSTANCES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkAccelerationStructureGeometryTrianglesDataKHR triangles;
-    private final VkAccelerationStructureGeometryAabbsDataKHR aabbs;
-    private final VkAccelerationStructureGeometryInstancesDataKHR instances;
+	private final VkAccelerationStructureGeometryTrianglesDataKHR triangles;
+	private final VkAccelerationStructureGeometryAabbsDataKHR aabbs;
+	private final VkAccelerationStructureGeometryInstancesDataKHR instances;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            VkAccelerationStructureGeometryTrianglesDataKHR.LAYOUT.withName("triangles"),
-            VkAccelerationStructureGeometryAabbsDataKHR.LAYOUT.withName("aabbs"),
-            VkAccelerationStructureGeometryInstancesDataKHR.LAYOUT.withName("instances")
-        ).withName("VkAccelerationStructureGeometryDataKHR").withByteAlignment(8);
-        
-        TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangles"));
-        AABBS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aabbs"));
-        INSTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instances"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    VkAccelerationStructureGeometryTrianglesDataKHR.LAYOUT.withName("triangles"),
+		    VkAccelerationStructureGeometryAabbsDataKHR.LAYOUT.withName("aabbs"),
+		    VkAccelerationStructureGeometryInstancesDataKHR.LAYOUT.withName("instances")
+		).withName("VkAccelerationStructureGeometryDataKHR").withByteAlignment(8);
+		
+		TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangles"));
+		AABBS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aabbs"));
+		INSTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instances"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureGeometryDataKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureGeometryDataKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureGeometryDataKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        triangles = new VkAccelerationStructureGeometryTrianglesDataKHR(segment.asSlice(TRIANGLES_BYTE_OFFSET, VkAccelerationStructureGeometryTrianglesDataKHR.LAYOUT));
-        aabbs = new VkAccelerationStructureGeometryAabbsDataKHR(segment.asSlice(AABBS_BYTE_OFFSET, VkAccelerationStructureGeometryAabbsDataKHR.LAYOUT));
-        instances = new VkAccelerationStructureGeometryInstancesDataKHR(segment.asSlice(INSTANCES_BYTE_OFFSET, VkAccelerationStructureGeometryInstancesDataKHR.LAYOUT));
-    }
+	public VkAccelerationStructureGeometryDataKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureGeometryDataKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureGeometryDataKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    triangles = new VkAccelerationStructureGeometryTrianglesDataKHR(segment.asSlice(TRIANGLES_BYTE_OFFSET, VkAccelerationStructureGeometryTrianglesDataKHR.LAYOUT));
+	    aabbs = new VkAccelerationStructureGeometryAabbsDataKHR(segment.asSlice(AABBS_BYTE_OFFSET, VkAccelerationStructureGeometryAabbsDataKHR.LAYOUT));
+	    instances = new VkAccelerationStructureGeometryInstancesDataKHR(segment.asSlice(INSTANCES_BYTE_OFFSET, VkAccelerationStructureGeometryInstancesDataKHR.LAYOUT));
+	}
 
     /// @see #triangles()
     public VkAccelerationStructureGeometryDataKHR triangles(Consumer<VkAccelerationStructureGeometryTrianglesDataKHR> consumer) {
@@ -160,5 +160,5 @@ public final class VkAccelerationStructureGeometryDataKHR
             segment -> new VkAccelerationStructureGeometryDataKHR(segment)
         );
     }
-    
+
 }

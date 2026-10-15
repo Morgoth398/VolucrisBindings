@@ -20,80 +20,96 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPartitionedAccelerationStructureWriteInstanceDataNV
 		implements Struct<VkPartitionedAccelerationStructureWriteInstanceDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle EXPLICIT_AABB_HANDLE;
-    public static final VarHandle INSTANCE_ID_HANDLE;
-    public static final VarHandle INSTANCE_MASK_HANDLE;
-    public static final VarHandle INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE;
-    public static final VarHandle INSTANCE_FLAGS_HANDLE;
-    public static final VarHandle INSTANCE_INDEX_HANDLE;
-    public static final VarHandle PARTITION_INDEX_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle EXPLICIT_AABB_HANDLE;
+	public static final VarHandle INSTANCE_ID_HANDLE;
+	public static final VarHandle INSTANCE_MASK_HANDLE;
+	public static final VarHandle INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE;
+	public static final VarHandle INSTANCE_FLAGS_HANDLE;
+	public static final VarHandle INSTANCE_INDEX_HANDLE;
+	public static final VarHandle PARTITION_INDEX_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
 
-    public static final long TRANSFORM_BYTE_OFFSET;
-    public static final long EXPLICIT_AABB_BYTE_OFFSET;
-    public static final long INSTANCE_ID_BYTE_OFFSET;
-    public static final long INSTANCE_MASK_BYTE_OFFSET;
-    public static final long INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET;
-    public static final long INSTANCE_FLAGS_BYTE_OFFSET;
-    public static final long INSTANCE_INDEX_BYTE_OFFSET;
-    public static final long PARTITION_INDEX_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long TRANSFORM_BYTE_OFFSET;
+	public static final long EXPLICIT_AABB_BYTE_OFFSET;
+	public static final long INSTANCE_ID_BYTE_OFFSET;
+	public static final long INSTANCE_MASK_BYTE_OFFSET;
+	public static final long INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET;
+	public static final long INSTANCE_FLAGS_BYTE_OFFSET;
+	public static final long INSTANCE_INDEX_BYTE_OFFSET;
+	public static final long PARTITION_INDEX_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkTransformMatrixKHR transform;
+	private final VkTransformMatrixKHR transform;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkTransformMatrixKHR.LAYOUT.withName("transform"),
-            MemoryLayout.sequenceLayout(6, JAVA_FLOAT).withName("explicitAABB"),
-            JAVA_INT.withName("instanceID"),
-            JAVA_INT.withName("instanceMask"),
-            JAVA_INT.withName("instanceContributionToHitGroupIndex"),
-            JAVA_INT.withName("instanceFlags"),
-            JAVA_INT.withName("instanceIndex"),
-            JAVA_INT.withName("partitionIndex"),
-            JAVA_LONG.withName("accelerationStructure")
-        ).withName("VkPartitionedAccelerationStructureWriteInstanceDataNV").withByteAlignment(8);
-        
-        EXPLICIT_AABB_HANDLE = LAYOUT.varHandle(PathElement.groupElement("explicitAABB"), PathElement.sequenceElement());
-        INSTANCE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceID"));
-        INSTANCE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceMask"));
-        INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceContributionToHitGroupIndex"));
-        INSTANCE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceFlags"));
-        INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceIndex"));
-        PARTITION_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionIndex"));
-        ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
-        
-        TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
-        EXPLICIT_AABB_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("explicitAABB"));
-        INSTANCE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceID"));
-        INSTANCE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceMask"));
-        INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceContributionToHitGroupIndex"));
-        INSTANCE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceFlags"));
-        INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceIndex"));
-        PARTITION_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionIndex"));
-        ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkTransformMatrixKHR.LAYOUT.withName("transform"),
+		    MemoryLayout.sequenceLayout(6, JAVA_FLOAT).withName("explicitAABB"),
+		    JAVA_INT.withName("instanceID"),
+		    JAVA_INT.withName("instanceMask"),
+		    JAVA_INT.withName("instanceContributionToHitGroupIndex"),
+		    JAVA_INT.withName("instanceFlags"),
+		    JAVA_INT.withName("instanceIndex"),
+		    JAVA_INT.withName("partitionIndex"),
+		    JAVA_LONG.withName("accelerationStructure")
+		).withName("VkPartitionedAccelerationStructureWriteInstanceDataNV").withByteAlignment(8);
+		
+		EXPLICIT_AABB_HANDLE = LAYOUT.varHandle(PathElement.groupElement("explicitAABB"), PathElement.sequenceElement());
+		INSTANCE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceID"));
+		INSTANCE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceMask"));
+		INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceContributionToHitGroupIndex"));
+		INSTANCE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceFlags"));
+		INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceIndex"));
+		PARTITION_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionIndex"));
+		ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
+		
+		TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
+		EXPLICIT_AABB_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("explicitAABB"));
+		INSTANCE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceID"));
+		INSTANCE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceMask"));
+		INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceContributionToHitGroupIndex"));
+		INSTANCE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceFlags"));
+		INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceIndex"));
+		PARTITION_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionIndex"));
+		ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
+		//@formatter:on
+	}
 
-    public VkPartitionedAccelerationStructureWriteInstanceDataNV() {
-        this(Arena.ofAuto());
+	public VkPartitionedAccelerationStructureWriteInstanceDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPartitionedAccelerationStructureWriteInstanceDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPartitionedAccelerationStructureWriteInstanceDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    transform = new VkTransformMatrixKHR(segment.asSlice(TRANSFORM_BYTE_OFFSET, VkTransformMatrixKHR.LAYOUT));
+	}
+
+    /// @see #transform()
+    public VkPartitionedAccelerationStructureWriteInstanceDataNV transform(Consumer<VkTransformMatrixKHR> consumer) {
+    	consumer.accept(transform);
+    	return this;
     }
     
-    public VkPartitionedAccelerationStructureWriteInstanceDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #transform()
+    public VkPartitionedAccelerationStructureWriteInstanceDataNV transform(VkTransformMatrixKHR other) {
+    	transform.set(other);
+    	return this;
     }
     
-    public VkPartitionedAccelerationStructureWriteInstanceDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        transform = new VkTransformMatrixKHR(segment.asSlice(TRANSFORM_BYTE_OFFSET, VkTransformMatrixKHR.LAYOUT));
+    public VkTransformMatrixKHR transform() {
+    	return transform;
     }
-
+    
     /// @see #explicitAABB(int)
     public VkPartitionedAccelerationStructureWriteInstanceDataNV explicitAABB(float explicitAABB, int index0) {
     	EXPLICIT_AABB_HANDLE.set(segment, 0L, index0, explicitAABB);
@@ -174,22 +190,6 @@ public final class VkPartitionedAccelerationStructureWriteInstanceDataNV
     	return (long) ACCELERATION_STRUCTURE_HANDLE.get(segment, 0L);
     }
     
-    /// @see #transform()
-    public VkPartitionedAccelerationStructureWriteInstanceDataNV transform(Consumer<VkTransformMatrixKHR> consumer) {
-    	consumer.accept(transform);
-    	return this;
-    }
-    
-    /// @see #transform()
-    public VkPartitionedAccelerationStructureWriteInstanceDataNV transform(VkTransformMatrixKHR other) {
-    	transform.set(other);
-    	return this;
-    }
-    
-    public VkTransformMatrixKHR transform() {
-    	return transform;
-    }
-    
     @Override
     public VkPartitionedAccelerationStructureWriteInstanceDataNV set(VkPartitionedAccelerationStructureWriteInstanceDataNV other) {
         return set(other.segment);
@@ -241,5 +241,5 @@ public final class VkPartitionedAccelerationStructureWriteInstanceDataNV
             segment -> new VkPartitionedAccelerationStructureWriteInstanceDataNV(segment)
         );
     }
-    
+
 }

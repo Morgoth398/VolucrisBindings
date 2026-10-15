@@ -22,66 +22,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageProcessingPropertiesQCOM
 		implements Struct<VkPhysicalDeviceImageProcessingPropertiesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_WEIGHT_FILTER_PHASES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_WEIGHT_FILTER_PHASES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_WEIGHT_FILTER_PHASES_BYTE_OFFSET;
-    public static final long MAX_WEIGHT_FILTER_DIMENSION_BYTE_OFFSET;
-    public static final long MAX_BLOCK_MATCH_REGION_BYTE_OFFSET;
-    public static final long MAX_BOX_FILTER_BLOCK_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_WEIGHT_FILTER_PHASES_BYTE_OFFSET;
+	public static final long MAX_WEIGHT_FILTER_DIMENSION_BYTE_OFFSET;
+	public static final long MAX_BLOCK_MATCH_REGION_BYTE_OFFSET;
+	public static final long MAX_BOX_FILTER_BLOCK_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D maxWeightFilterDimension;
-    private final VkExtent2D maxBlockMatchRegion;
-    private final VkExtent2D maxBoxFilterBlockSize;
+	private final VkExtent2D maxWeightFilterDimension;
+	private final VkExtent2D maxBlockMatchRegion;
+	private final VkExtent2D maxBoxFilterBlockSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxWeightFilterPhases"),
-            VkExtent2D.LAYOUT.withName("maxWeightFilterDimension"),
-            VkExtent2D.LAYOUT.withName("maxBlockMatchRegion"),
-            VkExtent2D.LAYOUT.withName("maxBoxFilterBlockSize"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceImageProcessingPropertiesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_WEIGHT_FILTER_PHASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWeightFilterPhases"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_WEIGHT_FILTER_PHASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWeightFilterPhases"));
-        MAX_WEIGHT_FILTER_DIMENSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWeightFilterDimension"));
-        MAX_BLOCK_MATCH_REGION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBlockMatchRegion"));
-        MAX_BOX_FILTER_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBoxFilterBlockSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxWeightFilterPhases"),
+		    VkExtent2D.LAYOUT.withName("maxWeightFilterDimension"),
+		    VkExtent2D.LAYOUT.withName("maxBlockMatchRegion"),
+		    VkExtent2D.LAYOUT.withName("maxBoxFilterBlockSize"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceImageProcessingPropertiesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_WEIGHT_FILTER_PHASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWeightFilterPhases"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_WEIGHT_FILTER_PHASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWeightFilterPhases"));
+		MAX_WEIGHT_FILTER_DIMENSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWeightFilterDimension"));
+		MAX_BLOCK_MATCH_REGION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBlockMatchRegion"));
+		MAX_BOX_FILTER_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBoxFilterBlockSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageProcessingPropertiesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageProcessingPropertiesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageProcessingPropertiesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        maxWeightFilterDimension = new VkExtent2D(segment.asSlice(MAX_WEIGHT_FILTER_DIMENSION_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxBlockMatchRegion = new VkExtent2D(segment.asSlice(MAX_BLOCK_MATCH_REGION_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxBoxFilterBlockSize = new VkExtent2D(segment.asSlice(MAX_BOX_FILTER_BLOCK_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceImageProcessingPropertiesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageProcessingPropertiesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageProcessingPropertiesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    maxWeightFilterDimension = new VkExtent2D(segment.asSlice(MAX_WEIGHT_FILTER_DIMENSION_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxBlockMatchRegion = new VkExtent2D(segment.asSlice(MAX_BLOCK_MATCH_REGION_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxBoxFilterBlockSize = new VkExtent2D(segment.asSlice(MAX_BOX_FILTER_BLOCK_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageProcessingPropertiesQCOM sType(int sType) {
@@ -217,5 +217,5 @@ public final class VkPhysicalDeviceImageProcessingPropertiesQCOM
             segment -> new VkPhysicalDeviceImageProcessingPropertiesQCOM(segment)
         );
     }
-    
+
 }

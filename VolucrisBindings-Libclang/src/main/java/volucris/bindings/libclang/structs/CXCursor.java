@@ -37,48 +37,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXCursor
 		implements Struct<CXCursor> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle KIND_HANDLE;
-    public static final VarHandle XDATA_HANDLE;
-    public static final VarHandle DATA_HANDLE;
+	public static final VarHandle KIND_HANDLE;
+	public static final VarHandle XDATA_HANDLE;
+	public static final VarHandle DATA_HANDLE;
 
-    public static final long KIND_BYTE_OFFSET;
-    public static final long XDATA_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
+	public static final long XDATA_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("kind"),
-            JAVA_INT.withName("xdata"),
-            MemoryLayout.sequenceLayout(3, UNBOUNDED_ADDRESS).withName("data")
-        ).withName("CXCursor").withByteAlignment(8);
-        
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        XDATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xdata"));
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
-        
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        XDATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xdata"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("kind"),
+		    JAVA_INT.withName("xdata"),
+		    MemoryLayout.sequenceLayout(3, UNBOUNDED_ADDRESS).withName("data")
+		).withName("CXCursor").withByteAlignment(8);
+		
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		XDATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xdata"));
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
+		
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		XDATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xdata"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public CXCursor() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXCursor(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXCursor(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXCursor() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXCursor(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXCursor(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #kind()
     public CXCursor kind(int kind) {
@@ -166,5 +166,5 @@ public final class CXCursor
             segment -> new CXCursor(segment)
         );
     }
-    
+
 }

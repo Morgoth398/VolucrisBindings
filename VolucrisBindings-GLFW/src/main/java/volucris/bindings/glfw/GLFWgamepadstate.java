@@ -28,44 +28,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class GLFWgamepadstate
 		implements Struct<GLFWgamepadstate> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUTTONS_HANDLE;
-    public static final VarHandle AXES_HANDLE;
+	public static final VarHandle BUTTONS_HANDLE;
+	public static final VarHandle AXES_HANDLE;
 
-    public static final long BUTTONS_BYTE_OFFSET;
-    public static final long AXES_BYTE_OFFSET;
+	public static final long BUTTONS_BYTE_OFFSET;
+	public static final long AXES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("buttons"),
-            MemoryLayout.paddingLayout(1),
-            MemoryLayout.sequenceLayout(6, JAVA_FLOAT).withName("axes")
-        ).withName("GLFWgamepadstate").withByteAlignment(4);
-        
-        BUTTONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buttons"), PathElement.sequenceElement());
-        AXES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("axes"), PathElement.sequenceElement());
-        
-        BUTTONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buttons"));
-        AXES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("axes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("buttons"),
+		    MemoryLayout.paddingLayout(1),
+		    MemoryLayout.sequenceLayout(6, JAVA_FLOAT).withName("axes")
+		).withName("GLFWgamepadstate").withByteAlignment(4);
+		
+		BUTTONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buttons"), PathElement.sequenceElement());
+		AXES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("axes"), PathElement.sequenceElement());
+		
+		BUTTONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buttons"));
+		AXES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("axes"));
+		//@formatter:on
+	}
 
-    public GLFWgamepadstate() {
-        this(Arena.ofAuto());
-    }
-    
-    public GLFWgamepadstate(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public GLFWgamepadstate(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public GLFWgamepadstate() {
+	    this(Arena.ofAuto());
+	}
+	
+	public GLFWgamepadstate(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public GLFWgamepadstate(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #buttons(int)
     public GLFWgamepadstate buttons(byte buttons, int index0) {
@@ -146,5 +146,5 @@ public final class GLFWgamepadstate
             segment -> new GLFWgamepadstate(segment)
         );
     }
-    
+
 }

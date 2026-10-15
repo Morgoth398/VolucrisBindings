@@ -22,71 +22,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSurfacePresentScalingCapabilitiesKHR
 		implements Struct<VkSurfacePresentScalingCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SUPPORTED_PRESENT_SCALING_HANDLE;
-    public static final VarHandle SUPPORTED_PRESENT_GRAVITY_X_HANDLE;
-    public static final VarHandle SUPPORTED_PRESENT_GRAVITY_Y_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SUPPORTED_PRESENT_SCALING_HANDLE;
+	public static final VarHandle SUPPORTED_PRESENT_GRAVITY_X_HANDLE;
+	public static final VarHandle SUPPORTED_PRESENT_GRAVITY_Y_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SUPPORTED_PRESENT_SCALING_BYTE_OFFSET;
-    public static final long SUPPORTED_PRESENT_GRAVITY_X_BYTE_OFFSET;
-    public static final long SUPPORTED_PRESENT_GRAVITY_Y_BYTE_OFFSET;
-    public static final long MIN_SCALED_IMAGE_EXTENT_BYTE_OFFSET;
-    public static final long MAX_SCALED_IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SUPPORTED_PRESENT_SCALING_BYTE_OFFSET;
+	public static final long SUPPORTED_PRESENT_GRAVITY_X_BYTE_OFFSET;
+	public static final long SUPPORTED_PRESENT_GRAVITY_Y_BYTE_OFFSET;
+	public static final long MIN_SCALED_IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long MAX_SCALED_IMAGE_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D minScaledImageExtent;
-    private final VkExtent2D maxScaledImageExtent;
+	private final VkExtent2D minScaledImageExtent;
+	private final VkExtent2D maxScaledImageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("supportedPresentScaling"),
-            JAVA_INT.withName("supportedPresentGravityX"),
-            JAVA_INT.withName("supportedPresentGravityY"),
-            VkExtent2D.LAYOUT.withName("minScaledImageExtent"),
-            VkExtent2D.LAYOUT.withName("maxScaledImageExtent"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSurfacePresentScalingCapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SUPPORTED_PRESENT_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedPresentScaling"));
-        SUPPORTED_PRESENT_GRAVITY_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedPresentGravityX"));
-        SUPPORTED_PRESENT_GRAVITY_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedPresentGravityY"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SUPPORTED_PRESENT_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedPresentScaling"));
-        SUPPORTED_PRESENT_GRAVITY_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedPresentGravityX"));
-        SUPPORTED_PRESENT_GRAVITY_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedPresentGravityY"));
-        MIN_SCALED_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minScaledImageExtent"));
-        MAX_SCALED_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxScaledImageExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("supportedPresentScaling"),
+		    JAVA_INT.withName("supportedPresentGravityX"),
+		    JAVA_INT.withName("supportedPresentGravityY"),
+		    VkExtent2D.LAYOUT.withName("minScaledImageExtent"),
+		    VkExtent2D.LAYOUT.withName("maxScaledImageExtent"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSurfacePresentScalingCapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SUPPORTED_PRESENT_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedPresentScaling"));
+		SUPPORTED_PRESENT_GRAVITY_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedPresentGravityX"));
+		SUPPORTED_PRESENT_GRAVITY_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedPresentGravityY"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SUPPORTED_PRESENT_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedPresentScaling"));
+		SUPPORTED_PRESENT_GRAVITY_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedPresentGravityX"));
+		SUPPORTED_PRESENT_GRAVITY_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedPresentGravityY"));
+		MIN_SCALED_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minScaledImageExtent"));
+		MAX_SCALED_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxScaledImageExtent"));
+		//@formatter:on
+	}
 
-    public VkSurfacePresentScalingCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSurfacePresentScalingCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSurfacePresentScalingCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        minScaledImageExtent = new VkExtent2D(segment.asSlice(MIN_SCALED_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxScaledImageExtent = new VkExtent2D(segment.asSlice(MAX_SCALED_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkSurfacePresentScalingCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSurfacePresentScalingCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSurfacePresentScalingCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minScaledImageExtent = new VkExtent2D(segment.asSlice(MIN_SCALED_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxScaledImageExtent = new VkExtent2D(segment.asSlice(MAX_SCALED_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSurfacePresentScalingCapabilitiesKHR sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkSurfacePresentScalingCapabilitiesKHR
             segment -> new VkSurfacePresentScalingCapabilitiesKHR(segment)
         );
     }
-    
+
 }

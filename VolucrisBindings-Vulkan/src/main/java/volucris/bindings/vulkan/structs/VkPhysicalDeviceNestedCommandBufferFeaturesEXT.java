@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceNestedCommandBufferFeaturesEXT
 		implements Struct<VkPhysicalDeviceNestedCommandBufferFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NESTED_COMMAND_BUFFER_HANDLE;
-    public static final VarHandle NESTED_COMMAND_BUFFER_RENDERING_HANDLE;
-    public static final VarHandle NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NESTED_COMMAND_BUFFER_HANDLE;
+	public static final VarHandle NESTED_COMMAND_BUFFER_RENDERING_HANDLE;
+	public static final VarHandle NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NESTED_COMMAND_BUFFER_BYTE_OFFSET;
-    public static final long NESTED_COMMAND_BUFFER_RENDERING_BYTE_OFFSET;
-    public static final long NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NESTED_COMMAND_BUFFER_BYTE_OFFSET;
+	public static final long NESTED_COMMAND_BUFFER_RENDERING_BYTE_OFFSET;
+	public static final long NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("nestedCommandBuffer"),
-            JAVA_INT.withName("nestedCommandBufferRendering"),
-            JAVA_INT.withName("nestedCommandBufferSimultaneousUse"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceNestedCommandBufferFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NESTED_COMMAND_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nestedCommandBuffer"));
-        NESTED_COMMAND_BUFFER_RENDERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nestedCommandBufferRendering"));
-        NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nestedCommandBufferSimultaneousUse"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NESTED_COMMAND_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nestedCommandBuffer"));
-        NESTED_COMMAND_BUFFER_RENDERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nestedCommandBufferRendering"));
-        NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nestedCommandBufferSimultaneousUse"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("nestedCommandBuffer"),
+		    JAVA_INT.withName("nestedCommandBufferRendering"),
+		    JAVA_INT.withName("nestedCommandBufferSimultaneousUse"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceNestedCommandBufferFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NESTED_COMMAND_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nestedCommandBuffer"));
+		NESTED_COMMAND_BUFFER_RENDERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nestedCommandBufferRendering"));
+		NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nestedCommandBufferSimultaneousUse"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NESTED_COMMAND_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nestedCommandBuffer"));
+		NESTED_COMMAND_BUFFER_RENDERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nestedCommandBufferRendering"));
+		NESTED_COMMAND_BUFFER_SIMULTANEOUS_USE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nestedCommandBufferSimultaneousUse"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceNestedCommandBufferFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceNestedCommandBufferFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceNestedCommandBufferFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceNestedCommandBufferFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceNestedCommandBufferFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceNestedCommandBufferFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceNestedCommandBufferFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceNestedCommandBufferFeaturesEXT
             segment -> new VkPhysicalDeviceNestedCommandBufferFeaturesEXT(segment)
         );
     }
-    
+
 }

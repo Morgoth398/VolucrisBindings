@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueueFamilyDataGraphProcessingEnginePropertiesARM
 		implements Struct<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FOREIGN_SEMAPHORE_HANDLE_TYPES_HANDLE;
-    public static final VarHandle FOREIGN_MEMORY_HANDLE_TYPES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FOREIGN_SEMAPHORE_HANDLE_TYPES_HANDLE;
+	public static final VarHandle FOREIGN_MEMORY_HANDLE_TYPES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FOREIGN_SEMAPHORE_HANDLE_TYPES_BYTE_OFFSET;
-    public static final long FOREIGN_MEMORY_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FOREIGN_SEMAPHORE_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long FOREIGN_MEMORY_HANDLE_TYPES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("foreignSemaphoreHandleTypes"),
-            JAVA_INT.withName("foreignMemoryHandleTypes")
-        ).withName("VkQueueFamilyDataGraphProcessingEnginePropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FOREIGN_SEMAPHORE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("foreignSemaphoreHandleTypes"));
-        FOREIGN_MEMORY_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("foreignMemoryHandleTypes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FOREIGN_SEMAPHORE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("foreignSemaphoreHandleTypes"));
-        FOREIGN_MEMORY_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("foreignMemoryHandleTypes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("foreignSemaphoreHandleTypes"),
+		    JAVA_INT.withName("foreignMemoryHandleTypes")
+		).withName("VkQueueFamilyDataGraphProcessingEnginePropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FOREIGN_SEMAPHORE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("foreignSemaphoreHandleTypes"));
+		FOREIGN_MEMORY_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("foreignMemoryHandleTypes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FOREIGN_SEMAPHORE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("foreignSemaphoreHandleTypes"));
+		FOREIGN_MEMORY_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("foreignMemoryHandleTypes"));
+		//@formatter:on
+	}
 
-    public VkQueueFamilyDataGraphProcessingEnginePropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkQueueFamilyDataGraphProcessingEnginePropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkQueueFamilyDataGraphProcessingEnginePropertiesARM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkQueueFamilyDataGraphProcessingEnginePropertiesARM
             segment -> new VkQueueFamilyDataGraphProcessingEnginePropertiesARM(segment)
         );
     }
-    
+
 }

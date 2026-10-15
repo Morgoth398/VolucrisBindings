@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkShaderModuleIdentifierEXT
 		implements Struct<VkShaderModuleIdentifierEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IDENTIFIER_SIZE_HANDLE;
-    public static final VarHandle IDENTIFIER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IDENTIFIER_SIZE_HANDLE;
+	public static final VarHandle IDENTIFIER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IDENTIFIER_SIZE_BYTE_OFFSET;
-    public static final long IDENTIFIER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IDENTIFIER_SIZE_BYTE_OFFSET;
+	public static final long IDENTIFIER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("identifierSize"),
-            MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("identifier"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkShaderModuleIdentifierEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IDENTIFIER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identifierSize"));
-        IDENTIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identifier"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IDENTIFIER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identifierSize"));
-        IDENTIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identifier"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("identifierSize"),
+		    MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("identifier"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkShaderModuleIdentifierEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IDENTIFIER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identifierSize"));
+		IDENTIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identifier"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IDENTIFIER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identifierSize"));
+		IDENTIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identifier"));
+		//@formatter:on
+	}
 
-    public VkShaderModuleIdentifierEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkShaderModuleIdentifierEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkShaderModuleIdentifierEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkShaderModuleIdentifierEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkShaderModuleIdentifierEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkShaderModuleIdentifierEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkShaderModuleIdentifierEXT sType(int sType) {
@@ -167,5 +167,5 @@ public final class VkShaderModuleIdentifierEXT
             segment -> new VkShaderModuleIdentifierEXT(segment)
         );
     }
-    
+
 }

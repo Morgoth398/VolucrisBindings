@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPartitionedAccelerationStructureWritePartitionTranslationDataNV
 		implements Struct<VkPartitionedAccelerationStructureWritePartitionTranslationDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PARTITION_INDEX_HANDLE;
-    public static final VarHandle PARTITION_TRANSLATION_HANDLE;
+	public static final VarHandle PARTITION_INDEX_HANDLE;
+	public static final VarHandle PARTITION_TRANSLATION_HANDLE;
 
-    public static final long PARTITION_INDEX_BYTE_OFFSET;
-    public static final long PARTITION_TRANSLATION_BYTE_OFFSET;
+	public static final long PARTITION_INDEX_BYTE_OFFSET;
+	public static final long PARTITION_TRANSLATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("partitionIndex"),
-            MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("partitionTranslation")
-        ).withName("VkPartitionedAccelerationStructureWritePartitionTranslationDataNV").withByteAlignment(4);
-        
-        PARTITION_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionIndex"));
-        PARTITION_TRANSLATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionTranslation"), PathElement.sequenceElement());
-        
-        PARTITION_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionIndex"));
-        PARTITION_TRANSLATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionTranslation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("partitionIndex"),
+		    MemoryLayout.sequenceLayout(3, JAVA_FLOAT).withName("partitionTranslation")
+		).withName("VkPartitionedAccelerationStructureWritePartitionTranslationDataNV").withByteAlignment(4);
+		
+		PARTITION_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionIndex"));
+		PARTITION_TRANSLATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionTranslation"), PathElement.sequenceElement());
+		
+		PARTITION_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionIndex"));
+		PARTITION_TRANSLATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionTranslation"));
+		//@formatter:on
+	}
 
-    public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #partitionIndex()
     public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV partitionIndex(int partitionIndex) {
@@ -128,5 +128,5 @@ public final class VkPartitionedAccelerationStructureWritePartitionTranslationDa
             segment -> new VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(segment)
         );
     }
-    
+
 }

@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectExecutionSetPipelineInfoEXT
 		implements Struct<VkIndirectExecutionSetPipelineInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INITIAL_PIPELINE_HANDLE;
-    public static final VarHandle MAX_PIPELINE_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INITIAL_PIPELINE_HANDLE;
+	public static final VarHandle MAX_PIPELINE_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INITIAL_PIPELINE_BYTE_OFFSET;
-    public static final long MAX_PIPELINE_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INITIAL_PIPELINE_BYTE_OFFSET;
+	public static final long MAX_PIPELINE_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("initialPipeline"),
-            JAVA_INT.withName("maxPipelineCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkIndirectExecutionSetPipelineInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INITIAL_PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initialPipeline"));
-        MAX_PIPELINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPipelineCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INITIAL_PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initialPipeline"));
-        MAX_PIPELINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPipelineCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("initialPipeline"),
+		    JAVA_INT.withName("maxPipelineCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkIndirectExecutionSetPipelineInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INITIAL_PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initialPipeline"));
+		MAX_PIPELINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPipelineCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INITIAL_PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initialPipeline"));
+		MAX_PIPELINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPipelineCount"));
+		//@formatter:on
+	}
 
-    public VkIndirectExecutionSetPipelineInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectExecutionSetPipelineInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectExecutionSetPipelineInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectExecutionSetPipelineInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectExecutionSetPipelineInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectExecutionSetPipelineInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectExecutionSetPipelineInfoEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkIndirectExecutionSetPipelineInfoEXT
             segment -> new VkIndirectExecutionSetPipelineInfoEXT(segment)
         );
     }
-    
+
 }

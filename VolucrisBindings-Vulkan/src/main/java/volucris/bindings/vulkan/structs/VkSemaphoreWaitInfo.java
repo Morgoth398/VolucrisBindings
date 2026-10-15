@@ -23,64 +23,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSemaphoreWaitInfo
 		implements Struct<VkSemaphoreWaitInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_SEMAPHORES_HANDLE;
-    public static final VarHandle P_VALUES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_SEMAPHORES_HANDLE;
+	public static final VarHandle P_VALUES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_SEMAPHORES_BYTE_OFFSET;
-    public static final long P_VALUES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_SEMAPHORES_BYTE_OFFSET;
+	public static final long P_VALUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("semaphoreCount"),
-            UNBOUNDED_ADDRESS.withName("pSemaphores"),
-            UNBOUNDED_ADDRESS.withName("pValues")
-        ).withName("VkSemaphoreWaitInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("semaphoreCount"));
-        P_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSemaphores"));
-        P_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pValues"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("semaphoreCount"));
-        P_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSemaphores"));
-        P_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pValues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("semaphoreCount"),
+		    UNBOUNDED_ADDRESS.withName("pSemaphores"),
+		    UNBOUNDED_ADDRESS.withName("pValues")
+		).withName("VkSemaphoreWaitInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("semaphoreCount"));
+		P_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSemaphores"));
+		P_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pValues"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("semaphoreCount"));
+		P_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSemaphores"));
+		P_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pValues"));
+		//@formatter:on
+	}
 
-    public VkSemaphoreWaitInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSemaphoreWaitInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSemaphoreWaitInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSemaphoreWaitInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSemaphoreWaitInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSemaphoreWaitInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSemaphoreWaitInfo sType(int sType) {
@@ -208,5 +208,5 @@ public final class VkSemaphoreWaitInfo
             segment -> new VkSemaphoreWaitInfo(segment)
         );
     }
-    
+
 }

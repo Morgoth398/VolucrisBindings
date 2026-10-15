@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE
 		implements Struct<VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_HANDLE;
-    public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_HANDLE;
+	public static final VarHandle SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_BYTE_OFFSET;
-    public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_BYTE_OFFSET;
+	public static final long SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderMixedFloatDotProductFloat16AccFloat32"),
-            JAVA_INT.withName("shaderMixedFloatDotProductFloat16AccFloat16"),
-            JAVA_INT.withName("shaderMixedFloatDotProductBFloat16Acc"),
-            JAVA_INT.withName("shaderMixedFloatDotProductFloat8AccFloat32")
-        ).withName("VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat32"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat16"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductBFloat16Acc"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductFloat8AccFloat32"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat32"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat16"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductBFloat16Acc"));
-        SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductFloat8AccFloat32"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderMixedFloatDotProductFloat16AccFloat32"),
+		    JAVA_INT.withName("shaderMixedFloatDotProductFloat16AccFloat16"),
+		    JAVA_INT.withName("shaderMixedFloatDotProductBFloat16Acc"),
+		    JAVA_INT.withName("shaderMixedFloatDotProductFloat8AccFloat32")
+		).withName("VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat32"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat16"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductBFloat16Acc"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMixedFloatDotProductFloat8AccFloat32"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat32"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT16_ACC_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductFloat16AccFloat16"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_BFLOAT16_ACC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductBFloat16Acc"));
+		SHADER_MIXED_FLOAT_DOT_PRODUCT_FLOAT8_ACC_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMixedFloatDotProductFloat8AccFloat32"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE
             segment -> new VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(segment)
         );
     }
-    
+
 }

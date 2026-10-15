@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCommandBufferInheritanceRenderPassTransformInfoQCOM
 		implements Struct<VkCommandBufferInheritanceRenderPassTransformInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TRANSFORM_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TRANSFORM_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TRANSFORM_BYTE_OFFSET;
-    public static final long RENDER_AREA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TRANSFORM_BYTE_OFFSET;
+	public static final long RENDER_AREA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkRect2D renderArea;
+	private final VkRect2D renderArea;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("transform"),
-            VkRect2D.LAYOUT.withName("renderArea"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCommandBufferInheritanceRenderPassTransformInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transform"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
-        RENDER_AREA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderArea"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("transform"),
+		    VkRect2D.LAYOUT.withName("renderArea"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCommandBufferInheritanceRenderPassTransformInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transform"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
+		RENDER_AREA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderArea"));
+		//@formatter:on
+	}
 
-    public VkCommandBufferInheritanceRenderPassTransformInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        renderArea = new VkRect2D(segment.asSlice(RENDER_AREA_BYTE_OFFSET, VkRect2D.LAYOUT));
-    }
+	public VkCommandBufferInheritanceRenderPassTransformInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    renderArea = new VkRect2D(segment.asSlice(RENDER_AREA_BYTE_OFFSET, VkRect2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkCommandBufferInheritanceRenderPassTransformInfoQCOM sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkCommandBufferInheritanceRenderPassTransformInfoQCOM
             segment -> new VkCommandBufferInheritanceRenderPassTransformInfoQCOM(segment)
         );
     }
-    
+
 }

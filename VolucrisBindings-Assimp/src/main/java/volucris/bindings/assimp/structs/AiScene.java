@@ -29,136 +29,136 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiScene
 		implements Struct<AiScene> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_FLAGS_HANDLE;
-    public static final VarHandle M_ROOT_NODE_HANDLE;
-    public static final VarHandle M_NUM_MESHES_HANDLE;
-    public static final VarHandle M_MESHES_HANDLE;
-    public static final VarHandle M_NUM_MATERIALS_HANDLE;
-    public static final VarHandle M_MATERIALS_HANDLE;
-    public static final VarHandle M_NUM_ANIMATIONS_HANDLE;
-    public static final VarHandle M_ANIMATIONS_HANDLE;
-    public static final VarHandle M_NUM_TEXTURES_HANDLE;
-    public static final VarHandle M_TEXTURES_HANDLE;
-    public static final VarHandle M_NUM_LIGHTS_HANDLE;
-    public static final VarHandle M_LIGHTS_HANDLE;
-    public static final VarHandle M_NUM_CAMERAS_HANDLE;
-    public static final VarHandle M_CAMERAS_HANDLE;
-    public static final VarHandle M_META_DATA_HANDLE;
-    public static final VarHandle M_NUM_SKELETONS_HANDLE;
-    public static final VarHandle M_SKELETONS_HANDLE;
-    public static final VarHandle M_PRIVATE_HANDLE;
+	public static final VarHandle M_FLAGS_HANDLE;
+	public static final VarHandle M_ROOT_NODE_HANDLE;
+	public static final VarHandle M_NUM_MESHES_HANDLE;
+	public static final VarHandle M_MESHES_HANDLE;
+	public static final VarHandle M_NUM_MATERIALS_HANDLE;
+	public static final VarHandle M_MATERIALS_HANDLE;
+	public static final VarHandle M_NUM_ANIMATIONS_HANDLE;
+	public static final VarHandle M_ANIMATIONS_HANDLE;
+	public static final VarHandle M_NUM_TEXTURES_HANDLE;
+	public static final VarHandle M_TEXTURES_HANDLE;
+	public static final VarHandle M_NUM_LIGHTS_HANDLE;
+	public static final VarHandle M_LIGHTS_HANDLE;
+	public static final VarHandle M_NUM_CAMERAS_HANDLE;
+	public static final VarHandle M_CAMERAS_HANDLE;
+	public static final VarHandle M_META_DATA_HANDLE;
+	public static final VarHandle M_NUM_SKELETONS_HANDLE;
+	public static final VarHandle M_SKELETONS_HANDLE;
+	public static final VarHandle M_PRIVATE_HANDLE;
 
-    public static final long M_FLAGS_BYTE_OFFSET;
-    public static final long M_ROOT_NODE_BYTE_OFFSET;
-    public static final long M_NUM_MESHES_BYTE_OFFSET;
-    public static final long M_MESHES_BYTE_OFFSET;
-    public static final long M_NUM_MATERIALS_BYTE_OFFSET;
-    public static final long M_MATERIALS_BYTE_OFFSET;
-    public static final long M_NUM_ANIMATIONS_BYTE_OFFSET;
-    public static final long M_ANIMATIONS_BYTE_OFFSET;
-    public static final long M_NUM_TEXTURES_BYTE_OFFSET;
-    public static final long M_TEXTURES_BYTE_OFFSET;
-    public static final long M_NUM_LIGHTS_BYTE_OFFSET;
-    public static final long M_LIGHTS_BYTE_OFFSET;
-    public static final long M_NUM_CAMERAS_BYTE_OFFSET;
-    public static final long M_CAMERAS_BYTE_OFFSET;
-    public static final long M_META_DATA_BYTE_OFFSET;
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_NUM_SKELETONS_BYTE_OFFSET;
-    public static final long M_SKELETONS_BYTE_OFFSET;
-    public static final long M_PRIVATE_BYTE_OFFSET;
+	public static final long M_FLAGS_BYTE_OFFSET;
+	public static final long M_ROOT_NODE_BYTE_OFFSET;
+	public static final long M_NUM_MESHES_BYTE_OFFSET;
+	public static final long M_MESHES_BYTE_OFFSET;
+	public static final long M_NUM_MATERIALS_BYTE_OFFSET;
+	public static final long M_MATERIALS_BYTE_OFFSET;
+	public static final long M_NUM_ANIMATIONS_BYTE_OFFSET;
+	public static final long M_ANIMATIONS_BYTE_OFFSET;
+	public static final long M_NUM_TEXTURES_BYTE_OFFSET;
+	public static final long M_TEXTURES_BYTE_OFFSET;
+	public static final long M_NUM_LIGHTS_BYTE_OFFSET;
+	public static final long M_LIGHTS_BYTE_OFFSET;
+	public static final long M_NUM_CAMERAS_BYTE_OFFSET;
+	public static final long M_CAMERAS_BYTE_OFFSET;
+	public static final long M_META_DATA_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_NUM_SKELETONS_BYTE_OFFSET;
+	public static final long M_SKELETONS_BYTE_OFFSET;
+	public static final long M_PRIVATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mName;
+	private final AiString mName;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mFlags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mRootNode"),
-            JAVA_INT.withName("mNumMeshes"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mMeshes"),
-            JAVA_INT.withName("mNumMaterials"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mMaterials"),
-            JAVA_INT.withName("mNumAnimations"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mAnimations"),
-            JAVA_INT.withName("mNumTextures"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mTextures"),
-            JAVA_INT.withName("mNumLights"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mLights"),
-            JAVA_INT.withName("mNumCameras"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mCameras"),
-            UNBOUNDED_ADDRESS.withName("mMetaData"),
-            AiString.LAYOUT.withName("mName"),
-            JAVA_INT.withName("mNumSkeletons"),
-            UNBOUNDED_ADDRESS.withName("mSkeletons"),
-            UNBOUNDED_ADDRESS.withName("mPrivate")
-        ).withName("aiScene").withByteAlignment(8);
-        
-        M_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mFlags"));
-        M_ROOT_NODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mRootNode"));
-        M_NUM_MESHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMeshes"));
-        M_MESHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMeshes"));
-        M_NUM_MATERIALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMaterials"));
-        M_MATERIALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaterials"));
-        M_NUM_ANIMATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumAnimations"));
-        M_ANIMATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mAnimations"));
-        M_NUM_TEXTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumTextures"));
-        M_TEXTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTextures"));
-        M_NUM_LIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumLights"));
-        M_LIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mLights"));
-        M_NUM_CAMERAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumCameras"));
-        M_CAMERAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mCameras"));
-        M_META_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMetaData"));
-        M_NUM_SKELETONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumSkeletons"));
-        M_SKELETONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mSkeletons"));
-        M_PRIVATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPrivate"));
-        
-        M_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFlags"));
-        M_ROOT_NODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mRootNode"));
-        M_NUM_MESHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMeshes"));
-        M_MESHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMeshes"));
-        M_NUM_MATERIALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMaterials"));
-        M_MATERIALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaterials"));
-        M_NUM_ANIMATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumAnimations"));
-        M_ANIMATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mAnimations"));
-        M_NUM_TEXTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumTextures"));
-        M_TEXTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTextures"));
-        M_NUM_LIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumLights"));
-        M_LIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mLights"));
-        M_NUM_CAMERAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumCameras"));
-        M_CAMERAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mCameras"));
-        M_META_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMetaData"));
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_NUM_SKELETONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumSkeletons"));
-        M_SKELETONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mSkeletons"));
-        M_PRIVATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPrivate"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mFlags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mRootNode"),
+		    JAVA_INT.withName("mNumMeshes"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mMeshes"),
+		    JAVA_INT.withName("mNumMaterials"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mMaterials"),
+		    JAVA_INT.withName("mNumAnimations"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mAnimations"),
+		    JAVA_INT.withName("mNumTextures"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mTextures"),
+		    JAVA_INT.withName("mNumLights"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mLights"),
+		    JAVA_INT.withName("mNumCameras"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mCameras"),
+		    UNBOUNDED_ADDRESS.withName("mMetaData"),
+		    AiString.LAYOUT.withName("mName"),
+		    JAVA_INT.withName("mNumSkeletons"),
+		    UNBOUNDED_ADDRESS.withName("mSkeletons"),
+		    UNBOUNDED_ADDRESS.withName("mPrivate")
+		).withName("aiScene").withByteAlignment(8);
+		
+		M_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mFlags"));
+		M_ROOT_NODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mRootNode"));
+		M_NUM_MESHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMeshes"));
+		M_MESHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMeshes"));
+		M_NUM_MATERIALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMaterials"));
+		M_MATERIALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaterials"));
+		M_NUM_ANIMATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumAnimations"));
+		M_ANIMATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mAnimations"));
+		M_NUM_TEXTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumTextures"));
+		M_TEXTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTextures"));
+		M_NUM_LIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumLights"));
+		M_LIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mLights"));
+		M_NUM_CAMERAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumCameras"));
+		M_CAMERAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mCameras"));
+		M_META_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMetaData"));
+		M_NUM_SKELETONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumSkeletons"));
+		M_SKELETONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mSkeletons"));
+		M_PRIVATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPrivate"));
+		
+		M_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFlags"));
+		M_ROOT_NODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mRootNode"));
+		M_NUM_MESHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMeshes"));
+		M_MESHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMeshes"));
+		M_NUM_MATERIALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMaterials"));
+		M_MATERIALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaterials"));
+		M_NUM_ANIMATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumAnimations"));
+		M_ANIMATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mAnimations"));
+		M_NUM_TEXTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumTextures"));
+		M_TEXTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTextures"));
+		M_NUM_LIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumLights"));
+		M_LIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mLights"));
+		M_NUM_CAMERAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumCameras"));
+		M_CAMERAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mCameras"));
+		M_META_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMetaData"));
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_NUM_SKELETONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumSkeletons"));
+		M_SKELETONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mSkeletons"));
+		M_PRIVATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPrivate"));
+		//@formatter:on
+	}
 
-    public AiScene() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiScene(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiScene(MemorySegment segment) {
-        this.segment = segment;
-    
-        mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
-    }
+	public AiScene() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiScene(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiScene(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	}
 
     /// @see #mFlags()
     public AiScene mFlags(int mFlags) {
@@ -435,6 +435,25 @@ public final class AiScene
     	return new AiMetadata(segment);
     }
     
+    /// @see #mName()
+    public AiScene mName(Consumer<AiString> consumer) {
+    	consumer.accept(mName);
+    	return this;
+    }
+    
+    /// @see #mName()
+    public AiScene mName(AiString other) {
+    	mName.set(other);
+    	return this;
+    }
+    
+    /// ```
+    /// The name of the scene itself.
+    /// ```
+    public AiString mName() {
+    	return mName;
+    }
+    
     /// @see #mNumSkeletons()
     public AiScene mNumSkeletons(int mNumSkeletons) {
     	M_NUM_SKELETONS_HANDLE.set(segment, 0L, mNumSkeletons);
@@ -481,25 +500,6 @@ public final class AiScene
     		return null;
     	
     	return new NativeByteArray(segment);
-    }
-    
-    /// @see #mName()
-    public AiScene mName(Consumer<AiString> consumer) {
-    	consumer.accept(mName);
-    	return this;
-    }
-    
-    /// @see #mName()
-    public AiScene mName(AiString other) {
-    	mName.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// The name of the scene itself.
-    /// ```
-    public AiString mName() {
-    	return mName;
     }
     
     @Override
@@ -553,5 +553,5 @@ public final class AiScene
             segment -> new AiScene(segment)
         );
     }
-    
+
 }

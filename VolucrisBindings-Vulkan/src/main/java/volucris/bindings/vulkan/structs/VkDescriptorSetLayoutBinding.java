@@ -22,58 +22,58 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetLayoutBinding
 		implements Struct<VkDescriptorSetLayoutBinding> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
-    public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle STAGE_FLAGS_HANDLE;
-    public static final VarHandle P_IMMUTABLE_SAMPLERS_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
+	public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle STAGE_FLAGS_HANDLE;
+	public static final VarHandle P_IMMUTABLE_SAMPLERS_HANDLE;
 
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
-    public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long STAGE_FLAGS_BYTE_OFFSET;
-    public static final long P_IMMUTABLE_SAMPLERS_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
+	public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long STAGE_FLAGS_BYTE_OFFSET;
+	public static final long P_IMMUTABLE_SAMPLERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("descriptorType"),
-            JAVA_INT.withName("descriptorCount"),
-            JAVA_INT.withName("stageFlags"),
-            UNBOUNDED_ADDRESS.withName("pImmutableSamplers")
-        ).withName("VkDescriptorSetLayoutBinding").withByteAlignment(8);
-        
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
-        DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
-        STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
-        P_IMMUTABLE_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImmutableSamplers"));
-        
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
-        DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
-        STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
-        P_IMMUTABLE_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImmutableSamplers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("descriptorType"),
+		    JAVA_INT.withName("descriptorCount"),
+		    JAVA_INT.withName("stageFlags"),
+		    UNBOUNDED_ADDRESS.withName("pImmutableSamplers")
+		).withName("VkDescriptorSetLayoutBinding").withByteAlignment(8);
+		
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
+		DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
+		STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
+		P_IMMUTABLE_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImmutableSamplers"));
+		
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
+		DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
+		STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
+		P_IMMUTABLE_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImmutableSamplers"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetLayoutBinding() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetLayoutBinding(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetLayoutBinding(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorSetLayoutBinding() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetLayoutBinding(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetLayoutBinding(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #binding()
     public VkDescriptorSetLayoutBinding binding(int binding) {
@@ -181,5 +181,5 @@ public final class VkDescriptorSetLayoutBinding
             segment -> new VkDescriptorSetLayoutBinding(segment)
         );
     }
-    
+
 }

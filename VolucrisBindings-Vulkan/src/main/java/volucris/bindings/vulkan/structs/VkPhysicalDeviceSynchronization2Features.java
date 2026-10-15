@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSynchronization2Features
 		implements Struct<VkPhysicalDeviceSynchronization2Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SYNCHRONIZATION2_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SYNCHRONIZATION2_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SYNCHRONIZATION2_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SYNCHRONIZATION2_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("synchronization2"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceSynchronization2Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SYNCHRONIZATION2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("synchronization2"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SYNCHRONIZATION2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("synchronization2"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("synchronization2"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceSynchronization2Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SYNCHRONIZATION2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("synchronization2"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SYNCHRONIZATION2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("synchronization2"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSynchronization2Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSynchronization2Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSynchronization2Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSynchronization2Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSynchronization2Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSynchronization2Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSynchronization2Features sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceSynchronization2Features
             segment -> new VkPhysicalDeviceSynchronization2Features(segment)
         );
     }
-    
+
 }

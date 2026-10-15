@@ -20,55 +20,71 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoDecodeH264ReferenceInfo
 		implements Struct<StdVideoDecodeH264ReferenceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FRAME_NUM_HANDLE;
-    public static final VarHandle RESERVED_HANDLE;
-    public static final VarHandle PIC_ORDER_CNT_HANDLE;
+	public static final VarHandle FRAME_NUM_HANDLE;
+	public static final VarHandle RESERVED_HANDLE;
+	public static final VarHandle PIC_ORDER_CNT_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long FRAME_NUM_BYTE_OFFSET;
-    public static final long RESERVED_BYTE_OFFSET;
-    public static final long PIC_ORDER_CNT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long FRAME_NUM_BYTE_OFFSET;
+	public static final long RESERVED_BYTE_OFFSET;
+	public static final long PIC_ORDER_CNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoDecodeH264ReferenceInfoFlags flags;
+	private final StdVideoDecodeH264ReferenceInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoDecodeH264ReferenceInfoFlags.LAYOUT.withName("flags"),
-            JAVA_SHORT.withName("FrameNum"),
-            JAVA_SHORT.withName("reserved"),
-            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("PicOrderCnt")
-        ).withName("StdVideoDecodeH264ReferenceInfo").withByteAlignment(4);
-        
-        FRAME_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FrameNum"));
-        RESERVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved"));
-        PIC_ORDER_CNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCnt"), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        FRAME_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FrameNum"));
-        RESERVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved"));
-        PIC_ORDER_CNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCnt"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoDecodeH264ReferenceInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_SHORT.withName("FrameNum"),
+		    JAVA_SHORT.withName("reserved"),
+		    MemoryLayout.sequenceLayout(2, JAVA_INT).withName("PicOrderCnt")
+		).withName("StdVideoDecodeH264ReferenceInfo").withByteAlignment(4);
+		
+		FRAME_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FrameNum"));
+		RESERVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved"));
+		PIC_ORDER_CNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCnt"), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		FRAME_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FrameNum"));
+		RESERVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved"));
+		PIC_ORDER_CNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCnt"));
+		//@formatter:on
+	}
 
-    public StdVideoDecodeH264ReferenceInfo() {
-        this(Arena.ofAuto());
+	public StdVideoDecodeH264ReferenceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoDecodeH264ReferenceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoDecodeH264ReferenceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoDecodeH264ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeH264ReferenceInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoDecodeH264ReferenceInfo flags(Consumer<StdVideoDecodeH264ReferenceInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoDecodeH264ReferenceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoDecodeH264ReferenceInfo flags(StdVideoDecodeH264ReferenceInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoDecodeH264ReferenceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoDecodeH264ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeH264ReferenceInfoFlags.LAYOUT));
+    public StdVideoDecodeH264ReferenceInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #frameNum()
     public StdVideoDecodeH264ReferenceInfo frameNum(short frameNum) {
     	FRAME_NUM_HANDLE.set(segment, 0L, frameNum);
@@ -97,22 +113,6 @@ public final class StdVideoDecodeH264ReferenceInfo
     
     public int picOrderCnt(int index0) {
     	return (int) PIC_ORDER_CNT_HANDLE.get(segment, 0L, index0);
-    }
-    
-    /// @see #flags()
-    public StdVideoDecodeH264ReferenceInfo flags(Consumer<StdVideoDecodeH264ReferenceInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoDecodeH264ReferenceInfo flags(StdVideoDecodeH264ReferenceInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoDecodeH264ReferenceInfoFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -166,5 +166,5 @@ public final class StdVideoDecodeH264ReferenceInfo
             segment -> new StdVideoDecodeH264ReferenceInfo(segment)
         );
     }
-    
+
 }

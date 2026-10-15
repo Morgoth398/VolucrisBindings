@@ -22,66 +22,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoPictureResourceInfoKHR
 		implements Struct<VkVideoPictureResourceInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
-    public static final VarHandle IMAGE_VIEW_BINDING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
+	public static final VarHandle IMAGE_VIEW_BINDING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CODED_OFFSET_BYTE_OFFSET;
-    public static final long CODED_EXTENT_BYTE_OFFSET;
-    public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
-    public static final long IMAGE_VIEW_BINDING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CODED_OFFSET_BYTE_OFFSET;
+	public static final long CODED_EXTENT_BYTE_OFFSET;
+	public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
+	public static final long IMAGE_VIEW_BINDING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkOffset2D codedOffset;
-    private final VkExtent2D codedExtent;
+	private final VkOffset2D codedOffset;
+	private final VkExtent2D codedExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkOffset2D.LAYOUT.withName("codedOffset"),
-            VkExtent2D.LAYOUT.withName("codedExtent"),
-            JAVA_INT.withName("baseArrayLayer"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("imageViewBinding")
-        ).withName("VkVideoPictureResourceInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
-        IMAGE_VIEW_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageViewBinding"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CODED_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codedOffset"));
-        CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codedExtent"));
-        BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
-        IMAGE_VIEW_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageViewBinding"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkOffset2D.LAYOUT.withName("codedOffset"),
+		    VkExtent2D.LAYOUT.withName("codedExtent"),
+		    JAVA_INT.withName("baseArrayLayer"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("imageViewBinding")
+		).withName("VkVideoPictureResourceInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
+		IMAGE_VIEW_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageViewBinding"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CODED_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codedOffset"));
+		CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codedExtent"));
+		BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
+		IMAGE_VIEW_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageViewBinding"));
+		//@formatter:on
+	}
 
-    public VkVideoPictureResourceInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoPictureResourceInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoPictureResourceInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        codedOffset = new VkOffset2D(segment.asSlice(CODED_OFFSET_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        codedExtent = new VkExtent2D(segment.asSlice(CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkVideoPictureResourceInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoPictureResourceInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoPictureResourceInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    codedOffset = new VkOffset2D(segment.asSlice(CODED_OFFSET_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    codedExtent = new VkExtent2D(segment.asSlice(CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoPictureResourceInfoKHR sType(int sType) {
@@ -106,31 +106,6 @@ public final class VkVideoPictureResourceInfoKHR
     		return null;
     	
     	return segment;
-    }
-    
-    /// @see #baseArrayLayer()
-    public VkVideoPictureResourceInfoKHR baseArrayLayer(int baseArrayLayer) {
-    	BASE_ARRAY_LAYER_HANDLE.set(segment, 0L, baseArrayLayer);
-    	return this;
-    }
-    
-    public int baseArrayLayer() {
-    	return (int) BASE_ARRAY_LAYER_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #imageViewBinding()
-    public VkVideoPictureResourceInfoKHR imageViewBinding(VkImageView imageViewBinding) {
-    	IMAGE_VIEW_BINDING_HANDLE.set(segment, 0L, imageViewBinding.memorySegment());
-    	return this;
-    }
-    
-    public @Nullable VkImageView imageViewBinding() {
-    	MemorySegment segment = (MemorySegment) IMAGE_VIEW_BINDING_HANDLE.get(this.segment, 0L);
-    
-    	if (segment.equals(MemorySegment.NULL))
-    		return null;
-    	
-    	return new VkImageView(segment);
     }
     
     /// @see #codedOffset()
@@ -163,6 +138,31 @@ public final class VkVideoPictureResourceInfoKHR
     
     public VkExtent2D codedExtent() {
     	return codedExtent;
+    }
+    
+    /// @see #baseArrayLayer()
+    public VkVideoPictureResourceInfoKHR baseArrayLayer(int baseArrayLayer) {
+    	BASE_ARRAY_LAYER_HANDLE.set(segment, 0L, baseArrayLayer);
+    	return this;
+    }
+    
+    public int baseArrayLayer() {
+    	return (int) BASE_ARRAY_LAYER_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #imageViewBinding()
+    public VkVideoPictureResourceInfoKHR imageViewBinding(VkImageView imageViewBinding) {
+    	IMAGE_VIEW_BINDING_HANDLE.set(segment, 0L, imageViewBinding.memorySegment());
+    	return this;
+    }
+    
+    public @Nullable VkImageView imageViewBinding() {
+    	MemorySegment segment = (MemorySegment) IMAGE_VIEW_BINDING_HANDLE.get(this.segment, 0L);
+    
+    	if (segment.equals(MemorySegment.NULL))
+    		return null;
+    	
+    	return new VkImageView(segment);
     }
     
     @Override
@@ -216,5 +216,5 @@ public final class VkVideoPictureResourceInfoKHR
             segment -> new VkVideoPictureResourceInfoKHR(segment)
         );
     }
-    
+
 }

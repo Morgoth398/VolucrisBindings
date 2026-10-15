@@ -22,51 +22,51 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSparseImageFormatProperties2
 		implements Struct<VkSparseImageFormatProperties2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PROPERTIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSparseImageFormatProperties properties;
+	private final VkSparseImageFormatProperties properties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkSparseImageFormatProperties.LAYOUT.withName("properties"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSparseImageFormatProperties2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("properties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkSparseImageFormatProperties.LAYOUT.withName("properties"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSparseImageFormatProperties2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("properties"));
+		//@formatter:on
+	}
 
-    public VkSparseImageFormatProperties2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSparseImageFormatProperties2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSparseImageFormatProperties2(MemorySegment segment) {
-        this.segment = segment;
-    
-        properties = new VkSparseImageFormatProperties(segment.asSlice(PROPERTIES_BYTE_OFFSET, VkSparseImageFormatProperties.LAYOUT));
-    }
+	public VkSparseImageFormatProperties2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseImageFormatProperties2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseImageFormatProperties2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    properties = new VkSparseImageFormatProperties(segment.asSlice(PROPERTIES_BYTE_OFFSET, VkSparseImageFormatProperties.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSparseImageFormatProperties2 sType(int sType) {
@@ -160,5 +160,5 @@ public final class VkSparseImageFormatProperties2
             segment -> new VkSparseImageFormatProperties2(segment)
         );
     }
-    
+
 }

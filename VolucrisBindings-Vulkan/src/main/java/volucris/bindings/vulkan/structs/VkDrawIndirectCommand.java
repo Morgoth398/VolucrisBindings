@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDrawIndirectCommand
 		implements Struct<VkDrawIndirectCommand> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle VERTEX_COUNT_HANDLE;
-    public static final VarHandle INSTANCE_COUNT_HANDLE;
-    public static final VarHandle FIRST_VERTEX_HANDLE;
-    public static final VarHandle FIRST_INSTANCE_HANDLE;
+	public static final VarHandle VERTEX_COUNT_HANDLE;
+	public static final VarHandle INSTANCE_COUNT_HANDLE;
+	public static final VarHandle FIRST_VERTEX_HANDLE;
+	public static final VarHandle FIRST_INSTANCE_HANDLE;
 
-    public static final long VERTEX_COUNT_BYTE_OFFSET;
-    public static final long INSTANCE_COUNT_BYTE_OFFSET;
-    public static final long FIRST_VERTEX_BYTE_OFFSET;
-    public static final long FIRST_INSTANCE_BYTE_OFFSET;
+	public static final long VERTEX_COUNT_BYTE_OFFSET;
+	public static final long INSTANCE_COUNT_BYTE_OFFSET;
+	public static final long FIRST_VERTEX_BYTE_OFFSET;
+	public static final long FIRST_INSTANCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("vertexCount"),
-            JAVA_INT.withName("instanceCount"),
-            JAVA_INT.withName("firstVertex"),
-            JAVA_INT.withName("firstInstance")
-        ).withName("VkDrawIndirectCommand").withByteAlignment(4);
-        
-        VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexCount"));
-        INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceCount"));
-        FIRST_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstVertex"));
-        FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstInstance"));
-        
-        VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexCount"));
-        INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceCount"));
-        FIRST_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstVertex"));
-        FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstInstance"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("vertexCount"),
+		    JAVA_INT.withName("instanceCount"),
+		    JAVA_INT.withName("firstVertex"),
+		    JAVA_INT.withName("firstInstance")
+		).withName("VkDrawIndirectCommand").withByteAlignment(4);
+		
+		VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexCount"));
+		INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceCount"));
+		FIRST_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstVertex"));
+		FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstInstance"));
+		
+		VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexCount"));
+		INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceCount"));
+		FIRST_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstVertex"));
+		FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstInstance"));
+		//@formatter:on
+	}
 
-    public VkDrawIndirectCommand() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrawIndirectCommand(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrawIndirectCommand(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrawIndirectCommand() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrawIndirectCommand(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrawIndirectCommand(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #vertexCount()
     public VkDrawIndirectCommand vertexCount(int vertexCount) {
@@ -158,5 +158,5 @@ public final class VkDrawIndirectCommand
             segment -> new VkDrawIndirectCommand(segment)
         );
     }
-    
+
 }

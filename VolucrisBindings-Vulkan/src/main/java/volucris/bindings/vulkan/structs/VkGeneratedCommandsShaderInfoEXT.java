@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGeneratedCommandsShaderInfoEXT
 		implements Struct<VkGeneratedCommandsShaderInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_COUNT_HANDLE;
-    public static final VarHandle P_SHADERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_COUNT_HANDLE;
+	public static final VarHandle P_SHADERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_COUNT_BYTE_OFFSET;
-    public static final long P_SHADERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_COUNT_BYTE_OFFSET;
+	public static final long P_SHADERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pShaders")
-        ).withName("VkGeneratedCommandsShaderInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCount"));
-        P_SHADERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShaders"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCount"));
-        P_SHADERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShaders"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pShaders")
+		).withName("VkGeneratedCommandsShaderInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCount"));
+		P_SHADERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShaders"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCount"));
+		P_SHADERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShaders"));
+		//@formatter:on
+	}
 
-    public VkGeneratedCommandsShaderInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeneratedCommandsShaderInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeneratedCommandsShaderInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGeneratedCommandsShaderInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeneratedCommandsShaderInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeneratedCommandsShaderInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGeneratedCommandsShaderInfoEXT sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkGeneratedCommandsShaderInfoEXT
             segment -> new VkGeneratedCommandsShaderInfoEXT(segment)
         );
     }
-    
+
 }

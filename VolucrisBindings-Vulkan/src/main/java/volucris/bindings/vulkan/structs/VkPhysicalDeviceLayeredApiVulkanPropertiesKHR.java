@@ -22,50 +22,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceLayeredApiVulkanPropertiesKHR
 		implements Struct<VkPhysicalDeviceLayeredApiVulkanPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PROPERTIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPhysicalDeviceProperties2 properties;
+	private final VkPhysicalDeviceProperties2 properties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkPhysicalDeviceProperties2.LAYOUT.withName("properties")
-        ).withName("VkPhysicalDeviceLayeredApiVulkanPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("properties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkPhysicalDeviceProperties2.LAYOUT.withName("properties")
+		).withName("VkPhysicalDeviceLayeredApiVulkanPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("properties"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        properties = new VkPhysicalDeviceProperties2(segment.asSlice(PROPERTIES_BYTE_OFFSET, VkPhysicalDeviceProperties2.LAYOUT));
-    }
+	public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    properties = new VkPhysicalDeviceProperties2(segment.asSlice(PROPERTIES_BYTE_OFFSET, VkPhysicalDeviceProperties2.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceLayeredApiVulkanPropertiesKHR sType(int sType) {
@@ -159,5 +159,5 @@ public final class VkPhysicalDeviceLayeredApiVulkanPropertiesKHR
             segment -> new VkPhysicalDeviceLayeredApiVulkanPropertiesKHR(segment)
         );
     }
-    
+
 }

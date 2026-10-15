@@ -21,66 +21,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTexelBufferAlignmentProperties
 		implements Struct<VkPhysicalDeviceTexelBufferAlignmentProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
-    public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
-    public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
-    public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
+	public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
+	public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
+	public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
-    public static final long STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
-    public static final long UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
-    public static final long UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
+	public static final long STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
+	public static final long UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
+	public static final long UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("storageTexelBufferOffsetAlignmentBytes"),
-            JAVA_INT.withName("storageTexelBufferOffsetSingleTexelAlignment"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("uniformTexelBufferOffsetAlignmentBytes"),
-            JAVA_INT.withName("uniformTexelBufferOffsetSingleTexelAlignment"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceTexelBufferAlignmentProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
-        STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
-        STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("storageTexelBufferOffsetAlignmentBytes"),
+		    JAVA_INT.withName("storageTexelBufferOffsetSingleTexelAlignment"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("uniformTexelBufferOffsetAlignmentBytes"),
+		    JAVA_INT.withName("uniformTexelBufferOffsetSingleTexelAlignment"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceTexelBufferAlignmentProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
+		STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
+		STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTexelBufferAlignmentProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTexelBufferAlignmentProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTexelBufferAlignmentProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTexelBufferAlignmentProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTexelBufferAlignmentProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTexelBufferAlignmentProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTexelBufferAlignmentProperties sType(int sType) {
@@ -198,5 +198,5 @@ public final class VkPhysicalDeviceTexelBufferAlignmentProperties
             segment -> new VkPhysicalDeviceTexelBufferAlignmentProperties(segment)
         );
     }
-    
+
 }

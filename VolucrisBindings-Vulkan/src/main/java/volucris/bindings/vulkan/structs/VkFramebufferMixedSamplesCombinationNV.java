@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkFramebufferMixedSamplesCombinationNV
 		implements Struct<VkFramebufferMixedSamplesCombinationNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COVERAGE_REDUCTION_MODE_HANDLE;
-    public static final VarHandle RASTERIZATION_SAMPLES_HANDLE;
-    public static final VarHandle DEPTH_STENCIL_SAMPLES_HANDLE;
-    public static final VarHandle COLOR_SAMPLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COVERAGE_REDUCTION_MODE_HANDLE;
+	public static final VarHandle RASTERIZATION_SAMPLES_HANDLE;
+	public static final VarHandle DEPTH_STENCIL_SAMPLES_HANDLE;
+	public static final VarHandle COLOR_SAMPLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COVERAGE_REDUCTION_MODE_BYTE_OFFSET;
-    public static final long RASTERIZATION_SAMPLES_BYTE_OFFSET;
-    public static final long DEPTH_STENCIL_SAMPLES_BYTE_OFFSET;
-    public static final long COLOR_SAMPLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COVERAGE_REDUCTION_MODE_BYTE_OFFSET;
+	public static final long RASTERIZATION_SAMPLES_BYTE_OFFSET;
+	public static final long DEPTH_STENCIL_SAMPLES_BYTE_OFFSET;
+	public static final long COLOR_SAMPLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("coverageReductionMode"),
-            JAVA_INT.withName("rasterizationSamples"),
-            JAVA_INT.withName("depthStencilSamples"),
-            JAVA_INT.withName("colorSamples")
-        ).withName("VkFramebufferMixedSamplesCombinationNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COVERAGE_REDUCTION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coverageReductionMode"));
-        RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationSamples"));
-        DEPTH_STENCIL_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilSamples"));
-        COLOR_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorSamples"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COVERAGE_REDUCTION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coverageReductionMode"));
-        RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationSamples"));
-        DEPTH_STENCIL_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilSamples"));
-        COLOR_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorSamples"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("coverageReductionMode"),
+		    JAVA_INT.withName("rasterizationSamples"),
+		    JAVA_INT.withName("depthStencilSamples"),
+		    JAVA_INT.withName("colorSamples")
+		).withName("VkFramebufferMixedSamplesCombinationNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COVERAGE_REDUCTION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coverageReductionMode"));
+		RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationSamples"));
+		DEPTH_STENCIL_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilSamples"));
+		COLOR_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorSamples"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COVERAGE_REDUCTION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coverageReductionMode"));
+		RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationSamples"));
+		DEPTH_STENCIL_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilSamples"));
+		COLOR_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorSamples"));
+		//@formatter:on
+	}
 
-    public VkFramebufferMixedSamplesCombinationNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkFramebufferMixedSamplesCombinationNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkFramebufferMixedSamplesCombinationNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkFramebufferMixedSamplesCombinationNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkFramebufferMixedSamplesCombinationNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkFramebufferMixedSamplesCombinationNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkFramebufferMixedSamplesCombinationNV sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkFramebufferMixedSamplesCombinationNV
             segment -> new VkFramebufferMixedSamplesCombinationNV(segment)
         );
     }
-    
+
 }

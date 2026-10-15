@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDebugUtilsObjectTagInfoEXT
 		implements Struct<VkDebugUtilsObjectTagInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OBJECT_TYPE_HANDLE;
-    public static final VarHandle OBJECT_HANDLE_HANDLE;
-    public static final VarHandle TAG_NAME_HANDLE;
-    public static final VarHandle TAG_SIZE_HANDLE;
-    public static final VarHandle P_TAG_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OBJECT_TYPE_HANDLE;
+	public static final VarHandle OBJECT_HANDLE_HANDLE;
+	public static final VarHandle TAG_NAME_HANDLE;
+	public static final VarHandle TAG_SIZE_HANDLE;
+	public static final VarHandle P_TAG_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OBJECT_TYPE_BYTE_OFFSET;
-    public static final long OBJECT_HANDLE_BYTE_OFFSET;
-    public static final long TAG_NAME_BYTE_OFFSET;
-    public static final long TAG_SIZE_BYTE_OFFSET;
-    public static final long P_TAG_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OBJECT_TYPE_BYTE_OFFSET;
+	public static final long OBJECT_HANDLE_BYTE_OFFSET;
+	public static final long TAG_NAME_BYTE_OFFSET;
+	public static final long TAG_SIZE_BYTE_OFFSET;
+	public static final long P_TAG_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("objectType"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("objectHandle"),
-            JAVA_LONG.withName("tagName"),
-            JAVA_LONG.withName("tagSize"),
-            UNBOUNDED_ADDRESS.withName("pTag")
-        ).withName("VkDebugUtilsObjectTagInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OBJECT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectType"));
-        OBJECT_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectHandle"));
-        TAG_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagName"));
-        TAG_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagSize"));
-        P_TAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTag"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OBJECT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectType"));
-        OBJECT_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectHandle"));
-        TAG_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagName"));
-        TAG_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagSize"));
-        P_TAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTag"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("objectType"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("objectHandle"),
+		    JAVA_LONG.withName("tagName"),
+		    JAVA_LONG.withName("tagSize"),
+		    UNBOUNDED_ADDRESS.withName("pTag")
+		).withName("VkDebugUtilsObjectTagInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OBJECT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectType"));
+		OBJECT_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectHandle"));
+		TAG_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagName"));
+		TAG_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagSize"));
+		P_TAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTag"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OBJECT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectType"));
+		OBJECT_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectHandle"));
+		TAG_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagName"));
+		TAG_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagSize"));
+		P_TAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTag"));
+		//@formatter:on
+	}
 
-    public VkDebugUtilsObjectTagInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDebugUtilsObjectTagInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDebugUtilsObjectTagInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDebugUtilsObjectTagInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDebugUtilsObjectTagInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDebugUtilsObjectTagInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDebugUtilsObjectTagInfoEXT sType(int sType) {
@@ -217,5 +217,5 @@ public final class VkDebugUtilsObjectTagInfoEXT
             segment -> new VkDebugUtilsObjectTagInfoEXT(segment)
         );
     }
-    
+
 }

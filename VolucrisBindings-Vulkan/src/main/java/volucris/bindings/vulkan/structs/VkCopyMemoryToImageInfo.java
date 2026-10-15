@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyMemoryToImageInfo
 		implements Struct<VkCopyMemoryToImageInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DST_IMAGE_HANDLE;
-    public static final VarHandle DST_IMAGE_LAYOUT_HANDLE;
-    public static final VarHandle REGION_COUNT_HANDLE;
-    public static final VarHandle P_REGIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DST_IMAGE_HANDLE;
+	public static final VarHandle DST_IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle REGION_COUNT_HANDLE;
+	public static final VarHandle P_REGIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DST_IMAGE_BYTE_OFFSET;
-    public static final long DST_IMAGE_LAYOUT_BYTE_OFFSET;
-    public static final long REGION_COUNT_BYTE_OFFSET;
-    public static final long P_REGIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DST_IMAGE_BYTE_OFFSET;
+	public static final long DST_IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long REGION_COUNT_BYTE_OFFSET;
+	public static final long P_REGIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("dstImage"),
-            JAVA_INT.withName("dstImageLayout"),
-            JAVA_INT.withName("regionCount"),
-            UNBOUNDED_ADDRESS.withName("pRegions")
-        ).withName("VkCopyMemoryToImageInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DST_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImage"));
-        DST_IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImageLayout"));
-        REGION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionCount"));
-        P_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRegions"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DST_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImage"));
-        DST_IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImageLayout"));
-        REGION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionCount"));
-        P_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRegions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("dstImage"),
+		    JAVA_INT.withName("dstImageLayout"),
+		    JAVA_INT.withName("regionCount"),
+		    UNBOUNDED_ADDRESS.withName("pRegions")
+		).withName("VkCopyMemoryToImageInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DST_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImage"));
+		DST_IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImageLayout"));
+		REGION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionCount"));
+		P_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRegions"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DST_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImage"));
+		DST_IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImageLayout"));
+		REGION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionCount"));
+		P_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRegions"));
+		//@formatter:on
+	}
 
-    public VkCopyMemoryToImageInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyMemoryToImageInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyMemoryToImageInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCopyMemoryToImageInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyMemoryToImageInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyMemoryToImageInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCopyMemoryToImageInfo sType(int sType) {
@@ -222,5 +222,5 @@ public final class VkCopyMemoryToImageInfo
             segment -> new VkCopyMemoryToImageInfo(segment)
         );
     }
-    
+
 }

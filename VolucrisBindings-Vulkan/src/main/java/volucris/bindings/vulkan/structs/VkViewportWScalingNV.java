@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkViewportWScalingNV
 		implements Struct<VkViewportWScalingNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle XCOEFF_HANDLE;
-    public static final VarHandle YCOEFF_HANDLE;
+	public static final VarHandle XCOEFF_HANDLE;
+	public static final VarHandle YCOEFF_HANDLE;
 
-    public static final long XCOEFF_BYTE_OFFSET;
-    public static final long YCOEFF_BYTE_OFFSET;
+	public static final long XCOEFF_BYTE_OFFSET;
+	public static final long YCOEFF_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("xcoeff"),
-            JAVA_FLOAT.withName("ycoeff")
-        ).withName("VkViewportWScalingNV").withByteAlignment(4);
-        
-        XCOEFF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xcoeff"));
-        YCOEFF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycoeff"));
-        
-        XCOEFF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xcoeff"));
-        YCOEFF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycoeff"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("xcoeff"),
+		    JAVA_FLOAT.withName("ycoeff")
+		).withName("VkViewportWScalingNV").withByteAlignment(4);
+		
+		XCOEFF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xcoeff"));
+		YCOEFF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycoeff"));
+		
+		XCOEFF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xcoeff"));
+		YCOEFF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycoeff"));
+		//@formatter:on
+	}
 
-    public VkViewportWScalingNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkViewportWScalingNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkViewportWScalingNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkViewportWScalingNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkViewportWScalingNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkViewportWScalingNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #xcoeff()
     public VkViewportWScalingNV xcoeff(float xcoeff) {
@@ -128,5 +128,5 @@ public final class VkViewportWScalingNV
             segment -> new VkViewportWScalingNV(segment)
         );
     }
-    
+
 }

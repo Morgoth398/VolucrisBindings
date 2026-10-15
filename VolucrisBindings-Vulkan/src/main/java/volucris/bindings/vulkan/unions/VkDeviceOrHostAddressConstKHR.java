@@ -21,43 +21,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceOrHostAddressConstKHR
 		implements Struct<VkDeviceOrHostAddressConstKHR> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle DEVICE_ADDRESS_HANDLE;
-    public static final VarHandle HOST_ADDRESS_HANDLE;
+	public static final VarHandle DEVICE_ADDRESS_HANDLE;
+	public static final VarHandle HOST_ADDRESS_HANDLE;
 
-    public static final long DEVICE_ADDRESS_BYTE_OFFSET;
-    public static final long HOST_ADDRESS_BYTE_OFFSET;
+	public static final long DEVICE_ADDRESS_BYTE_OFFSET;
+	public static final long HOST_ADDRESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            JAVA_LONG.withName("deviceAddress"),
-            UNBOUNDED_ADDRESS.withName("hostAddress")
-        ).withName("VkDeviceOrHostAddressConstKHR").withByteAlignment(8);
-        
-        DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceAddress"));
-        HOST_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hostAddress"));
-        
-        DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceAddress"));
-        HOST_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hostAddress"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    JAVA_LONG.withName("deviceAddress"),
+		    UNBOUNDED_ADDRESS.withName("hostAddress")
+		).withName("VkDeviceOrHostAddressConstKHR").withByteAlignment(8);
+		
+		DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceAddress"));
+		HOST_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hostAddress"));
+		
+		DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceAddress"));
+		HOST_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hostAddress"));
+		//@formatter:on
+	}
 
-    public VkDeviceOrHostAddressConstKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceOrHostAddressConstKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceOrHostAddressConstKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceOrHostAddressConstKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceOrHostAddressConstKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceOrHostAddressConstKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #deviceAddress()
     public VkDeviceOrHostAddressConstKHR deviceAddress(long deviceAddress) {
@@ -135,5 +135,5 @@ public final class VkDeviceOrHostAddressConstKHR
             segment -> new VkDeviceOrHostAddressConstKHR(segment)
         );
     }
-    
+
 }

@@ -22,44 +22,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMutableDescriptorTypeListEXT
 		implements Struct<VkMutableDescriptorTypeListEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DESCRIPTOR_TYPE_COUNT_HANDLE;
-    public static final VarHandle P_DESCRIPTOR_TYPES_HANDLE;
+	public static final VarHandle DESCRIPTOR_TYPE_COUNT_HANDLE;
+	public static final VarHandle P_DESCRIPTOR_TYPES_HANDLE;
 
-    public static final long DESCRIPTOR_TYPE_COUNT_BYTE_OFFSET;
-    public static final long P_DESCRIPTOR_TYPES_BYTE_OFFSET;
+	public static final long DESCRIPTOR_TYPE_COUNT_BYTE_OFFSET;
+	public static final long P_DESCRIPTOR_TYPES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("descriptorTypeCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDescriptorTypes")
-        ).withName("VkMutableDescriptorTypeListEXT").withByteAlignment(8);
-        
-        DESCRIPTOR_TYPE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorTypeCount"));
-        P_DESCRIPTOR_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorTypes"));
-        
-        DESCRIPTOR_TYPE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorTypeCount"));
-        P_DESCRIPTOR_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorTypes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("descriptorTypeCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDescriptorTypes")
+		).withName("VkMutableDescriptorTypeListEXT").withByteAlignment(8);
+		
+		DESCRIPTOR_TYPE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorTypeCount"));
+		P_DESCRIPTOR_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorTypes"));
+		
+		DESCRIPTOR_TYPE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorTypeCount"));
+		P_DESCRIPTOR_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorTypes"));
+		//@formatter:on
+	}
 
-    public VkMutableDescriptorTypeListEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMutableDescriptorTypeListEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMutableDescriptorTypeListEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMutableDescriptorTypeListEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMutableDescriptorTypeListEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMutableDescriptorTypeListEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #descriptorTypeCount()
     public VkMutableDescriptorTypeListEXT descriptorTypeCount(int descriptorTypeCount) {
@@ -137,5 +137,5 @@ public final class VkMutableDescriptorTypeListEXT
             segment -> new VkMutableDescriptorTypeListEXT(segment)
         );
     }
-    
+
 }

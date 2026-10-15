@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevice4444FormatsFeaturesEXT
 		implements Struct<VkPhysicalDevice4444FormatsFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FORMAT_A4_R4_G4_B4_HANDLE;
-    public static final VarHandle FORMAT_A4_B4_G4_R4_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FORMAT_A4_R4_G4_B4_HANDLE;
+	public static final VarHandle FORMAT_A4_B4_G4_R4_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FORMAT_A4_R4_G4_B4_BYTE_OFFSET;
-    public static final long FORMAT_A4_B4_G4_R4_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FORMAT_A4_R4_G4_B4_BYTE_OFFSET;
+	public static final long FORMAT_A4_B4_G4_R4_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("formatA4R4G4B4"),
-            JAVA_INT.withName("formatA4B4G4R4")
-        ).withName("VkPhysicalDevice4444FormatsFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FORMAT_A4_R4_G4_B4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("formatA4R4G4B4"));
-        FORMAT_A4_B4_G4_R4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("formatA4B4G4R4"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FORMAT_A4_R4_G4_B4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("formatA4R4G4B4"));
-        FORMAT_A4_B4_G4_R4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("formatA4B4G4R4"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("formatA4R4G4B4"),
+		    JAVA_INT.withName("formatA4B4G4R4")
+		).withName("VkPhysicalDevice4444FormatsFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FORMAT_A4_R4_G4_B4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("formatA4R4G4B4"));
+		FORMAT_A4_B4_G4_R4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("formatA4B4G4R4"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FORMAT_A4_R4_G4_B4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("formatA4R4G4B4"));
+		FORMAT_A4_B4_G4_R4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("formatA4B4G4R4"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevice4444FormatsFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevice4444FormatsFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevice4444FormatsFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevice4444FormatsFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevice4444FormatsFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevice4444FormatsFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevice4444FormatsFeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDevice4444FormatsFeaturesEXT
             segment -> new VkPhysicalDevice4444FormatsFeaturesEXT(segment)
         );
     }
-    
+
 }

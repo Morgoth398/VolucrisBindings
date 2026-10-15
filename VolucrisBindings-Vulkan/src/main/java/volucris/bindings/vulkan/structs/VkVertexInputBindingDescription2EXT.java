@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVertexInputBindingDescription2EXT
 		implements Struct<VkVertexInputBindingDescription2EXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle STRIDE_HANDLE;
-    public static final VarHandle INPUT_RATE_HANDLE;
-    public static final VarHandle DIVISOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle STRIDE_HANDLE;
+	public static final VarHandle INPUT_RATE_HANDLE;
+	public static final VarHandle DIVISOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long STRIDE_BYTE_OFFSET;
-    public static final long INPUT_RATE_BYTE_OFFSET;
-    public static final long DIVISOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long STRIDE_BYTE_OFFSET;
+	public static final long INPUT_RATE_BYTE_OFFSET;
+	public static final long DIVISOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("stride"),
-            JAVA_INT.withName("inputRate"),
-            JAVA_INT.withName("divisor")
-        ).withName("VkVertexInputBindingDescription2EXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
-        INPUT_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputRate"));
-        DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("divisor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
-        INPUT_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputRate"));
-        DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("divisor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("stride"),
+		    JAVA_INT.withName("inputRate"),
+		    JAVA_INT.withName("divisor")
+		).withName("VkVertexInputBindingDescription2EXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
+		INPUT_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputRate"));
+		DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("divisor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
+		INPUT_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputRate"));
+		DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("divisor"));
+		//@formatter:on
+	}
 
-    public VkVertexInputBindingDescription2EXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVertexInputBindingDescription2EXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVertexInputBindingDescription2EXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVertexInputBindingDescription2EXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVertexInputBindingDescription2EXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVertexInputBindingDescription2EXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVertexInputBindingDescription2EXT sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVertexInputBindingDescription2EXT
             segment -> new VkVertexInputBindingDescription2EXT(segment)
         );
     }
-    
+
 }

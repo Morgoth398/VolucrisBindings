@@ -20,64 +20,62 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPhysicalDeviceMemoryProperties
 		implements Struct<VkPhysicalDeviceMemoryProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MEMORY_TYPE_COUNT_HANDLE;
-    public static final VarHandle MEMORY_HEAP_COUNT_HANDLE;
+	public static final VarHandle MEMORY_TYPE_COUNT_HANDLE;
+	public static final VarHandle MEMORY_HEAP_COUNT_HANDLE;
 
-    public static final long MEMORY_TYPE_COUNT_BYTE_OFFSET;
-    public static final long MEMORY_TYPES_BYTE_OFFSET;
-    public static final long MEMORY_HEAP_COUNT_BYTE_OFFSET;
-    public static final long MEMORY_HEAPS_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_COUNT_BYTE_OFFSET;
+	public static final long MEMORY_TYPES_BYTE_OFFSET;
+	public static final long MEMORY_HEAP_COUNT_BYTE_OFFSET;
+	public static final long MEMORY_HEAPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkMemoryType[] memoryTypes;
-    private final VkMemoryHeap[] memoryHeaps;
+	private final VkMemoryType[] memoryTypes;
+	private final VkMemoryHeap[] memoryHeaps;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("memoryTypeCount"),
-            MemoryLayout.sequenceLayout(32, VkMemoryType.LAYOUT).withName("memoryTypes"),
-            JAVA_INT.withName("memoryHeapCount"),
-            MemoryLayout.sequenceLayout(16, VkMemoryHeap.LAYOUT).withName("memoryHeaps")
-        ).withName("VkPhysicalDeviceMemoryProperties").withByteAlignment(8);
-        
-        MEMORY_TYPE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeCount"));
-        MEMORY_HEAP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryHeapCount"));
-        
-        MEMORY_TYPE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeCount"));
-        MEMORY_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypes"));
-        MEMORY_HEAP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryHeapCount"));
-        MEMORY_HEAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryHeaps"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("memoryTypeCount"),
+		    MemoryLayout.sequenceLayout(32, VkMemoryType.LAYOUT).withName("memoryTypes"),
+		    JAVA_INT.withName("memoryHeapCount"),
+		    MemoryLayout.sequenceLayout(16, VkMemoryHeap.LAYOUT).withName("memoryHeaps")
+		).withName("VkPhysicalDeviceMemoryProperties").withByteAlignment(8);
+		
+		MEMORY_TYPE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeCount"));
+		MEMORY_HEAP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryHeapCount"));
+		
+		MEMORY_TYPE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeCount"));
+		MEMORY_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypes"));
+		MEMORY_HEAP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryHeapCount"));
+		MEMORY_HEAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryHeaps"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMemoryProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMemoryProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMemoryProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-        memoryTypes = new VkMemoryType[32];
-        for (int i = 0; i < 32; i++) {
-            long offset = MEMORY_TYPES_BYTE_OFFSET + i * VkMemoryType.LAYOUT.byteSize();
-            memoryTypes[i] = new VkMemoryType(segment.asSlice(offset, VkMemoryType.LAYOUT));
-        }
-    
-        memoryHeaps = new VkMemoryHeap[16];
-        for (int i = 0; i < 16; i++) {
-            long offset = MEMORY_HEAPS_BYTE_OFFSET + i * VkMemoryHeap.LAYOUT.byteSize();
-            memoryHeaps[i] = new VkMemoryHeap(segment.asSlice(offset, VkMemoryHeap.LAYOUT));
-        }
-    
-    }
+	public VkPhysicalDeviceMemoryProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMemoryProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMemoryProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    memoryTypes = new VkMemoryType[32];
+	    for (int i = 0; i < 32; i++) {
+	        long offset = MEMORY_TYPES_BYTE_OFFSET + i * VkMemoryType.LAYOUT.byteSize();
+	        memoryTypes[i] = new VkMemoryType(segment.asSlice(offset, VkMemoryType.LAYOUT));
+	    }
+	    memoryHeaps = new VkMemoryHeap[16];
+	    for (int i = 0; i < 16; i++) {
+	        long offset = MEMORY_HEAPS_BYTE_OFFSET + i * VkMemoryHeap.LAYOUT.byteSize();
+	        memoryHeaps[i] = new VkMemoryHeap(segment.asSlice(offset, VkMemoryHeap.LAYOUT));
+	    }
+	}
 
     /// @see #memoryTypeCount()
     public VkPhysicalDeviceMemoryProperties memoryTypeCount(int memoryTypeCount) {
@@ -87,16 +85,6 @@ public final class VkPhysicalDeviceMemoryProperties
     
     public int memoryTypeCount() {
     	return (int) MEMORY_TYPE_COUNT_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #memoryHeapCount()
-    public VkPhysicalDeviceMemoryProperties memoryHeapCount(int memoryHeapCount) {
-    	MEMORY_HEAP_COUNT_HANDLE.set(segment, 0L, memoryHeapCount);
-    	return this;
-    }
-    
-    public int memoryHeapCount() {
-    	return (int) MEMORY_HEAP_COUNT_HANDLE.get(segment, 0L);
     }
     
     /// @see #memoryTypes(int)
@@ -113,6 +101,16 @@ public final class VkPhysicalDeviceMemoryProperties
     
     public VkMemoryType memoryTypes(int index) {
     	return memoryTypes[index];
+    }
+    
+    /// @see #memoryHeapCount()
+    public VkPhysicalDeviceMemoryProperties memoryHeapCount(int memoryHeapCount) {
+    	MEMORY_HEAP_COUNT_HANDLE.set(segment, 0L, memoryHeapCount);
+    	return this;
+    }
+    
+    public int memoryHeapCount() {
+    	return (int) MEMORY_HEAP_COUNT_HANDLE.get(segment, 0L);
     }
     
     /// @see #memoryHeaps(int)
@@ -182,5 +180,5 @@ public final class VkPhysicalDeviceMemoryProperties
             segment -> new VkPhysicalDeviceMemoryProperties(segment)
         );
     }
-    
+
 }

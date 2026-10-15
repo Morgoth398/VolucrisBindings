@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryPriorityAllocateInfoEXT
 		implements Struct<VkMemoryPriorityAllocateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRIORITY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRIORITY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRIORITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRIORITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_FLOAT.withName("priority"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMemoryPriorityAllocateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_FLOAT.withName("priority"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMemoryPriorityAllocateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
+		//@formatter:on
+	}
 
-    public VkMemoryPriorityAllocateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryPriorityAllocateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryPriorityAllocateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryPriorityAllocateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryPriorityAllocateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryPriorityAllocateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMemoryPriorityAllocateInfoEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkMemoryPriorityAllocateInfoEXT
             segment -> new VkMemoryPriorityAllocateInfoEXT(segment)
         );
     }
-    
+
 }

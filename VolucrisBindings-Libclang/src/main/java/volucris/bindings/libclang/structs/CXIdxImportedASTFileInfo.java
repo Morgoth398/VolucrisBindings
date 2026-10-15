@@ -23,55 +23,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxImportedASTFileInfo
 		implements Struct<CXIdxImportedASTFileInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FILE_HANDLE;
-    public static final VarHandle MODULE_HANDLE;
-    public static final VarHandle IS_IMPLICIT_HANDLE;
+	public static final VarHandle FILE_HANDLE;
+	public static final VarHandle MODULE_HANDLE;
+	public static final VarHandle IS_IMPLICIT_HANDLE;
 
-    public static final long FILE_BYTE_OFFSET;
-    public static final long MODULE_BYTE_OFFSET;
-    public static final long LOC_BYTE_OFFSET;
-    public static final long IS_IMPLICIT_BYTE_OFFSET;
+	public static final long FILE_BYTE_OFFSET;
+	public static final long MODULE_BYTE_OFFSET;
+	public static final long LOC_BYTE_OFFSET;
+	public static final long IS_IMPLICIT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXIdxLoc loc;
+	private final CXIdxLoc loc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("file"),
-            UNBOUNDED_ADDRESS.withName("module"),
-            CXIdxLoc.LAYOUT.withName("loc"),
-            JAVA_INT.withName("isImplicit"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxImportedASTFileInfo").withByteAlignment(8);
-        
-        FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("file"));
-        MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("module"));
-        IS_IMPLICIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isImplicit"));
-        
-        FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("file"));
-        MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("module"));
-        LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
-        IS_IMPLICIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isImplicit"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("file"),
+		    UNBOUNDED_ADDRESS.withName("module"),
+		    CXIdxLoc.LAYOUT.withName("loc"),
+		    JAVA_INT.withName("isImplicit"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxImportedASTFileInfo").withByteAlignment(8);
+		
+		FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("file"));
+		MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("module"));
+		IS_IMPLICIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isImplicit"));
+		
+		FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("file"));
+		MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("module"));
+		LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
+		IS_IMPLICIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isImplicit"));
+		//@formatter:on
+	}
 
-    public CXIdxImportedASTFileInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxImportedASTFileInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxImportedASTFileInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxImportedASTFileInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxImportedASTFileInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxImportedASTFileInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #file()
     public CXIdxImportedASTFileInfo file(MemorySegment file) {
@@ -111,21 +111,6 @@ public final class CXIdxImportedASTFileInfo
     	return segment;
     }
     
-    /// @see #isImplicit()
-    public CXIdxImportedASTFileInfo isImplicit(int isImplicit) {
-    	IS_IMPLICIT_HANDLE.set(segment, 0L, isImplicit);
-    	return this;
-    }
-    
-    /// ```
-    /// 
-    /// Non-zero if an inclusion directive was automatically turned into
-    /// a module import. Applicable only for modules.
-    /// ```
-    public int isImplicit() {
-    	return (int) IS_IMPLICIT_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #loc()
     public CXIdxImportedASTFileInfo loc(Consumer<CXIdxLoc> consumer) {
     	consumer.accept(loc);
@@ -144,6 +129,21 @@ public final class CXIdxImportedASTFileInfo
     /// ```
     public CXIdxLoc loc() {
     	return loc;
+    }
+    
+    /// @see #isImplicit()
+    public CXIdxImportedASTFileInfo isImplicit(int isImplicit) {
+    	IS_IMPLICIT_HANDLE.set(segment, 0L, isImplicit);
+    	return this;
+    }
+    
+    /// ```
+    /// 
+    /// Non-zero if an inclusion directive was automatically turned into
+    /// a module import. Applicable only for modules.
+    /// ```
+    public int isImplicit() {
+    	return (int) IS_IMPLICIT_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -197,5 +197,5 @@ public final class CXIdxImportedASTFileInfo
             segment -> new CXIdxImportedASTFileInfo(segment)
         );
     }
-    
+
 }

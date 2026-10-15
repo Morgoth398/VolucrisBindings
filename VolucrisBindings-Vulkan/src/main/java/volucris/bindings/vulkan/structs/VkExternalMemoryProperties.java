@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkExternalMemoryProperties
 		implements Struct<VkExternalMemoryProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle EXTERNAL_MEMORY_FEATURES_HANDLE;
-    public static final VarHandle EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE;
-    public static final VarHandle COMPATIBLE_HANDLE_TYPES_HANDLE;
+	public static final VarHandle EXTERNAL_MEMORY_FEATURES_HANDLE;
+	public static final VarHandle EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE;
+	public static final VarHandle COMPATIBLE_HANDLE_TYPES_HANDLE;
 
-    public static final long EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET;
-    public static final long EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET;
-    public static final long COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET;
+	public static final long EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("externalMemoryFeatures"),
-            JAVA_INT.withName("exportFromImportedHandleTypes"),
-            JAVA_INT.withName("compatibleHandleTypes")
-        ).withName("VkExternalMemoryProperties").withByteAlignment(4);
-        
-        EXTERNAL_MEMORY_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalMemoryFeatures"));
-        EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exportFromImportedHandleTypes"));
-        COMPATIBLE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleHandleTypes"));
-        
-        EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalMemoryFeatures"));
-        EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exportFromImportedHandleTypes"));
-        COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleHandleTypes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("externalMemoryFeatures"),
+		    JAVA_INT.withName("exportFromImportedHandleTypes"),
+		    JAVA_INT.withName("compatibleHandleTypes")
+		).withName("VkExternalMemoryProperties").withByteAlignment(4);
+		
+		EXTERNAL_MEMORY_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalMemoryFeatures"));
+		EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exportFromImportedHandleTypes"));
+		COMPATIBLE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleHandleTypes"));
+		
+		EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalMemoryFeatures"));
+		EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exportFromImportedHandleTypes"));
+		COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleHandleTypes"));
+		//@formatter:on
+	}
 
-    public VkExternalMemoryProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkExternalMemoryProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkExternalMemoryProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkExternalMemoryProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkExternalMemoryProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkExternalMemoryProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #externalMemoryFeatures()
     public VkExternalMemoryProperties externalMemoryFeatures(int externalMemoryFeatures) {
@@ -143,5 +143,5 @@ public final class VkExternalMemoryProperties
             segment -> new VkExternalMemoryProperties(segment)
         );
     }
-    
+
 }

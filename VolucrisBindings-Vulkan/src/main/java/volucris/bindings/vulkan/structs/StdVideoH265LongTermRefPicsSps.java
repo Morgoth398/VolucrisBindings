@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265LongTermRefPicsSps
 		implements Struct<StdVideoH265LongTermRefPicsSps> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle USED_BY_CURR_PIC_LT_SPS_FLAG_HANDLE;
-    public static final VarHandle LT_REF_PIC_POC_LSB_SPS_HANDLE;
+	public static final VarHandle USED_BY_CURR_PIC_LT_SPS_FLAG_HANDLE;
+	public static final VarHandle LT_REF_PIC_POC_LSB_SPS_HANDLE;
 
-    public static final long USED_BY_CURR_PIC_LT_SPS_FLAG_BYTE_OFFSET;
-    public static final long LT_REF_PIC_POC_LSB_SPS_BYTE_OFFSET;
+	public static final long USED_BY_CURR_PIC_LT_SPS_FLAG_BYTE_OFFSET;
+	public static final long LT_REF_PIC_POC_LSB_SPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("used_by_curr_pic_lt_sps_flag"),
-            MemoryLayout.sequenceLayout(32, JAVA_INT).withName("lt_ref_pic_poc_lsb_sps")
-        ).withName("StdVideoH265LongTermRefPicsSps").withByteAlignment(4);
-        
-        USED_BY_CURR_PIC_LT_SPS_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_lt_sps_flag"));
-        LT_REF_PIC_POC_LSB_SPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lt_ref_pic_poc_lsb_sps"), PathElement.sequenceElement());
-        
-        USED_BY_CURR_PIC_LT_SPS_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_lt_sps_flag"));
-        LT_REF_PIC_POC_LSB_SPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lt_ref_pic_poc_lsb_sps"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("used_by_curr_pic_lt_sps_flag"),
+		    MemoryLayout.sequenceLayout(32, JAVA_INT).withName("lt_ref_pic_poc_lsb_sps")
+		).withName("StdVideoH265LongTermRefPicsSps").withByteAlignment(4);
+		
+		USED_BY_CURR_PIC_LT_SPS_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_lt_sps_flag"));
+		LT_REF_PIC_POC_LSB_SPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lt_ref_pic_poc_lsb_sps"), PathElement.sequenceElement());
+		
+		USED_BY_CURR_PIC_LT_SPS_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_lt_sps_flag"));
+		LT_REF_PIC_POC_LSB_SPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lt_ref_pic_poc_lsb_sps"));
+		//@formatter:on
+	}
 
-    public StdVideoH265LongTermRefPicsSps() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoH265LongTermRefPicsSps(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoH265LongTermRefPicsSps(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoH265LongTermRefPicsSps() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265LongTermRefPicsSps(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265LongTermRefPicsSps(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #used_by_curr_pic_lt_sps_flag()
     public StdVideoH265LongTermRefPicsSps used_by_curr_pic_lt_sps_flag(int used_by_curr_pic_lt_sps_flag) {
@@ -128,5 +128,5 @@ public final class StdVideoH265LongTermRefPicsSps
             segment -> new StdVideoH265LongTermRefPicsSps(segment)
         );
     }
-    
+
 }

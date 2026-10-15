@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueueFamilyVideoPropertiesKHR
 		implements Struct<VkQueueFamilyVideoPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIDEO_CODEC_OPERATIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIDEO_CODEC_OPERATIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIDEO_CODEC_OPERATIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIDEO_CODEC_OPERATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("videoCodecOperations"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkQueueFamilyVideoPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIDEO_CODEC_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoCodecOperations"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIDEO_CODEC_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoCodecOperations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("videoCodecOperations"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkQueueFamilyVideoPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIDEO_CODEC_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoCodecOperations"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIDEO_CODEC_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoCodecOperations"));
+		//@formatter:on
+	}
 
-    public VkQueueFamilyVideoPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueueFamilyVideoPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueueFamilyVideoPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkQueueFamilyVideoPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueueFamilyVideoPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueueFamilyVideoPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkQueueFamilyVideoPropertiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkQueueFamilyVideoPropertiesKHR
             segment -> new VkQueueFamilyVideoPropertiesKHR(segment)
         );
     }
-    
+
 }

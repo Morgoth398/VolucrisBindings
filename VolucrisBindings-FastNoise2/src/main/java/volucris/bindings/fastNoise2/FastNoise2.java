@@ -15,104 +15,104 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class FastNoise2 {
 
-    private static final LazyConstant<MethodHandle> FN_NEW_FROM_ENCODED_NODE_TREE;
-    private static final LazyConstant<MethodHandle> FN_DELETE_NODE_REF;
-    private static final LazyConstant<MethodHandle> FN_GET_ACTIVE_FEATURE_SET;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_ID;
-    private static final LazyConstant<MethodHandle> FN_GEN_UNIFORM_GRID2_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_UNIFORM_GRID3_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_UNIFORM_GRID4_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_POSITION_ARRAY2_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_POSITION_ARRAY3_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_POSITION_ARRAY4_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_TILEABLE2_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_SINGLE2_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_SINGLE3_D;
-    private static final LazyConstant<MethodHandle> FN_GEN_SINGLE4_D;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_COUNT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_NAME;
-    private static final LazyConstant<MethodHandle> FN_NEW_FROM_METADATA;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_COUNT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_NAME;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_TYPE;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DIMENSION_IDX;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_ENUM_COUNT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_ENUM_NAME;
-    private static final LazyConstant<MethodHandle> FN_SET_VARIABLE_FLOAT;
-    private static final LazyConstant<MethodHandle> FN_SET_VARIABLE_INT_ENUM;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_COUNT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_NAME;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_DIMENSION_IDX;
-    private static final LazyConstant<MethodHandle> FN_SET_NODE_LOOKUP;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_COUNT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_NAME;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_DIMENSION_IDX;
-    private static final LazyConstant<MethodHandle> FN_SET_HYBRID_NODE_LOOKUP;
-    private static final LazyConstant<MethodHandle> FN_SET_HYBRID_FLOAT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_DESCRIPTION;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_GROUP_COUNT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_GROUP_NAME;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DESCRIPTION;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DEFAULT_FLOAT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DEFAULT_INT_ENUM;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_MIN_FLOAT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_MAX_FLOAT;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_DESCRIPTION;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_DESCRIPTION;
-    private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_DEFAULT;
+	private static final LazyConstant<MethodHandle> FN_NEW_FROM_ENCODED_NODE_TREE;
+	private static final LazyConstant<MethodHandle> FN_DELETE_NODE_REF;
+	private static final LazyConstant<MethodHandle> FN_GET_ACTIVE_FEATURE_SET;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_ID;
+	private static final LazyConstant<MethodHandle> FN_GEN_UNIFORM_GRID2_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_UNIFORM_GRID3_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_UNIFORM_GRID4_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_POSITION_ARRAY2_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_POSITION_ARRAY3_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_POSITION_ARRAY4_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_TILEABLE2_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_SINGLE2_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_SINGLE3_D;
+	private static final LazyConstant<MethodHandle> FN_GEN_SINGLE4_D;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_COUNT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_NAME;
+	private static final LazyConstant<MethodHandle> FN_NEW_FROM_METADATA;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_COUNT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_NAME;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_TYPE;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DIMENSION_IDX;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_ENUM_COUNT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_ENUM_NAME;
+	private static final LazyConstant<MethodHandle> FN_SET_VARIABLE_FLOAT;
+	private static final LazyConstant<MethodHandle> FN_SET_VARIABLE_INT_ENUM;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_COUNT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_NAME;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_DIMENSION_IDX;
+	private static final LazyConstant<MethodHandle> FN_SET_NODE_LOOKUP;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_COUNT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_NAME;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_DIMENSION_IDX;
+	private static final LazyConstant<MethodHandle> FN_SET_HYBRID_NODE_LOOKUP;
+	private static final LazyConstant<MethodHandle> FN_SET_HYBRID_FLOAT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_DESCRIPTION;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_GROUP_COUNT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_GROUP_NAME;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DESCRIPTION;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DEFAULT_FLOAT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_DEFAULT_INT_ENUM;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_MIN_FLOAT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_VARIABLE_MAX_FLOAT;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_NODE_LOOKUP_DESCRIPTION;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_DESCRIPTION;
+	private static final LazyConstant<MethodHandle> FN_GET_METADATA_HYBRID_DEFAULT;
 
-    static {
-        //@formatter:off
-        FN_NEW_FROM_ENCODED_NODE_TREE = downcallHandle("fnNewFromEncodedNodeTree", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        FN_DELETE_NODE_REF = downcallHandleVoid("fnDeleteNodeRef", UNBOUNDED_ADDRESS);
-        FN_GET_ACTIVE_FEATURE_SET = downcallHandle("fnGetActiveFeatureSet", JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GET_METADATA_ID = downcallHandle("fnGetMetadataID", JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_UNIFORM_GRID2_D = downcallHandleVoid("fnGenUniformGrid2D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_UNIFORM_GRID3_D = downcallHandleVoid("fnGenUniformGrid3D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_UNIFORM_GRID4_D = downcallHandleVoid("fnGenUniformGrid4D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, JAVA_INT, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_POSITION_ARRAY2_D = downcallHandleVoid("fnGenPositionArray2D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_POSITION_ARRAY3_D = downcallHandleVoid("fnGenPositionArray3D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_POSITION_ARRAY4_D = downcallHandleVoid("fnGenPositionArray4D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_TILEABLE2_D = downcallHandleVoid("fnGenTileable2D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GEN_SINGLE2_D = downcallHandle("fnGenSingle2D", JAVA_FLOAT, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT);
-        FN_GEN_SINGLE3_D = downcallHandle("fnGenSingle3D", JAVA_FLOAT, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT);
-        FN_GEN_SINGLE4_D = downcallHandle("fnGenSingle4D", JAVA_FLOAT, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT);
-        FN_GET_METADATA_COUNT = downcallHandle("fnGetMetadataCount", JAVA_INT);
-        FN_GET_METADATA_NAME = downcallHandle("fnGetMetadataName", UNBOUNDED_ADDRESS, JAVA_INT);
-        FN_NEW_FROM_METADATA = downcallHandle("fnNewFromMetadata", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_COUNT = downcallHandle("fnGetMetadataVariableCount", JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_NAME = downcallHandle("fnGetMetadataVariableName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_TYPE = downcallHandle("fnGetMetadataVariableType", JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_DIMENSION_IDX = downcallHandle("fnGetMetadataVariableDimensionIdx", JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_ENUM_COUNT = downcallHandle("fnGetMetadataEnumCount", JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_ENUM_NAME = downcallHandle("fnGetMetadataEnumName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_SET_VARIABLE_FLOAT = downcallHandle("fnSetVariableFloat", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_FLOAT);
-        FN_SET_VARIABLE_INT_ENUM = downcallHandle("fnSetVariableIntEnum", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_NODE_LOOKUP_COUNT = downcallHandle("fnGetMetadataNodeLookupCount", JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_NODE_LOOKUP_NAME = downcallHandle("fnGetMetadataNodeLookupName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_NODE_LOOKUP_DIMENSION_IDX = downcallHandle("fnGetMetadataNodeLookupDimensionIdx", JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_SET_NODE_LOOKUP = downcallHandle("fnSetNodeLookup", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_GET_METADATA_HYBRID_COUNT = downcallHandle("fnGetMetadataHybridCount", JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_HYBRID_NAME = downcallHandle("fnGetMetadataHybridName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_HYBRID_DIMENSION_IDX = downcallHandle("fnGetMetadataHybridDimensionIdx", JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_SET_HYBRID_NODE_LOOKUP = downcallHandle("fnSetHybridNodeLookup", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
-        FN_SET_HYBRID_FLOAT = downcallHandle("fnSetHybridFloat", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_FLOAT);
-        FN_GET_METADATA_DESCRIPTION = downcallHandle("fnGetMetadataDescription", UNBOUNDED_ADDRESS, JAVA_INT);
-        FN_GET_METADATA_GROUP_COUNT = downcallHandle("fnGetMetadataGroupCount", JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_GROUP_NAME = downcallHandle("fnGetMetadataGroupName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_DESCRIPTION = downcallHandle("fnGetMetadataVariableDescription", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_DEFAULT_FLOAT = downcallHandle("fnGetMetadataVariableDefaultFloat", JAVA_FLOAT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_DEFAULT_INT_ENUM = downcallHandle("fnGetMetadataVariableDefaultIntEnum", JAVA_INT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_MIN_FLOAT = downcallHandle("fnGetMetadataVariableMinFloat", JAVA_FLOAT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_VARIABLE_MAX_FLOAT = downcallHandle("fnGetMetadataVariableMaxFloat", JAVA_FLOAT, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_NODE_LOOKUP_DESCRIPTION = downcallHandle("fnGetMetadataNodeLookupDescription", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_HYBRID_DESCRIPTION = downcallHandle("fnGetMetadataHybridDescription", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        FN_GET_METADATA_HYBRID_DEFAULT = downcallHandle("fnGetMetadataHybridDefault", JAVA_FLOAT, JAVA_INT, JAVA_INT);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		FN_NEW_FROM_ENCODED_NODE_TREE = downcallHandle("fnNewFromEncodedNodeTree", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		FN_DELETE_NODE_REF = downcallHandleVoid("fnDeleteNodeRef", UNBOUNDED_ADDRESS);
+		FN_GET_ACTIVE_FEATURE_SET = downcallHandle("fnGetActiveFeatureSet", JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GET_METADATA_ID = downcallHandle("fnGetMetadataID", JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_UNIFORM_GRID2_D = downcallHandleVoid("fnGenUniformGrid2D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_UNIFORM_GRID3_D = downcallHandleVoid("fnGenUniformGrid3D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_UNIFORM_GRID4_D = downcallHandleVoid("fnGenUniformGrid4D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, JAVA_INT, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_POSITION_ARRAY2_D = downcallHandleVoid("fnGenPositionArray2D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_POSITION_ARRAY3_D = downcallHandleVoid("fnGenPositionArray3D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_POSITION_ARRAY4_D = downcallHandleVoid("fnGenPositionArray4D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_TILEABLE2_D = downcallHandleVoid("fnGenTileable2D", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GEN_SINGLE2_D = downcallHandle("fnGenSingle2D", JAVA_FLOAT, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT);
+		FN_GEN_SINGLE3_D = downcallHandle("fnGenSingle3D", JAVA_FLOAT, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT);
+		FN_GEN_SINGLE4_D = downcallHandle("fnGenSingle4D", JAVA_FLOAT, UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT, JAVA_INT);
+		FN_GET_METADATA_COUNT = downcallHandle("fnGetMetadataCount", JAVA_INT);
+		FN_GET_METADATA_NAME = downcallHandle("fnGetMetadataName", UNBOUNDED_ADDRESS, JAVA_INT);
+		FN_NEW_FROM_METADATA = downcallHandle("fnNewFromMetadata", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_COUNT = downcallHandle("fnGetMetadataVariableCount", JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_NAME = downcallHandle("fnGetMetadataVariableName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_TYPE = downcallHandle("fnGetMetadataVariableType", JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_DIMENSION_IDX = downcallHandle("fnGetMetadataVariableDimensionIdx", JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_ENUM_COUNT = downcallHandle("fnGetMetadataEnumCount", JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_ENUM_NAME = downcallHandle("fnGetMetadataEnumName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_SET_VARIABLE_FLOAT = downcallHandle("fnSetVariableFloat", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_FLOAT);
+		FN_SET_VARIABLE_INT_ENUM = downcallHandle("fnSetVariableIntEnum", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_NODE_LOOKUP_COUNT = downcallHandle("fnGetMetadataNodeLookupCount", JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_NODE_LOOKUP_NAME = downcallHandle("fnGetMetadataNodeLookupName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_NODE_LOOKUP_DIMENSION_IDX = downcallHandle("fnGetMetadataNodeLookupDimensionIdx", JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_SET_NODE_LOOKUP = downcallHandle("fnSetNodeLookup", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_GET_METADATA_HYBRID_COUNT = downcallHandle("fnGetMetadataHybridCount", JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_HYBRID_NAME = downcallHandle("fnGetMetadataHybridName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_HYBRID_DIMENSION_IDX = downcallHandle("fnGetMetadataHybridDimensionIdx", JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_SET_HYBRID_NODE_LOOKUP = downcallHandle("fnSetHybridNodeLookup", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
+		FN_SET_HYBRID_FLOAT = downcallHandle("fnSetHybridFloat", JAVA_BOOLEAN, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_FLOAT);
+		FN_GET_METADATA_DESCRIPTION = downcallHandle("fnGetMetadataDescription", UNBOUNDED_ADDRESS, JAVA_INT);
+		FN_GET_METADATA_GROUP_COUNT = downcallHandle("fnGetMetadataGroupCount", JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_GROUP_NAME = downcallHandle("fnGetMetadataGroupName", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_DESCRIPTION = downcallHandle("fnGetMetadataVariableDescription", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_DEFAULT_FLOAT = downcallHandle("fnGetMetadataVariableDefaultFloat", JAVA_FLOAT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_DEFAULT_INT_ENUM = downcallHandle("fnGetMetadataVariableDefaultIntEnum", JAVA_INT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_MIN_FLOAT = downcallHandle("fnGetMetadataVariableMinFloat", JAVA_FLOAT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_VARIABLE_MAX_FLOAT = downcallHandle("fnGetMetadataVariableMaxFloat", JAVA_FLOAT, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_NODE_LOOKUP_DESCRIPTION = downcallHandle("fnGetMetadataNodeLookupDescription", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_HYBRID_DESCRIPTION = downcallHandle("fnGetMetadataHybridDescription", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		FN_GET_METADATA_HYBRID_DEFAULT = downcallHandle("fnGetMetadataHybridDefault", JAVA_FLOAT, JAVA_INT, JAVA_INT);
+		//@formatter:on
+	}
 
-    private FastNoise2() {
-    }
+	private FastNoise2() {
+	}
 
     /// ```
     /// @brief Create a node tree from an encoded string.
@@ -1877,5 +1877,5 @@ public final class FastNoise2 {
     		throw new RuntimeException(e);
     	}
     }
-    
+
 }

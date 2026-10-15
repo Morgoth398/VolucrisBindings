@@ -19,49 +19,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDrmFormatModifierProperties2EXT
 		implements Struct<VkDrmFormatModifierProperties2EXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DRM_FORMAT_MODIFIER_HANDLE;
-    public static final VarHandle DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE;
-    public static final VarHandle DRM_FORMAT_MODIFIER_TILING_FEATURES_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_TILING_FEATURES_HANDLE;
 
-    public static final long DRM_FORMAT_MODIFIER_BYTE_OFFSET;
-    public static final long DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET;
-    public static final long DRM_FORMAT_MODIFIER_TILING_FEATURES_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_TILING_FEATURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("drmFormatModifier"),
-            JAVA_INT.withName("drmFormatModifierPlaneCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("drmFormatModifierTilingFeatures")
-        ).withName("VkDrmFormatModifierProperties2EXT").withByteAlignment(8);
-        
-        DRM_FORMAT_MODIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifier"));
-        DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierPlaneCount"));
-        DRM_FORMAT_MODIFIER_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierTilingFeatures"));
-        
-        DRM_FORMAT_MODIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifier"));
-        DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierPlaneCount"));
-        DRM_FORMAT_MODIFIER_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierTilingFeatures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("drmFormatModifier"),
+		    JAVA_INT.withName("drmFormatModifierPlaneCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("drmFormatModifierTilingFeatures")
+		).withName("VkDrmFormatModifierProperties2EXT").withByteAlignment(8);
+		
+		DRM_FORMAT_MODIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifier"));
+		DRM_FORMAT_MODIFIER_PLANE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierPlaneCount"));
+		DRM_FORMAT_MODIFIER_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierTilingFeatures"));
+		
+		DRM_FORMAT_MODIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifier"));
+		DRM_FORMAT_MODIFIER_PLANE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierPlaneCount"));
+		DRM_FORMAT_MODIFIER_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierTilingFeatures"));
+		//@formatter:on
+	}
 
-    public VkDrmFormatModifierProperties2EXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrmFormatModifierProperties2EXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrmFormatModifierProperties2EXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrmFormatModifierProperties2EXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrmFormatModifierProperties2EXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrmFormatModifierProperties2EXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #drmFormatModifier()
     public VkDrmFormatModifierProperties2EXT drmFormatModifier(long drmFormatModifier) {
@@ -144,5 +144,5 @@ public final class VkDrmFormatModifierProperties2EXT
             segment -> new VkDrmFormatModifierProperties2EXT(segment)
         );
     }
-    
+
 }

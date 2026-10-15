@@ -18,54 +18,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class MsdfBitmap
 		implements Struct<MsdfBitmap> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle HANDLE_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle HANDLE_HANDLE;
 
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long HANDLE_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long HANDLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("handle")
-        ).withName("msdf_bitmap").withByteAlignment(8);
-        
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handle"));
-        
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handle"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("handle")
+		).withName("msdf_bitmap").withByteAlignment(8);
+		
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handle"));
+		
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handle"));
+		//@formatter:on
+	}
 
-    public MsdfBitmap() {
-        this(Arena.ofAuto());
-    }
-    
-    public MsdfBitmap(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public MsdfBitmap(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public MsdfBitmap() {
+	    this(Arena.ofAuto());
+	}
+	
+	public MsdfBitmap(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public MsdfBitmap(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #type()
     public MsdfBitmap type(int type) {
@@ -163,5 +163,5 @@ public final class MsdfBitmap
             segment -> new MsdfBitmap(segment)
         );
     }
-    
+
 }

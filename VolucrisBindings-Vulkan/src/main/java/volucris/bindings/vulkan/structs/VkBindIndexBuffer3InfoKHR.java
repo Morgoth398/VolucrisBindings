@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindIndexBuffer3InfoKHR
 		implements Struct<VkBindIndexBuffer3InfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADDRESS_FLAGS_HANDLE;
-    public static final VarHandle INDEX_TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADDRESS_FLAGS_HANDLE;
+	public static final VarHandle INDEX_TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long ADDRESS_FLAGS_BYTE_OFFSET;
-    public static final long INDEX_TYPE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long ADDRESS_FLAGS_BYTE_OFFSET;
+	public static final long INDEX_TYPE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR addressRange;
+	private final VkDeviceAddressRangeKHR addressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
-            JAVA_INT.withName("addressFlags"),
-            JAVA_INT.withName("indexType")
-        ).withName("VkBindIndexBuffer3InfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
-        INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
-        INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
+		    JAVA_INT.withName("addressFlags"),
+		    JAVA_INT.withName("indexType")
+		).withName("VkBindIndexBuffer3InfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
+		INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
+		INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
+		//@formatter:on
+	}
 
-    public VkBindIndexBuffer3InfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindIndexBuffer3InfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindIndexBuffer3InfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkBindIndexBuffer3InfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindIndexBuffer3InfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindIndexBuffer3InfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkBindIndexBuffer3InfoKHR sType(int sType) {
@@ -102,6 +102,22 @@ public final class VkBindIndexBuffer3InfoKHR
     	return segment;
     }
     
+    /// @see #addressRange()
+    public VkBindIndexBuffer3InfoKHR addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(addressRange);
+    	return this;
+    }
+    
+    /// @see #addressRange()
+    public VkBindIndexBuffer3InfoKHR addressRange(VkDeviceAddressRangeKHR other) {
+    	addressRange.set(other);
+    	return this;
+    }
+    
+    public VkDeviceAddressRangeKHR addressRange() {
+    	return addressRange;
+    }
+    
     /// @see #addressFlags()
     public VkBindIndexBuffer3InfoKHR addressFlags(int addressFlags) {
     	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
@@ -120,22 +136,6 @@ public final class VkBindIndexBuffer3InfoKHR
     
     public int indexType() {
     	return (int) INDEX_TYPE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #addressRange()
-    public VkBindIndexBuffer3InfoKHR addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(addressRange);
-    	return this;
-    }
-    
-    /// @see #addressRange()
-    public VkBindIndexBuffer3InfoKHR addressRange(VkDeviceAddressRangeKHR other) {
-    	addressRange.set(other);
-    	return this;
-    }
-    
-    public VkDeviceAddressRangeKHR addressRange() {
-    	return addressRange;
     }
     
     @Override
@@ -189,5 +189,5 @@ public final class VkBindIndexBuffer3InfoKHR
             segment -> new VkBindIndexBuffer3InfoKHR(segment)
         );
     }
-    
+
 }

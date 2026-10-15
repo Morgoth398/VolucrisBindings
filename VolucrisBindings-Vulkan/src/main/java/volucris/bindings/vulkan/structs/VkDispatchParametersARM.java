@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDispatchParametersARM
 		implements Struct<VkDispatchParametersARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WORK_GROUP_BATCH_SIZE_HANDLE;
-    public static final VarHandle MAX_QUEUED_WORK_GROUP_BATCHES_HANDLE;
-    public static final VarHandle MAX_WARPS_PER_SHADER_CORE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WORK_GROUP_BATCH_SIZE_HANDLE;
+	public static final VarHandle MAX_QUEUED_WORK_GROUP_BATCHES_HANDLE;
+	public static final VarHandle MAX_WARPS_PER_SHADER_CORE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WORK_GROUP_BATCH_SIZE_BYTE_OFFSET;
-    public static final long MAX_QUEUED_WORK_GROUP_BATCHES_BYTE_OFFSET;
-    public static final long MAX_WARPS_PER_SHADER_CORE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WORK_GROUP_BATCH_SIZE_BYTE_OFFSET;
+	public static final long MAX_QUEUED_WORK_GROUP_BATCHES_BYTE_OFFSET;
+	public static final long MAX_WARPS_PER_SHADER_CORE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("workGroupBatchSize"),
-            JAVA_INT.withName("maxQueuedWorkGroupBatches"),
-            JAVA_INT.withName("maxWarpsPerShaderCore"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDispatchParametersARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WORK_GROUP_BATCH_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workGroupBatchSize"));
-        MAX_QUEUED_WORK_GROUP_BATCHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQueuedWorkGroupBatches"));
-        MAX_WARPS_PER_SHADER_CORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWarpsPerShaderCore"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WORK_GROUP_BATCH_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workGroupBatchSize"));
-        MAX_QUEUED_WORK_GROUP_BATCHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQueuedWorkGroupBatches"));
-        MAX_WARPS_PER_SHADER_CORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWarpsPerShaderCore"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("workGroupBatchSize"),
+		    JAVA_INT.withName("maxQueuedWorkGroupBatches"),
+		    JAVA_INT.withName("maxWarpsPerShaderCore"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDispatchParametersARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WORK_GROUP_BATCH_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workGroupBatchSize"));
+		MAX_QUEUED_WORK_GROUP_BATCHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQueuedWorkGroupBatches"));
+		MAX_WARPS_PER_SHADER_CORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWarpsPerShaderCore"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WORK_GROUP_BATCH_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workGroupBatchSize"));
+		MAX_QUEUED_WORK_GROUP_BATCHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQueuedWorkGroupBatches"));
+		MAX_WARPS_PER_SHADER_CORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWarpsPerShaderCore"));
+		//@formatter:on
+	}
 
-    public VkDispatchParametersARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDispatchParametersARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDispatchParametersARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDispatchParametersARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDispatchParametersARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDispatchParametersARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDispatchParametersARM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDispatchParametersARM
             segment -> new VkDispatchParametersARM(segment)
         );
     }
-    
+
 }

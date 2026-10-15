@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectExecutionSetShaderInfoEXT
 		implements Struct<VkIndirectExecutionSetShaderInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_COUNT_HANDLE;
-    public static final VarHandle P_INITIAL_SHADERS_HANDLE;
-    public static final VarHandle P_SET_LAYOUT_INFOS_HANDLE;
-    public static final VarHandle MAX_SHADER_COUNT_HANDLE;
-    public static final VarHandle PUSH_CONSTANT_RANGE_COUNT_HANDLE;
-    public static final VarHandle P_PUSH_CONSTANT_RANGES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_COUNT_HANDLE;
+	public static final VarHandle P_INITIAL_SHADERS_HANDLE;
+	public static final VarHandle P_SET_LAYOUT_INFOS_HANDLE;
+	public static final VarHandle MAX_SHADER_COUNT_HANDLE;
+	public static final VarHandle PUSH_CONSTANT_RANGE_COUNT_HANDLE;
+	public static final VarHandle P_PUSH_CONSTANT_RANGES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_COUNT_BYTE_OFFSET;
-    public static final long P_INITIAL_SHADERS_BYTE_OFFSET;
-    public static final long P_SET_LAYOUT_INFOS_BYTE_OFFSET;
-    public static final long MAX_SHADER_COUNT_BYTE_OFFSET;
-    public static final long PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET;
-    public static final long P_PUSH_CONSTANT_RANGES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_COUNT_BYTE_OFFSET;
+	public static final long P_INITIAL_SHADERS_BYTE_OFFSET;
+	public static final long P_SET_LAYOUT_INFOS_BYTE_OFFSET;
+	public static final long MAX_SHADER_COUNT_BYTE_OFFSET;
+	public static final long PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET;
+	public static final long P_PUSH_CONSTANT_RANGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pInitialShaders"),
-            UNBOUNDED_ADDRESS.withName("pSetLayoutInfos"),
-            JAVA_INT.withName("maxShaderCount"),
-            JAVA_INT.withName("pushConstantRangeCount"),
-            UNBOUNDED_ADDRESS.withName("pPushConstantRanges")
-        ).withName("VkIndirectExecutionSetShaderInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCount"));
-        P_INITIAL_SHADERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInitialShaders"));
-        P_SET_LAYOUT_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayoutInfos"));
-        MAX_SHADER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderCount"));
-        PUSH_CONSTANT_RANGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushConstantRangeCount"));
-        P_PUSH_CONSTANT_RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPushConstantRanges"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCount"));
-        P_INITIAL_SHADERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInitialShaders"));
-        P_SET_LAYOUT_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayoutInfos"));
-        MAX_SHADER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderCount"));
-        PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushConstantRangeCount"));
-        P_PUSH_CONSTANT_RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPushConstantRanges"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pInitialShaders"),
+		    UNBOUNDED_ADDRESS.withName("pSetLayoutInfos"),
+		    JAVA_INT.withName("maxShaderCount"),
+		    JAVA_INT.withName("pushConstantRangeCount"),
+		    UNBOUNDED_ADDRESS.withName("pPushConstantRanges")
+		).withName("VkIndirectExecutionSetShaderInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCount"));
+		P_INITIAL_SHADERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInitialShaders"));
+		P_SET_LAYOUT_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayoutInfos"));
+		MAX_SHADER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderCount"));
+		PUSH_CONSTANT_RANGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushConstantRangeCount"));
+		P_PUSH_CONSTANT_RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPushConstantRanges"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCount"));
+		P_INITIAL_SHADERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInitialShaders"));
+		P_SET_LAYOUT_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayoutInfos"));
+		MAX_SHADER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderCount"));
+		PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushConstantRangeCount"));
+		P_PUSH_CONSTANT_RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPushConstantRanges"));
+		//@formatter:on
+	}
 
-    public VkIndirectExecutionSetShaderInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectExecutionSetShaderInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectExecutionSetShaderInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectExecutionSetShaderInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectExecutionSetShaderInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectExecutionSetShaderInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectExecutionSetShaderInfoEXT sType(int sType) {
@@ -243,5 +243,5 @@ public final class VkIndirectExecutionSetShaderInfoEXT
             segment -> new VkIndirectExecutionSetShaderInfoEXT(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures
 		implements Struct<VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderZeroInitializeWorkgroupMemory"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderZeroInitializeWorkgroupMemory"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures
             segment -> new VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures(segment)
         );
     }
-    
+
 }

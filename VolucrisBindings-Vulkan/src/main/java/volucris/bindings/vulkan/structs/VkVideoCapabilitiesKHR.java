@@ -22,92 +22,92 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoCapabilitiesKHR
 		implements Struct<VkVideoCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_DPB_SLOTS_HANDLE;
-    public static final VarHandle MAX_ACTIVE_REFERENCE_PICTURES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_DPB_SLOTS_HANDLE;
+	public static final VarHandle MAX_ACTIVE_REFERENCE_PICTURES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_BYTE_OFFSET;
-    public static final long PICTURE_ACCESS_GRANULARITY_BYTE_OFFSET;
-    public static final long MIN_CODED_EXTENT_BYTE_OFFSET;
-    public static final long MAX_CODED_EXTENT_BYTE_OFFSET;
-    public static final long MAX_DPB_SLOTS_BYTE_OFFSET;
-    public static final long MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET;
-    public static final long STD_HEADER_VERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_BYTE_OFFSET;
+	public static final long PICTURE_ACCESS_GRANULARITY_BYTE_OFFSET;
+	public static final long MIN_CODED_EXTENT_BYTE_OFFSET;
+	public static final long MAX_CODED_EXTENT_BYTE_OFFSET;
+	public static final long MAX_DPB_SLOTS_BYTE_OFFSET;
+	public static final long MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET;
+	public static final long STD_HEADER_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D pictureAccessGranularity;
-    private final VkExtent2D minCodedExtent;
-    private final VkExtent2D maxCodedExtent;
-    private final VkExtensionProperties stdHeaderVersion;
+	private final VkExtent2D pictureAccessGranularity;
+	private final VkExtent2D minCodedExtent;
+	private final VkExtent2D maxCodedExtent;
+	private final VkExtensionProperties stdHeaderVersion;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("minBitstreamBufferOffsetAlignment"),
-            JAVA_LONG.withName("minBitstreamBufferSizeAlignment"),
-            VkExtent2D.LAYOUT.withName("pictureAccessGranularity"),
-            VkExtent2D.LAYOUT.withName("minCodedExtent"),
-            VkExtent2D.LAYOUT.withName("maxCodedExtent"),
-            JAVA_INT.withName("maxDpbSlots"),
-            JAVA_INT.withName("maxActiveReferencePictures"),
-            VkExtensionProperties.LAYOUT.withName("stdHeaderVersion"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoCapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minBitstreamBufferOffsetAlignment"));
-        MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minBitstreamBufferSizeAlignment"));
-        MAX_DPB_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDpbSlots"));
-        MAX_ACTIVE_REFERENCE_PICTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxActiveReferencePictures"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minBitstreamBufferOffsetAlignment"));
-        MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minBitstreamBufferSizeAlignment"));
-        PICTURE_ACCESS_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pictureAccessGranularity"));
-        MIN_CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minCodedExtent"));
-        MAX_CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCodedExtent"));
-        MAX_DPB_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDpbSlots"));
-        MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxActiveReferencePictures"));
-        STD_HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdHeaderVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("minBitstreamBufferOffsetAlignment"),
+		    JAVA_LONG.withName("minBitstreamBufferSizeAlignment"),
+		    VkExtent2D.LAYOUT.withName("pictureAccessGranularity"),
+		    VkExtent2D.LAYOUT.withName("minCodedExtent"),
+		    VkExtent2D.LAYOUT.withName("maxCodedExtent"),
+		    JAVA_INT.withName("maxDpbSlots"),
+		    JAVA_INT.withName("maxActiveReferencePictures"),
+		    VkExtensionProperties.LAYOUT.withName("stdHeaderVersion"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoCapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minBitstreamBufferOffsetAlignment"));
+		MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minBitstreamBufferSizeAlignment"));
+		MAX_DPB_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDpbSlots"));
+		MAX_ACTIVE_REFERENCE_PICTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxActiveReferencePictures"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MIN_BITSTREAM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minBitstreamBufferOffsetAlignment"));
+		MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minBitstreamBufferSizeAlignment"));
+		PICTURE_ACCESS_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pictureAccessGranularity"));
+		MIN_CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minCodedExtent"));
+		MAX_CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCodedExtent"));
+		MAX_DPB_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDpbSlots"));
+		MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxActiveReferencePictures"));
+		STD_HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdHeaderVersion"));
+		//@formatter:on
+	}
 
-    public VkVideoCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        pictureAccessGranularity = new VkExtent2D(segment.asSlice(PICTURE_ACCESS_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        minCodedExtent = new VkExtent2D(segment.asSlice(MIN_CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxCodedExtent = new VkExtent2D(segment.asSlice(MAX_CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        stdHeaderVersion = new VkExtensionProperties(segment.asSlice(STD_HEADER_VERSION_BYTE_OFFSET, VkExtensionProperties.LAYOUT));
-    }
+	public VkVideoCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    pictureAccessGranularity = new VkExtent2D(segment.asSlice(PICTURE_ACCESS_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    minCodedExtent = new VkExtent2D(segment.asSlice(MIN_CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxCodedExtent = new VkExtent2D(segment.asSlice(MAX_CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    stdHeaderVersion = new VkExtensionProperties(segment.asSlice(STD_HEADER_VERSION_BYTE_OFFSET, VkExtensionProperties.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoCapabilitiesKHR sType(int sType) {
@@ -164,26 +164,6 @@ public final class VkVideoCapabilitiesKHR
     	return (long) MIN_BITSTREAM_BUFFER_SIZE_ALIGNMENT_HANDLE.get(segment, 0L);
     }
     
-    /// @see #maxDpbSlots()
-    public VkVideoCapabilitiesKHR maxDpbSlots(int maxDpbSlots) {
-    	MAX_DPB_SLOTS_HANDLE.set(segment, 0L, maxDpbSlots);
-    	return this;
-    }
-    
-    public int maxDpbSlots() {
-    	return (int) MAX_DPB_SLOTS_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #maxActiveReferencePictures()
-    public VkVideoCapabilitiesKHR maxActiveReferencePictures(int maxActiveReferencePictures) {
-    	MAX_ACTIVE_REFERENCE_PICTURES_HANDLE.set(segment, 0L, maxActiveReferencePictures);
-    	return this;
-    }
-    
-    public int maxActiveReferencePictures() {
-    	return (int) MAX_ACTIVE_REFERENCE_PICTURES_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #pictureAccessGranularity()
     public VkVideoCapabilitiesKHR pictureAccessGranularity(Consumer<VkExtent2D> consumer) {
     	consumer.accept(pictureAccessGranularity);
@@ -230,6 +210,26 @@ public final class VkVideoCapabilitiesKHR
     
     public VkExtent2D maxCodedExtent() {
     	return maxCodedExtent;
+    }
+    
+    /// @see #maxDpbSlots()
+    public VkVideoCapabilitiesKHR maxDpbSlots(int maxDpbSlots) {
+    	MAX_DPB_SLOTS_HANDLE.set(segment, 0L, maxDpbSlots);
+    	return this;
+    }
+    
+    public int maxDpbSlots() {
+    	return (int) MAX_DPB_SLOTS_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #maxActiveReferencePictures()
+    public VkVideoCapabilitiesKHR maxActiveReferencePictures(int maxActiveReferencePictures) {
+    	MAX_ACTIVE_REFERENCE_PICTURES_HANDLE.set(segment, 0L, maxActiveReferencePictures);
+    	return this;
+    }
+    
+    public int maxActiveReferencePictures() {
+    	return (int) MAX_ACTIVE_REFERENCE_PICTURES_HANDLE.get(segment, 0L);
     }
     
     /// @see #stdHeaderVersion()
@@ -299,5 +299,5 @@ public final class VkVideoCapabilitiesKHR
             segment -> new VkVideoCapabilitiesKHR(segment)
         );
     }
-    
+
 }

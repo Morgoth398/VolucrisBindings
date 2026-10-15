@@ -22,110 +22,126 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoEncodeH265SliceSegmentHeader
 		implements Struct<StdVideoEncodeH265SliceSegmentHeader> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SLICE_TYPE_HANDLE;
-    public static final VarHandle SLICE_SEGMENT_ADDRESS_HANDLE;
-    public static final VarHandle COLLOCATED_REF_IDX_HANDLE;
-    public static final VarHandle MAX_NUM_MERGE_CAND_HANDLE;
-    public static final VarHandle SLICE_CB_QP_OFFSET_HANDLE;
-    public static final VarHandle SLICE_CR_QP_OFFSET_HANDLE;
-    public static final VarHandle SLICE_BETA_OFFSET_DIV2_HANDLE;
-    public static final VarHandle SLICE_TC_OFFSET_DIV2_HANDLE;
-    public static final VarHandle SLICE_ACT_Y_QP_OFFSET_HANDLE;
-    public static final VarHandle SLICE_ACT_CB_QP_OFFSET_HANDLE;
-    public static final VarHandle SLICE_ACT_CR_QP_OFFSET_HANDLE;
-    public static final VarHandle SLICE_QP_DELTA_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_WEIGHT_TABLE_HANDLE;
+	public static final VarHandle SLICE_TYPE_HANDLE;
+	public static final VarHandle SLICE_SEGMENT_ADDRESS_HANDLE;
+	public static final VarHandle COLLOCATED_REF_IDX_HANDLE;
+	public static final VarHandle MAX_NUM_MERGE_CAND_HANDLE;
+	public static final VarHandle SLICE_CB_QP_OFFSET_HANDLE;
+	public static final VarHandle SLICE_CR_QP_OFFSET_HANDLE;
+	public static final VarHandle SLICE_BETA_OFFSET_DIV2_HANDLE;
+	public static final VarHandle SLICE_TC_OFFSET_DIV2_HANDLE;
+	public static final VarHandle SLICE_ACT_Y_QP_OFFSET_HANDLE;
+	public static final VarHandle SLICE_ACT_CB_QP_OFFSET_HANDLE;
+	public static final VarHandle SLICE_ACT_CR_QP_OFFSET_HANDLE;
+	public static final VarHandle SLICE_QP_DELTA_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_WEIGHT_TABLE_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SLICE_TYPE_BYTE_OFFSET;
-    public static final long SLICE_SEGMENT_ADDRESS_BYTE_OFFSET;
-    public static final long COLLOCATED_REF_IDX_BYTE_OFFSET;
-    public static final long MAX_NUM_MERGE_CAND_BYTE_OFFSET;
-    public static final long SLICE_CB_QP_OFFSET_BYTE_OFFSET;
-    public static final long SLICE_CR_QP_OFFSET_BYTE_OFFSET;
-    public static final long SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET;
-    public static final long SLICE_TC_OFFSET_DIV2_BYTE_OFFSET;
-    public static final long SLICE_ACT_Y_QP_OFFSET_BYTE_OFFSET;
-    public static final long SLICE_ACT_CB_QP_OFFSET_BYTE_OFFSET;
-    public static final long SLICE_ACT_CR_QP_OFFSET_BYTE_OFFSET;
-    public static final long SLICE_QP_DELTA_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_WEIGHT_TABLE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SLICE_TYPE_BYTE_OFFSET;
+	public static final long SLICE_SEGMENT_ADDRESS_BYTE_OFFSET;
+	public static final long COLLOCATED_REF_IDX_BYTE_OFFSET;
+	public static final long MAX_NUM_MERGE_CAND_BYTE_OFFSET;
+	public static final long SLICE_CB_QP_OFFSET_BYTE_OFFSET;
+	public static final long SLICE_CR_QP_OFFSET_BYTE_OFFSET;
+	public static final long SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET;
+	public static final long SLICE_TC_OFFSET_DIV2_BYTE_OFFSET;
+	public static final long SLICE_ACT_Y_QP_OFFSET_BYTE_OFFSET;
+	public static final long SLICE_ACT_CB_QP_OFFSET_BYTE_OFFSET;
+	public static final long SLICE_ACT_CR_QP_OFFSET_BYTE_OFFSET;
+	public static final long SLICE_QP_DELTA_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_WEIGHT_TABLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH265SliceSegmentHeaderFlags flags;
+	private final StdVideoEncodeH265SliceSegmentHeaderFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH265SliceSegmentHeaderFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("slice_type"),
-            JAVA_INT.withName("slice_segment_address"),
-            JAVA_BYTE.withName("collocated_ref_idx"),
-            JAVA_BYTE.withName("MaxNumMergeCand"),
-            JAVA_BYTE.withName("slice_cb_qp_offset"),
-            JAVA_BYTE.withName("slice_cr_qp_offset"),
-            JAVA_BYTE.withName("slice_beta_offset_div2"),
-            JAVA_BYTE.withName("slice_tc_offset_div2"),
-            JAVA_BYTE.withName("slice_act_y_qp_offset"),
-            JAVA_BYTE.withName("slice_act_cb_qp_offset"),
-            JAVA_BYTE.withName("slice_act_cr_qp_offset"),
-            JAVA_BYTE.withName("slice_qp_delta"),
-            JAVA_SHORT.withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pWeightTable")
-        ).withName("StdVideoEncodeH265SliceSegmentHeader").withByteAlignment(8);
-        
-        SLICE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_type"));
-        SLICE_SEGMENT_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_segment_address"));
-        COLLOCATED_REF_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("collocated_ref_idx"));
-        MAX_NUM_MERGE_CAND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("MaxNumMergeCand"));
-        SLICE_CB_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_cb_qp_offset"));
-        SLICE_CR_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_cr_qp_offset"));
-        SLICE_BETA_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_beta_offset_div2"));
-        SLICE_TC_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_tc_offset_div2"));
-        SLICE_ACT_Y_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_act_y_qp_offset"));
-        SLICE_ACT_CB_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_act_cb_qp_offset"));
-        SLICE_ACT_CR_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_act_cr_qp_offset"));
-        SLICE_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_qp_delta"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        P_WEIGHT_TABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWeightTable"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SLICE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_type"));
-        SLICE_SEGMENT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_segment_address"));
-        COLLOCATED_REF_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("collocated_ref_idx"));
-        MAX_NUM_MERGE_CAND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("MaxNumMergeCand"));
-        SLICE_CB_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_cb_qp_offset"));
-        SLICE_CR_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_cr_qp_offset"));
-        SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_beta_offset_div2"));
-        SLICE_TC_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_tc_offset_div2"));
-        SLICE_ACT_Y_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_act_y_qp_offset"));
-        SLICE_ACT_CB_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_act_cb_qp_offset"));
-        SLICE_ACT_CR_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_act_cr_qp_offset"));
-        SLICE_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_qp_delta"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_WEIGHT_TABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWeightTable"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH265SliceSegmentHeaderFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("slice_type"),
+		    JAVA_INT.withName("slice_segment_address"),
+		    JAVA_BYTE.withName("collocated_ref_idx"),
+		    JAVA_BYTE.withName("MaxNumMergeCand"),
+		    JAVA_BYTE.withName("slice_cb_qp_offset"),
+		    JAVA_BYTE.withName("slice_cr_qp_offset"),
+		    JAVA_BYTE.withName("slice_beta_offset_div2"),
+		    JAVA_BYTE.withName("slice_tc_offset_div2"),
+		    JAVA_BYTE.withName("slice_act_y_qp_offset"),
+		    JAVA_BYTE.withName("slice_act_cb_qp_offset"),
+		    JAVA_BYTE.withName("slice_act_cr_qp_offset"),
+		    JAVA_BYTE.withName("slice_qp_delta"),
+		    JAVA_SHORT.withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pWeightTable")
+		).withName("StdVideoEncodeH265SliceSegmentHeader").withByteAlignment(8);
+		
+		SLICE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_type"));
+		SLICE_SEGMENT_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_segment_address"));
+		COLLOCATED_REF_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("collocated_ref_idx"));
+		MAX_NUM_MERGE_CAND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("MaxNumMergeCand"));
+		SLICE_CB_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_cb_qp_offset"));
+		SLICE_CR_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_cr_qp_offset"));
+		SLICE_BETA_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_beta_offset_div2"));
+		SLICE_TC_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_tc_offset_div2"));
+		SLICE_ACT_Y_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_act_y_qp_offset"));
+		SLICE_ACT_CB_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_act_cb_qp_offset"));
+		SLICE_ACT_CR_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_act_cr_qp_offset"));
+		SLICE_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_qp_delta"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		P_WEIGHT_TABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWeightTable"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SLICE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_type"));
+		SLICE_SEGMENT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_segment_address"));
+		COLLOCATED_REF_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("collocated_ref_idx"));
+		MAX_NUM_MERGE_CAND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("MaxNumMergeCand"));
+		SLICE_CB_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_cb_qp_offset"));
+		SLICE_CR_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_cr_qp_offset"));
+		SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_beta_offset_div2"));
+		SLICE_TC_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_tc_offset_div2"));
+		SLICE_ACT_Y_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_act_y_qp_offset"));
+		SLICE_ACT_CB_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_act_cb_qp_offset"));
+		SLICE_ACT_CR_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_act_cr_qp_offset"));
+		SLICE_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_qp_delta"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_WEIGHT_TABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWeightTable"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH265SliceSegmentHeader() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH265SliceSegmentHeader() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH265SliceSegmentHeader(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH265SliceSegmentHeader(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH265SliceSegmentHeaderFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265SliceSegmentHeaderFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH265SliceSegmentHeader flags(Consumer<StdVideoEncodeH265SliceSegmentHeaderFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH265SliceSegmentHeader(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH265SliceSegmentHeader flags(StdVideoEncodeH265SliceSegmentHeaderFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH265SliceSegmentHeader(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH265SliceSegmentHeaderFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265SliceSegmentHeaderFlags.LAYOUT));
+    public StdVideoEncodeH265SliceSegmentHeaderFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #slice_type()
     public StdVideoEncodeH265SliceSegmentHeader slice_type(int slice_type) {
     	SLICE_TYPE_HANDLE.set(segment, 0L, slice_type);
@@ -271,22 +287,6 @@ public final class StdVideoEncodeH265SliceSegmentHeader
     	return new StdVideoEncodeH265WeightTable(segment);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH265SliceSegmentHeader flags(Consumer<StdVideoEncodeH265SliceSegmentHeaderFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH265SliceSegmentHeader flags(StdVideoEncodeH265SliceSegmentHeaderFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH265SliceSegmentHeaderFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH265SliceSegmentHeader set(StdVideoEncodeH265SliceSegmentHeader other) {
         return set(other.segment);
@@ -338,5 +338,5 @@ public final class StdVideoEncodeH265SliceSegmentHeader
             segment -> new StdVideoEncodeH265SliceSegmentHeader(segment)
         );
     }
-    
+
 }

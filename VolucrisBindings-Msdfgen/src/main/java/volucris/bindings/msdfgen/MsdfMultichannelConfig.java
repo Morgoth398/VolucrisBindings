@@ -16,59 +16,59 @@ import static java.lang.foreign.ValueLayout.*;
 public final class MsdfMultichannelConfig
 		implements Struct<MsdfMultichannelConfig> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OVERLAP_SUPPORT_HANDLE;
-    public static final VarHandle MODE_HANDLE;
-    public static final VarHandle DISTANCE_CHECK_MODE_HANDLE;
-    public static final VarHandle MIN_DEVIATION_RATIO_HANDLE;
-    public static final VarHandle MIN_IMPROVE_RATIO_HANDLE;
+	public static final VarHandle OVERLAP_SUPPORT_HANDLE;
+	public static final VarHandle MODE_HANDLE;
+	public static final VarHandle DISTANCE_CHECK_MODE_HANDLE;
+	public static final VarHandle MIN_DEVIATION_RATIO_HANDLE;
+	public static final VarHandle MIN_IMPROVE_RATIO_HANDLE;
 
-    public static final long OVERLAP_SUPPORT_BYTE_OFFSET;
-    public static final long MODE_BYTE_OFFSET;
-    public static final long DISTANCE_CHECK_MODE_BYTE_OFFSET;
-    public static final long MIN_DEVIATION_RATIO_BYTE_OFFSET;
-    public static final long MIN_IMPROVE_RATIO_BYTE_OFFSET;
+	public static final long OVERLAP_SUPPORT_BYTE_OFFSET;
+	public static final long MODE_BYTE_OFFSET;
+	public static final long DISTANCE_CHECK_MODE_BYTE_OFFSET;
+	public static final long MIN_DEVIATION_RATIO_BYTE_OFFSET;
+	public static final long MIN_IMPROVE_RATIO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("overlap_support"),
-            JAVA_INT.withName("mode"),
-            JAVA_INT.withName("distance_check_mode"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_DOUBLE.withName("min_deviation_ratio"),
-            JAVA_DOUBLE.withName("min_improve_ratio")
-        ).withName("msdf_multichannel_config").withByteAlignment(8);
-        
-        OVERLAP_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("overlap_support"));
-        MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
-        DISTANCE_CHECK_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("distance_check_mode"));
-        MIN_DEVIATION_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("min_deviation_ratio"));
-        MIN_IMPROVE_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("min_improve_ratio"));
-        
-        OVERLAP_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("overlap_support"));
-        MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
-        DISTANCE_CHECK_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("distance_check_mode"));
-        MIN_DEVIATION_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("min_deviation_ratio"));
-        MIN_IMPROVE_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("min_improve_ratio"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("overlap_support"),
+		    JAVA_INT.withName("mode"),
+		    JAVA_INT.withName("distance_check_mode"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_DOUBLE.withName("min_deviation_ratio"),
+		    JAVA_DOUBLE.withName("min_improve_ratio")
+		).withName("msdf_multichannel_config").withByteAlignment(8);
+		
+		OVERLAP_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("overlap_support"));
+		MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
+		DISTANCE_CHECK_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("distance_check_mode"));
+		MIN_DEVIATION_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("min_deviation_ratio"));
+		MIN_IMPROVE_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("min_improve_ratio"));
+		
+		OVERLAP_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("overlap_support"));
+		MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
+		DISTANCE_CHECK_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("distance_check_mode"));
+		MIN_DEVIATION_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("min_deviation_ratio"));
+		MIN_IMPROVE_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("min_improve_ratio"));
+		//@formatter:on
+	}
 
-    public MsdfMultichannelConfig() {
-        this(Arena.ofAuto());
-    }
-    
-    public MsdfMultichannelConfig(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public MsdfMultichannelConfig(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public MsdfMultichannelConfig() {
+	    this(Arena.ofAuto());
+	}
+	
+	public MsdfMultichannelConfig(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public MsdfMultichannelConfig(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #overlap_support()
     public MsdfMultichannelConfig overlap_support(int overlap_support) {
@@ -171,5 +171,5 @@ public final class MsdfMultichannelConfig
             segment -> new MsdfMultichannelConfig(segment)
         );
     }
-    
+
 }

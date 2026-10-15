@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetVariableDescriptorCountAllocateInfo
 		implements Struct<VkDescriptorSetVariableDescriptorCountAllocateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_COUNT_HANDLE;
-    public static final VarHandle P_DESCRIPTOR_COUNTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_COUNT_HANDLE;
+	public static final VarHandle P_DESCRIPTOR_COUNTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_COUNT_BYTE_OFFSET;
-    public static final long P_DESCRIPTOR_COUNTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_COUNT_BYTE_OFFSET;
+	public static final long P_DESCRIPTOR_COUNTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("descriptorSetCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDescriptorCounts")
-        ).withName("VkDescriptorSetVariableDescriptorCountAllocateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetCount"));
-        P_DESCRIPTOR_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorCounts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetCount"));
-        P_DESCRIPTOR_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorCounts"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("descriptorSetCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDescriptorCounts")
+		).withName("VkDescriptorSetVariableDescriptorCountAllocateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetCount"));
+		P_DESCRIPTOR_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorCounts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetCount"));
+		P_DESCRIPTOR_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorCounts"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetVariableDescriptorCountAllocateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetVariableDescriptorCountAllocateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetVariableDescriptorCountAllocateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorSetVariableDescriptorCountAllocateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetVariableDescriptorCountAllocateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetVariableDescriptorCountAllocateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorSetVariableDescriptorCountAllocateInfo sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkDescriptorSetVariableDescriptorCountAllocateInfo
             segment -> new VkDescriptorSetVariableDescriptorCountAllocateInfo(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTileMemoryHeapPropertiesQCOM
 		implements Struct<VkPhysicalDeviceTileMemoryHeapPropertiesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle QUEUE_SUBMIT_BOUNDARY_HANDLE;
-    public static final VarHandle TILE_BUFFER_TRANSFERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle QUEUE_SUBMIT_BOUNDARY_HANDLE;
+	public static final VarHandle TILE_BUFFER_TRANSFERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long QUEUE_SUBMIT_BOUNDARY_BYTE_OFFSET;
-    public static final long TILE_BUFFER_TRANSFERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long QUEUE_SUBMIT_BOUNDARY_BYTE_OFFSET;
+	public static final long TILE_BUFFER_TRANSFERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("queueSubmitBoundary"),
-            JAVA_INT.withName("tileBufferTransfers")
-        ).withName("VkPhysicalDeviceTileMemoryHeapPropertiesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        QUEUE_SUBMIT_BOUNDARY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueSubmitBoundary"));
-        TILE_BUFFER_TRANSFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tileBufferTransfers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        QUEUE_SUBMIT_BOUNDARY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueSubmitBoundary"));
-        TILE_BUFFER_TRANSFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileBufferTransfers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("queueSubmitBoundary"),
+		    JAVA_INT.withName("tileBufferTransfers")
+		).withName("VkPhysicalDeviceTileMemoryHeapPropertiesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		QUEUE_SUBMIT_BOUNDARY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueSubmitBoundary"));
+		TILE_BUFFER_TRANSFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tileBufferTransfers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		QUEUE_SUBMIT_BOUNDARY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueSubmitBoundary"));
+		TILE_BUFFER_TRANSFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileBufferTransfers"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTileMemoryHeapPropertiesQCOM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceTileMemoryHeapPropertiesQCOM
             segment -> new VkPhysicalDeviceTileMemoryHeapPropertiesQCOM(segment)
         );
     }
-    
+
 }

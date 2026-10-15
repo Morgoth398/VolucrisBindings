@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVideoEncodeAV1FrameSizeKHR
 		implements Struct<VkVideoEncodeAV1FrameSizeKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle INTRA_FRAME_SIZE_HANDLE;
-    public static final VarHandle PREDICTIVE_FRAME_SIZE_HANDLE;
-    public static final VarHandle BIPREDICTIVE_FRAME_SIZE_HANDLE;
+	public static final VarHandle INTRA_FRAME_SIZE_HANDLE;
+	public static final VarHandle PREDICTIVE_FRAME_SIZE_HANDLE;
+	public static final VarHandle BIPREDICTIVE_FRAME_SIZE_HANDLE;
 
-    public static final long INTRA_FRAME_SIZE_BYTE_OFFSET;
-    public static final long PREDICTIVE_FRAME_SIZE_BYTE_OFFSET;
-    public static final long BIPREDICTIVE_FRAME_SIZE_BYTE_OFFSET;
+	public static final long INTRA_FRAME_SIZE_BYTE_OFFSET;
+	public static final long PREDICTIVE_FRAME_SIZE_BYTE_OFFSET;
+	public static final long BIPREDICTIVE_FRAME_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("intraFrameSize"),
-            JAVA_INT.withName("predictiveFrameSize"),
-            JAVA_INT.withName("bipredictiveFrameSize")
-        ).withName("VkVideoEncodeAV1FrameSizeKHR").withByteAlignment(4);
-        
-        INTRA_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraFrameSize"));
-        PREDICTIVE_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("predictiveFrameSize"));
-        BIPREDICTIVE_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bipredictiveFrameSize"));
-        
-        INTRA_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraFrameSize"));
-        PREDICTIVE_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("predictiveFrameSize"));
-        BIPREDICTIVE_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bipredictiveFrameSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("intraFrameSize"),
+		    JAVA_INT.withName("predictiveFrameSize"),
+		    JAVA_INT.withName("bipredictiveFrameSize")
+		).withName("VkVideoEncodeAV1FrameSizeKHR").withByteAlignment(4);
+		
+		INTRA_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraFrameSize"));
+		PREDICTIVE_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("predictiveFrameSize"));
+		BIPREDICTIVE_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bipredictiveFrameSize"));
+		
+		INTRA_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraFrameSize"));
+		PREDICTIVE_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("predictiveFrameSize"));
+		BIPREDICTIVE_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bipredictiveFrameSize"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1FrameSizeKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1FrameSizeKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1FrameSizeKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1FrameSizeKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1FrameSizeKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1FrameSizeKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #intraFrameSize()
     public VkVideoEncodeAV1FrameSizeKHR intraFrameSize(int intraFrameSize) {
@@ -143,5 +143,5 @@ public final class VkVideoEncodeAV1FrameSizeKHR
             segment -> new VkVideoEncodeAV1FrameSizeKHR(segment)
         );
     }
-    
+
 }

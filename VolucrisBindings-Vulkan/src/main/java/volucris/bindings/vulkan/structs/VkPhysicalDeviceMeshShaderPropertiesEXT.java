@@ -21,184 +21,184 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMeshShaderPropertiesEXT
 		implements Struct<VkPhysicalDeviceMeshShaderPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_TASK_WORK_GROUP_TOTAL_COUNT_HANDLE;
-    public static final VarHandle MAX_TASK_WORK_GROUP_COUNT_HANDLE;
-    public static final VarHandle MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_TASK_WORK_GROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_TASK_PAYLOAD_SIZE_HANDLE;
-    public static final VarHandle MAX_TASK_SHARED_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_WORK_GROUP_TOTAL_COUNT_HANDLE;
-    public static final VarHandle MAX_MESH_WORK_GROUP_COUNT_HANDLE;
-    public static final VarHandle MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_MESH_WORK_GROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_SHARED_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_VERTICES_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_PRIMITIVES_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_LAYERS_HANDLE;
-    public static final VarHandle MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE;
-    public static final VarHandle MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE;
-    public static final VarHandle MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE;
-    public static final VarHandle MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_HANDLE;
-    public static final VarHandle PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_HANDLE;
-    public static final VarHandle PREFERS_COMPACT_VERTEX_OUTPUT_HANDLE;
-    public static final VarHandle PREFERS_COMPACT_PRIMITIVE_OUTPUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_TASK_WORK_GROUP_TOTAL_COUNT_HANDLE;
+	public static final VarHandle MAX_TASK_WORK_GROUP_COUNT_HANDLE;
+	public static final VarHandle MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_TASK_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_TASK_PAYLOAD_SIZE_HANDLE;
+	public static final VarHandle MAX_TASK_SHARED_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_WORK_GROUP_TOTAL_COUNT_HANDLE;
+	public static final VarHandle MAX_MESH_WORK_GROUP_COUNT_HANDLE;
+	public static final VarHandle MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_MESH_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_SHARED_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_VERTICES_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_PRIMITIVES_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_LAYERS_HANDLE;
+	public static final VarHandle MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE;
+	public static final VarHandle MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE;
+	public static final VarHandle MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE;
+	public static final VarHandle MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_HANDLE;
+	public static final VarHandle PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_HANDLE;
+	public static final VarHandle PREFERS_COMPACT_VERTEX_OUTPUT_HANDLE;
+	public static final VarHandle PREFERS_COMPACT_PRIMITIVE_OUTPUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_TASK_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET;
-    public static final long MAX_TASK_WORK_GROUP_COUNT_BYTE_OFFSET;
-    public static final long MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_TASK_PAYLOAD_SIZE_BYTE_OFFSET;
-    public static final long MAX_TASK_SHARED_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET;
-    public static final long MAX_MESH_WORK_GROUP_COUNT_BYTE_OFFSET;
-    public static final long MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_SHARED_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_LAYERS_BYTE_OFFSET;
-    public static final long MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
-    public static final long MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET;
-    public static final long MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET;
-    public static final long MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_BYTE_OFFSET;
-    public static final long PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_BYTE_OFFSET;
-    public static final long PREFERS_COMPACT_VERTEX_OUTPUT_BYTE_OFFSET;
-    public static final long PREFERS_COMPACT_PRIMITIVE_OUTPUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_TASK_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET;
+	public static final long MAX_TASK_WORK_GROUP_COUNT_BYTE_OFFSET;
+	public static final long MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_TASK_PAYLOAD_SIZE_BYTE_OFFSET;
+	public static final long MAX_TASK_SHARED_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET;
+	public static final long MAX_MESH_WORK_GROUP_COUNT_BYTE_OFFSET;
+	public static final long MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_SHARED_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_LAYERS_BYTE_OFFSET;
+	public static final long MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
+	public static final long MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET;
+	public static final long MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET;
+	public static final long MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_BYTE_OFFSET;
+	public static final long PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_BYTE_OFFSET;
+	public static final long PREFERS_COMPACT_VERTEX_OUTPUT_BYTE_OFFSET;
+	public static final long PREFERS_COMPACT_PRIMITIVE_OUTPUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxTaskWorkGroupTotalCount"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxTaskWorkGroupCount"),
-            JAVA_INT.withName("maxTaskWorkGroupInvocations"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxTaskWorkGroupSize"),
-            JAVA_INT.withName("maxTaskPayloadSize"),
-            JAVA_INT.withName("maxTaskSharedMemorySize"),
-            JAVA_INT.withName("maxTaskPayloadAndSharedMemorySize"),
-            JAVA_INT.withName("maxMeshWorkGroupTotalCount"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxMeshWorkGroupCount"),
-            JAVA_INT.withName("maxMeshWorkGroupInvocations"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxMeshWorkGroupSize"),
-            JAVA_INT.withName("maxMeshSharedMemorySize"),
-            JAVA_INT.withName("maxMeshPayloadAndSharedMemorySize"),
-            JAVA_INT.withName("maxMeshOutputMemorySize"),
-            JAVA_INT.withName("maxMeshPayloadAndOutputMemorySize"),
-            JAVA_INT.withName("maxMeshOutputComponents"),
-            JAVA_INT.withName("maxMeshOutputVertices"),
-            JAVA_INT.withName("maxMeshOutputPrimitives"),
-            JAVA_INT.withName("maxMeshOutputLayers"),
-            JAVA_INT.withName("maxMeshMultiviewViewCount"),
-            JAVA_INT.withName("meshOutputPerVertexGranularity"),
-            JAVA_INT.withName("meshOutputPerPrimitiveGranularity"),
-            JAVA_INT.withName("maxPreferredTaskWorkGroupInvocations"),
-            JAVA_INT.withName("maxPreferredMeshWorkGroupInvocations"),
-            JAVA_INT.withName("prefersLocalInvocationVertexOutput"),
-            JAVA_INT.withName("prefersLocalInvocationPrimitiveOutput"),
-            JAVA_INT.withName("prefersCompactVertexOutput"),
-            JAVA_INT.withName("prefersCompactPrimitiveOutput")
-        ).withName("VkPhysicalDeviceMeshShaderPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_TASK_WORK_GROUP_TOTAL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupTotalCount"));
-        MAX_TASK_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupCount"), PathElement.sequenceElement());
-        MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupInvocations"));
-        MAX_TASK_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupSize"), PathElement.sequenceElement());
-        MAX_TASK_PAYLOAD_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskPayloadSize"));
-        MAX_TASK_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskSharedMemorySize"));
-        MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskPayloadAndSharedMemorySize"));
-        MAX_MESH_WORK_GROUP_TOTAL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupTotalCount"));
-        MAX_MESH_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupCount"), PathElement.sequenceElement());
-        MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupInvocations"));
-        MAX_MESH_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupSize"), PathElement.sequenceElement());
-        MAX_MESH_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshSharedMemorySize"));
-        MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshPayloadAndSharedMemorySize"));
-        MAX_MESH_OUTPUT_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputMemorySize"));
-        MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshPayloadAndOutputMemorySize"));
-        MAX_MESH_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputComponents"));
-        MAX_MESH_OUTPUT_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputVertices"));
-        MAX_MESH_OUTPUT_PRIMITIVES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputPrimitives"));
-        MAX_MESH_OUTPUT_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputLayers"));
-        MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshMultiviewViewCount"));
-        MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerVertexGranularity"));
-        MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
-        MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPreferredTaskWorkGroupInvocations"));
-        MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPreferredMeshWorkGroupInvocations"));
-        PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersLocalInvocationVertexOutput"));
-        PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersLocalInvocationPrimitiveOutput"));
-        PREFERS_COMPACT_VERTEX_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersCompactVertexOutput"));
-        PREFERS_COMPACT_PRIMITIVE_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersCompactPrimitiveOutput"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_TASK_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupTotalCount"));
-        MAX_TASK_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupCount"));
-        MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupInvocations"));
-        MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupSize"));
-        MAX_TASK_PAYLOAD_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskPayloadSize"));
-        MAX_TASK_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskSharedMemorySize"));
-        MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskPayloadAndSharedMemorySize"));
-        MAX_MESH_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupTotalCount"));
-        MAX_MESH_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupCount"));
-        MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupInvocations"));
-        MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupSize"));
-        MAX_MESH_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshSharedMemorySize"));
-        MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshPayloadAndSharedMemorySize"));
-        MAX_MESH_OUTPUT_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputMemorySize"));
-        MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshPayloadAndOutputMemorySize"));
-        MAX_MESH_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputComponents"));
-        MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputVertices"));
-        MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputPrimitives"));
-        MAX_MESH_OUTPUT_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputLayers"));
-        MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshMultiviewViewCount"));
-        MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerVertexGranularity"));
-        MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
-        MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPreferredTaskWorkGroupInvocations"));
-        MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPreferredMeshWorkGroupInvocations"));
-        PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersLocalInvocationVertexOutput"));
-        PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersLocalInvocationPrimitiveOutput"));
-        PREFERS_COMPACT_VERTEX_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersCompactVertexOutput"));
-        PREFERS_COMPACT_PRIMITIVE_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersCompactPrimitiveOutput"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxTaskWorkGroupTotalCount"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxTaskWorkGroupCount"),
+		    JAVA_INT.withName("maxTaskWorkGroupInvocations"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxTaskWorkGroupSize"),
+		    JAVA_INT.withName("maxTaskPayloadSize"),
+		    JAVA_INT.withName("maxTaskSharedMemorySize"),
+		    JAVA_INT.withName("maxTaskPayloadAndSharedMemorySize"),
+		    JAVA_INT.withName("maxMeshWorkGroupTotalCount"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxMeshWorkGroupCount"),
+		    JAVA_INT.withName("maxMeshWorkGroupInvocations"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxMeshWorkGroupSize"),
+		    JAVA_INT.withName("maxMeshSharedMemorySize"),
+		    JAVA_INT.withName("maxMeshPayloadAndSharedMemorySize"),
+		    JAVA_INT.withName("maxMeshOutputMemorySize"),
+		    JAVA_INT.withName("maxMeshPayloadAndOutputMemorySize"),
+		    JAVA_INT.withName("maxMeshOutputComponents"),
+		    JAVA_INT.withName("maxMeshOutputVertices"),
+		    JAVA_INT.withName("maxMeshOutputPrimitives"),
+		    JAVA_INT.withName("maxMeshOutputLayers"),
+		    JAVA_INT.withName("maxMeshMultiviewViewCount"),
+		    JAVA_INT.withName("meshOutputPerVertexGranularity"),
+		    JAVA_INT.withName("meshOutputPerPrimitiveGranularity"),
+		    JAVA_INT.withName("maxPreferredTaskWorkGroupInvocations"),
+		    JAVA_INT.withName("maxPreferredMeshWorkGroupInvocations"),
+		    JAVA_INT.withName("prefersLocalInvocationVertexOutput"),
+		    JAVA_INT.withName("prefersLocalInvocationPrimitiveOutput"),
+		    JAVA_INT.withName("prefersCompactVertexOutput"),
+		    JAVA_INT.withName("prefersCompactPrimitiveOutput")
+		).withName("VkPhysicalDeviceMeshShaderPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_TASK_WORK_GROUP_TOTAL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupTotalCount"));
+		MAX_TASK_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupCount"), PathElement.sequenceElement());
+		MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupInvocations"));
+		MAX_TASK_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupSize"), PathElement.sequenceElement());
+		MAX_TASK_PAYLOAD_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskPayloadSize"));
+		MAX_TASK_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskSharedMemorySize"));
+		MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskPayloadAndSharedMemorySize"));
+		MAX_MESH_WORK_GROUP_TOTAL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupTotalCount"));
+		MAX_MESH_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupCount"), PathElement.sequenceElement());
+		MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupInvocations"));
+		MAX_MESH_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupSize"), PathElement.sequenceElement());
+		MAX_MESH_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshSharedMemorySize"));
+		MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshPayloadAndSharedMemorySize"));
+		MAX_MESH_OUTPUT_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputMemorySize"));
+		MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshPayloadAndOutputMemorySize"));
+		MAX_MESH_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputComponents"));
+		MAX_MESH_OUTPUT_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputVertices"));
+		MAX_MESH_OUTPUT_PRIMITIVES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputPrimitives"));
+		MAX_MESH_OUTPUT_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputLayers"));
+		MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshMultiviewViewCount"));
+		MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerVertexGranularity"));
+		MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
+		MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPreferredTaskWorkGroupInvocations"));
+		MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPreferredMeshWorkGroupInvocations"));
+		PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersLocalInvocationVertexOutput"));
+		PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersLocalInvocationPrimitiveOutput"));
+		PREFERS_COMPACT_VERTEX_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersCompactVertexOutput"));
+		PREFERS_COMPACT_PRIMITIVE_OUTPUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersCompactPrimitiveOutput"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_TASK_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupTotalCount"));
+		MAX_TASK_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupCount"));
+		MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupInvocations"));
+		MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupSize"));
+		MAX_TASK_PAYLOAD_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskPayloadSize"));
+		MAX_TASK_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskSharedMemorySize"));
+		MAX_TASK_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskPayloadAndSharedMemorySize"));
+		MAX_MESH_WORK_GROUP_TOTAL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupTotalCount"));
+		MAX_MESH_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupCount"));
+		MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupInvocations"));
+		MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupSize"));
+		MAX_MESH_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshSharedMemorySize"));
+		MAX_MESH_PAYLOAD_AND_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshPayloadAndSharedMemorySize"));
+		MAX_MESH_OUTPUT_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputMemorySize"));
+		MAX_MESH_PAYLOAD_AND_OUTPUT_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshPayloadAndOutputMemorySize"));
+		MAX_MESH_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputComponents"));
+		MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputVertices"));
+		MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputPrimitives"));
+		MAX_MESH_OUTPUT_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputLayers"));
+		MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshMultiviewViewCount"));
+		MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerVertexGranularity"));
+		MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
+		MAX_PREFERRED_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPreferredTaskWorkGroupInvocations"));
+		MAX_PREFERRED_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPreferredMeshWorkGroupInvocations"));
+		PREFERS_LOCAL_INVOCATION_VERTEX_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersLocalInvocationVertexOutput"));
+		PREFERS_LOCAL_INVOCATION_PRIMITIVE_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersLocalInvocationPrimitiveOutput"));
+		PREFERS_COMPACT_VERTEX_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersCompactVertexOutput"));
+		PREFERS_COMPACT_PRIMITIVE_OUTPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersCompactPrimitiveOutput"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMeshShaderPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMeshShaderPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMeshShaderPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMeshShaderPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMeshShaderPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMeshShaderPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMeshShaderPropertiesEXT sType(int sType) {
@@ -556,5 +556,5 @@ public final class VkPhysicalDeviceMeshShaderPropertiesEXT
             segment -> new VkPhysicalDeviceMeshShaderPropertiesEXT(segment)
         );
     }
-    
+
 }

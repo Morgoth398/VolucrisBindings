@@ -22,121 +22,121 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1QualityLevelPropertiesKHR
 		implements Struct<VkVideoEncodeAV1QualityLevelPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PREFERRED_RATE_CONTROL_FLAGS_HANDLE;
-    public static final VarHandle PREFERRED_GOP_FRAME_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_KEY_FRAME_PERIOD_HANDLE;
-    public static final VarHandle PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_MAX_SINGLE_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_SINGLE_REFERENCE_NAME_MASK_HANDLE;
-    public static final VarHandle PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
-    public static final VarHandle PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PREFERRED_RATE_CONTROL_FLAGS_HANDLE;
+	public static final VarHandle PREFERRED_GOP_FRAME_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_KEY_FRAME_PERIOD_HANDLE;
+	public static final VarHandle PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_MAX_SINGLE_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_SINGLE_REFERENCE_NAME_MASK_HANDLE;
+	public static final VarHandle PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
+	public static final VarHandle PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET;
-    public static final long PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_KEY_FRAME_PERIOD_BYTE_OFFSET;
-    public static final long PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_CONSTANT_QINDEX_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET;
+	public static final long PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_KEY_FRAME_PERIOD_BYTE_OFFSET;
+	public static final long PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_CONSTANT_QINDEX_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkVideoEncodeAV1QIndexKHR preferredConstantQIndex;
+	private final VkVideoEncodeAV1QIndexKHR preferredConstantQIndex;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("preferredRateControlFlags"),
-            JAVA_INT.withName("preferredGopFrameCount"),
-            JAVA_INT.withName("preferredKeyFramePeriod"),
-            JAVA_INT.withName("preferredConsecutiveBipredictiveFrameCount"),
-            JAVA_INT.withName("preferredTemporalLayerCount"),
-            VkVideoEncodeAV1QIndexKHR.LAYOUT.withName("preferredConstantQIndex"),
-            JAVA_INT.withName("preferredMaxSingleReferenceCount"),
-            JAVA_INT.withName("preferredSingleReferenceNameMask"),
-            JAVA_INT.withName("preferredMaxUnidirectionalCompoundReferenceCount"),
-            JAVA_INT.withName("preferredMaxUnidirectionalCompoundGroup1ReferenceCount"),
-            JAVA_INT.withName("preferredUnidirectionalCompoundReferenceNameMask"),
-            JAVA_INT.withName("preferredMaxBidirectionalCompoundReferenceCount"),
-            JAVA_INT.withName("preferredMaxBidirectionalCompoundGroup1ReferenceCount"),
-            JAVA_INT.withName("preferredMaxBidirectionalCompoundGroup2ReferenceCount"),
-            JAVA_INT.withName("preferredBidirectionalCompoundReferenceNameMask"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeAV1QualityLevelPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PREFERRED_RATE_CONTROL_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredRateControlFlags"));
-        PREFERRED_GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredGopFrameCount"));
-        PREFERRED_KEY_FRAME_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredKeyFramePeriod"));
-        PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredConsecutiveBipredictiveFrameCount"));
-        PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredTemporalLayerCount"));
-        PREFERRED_MAX_SINGLE_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxSingleReferenceCount"));
-        PREFERRED_SINGLE_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredSingleReferenceNameMask"));
-        PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxUnidirectionalCompoundReferenceCount"));
-        PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxUnidirectionalCompoundGroup1ReferenceCount"));
-        PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredUnidirectionalCompoundReferenceNameMask"));
-        PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxBidirectionalCompoundReferenceCount"));
-        PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup1ReferenceCount"));
-        PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup2ReferenceCount"));
-        PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredBidirectionalCompoundReferenceNameMask"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredRateControlFlags"));
-        PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredGopFrameCount"));
-        PREFERRED_KEY_FRAME_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredKeyFramePeriod"));
-        PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConsecutiveBipredictiveFrameCount"));
-        PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredTemporalLayerCount"));
-        PREFERRED_CONSTANT_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConstantQIndex"));
-        PREFERRED_MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxSingleReferenceCount"));
-        PREFERRED_SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredSingleReferenceNameMask"));
-        PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxUnidirectionalCompoundReferenceCount"));
-        PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxUnidirectionalCompoundGroup1ReferenceCount"));
-        PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredUnidirectionalCompoundReferenceNameMask"));
-        PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxBidirectionalCompoundReferenceCount"));
-        PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup1ReferenceCount"));
-        PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup2ReferenceCount"));
-        PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredBidirectionalCompoundReferenceNameMask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("preferredRateControlFlags"),
+		    JAVA_INT.withName("preferredGopFrameCount"),
+		    JAVA_INT.withName("preferredKeyFramePeriod"),
+		    JAVA_INT.withName("preferredConsecutiveBipredictiveFrameCount"),
+		    JAVA_INT.withName("preferredTemporalLayerCount"),
+		    VkVideoEncodeAV1QIndexKHR.LAYOUT.withName("preferredConstantQIndex"),
+		    JAVA_INT.withName("preferredMaxSingleReferenceCount"),
+		    JAVA_INT.withName("preferredSingleReferenceNameMask"),
+		    JAVA_INT.withName("preferredMaxUnidirectionalCompoundReferenceCount"),
+		    JAVA_INT.withName("preferredMaxUnidirectionalCompoundGroup1ReferenceCount"),
+		    JAVA_INT.withName("preferredUnidirectionalCompoundReferenceNameMask"),
+		    JAVA_INT.withName("preferredMaxBidirectionalCompoundReferenceCount"),
+		    JAVA_INT.withName("preferredMaxBidirectionalCompoundGroup1ReferenceCount"),
+		    JAVA_INT.withName("preferredMaxBidirectionalCompoundGroup2ReferenceCount"),
+		    JAVA_INT.withName("preferredBidirectionalCompoundReferenceNameMask"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeAV1QualityLevelPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PREFERRED_RATE_CONTROL_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredRateControlFlags"));
+		PREFERRED_GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredGopFrameCount"));
+		PREFERRED_KEY_FRAME_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredKeyFramePeriod"));
+		PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredConsecutiveBipredictiveFrameCount"));
+		PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredTemporalLayerCount"));
+		PREFERRED_MAX_SINGLE_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxSingleReferenceCount"));
+		PREFERRED_SINGLE_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredSingleReferenceNameMask"));
+		PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxUnidirectionalCompoundReferenceCount"));
+		PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxUnidirectionalCompoundGroup1ReferenceCount"));
+		PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredUnidirectionalCompoundReferenceNameMask"));
+		PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxBidirectionalCompoundReferenceCount"));
+		PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup1ReferenceCount"));
+		PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup2ReferenceCount"));
+		PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredBidirectionalCompoundReferenceNameMask"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredRateControlFlags"));
+		PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredGopFrameCount"));
+		PREFERRED_KEY_FRAME_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredKeyFramePeriod"));
+		PREFERRED_CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConsecutiveBipredictiveFrameCount"));
+		PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredTemporalLayerCount"));
+		PREFERRED_CONSTANT_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConstantQIndex"));
+		PREFERRED_MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxSingleReferenceCount"));
+		PREFERRED_SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredSingleReferenceNameMask"));
+		PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxUnidirectionalCompoundReferenceCount"));
+		PREFERRED_MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxUnidirectionalCompoundGroup1ReferenceCount"));
+		PREFERRED_UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredUnidirectionalCompoundReferenceNameMask"));
+		PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxBidirectionalCompoundReferenceCount"));
+		PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup1ReferenceCount"));
+		PREFERRED_MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxBidirectionalCompoundGroup2ReferenceCount"));
+		PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredBidirectionalCompoundReferenceNameMask"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1QualityLevelPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1QualityLevelPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1QualityLevelPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        preferredConstantQIndex = new VkVideoEncodeAV1QIndexKHR(segment.asSlice(PREFERRED_CONSTANT_QINDEX_BYTE_OFFSET, VkVideoEncodeAV1QIndexKHR.LAYOUT));
-    }
+	public VkVideoEncodeAV1QualityLevelPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1QualityLevelPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1QualityLevelPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    preferredConstantQIndex = new VkVideoEncodeAV1QIndexKHR(segment.asSlice(PREFERRED_CONSTANT_QINDEX_BYTE_OFFSET, VkVideoEncodeAV1QIndexKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1QualityLevelPropertiesKHR sType(int sType) {
@@ -211,6 +211,22 @@ public final class VkVideoEncodeAV1QualityLevelPropertiesKHR
     
     public int preferredTemporalLayerCount() {
     	return (int) PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #preferredConstantQIndex()
+    public VkVideoEncodeAV1QualityLevelPropertiesKHR preferredConstantQIndex(Consumer<VkVideoEncodeAV1QIndexKHR> consumer) {
+    	consumer.accept(preferredConstantQIndex);
+    	return this;
+    }
+    
+    /// @see #preferredConstantQIndex()
+    public VkVideoEncodeAV1QualityLevelPropertiesKHR preferredConstantQIndex(VkVideoEncodeAV1QIndexKHR other) {
+    	preferredConstantQIndex.set(other);
+    	return this;
+    }
+    
+    public VkVideoEncodeAV1QIndexKHR preferredConstantQIndex() {
+    	return preferredConstantQIndex;
     }
     
     /// @see #preferredMaxSingleReferenceCount()
@@ -303,22 +319,6 @@ public final class VkVideoEncodeAV1QualityLevelPropertiesKHR
     	return (int) PREFERRED_BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE.get(segment, 0L);
     }
     
-    /// @see #preferredConstantQIndex()
-    public VkVideoEncodeAV1QualityLevelPropertiesKHR preferredConstantQIndex(Consumer<VkVideoEncodeAV1QIndexKHR> consumer) {
-    	consumer.accept(preferredConstantQIndex);
-    	return this;
-    }
-    
-    /// @see #preferredConstantQIndex()
-    public VkVideoEncodeAV1QualityLevelPropertiesKHR preferredConstantQIndex(VkVideoEncodeAV1QIndexKHR other) {
-    	preferredConstantQIndex.set(other);
-    	return this;
-    }
-    
-    public VkVideoEncodeAV1QIndexKHR preferredConstantQIndex() {
-    	return preferredConstantQIndex;
-    }
-    
     @Override
     public VkVideoEncodeAV1QualityLevelPropertiesKHR set(VkVideoEncodeAV1QualityLevelPropertiesKHR other) {
         return set(other.segment);
@@ -370,5 +370,5 @@ public final class VkVideoEncodeAV1QualityLevelPropertiesKHR
             segment -> new VkVideoEncodeAV1QualityLevelPropertiesKHR(segment)
         );
     }
-    
+
 }

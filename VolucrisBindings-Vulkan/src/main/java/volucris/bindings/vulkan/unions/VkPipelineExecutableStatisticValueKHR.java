@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPipelineExecutableStatisticValueKHR
 		implements Struct<VkPipelineExecutableStatisticValueKHR> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle B32_HANDLE;
-    public static final VarHandle I64_HANDLE;
-    public static final VarHandle U64_HANDLE;
-    public static final VarHandle F64_HANDLE;
+	public static final VarHandle B32_HANDLE;
+	public static final VarHandle I64_HANDLE;
+	public static final VarHandle U64_HANDLE;
+	public static final VarHandle F64_HANDLE;
 
-    public static final long B32_BYTE_OFFSET;
-    public static final long I64_BYTE_OFFSET;
-    public static final long U64_BYTE_OFFSET;
-    public static final long F64_BYTE_OFFSET;
+	public static final long B32_BYTE_OFFSET;
+	public static final long I64_BYTE_OFFSET;
+	public static final long U64_BYTE_OFFSET;
+	public static final long F64_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            JAVA_INT.withName("b32"),
-            JAVA_LONG.withName("i64"),
-            JAVA_LONG.withName("u64"),
-            JAVA_DOUBLE.withName("f64")
-        ).withName("VkPipelineExecutableStatisticValueKHR").withByteAlignment(8);
-        
-        B32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b32"));
-        I64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("i64"));
-        U64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("u64"));
-        F64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("f64"));
-        
-        B32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b32"));
-        I64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("i64"));
-        U64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("u64"));
-        F64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("f64"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    JAVA_INT.withName("b32"),
+		    JAVA_LONG.withName("i64"),
+		    JAVA_LONG.withName("u64"),
+		    JAVA_DOUBLE.withName("f64")
+		).withName("VkPipelineExecutableStatisticValueKHR").withByteAlignment(8);
+		
+		B32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b32"));
+		I64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("i64"));
+		U64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("u64"));
+		F64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("f64"));
+		
+		B32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b32"));
+		I64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("i64"));
+		U64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("u64"));
+		F64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("f64"));
+		//@formatter:on
+	}
 
-    public VkPipelineExecutableStatisticValueKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineExecutableStatisticValueKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineExecutableStatisticValueKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineExecutableStatisticValueKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineExecutableStatisticValueKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineExecutableStatisticValueKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #b32()
     public VkPipelineExecutableStatisticValueKHR b32(int b32) {
@@ -158,5 +158,5 @@ public final class VkPipelineExecutableStatisticValueKHR
             segment -> new VkPipelineExecutableStatisticValueKHR(segment)
         );
     }
-    
+
 }

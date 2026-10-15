@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassStripeBeginInfoARM
 		implements Struct<VkRenderPassStripeBeginInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STRIPE_INFO_COUNT_HANDLE;
-    public static final VarHandle P_STRIPE_INFOS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STRIPE_INFO_COUNT_HANDLE;
+	public static final VarHandle P_STRIPE_INFOS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STRIPE_INFO_COUNT_BYTE_OFFSET;
-    public static final long P_STRIPE_INFOS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STRIPE_INFO_COUNT_BYTE_OFFSET;
+	public static final long P_STRIPE_INFOS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stripeInfoCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStripeInfos")
-        ).withName("VkRenderPassStripeBeginInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STRIPE_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stripeInfoCount"));
-        P_STRIPE_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStripeInfos"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STRIPE_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stripeInfoCount"));
-        P_STRIPE_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStripeInfos"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stripeInfoCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStripeInfos")
+		).withName("VkRenderPassStripeBeginInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STRIPE_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stripeInfoCount"));
+		P_STRIPE_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStripeInfos"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STRIPE_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stripeInfoCount"));
+		P_STRIPE_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStripeInfos"));
+		//@formatter:on
+	}
 
-    public VkRenderPassStripeBeginInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassStripeBeginInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassStripeBeginInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassStripeBeginInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassStripeBeginInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassStripeBeginInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderPassStripeBeginInfoARM sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkRenderPassStripeBeginInfoARM
             segment -> new VkRenderPassStripeBeginInfoARM(segment)
         );
     }
-    
+
 }

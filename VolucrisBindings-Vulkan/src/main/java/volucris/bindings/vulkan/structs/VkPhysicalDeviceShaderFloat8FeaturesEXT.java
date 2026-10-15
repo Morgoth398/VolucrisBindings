@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderFloat8FeaturesEXT
 		implements Struct<VkPhysicalDeviceShaderFloat8FeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_FLOAT8_HANDLE;
-    public static final VarHandle SHADER_FLOAT8_COOPERATIVE_MATRIX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_FLOAT8_HANDLE;
+	public static final VarHandle SHADER_FLOAT8_COOPERATIVE_MATRIX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_FLOAT8_BYTE_OFFSET;
-    public static final long SHADER_FLOAT8_COOPERATIVE_MATRIX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_FLOAT8_BYTE_OFFSET;
+	public static final long SHADER_FLOAT8_COOPERATIVE_MATRIX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderFloat8"),
-            JAVA_INT.withName("shaderFloat8CooperativeMatrix")
-        ).withName("VkPhysicalDeviceShaderFloat8FeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_FLOAT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat8"));
-        SHADER_FLOAT8_COOPERATIVE_MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat8CooperativeMatrix"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_FLOAT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat8"));
-        SHADER_FLOAT8_COOPERATIVE_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat8CooperativeMatrix"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderFloat8"),
+		    JAVA_INT.withName("shaderFloat8CooperativeMatrix")
+		).withName("VkPhysicalDeviceShaderFloat8FeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_FLOAT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat8"));
+		SHADER_FLOAT8_COOPERATIVE_MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat8CooperativeMatrix"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_FLOAT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat8"));
+		SHADER_FLOAT8_COOPERATIVE_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat8CooperativeMatrix"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderFloat8FeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderFloat8FeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderFloat8FeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderFloat8FeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderFloat8FeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderFloat8FeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderFloat8FeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShaderFloat8FeaturesEXT
             segment -> new VkPhysicalDeviceShaderFloat8FeaturesEXT(segment)
         );
     }
-    
+
 }

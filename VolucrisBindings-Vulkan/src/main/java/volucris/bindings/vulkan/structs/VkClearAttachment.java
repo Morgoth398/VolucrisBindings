@@ -20,49 +20,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClearAttachment
 		implements Struct<VkClearAttachment> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_MASK_HANDLE;
-    public static final VarHandle COLOR_ATTACHMENT_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle COLOR_ATTACHMENT_HANDLE;
 
-    public static final long ASPECT_MASK_BYTE_OFFSET;
-    public static final long COLOR_ATTACHMENT_BYTE_OFFSET;
-    public static final long CLEAR_VALUE_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long COLOR_ATTACHMENT_BYTE_OFFSET;
+	public static final long CLEAR_VALUE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkClearValue clearValue;
+	private final VkClearValue clearValue;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("aspectMask"),
-            JAVA_INT.withName("colorAttachment"),
-            VkClearValue.LAYOUT.withName("clearValue")
-        ).withName("VkClearAttachment").withByteAlignment(4);
-        
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        COLOR_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachment"));
-        
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        COLOR_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachment"));
-        CLEAR_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clearValue"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("aspectMask"),
+		    JAVA_INT.withName("colorAttachment"),
+		    VkClearValue.LAYOUT.withName("clearValue")
+		).withName("VkClearAttachment").withByteAlignment(4);
+		
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		COLOR_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachment"));
+		
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		COLOR_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachment"));
+		CLEAR_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clearValue"));
+		//@formatter:on
+	}
 
-    public VkClearAttachment() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClearAttachment(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClearAttachment(MemorySegment segment) {
-        this.segment = segment;
-    
-        clearValue = new VkClearValue(segment.asSlice(CLEAR_VALUE_BYTE_OFFSET, VkClearValue.LAYOUT));
-    }
+	public VkClearAttachment() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClearAttachment(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClearAttachment(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    clearValue = new VkClearValue(segment.asSlice(CLEAR_VALUE_BYTE_OFFSET, VkClearValue.LAYOUT));
+	}
 
     /// @see #aspectMask()
     public VkClearAttachment aspectMask(int aspectMask) {
@@ -151,5 +151,5 @@ public final class VkClearAttachment
             segment -> new VkClearAttachment(segment)
         );
     }
-    
+
 }

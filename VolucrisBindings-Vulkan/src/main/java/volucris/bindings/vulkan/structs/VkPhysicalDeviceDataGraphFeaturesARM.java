@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDataGraphFeaturesARM
 		implements Struct<VkPhysicalDeviceDataGraphFeaturesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DATA_GRAPH_HANDLE;
-    public static final VarHandle DATA_GRAPH_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DATA_GRAPH_SPECIALIZATION_CONSTANTS_HANDLE;
-    public static final VarHandle DATA_GRAPH_DESCRIPTOR_BUFFER_HANDLE;
-    public static final VarHandle DATA_GRAPH_SHADER_MODULE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DATA_GRAPH_HANDLE;
+	public static final VarHandle DATA_GRAPH_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DATA_GRAPH_SPECIALIZATION_CONSTANTS_HANDLE;
+	public static final VarHandle DATA_GRAPH_DESCRIPTOR_BUFFER_HANDLE;
+	public static final VarHandle DATA_GRAPH_SHADER_MODULE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DATA_GRAPH_BYTE_OFFSET;
-    public static final long DATA_GRAPH_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DATA_GRAPH_SPECIALIZATION_CONSTANTS_BYTE_OFFSET;
-    public static final long DATA_GRAPH_DESCRIPTOR_BUFFER_BYTE_OFFSET;
-    public static final long DATA_GRAPH_SHADER_MODULE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DATA_GRAPH_BYTE_OFFSET;
+	public static final long DATA_GRAPH_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DATA_GRAPH_SPECIALIZATION_CONSTANTS_BYTE_OFFSET;
+	public static final long DATA_GRAPH_DESCRIPTOR_BUFFER_BYTE_OFFSET;
+	public static final long DATA_GRAPH_SHADER_MODULE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dataGraph"),
-            JAVA_INT.withName("dataGraphUpdateAfterBind"),
-            JAVA_INT.withName("dataGraphSpecializationConstants"),
-            JAVA_INT.withName("dataGraphDescriptorBuffer"),
-            JAVA_INT.withName("dataGraphShaderModule"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDataGraphFeaturesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DATA_GRAPH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraph"));
-        DATA_GRAPH_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphUpdateAfterBind"));
-        DATA_GRAPH_SPECIALIZATION_CONSTANTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphSpecializationConstants"));
-        DATA_GRAPH_DESCRIPTOR_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphDescriptorBuffer"));
-        DATA_GRAPH_SHADER_MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphShaderModule"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DATA_GRAPH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraph"));
-        DATA_GRAPH_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphUpdateAfterBind"));
-        DATA_GRAPH_SPECIALIZATION_CONSTANTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphSpecializationConstants"));
-        DATA_GRAPH_DESCRIPTOR_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphDescriptorBuffer"));
-        DATA_GRAPH_SHADER_MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphShaderModule"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dataGraph"),
+		    JAVA_INT.withName("dataGraphUpdateAfterBind"),
+		    JAVA_INT.withName("dataGraphSpecializationConstants"),
+		    JAVA_INT.withName("dataGraphDescriptorBuffer"),
+		    JAVA_INT.withName("dataGraphShaderModule"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDataGraphFeaturesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DATA_GRAPH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraph"));
+		DATA_GRAPH_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphUpdateAfterBind"));
+		DATA_GRAPH_SPECIALIZATION_CONSTANTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphSpecializationConstants"));
+		DATA_GRAPH_DESCRIPTOR_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphDescriptorBuffer"));
+		DATA_GRAPH_SHADER_MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphShaderModule"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DATA_GRAPH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraph"));
+		DATA_GRAPH_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphUpdateAfterBind"));
+		DATA_GRAPH_SPECIALIZATION_CONSTANTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphSpecializationConstants"));
+		DATA_GRAPH_DESCRIPTOR_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphDescriptorBuffer"));
+		DATA_GRAPH_SHADER_MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphShaderModule"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDataGraphFeaturesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDataGraphFeaturesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDataGraphFeaturesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDataGraphFeaturesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDataGraphFeaturesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDataGraphFeaturesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDataGraphFeaturesARM sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceDataGraphFeaturesARM
             segment -> new VkPhysicalDeviceDataGraphFeaturesARM(segment)
         );
     }
-    
+
 }

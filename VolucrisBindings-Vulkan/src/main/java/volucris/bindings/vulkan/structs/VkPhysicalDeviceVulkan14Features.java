@@ -21,150 +21,150 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan14Features
 		implements Struct<VkPhysicalDeviceVulkan14Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle GLOBAL_PRIORITY_QUERY_HANDLE;
-    public static final VarHandle SHADER_SUBGROUP_ROTATE_HANDLE;
-    public static final VarHandle SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE;
-    public static final VarHandle SHADER_FLOAT_CONTROLS2_HANDLE;
-    public static final VarHandle SHADER_EXPECT_ASSUME_HANDLE;
-    public static final VarHandle RECTANGULAR_LINES_HANDLE;
-    public static final VarHandle BRESENHAM_LINES_HANDLE;
-    public static final VarHandle SMOOTH_LINES_HANDLE;
-    public static final VarHandle STIPPLED_RECTANGULAR_LINES_HANDLE;
-    public static final VarHandle STIPPLED_BRESENHAM_LINES_HANDLE;
-    public static final VarHandle STIPPLED_SMOOTH_LINES_HANDLE;
-    public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE;
-    public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE;
-    public static final VarHandle INDEX_TYPE_UINT8_HANDLE;
-    public static final VarHandle DYNAMIC_RENDERING_LOCAL_READ_HANDLE;
-    public static final VarHandle MAINTENANCE5_HANDLE;
-    public static final VarHandle MAINTENANCE6_HANDLE;
-    public static final VarHandle PIPELINE_PROTECTED_ACCESS_HANDLE;
-    public static final VarHandle PIPELINE_ROBUSTNESS_HANDLE;
-    public static final VarHandle HOST_IMAGE_COPY_HANDLE;
-    public static final VarHandle PUSH_DESCRIPTOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle GLOBAL_PRIORITY_QUERY_HANDLE;
+	public static final VarHandle SHADER_SUBGROUP_ROTATE_HANDLE;
+	public static final VarHandle SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE;
+	public static final VarHandle SHADER_FLOAT_CONTROLS2_HANDLE;
+	public static final VarHandle SHADER_EXPECT_ASSUME_HANDLE;
+	public static final VarHandle RECTANGULAR_LINES_HANDLE;
+	public static final VarHandle BRESENHAM_LINES_HANDLE;
+	public static final VarHandle SMOOTH_LINES_HANDLE;
+	public static final VarHandle STIPPLED_RECTANGULAR_LINES_HANDLE;
+	public static final VarHandle STIPPLED_BRESENHAM_LINES_HANDLE;
+	public static final VarHandle STIPPLED_SMOOTH_LINES_HANDLE;
+	public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE;
+	public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE;
+	public static final VarHandle INDEX_TYPE_UINT8_HANDLE;
+	public static final VarHandle DYNAMIC_RENDERING_LOCAL_READ_HANDLE;
+	public static final VarHandle MAINTENANCE5_HANDLE;
+	public static final VarHandle MAINTENANCE6_HANDLE;
+	public static final VarHandle PIPELINE_PROTECTED_ACCESS_HANDLE;
+	public static final VarHandle PIPELINE_ROBUSTNESS_HANDLE;
+	public static final VarHandle HOST_IMAGE_COPY_HANDLE;
+	public static final VarHandle PUSH_DESCRIPTOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long GLOBAL_PRIORITY_QUERY_BYTE_OFFSET;
-    public static final long SHADER_SUBGROUP_ROTATE_BYTE_OFFSET;
-    public static final long SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET;
-    public static final long SHADER_FLOAT_CONTROLS2_BYTE_OFFSET;
-    public static final long SHADER_EXPECT_ASSUME_BYTE_OFFSET;
-    public static final long RECTANGULAR_LINES_BYTE_OFFSET;
-    public static final long BRESENHAM_LINES_BYTE_OFFSET;
-    public static final long SMOOTH_LINES_BYTE_OFFSET;
-    public static final long STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET;
-    public static final long STIPPLED_BRESENHAM_LINES_BYTE_OFFSET;
-    public static final long STIPPLED_SMOOTH_LINES_BYTE_OFFSET;
-    public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET;
-    public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET;
-    public static final long INDEX_TYPE_UINT8_BYTE_OFFSET;
-    public static final long DYNAMIC_RENDERING_LOCAL_READ_BYTE_OFFSET;
-    public static final long MAINTENANCE5_BYTE_OFFSET;
-    public static final long MAINTENANCE6_BYTE_OFFSET;
-    public static final long PIPELINE_PROTECTED_ACCESS_BYTE_OFFSET;
-    public static final long PIPELINE_ROBUSTNESS_BYTE_OFFSET;
-    public static final long HOST_IMAGE_COPY_BYTE_OFFSET;
-    public static final long PUSH_DESCRIPTOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long GLOBAL_PRIORITY_QUERY_BYTE_OFFSET;
+	public static final long SHADER_SUBGROUP_ROTATE_BYTE_OFFSET;
+	public static final long SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET;
+	public static final long SHADER_FLOAT_CONTROLS2_BYTE_OFFSET;
+	public static final long SHADER_EXPECT_ASSUME_BYTE_OFFSET;
+	public static final long RECTANGULAR_LINES_BYTE_OFFSET;
+	public static final long BRESENHAM_LINES_BYTE_OFFSET;
+	public static final long SMOOTH_LINES_BYTE_OFFSET;
+	public static final long STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET;
+	public static final long STIPPLED_BRESENHAM_LINES_BYTE_OFFSET;
+	public static final long STIPPLED_SMOOTH_LINES_BYTE_OFFSET;
+	public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET;
+	public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET;
+	public static final long INDEX_TYPE_UINT8_BYTE_OFFSET;
+	public static final long DYNAMIC_RENDERING_LOCAL_READ_BYTE_OFFSET;
+	public static final long MAINTENANCE5_BYTE_OFFSET;
+	public static final long MAINTENANCE6_BYTE_OFFSET;
+	public static final long PIPELINE_PROTECTED_ACCESS_BYTE_OFFSET;
+	public static final long PIPELINE_ROBUSTNESS_BYTE_OFFSET;
+	public static final long HOST_IMAGE_COPY_BYTE_OFFSET;
+	public static final long PUSH_DESCRIPTOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("globalPriorityQuery"),
-            JAVA_INT.withName("shaderSubgroupRotate"),
-            JAVA_INT.withName("shaderSubgroupRotateClustered"),
-            JAVA_INT.withName("shaderFloatControls2"),
-            JAVA_INT.withName("shaderExpectAssume"),
-            JAVA_INT.withName("rectangularLines"),
-            JAVA_INT.withName("bresenhamLines"),
-            JAVA_INT.withName("smoothLines"),
-            JAVA_INT.withName("stippledRectangularLines"),
-            JAVA_INT.withName("stippledBresenhamLines"),
-            JAVA_INT.withName("stippledSmoothLines"),
-            JAVA_INT.withName("vertexAttributeInstanceRateDivisor"),
-            JAVA_INT.withName("vertexAttributeInstanceRateZeroDivisor"),
-            JAVA_INT.withName("indexTypeUint8"),
-            JAVA_INT.withName("dynamicRenderingLocalRead"),
-            JAVA_INT.withName("maintenance5"),
-            JAVA_INT.withName("maintenance6"),
-            JAVA_INT.withName("pipelineProtectedAccess"),
-            JAVA_INT.withName("pipelineRobustness"),
-            JAVA_INT.withName("hostImageCopy"),
-            JAVA_INT.withName("pushDescriptor"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVulkan14Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        GLOBAL_PRIORITY_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalPriorityQuery"));
-        SHADER_SUBGROUP_ROTATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotate"));
-        SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotateClustered"));
-        SHADER_FLOAT_CONTROLS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloatControls2"));
-        SHADER_EXPECT_ASSUME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderExpectAssume"));
-        RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rectangularLines"));
-        BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bresenhamLines"));
-        SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("smoothLines"));
-        STIPPLED_RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledRectangularLines"));
-        STIPPLED_BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledBresenhamLines"));
-        STIPPLED_SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledSmoothLines"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
-        INDEX_TYPE_UINT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexTypeUint8"));
-        DYNAMIC_RENDERING_LOCAL_READ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingLocalRead"));
-        MAINTENANCE5_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance5"));
-        MAINTENANCE6_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance6"));
-        PIPELINE_PROTECTED_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineProtectedAccess"));
-        PIPELINE_ROBUSTNESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineRobustness"));
-        HOST_IMAGE_COPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hostImageCopy"));
-        PUSH_DESCRIPTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDescriptor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        GLOBAL_PRIORITY_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalPriorityQuery"));
-        SHADER_SUBGROUP_ROTATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotate"));
-        SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotateClustered"));
-        SHADER_FLOAT_CONTROLS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloatControls2"));
-        SHADER_EXPECT_ASSUME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderExpectAssume"));
-        RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rectangularLines"));
-        BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bresenhamLines"));
-        SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("smoothLines"));
-        STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledRectangularLines"));
-        STIPPLED_BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledBresenhamLines"));
-        STIPPLED_SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledSmoothLines"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
-        INDEX_TYPE_UINT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexTypeUint8"));
-        DYNAMIC_RENDERING_LOCAL_READ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingLocalRead"));
-        MAINTENANCE5_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance5"));
-        MAINTENANCE6_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance6"));
-        PIPELINE_PROTECTED_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineProtectedAccess"));
-        PIPELINE_ROBUSTNESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineRobustness"));
-        HOST_IMAGE_COPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hostImageCopy"));
-        PUSH_DESCRIPTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDescriptor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("globalPriorityQuery"),
+		    JAVA_INT.withName("shaderSubgroupRotate"),
+		    JAVA_INT.withName("shaderSubgroupRotateClustered"),
+		    JAVA_INT.withName("shaderFloatControls2"),
+		    JAVA_INT.withName("shaderExpectAssume"),
+		    JAVA_INT.withName("rectangularLines"),
+		    JAVA_INT.withName("bresenhamLines"),
+		    JAVA_INT.withName("smoothLines"),
+		    JAVA_INT.withName("stippledRectangularLines"),
+		    JAVA_INT.withName("stippledBresenhamLines"),
+		    JAVA_INT.withName("stippledSmoothLines"),
+		    JAVA_INT.withName("vertexAttributeInstanceRateDivisor"),
+		    JAVA_INT.withName("vertexAttributeInstanceRateZeroDivisor"),
+		    JAVA_INT.withName("indexTypeUint8"),
+		    JAVA_INT.withName("dynamicRenderingLocalRead"),
+		    JAVA_INT.withName("maintenance5"),
+		    JAVA_INT.withName("maintenance6"),
+		    JAVA_INT.withName("pipelineProtectedAccess"),
+		    JAVA_INT.withName("pipelineRobustness"),
+		    JAVA_INT.withName("hostImageCopy"),
+		    JAVA_INT.withName("pushDescriptor"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVulkan14Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		GLOBAL_PRIORITY_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalPriorityQuery"));
+		SHADER_SUBGROUP_ROTATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotate"));
+		SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotateClustered"));
+		SHADER_FLOAT_CONTROLS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloatControls2"));
+		SHADER_EXPECT_ASSUME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderExpectAssume"));
+		RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rectangularLines"));
+		BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bresenhamLines"));
+		SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("smoothLines"));
+		STIPPLED_RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledRectangularLines"));
+		STIPPLED_BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledBresenhamLines"));
+		STIPPLED_SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledSmoothLines"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
+		INDEX_TYPE_UINT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexTypeUint8"));
+		DYNAMIC_RENDERING_LOCAL_READ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingLocalRead"));
+		MAINTENANCE5_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance5"));
+		MAINTENANCE6_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance6"));
+		PIPELINE_PROTECTED_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineProtectedAccess"));
+		PIPELINE_ROBUSTNESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineRobustness"));
+		HOST_IMAGE_COPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hostImageCopy"));
+		PUSH_DESCRIPTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDescriptor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		GLOBAL_PRIORITY_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalPriorityQuery"));
+		SHADER_SUBGROUP_ROTATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotate"));
+		SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotateClustered"));
+		SHADER_FLOAT_CONTROLS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloatControls2"));
+		SHADER_EXPECT_ASSUME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderExpectAssume"));
+		RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rectangularLines"));
+		BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bresenhamLines"));
+		SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("smoothLines"));
+		STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledRectangularLines"));
+		STIPPLED_BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledBresenhamLines"));
+		STIPPLED_SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledSmoothLines"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
+		INDEX_TYPE_UINT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexTypeUint8"));
+		DYNAMIC_RENDERING_LOCAL_READ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingLocalRead"));
+		MAINTENANCE5_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance5"));
+		MAINTENANCE6_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance6"));
+		PIPELINE_PROTECTED_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineProtectedAccess"));
+		PIPELINE_ROBUSTNESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineRobustness"));
+		HOST_IMAGE_COPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hostImageCopy"));
+		PUSH_DESCRIPTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDescriptor"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan14Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan14Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan14Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkan14Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan14Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan14Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan14Features sType(int sType) {
@@ -452,5 +452,5 @@ public final class VkPhysicalDeviceVulkan14Features
             segment -> new VkPhysicalDeviceVulkan14Features(segment)
         );
     }
-    
+
 }

@@ -19,62 +19,60 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkImageBlit
 		implements Struct<VkImageBlit> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long SRC_SUBRESOURCE_BYTE_OFFSET;
-    public static final long SRC_OFFSETS_BYTE_OFFSET;
-    public static final long DST_SUBRESOURCE_BYTE_OFFSET;
-    public static final long DST_OFFSETS_BYTE_OFFSET;
+	public static final long SRC_SUBRESOURCE_BYTE_OFFSET;
+	public static final long SRC_OFFSETS_BYTE_OFFSET;
+	public static final long DST_SUBRESOURCE_BYTE_OFFSET;
+	public static final long DST_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceLayers srcSubresource;
-    private final VkOffset3D[] srcOffsets;
-    private final VkImageSubresourceLayers dstSubresource;
-    private final VkOffset3D[] dstOffsets;
+	private final VkImageSubresourceLayers srcSubresource;
+	private final VkOffset3D[] srcOffsets;
+	private final VkImageSubresourceLayers dstSubresource;
+	private final VkOffset3D[] dstOffsets;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkImageSubresourceLayers.LAYOUT.withName("srcSubresource"),
-            MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("srcOffsets"),
-            VkImageSubresourceLayers.LAYOUT.withName("dstSubresource"),
-            MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("dstOffsets")
-        ).withName("VkImageBlit").withByteAlignment(4);
-        
-        SRC_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubresource"));
-        SRC_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffsets"));
-        DST_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubresource"));
-        DST_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkImageSubresourceLayers.LAYOUT.withName("srcSubresource"),
+		    MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("srcOffsets"),
+		    VkImageSubresourceLayers.LAYOUT.withName("dstSubresource"),
+		    MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("dstOffsets")
+		).withName("VkImageBlit").withByteAlignment(4);
+		
+		SRC_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubresource"));
+		SRC_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffsets"));
+		DST_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubresource"));
+		DST_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffsets"));
+		//@formatter:on
+	}
 
-    public VkImageBlit() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageBlit(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageBlit(MemorySegment segment) {
-        this.segment = segment;
-    
-        srcSubresource = new VkImageSubresourceLayers(segment.asSlice(SRC_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        srcOffsets = new VkOffset3D[2];
-        for (int i = 0; i < 2; i++) {
-            long offset = SRC_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
-            srcOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
-        }
-    
-        dstSubresource = new VkImageSubresourceLayers(segment.asSlice(DST_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        dstOffsets = new VkOffset3D[2];
-        for (int i = 0; i < 2; i++) {
-            long offset = DST_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
-            dstOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
-        }
-    
-    }
+	public VkImageBlit() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageBlit(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageBlit(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    srcSubresource = new VkImageSubresourceLayers(segment.asSlice(SRC_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    srcOffsets = new VkOffset3D[2];
+	    for (int i = 0; i < 2; i++) {
+	        long offset = SRC_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
+	        srcOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
+	    }
+	    dstSubresource = new VkImageSubresourceLayers(segment.asSlice(DST_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    dstOffsets = new VkOffset3D[2];
+	    for (int i = 0; i < 2; i++) {
+	        long offset = DST_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
+	        dstOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
+	    }
+	}
 
     /// @see #srcSubresource()
     public VkImageBlit srcSubresource(Consumer<VkImageSubresourceLayers> consumer) {
@@ -191,5 +189,5 @@ public final class VkImageBlit
             segment -> new VkImageBlit(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSurfaceCapabilitiesPresentBarrierNV
 		implements Struct<VkSurfaceCapabilitiesPresentBarrierNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_BARRIER_SUPPORTED_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_BARRIER_SUPPORTED_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_BARRIER_SUPPORTED_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_BARRIER_SUPPORTED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("presentBarrierSupported"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSurfaceCapabilitiesPresentBarrierNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_BARRIER_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentBarrierSupported"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_BARRIER_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentBarrierSupported"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("presentBarrierSupported"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSurfaceCapabilitiesPresentBarrierNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_BARRIER_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentBarrierSupported"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_BARRIER_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentBarrierSupported"));
+		//@formatter:on
+	}
 
-    public VkSurfaceCapabilitiesPresentBarrierNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSurfaceCapabilitiesPresentBarrierNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSurfaceCapabilitiesPresentBarrierNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSurfaceCapabilitiesPresentBarrierNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSurfaceCapabilitiesPresentBarrierNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSurfaceCapabilitiesPresentBarrierNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSurfaceCapabilitiesPresentBarrierNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkSurfaceCapabilitiesPresentBarrierNV
             segment -> new VkSurfaceCapabilitiesPresentBarrierNV(segment)
         );
     }
-    
+
 }

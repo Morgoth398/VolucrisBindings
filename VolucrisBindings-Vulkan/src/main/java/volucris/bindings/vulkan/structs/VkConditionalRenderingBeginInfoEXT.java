@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkConditionalRenderingBeginInfoEXT
 		implements Struct<VkConditionalRenderingBeginInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BUFFER_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BUFFER_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("buffer"),
-            JAVA_LONG.withName("offset"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkConditionalRenderingBeginInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("buffer"),
+		    JAVA_LONG.withName("offset"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkConditionalRenderingBeginInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkConditionalRenderingBeginInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkConditionalRenderingBeginInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkConditionalRenderingBeginInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkConditionalRenderingBeginInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkConditionalRenderingBeginInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkConditionalRenderingBeginInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkConditionalRenderingBeginInfoEXT sType(int sType) {
@@ -187,5 +187,5 @@ public final class VkConditionalRenderingBeginInfoEXT
             segment -> new VkConditionalRenderingBeginInfoEXT(segment)
         );
     }
-    
+
 }

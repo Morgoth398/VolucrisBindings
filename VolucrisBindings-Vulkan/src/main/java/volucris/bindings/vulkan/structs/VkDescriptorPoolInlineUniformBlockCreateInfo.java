@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorPoolInlineUniformBlockCreateInfo
 		implements Struct<VkDescriptorPoolInlineUniformBlockCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_INLINE_UNIFORM_BLOCK_BINDINGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_INLINE_UNIFORM_BLOCK_BINDINGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_INLINE_UNIFORM_BLOCK_BINDINGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_INLINE_UNIFORM_BLOCK_BINDINGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxInlineUniformBlockBindings"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDescriptorPoolInlineUniformBlockCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_INLINE_UNIFORM_BLOCK_BINDINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformBlockBindings"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_INLINE_UNIFORM_BLOCK_BINDINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformBlockBindings"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxInlineUniformBlockBindings"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDescriptorPoolInlineUniformBlockCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_INLINE_UNIFORM_BLOCK_BINDINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformBlockBindings"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_INLINE_UNIFORM_BLOCK_BINDINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformBlockBindings"));
+		//@formatter:on
+	}
 
-    public VkDescriptorPoolInlineUniformBlockCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorPoolInlineUniformBlockCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorPoolInlineUniformBlockCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorPoolInlineUniformBlockCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorPoolInlineUniformBlockCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorPoolInlineUniformBlockCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorPoolInlineUniformBlockCreateInfo sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDescriptorPoolInlineUniformBlockCreateInfo
             segment -> new VkDescriptorPoolInlineUniformBlockCreateInfo(segment)
         );
     }
-    
+
 }

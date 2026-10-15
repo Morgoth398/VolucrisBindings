@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDevicePipelineBinaryInternalCacheControlKHR
 		implements Struct<VkDevicePipelineBinaryInternalCacheControlKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DISABLE_INTERNAL_CACHE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DISABLE_INTERNAL_CACHE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DISABLE_INTERNAL_CACHE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DISABLE_INTERNAL_CACHE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("disableInternalCache"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDevicePipelineBinaryInternalCacheControlKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DISABLE_INTERNAL_CACHE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("disableInternalCache"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DISABLE_INTERNAL_CACHE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("disableInternalCache"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("disableInternalCache"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDevicePipelineBinaryInternalCacheControlKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DISABLE_INTERNAL_CACHE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("disableInternalCache"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DISABLE_INTERNAL_CACHE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("disableInternalCache"));
+		//@formatter:on
+	}
 
-    public VkDevicePipelineBinaryInternalCacheControlKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDevicePipelineBinaryInternalCacheControlKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDevicePipelineBinaryInternalCacheControlKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDevicePipelineBinaryInternalCacheControlKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDevicePipelineBinaryInternalCacheControlKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDevicePipelineBinaryInternalCacheControlKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDevicePipelineBinaryInternalCacheControlKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDevicePipelineBinaryInternalCacheControlKHR
             segment -> new VkDevicePipelineBinaryInternalCacheControlKHR(segment)
         );
     }
-    
+
 }

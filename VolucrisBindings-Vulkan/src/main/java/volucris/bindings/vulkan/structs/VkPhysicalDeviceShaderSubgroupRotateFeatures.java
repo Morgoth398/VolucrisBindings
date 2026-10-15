@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderSubgroupRotateFeatures
 		implements Struct<VkPhysicalDeviceShaderSubgroupRotateFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_SUBGROUP_ROTATE_HANDLE;
-    public static final VarHandle SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_SUBGROUP_ROTATE_HANDLE;
+	public static final VarHandle SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_SUBGROUP_ROTATE_BYTE_OFFSET;
-    public static final long SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_SUBGROUP_ROTATE_BYTE_OFFSET;
+	public static final long SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderSubgroupRotate"),
-            JAVA_INT.withName("shaderSubgroupRotateClustered")
-        ).withName("VkPhysicalDeviceShaderSubgroupRotateFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_SUBGROUP_ROTATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotate"));
-        SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotateClustered"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_SUBGROUP_ROTATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotate"));
-        SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotateClustered"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderSubgroupRotate"),
+		    JAVA_INT.withName("shaderSubgroupRotateClustered")
+		).withName("VkPhysicalDeviceShaderSubgroupRotateFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_SUBGROUP_ROTATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotate"));
+		SHADER_SUBGROUP_ROTATE_CLUSTERED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupRotateClustered"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_SUBGROUP_ROTATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotate"));
+		SHADER_SUBGROUP_ROTATE_CLUSTERED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupRotateClustered"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderSubgroupRotateFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderSubgroupRotateFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderSubgroupRotateFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderSubgroupRotateFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderSubgroupRotateFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderSubgroupRotateFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderSubgroupRotateFeatures sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShaderSubgroupRotateFeatures
             segment -> new VkPhysicalDeviceShaderSubgroupRotateFeatures(segment)
         );
     }
-    
+
 }

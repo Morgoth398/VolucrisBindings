@@ -22,86 +22,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryRangeBarrierKHR
 		implements Struct<VkMemoryRangeBarrierKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_STAGE_MASK_HANDLE;
-    public static final VarHandle SRC_ACCESS_MASK_HANDLE;
-    public static final VarHandle DST_STAGE_MASK_HANDLE;
-    public static final VarHandle DST_ACCESS_MASK_HANDLE;
-    public static final VarHandle SRC_QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle DST_QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle ADDRESS_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_STAGE_MASK_HANDLE;
+	public static final VarHandle SRC_ACCESS_MASK_HANDLE;
+	public static final VarHandle DST_STAGE_MASK_HANDLE;
+	public static final VarHandle DST_ACCESS_MASK_HANDLE;
+	public static final VarHandle SRC_QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle DST_QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle ADDRESS_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_STAGE_MASK_BYTE_OFFSET;
-    public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
-    public static final long DST_STAGE_MASK_BYTE_OFFSET;
-    public static final long DST_ACCESS_MASK_BYTE_OFFSET;
-    public static final long SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long ADDRESS_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_STAGE_MASK_BYTE_OFFSET;
+	public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
+	public static final long DST_STAGE_MASK_BYTE_OFFSET;
+	public static final long DST_ACCESS_MASK_BYTE_OFFSET;
+	public static final long SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long ADDRESS_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR addressRange;
+	private final VkDeviceAddressRangeKHR addressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("srcStageMask"),
-            JAVA_LONG.withName("srcAccessMask"),
-            JAVA_LONG.withName("dstStageMask"),
-            JAVA_LONG.withName("dstAccessMask"),
-            JAVA_INT.withName("srcQueueFamilyIndex"),
-            JAVA_INT.withName("dstQueueFamilyIndex"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
-            JAVA_INT.withName("addressFlags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMemoryRangeBarrierKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStageMask"));
-        SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
-        DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStageMask"));
-        DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
-        SRC_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcQueueFamilyIndex"));
-        DST_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstQueueFamilyIndex"));
-        ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStageMask"));
-        SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
-        DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStageMask"));
-        DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
-        SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcQueueFamilyIndex"));
-        DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstQueueFamilyIndex"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("srcStageMask"),
+		    JAVA_LONG.withName("srcAccessMask"),
+		    JAVA_LONG.withName("dstStageMask"),
+		    JAVA_LONG.withName("dstAccessMask"),
+		    JAVA_INT.withName("srcQueueFamilyIndex"),
+		    JAVA_INT.withName("dstQueueFamilyIndex"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
+		    JAVA_INT.withName("addressFlags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMemoryRangeBarrierKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStageMask"));
+		SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
+		DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStageMask"));
+		DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
+		SRC_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcQueueFamilyIndex"));
+		DST_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstQueueFamilyIndex"));
+		ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStageMask"));
+		SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
+		DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStageMask"));
+		DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
+		SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcQueueFamilyIndex"));
+		DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstQueueFamilyIndex"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
+		//@formatter:on
+	}
 
-    public VkMemoryRangeBarrierKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryRangeBarrierKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryRangeBarrierKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkMemoryRangeBarrierKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryRangeBarrierKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryRangeBarrierKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkMemoryRangeBarrierKHR sType(int sType) {
@@ -188,16 +188,6 @@ public final class VkMemoryRangeBarrierKHR
     	return (int) DST_QUEUE_FAMILY_INDEX_HANDLE.get(segment, 0L);
     }
     
-    /// @see #addressFlags()
-    public VkMemoryRangeBarrierKHR addressFlags(int addressFlags) {
-    	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
-    	return this;
-    }
-    
-    public int addressFlags() {
-    	return (int) ADDRESS_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #addressRange()
     public VkMemoryRangeBarrierKHR addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
     	consumer.accept(addressRange);
@@ -212,6 +202,16 @@ public final class VkMemoryRangeBarrierKHR
     
     public VkDeviceAddressRangeKHR addressRange() {
     	return addressRange;
+    }
+    
+    /// @see #addressFlags()
+    public VkMemoryRangeBarrierKHR addressFlags(int addressFlags) {
+    	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
+    	return this;
+    }
+    
+    public int addressFlags() {
+    	return (int) ADDRESS_FLAGS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -265,5 +265,5 @@ public final class VkMemoryRangeBarrierKHR
             segment -> new VkMemoryRangeBarrierKHR(segment)
         );
     }
-    
+
 }

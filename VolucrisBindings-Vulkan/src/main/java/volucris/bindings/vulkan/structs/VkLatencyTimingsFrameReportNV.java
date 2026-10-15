@@ -21,114 +21,114 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkLatencyTimingsFrameReportNV
 		implements Struct<VkLatencyTimingsFrameReportNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_ID_HANDLE;
-    public static final VarHandle INPUT_SAMPLE_TIME_US_HANDLE;
-    public static final VarHandle SIM_START_TIME_US_HANDLE;
-    public static final VarHandle SIM_END_TIME_US_HANDLE;
-    public static final VarHandle RENDER_SUBMIT_START_TIME_US_HANDLE;
-    public static final VarHandle RENDER_SUBMIT_END_TIME_US_HANDLE;
-    public static final VarHandle PRESENT_START_TIME_US_HANDLE;
-    public static final VarHandle PRESENT_END_TIME_US_HANDLE;
-    public static final VarHandle DRIVER_START_TIME_US_HANDLE;
-    public static final VarHandle DRIVER_END_TIME_US_HANDLE;
-    public static final VarHandle OS_RENDER_QUEUE_START_TIME_US_HANDLE;
-    public static final VarHandle OS_RENDER_QUEUE_END_TIME_US_HANDLE;
-    public static final VarHandle GPU_RENDER_START_TIME_US_HANDLE;
-    public static final VarHandle GPU_RENDER_END_TIME_US_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_ID_HANDLE;
+	public static final VarHandle INPUT_SAMPLE_TIME_US_HANDLE;
+	public static final VarHandle SIM_START_TIME_US_HANDLE;
+	public static final VarHandle SIM_END_TIME_US_HANDLE;
+	public static final VarHandle RENDER_SUBMIT_START_TIME_US_HANDLE;
+	public static final VarHandle RENDER_SUBMIT_END_TIME_US_HANDLE;
+	public static final VarHandle PRESENT_START_TIME_US_HANDLE;
+	public static final VarHandle PRESENT_END_TIME_US_HANDLE;
+	public static final VarHandle DRIVER_START_TIME_US_HANDLE;
+	public static final VarHandle DRIVER_END_TIME_US_HANDLE;
+	public static final VarHandle OS_RENDER_QUEUE_START_TIME_US_HANDLE;
+	public static final VarHandle OS_RENDER_QUEUE_END_TIME_US_HANDLE;
+	public static final VarHandle GPU_RENDER_START_TIME_US_HANDLE;
+	public static final VarHandle GPU_RENDER_END_TIME_US_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_ID_BYTE_OFFSET;
-    public static final long INPUT_SAMPLE_TIME_US_BYTE_OFFSET;
-    public static final long SIM_START_TIME_US_BYTE_OFFSET;
-    public static final long SIM_END_TIME_US_BYTE_OFFSET;
-    public static final long RENDER_SUBMIT_START_TIME_US_BYTE_OFFSET;
-    public static final long RENDER_SUBMIT_END_TIME_US_BYTE_OFFSET;
-    public static final long PRESENT_START_TIME_US_BYTE_OFFSET;
-    public static final long PRESENT_END_TIME_US_BYTE_OFFSET;
-    public static final long DRIVER_START_TIME_US_BYTE_OFFSET;
-    public static final long DRIVER_END_TIME_US_BYTE_OFFSET;
-    public static final long OS_RENDER_QUEUE_START_TIME_US_BYTE_OFFSET;
-    public static final long OS_RENDER_QUEUE_END_TIME_US_BYTE_OFFSET;
-    public static final long GPU_RENDER_START_TIME_US_BYTE_OFFSET;
-    public static final long GPU_RENDER_END_TIME_US_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_ID_BYTE_OFFSET;
+	public static final long INPUT_SAMPLE_TIME_US_BYTE_OFFSET;
+	public static final long SIM_START_TIME_US_BYTE_OFFSET;
+	public static final long SIM_END_TIME_US_BYTE_OFFSET;
+	public static final long RENDER_SUBMIT_START_TIME_US_BYTE_OFFSET;
+	public static final long RENDER_SUBMIT_END_TIME_US_BYTE_OFFSET;
+	public static final long PRESENT_START_TIME_US_BYTE_OFFSET;
+	public static final long PRESENT_END_TIME_US_BYTE_OFFSET;
+	public static final long DRIVER_START_TIME_US_BYTE_OFFSET;
+	public static final long DRIVER_END_TIME_US_BYTE_OFFSET;
+	public static final long OS_RENDER_QUEUE_START_TIME_US_BYTE_OFFSET;
+	public static final long OS_RENDER_QUEUE_END_TIME_US_BYTE_OFFSET;
+	public static final long GPU_RENDER_START_TIME_US_BYTE_OFFSET;
+	public static final long GPU_RENDER_END_TIME_US_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("presentID"),
-            JAVA_LONG.withName("inputSampleTimeUs"),
-            JAVA_LONG.withName("simStartTimeUs"),
-            JAVA_LONG.withName("simEndTimeUs"),
-            JAVA_LONG.withName("renderSubmitStartTimeUs"),
-            JAVA_LONG.withName("renderSubmitEndTimeUs"),
-            JAVA_LONG.withName("presentStartTimeUs"),
-            JAVA_LONG.withName("presentEndTimeUs"),
-            JAVA_LONG.withName("driverStartTimeUs"),
-            JAVA_LONG.withName("driverEndTimeUs"),
-            JAVA_LONG.withName("osRenderQueueStartTimeUs"),
-            JAVA_LONG.withName("osRenderQueueEndTimeUs"),
-            JAVA_LONG.withName("gpuRenderStartTimeUs"),
-            JAVA_LONG.withName("gpuRenderEndTimeUs")
-        ).withName("VkLatencyTimingsFrameReportNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentID"));
-        INPUT_SAMPLE_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputSampleTimeUs"));
-        SIM_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("simStartTimeUs"));
-        SIM_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("simEndTimeUs"));
-        RENDER_SUBMIT_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderSubmitStartTimeUs"));
-        RENDER_SUBMIT_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderSubmitEndTimeUs"));
-        PRESENT_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStartTimeUs"));
-        PRESENT_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentEndTimeUs"));
-        DRIVER_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverStartTimeUs"));
-        DRIVER_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverEndTimeUs"));
-        OS_RENDER_QUEUE_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("osRenderQueueStartTimeUs"));
-        OS_RENDER_QUEUE_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("osRenderQueueEndTimeUs"));
-        GPU_RENDER_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gpuRenderStartTimeUs"));
-        GPU_RENDER_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gpuRenderEndTimeUs"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentID"));
-        INPUT_SAMPLE_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputSampleTimeUs"));
-        SIM_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("simStartTimeUs"));
-        SIM_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("simEndTimeUs"));
-        RENDER_SUBMIT_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderSubmitStartTimeUs"));
-        RENDER_SUBMIT_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderSubmitEndTimeUs"));
-        PRESENT_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStartTimeUs"));
-        PRESENT_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentEndTimeUs"));
-        DRIVER_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverStartTimeUs"));
-        DRIVER_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverEndTimeUs"));
-        OS_RENDER_QUEUE_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("osRenderQueueStartTimeUs"));
-        OS_RENDER_QUEUE_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("osRenderQueueEndTimeUs"));
-        GPU_RENDER_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gpuRenderStartTimeUs"));
-        GPU_RENDER_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gpuRenderEndTimeUs"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("presentID"),
+		    JAVA_LONG.withName("inputSampleTimeUs"),
+		    JAVA_LONG.withName("simStartTimeUs"),
+		    JAVA_LONG.withName("simEndTimeUs"),
+		    JAVA_LONG.withName("renderSubmitStartTimeUs"),
+		    JAVA_LONG.withName("renderSubmitEndTimeUs"),
+		    JAVA_LONG.withName("presentStartTimeUs"),
+		    JAVA_LONG.withName("presentEndTimeUs"),
+		    JAVA_LONG.withName("driverStartTimeUs"),
+		    JAVA_LONG.withName("driverEndTimeUs"),
+		    JAVA_LONG.withName("osRenderQueueStartTimeUs"),
+		    JAVA_LONG.withName("osRenderQueueEndTimeUs"),
+		    JAVA_LONG.withName("gpuRenderStartTimeUs"),
+		    JAVA_LONG.withName("gpuRenderEndTimeUs")
+		).withName("VkLatencyTimingsFrameReportNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentID"));
+		INPUT_SAMPLE_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputSampleTimeUs"));
+		SIM_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("simStartTimeUs"));
+		SIM_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("simEndTimeUs"));
+		RENDER_SUBMIT_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderSubmitStartTimeUs"));
+		RENDER_SUBMIT_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderSubmitEndTimeUs"));
+		PRESENT_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStartTimeUs"));
+		PRESENT_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentEndTimeUs"));
+		DRIVER_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverStartTimeUs"));
+		DRIVER_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverEndTimeUs"));
+		OS_RENDER_QUEUE_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("osRenderQueueStartTimeUs"));
+		OS_RENDER_QUEUE_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("osRenderQueueEndTimeUs"));
+		GPU_RENDER_START_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gpuRenderStartTimeUs"));
+		GPU_RENDER_END_TIME_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gpuRenderEndTimeUs"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentID"));
+		INPUT_SAMPLE_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputSampleTimeUs"));
+		SIM_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("simStartTimeUs"));
+		SIM_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("simEndTimeUs"));
+		RENDER_SUBMIT_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderSubmitStartTimeUs"));
+		RENDER_SUBMIT_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderSubmitEndTimeUs"));
+		PRESENT_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStartTimeUs"));
+		PRESENT_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentEndTimeUs"));
+		DRIVER_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverStartTimeUs"));
+		DRIVER_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverEndTimeUs"));
+		OS_RENDER_QUEUE_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("osRenderQueueStartTimeUs"));
+		OS_RENDER_QUEUE_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("osRenderQueueEndTimeUs"));
+		GPU_RENDER_START_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gpuRenderStartTimeUs"));
+		GPU_RENDER_END_TIME_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gpuRenderEndTimeUs"));
+		//@formatter:on
+	}
 
-    public VkLatencyTimingsFrameReportNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkLatencyTimingsFrameReportNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkLatencyTimingsFrameReportNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkLatencyTimingsFrameReportNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkLatencyTimingsFrameReportNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkLatencyTimingsFrameReportNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkLatencyTimingsFrameReportNV sType(int sType) {
@@ -346,5 +346,5 @@ public final class VkLatencyTimingsFrameReportNV
             segment -> new VkLatencyTimingsFrameReportNV(segment)
         );
     }
-    
+
 }

@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPastPresentationTimingPropertiesEXT
 		implements Struct<VkPastPresentationTimingPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TIMING_PROPERTIES_COUNTER_HANDLE;
-    public static final VarHandle TIME_DOMAINS_COUNTER_HANDLE;
-    public static final VarHandle PRESENTATION_TIMING_COUNT_HANDLE;
-    public static final VarHandle P_PRESENTATION_TIMINGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TIMING_PROPERTIES_COUNTER_HANDLE;
+	public static final VarHandle TIME_DOMAINS_COUNTER_HANDLE;
+	public static final VarHandle PRESENTATION_TIMING_COUNT_HANDLE;
+	public static final VarHandle P_PRESENTATION_TIMINGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TIMING_PROPERTIES_COUNTER_BYTE_OFFSET;
-    public static final long TIME_DOMAINS_COUNTER_BYTE_OFFSET;
-    public static final long PRESENTATION_TIMING_COUNT_BYTE_OFFSET;
-    public static final long P_PRESENTATION_TIMINGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TIMING_PROPERTIES_COUNTER_BYTE_OFFSET;
+	public static final long TIME_DOMAINS_COUNTER_BYTE_OFFSET;
+	public static final long PRESENTATION_TIMING_COUNT_BYTE_OFFSET;
+	public static final long P_PRESENTATION_TIMINGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("timingPropertiesCounter"),
-            JAVA_LONG.withName("timeDomainsCounter"),
-            JAVA_INT.withName("presentationTimingCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPresentationTimings")
-        ).withName("VkPastPresentationTimingPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TIMING_PROPERTIES_COUNTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timingPropertiesCounter"));
-        TIME_DOMAINS_COUNTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainsCounter"));
-        PRESENTATION_TIMING_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentationTimingCount"));
-        P_PRESENTATION_TIMINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPresentationTimings"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TIMING_PROPERTIES_COUNTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timingPropertiesCounter"));
-        TIME_DOMAINS_COUNTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainsCounter"));
-        PRESENTATION_TIMING_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentationTimingCount"));
-        P_PRESENTATION_TIMINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPresentationTimings"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("timingPropertiesCounter"),
+		    JAVA_LONG.withName("timeDomainsCounter"),
+		    JAVA_INT.withName("presentationTimingCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPresentationTimings")
+		).withName("VkPastPresentationTimingPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TIMING_PROPERTIES_COUNTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timingPropertiesCounter"));
+		TIME_DOMAINS_COUNTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainsCounter"));
+		PRESENTATION_TIMING_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentationTimingCount"));
+		P_PRESENTATION_TIMINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPresentationTimings"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TIMING_PROPERTIES_COUNTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timingPropertiesCounter"));
+		TIME_DOMAINS_COUNTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainsCounter"));
+		PRESENTATION_TIMING_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentationTimingCount"));
+		P_PRESENTATION_TIMINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPresentationTimings"));
+		//@formatter:on
+	}
 
-    public VkPastPresentationTimingPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPastPresentationTimingPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPastPresentationTimingPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPastPresentationTimingPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPastPresentationTimingPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPastPresentationTimingPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPastPresentationTimingPropertiesEXT sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkPastPresentationTimingPropertiesEXT
             segment -> new VkPastPresentationTimingPropertiesEXT(segment)
         );
     }
-    
+
 }

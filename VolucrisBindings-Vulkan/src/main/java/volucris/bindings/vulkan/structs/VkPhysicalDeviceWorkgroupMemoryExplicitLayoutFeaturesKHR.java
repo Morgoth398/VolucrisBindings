@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR
 		implements Struct<VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT_HANDLE;
-    public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_HANDLE;
-    public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_HANDLE;
-    public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT_HANDLE;
+	public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_HANDLE;
+	public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_HANDLE;
+	public static final VarHandle WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT_BYTE_OFFSET;
-    public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_BYTE_OFFSET;
-    public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_BYTE_OFFSET;
-    public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT_BYTE_OFFSET;
+	public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_BYTE_OFFSET;
+	public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_BYTE_OFFSET;
+	public static final long WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("workgroupMemoryExplicitLayout"),
-            JAVA_INT.withName("workgroupMemoryExplicitLayoutScalarBlockLayout"),
-            JAVA_INT.withName("workgroupMemoryExplicitLayout8BitAccess"),
-            JAVA_INT.withName("workgroupMemoryExplicitLayout16BitAccess")
-        ).withName("VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayout"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayoutScalarBlockLayout"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayout8BitAccess"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayout16BitAccess"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayout"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayoutScalarBlockLayout"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayout8BitAccess"));
-        WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayout16BitAccess"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("workgroupMemoryExplicitLayout"),
+		    JAVA_INT.withName("workgroupMemoryExplicitLayoutScalarBlockLayout"),
+		    JAVA_INT.withName("workgroupMemoryExplicitLayout8BitAccess"),
+		    JAVA_INT.withName("workgroupMemoryExplicitLayout16BitAccess")
+		).withName("VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayout"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayoutScalarBlockLayout"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayout8BitAccess"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("workgroupMemoryExplicitLayout16BitAccess"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayout"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT_SCALAR_BLOCK_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayoutScalarBlockLayout"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT8_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayout8BitAccess"));
+		WORKGROUP_MEMORY_EXPLICIT_LAYOUT16_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("workgroupMemoryExplicitLayout16BitAccess"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR
             segment -> new VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(segment)
         );
     }
-    
+
 }

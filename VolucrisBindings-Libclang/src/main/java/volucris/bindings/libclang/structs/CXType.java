@@ -23,44 +23,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXType
 		implements Struct<CXType> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle KIND_HANDLE;
-    public static final VarHandle DATA_HANDLE;
+	public static final VarHandle KIND_HANDLE;
+	public static final VarHandle DATA_HANDLE;
 
-    public static final long KIND_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("kind"),
-            MemoryLayout.paddingLayout(4),
-            MemoryLayout.sequenceLayout(2, UNBOUNDED_ADDRESS).withName("data")
-        ).withName("CXType").withByteAlignment(8);
-        
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
-        
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("kind"),
+		    MemoryLayout.paddingLayout(4),
+		    MemoryLayout.sequenceLayout(2, UNBOUNDED_ADDRESS).withName("data")
+		).withName("CXType").withByteAlignment(8);
+		
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
+		
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public CXType() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXType(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXType(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXType() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXType(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXType(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #kind()
     public CXType kind(int kind) {
@@ -138,5 +138,5 @@ public final class CXType
             segment -> new CXType(segment)
         );
     }
-    
+
 }

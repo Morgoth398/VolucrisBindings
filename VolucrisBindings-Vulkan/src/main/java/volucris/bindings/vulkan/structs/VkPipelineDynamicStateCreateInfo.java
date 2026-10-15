@@ -22,59 +22,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineDynamicStateCreateInfo
 		implements Struct<VkPipelineDynamicStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DYNAMIC_STATE_COUNT_HANDLE;
-    public static final VarHandle P_DYNAMIC_STATES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DYNAMIC_STATE_COUNT_HANDLE;
+	public static final VarHandle P_DYNAMIC_STATES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DYNAMIC_STATE_COUNT_BYTE_OFFSET;
-    public static final long P_DYNAMIC_STATES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DYNAMIC_STATE_COUNT_BYTE_OFFSET;
+	public static final long P_DYNAMIC_STATES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("dynamicStateCount"),
-            UNBOUNDED_ADDRESS.withName("pDynamicStates")
-        ).withName("VkPipelineDynamicStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DYNAMIC_STATE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicStateCount"));
-        P_DYNAMIC_STATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicStates"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DYNAMIC_STATE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicStateCount"));
-        P_DYNAMIC_STATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicStates"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("dynamicStateCount"),
+		    UNBOUNDED_ADDRESS.withName("pDynamicStates")
+		).withName("VkPipelineDynamicStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DYNAMIC_STATE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicStateCount"));
+		P_DYNAMIC_STATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicStates"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DYNAMIC_STATE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicStateCount"));
+		P_DYNAMIC_STATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicStates"));
+		//@formatter:on
+	}
 
-    public VkPipelineDynamicStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineDynamicStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineDynamicStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineDynamicStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineDynamicStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineDynamicStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineDynamicStateCreateInfo sType(int sType) {
@@ -187,5 +187,5 @@ public final class VkPipelineDynamicStateCreateInfo
             segment -> new VkPipelineDynamicStateCreateInfo(segment)
         );
     }
-    
+
 }

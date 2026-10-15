@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkClusterAccelerationStructureTriangleClusterInputNV
 		implements Struct<VkClusterAccelerationStructureTriangleClusterInputNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VERTEX_FORMAT_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_INDEX_VALUE_HANDLE;
-    public static final VarHandle MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_HANDLE;
-    public static final VarHandle MAX_CLUSTER_TRIANGLE_COUNT_HANDLE;
-    public static final VarHandle MAX_CLUSTER_VERTEX_COUNT_HANDLE;
-    public static final VarHandle MAX_TOTAL_TRIANGLE_COUNT_HANDLE;
-    public static final VarHandle MAX_TOTAL_VERTEX_COUNT_HANDLE;
-    public static final VarHandle MIN_POSITION_TRUNCATE_BIT_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VERTEX_FORMAT_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_INDEX_VALUE_HANDLE;
+	public static final VarHandle MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_HANDLE;
+	public static final VarHandle MAX_CLUSTER_TRIANGLE_COUNT_HANDLE;
+	public static final VarHandle MAX_CLUSTER_VERTEX_COUNT_HANDLE;
+	public static final VarHandle MAX_TOTAL_TRIANGLE_COUNT_HANDLE;
+	public static final VarHandle MAX_TOTAL_VERTEX_COUNT_HANDLE;
+	public static final VarHandle MIN_POSITION_TRUNCATE_BIT_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VERTEX_FORMAT_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_INDEX_VALUE_BYTE_OFFSET;
-    public static final long MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_BYTE_OFFSET;
-    public static final long MAX_CLUSTER_TRIANGLE_COUNT_BYTE_OFFSET;
-    public static final long MAX_CLUSTER_VERTEX_COUNT_BYTE_OFFSET;
-    public static final long MAX_TOTAL_TRIANGLE_COUNT_BYTE_OFFSET;
-    public static final long MAX_TOTAL_VERTEX_COUNT_BYTE_OFFSET;
-    public static final long MIN_POSITION_TRUNCATE_BIT_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VERTEX_FORMAT_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_INDEX_VALUE_BYTE_OFFSET;
+	public static final long MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_BYTE_OFFSET;
+	public static final long MAX_CLUSTER_TRIANGLE_COUNT_BYTE_OFFSET;
+	public static final long MAX_CLUSTER_VERTEX_COUNT_BYTE_OFFSET;
+	public static final long MAX_TOTAL_TRIANGLE_COUNT_BYTE_OFFSET;
+	public static final long MAX_TOTAL_VERTEX_COUNT_BYTE_OFFSET;
+	public static final long MIN_POSITION_TRUNCATE_BIT_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vertexFormat"),
-            JAVA_INT.withName("maxGeometryIndexValue"),
-            JAVA_INT.withName("maxClusterUniqueGeometryCount"),
-            JAVA_INT.withName("maxClusterTriangleCount"),
-            JAVA_INT.withName("maxClusterVertexCount"),
-            JAVA_INT.withName("maxTotalTriangleCount"),
-            JAVA_INT.withName("maxTotalVertexCount"),
-            JAVA_INT.withName("minPositionTruncateBitCount")
-        ).withName("VkClusterAccelerationStructureTriangleClusterInputNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
-        MAX_GEOMETRY_INDEX_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryIndexValue"));
-        MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterUniqueGeometryCount"));
-        MAX_CLUSTER_TRIANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterTriangleCount"));
-        MAX_CLUSTER_VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterVertexCount"));
-        MAX_TOTAL_TRIANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTotalTriangleCount"));
-        MAX_TOTAL_VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTotalVertexCount"));
-        MIN_POSITION_TRUNCATE_BIT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minPositionTruncateBitCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
-        MAX_GEOMETRY_INDEX_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryIndexValue"));
-        MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterUniqueGeometryCount"));
-        MAX_CLUSTER_TRIANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterTriangleCount"));
-        MAX_CLUSTER_VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterVertexCount"));
-        MAX_TOTAL_TRIANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTotalTriangleCount"));
-        MAX_TOTAL_VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTotalVertexCount"));
-        MIN_POSITION_TRUNCATE_BIT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minPositionTruncateBitCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vertexFormat"),
+		    JAVA_INT.withName("maxGeometryIndexValue"),
+		    JAVA_INT.withName("maxClusterUniqueGeometryCount"),
+		    JAVA_INT.withName("maxClusterTriangleCount"),
+		    JAVA_INT.withName("maxClusterVertexCount"),
+		    JAVA_INT.withName("maxTotalTriangleCount"),
+		    JAVA_INT.withName("maxTotalVertexCount"),
+		    JAVA_INT.withName("minPositionTruncateBitCount")
+		).withName("VkClusterAccelerationStructureTriangleClusterInputNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
+		MAX_GEOMETRY_INDEX_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryIndexValue"));
+		MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterUniqueGeometryCount"));
+		MAX_CLUSTER_TRIANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterTriangleCount"));
+		MAX_CLUSTER_VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClusterVertexCount"));
+		MAX_TOTAL_TRIANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTotalTriangleCount"));
+		MAX_TOTAL_VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTotalVertexCount"));
+		MIN_POSITION_TRUNCATE_BIT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minPositionTruncateBitCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
+		MAX_GEOMETRY_INDEX_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryIndexValue"));
+		MAX_CLUSTER_UNIQUE_GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterUniqueGeometryCount"));
+		MAX_CLUSTER_TRIANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterTriangleCount"));
+		MAX_CLUSTER_VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClusterVertexCount"));
+		MAX_TOTAL_TRIANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTotalTriangleCount"));
+		MAX_TOTAL_VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTotalVertexCount"));
+		MIN_POSITION_TRUNCATE_BIT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minPositionTruncateBitCount"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureTriangleClusterInputNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureTriangleClusterInputNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureTriangleClusterInputNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClusterAccelerationStructureTriangleClusterInputNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureTriangleClusterInputNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureTriangleClusterInputNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkClusterAccelerationStructureTriangleClusterInputNV sType(int sType) {
@@ -256,5 +256,5 @@ public final class VkClusterAccelerationStructureTriangleClusterInputNV
             segment -> new VkClusterAccelerationStructureTriangleClusterInputNV(segment)
         );
     }
-    
+
 }

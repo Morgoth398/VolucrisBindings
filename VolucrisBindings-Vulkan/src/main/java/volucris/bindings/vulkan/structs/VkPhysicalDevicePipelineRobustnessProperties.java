@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePipelineRobustnessProperties
 		implements Struct<VkPhysicalDevicePipelineRobustnessProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_IMAGES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_IMAGES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("defaultRobustnessStorageBuffers"),
-            JAVA_INT.withName("defaultRobustnessUniformBuffers"),
-            JAVA_INT.withName("defaultRobustnessVertexInputs"),
-            JAVA_INT.withName("defaultRobustnessImages")
-        ).withName("VkPhysicalDevicePipelineRobustnessProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessStorageBuffers"));
-        DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessUniformBuffers"));
-        DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessVertexInputs"));
-        DEFAULT_ROBUSTNESS_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessImages"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessStorageBuffers"));
-        DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessUniformBuffers"));
-        DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessVertexInputs"));
-        DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessImages"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("defaultRobustnessStorageBuffers"),
+		    JAVA_INT.withName("defaultRobustnessUniformBuffers"),
+		    JAVA_INT.withName("defaultRobustnessVertexInputs"),
+		    JAVA_INT.withName("defaultRobustnessImages")
+		).withName("VkPhysicalDevicePipelineRobustnessProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessStorageBuffers"));
+		DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessUniformBuffers"));
+		DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessVertexInputs"));
+		DEFAULT_ROBUSTNESS_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessImages"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessStorageBuffers"));
+		DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessUniformBuffers"));
+		DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessVertexInputs"));
+		DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessImages"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePipelineRobustnessProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePipelineRobustnessProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePipelineRobustnessProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePipelineRobustnessProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePipelineRobustnessProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePipelineRobustnessProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePipelineRobustnessProperties sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDevicePipelineRobustnessProperties
             segment -> new VkPhysicalDevicePipelineRobustnessProperties(segment)
         );
     }
-    
+
 }

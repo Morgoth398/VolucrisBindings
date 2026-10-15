@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceGpaProperties2AMD
 		implements Struct<VkPhysicalDeviceGpaProperties2AMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle REVISION_ID_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle REVISION_ID_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long REVISION_ID_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long REVISION_ID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("revisionId"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceGpaProperties2AMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        REVISION_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("revisionId"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        REVISION_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("revisionId"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("revisionId"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceGpaProperties2AMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		REVISION_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("revisionId"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		REVISION_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("revisionId"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceGpaProperties2AMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceGpaProperties2AMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceGpaProperties2AMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceGpaProperties2AMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceGpaProperties2AMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceGpaProperties2AMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceGpaProperties2AMD sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceGpaProperties2AMD
             segment -> new VkPhysicalDeviceGpaProperties2AMD(segment)
         );
     }
-    
+
 }

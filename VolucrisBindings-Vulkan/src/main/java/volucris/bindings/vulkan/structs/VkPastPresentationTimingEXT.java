@@ -21,82 +21,82 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPastPresentationTimingEXT
 		implements Struct<VkPastPresentationTimingEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_ID_HANDLE;
-    public static final VarHandle TARGET_TIME_HANDLE;
-    public static final VarHandle PRESENT_STAGE_COUNT_HANDLE;
-    public static final VarHandle P_PRESENT_STAGES_HANDLE;
-    public static final VarHandle TIME_DOMAIN_HANDLE;
-    public static final VarHandle TIME_DOMAIN_ID_HANDLE;
-    public static final VarHandle REPORT_COMPLETE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_ID_HANDLE;
+	public static final VarHandle TARGET_TIME_HANDLE;
+	public static final VarHandle PRESENT_STAGE_COUNT_HANDLE;
+	public static final VarHandle P_PRESENT_STAGES_HANDLE;
+	public static final VarHandle TIME_DOMAIN_HANDLE;
+	public static final VarHandle TIME_DOMAIN_ID_HANDLE;
+	public static final VarHandle REPORT_COMPLETE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_ID_BYTE_OFFSET;
-    public static final long TARGET_TIME_BYTE_OFFSET;
-    public static final long PRESENT_STAGE_COUNT_BYTE_OFFSET;
-    public static final long P_PRESENT_STAGES_BYTE_OFFSET;
-    public static final long TIME_DOMAIN_BYTE_OFFSET;
-    public static final long TIME_DOMAIN_ID_BYTE_OFFSET;
-    public static final long REPORT_COMPLETE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_ID_BYTE_OFFSET;
+	public static final long TARGET_TIME_BYTE_OFFSET;
+	public static final long PRESENT_STAGE_COUNT_BYTE_OFFSET;
+	public static final long P_PRESENT_STAGES_BYTE_OFFSET;
+	public static final long TIME_DOMAIN_BYTE_OFFSET;
+	public static final long TIME_DOMAIN_ID_BYTE_OFFSET;
+	public static final long REPORT_COMPLETE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("presentId"),
-            JAVA_LONG.withName("targetTime"),
-            JAVA_INT.withName("presentStageCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPresentStages"),
-            JAVA_INT.withName("timeDomain"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("timeDomainId"),
-            JAVA_INT.withName("reportComplete"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPastPresentationTimingEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentId"));
-        TARGET_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("targetTime"));
-        PRESENT_STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStageCount"));
-        P_PRESENT_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPresentStages"));
-        TIME_DOMAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomain"));
-        TIME_DOMAIN_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainId"));
-        REPORT_COMPLETE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reportComplete"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentId"));
-        TARGET_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("targetTime"));
-        PRESENT_STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStageCount"));
-        P_PRESENT_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPresentStages"));
-        TIME_DOMAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomain"));
-        TIME_DOMAIN_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainId"));
-        REPORT_COMPLETE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reportComplete"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("presentId"),
+		    JAVA_LONG.withName("targetTime"),
+		    JAVA_INT.withName("presentStageCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPresentStages"),
+		    JAVA_INT.withName("timeDomain"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("timeDomainId"),
+		    JAVA_INT.withName("reportComplete"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPastPresentationTimingEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentId"));
+		TARGET_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("targetTime"));
+		PRESENT_STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStageCount"));
+		P_PRESENT_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPresentStages"));
+		TIME_DOMAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomain"));
+		TIME_DOMAIN_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainId"));
+		REPORT_COMPLETE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reportComplete"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentId"));
+		TARGET_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("targetTime"));
+		PRESENT_STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStageCount"));
+		P_PRESENT_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPresentStages"));
+		TIME_DOMAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomain"));
+		TIME_DOMAIN_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainId"));
+		REPORT_COMPLETE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reportComplete"));
+		//@formatter:on
+	}
 
-    public VkPastPresentationTimingEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPastPresentationTimingEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPastPresentationTimingEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPastPresentationTimingEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPastPresentationTimingEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPastPresentationTimingEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPastPresentationTimingEXT sType(int sType) {
@@ -249,5 +249,5 @@ public final class VkPastPresentationTimingEXT
             segment -> new VkPastPresentationTimingEXT(segment)
         );
     }
-    
+
 }

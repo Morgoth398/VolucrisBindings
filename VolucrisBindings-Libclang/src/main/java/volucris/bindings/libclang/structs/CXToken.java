@@ -22,43 +22,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXToken
 		implements Struct<CXToken> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle INT_DATA_HANDLE;
-    public static final VarHandle PTR_DATA_HANDLE;
+	public static final VarHandle INT_DATA_HANDLE;
+	public static final VarHandle PTR_DATA_HANDLE;
 
-    public static final long INT_DATA_BYTE_OFFSET;
-    public static final long PTR_DATA_BYTE_OFFSET;
+	public static final long INT_DATA_BYTE_OFFSET;
+	public static final long PTR_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(4, JAVA_INT).withName("int_data"),
-            UNBOUNDED_ADDRESS.withName("ptr_data")
-        ).withName("CXToken").withByteAlignment(8);
-        
-        INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int_data"), PathElement.sequenceElement());
-        PTR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ptr_data"));
-        
-        INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int_data"));
-        PTR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ptr_data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(4, JAVA_INT).withName("int_data"),
+		    UNBOUNDED_ADDRESS.withName("ptr_data")
+		).withName("CXToken").withByteAlignment(8);
+		
+		INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int_data"), PathElement.sequenceElement());
+		PTR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ptr_data"));
+		
+		INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int_data"));
+		PTR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ptr_data"));
+		//@formatter:on
+	}
 
-    public CXToken() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXToken(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXToken(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXToken() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXToken(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXToken(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #int_data(int)
     public CXToken int_data(int int_data, int index0) {
@@ -136,5 +136,5 @@ public final class CXToken
             segment -> new CXToken(segment)
         );
     }
-    
+
 }

@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkIndirectCommandsExecutionSetTokenEXT
 		implements Struct<VkIndirectCommandsExecutionSetTokenEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle SHADER_STAGES_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle SHADER_STAGES_HANDLE;
 
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long SHADER_STAGES_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long SHADER_STAGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("shaderStages")
-        ).withName("VkIndirectCommandsExecutionSetTokenEXT").withByteAlignment(4);
-        
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStages"));
-        
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStages"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("shaderStages")
+		).withName("VkIndirectCommandsExecutionSetTokenEXT").withByteAlignment(4);
+		
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStages"));
+		
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStages"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsExecutionSetTokenEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsExecutionSetTokenEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsExecutionSetTokenEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsExecutionSetTokenEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsExecutionSetTokenEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsExecutionSetTokenEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #type()
     public VkIndirectCommandsExecutionSetTokenEXT type(int type) {
@@ -128,5 +128,5 @@ public final class VkIndirectCommandsExecutionSetTokenEXT
             segment -> new VkIndirectCommandsExecutionSetTokenEXT(segment)
         );
     }
-    
+
 }

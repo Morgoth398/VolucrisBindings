@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeAV1CapabilitiesKHR
 		implements Struct<VkVideoDecodeAV1CapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_LEVEL_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_LEVEL_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_LEVEL_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_LEVEL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxLevel"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoDecodeAV1CapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevel"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevel"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxLevel"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoDecodeAV1CapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevel"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevel"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeAV1CapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeAV1CapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeAV1CapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoDecodeAV1CapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeAV1CapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeAV1CapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoDecodeAV1CapabilitiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkVideoDecodeAV1CapabilitiesKHR
             segment -> new VkVideoDecodeAV1CapabilitiesKHR(segment)
         );
     }
-    
+
 }

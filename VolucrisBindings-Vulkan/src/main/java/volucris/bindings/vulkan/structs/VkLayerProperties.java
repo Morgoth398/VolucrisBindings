@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkLayerProperties
 		implements Struct<VkLayerProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LAYER_NAME_HANDLE;
-    public static final VarHandle SPEC_VERSION_HANDLE;
-    public static final VarHandle IMPLEMENTATION_VERSION_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle LAYER_NAME_HANDLE;
+	public static final VarHandle SPEC_VERSION_HANDLE;
+	public static final VarHandle IMPLEMENTATION_VERSION_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
 
-    public static final long LAYER_NAME_BYTE_OFFSET;
-    public static final long SPEC_VERSION_BYTE_OFFSET;
-    public static final long IMPLEMENTATION_VERSION_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long LAYER_NAME_BYTE_OFFSET;
+	public static final long SPEC_VERSION_BYTE_OFFSET;
+	public static final long IMPLEMENTATION_VERSION_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("layerName"),
-            JAVA_INT.withName("specVersion"),
-            JAVA_INT.withName("implementationVersion"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description")
-        ).withName("VkLayerProperties").withByteAlignment(4);
-        
-        LAYER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerName"), PathElement.sequenceElement());
-        SPEC_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("specVersion"));
-        IMPLEMENTATION_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("implementationVersion"));
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        
-        LAYER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerName"));
-        SPEC_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("specVersion"));
-        IMPLEMENTATION_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("implementationVersion"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("layerName"),
+		    JAVA_INT.withName("specVersion"),
+		    JAVA_INT.withName("implementationVersion"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description")
+		).withName("VkLayerProperties").withByteAlignment(4);
+		
+		LAYER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerName"), PathElement.sequenceElement());
+		SPEC_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("specVersion"));
+		IMPLEMENTATION_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("implementationVersion"));
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		
+		LAYER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerName"));
+		SPEC_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("specVersion"));
+		IMPLEMENTATION_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("implementationVersion"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		//@formatter:on
+	}
 
-    public VkLayerProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkLayerProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkLayerProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkLayerProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkLayerProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkLayerProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #layerName(int)
     public VkLayerProperties layerName(byte layerName, int index0) {
@@ -75,6 +75,10 @@ public final class VkLayerProperties
     
     public byte layerName(int index0) {
     	return (byte) LAYER_NAME_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String layerName() {
+        return segment.getString(LAYER_NAME_BYTE_OFFSET);
     }
     
     /// @see #specVersion()
@@ -105,10 +109,6 @@ public final class VkLayerProperties
     
     public byte description(int index0) {
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
-    }
-    
-    public String layerName() {
-        return segment.getString(LAYER_NAME_BYTE_OFFSET);
     }
     
     public String description() {
@@ -166,5 +166,5 @@ public final class VkLayerProperties
             segment -> new VkLayerProperties(segment)
         );
     }
-    
+
 }

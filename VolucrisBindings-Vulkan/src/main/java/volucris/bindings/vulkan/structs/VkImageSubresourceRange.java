@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkImageSubresourceRange
 		implements Struct<VkImageSubresourceRange> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_MASK_HANDLE;
-    public static final VarHandle BASE_MIP_LEVEL_HANDLE;
-    public static final VarHandle LEVEL_COUNT_HANDLE;
-    public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
-    public static final VarHandle LAYER_COUNT_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle BASE_MIP_LEVEL_HANDLE;
+	public static final VarHandle LEVEL_COUNT_HANDLE;
+	public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
+	public static final VarHandle LAYER_COUNT_HANDLE;
 
-    public static final long ASPECT_MASK_BYTE_OFFSET;
-    public static final long BASE_MIP_LEVEL_BYTE_OFFSET;
-    public static final long LEVEL_COUNT_BYTE_OFFSET;
-    public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
-    public static final long LAYER_COUNT_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long BASE_MIP_LEVEL_BYTE_OFFSET;
+	public static final long LEVEL_COUNT_BYTE_OFFSET;
+	public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
+	public static final long LAYER_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("aspectMask"),
-            JAVA_INT.withName("baseMipLevel"),
-            JAVA_INT.withName("levelCount"),
-            JAVA_INT.withName("baseArrayLayer"),
-            JAVA_INT.withName("layerCount")
-        ).withName("VkImageSubresourceRange").withByteAlignment(4);
-        
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        BASE_MIP_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseMipLevel"));
-        LEVEL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("levelCount"));
-        BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
-        LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
-        
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        BASE_MIP_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseMipLevel"));
-        LEVEL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("levelCount"));
-        BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
-        LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("aspectMask"),
+		    JAVA_INT.withName("baseMipLevel"),
+		    JAVA_INT.withName("levelCount"),
+		    JAVA_INT.withName("baseArrayLayer"),
+		    JAVA_INT.withName("layerCount")
+		).withName("VkImageSubresourceRange").withByteAlignment(4);
+		
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		BASE_MIP_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseMipLevel"));
+		LEVEL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("levelCount"));
+		BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
+		LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
+		
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		BASE_MIP_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseMipLevel"));
+		LEVEL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("levelCount"));
+		BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
+		LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
+		//@formatter:on
+	}
 
-    public VkImageSubresourceRange() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageSubresourceRange(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageSubresourceRange(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageSubresourceRange() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageSubresourceRange(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageSubresourceRange(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #aspectMask()
     public VkImageSubresourceRange aspectMask(int aspectMask) {
@@ -173,5 +173,5 @@ public final class VkImageSubresourceRange
             segment -> new VkImageSubresourceRange(segment)
         );
     }
-    
+
 }

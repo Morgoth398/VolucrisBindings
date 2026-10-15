@@ -21,66 +21,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264PictureInfoKHR
 		implements Struct<VkVideoEncodeH264PictureInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NALU_SLICE_ENTRY_COUNT_HANDLE;
-    public static final VarHandle P_NALU_SLICE_ENTRIES_HANDLE;
-    public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
-    public static final VarHandle GENERATE_PREFIX_NALU_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NALU_SLICE_ENTRY_COUNT_HANDLE;
+	public static final VarHandle P_NALU_SLICE_ENTRIES_HANDLE;
+	public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
+	public static final VarHandle GENERATE_PREFIX_NALU_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NALU_SLICE_ENTRY_COUNT_BYTE_OFFSET;
-    public static final long P_NALU_SLICE_ENTRIES_BYTE_OFFSET;
-    public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
-    public static final long GENERATE_PREFIX_NALU_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NALU_SLICE_ENTRY_COUNT_BYTE_OFFSET;
+	public static final long P_NALU_SLICE_ENTRIES_BYTE_OFFSET;
+	public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
+	public static final long GENERATE_PREFIX_NALU_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("naluSliceEntryCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNaluSliceEntries"),
-            UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
-            JAVA_INT.withName("generatePrefixNalu"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeH264PictureInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NALU_SLICE_ENTRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("naluSliceEntryCount"));
-        P_NALU_SLICE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNaluSliceEntries"));
-        P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
-        GENERATE_PREFIX_NALU_HANDLE = LAYOUT.varHandle(PathElement.groupElement("generatePrefixNalu"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NALU_SLICE_ENTRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("naluSliceEntryCount"));
-        P_NALU_SLICE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNaluSliceEntries"));
-        P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
-        GENERATE_PREFIX_NALU_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("generatePrefixNalu"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("naluSliceEntryCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNaluSliceEntries"),
+		    UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
+		    JAVA_INT.withName("generatePrefixNalu"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeH264PictureInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NALU_SLICE_ENTRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("naluSliceEntryCount"));
+		P_NALU_SLICE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNaluSliceEntries"));
+		P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
+		GENERATE_PREFIX_NALU_HANDLE = LAYOUT.varHandle(PathElement.groupElement("generatePrefixNalu"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NALU_SLICE_ENTRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("naluSliceEntryCount"));
+		P_NALU_SLICE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNaluSliceEntries"));
+		P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
+		GENERATE_PREFIX_NALU_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("generatePrefixNalu"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264PictureInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264PictureInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264PictureInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH264PictureInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264PictureInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264PictureInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264PictureInfoKHR sType(int sType) {
@@ -208,5 +208,5 @@ public final class VkVideoEncodeH264PictureInfoKHR
             segment -> new VkVideoEncodeH264PictureInfoKHR(segment)
         );
     }
-    
+
 }

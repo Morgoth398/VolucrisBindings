@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClearColorValue
 		implements Struct<VkClearColorValue> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle FLOAT32_HANDLE;
-    public static final VarHandle INT32_HANDLE;
-    public static final VarHandle UINT32_HANDLE;
+	public static final VarHandle FLOAT32_HANDLE;
+	public static final VarHandle INT32_HANDLE;
+	public static final VarHandle UINT32_HANDLE;
 
-    public static final long FLOAT32_BYTE_OFFSET;
-    public static final long INT32_BYTE_OFFSET;
-    public static final long UINT32_BYTE_OFFSET;
+	public static final long FLOAT32_BYTE_OFFSET;
+	public static final long INT32_BYTE_OFFSET;
+	public static final long UINT32_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            MemoryLayout.sequenceLayout(4, JAVA_FLOAT).withName("float32"),
-            MemoryLayout.sequenceLayout(4, JAVA_INT).withName("int32"),
-            MemoryLayout.sequenceLayout(4, JAVA_INT).withName("uint32")
-        ).withName("VkClearColorValue").withByteAlignment(4);
-        
-        FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("float32"), PathElement.sequenceElement());
-        INT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int32"), PathElement.sequenceElement());
-        UINT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uint32"), PathElement.sequenceElement());
-        
-        FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("float32"));
-        INT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int32"));
-        UINT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uint32"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    MemoryLayout.sequenceLayout(4, JAVA_FLOAT).withName("float32"),
+		    MemoryLayout.sequenceLayout(4, JAVA_INT).withName("int32"),
+		    MemoryLayout.sequenceLayout(4, JAVA_INT).withName("uint32")
+		).withName("VkClearColorValue").withByteAlignment(4);
+		
+		FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("float32"), PathElement.sequenceElement());
+		INT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int32"), PathElement.sequenceElement());
+		UINT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uint32"), PathElement.sequenceElement());
+		
+		FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("float32"));
+		INT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int32"));
+		UINT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uint32"));
+		//@formatter:on
+	}
 
-    public VkClearColorValue() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClearColorValue(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClearColorValue(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClearColorValue() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClearColorValue(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClearColorValue(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #float32(int)
     public VkClearColorValue float32(float float32, int index0) {
@@ -143,5 +143,5 @@ public final class VkClearColorValue
             segment -> new VkClearColorValue(segment)
         );
     }
-    
+
 }

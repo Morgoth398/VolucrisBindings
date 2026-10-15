@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceOpacityMicromapPropertiesKHR
 		implements Struct<VkPhysicalDeviceOpacityMicromapPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_HANDLE;
-    public static final VarHandle MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_HANDLE;
-    public static final VarHandle MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_HANDLE;
-    public static final VarHandle MAX_MICROMAP_TRIANGLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_HANDLE;
+	public static final VarHandle MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_HANDLE;
+	public static final VarHandle MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_HANDLE;
+	public static final VarHandle MAX_MICROMAP_TRIANGLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET;
-    public static final long MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET;
-    public static final long MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET;
-    public static final long MAX_MICROMAP_TRIANGLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET;
+	public static final long MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET;
+	public static final long MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET;
+	public static final long MAX_MICROMAP_TRIANGLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxOpacity2StateSubdivisionLevel"),
-            JAVA_INT.withName("maxOpacity4StateSubdivisionLevel"),
-            JAVA_INT.withName("maxOpacityLossy4StateSubdivisionLevel"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("maxMicromapTriangles")
-        ).withName("VkPhysicalDeviceOpacityMicromapPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOpacity2StateSubdivisionLevel"));
-        MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOpacity4StateSubdivisionLevel"));
-        MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOpacityLossy4StateSubdivisionLevel"));
-        MAX_MICROMAP_TRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMicromapTriangles"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOpacity2StateSubdivisionLevel"));
-        MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOpacity4StateSubdivisionLevel"));
-        MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOpacityLossy4StateSubdivisionLevel"));
-        MAX_MICROMAP_TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMicromapTriangles"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxOpacity2StateSubdivisionLevel"),
+		    JAVA_INT.withName("maxOpacity4StateSubdivisionLevel"),
+		    JAVA_INT.withName("maxOpacityLossy4StateSubdivisionLevel"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("maxMicromapTriangles")
+		).withName("VkPhysicalDeviceOpacityMicromapPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOpacity2StateSubdivisionLevel"));
+		MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOpacity4StateSubdivisionLevel"));
+		MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOpacityLossy4StateSubdivisionLevel"));
+		MAX_MICROMAP_TRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMicromapTriangles"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_OPACITY2_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOpacity2StateSubdivisionLevel"));
+		MAX_OPACITY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOpacity4StateSubdivisionLevel"));
+		MAX_OPACITY_LOSSY4_STATE_SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOpacityLossy4StateSubdivisionLevel"));
+		MAX_MICROMAP_TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMicromapTriangles"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceOpacityMicromapPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceOpacityMicromapPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceOpacityMicromapPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceOpacityMicromapPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceOpacityMicromapPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceOpacityMicromapPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceOpacityMicromapPropertiesKHR sType(int sType) {
@@ -197,5 +197,5 @@ public final class VkPhysicalDeviceOpacityMicromapPropertiesKHR
             segment -> new VkPhysicalDeviceOpacityMicromapPropertiesKHR(segment)
         );
     }
-    
+
 }

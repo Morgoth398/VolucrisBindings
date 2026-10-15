@@ -19,57 +19,57 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkImageCopy
 		implements Struct<VkImageCopy> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long SRC_SUBRESOURCE_BYTE_OFFSET;
-    public static final long SRC_OFFSET_BYTE_OFFSET;
-    public static final long DST_SUBRESOURCE_BYTE_OFFSET;
-    public static final long DST_OFFSET_BYTE_OFFSET;
-    public static final long EXTENT_BYTE_OFFSET;
+	public static final long SRC_SUBRESOURCE_BYTE_OFFSET;
+	public static final long SRC_OFFSET_BYTE_OFFSET;
+	public static final long DST_SUBRESOURCE_BYTE_OFFSET;
+	public static final long DST_OFFSET_BYTE_OFFSET;
+	public static final long EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceLayers srcSubresource;
-    private final VkOffset3D srcOffset;
-    private final VkImageSubresourceLayers dstSubresource;
-    private final VkOffset3D dstOffset;
-    private final VkExtent3D extent;
+	private final VkImageSubresourceLayers srcSubresource;
+	private final VkOffset3D srcOffset;
+	private final VkImageSubresourceLayers dstSubresource;
+	private final VkOffset3D dstOffset;
+	private final VkExtent3D extent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkImageSubresourceLayers.LAYOUT.withName("srcSubresource"),
-            VkOffset3D.LAYOUT.withName("srcOffset"),
-            VkImageSubresourceLayers.LAYOUT.withName("dstSubresource"),
-            VkOffset3D.LAYOUT.withName("dstOffset"),
-            VkExtent3D.LAYOUT.withName("extent")
-        ).withName("VkImageCopy").withByteAlignment(4);
-        
-        SRC_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubresource"));
-        SRC_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffset"));
-        DST_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubresource"));
-        DST_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffset"));
-        EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkImageSubresourceLayers.LAYOUT.withName("srcSubresource"),
+		    VkOffset3D.LAYOUT.withName("srcOffset"),
+		    VkImageSubresourceLayers.LAYOUT.withName("dstSubresource"),
+		    VkOffset3D.LAYOUT.withName("dstOffset"),
+		    VkExtent3D.LAYOUT.withName("extent")
+		).withName("VkImageCopy").withByteAlignment(4);
+		
+		SRC_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubresource"));
+		SRC_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffset"));
+		DST_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubresource"));
+		DST_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffset"));
+		EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
+		//@formatter:on
+	}
 
-    public VkImageCopy() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageCopy(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageCopy(MemorySegment segment) {
-        this.segment = segment;
-    
-        srcSubresource = new VkImageSubresourceLayers(segment.asSlice(SRC_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        srcOffset = new VkOffset3D(segment.asSlice(SRC_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
-        dstSubresource = new VkImageSubresourceLayers(segment.asSlice(DST_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        dstOffset = new VkOffset3D(segment.asSlice(DST_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
-        extent = new VkExtent3D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkImageCopy() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageCopy(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageCopy(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    srcSubresource = new VkImageSubresourceLayers(segment.asSlice(SRC_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    srcOffset = new VkOffset3D(segment.asSlice(SRC_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
+	    dstSubresource = new VkImageSubresourceLayers(segment.asSlice(DST_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    dstOffset = new VkOffset3D(segment.asSlice(DST_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
+	    extent = new VkExtent3D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #srcSubresource()
     public VkImageCopy srcSubresource(Consumer<VkImageSubresourceLayers> consumer) {
@@ -202,5 +202,5 @@ public final class VkImageCopy
             segment -> new VkImageCopy(segment)
         );
     }
-    
+
 }

@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkCoarseSampleLocationNV
 		implements Struct<VkCoarseSampleLocationNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PIXEL_X_HANDLE;
-    public static final VarHandle PIXEL_Y_HANDLE;
-    public static final VarHandle SAMPLE_HANDLE;
+	public static final VarHandle PIXEL_X_HANDLE;
+	public static final VarHandle PIXEL_Y_HANDLE;
+	public static final VarHandle SAMPLE_HANDLE;
 
-    public static final long PIXEL_X_BYTE_OFFSET;
-    public static final long PIXEL_Y_BYTE_OFFSET;
-    public static final long SAMPLE_BYTE_OFFSET;
+	public static final long PIXEL_X_BYTE_OFFSET;
+	public static final long PIXEL_Y_BYTE_OFFSET;
+	public static final long SAMPLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("pixelX"),
-            JAVA_INT.withName("pixelY"),
-            JAVA_INT.withName("sample")
-        ).withName("VkCoarseSampleLocationNV").withByteAlignment(4);
-        
-        PIXEL_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pixelX"));
-        PIXEL_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pixelY"));
-        SAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sample"));
-        
-        PIXEL_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pixelX"));
-        PIXEL_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pixelY"));
-        SAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sample"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("pixelX"),
+		    JAVA_INT.withName("pixelY"),
+		    JAVA_INT.withName("sample")
+		).withName("VkCoarseSampleLocationNV").withByteAlignment(4);
+		
+		PIXEL_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pixelX"));
+		PIXEL_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pixelY"));
+		SAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sample"));
+		
+		PIXEL_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pixelX"));
+		PIXEL_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pixelY"));
+		SAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sample"));
+		//@formatter:on
+	}
 
-    public VkCoarseSampleLocationNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCoarseSampleLocationNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCoarseSampleLocationNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCoarseSampleLocationNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCoarseSampleLocationNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCoarseSampleLocationNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pixelX()
     public VkCoarseSampleLocationNV pixelX(int pixelX) {
@@ -143,5 +143,5 @@ public final class VkCoarseSampleLocationNV
             segment -> new VkCoarseSampleLocationNV(segment)
         );
     }
-    
+
 }

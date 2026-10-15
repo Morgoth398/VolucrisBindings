@@ -22,49 +22,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXTUResourceUsage
 		implements Struct<CXTUResourceUsage> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_HANDLE;
-    public static final VarHandle NUM_ENTRIES_HANDLE;
-    public static final VarHandle ENTRIES_HANDLE;
+	public static final VarHandle DATA_HANDLE;
+	public static final VarHandle NUM_ENTRIES_HANDLE;
+	public static final VarHandle ENTRIES_HANDLE;
 
-    public static final long DATA_BYTE_OFFSET;
-    public static final long NUM_ENTRIES_BYTE_OFFSET;
-    public static final long ENTRIES_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
+	public static final long NUM_ENTRIES_BYTE_OFFSET;
+	public static final long ENTRIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("data"),
-            JAVA_INT.withName("numEntries"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("entries")
-        ).withName("CXTUResourceUsage").withByteAlignment(8);
-        
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
-        NUM_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numEntries"));
-        ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("entries"));
-        
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        NUM_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numEntries"));
-        ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("entries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("data"),
+		    JAVA_INT.withName("numEntries"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("entries")
+		).withName("CXTUResourceUsage").withByteAlignment(8);
+		
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
+		NUM_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numEntries"));
+		ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("entries"));
+		
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		NUM_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numEntries"));
+		ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("entries"));
+		//@formatter:on
+	}
 
-    public CXTUResourceUsage() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXTUResourceUsage(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXTUResourceUsage(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXTUResourceUsage() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXTUResourceUsage(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXTUResourceUsage(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #data()
     public CXTUResourceUsage data(MemorySegment data) {
@@ -157,5 +157,5 @@ public final class CXTUResourceUsage
             segment -> new CXTUResourceUsage(segment)
         );
     }
-    
+
 }

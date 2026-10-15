@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures
 		implements Struct<VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("separateDepthStencilLayouts"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("separateDepthStencilLayouts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("separateDepthStencilLayouts"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("separateDepthStencilLayouts"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("separateDepthStencilLayouts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("separateDepthStencilLayouts"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures
             segment -> new VkPhysicalDeviceSeparateDepthStencilLayoutsFeatures(segment)
         );
     }
-    
+
 }

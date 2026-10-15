@@ -21,124 +21,124 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerCreateInfo
 		implements Struct<VkSamplerCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MAG_FILTER_HANDLE;
-    public static final VarHandle MIN_FILTER_HANDLE;
-    public static final VarHandle MIPMAP_MODE_HANDLE;
-    public static final VarHandle ADDRESS_MODE_U_HANDLE;
-    public static final VarHandle ADDRESS_MODE_V_HANDLE;
-    public static final VarHandle ADDRESS_MODE_W_HANDLE;
-    public static final VarHandle MIP_LOD_BIAS_HANDLE;
-    public static final VarHandle ANISOTROPY_ENABLE_HANDLE;
-    public static final VarHandle MAX_ANISOTROPY_HANDLE;
-    public static final VarHandle COMPARE_ENABLE_HANDLE;
-    public static final VarHandle COMPARE_OP_HANDLE;
-    public static final VarHandle MIN_LOD_HANDLE;
-    public static final VarHandle MAX_LOD_HANDLE;
-    public static final VarHandle BORDER_COLOR_HANDLE;
-    public static final VarHandle UNNORMALIZED_COORDINATES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MAG_FILTER_HANDLE;
+	public static final VarHandle MIN_FILTER_HANDLE;
+	public static final VarHandle MIPMAP_MODE_HANDLE;
+	public static final VarHandle ADDRESS_MODE_U_HANDLE;
+	public static final VarHandle ADDRESS_MODE_V_HANDLE;
+	public static final VarHandle ADDRESS_MODE_W_HANDLE;
+	public static final VarHandle MIP_LOD_BIAS_HANDLE;
+	public static final VarHandle ANISOTROPY_ENABLE_HANDLE;
+	public static final VarHandle MAX_ANISOTROPY_HANDLE;
+	public static final VarHandle COMPARE_ENABLE_HANDLE;
+	public static final VarHandle COMPARE_OP_HANDLE;
+	public static final VarHandle MIN_LOD_HANDLE;
+	public static final VarHandle MAX_LOD_HANDLE;
+	public static final VarHandle BORDER_COLOR_HANDLE;
+	public static final VarHandle UNNORMALIZED_COORDINATES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MAG_FILTER_BYTE_OFFSET;
-    public static final long MIN_FILTER_BYTE_OFFSET;
-    public static final long MIPMAP_MODE_BYTE_OFFSET;
-    public static final long ADDRESS_MODE_U_BYTE_OFFSET;
-    public static final long ADDRESS_MODE_V_BYTE_OFFSET;
-    public static final long ADDRESS_MODE_W_BYTE_OFFSET;
-    public static final long MIP_LOD_BIAS_BYTE_OFFSET;
-    public static final long ANISOTROPY_ENABLE_BYTE_OFFSET;
-    public static final long MAX_ANISOTROPY_BYTE_OFFSET;
-    public static final long COMPARE_ENABLE_BYTE_OFFSET;
-    public static final long COMPARE_OP_BYTE_OFFSET;
-    public static final long MIN_LOD_BYTE_OFFSET;
-    public static final long MAX_LOD_BYTE_OFFSET;
-    public static final long BORDER_COLOR_BYTE_OFFSET;
-    public static final long UNNORMALIZED_COORDINATES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MAG_FILTER_BYTE_OFFSET;
+	public static final long MIN_FILTER_BYTE_OFFSET;
+	public static final long MIPMAP_MODE_BYTE_OFFSET;
+	public static final long ADDRESS_MODE_U_BYTE_OFFSET;
+	public static final long ADDRESS_MODE_V_BYTE_OFFSET;
+	public static final long ADDRESS_MODE_W_BYTE_OFFSET;
+	public static final long MIP_LOD_BIAS_BYTE_OFFSET;
+	public static final long ANISOTROPY_ENABLE_BYTE_OFFSET;
+	public static final long MAX_ANISOTROPY_BYTE_OFFSET;
+	public static final long COMPARE_ENABLE_BYTE_OFFSET;
+	public static final long COMPARE_OP_BYTE_OFFSET;
+	public static final long MIN_LOD_BYTE_OFFSET;
+	public static final long MAX_LOD_BYTE_OFFSET;
+	public static final long BORDER_COLOR_BYTE_OFFSET;
+	public static final long UNNORMALIZED_COORDINATES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("magFilter"),
-            JAVA_INT.withName("minFilter"),
-            JAVA_INT.withName("mipmapMode"),
-            JAVA_INT.withName("addressModeU"),
-            JAVA_INT.withName("addressModeV"),
-            JAVA_INT.withName("addressModeW"),
-            JAVA_FLOAT.withName("mipLodBias"),
-            JAVA_INT.withName("anisotropyEnable"),
-            JAVA_FLOAT.withName("maxAnisotropy"),
-            JAVA_INT.withName("compareEnable"),
-            JAVA_INT.withName("compareOp"),
-            JAVA_FLOAT.withName("minLod"),
-            JAVA_FLOAT.withName("maxLod"),
-            JAVA_INT.withName("borderColor"),
-            JAVA_INT.withName("unnormalizedCoordinates")
-        ).withName("VkSamplerCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MAG_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("magFilter"));
-        MIN_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minFilter"));
-        MIPMAP_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipmapMode"));
-        ADDRESS_MODE_U_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressModeU"));
-        ADDRESS_MODE_V_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressModeV"));
-        ADDRESS_MODE_W_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressModeW"));
-        MIP_LOD_BIAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipLodBias"));
-        ANISOTROPY_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("anisotropyEnable"));
-        MAX_ANISOTROPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxAnisotropy"));
-        COMPARE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareEnable"));
-        COMPARE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareOp"));
-        MIN_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minLod"));
-        MAX_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLod"));
-        BORDER_COLOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("borderColor"));
-        UNNORMALIZED_COORDINATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unnormalizedCoordinates"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MAG_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("magFilter"));
-        MIN_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minFilter"));
-        MIPMAP_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipmapMode"));
-        ADDRESS_MODE_U_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressModeU"));
-        ADDRESS_MODE_V_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressModeV"));
-        ADDRESS_MODE_W_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressModeW"));
-        MIP_LOD_BIAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipLodBias"));
-        ANISOTROPY_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("anisotropyEnable"));
-        MAX_ANISOTROPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxAnisotropy"));
-        COMPARE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareEnable"));
-        COMPARE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareOp"));
-        MIN_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minLod"));
-        MAX_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLod"));
-        BORDER_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("borderColor"));
-        UNNORMALIZED_COORDINATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unnormalizedCoordinates"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("magFilter"),
+		    JAVA_INT.withName("minFilter"),
+		    JAVA_INT.withName("mipmapMode"),
+		    JAVA_INT.withName("addressModeU"),
+		    JAVA_INT.withName("addressModeV"),
+		    JAVA_INT.withName("addressModeW"),
+		    JAVA_FLOAT.withName("mipLodBias"),
+		    JAVA_INT.withName("anisotropyEnable"),
+		    JAVA_FLOAT.withName("maxAnisotropy"),
+		    JAVA_INT.withName("compareEnable"),
+		    JAVA_INT.withName("compareOp"),
+		    JAVA_FLOAT.withName("minLod"),
+		    JAVA_FLOAT.withName("maxLod"),
+		    JAVA_INT.withName("borderColor"),
+		    JAVA_INT.withName("unnormalizedCoordinates")
+		).withName("VkSamplerCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MAG_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("magFilter"));
+		MIN_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minFilter"));
+		MIPMAP_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipmapMode"));
+		ADDRESS_MODE_U_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressModeU"));
+		ADDRESS_MODE_V_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressModeV"));
+		ADDRESS_MODE_W_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressModeW"));
+		MIP_LOD_BIAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipLodBias"));
+		ANISOTROPY_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("anisotropyEnable"));
+		MAX_ANISOTROPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxAnisotropy"));
+		COMPARE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareEnable"));
+		COMPARE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareOp"));
+		MIN_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minLod"));
+		MAX_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLod"));
+		BORDER_COLOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("borderColor"));
+		UNNORMALIZED_COORDINATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unnormalizedCoordinates"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MAG_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("magFilter"));
+		MIN_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minFilter"));
+		MIPMAP_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipmapMode"));
+		ADDRESS_MODE_U_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressModeU"));
+		ADDRESS_MODE_V_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressModeV"));
+		ADDRESS_MODE_W_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressModeW"));
+		MIP_LOD_BIAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipLodBias"));
+		ANISOTROPY_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("anisotropyEnable"));
+		MAX_ANISOTROPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxAnisotropy"));
+		COMPARE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareEnable"));
+		COMPARE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareOp"));
+		MIN_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minLod"));
+		MAX_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLod"));
+		BORDER_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("borderColor"));
+		UNNORMALIZED_COORDINATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unnormalizedCoordinates"));
+		//@formatter:on
+	}
 
-    public VkSamplerCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSamplerCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSamplerCreateInfo sType(int sType) {
@@ -376,5 +376,5 @@ public final class VkSamplerCreateInfo
             segment -> new VkSamplerCreateInfo(segment)
         );
     }
-    
+
 }

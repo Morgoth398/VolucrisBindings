@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueryPoolCreateInfo
 		implements Struct<VkQueryPoolCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle QUERY_TYPE_HANDLE;
-    public static final VarHandle QUERY_COUNT_HANDLE;
-    public static final VarHandle PIPELINE_STATISTICS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle QUERY_TYPE_HANDLE;
+	public static final VarHandle QUERY_COUNT_HANDLE;
+	public static final VarHandle PIPELINE_STATISTICS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long QUERY_TYPE_BYTE_OFFSET;
-    public static final long QUERY_COUNT_BYTE_OFFSET;
-    public static final long PIPELINE_STATISTICS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long QUERY_TYPE_BYTE_OFFSET;
+	public static final long QUERY_COUNT_BYTE_OFFSET;
+	public static final long PIPELINE_STATISTICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("queryType"),
-            JAVA_INT.withName("queryCount"),
-            JAVA_INT.withName("pipelineStatistics")
-        ).withName("VkQueryPoolCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        QUERY_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryType"));
-        QUERY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryCount"));
-        PIPELINE_STATISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStatistics"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        QUERY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryType"));
-        QUERY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryCount"));
-        PIPELINE_STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStatistics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("queryType"),
+		    JAVA_INT.withName("queryCount"),
+		    JAVA_INT.withName("pipelineStatistics")
+		).withName("VkQueryPoolCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		QUERY_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryType"));
+		QUERY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryCount"));
+		PIPELINE_STATISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStatistics"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		QUERY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryType"));
+		QUERY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryCount"));
+		PIPELINE_STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStatistics"));
+		//@formatter:on
+	}
 
-    public VkQueryPoolCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueryPoolCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueryPoolCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkQueryPoolCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueryPoolCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueryPoolCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkQueryPoolCreateInfo sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkQueryPoolCreateInfo
             segment -> new VkQueryPoolCreateInfo(segment)
         );
     }
-    
+
 }

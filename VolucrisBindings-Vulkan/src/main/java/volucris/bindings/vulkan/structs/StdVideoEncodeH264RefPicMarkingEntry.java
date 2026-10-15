@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH264RefPicMarkingEntry
 		implements Struct<StdVideoEncodeH264RefPicMarkingEntry> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MEMORY_MANAGEMENT_CONTROL_OPERATION_HANDLE;
-    public static final VarHandle DIFFERENCE_OF_PIC_NUMS_MINUS1_HANDLE;
-    public static final VarHandle LONG_TERM_PIC_NUM_HANDLE;
-    public static final VarHandle LONG_TERM_FRAME_IDX_HANDLE;
-    public static final VarHandle MAX_LONG_TERM_FRAME_IDX_PLUS1_HANDLE;
+	public static final VarHandle MEMORY_MANAGEMENT_CONTROL_OPERATION_HANDLE;
+	public static final VarHandle DIFFERENCE_OF_PIC_NUMS_MINUS1_HANDLE;
+	public static final VarHandle LONG_TERM_PIC_NUM_HANDLE;
+	public static final VarHandle LONG_TERM_FRAME_IDX_HANDLE;
+	public static final VarHandle MAX_LONG_TERM_FRAME_IDX_PLUS1_HANDLE;
 
-    public static final long MEMORY_MANAGEMENT_CONTROL_OPERATION_BYTE_OFFSET;
-    public static final long DIFFERENCE_OF_PIC_NUMS_MINUS1_BYTE_OFFSET;
-    public static final long LONG_TERM_PIC_NUM_BYTE_OFFSET;
-    public static final long LONG_TERM_FRAME_IDX_BYTE_OFFSET;
-    public static final long MAX_LONG_TERM_FRAME_IDX_PLUS1_BYTE_OFFSET;
+	public static final long MEMORY_MANAGEMENT_CONTROL_OPERATION_BYTE_OFFSET;
+	public static final long DIFFERENCE_OF_PIC_NUMS_MINUS1_BYTE_OFFSET;
+	public static final long LONG_TERM_PIC_NUM_BYTE_OFFSET;
+	public static final long LONG_TERM_FRAME_IDX_BYTE_OFFSET;
+	public static final long MAX_LONG_TERM_FRAME_IDX_PLUS1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("memory_management_control_operation"),
-            JAVA_SHORT.withName("difference_of_pic_nums_minus1"),
-            JAVA_SHORT.withName("long_term_pic_num"),
-            JAVA_SHORT.withName("long_term_frame_idx"),
-            JAVA_SHORT.withName("max_long_term_frame_idx_plus1")
-        ).withName("StdVideoEncodeH264RefPicMarkingEntry").withByteAlignment(4);
-        
-        MEMORY_MANAGEMENT_CONTROL_OPERATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory_management_control_operation"));
-        DIFFERENCE_OF_PIC_NUMS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("difference_of_pic_nums_minus1"));
-        LONG_TERM_PIC_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_pic_num"));
-        LONG_TERM_FRAME_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_frame_idx"));
-        MAX_LONG_TERM_FRAME_IDX_PLUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_long_term_frame_idx_plus1"));
-        
-        MEMORY_MANAGEMENT_CONTROL_OPERATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory_management_control_operation"));
-        DIFFERENCE_OF_PIC_NUMS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("difference_of_pic_nums_minus1"));
-        LONG_TERM_PIC_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_pic_num"));
-        LONG_TERM_FRAME_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_frame_idx"));
-        MAX_LONG_TERM_FRAME_IDX_PLUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_long_term_frame_idx_plus1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("memory_management_control_operation"),
+		    JAVA_SHORT.withName("difference_of_pic_nums_minus1"),
+		    JAVA_SHORT.withName("long_term_pic_num"),
+		    JAVA_SHORT.withName("long_term_frame_idx"),
+		    JAVA_SHORT.withName("max_long_term_frame_idx_plus1")
+		).withName("StdVideoEncodeH264RefPicMarkingEntry").withByteAlignment(4);
+		
+		MEMORY_MANAGEMENT_CONTROL_OPERATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory_management_control_operation"));
+		DIFFERENCE_OF_PIC_NUMS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("difference_of_pic_nums_minus1"));
+		LONG_TERM_PIC_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_pic_num"));
+		LONG_TERM_FRAME_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_frame_idx"));
+		MAX_LONG_TERM_FRAME_IDX_PLUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_long_term_frame_idx_plus1"));
+		
+		MEMORY_MANAGEMENT_CONTROL_OPERATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory_management_control_operation"));
+		DIFFERENCE_OF_PIC_NUMS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("difference_of_pic_nums_minus1"));
+		LONG_TERM_PIC_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_pic_num"));
+		LONG_TERM_FRAME_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_frame_idx"));
+		MAX_LONG_TERM_FRAME_IDX_PLUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_long_term_frame_idx_plus1"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH264RefPicMarkingEntry() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoEncodeH264RefPicMarkingEntry(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoEncodeH264RefPicMarkingEntry(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoEncodeH264RefPicMarkingEntry() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH264RefPicMarkingEntry(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH264RefPicMarkingEntry(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #memory_management_control_operation()
     public StdVideoEncodeH264RefPicMarkingEntry memory_management_control_operation(int memory_management_control_operation) {
@@ -173,5 +173,5 @@ public final class StdVideoEncodeH264RefPicMarkingEntry
             segment -> new StdVideoEncodeH264RefPicMarkingEntry(segment)
         );
     }
-    
+
 }

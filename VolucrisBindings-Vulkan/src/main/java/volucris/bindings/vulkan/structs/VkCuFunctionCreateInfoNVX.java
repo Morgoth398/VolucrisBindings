@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCuFunctionCreateInfoNVX
 		implements Struct<VkCuFunctionCreateInfoNVX> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MODULE_HANDLE;
-    public static final VarHandle P_NAME_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MODULE_HANDLE;
+	public static final VarHandle P_NAME_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MODULE_BYTE_OFFSET;
-    public static final long P_NAME_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MODULE_BYTE_OFFSET;
+	public static final long P_NAME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("module"),
-            UNBOUNDED_ADDRESS.withName("pName")
-        ).withName("VkCuFunctionCreateInfoNVX").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("module"));
-        P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("module"));
-        P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("module"),
+		    UNBOUNDED_ADDRESS.withName("pName")
+		).withName("VkCuFunctionCreateInfoNVX").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("module"));
+		P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("module"));
+		P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
+		//@formatter:on
+	}
 
-    public VkCuFunctionCreateInfoNVX() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCuFunctionCreateInfoNVX(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCuFunctionCreateInfoNVX(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCuFunctionCreateInfoNVX() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCuFunctionCreateInfoNVX(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCuFunctionCreateInfoNVX(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCuFunctionCreateInfoNVX sType(int sType) {
@@ -176,5 +176,5 @@ public final class VkCuFunctionCreateInfoNVX
             segment -> new VkCuFunctionCreateInfoNVX(segment)
         );
     }
-    
+
 }

@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMicromapUsageEXT
 		implements Struct<VkMicromapUsageEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle COUNT_HANDLE;
-    public static final VarHandle SUBDIVISION_LEVEL_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle COUNT_HANDLE;
+	public static final VarHandle SUBDIVISION_LEVEL_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
 
-    public static final long COUNT_BYTE_OFFSET;
-    public static final long SUBDIVISION_LEVEL_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
+	public static final long COUNT_BYTE_OFFSET;
+	public static final long SUBDIVISION_LEVEL_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("count"),
-            JAVA_INT.withName("subdivisionLevel"),
-            JAVA_INT.withName("format")
-        ).withName("VkMicromapUsageEXT").withByteAlignment(4);
-        
-        COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("count"));
-        SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subdivisionLevel"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        
-        COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("count"));
-        SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subdivisionLevel"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("count"),
+		    JAVA_INT.withName("subdivisionLevel"),
+		    JAVA_INT.withName("format")
+		).withName("VkMicromapUsageEXT").withByteAlignment(4);
+		
+		COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("count"));
+		SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subdivisionLevel"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		
+		COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("count"));
+		SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subdivisionLevel"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		//@formatter:on
+	}
 
-    public VkMicromapUsageEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMicromapUsageEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMicromapUsageEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMicromapUsageEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMicromapUsageEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMicromapUsageEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #count()
     public VkMicromapUsageEXT count(int count) {
@@ -143,5 +143,5 @@ public final class VkMicromapUsageEXT
             segment -> new VkMicromapUsageEXT(segment)
         );
     }
-    
+
 }

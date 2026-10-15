@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerBlockMatchWindowCreateInfoQCOM
 		implements Struct<VkSamplerBlockMatchWindowCreateInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WINDOW_COMPARE_MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WINDOW_COMPARE_MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WINDOW_EXTENT_BYTE_OFFSET;
-    public static final long WINDOW_COMPARE_MODE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WINDOW_EXTENT_BYTE_OFFSET;
+	public static final long WINDOW_COMPARE_MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D windowExtent;
+	private final VkExtent2D windowExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("windowExtent"),
-            JAVA_INT.withName("windowCompareMode"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSamplerBlockMatchWindowCreateInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WINDOW_COMPARE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("windowCompareMode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WINDOW_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("windowExtent"));
-        WINDOW_COMPARE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("windowCompareMode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("windowExtent"),
+		    JAVA_INT.withName("windowCompareMode"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSamplerBlockMatchWindowCreateInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WINDOW_COMPARE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("windowCompareMode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WINDOW_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("windowExtent"));
+		WINDOW_COMPARE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("windowCompareMode"));
+		//@formatter:on
+	}
 
-    public VkSamplerBlockMatchWindowCreateInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerBlockMatchWindowCreateInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerBlockMatchWindowCreateInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        windowExtent = new VkExtent2D(segment.asSlice(WINDOW_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkSamplerBlockMatchWindowCreateInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerBlockMatchWindowCreateInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerBlockMatchWindowCreateInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    windowExtent = new VkExtent2D(segment.asSlice(WINDOW_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSamplerBlockMatchWindowCreateInfoQCOM sType(int sType) {
@@ -98,16 +98,6 @@ public final class VkSamplerBlockMatchWindowCreateInfoQCOM
     	return segment;
     }
     
-    /// @see #windowCompareMode()
-    public VkSamplerBlockMatchWindowCreateInfoQCOM windowCompareMode(int windowCompareMode) {
-    	WINDOW_COMPARE_MODE_HANDLE.set(segment, 0L, windowCompareMode);
-    	return this;
-    }
-    
-    public int windowCompareMode() {
-    	return (int) WINDOW_COMPARE_MODE_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #windowExtent()
     public VkSamplerBlockMatchWindowCreateInfoQCOM windowExtent(Consumer<VkExtent2D> consumer) {
     	consumer.accept(windowExtent);
@@ -122,6 +112,16 @@ public final class VkSamplerBlockMatchWindowCreateInfoQCOM
     
     public VkExtent2D windowExtent() {
     	return windowExtent;
+    }
+    
+    /// @see #windowCompareMode()
+    public VkSamplerBlockMatchWindowCreateInfoQCOM windowCompareMode(int windowCompareMode) {
+    	WINDOW_COMPARE_MODE_HANDLE.set(segment, 0L, windowCompareMode);
+    	return this;
+    }
+    
+    public int windowCompareMode() {
+    	return (int) WINDOW_COMPARE_MODE_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -175,5 +175,5 @@ public final class VkSamplerBlockMatchWindowCreateInfoQCOM
             segment -> new VkSamplerBlockMatchWindowCreateInfoQCOM(segment)
         );
     }
-    
+
 }

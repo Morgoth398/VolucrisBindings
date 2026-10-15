@@ -21,76 +21,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectCommandsLayoutCreateInfoEXT
 		implements Struct<VkIndirectCommandsLayoutCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle SHADER_STAGES_HANDLE;
-    public static final VarHandle INDIRECT_STRIDE_HANDLE;
-    public static final VarHandle PIPELINE_LAYOUT_HANDLE;
-    public static final VarHandle TOKEN_COUNT_HANDLE;
-    public static final VarHandle P_TOKENS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle SHADER_STAGES_HANDLE;
+	public static final VarHandle INDIRECT_STRIDE_HANDLE;
+	public static final VarHandle PIPELINE_LAYOUT_HANDLE;
+	public static final VarHandle TOKEN_COUNT_HANDLE;
+	public static final VarHandle P_TOKENS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SHADER_STAGES_BYTE_OFFSET;
-    public static final long INDIRECT_STRIDE_BYTE_OFFSET;
-    public static final long PIPELINE_LAYOUT_BYTE_OFFSET;
-    public static final long TOKEN_COUNT_BYTE_OFFSET;
-    public static final long P_TOKENS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SHADER_STAGES_BYTE_OFFSET;
+	public static final long INDIRECT_STRIDE_BYTE_OFFSET;
+	public static final long PIPELINE_LAYOUT_BYTE_OFFSET;
+	public static final long TOKEN_COUNT_BYTE_OFFSET;
+	public static final long P_TOKENS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("shaderStages"),
-            JAVA_INT.withName("indirectStride"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pipelineLayout"),
-            JAVA_INT.withName("tokenCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTokens")
-        ).withName("VkIndirectCommandsLayoutCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStages"));
-        INDIRECT_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectStride"));
-        PIPELINE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineLayout"));
-        TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tokenCount"));
-        P_TOKENS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTokens"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStages"));
-        INDIRECT_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectStride"));
-        PIPELINE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineLayout"));
-        TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tokenCount"));
-        P_TOKENS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTokens"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("shaderStages"),
+		    JAVA_INT.withName("indirectStride"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pipelineLayout"),
+		    JAVA_INT.withName("tokenCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTokens")
+		).withName("VkIndirectCommandsLayoutCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStages"));
+		INDIRECT_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectStride"));
+		PIPELINE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineLayout"));
+		TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tokenCount"));
+		P_TOKENS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTokens"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStages"));
+		INDIRECT_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectStride"));
+		PIPELINE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineLayout"));
+		TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tokenCount"));
+		P_TOKENS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTokens"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsLayoutCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsLayoutCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsLayoutCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsLayoutCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsLayoutCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsLayoutCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectCommandsLayoutCreateInfoEXT sType(int sType) {
@@ -238,5 +238,5 @@ public final class VkIndirectCommandsLayoutCreateInfoEXT
             segment -> new VkIndirectCommandsLayoutCreateInfoEXT(segment)
         );
     }
-    
+
 }

@@ -22,306 +22,306 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan12Properties
 		implements Struct<VkPhysicalDeviceVulkan12Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DRIVER_ID_HANDLE;
-    public static final VarHandle DRIVER_NAME_HANDLE;
-    public static final VarHandle DRIVER_INFO_HANDLE;
-    public static final VarHandle DENORM_BEHAVIOR_INDEPENDENCE_HANDLE;
-    public static final VarHandle ROUNDING_MODE_INDEPENDENCE_HANDLE;
-    public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE;
-    public static final VarHandle MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE;
-    public static final VarHandle SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE;
-    public static final VarHandle INDEPENDENT_RESOLVE_NONE_HANDLE;
-    public static final VarHandle INDEPENDENT_RESOLVE_HANDLE;
-    public static final VarHandle FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE;
-    public static final VarHandle FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE;
-    public static final VarHandle MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE;
-    public static final VarHandle FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DRIVER_ID_HANDLE;
+	public static final VarHandle DRIVER_NAME_HANDLE;
+	public static final VarHandle DRIVER_INFO_HANDLE;
+	public static final VarHandle DENORM_BEHAVIOR_INDEPENDENCE_HANDLE;
+	public static final VarHandle ROUNDING_MODE_INDEPENDENCE_HANDLE;
+	public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE;
+	public static final VarHandle MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE;
+	public static final VarHandle SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE;
+	public static final VarHandle INDEPENDENT_RESOLVE_NONE_HANDLE;
+	public static final VarHandle INDEPENDENT_RESOLVE_HANDLE;
+	public static final VarHandle FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE;
+	public static final VarHandle FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE;
+	public static final VarHandle MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE;
+	public static final VarHandle FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DRIVER_ID_BYTE_OFFSET;
-    public static final long DRIVER_NAME_BYTE_OFFSET;
-    public static final long DRIVER_INFO_BYTE_OFFSET;
-    public static final long CONFORMANCE_VERSION_BYTE_OFFSET;
-    public static final long DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET;
-    public static final long ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET;
-    public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET;
-    public static final long MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET;
-    public static final long SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET;
-    public static final long INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET;
-    public static final long INDEPENDENT_RESOLVE_BYTE_OFFSET;
-    public static final long FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET;
-    public static final long FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET;
-    public static final long MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DRIVER_ID_BYTE_OFFSET;
+	public static final long DRIVER_NAME_BYTE_OFFSET;
+	public static final long DRIVER_INFO_BYTE_OFFSET;
+	public static final long CONFORMANCE_VERSION_BYTE_OFFSET;
+	public static final long DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET;
+	public static final long ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET;
+	public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET;
+	public static final long MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET;
+	public static final long SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET;
+	public static final long INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET;
+	public static final long INDEPENDENT_RESOLVE_BYTE_OFFSET;
+	public static final long FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET;
+	public static final long FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET;
+	public static final long MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkConformanceVersion conformanceVersion;
+	private final VkConformanceVersion conformanceVersion;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("driverID"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverName"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverInfo"),
-            VkConformanceVersion.LAYOUT.withName("conformanceVersion"),
-            JAVA_INT.withName("denormBehaviorIndependence"),
-            JAVA_INT.withName("roundingModeIndependence"),
-            JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat16"),
-            JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat32"),
-            JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat64"),
-            JAVA_INT.withName("shaderDenormPreserveFloat16"),
-            JAVA_INT.withName("shaderDenormPreserveFloat32"),
-            JAVA_INT.withName("shaderDenormPreserveFloat64"),
-            JAVA_INT.withName("shaderDenormFlushToZeroFloat16"),
-            JAVA_INT.withName("shaderDenormFlushToZeroFloat32"),
-            JAVA_INT.withName("shaderDenormFlushToZeroFloat64"),
-            JAVA_INT.withName("shaderRoundingModeRTEFloat16"),
-            JAVA_INT.withName("shaderRoundingModeRTEFloat32"),
-            JAVA_INT.withName("shaderRoundingModeRTEFloat64"),
-            JAVA_INT.withName("shaderRoundingModeRTZFloat16"),
-            JAVA_INT.withName("shaderRoundingModeRTZFloat32"),
-            JAVA_INT.withName("shaderRoundingModeRTZFloat64"),
-            JAVA_INT.withName("maxUpdateAfterBindDescriptorsInAllPools"),
-            JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("robustBufferAccessUpdateAfterBind"),
-            JAVA_INT.withName("quadDivergentImplicitLod"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSamplers"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindUniformBuffers"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageBuffers"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSampledImages"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageImages"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInputAttachments"),
-            JAVA_INT.withName("maxPerStageUpdateAfterBindResources"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSamplers"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffers"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffers"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSampledImages"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageImages"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInputAttachments"),
-            JAVA_INT.withName("supportedDepthResolveModes"),
-            JAVA_INT.withName("supportedStencilResolveModes"),
-            JAVA_INT.withName("independentResolveNone"),
-            JAVA_INT.withName("independentResolve"),
-            JAVA_INT.withName("filterMinmaxSingleComponentFormats"),
-            JAVA_INT.withName("filterMinmaxImageComponentMapping"),
-            JAVA_LONG.withName("maxTimelineSemaphoreValueDifference"),
-            JAVA_INT.withName("framebufferIntegerColorSampleCounts"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVulkan12Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DRIVER_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverID"));
-        DRIVER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverName"), PathElement.sequenceElement());
-        DRIVER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverInfo"), PathElement.sequenceElement());
-        DENORM_BEHAVIOR_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("denormBehaviorIndependence"));
-        ROUNDING_MODE_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("roundingModeIndependence"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
-        SHADER_DENORM_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat16"));
-        SHADER_DENORM_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat32"));
-        SHADER_DENORM_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat64"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
-        SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
-        SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
-        SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
-        SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
-        SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
-        SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
-        MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
-        ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
-        QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("quadDivergentImplicitLod"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
-        MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
-        SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedDepthResolveModes"));
-        SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedStencilResolveModes"));
-        INDEPENDENT_RESOLVE_NONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolveNone"));
-        INDEPENDENT_RESOLVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolve"));
-        FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
-        FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxImageComponentMapping"));
-        MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
-        FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferIntegerColorSampleCounts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DRIVER_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverID"));
-        DRIVER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverName"));
-        DRIVER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverInfo"));
-        CONFORMANCE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conformanceVersion"));
-        DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("denormBehaviorIndependence"));
-        ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("roundingModeIndependence"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
-        SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat16"));
-        SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat32"));
-        SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat64"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
-        SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
-        SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
-        SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
-        SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
-        SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
-        SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
-        MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
-        ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
-        QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quadDivergentImplicitLod"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
-        MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
-        SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedDepthResolveModes"));
-        SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedStencilResolveModes"));
-        INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolveNone"));
-        INDEPENDENT_RESOLVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolve"));
-        FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
-        FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxImageComponentMapping"));
-        MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
-        FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferIntegerColorSampleCounts"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("driverID"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverName"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverInfo"),
+		    VkConformanceVersion.LAYOUT.withName("conformanceVersion"),
+		    JAVA_INT.withName("denormBehaviorIndependence"),
+		    JAVA_INT.withName("roundingModeIndependence"),
+		    JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat16"),
+		    JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat32"),
+		    JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat64"),
+		    JAVA_INT.withName("shaderDenormPreserveFloat16"),
+		    JAVA_INT.withName("shaderDenormPreserveFloat32"),
+		    JAVA_INT.withName("shaderDenormPreserveFloat64"),
+		    JAVA_INT.withName("shaderDenormFlushToZeroFloat16"),
+		    JAVA_INT.withName("shaderDenormFlushToZeroFloat32"),
+		    JAVA_INT.withName("shaderDenormFlushToZeroFloat64"),
+		    JAVA_INT.withName("shaderRoundingModeRTEFloat16"),
+		    JAVA_INT.withName("shaderRoundingModeRTEFloat32"),
+		    JAVA_INT.withName("shaderRoundingModeRTEFloat64"),
+		    JAVA_INT.withName("shaderRoundingModeRTZFloat16"),
+		    JAVA_INT.withName("shaderRoundingModeRTZFloat32"),
+		    JAVA_INT.withName("shaderRoundingModeRTZFloat64"),
+		    JAVA_INT.withName("maxUpdateAfterBindDescriptorsInAllPools"),
+		    JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("robustBufferAccessUpdateAfterBind"),
+		    JAVA_INT.withName("quadDivergentImplicitLod"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSamplers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindUniformBuffers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageBuffers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSampledImages"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageImages"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInputAttachments"),
+		    JAVA_INT.withName("maxPerStageUpdateAfterBindResources"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSamplers"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffers"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffers"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSampledImages"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageImages"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInputAttachments"),
+		    JAVA_INT.withName("supportedDepthResolveModes"),
+		    JAVA_INT.withName("supportedStencilResolveModes"),
+		    JAVA_INT.withName("independentResolveNone"),
+		    JAVA_INT.withName("independentResolve"),
+		    JAVA_INT.withName("filterMinmaxSingleComponentFormats"),
+		    JAVA_INT.withName("filterMinmaxImageComponentMapping"),
+		    JAVA_LONG.withName("maxTimelineSemaphoreValueDifference"),
+		    JAVA_INT.withName("framebufferIntegerColorSampleCounts"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVulkan12Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DRIVER_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverID"));
+		DRIVER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverName"), PathElement.sequenceElement());
+		DRIVER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverInfo"), PathElement.sequenceElement());
+		DENORM_BEHAVIOR_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("denormBehaviorIndependence"));
+		ROUNDING_MODE_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("roundingModeIndependence"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
+		SHADER_DENORM_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat16"));
+		SHADER_DENORM_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat32"));
+		SHADER_DENORM_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat64"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
+		SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
+		SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
+		SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
+		SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
+		SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
+		SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
+		MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
+		ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
+		QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("quadDivergentImplicitLod"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
+		MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
+		SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedDepthResolveModes"));
+		SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedStencilResolveModes"));
+		INDEPENDENT_RESOLVE_NONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolveNone"));
+		INDEPENDENT_RESOLVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolve"));
+		FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
+		FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxImageComponentMapping"));
+		MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
+		FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferIntegerColorSampleCounts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DRIVER_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverID"));
+		DRIVER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverName"));
+		DRIVER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverInfo"));
+		CONFORMANCE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conformanceVersion"));
+		DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("denormBehaviorIndependence"));
+		ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("roundingModeIndependence"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
+		SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat16"));
+		SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat32"));
+		SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat64"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
+		SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
+		SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
+		SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
+		SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
+		SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
+		SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
+		MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
+		ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
+		QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quadDivergentImplicitLod"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
+		MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
+		SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedDepthResolveModes"));
+		SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedStencilResolveModes"));
+		INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolveNone"));
+		INDEPENDENT_RESOLVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolve"));
+		FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
+		FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxImageComponentMapping"));
+		MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
+		FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferIntegerColorSampleCounts"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan12Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan12Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan12Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-        conformanceVersion = new VkConformanceVersion(segment.asSlice(CONFORMANCE_VERSION_BYTE_OFFSET, VkConformanceVersion.LAYOUT));
-    }
+	public VkPhysicalDeviceVulkan12Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan12Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan12Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    conformanceVersion = new VkConformanceVersion(segment.asSlice(CONFORMANCE_VERSION_BYTE_OFFSET, VkConformanceVersion.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan12Properties sType(int sType) {
@@ -368,6 +368,10 @@ public final class VkPhysicalDeviceVulkan12Properties
     	return (byte) DRIVER_NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String driverName() {
+        return segment.getString(DRIVER_NAME_BYTE_OFFSET);
+    }
+    
     /// @see #driverInfo(int)
     public VkPhysicalDeviceVulkan12Properties driverInfo(byte driverInfo, int index0) {
     	DRIVER_INFO_HANDLE.set(segment, 0L, index0, driverInfo);
@@ -376,6 +380,26 @@ public final class VkPhysicalDeviceVulkan12Properties
     
     public byte driverInfo(int index0) {
     	return (byte) DRIVER_INFO_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String driverInfo() {
+        return segment.getString(DRIVER_INFO_BYTE_OFFSET);
+    }
+    
+    /// @see #conformanceVersion()
+    public VkPhysicalDeviceVulkan12Properties conformanceVersion(Consumer<VkConformanceVersion> consumer) {
+    	consumer.accept(conformanceVersion);
+    	return this;
+    }
+    
+    /// @see #conformanceVersion()
+    public VkPhysicalDeviceVulkan12Properties conformanceVersion(VkConformanceVersion other) {
+    	conformanceVersion.set(other);
+    	return this;
+    }
+    
+    public VkConformanceVersion conformanceVersion() {
+    	return conformanceVersion;
     }
     
     /// @see #denormBehaviorIndependence()
@@ -858,30 +882,6 @@ public final class VkPhysicalDeviceVulkan12Properties
     	return (int) FRAMEBUFFER_INTEGER_COLOR_SAMPLE_COUNTS_HANDLE.get(segment, 0L);
     }
     
-    /// @see #conformanceVersion()
-    public VkPhysicalDeviceVulkan12Properties conformanceVersion(Consumer<VkConformanceVersion> consumer) {
-    	consumer.accept(conformanceVersion);
-    	return this;
-    }
-    
-    /// @see #conformanceVersion()
-    public VkPhysicalDeviceVulkan12Properties conformanceVersion(VkConformanceVersion other) {
-    	conformanceVersion.set(other);
-    	return this;
-    }
-    
-    public VkConformanceVersion conformanceVersion() {
-    	return conformanceVersion;
-    }
-    
-    public String driverName() {
-        return segment.getString(DRIVER_NAME_BYTE_OFFSET);
-    }
-    
-    public String driverInfo() {
-        return segment.getString(DRIVER_INFO_BYTE_OFFSET);
-    }
-    
     @Override
     public VkPhysicalDeviceVulkan12Properties set(VkPhysicalDeviceVulkan12Properties other) {
         return set(other.segment);
@@ -933,5 +933,5 @@ public final class VkPhysicalDeviceVulkan12Properties
             segment -> new VkPhysicalDeviceVulkan12Properties(segment)
         );
     }
-    
+
 }

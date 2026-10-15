@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorImageInfo
 		implements Struct<VkDescriptorImageInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SAMPLER_HANDLE;
-    public static final VarHandle IMAGE_VIEW_HANDLE;
-    public static final VarHandle IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle SAMPLER_HANDLE;
+	public static final VarHandle IMAGE_VIEW_HANDLE;
+	public static final VarHandle IMAGE_LAYOUT_HANDLE;
 
-    public static final long SAMPLER_BYTE_OFFSET;
-    public static final long IMAGE_VIEW_BYTE_OFFSET;
-    public static final long IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long SAMPLER_BYTE_OFFSET;
+	public static final long IMAGE_VIEW_BYTE_OFFSET;
+	public static final long IMAGE_LAYOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("sampler"),
-            UNBOUNDED_ADDRESS.withName("imageView"),
-            JAVA_INT.withName("imageLayout"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDescriptorImageInfo").withByteAlignment(8);
-        
-        SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampler"));
-        IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
-        
-        SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampler"));
-        IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("sampler"),
+		    UNBOUNDED_ADDRESS.withName("imageView"),
+		    JAVA_INT.withName("imageLayout"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDescriptorImageInfo").withByteAlignment(8);
+		
+		SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampler"));
+		IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
+		
+		SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampler"));
+		IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
+		//@formatter:on
+	}
 
-    public VkDescriptorImageInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorImageInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorImageInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorImageInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorImageInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorImageInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sampler()
     public VkDescriptorImageInfo sampler(VkSampler sampler) {
@@ -156,5 +156,5 @@ public final class VkDescriptorImageInfo
             segment -> new VkDescriptorImageInfo(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderTerminateInvocationFeatures
 		implements Struct<VkPhysicalDeviceShaderTerminateInvocationFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_TERMINATE_INVOCATION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_TERMINATE_INVOCATION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_TERMINATE_INVOCATION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_TERMINATE_INVOCATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderTerminateInvocation"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderTerminateInvocationFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_TERMINATE_INVOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTerminateInvocation"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_TERMINATE_INVOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTerminateInvocation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderTerminateInvocation"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderTerminateInvocationFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_TERMINATE_INVOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTerminateInvocation"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_TERMINATE_INVOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTerminateInvocation"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderTerminateInvocationFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderTerminateInvocationFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderTerminateInvocationFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderTerminateInvocationFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderTerminateInvocationFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderTerminateInvocationFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderTerminateInvocationFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceShaderTerminateInvocationFeatures
             segment -> new VkPhysicalDeviceShaderTerminateInvocationFeatures(segment)
         );
     }
-    
+
 }

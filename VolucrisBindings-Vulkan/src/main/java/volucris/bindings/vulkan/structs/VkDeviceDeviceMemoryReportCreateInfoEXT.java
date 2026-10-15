@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceDeviceMemoryReportCreateInfoEXT
 		implements Struct<VkDeviceDeviceMemoryReportCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle PFN_USER_CALLBACK_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle PFN_USER_CALLBACK_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PFN_USER_CALLBACK_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PFN_USER_CALLBACK_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pfnUserCallback"),
-            UNBOUNDED_ADDRESS.withName("pUserData")
-        ).withName("VkDeviceDeviceMemoryReportCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        PFN_USER_CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnUserCallback"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PFN_USER_CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnUserCallback"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pfnUserCallback"),
+		    UNBOUNDED_ADDRESS.withName("pUserData")
+		).withName("VkDeviceDeviceMemoryReportCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		PFN_USER_CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnUserCallback"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PFN_USER_CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnUserCallback"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		//@formatter:on
+	}
 
-    public VkDeviceDeviceMemoryReportCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceDeviceMemoryReportCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceDeviceMemoryReportCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceDeviceMemoryReportCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceDeviceMemoryReportCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceDeviceMemoryReportCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceDeviceMemoryReportCreateInfoEXT sType(int sType) {
@@ -192,5 +192,5 @@ public final class VkDeviceDeviceMemoryReportCreateInfoEXT
             segment -> new VkDeviceDeviceMemoryReportCreateInfoEXT(segment)
         );
     }
-    
+
 }

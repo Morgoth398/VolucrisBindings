@@ -22,87 +22,87 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeInfoKHR
 		implements Struct<VkVideoDecodeInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle SRC_BUFFER_HANDLE;
-    public static final VarHandle SRC_BUFFER_OFFSET_HANDLE;
-    public static final VarHandle SRC_BUFFER_RANGE_HANDLE;
-    public static final VarHandle P_SETUP_REFERENCE_SLOT_HANDLE;
-    public static final VarHandle REFERENCE_SLOT_COUNT_HANDLE;
-    public static final VarHandle P_REFERENCE_SLOTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle SRC_BUFFER_HANDLE;
+	public static final VarHandle SRC_BUFFER_OFFSET_HANDLE;
+	public static final VarHandle SRC_BUFFER_RANGE_HANDLE;
+	public static final VarHandle P_SETUP_REFERENCE_SLOT_HANDLE;
+	public static final VarHandle REFERENCE_SLOT_COUNT_HANDLE;
+	public static final VarHandle P_REFERENCE_SLOTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SRC_BUFFER_BYTE_OFFSET;
-    public static final long SRC_BUFFER_OFFSET_BYTE_OFFSET;
-    public static final long SRC_BUFFER_RANGE_BYTE_OFFSET;
-    public static final long DST_PICTURE_RESOURCE_BYTE_OFFSET;
-    public static final long P_SETUP_REFERENCE_SLOT_BYTE_OFFSET;
-    public static final long REFERENCE_SLOT_COUNT_BYTE_OFFSET;
-    public static final long P_REFERENCE_SLOTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SRC_BUFFER_BYTE_OFFSET;
+	public static final long SRC_BUFFER_OFFSET_BYTE_OFFSET;
+	public static final long SRC_BUFFER_RANGE_BYTE_OFFSET;
+	public static final long DST_PICTURE_RESOURCE_BYTE_OFFSET;
+	public static final long P_SETUP_REFERENCE_SLOT_BYTE_OFFSET;
+	public static final long REFERENCE_SLOT_COUNT_BYTE_OFFSET;
+	public static final long P_REFERENCE_SLOTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkVideoPictureResourceInfoKHR dstPictureResource;
+	private final VkVideoPictureResourceInfoKHR dstPictureResource;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("srcBuffer"),
-            JAVA_LONG.withName("srcBufferOffset"),
-            JAVA_LONG.withName("srcBufferRange"),
-            VkVideoPictureResourceInfoKHR.LAYOUT.withName("dstPictureResource"),
-            UNBOUNDED_ADDRESS.withName("pSetupReferenceSlot"),
-            JAVA_INT.withName("referenceSlotCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pReferenceSlots")
-        ).withName("VkVideoDecodeInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        SRC_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBuffer"));
-        SRC_BUFFER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBufferOffset"));
-        SRC_BUFFER_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBufferRange"));
-        P_SETUP_REFERENCE_SLOT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetupReferenceSlot"));
-        REFERENCE_SLOT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceSlotCount"));
-        P_REFERENCE_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pReferenceSlots"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SRC_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBuffer"));
-        SRC_BUFFER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBufferOffset"));
-        SRC_BUFFER_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBufferRange"));
-        DST_PICTURE_RESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstPictureResource"));
-        P_SETUP_REFERENCE_SLOT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetupReferenceSlot"));
-        REFERENCE_SLOT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceSlotCount"));
-        P_REFERENCE_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pReferenceSlots"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("srcBuffer"),
+		    JAVA_LONG.withName("srcBufferOffset"),
+		    JAVA_LONG.withName("srcBufferRange"),
+		    VkVideoPictureResourceInfoKHR.LAYOUT.withName("dstPictureResource"),
+		    UNBOUNDED_ADDRESS.withName("pSetupReferenceSlot"),
+		    JAVA_INT.withName("referenceSlotCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pReferenceSlots")
+		).withName("VkVideoDecodeInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		SRC_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBuffer"));
+		SRC_BUFFER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBufferOffset"));
+		SRC_BUFFER_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBufferRange"));
+		P_SETUP_REFERENCE_SLOT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetupReferenceSlot"));
+		REFERENCE_SLOT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceSlotCount"));
+		P_REFERENCE_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pReferenceSlots"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SRC_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBuffer"));
+		SRC_BUFFER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBufferOffset"));
+		SRC_BUFFER_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBufferRange"));
+		DST_PICTURE_RESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstPictureResource"));
+		P_SETUP_REFERENCE_SLOT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetupReferenceSlot"));
+		REFERENCE_SLOT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceSlotCount"));
+		P_REFERENCE_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pReferenceSlots"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        dstPictureResource = new VkVideoPictureResourceInfoKHR(segment.asSlice(DST_PICTURE_RESOURCE_BYTE_OFFSET, VkVideoPictureResourceInfoKHR.LAYOUT));
-    }
+	public VkVideoDecodeInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    dstPictureResource = new VkVideoPictureResourceInfoKHR(segment.asSlice(DST_PICTURE_RESOURCE_BYTE_OFFSET, VkVideoPictureResourceInfoKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoDecodeInfoKHR sType(int sType) {
@@ -174,6 +174,22 @@ public final class VkVideoDecodeInfoKHR
     	return (long) SRC_BUFFER_RANGE_HANDLE.get(segment, 0L);
     }
     
+    /// @see #dstPictureResource()
+    public VkVideoDecodeInfoKHR dstPictureResource(Consumer<VkVideoPictureResourceInfoKHR> consumer) {
+    	consumer.accept(dstPictureResource);
+    	return this;
+    }
+    
+    /// @see #dstPictureResource()
+    public VkVideoDecodeInfoKHR dstPictureResource(VkVideoPictureResourceInfoKHR other) {
+    	dstPictureResource.set(other);
+    	return this;
+    }
+    
+    public VkVideoPictureResourceInfoKHR dstPictureResource() {
+    	return dstPictureResource;
+    }
+    
     /// @see #pSetupReferenceSlot()
     public VkVideoDecodeInfoKHR pSetupReferenceSlot(VkVideoReferenceSlotInfoKHR pSetupReferenceSlot) {
     	P_SETUP_REFERENCE_SLOT_HANDLE.set(segment, 0L, pSetupReferenceSlot.memorySegment());
@@ -212,22 +228,6 @@ public final class VkVideoDecodeInfoKHR
     		return null;
     
     	return VkVideoReferenceSlotInfoKHR.array(segment);
-    }
-    
-    /// @see #dstPictureResource()
-    public VkVideoDecodeInfoKHR dstPictureResource(Consumer<VkVideoPictureResourceInfoKHR> consumer) {
-    	consumer.accept(dstPictureResource);
-    	return this;
-    }
-    
-    /// @see #dstPictureResource()
-    public VkVideoDecodeInfoKHR dstPictureResource(VkVideoPictureResourceInfoKHR other) {
-    	dstPictureResource.set(other);
-    	return this;
-    }
-    
-    public VkVideoPictureResourceInfoKHR dstPictureResource() {
-    	return dstPictureResource;
     }
     
     @Override
@@ -281,5 +281,5 @@ public final class VkVideoDecodeInfoKHR
             segment -> new VkVideoDecodeInfoKHR(segment)
         );
     }
-    
+
 }

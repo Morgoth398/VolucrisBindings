@@ -21,74 +21,74 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT
 		implements Struct<VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_INDEPENDENT_BLEND_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_CORRELATED_OVERLAP_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_ALL_OPERATIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_INDEPENDENT_BLEND_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_CORRELATED_OVERLAP_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_ALL_OPERATIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_INDEPENDENT_BLEND_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_CORRELATED_OVERLAP_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_ALL_OPERATIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_INDEPENDENT_BLEND_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_CORRELATED_OVERLAP_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_ALL_OPERATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("advancedBlendMaxColorAttachments"),
-            JAVA_INT.withName("advancedBlendIndependentBlend"),
-            JAVA_INT.withName("advancedBlendNonPremultipliedSrcColor"),
-            JAVA_INT.withName("advancedBlendNonPremultipliedDstColor"),
-            JAVA_INT.withName("advancedBlendCorrelatedOverlap"),
-            JAVA_INT.withName("advancedBlendAllOperations")
-        ).withName("VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendMaxColorAttachments"));
-        ADVANCED_BLEND_INDEPENDENT_BLEND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendIndependentBlend"));
-        ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendNonPremultipliedSrcColor"));
-        ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendNonPremultipliedDstColor"));
-        ADVANCED_BLEND_CORRELATED_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendCorrelatedOverlap"));
-        ADVANCED_BLEND_ALL_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendAllOperations"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendMaxColorAttachments"));
-        ADVANCED_BLEND_INDEPENDENT_BLEND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendIndependentBlend"));
-        ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendNonPremultipliedSrcColor"));
-        ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendNonPremultipliedDstColor"));
-        ADVANCED_BLEND_CORRELATED_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendCorrelatedOverlap"));
-        ADVANCED_BLEND_ALL_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendAllOperations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("advancedBlendMaxColorAttachments"),
+		    JAVA_INT.withName("advancedBlendIndependentBlend"),
+		    JAVA_INT.withName("advancedBlendNonPremultipliedSrcColor"),
+		    JAVA_INT.withName("advancedBlendNonPremultipliedDstColor"),
+		    JAVA_INT.withName("advancedBlendCorrelatedOverlap"),
+		    JAVA_INT.withName("advancedBlendAllOperations")
+		).withName("VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendMaxColorAttachments"));
+		ADVANCED_BLEND_INDEPENDENT_BLEND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendIndependentBlend"));
+		ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendNonPremultipliedSrcColor"));
+		ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendNonPremultipliedDstColor"));
+		ADVANCED_BLEND_CORRELATED_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendCorrelatedOverlap"));
+		ADVANCED_BLEND_ALL_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendAllOperations"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADVANCED_BLEND_MAX_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendMaxColorAttachments"));
+		ADVANCED_BLEND_INDEPENDENT_BLEND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendIndependentBlend"));
+		ADVANCED_BLEND_NON_PREMULTIPLIED_SRC_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendNonPremultipliedSrcColor"));
+		ADVANCED_BLEND_NON_PREMULTIPLIED_DST_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendNonPremultipliedDstColor"));
+		ADVANCED_BLEND_CORRELATED_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendCorrelatedOverlap"));
+		ADVANCED_BLEND_ALL_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendAllOperations"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT
             segment -> new VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(segment)
         );
     }
-    
+
 }

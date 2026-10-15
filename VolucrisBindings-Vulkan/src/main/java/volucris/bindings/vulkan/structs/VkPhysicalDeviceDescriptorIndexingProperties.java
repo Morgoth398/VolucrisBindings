@@ -21,160 +21,160 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDescriptorIndexingProperties
 		implements Struct<VkPhysicalDeviceDescriptorIndexingProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxUpdateAfterBindDescriptorsInAllPools"),
-            JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("robustBufferAccessUpdateAfterBind"),
-            JAVA_INT.withName("quadDivergentImplicitLod"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSamplers"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindUniformBuffers"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageBuffers"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSampledImages"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageImages"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInputAttachments"),
-            JAVA_INT.withName("maxPerStageUpdateAfterBindResources"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSamplers"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffers"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffers"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSampledImages"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageImages"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInputAttachments"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDescriptorIndexingProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
-        ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
-        QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("quadDivergentImplicitLod"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
-        MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
-        ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
-        QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quadDivergentImplicitLod"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
-        MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxUpdateAfterBindDescriptorsInAllPools"),
+		    JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("robustBufferAccessUpdateAfterBind"),
+		    JAVA_INT.withName("quadDivergentImplicitLod"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSamplers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindUniformBuffers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageBuffers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindSampledImages"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageImages"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInputAttachments"),
+		    JAVA_INT.withName("maxPerStageUpdateAfterBindResources"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSamplers"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffers"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffers"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindSampledImages"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageImages"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInputAttachments"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDescriptorIndexingProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
+		ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
+		QUAD_DIVERGENT_IMPLICIT_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("quadDivergentImplicitLod"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
+		MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_UPDATE_AFTER_BIND_DESCRIPTORS_IN_ALL_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUpdateAfterBindDescriptorsInAllPools"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexingNative"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexingNative"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexingNative"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexingNative"));
+		ROBUST_BUFFER_ACCESS_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccessUpdateAfterBind"));
+		QUAD_DIVERGENT_IMPLICIT_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quadDivergentImplicitLod"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSamplers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindUniformBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindSampledImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageImages"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInputAttachments"));
+		MAX_PER_STAGE_UPDATE_AFTER_BIND_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageUpdateAfterBindResources"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSamplers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffers"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindSampledImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageImages"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInputAttachments"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDescriptorIndexingProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDescriptorIndexingProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDescriptorIndexingProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDescriptorIndexingProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDescriptorIndexingProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDescriptorIndexingProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDescriptorIndexingProperties sType(int sType) {
@@ -482,5 +482,5 @@ public final class VkPhysicalDeviceDescriptorIndexingProperties
             segment -> new VkPhysicalDeviceDescriptorIndexingProperties(segment)
         );
     }
-    
+
 }

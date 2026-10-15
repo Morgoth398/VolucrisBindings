@@ -21,66 +21,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGeneratedCommandsMemoryRequirementsInfoNV
 		implements Struct<VkGeneratedCommandsMemoryRequirementsInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
-    public static final VarHandle PIPELINE_HANDLE;
-    public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
-    public static final VarHandle MAX_SEQUENCES_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
+	public static final VarHandle PIPELINE_HANDLE;
+	public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
+	public static final VarHandle MAX_SEQUENCES_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
-    public static final long PIPELINE_BYTE_OFFSET;
-    public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
-    public static final long MAX_SEQUENCES_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
+	public static final long PIPELINE_BYTE_OFFSET;
+	public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
+	public static final long MAX_SEQUENCES_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("pipelineBindPoint"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pipeline"),
-            UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
-            JAVA_INT.withName("maxSequencesCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkGeneratedCommandsMemoryRequirementsInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
-        PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipeline"));
-        INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
-        MAX_SEQUENCES_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSequencesCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
-        PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipeline"));
-        INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
-        MAX_SEQUENCES_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSequencesCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("pipelineBindPoint"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pipeline"),
+		    UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
+		    JAVA_INT.withName("maxSequencesCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkGeneratedCommandsMemoryRequirementsInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
+		PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipeline"));
+		INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
+		MAX_SEQUENCES_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSequencesCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
+		PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipeline"));
+		INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
+		MAX_SEQUENCES_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSequencesCount"));
+		//@formatter:on
+	}
 
-    public VkGeneratedCommandsMemoryRequirementsInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeneratedCommandsMemoryRequirementsInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeneratedCommandsMemoryRequirementsInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGeneratedCommandsMemoryRequirementsInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeneratedCommandsMemoryRequirementsInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeneratedCommandsMemoryRequirementsInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGeneratedCommandsMemoryRequirementsInfoNV sType(int sType) {
@@ -208,5 +208,5 @@ public final class VkGeneratedCommandsMemoryRequirementsInfoNV
             segment -> new VkGeneratedCommandsMemoryRequirementsInfoNV(segment)
         );
     }
-    
+
 }

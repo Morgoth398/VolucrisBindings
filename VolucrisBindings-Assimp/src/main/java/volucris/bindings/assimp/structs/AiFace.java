@@ -42,44 +42,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiFace
 		implements Struct<AiFace> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_NUM_INDICES_HANDLE;
-    public static final VarHandle M_INDICES_HANDLE;
+	public static final VarHandle M_NUM_INDICES_HANDLE;
+	public static final VarHandle M_INDICES_HANDLE;
 
-    public static final long M_NUM_INDICES_BYTE_OFFSET;
-    public static final long M_INDICES_BYTE_OFFSET;
+	public static final long M_NUM_INDICES_BYTE_OFFSET;
+	public static final long M_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mNumIndices"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mIndices")
-        ).withName("aiFace").withByteAlignment(8);
-        
-        M_NUM_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumIndices"));
-        M_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mIndices"));
-        
-        M_NUM_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumIndices"));
-        M_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mNumIndices"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mIndices")
+		).withName("aiFace").withByteAlignment(8);
+		
+		M_NUM_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumIndices"));
+		M_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mIndices"));
+		
+		M_NUM_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumIndices"));
+		M_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mIndices"));
+		//@formatter:on
+	}
 
-    public AiFace() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiFace(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiFace(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiFace() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiFace(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiFace(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mNumIndices()
     public AiFace mNumIndices(int mNumIndices) {
@@ -164,5 +164,5 @@ public final class AiFace
             segment -> new AiFace(segment)
         );
     }
-    
+
 }

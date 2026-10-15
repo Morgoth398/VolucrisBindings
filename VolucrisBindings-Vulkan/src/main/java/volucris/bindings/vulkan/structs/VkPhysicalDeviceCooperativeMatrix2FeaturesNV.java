@@ -21,80 +21,80 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceCooperativeMatrix2FeaturesNV
 		implements Struct<VkPhysicalDeviceCooperativeMatrix2FeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_WORKGROUP_SCOPE_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_REDUCTIONS_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_CONVERSIONS_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_TENSOR_ADDRESSING_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_BLOCK_LOADS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_WORKGROUP_SCOPE_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_REDUCTIONS_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_CONVERSIONS_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_TENSOR_ADDRESSING_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_BLOCK_LOADS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_WORKGROUP_SCOPE_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_REDUCTIONS_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_CONVERSIONS_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_TENSOR_ADDRESSING_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_BLOCK_LOADS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_WORKGROUP_SCOPE_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_REDUCTIONS_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_CONVERSIONS_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_TENSOR_ADDRESSING_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_BLOCK_LOADS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("cooperativeMatrixWorkgroupScope"),
-            JAVA_INT.withName("cooperativeMatrixFlexibleDimensions"),
-            JAVA_INT.withName("cooperativeMatrixReductions"),
-            JAVA_INT.withName("cooperativeMatrixConversions"),
-            JAVA_INT.withName("cooperativeMatrixPerElementOperations"),
-            JAVA_INT.withName("cooperativeMatrixTensorAddressing"),
-            JAVA_INT.withName("cooperativeMatrixBlockLoads"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceCooperativeMatrix2FeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COOPERATIVE_MATRIX_WORKGROUP_SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixWorkgroupScope"));
-        COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixFlexibleDimensions"));
-        COOPERATIVE_MATRIX_REDUCTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixReductions"));
-        COOPERATIVE_MATRIX_CONVERSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixConversions"));
-        COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixPerElementOperations"));
-        COOPERATIVE_MATRIX_TENSOR_ADDRESSING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixTensorAddressing"));
-        COOPERATIVE_MATRIX_BLOCK_LOADS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixBlockLoads"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COOPERATIVE_MATRIX_WORKGROUP_SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixWorkgroupScope"));
-        COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixFlexibleDimensions"));
-        COOPERATIVE_MATRIX_REDUCTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixReductions"));
-        COOPERATIVE_MATRIX_CONVERSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixConversions"));
-        COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixPerElementOperations"));
-        COOPERATIVE_MATRIX_TENSOR_ADDRESSING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixTensorAddressing"));
-        COOPERATIVE_MATRIX_BLOCK_LOADS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixBlockLoads"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("cooperativeMatrixWorkgroupScope"),
+		    JAVA_INT.withName("cooperativeMatrixFlexibleDimensions"),
+		    JAVA_INT.withName("cooperativeMatrixReductions"),
+		    JAVA_INT.withName("cooperativeMatrixConversions"),
+		    JAVA_INT.withName("cooperativeMatrixPerElementOperations"),
+		    JAVA_INT.withName("cooperativeMatrixTensorAddressing"),
+		    JAVA_INT.withName("cooperativeMatrixBlockLoads"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceCooperativeMatrix2FeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COOPERATIVE_MATRIX_WORKGROUP_SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixWorkgroupScope"));
+		COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixFlexibleDimensions"));
+		COOPERATIVE_MATRIX_REDUCTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixReductions"));
+		COOPERATIVE_MATRIX_CONVERSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixConversions"));
+		COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixPerElementOperations"));
+		COOPERATIVE_MATRIX_TENSOR_ADDRESSING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixTensorAddressing"));
+		COOPERATIVE_MATRIX_BLOCK_LOADS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixBlockLoads"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COOPERATIVE_MATRIX_WORKGROUP_SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixWorkgroupScope"));
+		COOPERATIVE_MATRIX_FLEXIBLE_DIMENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixFlexibleDimensions"));
+		COOPERATIVE_MATRIX_REDUCTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixReductions"));
+		COOPERATIVE_MATRIX_CONVERSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixConversions"));
+		COOPERATIVE_MATRIX_PER_ELEMENT_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixPerElementOperations"));
+		COOPERATIVE_MATRIX_TENSOR_ADDRESSING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixTensorAddressing"));
+		COOPERATIVE_MATRIX_BLOCK_LOADS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixBlockLoads"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceCooperativeMatrix2FeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceCooperativeMatrix2FeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceCooperativeMatrix2FeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceCooperativeMatrix2FeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceCooperativeMatrix2FeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceCooperativeMatrix2FeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceCooperativeMatrix2FeaturesNV sType(int sType) {
@@ -242,5 +242,5 @@ public final class VkPhysicalDeviceCooperativeMatrix2FeaturesNV
             segment -> new VkPhysicalDeviceCooperativeMatrix2FeaturesNV(segment)
         );
     }
-    
+
 }

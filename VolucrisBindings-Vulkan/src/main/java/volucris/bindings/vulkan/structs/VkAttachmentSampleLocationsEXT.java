@@ -20,45 +20,45 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAttachmentSampleLocationsEXT
 		implements Struct<VkAttachmentSampleLocationsEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ATTACHMENT_INDEX_HANDLE;
+	public static final VarHandle ATTACHMENT_INDEX_HANDLE;
 
-    public static final long ATTACHMENT_INDEX_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATIONS_INFO_BYTE_OFFSET;
+	public static final long ATTACHMENT_INDEX_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATIONS_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSampleLocationsInfoEXT sampleLocationsInfo;
+	private final VkSampleLocationsInfoEXT sampleLocationsInfo;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("attachmentIndex"),
-            MemoryLayout.paddingLayout(4),
-            VkSampleLocationsInfoEXT.LAYOUT.withName("sampleLocationsInfo")
-        ).withName("VkAttachmentSampleLocationsEXT").withByteAlignment(8);
-        
-        ATTACHMENT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentIndex"));
-        
-        ATTACHMENT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentIndex"));
-        SAMPLE_LOCATIONS_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("attachmentIndex"),
+		    MemoryLayout.paddingLayout(4),
+		    VkSampleLocationsInfoEXT.LAYOUT.withName("sampleLocationsInfo")
+		).withName("VkAttachmentSampleLocationsEXT").withByteAlignment(8);
+		
+		ATTACHMENT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentIndex"));
+		
+		ATTACHMENT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentIndex"));
+		SAMPLE_LOCATIONS_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsInfo"));
+		//@formatter:on
+	}
 
-    public VkAttachmentSampleLocationsEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAttachmentSampleLocationsEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAttachmentSampleLocationsEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        sampleLocationsInfo = new VkSampleLocationsInfoEXT(segment.asSlice(SAMPLE_LOCATIONS_INFO_BYTE_OFFSET, VkSampleLocationsInfoEXT.LAYOUT));
-    }
+	public VkAttachmentSampleLocationsEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAttachmentSampleLocationsEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAttachmentSampleLocationsEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    sampleLocationsInfo = new VkSampleLocationsInfoEXT(segment.asSlice(SAMPLE_LOCATIONS_INFO_BYTE_OFFSET, VkSampleLocationsInfoEXT.LAYOUT));
+	}
 
     /// @see #attachmentIndex()
     public VkAttachmentSampleLocationsEXT attachmentIndex(int attachmentIndex) {
@@ -137,5 +137,5 @@ public final class VkAttachmentSampleLocationsEXT
             segment -> new VkAttachmentSampleLocationsEXT(segment)
         );
     }
-    
+
 }

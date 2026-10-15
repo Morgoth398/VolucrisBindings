@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderBfloat16FeaturesKHR
 		implements Struct<VkPhysicalDeviceShaderBfloat16FeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_BFLOAT16_TYPE_HANDLE;
-    public static final VarHandle SHADER_BFLOAT16_DOT_PRODUCT_HANDLE;
-    public static final VarHandle SHADER_BFLOAT16_COOPERATIVE_MATRIX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_BFLOAT16_TYPE_HANDLE;
+	public static final VarHandle SHADER_BFLOAT16_DOT_PRODUCT_HANDLE;
+	public static final VarHandle SHADER_BFLOAT16_COOPERATIVE_MATRIX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_BFLOAT16_TYPE_BYTE_OFFSET;
-    public static final long SHADER_BFLOAT16_DOT_PRODUCT_BYTE_OFFSET;
-    public static final long SHADER_BFLOAT16_COOPERATIVE_MATRIX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_BFLOAT16_TYPE_BYTE_OFFSET;
+	public static final long SHADER_BFLOAT16_DOT_PRODUCT_BYTE_OFFSET;
+	public static final long SHADER_BFLOAT16_COOPERATIVE_MATRIX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderBFloat16Type"),
-            JAVA_INT.withName("shaderBFloat16DotProduct"),
-            JAVA_INT.withName("shaderBFloat16CooperativeMatrix"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderBfloat16FeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_BFLOAT16_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBFloat16Type"));
-        SHADER_BFLOAT16_DOT_PRODUCT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBFloat16DotProduct"));
-        SHADER_BFLOAT16_COOPERATIVE_MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBFloat16CooperativeMatrix"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_BFLOAT16_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBFloat16Type"));
-        SHADER_BFLOAT16_DOT_PRODUCT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBFloat16DotProduct"));
-        SHADER_BFLOAT16_COOPERATIVE_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBFloat16CooperativeMatrix"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderBFloat16Type"),
+		    JAVA_INT.withName("shaderBFloat16DotProduct"),
+		    JAVA_INT.withName("shaderBFloat16CooperativeMatrix"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderBfloat16FeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_BFLOAT16_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBFloat16Type"));
+		SHADER_BFLOAT16_DOT_PRODUCT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBFloat16DotProduct"));
+		SHADER_BFLOAT16_COOPERATIVE_MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBFloat16CooperativeMatrix"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_BFLOAT16_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBFloat16Type"));
+		SHADER_BFLOAT16_DOT_PRODUCT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBFloat16DotProduct"));
+		SHADER_BFLOAT16_COOPERATIVE_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBFloat16CooperativeMatrix"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderBfloat16FeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderBfloat16FeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderBfloat16FeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderBfloat16FeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderBfloat16FeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderBfloat16FeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderBfloat16FeaturesKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceShaderBfloat16FeaturesKHR
             segment -> new VkPhysicalDeviceShaderBfloat16FeaturesKHR(segment)
         );
     }
-    
+
 }

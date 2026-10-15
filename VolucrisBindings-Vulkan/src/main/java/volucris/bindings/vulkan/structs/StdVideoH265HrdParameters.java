@@ -22,110 +22,126 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoH265HrdParameters
 		implements Struct<StdVideoH265HrdParameters> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TICK_DIVISOR_MINUS2_HANDLE;
-    public static final VarHandle DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_HANDLE;
-    public static final VarHandle DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_HANDLE;
-    public static final VarHandle BIT_RATE_SCALE_HANDLE;
-    public static final VarHandle CPB_SIZE_SCALE_HANDLE;
-    public static final VarHandle CPB_SIZE_DU_SCALE_HANDLE;
-    public static final VarHandle INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE;
-    public static final VarHandle AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE;
-    public static final VarHandle DPB_OUTPUT_DELAY_LENGTH_MINUS1_HANDLE;
-    public static final VarHandle CPB_CNT_MINUS1_HANDLE;
-    public static final VarHandle ELEMENTAL_DURATION_IN_TC_MINUS1_HANDLE;
-    public static final VarHandle RESERVED_HANDLE;
-    public static final VarHandle P_SUB_LAYER_HRD_PARAMETERS_NAL_HANDLE;
-    public static final VarHandle P_SUB_LAYER_HRD_PARAMETERS_VCL_HANDLE;
+	public static final VarHandle TICK_DIVISOR_MINUS2_HANDLE;
+	public static final VarHandle DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_HANDLE;
+	public static final VarHandle DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_HANDLE;
+	public static final VarHandle BIT_RATE_SCALE_HANDLE;
+	public static final VarHandle CPB_SIZE_SCALE_HANDLE;
+	public static final VarHandle CPB_SIZE_DU_SCALE_HANDLE;
+	public static final VarHandle INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE;
+	public static final VarHandle AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE;
+	public static final VarHandle DPB_OUTPUT_DELAY_LENGTH_MINUS1_HANDLE;
+	public static final VarHandle CPB_CNT_MINUS1_HANDLE;
+	public static final VarHandle ELEMENTAL_DURATION_IN_TC_MINUS1_HANDLE;
+	public static final VarHandle RESERVED_HANDLE;
+	public static final VarHandle P_SUB_LAYER_HRD_PARAMETERS_NAL_HANDLE;
+	public static final VarHandle P_SUB_LAYER_HRD_PARAMETERS_VCL_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long TICK_DIVISOR_MINUS2_BYTE_OFFSET;
-    public static final long DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_BYTE_OFFSET;
-    public static final long DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_BYTE_OFFSET;
-    public static final long BIT_RATE_SCALE_BYTE_OFFSET;
-    public static final long CPB_SIZE_SCALE_BYTE_OFFSET;
-    public static final long CPB_SIZE_DU_SCALE_BYTE_OFFSET;
-    public static final long INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET;
-    public static final long AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET;
-    public static final long DPB_OUTPUT_DELAY_LENGTH_MINUS1_BYTE_OFFSET;
-    public static final long CPB_CNT_MINUS1_BYTE_OFFSET;
-    public static final long ELEMENTAL_DURATION_IN_TC_MINUS1_BYTE_OFFSET;
-    public static final long RESERVED_BYTE_OFFSET;
-    public static final long P_SUB_LAYER_HRD_PARAMETERS_NAL_BYTE_OFFSET;
-    public static final long P_SUB_LAYER_HRD_PARAMETERS_VCL_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long TICK_DIVISOR_MINUS2_BYTE_OFFSET;
+	public static final long DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_BYTE_OFFSET;
+	public static final long DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_BYTE_OFFSET;
+	public static final long BIT_RATE_SCALE_BYTE_OFFSET;
+	public static final long CPB_SIZE_SCALE_BYTE_OFFSET;
+	public static final long CPB_SIZE_DU_SCALE_BYTE_OFFSET;
+	public static final long INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET;
+	public static final long AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET;
+	public static final long DPB_OUTPUT_DELAY_LENGTH_MINUS1_BYTE_OFFSET;
+	public static final long CPB_CNT_MINUS1_BYTE_OFFSET;
+	public static final long ELEMENTAL_DURATION_IN_TC_MINUS1_BYTE_OFFSET;
+	public static final long RESERVED_BYTE_OFFSET;
+	public static final long P_SUB_LAYER_HRD_PARAMETERS_NAL_BYTE_OFFSET;
+	public static final long P_SUB_LAYER_HRD_PARAMETERS_VCL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH265HrdFlags flags;
+	private final StdVideoH265HrdFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH265HrdFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("tick_divisor_minus2"),
-            JAVA_BYTE.withName("du_cpb_removal_delay_increment_length_minus1"),
-            JAVA_BYTE.withName("dpb_output_delay_du_length_minus1"),
-            JAVA_BYTE.withName("bit_rate_scale"),
-            JAVA_BYTE.withName("cpb_size_scale"),
-            JAVA_BYTE.withName("cpb_size_du_scale"),
-            JAVA_BYTE.withName("initial_cpb_removal_delay_length_minus1"),
-            JAVA_BYTE.withName("au_cpb_removal_delay_length_minus1"),
-            JAVA_BYTE.withName("dpb_output_delay_length_minus1"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("cpb_cnt_minus1"),
-            MemoryLayout.sequenceLayout(7, JAVA_SHORT).withName("elemental_duration_in_tc_minus1"),
-            MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("reserved"),
-            UNBOUNDED_ADDRESS.withName("pSubLayerHrdParametersNal"),
-            UNBOUNDED_ADDRESS.withName("pSubLayerHrdParametersVcl")
-        ).withName("StdVideoH265HrdParameters").withByteAlignment(8);
-        
-        TICK_DIVISOR_MINUS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tick_divisor_minus2"));
-        DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("du_cpb_removal_delay_increment_length_minus1"));
-        DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dpb_output_delay_du_length_minus1"));
-        BIT_RATE_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bit_rate_scale"));
-        CPB_SIZE_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_scale"));
-        CPB_SIZE_DU_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_du_scale"));
-        INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initial_cpb_removal_delay_length_minus1"));
-        AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("au_cpb_removal_delay_length_minus1"));
-        DPB_OUTPUT_DELAY_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dpb_output_delay_length_minus1"));
-        CPB_CNT_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_cnt_minus1"), PathElement.sequenceElement());
-        ELEMENTAL_DURATION_IN_TC_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("elemental_duration_in_tc_minus1"), PathElement.sequenceElement());
-        RESERVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved"), PathElement.sequenceElement());
-        P_SUB_LAYER_HRD_PARAMETERS_NAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSubLayerHrdParametersNal"));
-        P_SUB_LAYER_HRD_PARAMETERS_VCL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSubLayerHrdParametersVcl"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        TICK_DIVISOR_MINUS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tick_divisor_minus2"));
-        DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("du_cpb_removal_delay_increment_length_minus1"));
-        DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dpb_output_delay_du_length_minus1"));
-        BIT_RATE_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bit_rate_scale"));
-        CPB_SIZE_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_scale"));
-        CPB_SIZE_DU_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_du_scale"));
-        INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initial_cpb_removal_delay_length_minus1"));
-        AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("au_cpb_removal_delay_length_minus1"));
-        DPB_OUTPUT_DELAY_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dpb_output_delay_length_minus1"));
-        CPB_CNT_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_cnt_minus1"));
-        ELEMENTAL_DURATION_IN_TC_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("elemental_duration_in_tc_minus1"));
-        RESERVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved"));
-        P_SUB_LAYER_HRD_PARAMETERS_NAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSubLayerHrdParametersNal"));
-        P_SUB_LAYER_HRD_PARAMETERS_VCL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSubLayerHrdParametersVcl"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH265HrdFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("tick_divisor_minus2"),
+		    JAVA_BYTE.withName("du_cpb_removal_delay_increment_length_minus1"),
+		    JAVA_BYTE.withName("dpb_output_delay_du_length_minus1"),
+		    JAVA_BYTE.withName("bit_rate_scale"),
+		    JAVA_BYTE.withName("cpb_size_scale"),
+		    JAVA_BYTE.withName("cpb_size_du_scale"),
+		    JAVA_BYTE.withName("initial_cpb_removal_delay_length_minus1"),
+		    JAVA_BYTE.withName("au_cpb_removal_delay_length_minus1"),
+		    JAVA_BYTE.withName("dpb_output_delay_length_minus1"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("cpb_cnt_minus1"),
+		    MemoryLayout.sequenceLayout(7, JAVA_SHORT).withName("elemental_duration_in_tc_minus1"),
+		    MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("reserved"),
+		    UNBOUNDED_ADDRESS.withName("pSubLayerHrdParametersNal"),
+		    UNBOUNDED_ADDRESS.withName("pSubLayerHrdParametersVcl")
+		).withName("StdVideoH265HrdParameters").withByteAlignment(8);
+		
+		TICK_DIVISOR_MINUS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tick_divisor_minus2"));
+		DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("du_cpb_removal_delay_increment_length_minus1"));
+		DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dpb_output_delay_du_length_minus1"));
+		BIT_RATE_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bit_rate_scale"));
+		CPB_SIZE_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_scale"));
+		CPB_SIZE_DU_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_du_scale"));
+		INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initial_cpb_removal_delay_length_minus1"));
+		AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("au_cpb_removal_delay_length_minus1"));
+		DPB_OUTPUT_DELAY_LENGTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dpb_output_delay_length_minus1"));
+		CPB_CNT_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_cnt_minus1"), PathElement.sequenceElement());
+		ELEMENTAL_DURATION_IN_TC_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("elemental_duration_in_tc_minus1"), PathElement.sequenceElement());
+		RESERVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved"), PathElement.sequenceElement());
+		P_SUB_LAYER_HRD_PARAMETERS_NAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSubLayerHrdParametersNal"));
+		P_SUB_LAYER_HRD_PARAMETERS_VCL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSubLayerHrdParametersVcl"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		TICK_DIVISOR_MINUS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tick_divisor_minus2"));
+		DU_CPB_REMOVAL_DELAY_INCREMENT_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("du_cpb_removal_delay_increment_length_minus1"));
+		DPB_OUTPUT_DELAY_DU_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dpb_output_delay_du_length_minus1"));
+		BIT_RATE_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bit_rate_scale"));
+		CPB_SIZE_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_scale"));
+		CPB_SIZE_DU_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_du_scale"));
+		INITIAL_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initial_cpb_removal_delay_length_minus1"));
+		AU_CPB_REMOVAL_DELAY_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("au_cpb_removal_delay_length_minus1"));
+		DPB_OUTPUT_DELAY_LENGTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dpb_output_delay_length_minus1"));
+		CPB_CNT_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_cnt_minus1"));
+		ELEMENTAL_DURATION_IN_TC_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("elemental_duration_in_tc_minus1"));
+		RESERVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved"));
+		P_SUB_LAYER_HRD_PARAMETERS_NAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSubLayerHrdParametersNal"));
+		P_SUB_LAYER_HRD_PARAMETERS_VCL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSubLayerHrdParametersVcl"));
+		//@formatter:on
+	}
 
-    public StdVideoH265HrdParameters() {
-        this(Arena.ofAuto());
+	public StdVideoH265HrdParameters() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265HrdParameters(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265HrdParameters(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH265HrdFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265HrdFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH265HrdParameters flags(Consumer<StdVideoH265HrdFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH265HrdParameters(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH265HrdParameters flags(StdVideoH265HrdFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH265HrdParameters(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH265HrdFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265HrdFlags.LAYOUT));
+    public StdVideoH265HrdFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #tick_divisor_minus2()
     public StdVideoH265HrdParameters tick_divisor_minus2(byte tick_divisor_minus2) {
     	TICK_DIVISOR_MINUS2_HANDLE.set(segment, 0L, tick_divisor_minus2);
@@ -276,22 +292,6 @@ public final class StdVideoH265HrdParameters
     	return StdVideoH265SubLayerHrdParameters.array(segment);
     }
     
-    /// @see #flags()
-    public StdVideoH265HrdParameters flags(Consumer<StdVideoH265HrdFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH265HrdParameters flags(StdVideoH265HrdFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH265HrdFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH265HrdParameters set(StdVideoH265HrdParameters other) {
         return set(other.segment);
@@ -343,5 +343,5 @@ public final class StdVideoH265HrdParameters
             segment -> new StdVideoH265HrdParameters(segment)
         );
     }
-    
+
 }

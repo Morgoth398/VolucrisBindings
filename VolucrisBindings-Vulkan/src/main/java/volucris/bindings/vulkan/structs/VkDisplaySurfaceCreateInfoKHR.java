@@ -22,87 +22,87 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplaySurfaceCreateInfoKHR
 		implements Struct<VkDisplaySurfaceCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DISPLAY_MODE_HANDLE;
-    public static final VarHandle PLANE_INDEX_HANDLE;
-    public static final VarHandle PLANE_STACK_INDEX_HANDLE;
-    public static final VarHandle TRANSFORM_HANDLE;
-    public static final VarHandle GLOBAL_ALPHA_HANDLE;
-    public static final VarHandle ALPHA_MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DISPLAY_MODE_HANDLE;
+	public static final VarHandle PLANE_INDEX_HANDLE;
+	public static final VarHandle PLANE_STACK_INDEX_HANDLE;
+	public static final VarHandle TRANSFORM_HANDLE;
+	public static final VarHandle GLOBAL_ALPHA_HANDLE;
+	public static final VarHandle ALPHA_MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DISPLAY_MODE_BYTE_OFFSET;
-    public static final long PLANE_INDEX_BYTE_OFFSET;
-    public static final long PLANE_STACK_INDEX_BYTE_OFFSET;
-    public static final long TRANSFORM_BYTE_OFFSET;
-    public static final long GLOBAL_ALPHA_BYTE_OFFSET;
-    public static final long ALPHA_MODE_BYTE_OFFSET;
-    public static final long IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DISPLAY_MODE_BYTE_OFFSET;
+	public static final long PLANE_INDEX_BYTE_OFFSET;
+	public static final long PLANE_STACK_INDEX_BYTE_OFFSET;
+	public static final long TRANSFORM_BYTE_OFFSET;
+	public static final long GLOBAL_ALPHA_BYTE_OFFSET;
+	public static final long ALPHA_MODE_BYTE_OFFSET;
+	public static final long IMAGE_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D imageExtent;
+	private final VkExtent2D imageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("displayMode"),
-            JAVA_INT.withName("planeIndex"),
-            JAVA_INT.withName("planeStackIndex"),
-            JAVA_INT.withName("transform"),
-            JAVA_FLOAT.withName("globalAlpha"),
-            JAVA_INT.withName("alphaMode"),
-            VkExtent2D.LAYOUT.withName("imageExtent"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDisplaySurfaceCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DISPLAY_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("displayMode"));
-        PLANE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("planeIndex"));
-        PLANE_STACK_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("planeStackIndex"));
-        TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transform"));
-        GLOBAL_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalAlpha"));
-        ALPHA_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaMode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DISPLAY_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayMode"));
-        PLANE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("planeIndex"));
-        PLANE_STACK_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("planeStackIndex"));
-        TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
-        GLOBAL_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalAlpha"));
-        ALPHA_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaMode"));
-        IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("displayMode"),
+		    JAVA_INT.withName("planeIndex"),
+		    JAVA_INT.withName("planeStackIndex"),
+		    JAVA_INT.withName("transform"),
+		    JAVA_FLOAT.withName("globalAlpha"),
+		    JAVA_INT.withName("alphaMode"),
+		    VkExtent2D.LAYOUT.withName("imageExtent"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDisplaySurfaceCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DISPLAY_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("displayMode"));
+		PLANE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("planeIndex"));
+		PLANE_STACK_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("planeStackIndex"));
+		TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transform"));
+		GLOBAL_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalAlpha"));
+		ALPHA_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaMode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DISPLAY_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayMode"));
+		PLANE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("planeIndex"));
+		PLANE_STACK_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("planeStackIndex"));
+		TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
+		GLOBAL_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalAlpha"));
+		ALPHA_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaMode"));
+		IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
+		//@formatter:on
+	}
 
-    public VkDisplaySurfaceCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplaySurfaceCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplaySurfaceCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        imageExtent = new VkExtent2D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkDisplaySurfaceCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplaySurfaceCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplaySurfaceCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    imageExtent = new VkExtent2D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDisplaySurfaceCreateInfoKHR sType(int sType) {
@@ -271,5 +271,5 @@ public final class VkDisplaySurfaceCreateInfoKHR
             segment -> new VkDisplaySurfaceCreateInfoKHR(segment)
         );
     }
-    
+
 }

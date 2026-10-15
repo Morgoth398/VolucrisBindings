@@ -20,71 +20,87 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1LoopFilter
 		implements Struct<StdVideoAV1LoopFilter> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LOOP_FILTER_LEVEL_HANDLE;
-    public static final VarHandle LOOP_FILTER_SHARPNESS_HANDLE;
-    public static final VarHandle UPDATE_REF_DELTA_HANDLE;
-    public static final VarHandle LOOP_FILTER_REF_DELTAS_HANDLE;
-    public static final VarHandle UPDATE_MODE_DELTA_HANDLE;
-    public static final VarHandle LOOP_FILTER_MODE_DELTAS_HANDLE;
+	public static final VarHandle LOOP_FILTER_LEVEL_HANDLE;
+	public static final VarHandle LOOP_FILTER_SHARPNESS_HANDLE;
+	public static final VarHandle UPDATE_REF_DELTA_HANDLE;
+	public static final VarHandle LOOP_FILTER_REF_DELTAS_HANDLE;
+	public static final VarHandle UPDATE_MODE_DELTA_HANDLE;
+	public static final VarHandle LOOP_FILTER_MODE_DELTAS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long LOOP_FILTER_LEVEL_BYTE_OFFSET;
-    public static final long LOOP_FILTER_SHARPNESS_BYTE_OFFSET;
-    public static final long UPDATE_REF_DELTA_BYTE_OFFSET;
-    public static final long LOOP_FILTER_REF_DELTAS_BYTE_OFFSET;
-    public static final long UPDATE_MODE_DELTA_BYTE_OFFSET;
-    public static final long LOOP_FILTER_MODE_DELTAS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long LOOP_FILTER_LEVEL_BYTE_OFFSET;
+	public static final long LOOP_FILTER_SHARPNESS_BYTE_OFFSET;
+	public static final long UPDATE_REF_DELTA_BYTE_OFFSET;
+	public static final long LOOP_FILTER_REF_DELTAS_BYTE_OFFSET;
+	public static final long UPDATE_MODE_DELTA_BYTE_OFFSET;
+	public static final long LOOP_FILTER_MODE_DELTAS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoAV1LoopFilterFlags flags;
+	private final StdVideoAV1LoopFilterFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoAV1LoopFilterFlags.LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("loop_filter_level"),
-            JAVA_BYTE.withName("loop_filter_sharpness"),
-            JAVA_BYTE.withName("update_ref_delta"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("loop_filter_ref_deltas"),
-            JAVA_BYTE.withName("update_mode_delta"),
-            MemoryLayout.sequenceLayout(2, JAVA_BYTE).withName("loop_filter_mode_deltas"),
-            MemoryLayout.paddingLayout(3)
-        ).withName("StdVideoAV1LoopFilter").withByteAlignment(4);
-        
-        LOOP_FILTER_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_level"), PathElement.sequenceElement());
-        LOOP_FILTER_SHARPNESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_sharpness"));
-        UPDATE_REF_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("update_ref_delta"));
-        LOOP_FILTER_REF_DELTAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_ref_deltas"), PathElement.sequenceElement());
-        UPDATE_MODE_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("update_mode_delta"));
-        LOOP_FILTER_MODE_DELTAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_mode_deltas"), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        LOOP_FILTER_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_level"));
-        LOOP_FILTER_SHARPNESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_sharpness"));
-        UPDATE_REF_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("update_ref_delta"));
-        LOOP_FILTER_REF_DELTAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_ref_deltas"));
-        UPDATE_MODE_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("update_mode_delta"));
-        LOOP_FILTER_MODE_DELTAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_mode_deltas"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoAV1LoopFilterFlags.LAYOUT.withName("flags"),
+		    MemoryLayout.sequenceLayout(4, JAVA_BYTE).withName("loop_filter_level"),
+		    JAVA_BYTE.withName("loop_filter_sharpness"),
+		    JAVA_BYTE.withName("update_ref_delta"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("loop_filter_ref_deltas"),
+		    JAVA_BYTE.withName("update_mode_delta"),
+		    MemoryLayout.sequenceLayout(2, JAVA_BYTE).withName("loop_filter_mode_deltas"),
+		    MemoryLayout.paddingLayout(3)
+		).withName("StdVideoAV1LoopFilter").withByteAlignment(4);
+		
+		LOOP_FILTER_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_level"), PathElement.sequenceElement());
+		LOOP_FILTER_SHARPNESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_sharpness"));
+		UPDATE_REF_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("update_ref_delta"));
+		LOOP_FILTER_REF_DELTAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_ref_deltas"), PathElement.sequenceElement());
+		UPDATE_MODE_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("update_mode_delta"));
+		LOOP_FILTER_MODE_DELTAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loop_filter_mode_deltas"), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		LOOP_FILTER_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_level"));
+		LOOP_FILTER_SHARPNESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_sharpness"));
+		UPDATE_REF_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("update_ref_delta"));
+		LOOP_FILTER_REF_DELTAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_ref_deltas"));
+		UPDATE_MODE_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("update_mode_delta"));
+		LOOP_FILTER_MODE_DELTAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loop_filter_mode_deltas"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1LoopFilter() {
-        this(Arena.ofAuto());
+	public StdVideoAV1LoopFilter() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1LoopFilter(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1LoopFilter(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoAV1LoopFilterFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1LoopFilterFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoAV1LoopFilter flags(Consumer<StdVideoAV1LoopFilterFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoAV1LoopFilter(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoAV1LoopFilter flags(StdVideoAV1LoopFilterFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoAV1LoopFilter(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoAV1LoopFilterFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1LoopFilterFlags.LAYOUT));
+    public StdVideoAV1LoopFilterFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #loop_filter_level(int)
     public StdVideoAV1LoopFilter loop_filter_level(byte loop_filter_level, int index0) {
     	LOOP_FILTER_LEVEL_HANDLE.set(segment, 0L, index0, loop_filter_level);
@@ -145,22 +161,6 @@ public final class StdVideoAV1LoopFilter
     	return (byte) LOOP_FILTER_MODE_DELTAS_HANDLE.get(segment, 0L, index0);
     }
     
-    /// @see #flags()
-    public StdVideoAV1LoopFilter flags(Consumer<StdVideoAV1LoopFilterFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1LoopFilter flags(StdVideoAV1LoopFilterFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoAV1LoopFilterFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoAV1LoopFilter set(StdVideoAV1LoopFilter other) {
         return set(other.segment);
@@ -212,5 +212,5 @@ public final class StdVideoAV1LoopFilter
             segment -> new StdVideoAV1LoopFilter(segment)
         );
     }
-    
+
 }

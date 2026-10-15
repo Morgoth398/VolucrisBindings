@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectCommandsLayoutPushDataTokenNV
 		implements Struct<VkIndirectCommandsLayoutPushDataTokenNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PUSH_DATA_OFFSET_HANDLE;
-    public static final VarHandle PUSH_DATA_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PUSH_DATA_OFFSET_HANDLE;
+	public static final VarHandle PUSH_DATA_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PUSH_DATA_OFFSET_BYTE_OFFSET;
-    public static final long PUSH_DATA_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PUSH_DATA_OFFSET_BYTE_OFFSET;
+	public static final long PUSH_DATA_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("pushDataOffset"),
-            JAVA_INT.withName("pushDataSize")
-        ).withName("VkIndirectCommandsLayoutPushDataTokenNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PUSH_DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDataOffset"));
-        PUSH_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDataSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PUSH_DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDataOffset"));
-        PUSH_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDataSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("pushDataOffset"),
+		    JAVA_INT.withName("pushDataSize")
+		).withName("VkIndirectCommandsLayoutPushDataTokenNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PUSH_DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDataOffset"));
+		PUSH_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushDataSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PUSH_DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDataOffset"));
+		PUSH_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushDataSize"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsLayoutPushDataTokenNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsLayoutPushDataTokenNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsLayoutPushDataTokenNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsLayoutPushDataTokenNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsLayoutPushDataTokenNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsLayoutPushDataTokenNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectCommandsLayoutPushDataTokenNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkIndirectCommandsLayoutPushDataTokenNV
             segment -> new VkIndirectCommandsLayoutPushDataTokenNV(segment)
         );
     }
-    
+
 }

@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VmaDefragmentationStats
 		implements Struct<VmaDefragmentationStats> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BYTES_MOVED_HANDLE;
-    public static final VarHandle BYTES_FREED_HANDLE;
-    public static final VarHandle ALLOCATIONS_MOVED_HANDLE;
-    public static final VarHandle DEVICE_MEMORY_BLOCKS_FREED_HANDLE;
+	public static final VarHandle BYTES_MOVED_HANDLE;
+	public static final VarHandle BYTES_FREED_HANDLE;
+	public static final VarHandle ALLOCATIONS_MOVED_HANDLE;
+	public static final VarHandle DEVICE_MEMORY_BLOCKS_FREED_HANDLE;
 
-    public static final long BYTES_MOVED_BYTE_OFFSET;
-    public static final long BYTES_FREED_BYTE_OFFSET;
-    public static final long ALLOCATIONS_MOVED_BYTE_OFFSET;
-    public static final long DEVICE_MEMORY_BLOCKS_FREED_BYTE_OFFSET;
+	public static final long BYTES_MOVED_BYTE_OFFSET;
+	public static final long BYTES_FREED_BYTE_OFFSET;
+	public static final long ALLOCATIONS_MOVED_BYTE_OFFSET;
+	public static final long DEVICE_MEMORY_BLOCKS_FREED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("bytesMoved"),
-            JAVA_LONG.withName("bytesFreed"),
-            JAVA_INT.withName("allocationsMoved"),
-            JAVA_INT.withName("deviceMemoryBlocksFreed")
-        ).withName("VmaDefragmentationStats").withByteAlignment(8);
-        
-        BYTES_MOVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bytesMoved"));
-        BYTES_FREED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bytesFreed"));
-        ALLOCATIONS_MOVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationsMoved"));
-        DEVICE_MEMORY_BLOCKS_FREED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMemoryBlocksFreed"));
-        
-        BYTES_MOVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bytesMoved"));
-        BYTES_FREED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bytesFreed"));
-        ALLOCATIONS_MOVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationsMoved"));
-        DEVICE_MEMORY_BLOCKS_FREED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMemoryBlocksFreed"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("bytesMoved"),
+		    JAVA_LONG.withName("bytesFreed"),
+		    JAVA_INT.withName("allocationsMoved"),
+		    JAVA_INT.withName("deviceMemoryBlocksFreed")
+		).withName("VmaDefragmentationStats").withByteAlignment(8);
+		
+		BYTES_MOVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bytesMoved"));
+		BYTES_FREED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bytesFreed"));
+		ALLOCATIONS_MOVED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationsMoved"));
+		DEVICE_MEMORY_BLOCKS_FREED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMemoryBlocksFreed"));
+		
+		BYTES_MOVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bytesMoved"));
+		BYTES_FREED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bytesFreed"));
+		ALLOCATIONS_MOVED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationsMoved"));
+		DEVICE_MEMORY_BLOCKS_FREED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMemoryBlocksFreed"));
+		//@formatter:on
+	}
 
-    public VmaDefragmentationStats() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaDefragmentationStats(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaDefragmentationStats(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaDefragmentationStats() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaDefragmentationStats(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaDefragmentationStats(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #bytesMoved()
     public VmaDefragmentationStats bytesMoved(long bytesMoved) {
@@ -170,5 +170,5 @@ public final class VmaDefragmentationStats
             segment -> new VmaDefragmentationStats(segment)
         );
     }
-    
+
 }

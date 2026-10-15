@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceQueueInfo2
 		implements Struct<VkDeviceQueueInfo2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle QUEUE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle QUEUE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long QUEUE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long QUEUE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("queueFamilyIndex"),
-            JAVA_INT.withName("queueIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDeviceQueueInfo2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
-        QUEUE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
-        QUEUE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("queueFamilyIndex"),
+		    JAVA_INT.withName("queueIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDeviceQueueInfo2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
+		QUEUE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
+		QUEUE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueIndex"));
+		//@formatter:on
+	}
 
-    public VkDeviceQueueInfo2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceQueueInfo2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceQueueInfo2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceQueueInfo2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceQueueInfo2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceQueueInfo2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceQueueInfo2 sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDeviceQueueInfo2
             segment -> new VkDeviceQueueInfo2(segment)
         );
     }
-    
+
 }

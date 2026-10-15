@@ -22,50 +22,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayModeProperties2KHR
 		implements Struct<VkDisplayModeProperties2KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DISPLAY_MODE_PROPERTIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DISPLAY_MODE_PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDisplayModePropertiesKHR displayModeProperties;
+	private final VkDisplayModePropertiesKHR displayModeProperties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDisplayModePropertiesKHR.LAYOUT.withName("displayModeProperties")
-        ).withName("VkDisplayModeProperties2KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DISPLAY_MODE_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayModeProperties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDisplayModePropertiesKHR.LAYOUT.withName("displayModeProperties")
+		).withName("VkDisplayModeProperties2KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DISPLAY_MODE_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayModeProperties"));
+		//@formatter:on
+	}
 
-    public VkDisplayModeProperties2KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayModeProperties2KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayModeProperties2KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        displayModeProperties = new VkDisplayModePropertiesKHR(segment.asSlice(DISPLAY_MODE_PROPERTIES_BYTE_OFFSET, VkDisplayModePropertiesKHR.LAYOUT));
-    }
+	public VkDisplayModeProperties2KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayModeProperties2KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayModeProperties2KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    displayModeProperties = new VkDisplayModePropertiesKHR(segment.asSlice(DISPLAY_MODE_PROPERTIES_BYTE_OFFSET, VkDisplayModePropertiesKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDisplayModeProperties2KHR sType(int sType) {
@@ -159,5 +159,5 @@ public final class VkDisplayModeProperties2KHR
             segment -> new VkDisplayModeProperties2KHR(segment)
         );
     }
-    
+
 }

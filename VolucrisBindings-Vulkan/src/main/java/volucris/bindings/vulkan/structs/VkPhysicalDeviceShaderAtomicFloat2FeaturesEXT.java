@@ -21,104 +21,104 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT
 		implements Struct<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_BUFFER_FLOAT16_ATOMICS_HANDLE;
-    public static final VarHandle SHADER_BUFFER_FLOAT16_ATOMIC_ADD_HANDLE;
-    public static final VarHandle SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SHADER_SHARED_FLOAT16_ATOMICS_HANDLE;
-    public static final VarHandle SHADER_SHARED_FLOAT16_ATOMIC_ADD_HANDLE;
-    public static final VarHandle SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
-    public static final VarHandle SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_BUFFER_FLOAT16_ATOMICS_HANDLE;
+	public static final VarHandle SHADER_BUFFER_FLOAT16_ATOMIC_ADD_HANDLE;
+	public static final VarHandle SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SHADER_SHARED_FLOAT16_ATOMICS_HANDLE;
+	public static final VarHandle SHADER_SHARED_FLOAT16_ATOMIC_ADD_HANDLE;
+	public static final VarHandle SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
+	public static final VarHandle SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_FLOAT16_ATOMICS_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_FLOAT16_ATOMIC_ADD_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SHADER_SHARED_FLOAT16_ATOMICS_BYTE_OFFSET;
-    public static final long SHADER_SHARED_FLOAT16_ATOMIC_ADD_BYTE_OFFSET;
-    public static final long SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
-    public static final long SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_FLOAT16_ATOMICS_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_FLOAT16_ATOMIC_ADD_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SHADER_SHARED_FLOAT16_ATOMICS_BYTE_OFFSET;
+	public static final long SHADER_SHARED_FLOAT16_ATOMIC_ADD_BYTE_OFFSET;
+	public static final long SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
+	public static final long SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderBufferFloat16Atomics"),
-            JAVA_INT.withName("shaderBufferFloat16AtomicAdd"),
-            JAVA_INT.withName("shaderBufferFloat16AtomicMinMax"),
-            JAVA_INT.withName("shaderBufferFloat32AtomicMinMax"),
-            JAVA_INT.withName("shaderBufferFloat64AtomicMinMax"),
-            JAVA_INT.withName("shaderSharedFloat16Atomics"),
-            JAVA_INT.withName("shaderSharedFloat16AtomicAdd"),
-            JAVA_INT.withName("shaderSharedFloat16AtomicMinMax"),
-            JAVA_INT.withName("shaderSharedFloat32AtomicMinMax"),
-            JAVA_INT.withName("shaderSharedFloat64AtomicMinMax"),
-            JAVA_INT.withName("shaderImageFloat32AtomicMinMax"),
-            JAVA_INT.withName("sparseImageFloat32AtomicMinMax")
-        ).withName("VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_BUFFER_FLOAT16_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat16Atomics"));
-        SHADER_BUFFER_FLOAT16_ATOMIC_ADD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat16AtomicAdd"));
-        SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat16AtomicMinMax"));
-        SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat32AtomicMinMax"));
-        SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat64AtomicMinMax"));
-        SHADER_SHARED_FLOAT16_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat16Atomics"));
-        SHADER_SHARED_FLOAT16_ATOMIC_ADD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat16AtomicAdd"));
-        SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat16AtomicMinMax"));
-        SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat32AtomicMinMax"));
-        SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat64AtomicMinMax"));
-        SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderImageFloat32AtomicMinMax"));
-        SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseImageFloat32AtomicMinMax"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_BUFFER_FLOAT16_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat16Atomics"));
-        SHADER_BUFFER_FLOAT16_ATOMIC_ADD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat16AtomicAdd"));
-        SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat16AtomicMinMax"));
-        SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat32AtomicMinMax"));
-        SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat64AtomicMinMax"));
-        SHADER_SHARED_FLOAT16_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat16Atomics"));
-        SHADER_SHARED_FLOAT16_ATOMIC_ADD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat16AtomicAdd"));
-        SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat16AtomicMinMax"));
-        SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat32AtomicMinMax"));
-        SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat64AtomicMinMax"));
-        SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderImageFloat32AtomicMinMax"));
-        SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseImageFloat32AtomicMinMax"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderBufferFloat16Atomics"),
+		    JAVA_INT.withName("shaderBufferFloat16AtomicAdd"),
+		    JAVA_INT.withName("shaderBufferFloat16AtomicMinMax"),
+		    JAVA_INT.withName("shaderBufferFloat32AtomicMinMax"),
+		    JAVA_INT.withName("shaderBufferFloat64AtomicMinMax"),
+		    JAVA_INT.withName("shaderSharedFloat16Atomics"),
+		    JAVA_INT.withName("shaderSharedFloat16AtomicAdd"),
+		    JAVA_INT.withName("shaderSharedFloat16AtomicMinMax"),
+		    JAVA_INT.withName("shaderSharedFloat32AtomicMinMax"),
+		    JAVA_INT.withName("shaderSharedFloat64AtomicMinMax"),
+		    JAVA_INT.withName("shaderImageFloat32AtomicMinMax"),
+		    JAVA_INT.withName("sparseImageFloat32AtomicMinMax")
+		).withName("VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_BUFFER_FLOAT16_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat16Atomics"));
+		SHADER_BUFFER_FLOAT16_ATOMIC_ADD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat16AtomicAdd"));
+		SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat16AtomicMinMax"));
+		SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat32AtomicMinMax"));
+		SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferFloat64AtomicMinMax"));
+		SHADER_SHARED_FLOAT16_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat16Atomics"));
+		SHADER_SHARED_FLOAT16_ATOMIC_ADD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat16AtomicAdd"));
+		SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat16AtomicMinMax"));
+		SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat32AtomicMinMax"));
+		SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedFloat64AtomicMinMax"));
+		SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderImageFloat32AtomicMinMax"));
+		SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseImageFloat32AtomicMinMax"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_BUFFER_FLOAT16_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat16Atomics"));
+		SHADER_BUFFER_FLOAT16_ATOMIC_ADD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat16AtomicAdd"));
+		SHADER_BUFFER_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat16AtomicMinMax"));
+		SHADER_BUFFER_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat32AtomicMinMax"));
+		SHADER_BUFFER_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferFloat64AtomicMinMax"));
+		SHADER_SHARED_FLOAT16_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat16Atomics"));
+		SHADER_SHARED_FLOAT16_ATOMIC_ADD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat16AtomicAdd"));
+		SHADER_SHARED_FLOAT16_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat16AtomicMinMax"));
+		SHADER_SHARED_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat32AtomicMinMax"));
+		SHADER_SHARED_FLOAT64_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedFloat64AtomicMinMax"));
+		SHADER_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderImageFloat32AtomicMinMax"));
+		SPARSE_IMAGE_FLOAT32_ATOMIC_MIN_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseImageFloat32AtomicMinMax"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT sType(int sType) {
@@ -316,5 +316,5 @@ public final class VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT
             segment -> new VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(segment)
         );
     }
-    
+
 }

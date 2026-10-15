@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceExternalComputeQueuePropertiesNV
 		implements Struct<VkPhysicalDeviceExternalComputeQueuePropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EXTERNAL_DATA_SIZE_HANDLE;
-    public static final VarHandle MAX_EXTERNAL_QUEUES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EXTERNAL_DATA_SIZE_HANDLE;
+	public static final VarHandle MAX_EXTERNAL_QUEUES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXTERNAL_DATA_SIZE_BYTE_OFFSET;
-    public static final long MAX_EXTERNAL_QUEUES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXTERNAL_DATA_SIZE_BYTE_OFFSET;
+	public static final long MAX_EXTERNAL_QUEUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("externalDataSize"),
-            JAVA_INT.withName("maxExternalQueues")
-        ).withName("VkPhysicalDeviceExternalComputeQueuePropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EXTERNAL_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalDataSize"));
-        MAX_EXTERNAL_QUEUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxExternalQueues"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXTERNAL_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalDataSize"));
-        MAX_EXTERNAL_QUEUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxExternalQueues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("externalDataSize"),
+		    JAVA_INT.withName("maxExternalQueues")
+		).withName("VkPhysicalDeviceExternalComputeQueuePropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EXTERNAL_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalDataSize"));
+		MAX_EXTERNAL_QUEUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxExternalQueues"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXTERNAL_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalDataSize"));
+		MAX_EXTERNAL_QUEUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxExternalQueues"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceExternalComputeQueuePropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceExternalComputeQueuePropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceExternalComputeQueuePropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceExternalComputeQueuePropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceExternalComputeQueuePropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceExternalComputeQueuePropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceExternalComputeQueuePropertiesNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceExternalComputeQueuePropertiesNV
             segment -> new VkPhysicalDeviceExternalComputeQueuePropertiesNV(segment)
         );
     }
-    
+
 }

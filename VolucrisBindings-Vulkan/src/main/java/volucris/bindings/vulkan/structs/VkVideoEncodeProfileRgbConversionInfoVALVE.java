@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeProfileRgbConversionInfoVALVE
 		implements Struct<VkVideoEncodeProfileRgbConversionInfoVALVE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PERFORM_ENCODE_RGB_CONVERSION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PERFORM_ENCODE_RGB_CONVERSION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PERFORM_ENCODE_RGB_CONVERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PERFORM_ENCODE_RGB_CONVERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("performEncodeRgbConversion"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeProfileRgbConversionInfoVALVE").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PERFORM_ENCODE_RGB_CONVERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performEncodeRgbConversion"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PERFORM_ENCODE_RGB_CONVERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performEncodeRgbConversion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("performEncodeRgbConversion"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeProfileRgbConversionInfoVALVE").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PERFORM_ENCODE_RGB_CONVERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performEncodeRgbConversion"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PERFORM_ENCODE_RGB_CONVERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performEncodeRgbConversion"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeProfileRgbConversionInfoVALVE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeProfileRgbConversionInfoVALVE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeProfileRgbConversionInfoVALVE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeProfileRgbConversionInfoVALVE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeProfileRgbConversionInfoVALVE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeProfileRgbConversionInfoVALVE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeProfileRgbConversionInfoVALVE sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkVideoEncodeProfileRgbConversionInfoVALVE
             segment -> new VkVideoEncodeProfileRgbConversionInfoVALVE(segment)
         );
     }
-    
+
 }

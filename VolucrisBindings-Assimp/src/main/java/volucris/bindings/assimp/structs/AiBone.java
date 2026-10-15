@@ -27,65 +27,85 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiBone
 		implements Struct<AiBone> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_NUM_WEIGHTS_HANDLE;
-    public static final VarHandle M_ARMATURE_HANDLE;
-    public static final VarHandle M_NODE_HANDLE;
-    public static final VarHandle M_WEIGHTS_HANDLE;
+	public static final VarHandle M_NUM_WEIGHTS_HANDLE;
+	public static final VarHandle M_ARMATURE_HANDLE;
+	public static final VarHandle M_NODE_HANDLE;
+	public static final VarHandle M_WEIGHTS_HANDLE;
 
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_NUM_WEIGHTS_BYTE_OFFSET;
-    public static final long M_ARMATURE_BYTE_OFFSET;
-    public static final long M_NODE_BYTE_OFFSET;
-    public static final long M_WEIGHTS_BYTE_OFFSET;
-    public static final long M_OFFSET_MATRIX_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_NUM_WEIGHTS_BYTE_OFFSET;
+	public static final long M_ARMATURE_BYTE_OFFSET;
+	public static final long M_NODE_BYTE_OFFSET;
+	public static final long M_WEIGHTS_BYTE_OFFSET;
+	public static final long M_OFFSET_MATRIX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mName;
-    private final AiMatrix4x4 mOffsetMatrix;
+	private final AiString mName;
+	private final AiMatrix4x4 mOffsetMatrix;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mName"),
-            JAVA_INT.withName("mNumWeights"),
-            UNBOUNDED_ADDRESS.withName("mArmature"),
-            UNBOUNDED_ADDRESS.withName("mNode"),
-            UNBOUNDED_ADDRESS.withName("mWeights"),
-            AiMatrix4x4.LAYOUT.withName("mOffsetMatrix")
-        ).withName("aiBone").withByteAlignment(8);
-        
-        M_NUM_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumWeights"));
-        M_ARMATURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mArmature"));
-        M_NODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNode"));
-        M_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeights"));
-        
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_NUM_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumWeights"));
-        M_ARMATURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mArmature"));
-        M_NODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNode"));
-        M_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeights"));
-        M_OFFSET_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mOffsetMatrix"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mName"),
+		    JAVA_INT.withName("mNumWeights"),
+		    UNBOUNDED_ADDRESS.withName("mArmature"),
+		    UNBOUNDED_ADDRESS.withName("mNode"),
+		    UNBOUNDED_ADDRESS.withName("mWeights"),
+		    AiMatrix4x4.LAYOUT.withName("mOffsetMatrix")
+		).withName("aiBone").withByteAlignment(8);
+		
+		M_NUM_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumWeights"));
+		M_ARMATURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mArmature"));
+		M_NODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNode"));
+		M_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeights"));
+		
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_NUM_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumWeights"));
+		M_ARMATURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mArmature"));
+		M_NODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNode"));
+		M_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeights"));
+		M_OFFSET_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mOffsetMatrix"));
+		//@formatter:on
+	}
 
-    public AiBone() {
-        this(Arena.ofAuto());
+	public AiBone() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiBone(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiBone(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	    mOffsetMatrix = new AiMatrix4x4(segment.asSlice(M_OFFSET_MATRIX_BYTE_OFFSET, AiMatrix4x4.LAYOUT));
+	}
+
+    /// @see #mName()
+    public AiBone mName(Consumer<AiString> consumer) {
+    	consumer.accept(mName);
+    	return this;
     }
     
-    public AiBone(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #mName()
+    public AiBone mName(AiString other) {
+    	mName.set(other);
+    	return this;
     }
     
-    public AiBone(MemorySegment segment) {
-        this.segment = segment;
-    
-        mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
-        mOffsetMatrix = new AiMatrix4x4(segment.asSlice(M_OFFSET_MATRIX_BYTE_OFFSET, AiMatrix4x4.LAYOUT));
+    /// ```
+    /// 
+    /// The name of the bone.
+    /// ```
+    public AiString mName() {
+    	return mName;
     }
-
+    
     /// @see #mNumWeights()
     public AiBone mNumWeights(int mNumWeights) {
     	M_NUM_WEIGHTS_HANDLE.set(segment, 0L, mNumWeights);
@@ -158,26 +178,6 @@ public final class AiBone
     		return null;
     
     	return AiVertexWeight.array(segment);
-    }
-    
-    /// @see #mName()
-    public AiBone mName(Consumer<AiString> consumer) {
-    	consumer.accept(mName);
-    	return this;
-    }
-    
-    /// @see #mName()
-    public AiBone mName(AiString other) {
-    	mName.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// 
-    /// The name of the bone.
-    /// ```
-    public AiString mName() {
-    	return mName;
     }
     
     /// @see #mOffsetMatrix()
@@ -260,5 +260,5 @@ public final class AiBone
             segment -> new AiBone(segment)
         );
     }
-    
+
 }

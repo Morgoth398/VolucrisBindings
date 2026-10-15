@@ -21,74 +21,74 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceLineRasterizationFeatures
 		implements Struct<VkPhysicalDeviceLineRasterizationFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RECTANGULAR_LINES_HANDLE;
-    public static final VarHandle BRESENHAM_LINES_HANDLE;
-    public static final VarHandle SMOOTH_LINES_HANDLE;
-    public static final VarHandle STIPPLED_RECTANGULAR_LINES_HANDLE;
-    public static final VarHandle STIPPLED_BRESENHAM_LINES_HANDLE;
-    public static final VarHandle STIPPLED_SMOOTH_LINES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RECTANGULAR_LINES_HANDLE;
+	public static final VarHandle BRESENHAM_LINES_HANDLE;
+	public static final VarHandle SMOOTH_LINES_HANDLE;
+	public static final VarHandle STIPPLED_RECTANGULAR_LINES_HANDLE;
+	public static final VarHandle STIPPLED_BRESENHAM_LINES_HANDLE;
+	public static final VarHandle STIPPLED_SMOOTH_LINES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RECTANGULAR_LINES_BYTE_OFFSET;
-    public static final long BRESENHAM_LINES_BYTE_OFFSET;
-    public static final long SMOOTH_LINES_BYTE_OFFSET;
-    public static final long STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET;
-    public static final long STIPPLED_BRESENHAM_LINES_BYTE_OFFSET;
-    public static final long STIPPLED_SMOOTH_LINES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RECTANGULAR_LINES_BYTE_OFFSET;
+	public static final long BRESENHAM_LINES_BYTE_OFFSET;
+	public static final long SMOOTH_LINES_BYTE_OFFSET;
+	public static final long STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET;
+	public static final long STIPPLED_BRESENHAM_LINES_BYTE_OFFSET;
+	public static final long STIPPLED_SMOOTH_LINES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rectangularLines"),
-            JAVA_INT.withName("bresenhamLines"),
-            JAVA_INT.withName("smoothLines"),
-            JAVA_INT.withName("stippledRectangularLines"),
-            JAVA_INT.withName("stippledBresenhamLines"),
-            JAVA_INT.withName("stippledSmoothLines")
-        ).withName("VkPhysicalDeviceLineRasterizationFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rectangularLines"));
-        BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bresenhamLines"));
-        SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("smoothLines"));
-        STIPPLED_RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledRectangularLines"));
-        STIPPLED_BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledBresenhamLines"));
-        STIPPLED_SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledSmoothLines"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rectangularLines"));
-        BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bresenhamLines"));
-        SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("smoothLines"));
-        STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledRectangularLines"));
-        STIPPLED_BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledBresenhamLines"));
-        STIPPLED_SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledSmoothLines"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rectangularLines"),
+		    JAVA_INT.withName("bresenhamLines"),
+		    JAVA_INT.withName("smoothLines"),
+		    JAVA_INT.withName("stippledRectangularLines"),
+		    JAVA_INT.withName("stippledBresenhamLines"),
+		    JAVA_INT.withName("stippledSmoothLines")
+		).withName("VkPhysicalDeviceLineRasterizationFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rectangularLines"));
+		BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bresenhamLines"));
+		SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("smoothLines"));
+		STIPPLED_RECTANGULAR_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledRectangularLines"));
+		STIPPLED_BRESENHAM_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledBresenhamLines"));
+		STIPPLED_SMOOTH_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledSmoothLines"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rectangularLines"));
+		BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bresenhamLines"));
+		SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("smoothLines"));
+		STIPPLED_RECTANGULAR_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledRectangularLines"));
+		STIPPLED_BRESENHAM_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledBresenhamLines"));
+		STIPPLED_SMOOTH_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledSmoothLines"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceLineRasterizationFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceLineRasterizationFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceLineRasterizationFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceLineRasterizationFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceLineRasterizationFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceLineRasterizationFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceLineRasterizationFeatures sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkPhysicalDeviceLineRasterizationFeatures
             segment -> new VkPhysicalDeviceLineRasterizationFeatures(segment)
         );
     }
-    
+
 }

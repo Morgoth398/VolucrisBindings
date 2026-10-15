@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSparseImageMemoryBindInfo
 		implements Struct<VkSparseImageMemoryBindInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle IMAGE_HANDLE;
-    public static final VarHandle BIND_COUNT_HANDLE;
-    public static final VarHandle P_BINDS_HANDLE;
+	public static final VarHandle IMAGE_HANDLE;
+	public static final VarHandle BIND_COUNT_HANDLE;
+	public static final VarHandle P_BINDS_HANDLE;
 
-    public static final long IMAGE_BYTE_OFFSET;
-    public static final long BIND_COUNT_BYTE_OFFSET;
-    public static final long P_BINDS_BYTE_OFFSET;
+	public static final long IMAGE_BYTE_OFFSET;
+	public static final long BIND_COUNT_BYTE_OFFSET;
+	public static final long P_BINDS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("image"),
-            JAVA_INT.withName("bindCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pBinds")
-        ).withName("VkSparseImageMemoryBindInfo").withByteAlignment(8);
-        
-        IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
-        BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindCount"));
-        P_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBinds"));
-        
-        IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
-        BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindCount"));
-        P_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBinds"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("image"),
+		    JAVA_INT.withName("bindCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pBinds")
+		).withName("VkSparseImageMemoryBindInfo").withByteAlignment(8);
+		
+		IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
+		BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindCount"));
+		P_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBinds"));
+		
+		IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
+		BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindCount"));
+		P_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBinds"));
+		//@formatter:on
+	}
 
-    public VkSparseImageMemoryBindInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSparseImageMemoryBindInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSparseImageMemoryBindInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSparseImageMemoryBindInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseImageMemoryBindInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseImageMemoryBindInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #image()
     public VkSparseImageMemoryBindInfo image(VkImage image) {
@@ -156,5 +156,5 @@ public final class VkSparseImageMemoryBindInfo
             segment -> new VkSparseImageMemoryBindInfo(segment)
         );
     }
-    
+
 }

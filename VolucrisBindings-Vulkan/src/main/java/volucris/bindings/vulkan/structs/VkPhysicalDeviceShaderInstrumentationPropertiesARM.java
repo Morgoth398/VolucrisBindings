@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderInstrumentationPropertiesARM
 		implements Struct<VkPhysicalDeviceShaderInstrumentationPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NUM_METRICS_HANDLE;
-    public static final VarHandle PER_BASIC_BLOCK_GRANULARITY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NUM_METRICS_HANDLE;
+	public static final VarHandle PER_BASIC_BLOCK_GRANULARITY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NUM_METRICS_BYTE_OFFSET;
-    public static final long PER_BASIC_BLOCK_GRANULARITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NUM_METRICS_BYTE_OFFSET;
+	public static final long PER_BASIC_BLOCK_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("numMetrics"),
-            JAVA_INT.withName("perBasicBlockGranularity")
-        ).withName("VkPhysicalDeviceShaderInstrumentationPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NUM_METRICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numMetrics"));
-        PER_BASIC_BLOCK_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perBasicBlockGranularity"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NUM_METRICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numMetrics"));
-        PER_BASIC_BLOCK_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perBasicBlockGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("numMetrics"),
+		    JAVA_INT.withName("perBasicBlockGranularity")
+		).withName("VkPhysicalDeviceShaderInstrumentationPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NUM_METRICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numMetrics"));
+		PER_BASIC_BLOCK_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perBasicBlockGranularity"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NUM_METRICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numMetrics"));
+		PER_BASIC_BLOCK_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perBasicBlockGranularity"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderInstrumentationPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderInstrumentationPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderInstrumentationPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderInstrumentationPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderInstrumentationPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderInstrumentationPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderInstrumentationPropertiesARM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShaderInstrumentationPropertiesARM
             segment -> new VkPhysicalDeviceShaderInstrumentationPropertiesARM(segment)
         );
     }
-    
+
 }

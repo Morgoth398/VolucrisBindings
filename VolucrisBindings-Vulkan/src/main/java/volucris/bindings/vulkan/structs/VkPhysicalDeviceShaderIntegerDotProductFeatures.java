@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderIntegerDotProductFeatures
 		implements Struct<VkPhysicalDeviceShaderIntegerDotProductFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_INTEGER_DOT_PRODUCT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_INTEGER_DOT_PRODUCT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderIntegerDotProduct"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderIntegerDotProductFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_INTEGER_DOT_PRODUCT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderIntegerDotProduct"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderIntegerDotProduct"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderIntegerDotProduct"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderIntegerDotProductFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_INTEGER_DOT_PRODUCT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderIntegerDotProduct"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderIntegerDotProduct"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderIntegerDotProductFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderIntegerDotProductFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderIntegerDotProductFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderIntegerDotProductFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderIntegerDotProductFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderIntegerDotProductFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderIntegerDotProductFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceShaderIntegerDotProductFeatures
             segment -> new VkPhysicalDeviceShaderIntegerDotProductFeatures(segment)
         );
     }
-    
+
 }

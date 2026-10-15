@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkWriteDescriptorSetInlineUniformBlock
 		implements Struct<VkWriteDescriptorSetInlineUniformBlock> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DATA_SIZE_HANDLE;
-    public static final VarHandle P_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DATA_SIZE_HANDLE;
+	public static final VarHandle P_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DATA_SIZE_BYTE_OFFSET;
-    public static final long P_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DATA_SIZE_BYTE_OFFSET;
+	public static final long P_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dataSize"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pData")
-        ).withName("VkWriteDescriptorSetInlineUniformBlock").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataSize"));
-        P_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataSize"));
-        P_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dataSize"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pData")
+		).withName("VkWriteDescriptorSetInlineUniformBlock").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataSize"));
+		P_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataSize"));
+		P_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pData"));
+		//@formatter:on
+	}
 
-    public VkWriteDescriptorSetInlineUniformBlock() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkWriteDescriptorSetInlineUniformBlock(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkWriteDescriptorSetInlineUniformBlock(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkWriteDescriptorSetInlineUniformBlock() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkWriteDescriptorSetInlineUniformBlock(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkWriteDescriptorSetInlineUniformBlock(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkWriteDescriptorSetInlineUniformBlock sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkWriteDescriptorSetInlineUniformBlock
             segment -> new VkWriteDescriptorSetInlineUniformBlock(segment)
         );
     }
-    
+
 }

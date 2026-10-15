@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDescriptorBufferTensorFeaturesARM
 		implements Struct<VkPhysicalDeviceDescriptorBufferTensorFeaturesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("descriptorBufferTensorDescriptors"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDescriptorBufferTensorFeaturesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferTensorDescriptors"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferTensorDescriptors"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("descriptorBufferTensorDescriptors"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDescriptorBufferTensorFeaturesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferTensorDescriptors"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_BUFFER_TENSOR_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferTensorDescriptors"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDescriptorBufferTensorFeaturesARM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDescriptorBufferTensorFeaturesARM
             segment -> new VkPhysicalDeviceDescriptorBufferTensorFeaturesARM(segment)
         );
     }
-    
+
 }

@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPipelineCacheHeaderVersionDataGraphQCOM
 		implements Struct<VkPipelineCacheHeaderVersionDataGraphQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle HEADER_SIZE_HANDLE;
-    public static final VarHandle HEADER_VERSION_HANDLE;
-    public static final VarHandle CACHE_TYPE_HANDLE;
-    public static final VarHandle CACHE_VERSION_HANDLE;
-    public static final VarHandle TOOLCHAIN_VERSION_HANDLE;
+	public static final VarHandle HEADER_SIZE_HANDLE;
+	public static final VarHandle HEADER_VERSION_HANDLE;
+	public static final VarHandle CACHE_TYPE_HANDLE;
+	public static final VarHandle CACHE_VERSION_HANDLE;
+	public static final VarHandle TOOLCHAIN_VERSION_HANDLE;
 
-    public static final long HEADER_SIZE_BYTE_OFFSET;
-    public static final long HEADER_VERSION_BYTE_OFFSET;
-    public static final long CACHE_TYPE_BYTE_OFFSET;
-    public static final long CACHE_VERSION_BYTE_OFFSET;
-    public static final long TOOLCHAIN_VERSION_BYTE_OFFSET;
+	public static final long HEADER_SIZE_BYTE_OFFSET;
+	public static final long HEADER_VERSION_BYTE_OFFSET;
+	public static final long CACHE_TYPE_BYTE_OFFSET;
+	public static final long CACHE_VERSION_BYTE_OFFSET;
+	public static final long TOOLCHAIN_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("headerSize"),
-            JAVA_INT.withName("headerVersion"),
-            JAVA_INT.withName("cacheType"),
-            JAVA_INT.withName("cacheVersion"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("toolchainVersion")
-        ).withName("VkPipelineCacheHeaderVersionDataGraphQCOM").withByteAlignment(4);
-        
-        HEADER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerSize"));
-        HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerVersion"));
-        CACHE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cacheType"));
-        CACHE_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cacheVersion"));
-        TOOLCHAIN_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("toolchainVersion"), PathElement.sequenceElement());
-        
-        HEADER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerSize"));
-        HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerVersion"));
-        CACHE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cacheType"));
-        CACHE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cacheVersion"));
-        TOOLCHAIN_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("toolchainVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("headerSize"),
+		    JAVA_INT.withName("headerVersion"),
+		    JAVA_INT.withName("cacheType"),
+		    JAVA_INT.withName("cacheVersion"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("toolchainVersion")
+		).withName("VkPipelineCacheHeaderVersionDataGraphQCOM").withByteAlignment(4);
+		
+		HEADER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerSize"));
+		HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerVersion"));
+		CACHE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cacheType"));
+		CACHE_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cacheVersion"));
+		TOOLCHAIN_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("toolchainVersion"), PathElement.sequenceElement());
+		
+		HEADER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerSize"));
+		HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerVersion"));
+		CACHE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cacheType"));
+		CACHE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cacheVersion"));
+		TOOLCHAIN_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("toolchainVersion"));
+		//@formatter:on
+	}
 
-    public VkPipelineCacheHeaderVersionDataGraphQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineCacheHeaderVersionDataGraphQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineCacheHeaderVersionDataGraphQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineCacheHeaderVersionDataGraphQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineCacheHeaderVersionDataGraphQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineCacheHeaderVersionDataGraphQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #headerSize()
     public VkPipelineCacheHeaderVersionDataGraphQCOM headerSize(int headerSize) {
@@ -173,5 +173,5 @@ public final class VkPipelineCacheHeaderVersionDataGraphQCOM
             segment -> new VkPipelineCacheHeaderVersionDataGraphQCOM(segment)
         );
     }
-    
+
 }

@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkResourceDescriptorInfoEXT
 		implements Struct<VkResourceDescriptorInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkResourceDescriptorDataEXT data;
+	private final VkResourceDescriptorDataEXT data;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            MemoryLayout.paddingLayout(4),
-            VkResourceDescriptorDataEXT.LAYOUT.withName("data")
-        ).withName("VkResourceDescriptorInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    MemoryLayout.paddingLayout(4),
+		    VkResourceDescriptorDataEXT.LAYOUT.withName("data")
+		).withName("VkResourceDescriptorInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public VkResourceDescriptorInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkResourceDescriptorInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkResourceDescriptorInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        data = new VkResourceDescriptorDataEXT(segment.asSlice(DATA_BYTE_OFFSET, VkResourceDescriptorDataEXT.LAYOUT));
-    }
+	public VkResourceDescriptorInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkResourceDescriptorInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkResourceDescriptorInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    data = new VkResourceDescriptorDataEXT(segment.asSlice(DATA_BYTE_OFFSET, VkResourceDescriptorDataEXT.LAYOUT));
+	}
 
     /// @see #sType()
     public VkResourceDescriptorInfoEXT sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkResourceDescriptorInfoEXT
             segment -> new VkResourceDescriptorInfoEXT(segment)
         );
     }
-    
+
 }

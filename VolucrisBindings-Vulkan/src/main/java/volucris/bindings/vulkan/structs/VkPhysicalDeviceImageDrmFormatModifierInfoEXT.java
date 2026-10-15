@@ -22,64 +22,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageDrmFormatModifierInfoEXT
 		implements Struct<VkPhysicalDeviceImageDrmFormatModifierInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DRM_FORMAT_MODIFIER_HANDLE;
-    public static final VarHandle SHARING_MODE_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_COUNT_HANDLE;
-    public static final VarHandle P_QUEUE_FAMILY_INDICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_HANDLE;
+	public static final VarHandle SHARING_MODE_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_COUNT_HANDLE;
+	public static final VarHandle P_QUEUE_FAMILY_INDICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DRM_FORMAT_MODIFIER_BYTE_OFFSET;
-    public static final long SHARING_MODE_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET;
-    public static final long P_QUEUE_FAMILY_INDICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_BYTE_OFFSET;
+	public static final long SHARING_MODE_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET;
+	public static final long P_QUEUE_FAMILY_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("drmFormatModifier"),
-            JAVA_INT.withName("sharingMode"),
-            JAVA_INT.withName("queueFamilyIndexCount"),
-            UNBOUNDED_ADDRESS.withName("pQueueFamilyIndices")
-        ).withName("VkPhysicalDeviceImageDrmFormatModifierInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DRM_FORMAT_MODIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifier"));
-        SHARING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharingMode"));
-        QUEUE_FAMILY_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndexCount"));
-        P_QUEUE_FAMILY_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueFamilyIndices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DRM_FORMAT_MODIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifier"));
-        SHARING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharingMode"));
-        QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndexCount"));
-        P_QUEUE_FAMILY_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueFamilyIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("drmFormatModifier"),
+		    JAVA_INT.withName("sharingMode"),
+		    JAVA_INT.withName("queueFamilyIndexCount"),
+		    UNBOUNDED_ADDRESS.withName("pQueueFamilyIndices")
+		).withName("VkPhysicalDeviceImageDrmFormatModifierInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DRM_FORMAT_MODIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifier"));
+		SHARING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharingMode"));
+		QUEUE_FAMILY_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndexCount"));
+		P_QUEUE_FAMILY_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueFamilyIndices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DRM_FORMAT_MODIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifier"));
+		SHARING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharingMode"));
+		QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndexCount"));
+		P_QUEUE_FAMILY_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueFamilyIndices"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageDrmFormatModifierInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageDrmFormatModifierInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageDrmFormatModifierInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceImageDrmFormatModifierInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageDrmFormatModifierInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageDrmFormatModifierInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageDrmFormatModifierInfoEXT sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkPhysicalDeviceImageDrmFormatModifierInfoEXT
             segment -> new VkPhysicalDeviceImageDrmFormatModifierInfoEXT(segment)
         );
     }
-    
+
 }

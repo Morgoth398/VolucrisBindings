@@ -21,131 +21,131 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGraphicsPipelineCreateInfo
 		implements Struct<VkGraphicsPipelineCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle STAGE_COUNT_HANDLE;
-    public static final VarHandle P_STAGES_HANDLE;
-    public static final VarHandle P_VERTEX_INPUT_STATE_HANDLE;
-    public static final VarHandle P_INPUT_ASSEMBLY_STATE_HANDLE;
-    public static final VarHandle P_TESSELLATION_STATE_HANDLE;
-    public static final VarHandle P_VIEWPORT_STATE_HANDLE;
-    public static final VarHandle P_RASTERIZATION_STATE_HANDLE;
-    public static final VarHandle P_MULTISAMPLE_STATE_HANDLE;
-    public static final VarHandle P_DEPTH_STENCIL_STATE_HANDLE;
-    public static final VarHandle P_COLOR_BLEND_STATE_HANDLE;
-    public static final VarHandle P_DYNAMIC_STATE_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle RENDER_PASS_HANDLE;
-    public static final VarHandle SUBPASS_HANDLE;
-    public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
-    public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle STAGE_COUNT_HANDLE;
+	public static final VarHandle P_STAGES_HANDLE;
+	public static final VarHandle P_VERTEX_INPUT_STATE_HANDLE;
+	public static final VarHandle P_INPUT_ASSEMBLY_STATE_HANDLE;
+	public static final VarHandle P_TESSELLATION_STATE_HANDLE;
+	public static final VarHandle P_VIEWPORT_STATE_HANDLE;
+	public static final VarHandle P_RASTERIZATION_STATE_HANDLE;
+	public static final VarHandle P_MULTISAMPLE_STATE_HANDLE;
+	public static final VarHandle P_DEPTH_STENCIL_STATE_HANDLE;
+	public static final VarHandle P_COLOR_BLEND_STATE_HANDLE;
+	public static final VarHandle P_DYNAMIC_STATE_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle RENDER_PASS_HANDLE;
+	public static final VarHandle SUBPASS_HANDLE;
+	public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
+	public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long STAGE_COUNT_BYTE_OFFSET;
-    public static final long P_STAGES_BYTE_OFFSET;
-    public static final long P_VERTEX_INPUT_STATE_BYTE_OFFSET;
-    public static final long P_INPUT_ASSEMBLY_STATE_BYTE_OFFSET;
-    public static final long P_TESSELLATION_STATE_BYTE_OFFSET;
-    public static final long P_VIEWPORT_STATE_BYTE_OFFSET;
-    public static final long P_RASTERIZATION_STATE_BYTE_OFFSET;
-    public static final long P_MULTISAMPLE_STATE_BYTE_OFFSET;
-    public static final long P_DEPTH_STENCIL_STATE_BYTE_OFFSET;
-    public static final long P_COLOR_BLEND_STATE_BYTE_OFFSET;
-    public static final long P_DYNAMIC_STATE_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long RENDER_PASS_BYTE_OFFSET;
-    public static final long SUBPASS_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long STAGE_COUNT_BYTE_OFFSET;
+	public static final long P_STAGES_BYTE_OFFSET;
+	public static final long P_VERTEX_INPUT_STATE_BYTE_OFFSET;
+	public static final long P_INPUT_ASSEMBLY_STATE_BYTE_OFFSET;
+	public static final long P_TESSELLATION_STATE_BYTE_OFFSET;
+	public static final long P_VIEWPORT_STATE_BYTE_OFFSET;
+	public static final long P_RASTERIZATION_STATE_BYTE_OFFSET;
+	public static final long P_MULTISAMPLE_STATE_BYTE_OFFSET;
+	public static final long P_DEPTH_STENCIL_STATE_BYTE_OFFSET;
+	public static final long P_COLOR_BLEND_STATE_BYTE_OFFSET;
+	public static final long P_DYNAMIC_STATE_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long RENDER_PASS_BYTE_OFFSET;
+	public static final long SUBPASS_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("stageCount"),
-            UNBOUNDED_ADDRESS.withName("pStages"),
-            UNBOUNDED_ADDRESS.withName("pVertexInputState"),
-            UNBOUNDED_ADDRESS.withName("pInputAssemblyState"),
-            UNBOUNDED_ADDRESS.withName("pTessellationState"),
-            UNBOUNDED_ADDRESS.withName("pViewportState"),
-            UNBOUNDED_ADDRESS.withName("pRasterizationState"),
-            UNBOUNDED_ADDRESS.withName("pMultisampleState"),
-            UNBOUNDED_ADDRESS.withName("pDepthStencilState"),
-            UNBOUNDED_ADDRESS.withName("pColorBlendState"),
-            UNBOUNDED_ADDRESS.withName("pDynamicState"),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            UNBOUNDED_ADDRESS.withName("renderPass"),
-            JAVA_INT.withName("subpass"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
-            JAVA_INT.withName("basePipelineIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkGraphicsPipelineCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
-        P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
-        P_VERTEX_INPUT_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexInputState"));
-        P_INPUT_ASSEMBLY_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInputAssemblyState"));
-        P_TESSELLATION_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTessellationState"));
-        P_VIEWPORT_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewportState"));
-        P_RASTERIZATION_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRasterizationState"));
-        P_MULTISAMPLE_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMultisampleState"));
-        P_DEPTH_STENCIL_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthStencilState"));
-        P_COLOR_BLEND_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorBlendState"));
-        P_DYNAMIC_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicState"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        RENDER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPass"));
-        SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpass"));
-        BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
-        P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
-        P_VERTEX_INPUT_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexInputState"));
-        P_INPUT_ASSEMBLY_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInputAssemblyState"));
-        P_TESSELLATION_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTessellationState"));
-        P_VIEWPORT_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewportState"));
-        P_RASTERIZATION_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRasterizationState"));
-        P_MULTISAMPLE_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMultisampleState"));
-        P_DEPTH_STENCIL_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthStencilState"));
-        P_COLOR_BLEND_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorBlendState"));
-        P_DYNAMIC_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicState"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        RENDER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPass"));
-        SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpass"));
-        BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("stageCount"),
+		    UNBOUNDED_ADDRESS.withName("pStages"),
+		    UNBOUNDED_ADDRESS.withName("pVertexInputState"),
+		    UNBOUNDED_ADDRESS.withName("pInputAssemblyState"),
+		    UNBOUNDED_ADDRESS.withName("pTessellationState"),
+		    UNBOUNDED_ADDRESS.withName("pViewportState"),
+		    UNBOUNDED_ADDRESS.withName("pRasterizationState"),
+		    UNBOUNDED_ADDRESS.withName("pMultisampleState"),
+		    UNBOUNDED_ADDRESS.withName("pDepthStencilState"),
+		    UNBOUNDED_ADDRESS.withName("pColorBlendState"),
+		    UNBOUNDED_ADDRESS.withName("pDynamicState"),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    UNBOUNDED_ADDRESS.withName("renderPass"),
+		    JAVA_INT.withName("subpass"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
+		    JAVA_INT.withName("basePipelineIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkGraphicsPipelineCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
+		P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
+		P_VERTEX_INPUT_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexInputState"));
+		P_INPUT_ASSEMBLY_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInputAssemblyState"));
+		P_TESSELLATION_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTessellationState"));
+		P_VIEWPORT_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewportState"));
+		P_RASTERIZATION_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRasterizationState"));
+		P_MULTISAMPLE_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMultisampleState"));
+		P_DEPTH_STENCIL_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthStencilState"));
+		P_COLOR_BLEND_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorBlendState"));
+		P_DYNAMIC_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicState"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		RENDER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPass"));
+		SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpass"));
+		BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
+		P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
+		P_VERTEX_INPUT_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexInputState"));
+		P_INPUT_ASSEMBLY_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInputAssemblyState"));
+		P_TESSELLATION_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTessellationState"));
+		P_VIEWPORT_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewportState"));
+		P_RASTERIZATION_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRasterizationState"));
+		P_MULTISAMPLE_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMultisampleState"));
+		P_DEPTH_STENCIL_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthStencilState"));
+		P_COLOR_BLEND_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorBlendState"));
+		P_DYNAMIC_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicState"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		RENDER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPass"));
+		SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpass"));
+		BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
+		//@formatter:on
+	}
 
-    public VkGraphicsPipelineCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGraphicsPipelineCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGraphicsPipelineCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGraphicsPipelineCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGraphicsPipelineCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGraphicsPipelineCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGraphicsPipelineCreateInfo sType(int sType) {
@@ -458,5 +458,5 @@ public final class VkGraphicsPipelineCreateInfo
             segment -> new VkGraphicsPipelineCreateInfo(segment)
         );
     }
-    
+
 }

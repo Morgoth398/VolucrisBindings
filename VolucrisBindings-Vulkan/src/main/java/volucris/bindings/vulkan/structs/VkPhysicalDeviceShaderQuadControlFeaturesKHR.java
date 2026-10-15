@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderQuadControlFeaturesKHR
 		implements Struct<VkPhysicalDeviceShaderQuadControlFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_QUAD_CONTROL_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_QUAD_CONTROL_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_QUAD_CONTROL_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_QUAD_CONTROL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderQuadControl"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderQuadControlFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_QUAD_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderQuadControl"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_QUAD_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderQuadControl"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderQuadControl"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderQuadControlFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_QUAD_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderQuadControl"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_QUAD_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderQuadControl"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderQuadControlFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderQuadControlFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderQuadControlFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderQuadControlFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderQuadControlFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderQuadControlFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderQuadControlFeaturesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceShaderQuadControlFeaturesKHR
             segment -> new VkPhysicalDeviceShaderQuadControlFeaturesKHR(segment)
         );
     }
-    
+
 }

@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPresentTimesInfoGOOGLE
 		implements Struct<VkPresentTimesInfoGOOGLE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SWAPCHAIN_COUNT_HANDLE;
-    public static final VarHandle P_TIMES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SWAPCHAIN_COUNT_HANDLE;
+	public static final VarHandle P_TIMES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SWAPCHAIN_COUNT_BYTE_OFFSET;
-    public static final long P_TIMES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SWAPCHAIN_COUNT_BYTE_OFFSET;
+	public static final long P_TIMES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("swapchainCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTimes")
-        ).withName("VkPresentTimesInfoGOOGLE").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SWAPCHAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchainCount"));
-        P_TIMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTimes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SWAPCHAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchainCount"));
-        P_TIMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTimes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("swapchainCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTimes")
+		).withName("VkPresentTimesInfoGOOGLE").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SWAPCHAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchainCount"));
+		P_TIMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTimes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SWAPCHAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchainCount"));
+		P_TIMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTimes"));
+		//@formatter:on
+	}
 
-    public VkPresentTimesInfoGOOGLE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentTimesInfoGOOGLE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentTimesInfoGOOGLE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentTimesInfoGOOGLE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentTimesInfoGOOGLE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentTimesInfoGOOGLE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPresentTimesInfoGOOGLE sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkPresentTimesInfoGOOGLE
             segment -> new VkPresentTimesInfoGOOGLE(segment)
         );
     }
-    
+
 }

@@ -22,125 +22,141 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoDecodeVP9PictureInfo
 		implements Struct<StdVideoDecodeVP9PictureInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PROFILE_HANDLE;
-    public static final VarHandle FRAME_TYPE_HANDLE;
-    public static final VarHandle FRAME_CONTEXT_IDX_HANDLE;
-    public static final VarHandle RESET_FRAME_CONTEXT_HANDLE;
-    public static final VarHandle REFRESH_FRAME_FLAGS_HANDLE;
-    public static final VarHandle REF_FRAME_SIGN_BIAS_MASK_HANDLE;
-    public static final VarHandle INTERPOLATION_FILTER_HANDLE;
-    public static final VarHandle BASE_Q_IDX_HANDLE;
-    public static final VarHandle DELTA_Q_Y_DC_HANDLE;
-    public static final VarHandle DELTA_Q_UV_DC_HANDLE;
-    public static final VarHandle DELTA_Q_UV_AC_HANDLE;
-    public static final VarHandle TILE_COLS_LOG2_HANDLE;
-    public static final VarHandle TILE_ROWS_LOG2_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_COLOR_CONFIG_HANDLE;
-    public static final VarHandle P_LOOP_FILTER_HANDLE;
-    public static final VarHandle P_SEGMENTATION_HANDLE;
+	public static final VarHandle PROFILE_HANDLE;
+	public static final VarHandle FRAME_TYPE_HANDLE;
+	public static final VarHandle FRAME_CONTEXT_IDX_HANDLE;
+	public static final VarHandle RESET_FRAME_CONTEXT_HANDLE;
+	public static final VarHandle REFRESH_FRAME_FLAGS_HANDLE;
+	public static final VarHandle REF_FRAME_SIGN_BIAS_MASK_HANDLE;
+	public static final VarHandle INTERPOLATION_FILTER_HANDLE;
+	public static final VarHandle BASE_Q_IDX_HANDLE;
+	public static final VarHandle DELTA_Q_Y_DC_HANDLE;
+	public static final VarHandle DELTA_Q_UV_DC_HANDLE;
+	public static final VarHandle DELTA_Q_UV_AC_HANDLE;
+	public static final VarHandle TILE_COLS_LOG2_HANDLE;
+	public static final VarHandle TILE_ROWS_LOG2_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_COLOR_CONFIG_HANDLE;
+	public static final VarHandle P_LOOP_FILTER_HANDLE;
+	public static final VarHandle P_SEGMENTATION_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PROFILE_BYTE_OFFSET;
-    public static final long FRAME_TYPE_BYTE_OFFSET;
-    public static final long FRAME_CONTEXT_IDX_BYTE_OFFSET;
-    public static final long RESET_FRAME_CONTEXT_BYTE_OFFSET;
-    public static final long REFRESH_FRAME_FLAGS_BYTE_OFFSET;
-    public static final long REF_FRAME_SIGN_BIAS_MASK_BYTE_OFFSET;
-    public static final long INTERPOLATION_FILTER_BYTE_OFFSET;
-    public static final long BASE_Q_IDX_BYTE_OFFSET;
-    public static final long DELTA_Q_Y_DC_BYTE_OFFSET;
-    public static final long DELTA_Q_UV_DC_BYTE_OFFSET;
-    public static final long DELTA_Q_UV_AC_BYTE_OFFSET;
-    public static final long TILE_COLS_LOG2_BYTE_OFFSET;
-    public static final long TILE_ROWS_LOG2_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_COLOR_CONFIG_BYTE_OFFSET;
-    public static final long P_LOOP_FILTER_BYTE_OFFSET;
-    public static final long P_SEGMENTATION_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PROFILE_BYTE_OFFSET;
+	public static final long FRAME_TYPE_BYTE_OFFSET;
+	public static final long FRAME_CONTEXT_IDX_BYTE_OFFSET;
+	public static final long RESET_FRAME_CONTEXT_BYTE_OFFSET;
+	public static final long REFRESH_FRAME_FLAGS_BYTE_OFFSET;
+	public static final long REF_FRAME_SIGN_BIAS_MASK_BYTE_OFFSET;
+	public static final long INTERPOLATION_FILTER_BYTE_OFFSET;
+	public static final long BASE_Q_IDX_BYTE_OFFSET;
+	public static final long DELTA_Q_Y_DC_BYTE_OFFSET;
+	public static final long DELTA_Q_UV_DC_BYTE_OFFSET;
+	public static final long DELTA_Q_UV_AC_BYTE_OFFSET;
+	public static final long TILE_COLS_LOG2_BYTE_OFFSET;
+	public static final long TILE_ROWS_LOG2_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_COLOR_CONFIG_BYTE_OFFSET;
+	public static final long P_LOOP_FILTER_BYTE_OFFSET;
+	public static final long P_SEGMENTATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoDecodeVP9PictureInfoFlags flags;
+	private final StdVideoDecodeVP9PictureInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoDecodeVP9PictureInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("profile"),
-            JAVA_INT.withName("frame_type"),
-            JAVA_BYTE.withName("frame_context_idx"),
-            JAVA_BYTE.withName("reset_frame_context"),
-            JAVA_BYTE.withName("refresh_frame_flags"),
-            JAVA_BYTE.withName("ref_frame_sign_bias_mask"),
-            JAVA_INT.withName("interpolation_filter"),
-            JAVA_BYTE.withName("base_q_idx"),
-            JAVA_BYTE.withName("delta_q_y_dc"),
-            JAVA_BYTE.withName("delta_q_uv_dc"),
-            JAVA_BYTE.withName("delta_q_uv_ac"),
-            JAVA_BYTE.withName("tile_cols_log2"),
-            JAVA_BYTE.withName("tile_rows_log2"),
-            MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pColorConfig"),
-            UNBOUNDED_ADDRESS.withName("pLoopFilter"),
-            UNBOUNDED_ADDRESS.withName("pSegmentation")
-        ).withName("StdVideoDecodeVP9PictureInfo").withByteAlignment(8);
-        
-        PROFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("profile"));
-        FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
-        FRAME_CONTEXT_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_context_idx"));
-        RESET_FRAME_CONTEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reset_frame_context"));
-        REFRESH_FRAME_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refresh_frame_flags"));
-        REF_FRAME_SIGN_BIAS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ref_frame_sign_bias_mask"));
-        INTERPOLATION_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("interpolation_filter"));
-        BASE_Q_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("base_q_idx"));
-        DELTA_Q_Y_DC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_y_dc"));
-        DELTA_Q_UV_DC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_uv_dc"));
-        DELTA_Q_UV_AC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_uv_ac"));
-        TILE_COLS_LOG2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tile_cols_log2"));
-        TILE_ROWS_LOG2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tile_rows_log2"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
-        P_COLOR_CONFIG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorConfig"));
-        P_LOOP_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLoopFilter"));
-        P_SEGMENTATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSegmentation"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PROFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("profile"));
-        FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
-        FRAME_CONTEXT_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_context_idx"));
-        RESET_FRAME_CONTEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reset_frame_context"));
-        REFRESH_FRAME_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refresh_frame_flags"));
-        REF_FRAME_SIGN_BIAS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ref_frame_sign_bias_mask"));
-        INTERPOLATION_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("interpolation_filter"));
-        BASE_Q_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("base_q_idx"));
-        DELTA_Q_Y_DC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_y_dc"));
-        DELTA_Q_UV_DC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_uv_dc"));
-        DELTA_Q_UV_AC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_uv_ac"));
-        TILE_COLS_LOG2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tile_cols_log2"));
-        TILE_ROWS_LOG2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tile_rows_log2"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_COLOR_CONFIG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorConfig"));
-        P_LOOP_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLoopFilter"));
-        P_SEGMENTATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSegmentation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoDecodeVP9PictureInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("profile"),
+		    JAVA_INT.withName("frame_type"),
+		    JAVA_BYTE.withName("frame_context_idx"),
+		    JAVA_BYTE.withName("reset_frame_context"),
+		    JAVA_BYTE.withName("refresh_frame_flags"),
+		    JAVA_BYTE.withName("ref_frame_sign_bias_mask"),
+		    JAVA_INT.withName("interpolation_filter"),
+		    JAVA_BYTE.withName("base_q_idx"),
+		    JAVA_BYTE.withName("delta_q_y_dc"),
+		    JAVA_BYTE.withName("delta_q_uv_dc"),
+		    JAVA_BYTE.withName("delta_q_uv_ac"),
+		    JAVA_BYTE.withName("tile_cols_log2"),
+		    JAVA_BYTE.withName("tile_rows_log2"),
+		    MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pColorConfig"),
+		    UNBOUNDED_ADDRESS.withName("pLoopFilter"),
+		    UNBOUNDED_ADDRESS.withName("pSegmentation")
+		).withName("StdVideoDecodeVP9PictureInfo").withByteAlignment(8);
+		
+		PROFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("profile"));
+		FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
+		FRAME_CONTEXT_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_context_idx"));
+		RESET_FRAME_CONTEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reset_frame_context"));
+		REFRESH_FRAME_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refresh_frame_flags"));
+		REF_FRAME_SIGN_BIAS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ref_frame_sign_bias_mask"));
+		INTERPOLATION_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("interpolation_filter"));
+		BASE_Q_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("base_q_idx"));
+		DELTA_Q_Y_DC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_y_dc"));
+		DELTA_Q_UV_DC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_uv_dc"));
+		DELTA_Q_UV_AC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_uv_ac"));
+		TILE_COLS_LOG2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tile_cols_log2"));
+		TILE_ROWS_LOG2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tile_rows_log2"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
+		P_COLOR_CONFIG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorConfig"));
+		P_LOOP_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLoopFilter"));
+		P_SEGMENTATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSegmentation"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PROFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("profile"));
+		FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
+		FRAME_CONTEXT_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_context_idx"));
+		RESET_FRAME_CONTEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reset_frame_context"));
+		REFRESH_FRAME_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refresh_frame_flags"));
+		REF_FRAME_SIGN_BIAS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ref_frame_sign_bias_mask"));
+		INTERPOLATION_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("interpolation_filter"));
+		BASE_Q_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("base_q_idx"));
+		DELTA_Q_Y_DC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_y_dc"));
+		DELTA_Q_UV_DC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_uv_dc"));
+		DELTA_Q_UV_AC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_uv_ac"));
+		TILE_COLS_LOG2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tile_cols_log2"));
+		TILE_ROWS_LOG2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tile_rows_log2"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_COLOR_CONFIG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorConfig"));
+		P_LOOP_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLoopFilter"));
+		P_SEGMENTATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSegmentation"));
+		//@formatter:on
+	}
 
-    public StdVideoDecodeVP9PictureInfo() {
-        this(Arena.ofAuto());
+	public StdVideoDecodeVP9PictureInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoDecodeVP9PictureInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoDecodeVP9PictureInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoDecodeVP9PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeVP9PictureInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoDecodeVP9PictureInfo flags(Consumer<StdVideoDecodeVP9PictureInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoDecodeVP9PictureInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoDecodeVP9PictureInfo flags(StdVideoDecodeVP9PictureInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoDecodeVP9PictureInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoDecodeVP9PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeVP9PictureInfoFlags.LAYOUT));
+    public StdVideoDecodeVP9PictureInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #profile()
     public StdVideoDecodeVP9PictureInfo profile(int profile) {
     	PROFILE_HANDLE.set(segment, 0L, profile);
@@ -326,22 +342,6 @@ public final class StdVideoDecodeVP9PictureInfo
     	return new StdVideoVP9Segmentation(segment);
     }
     
-    /// @see #flags()
-    public StdVideoDecodeVP9PictureInfo flags(Consumer<StdVideoDecodeVP9PictureInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoDecodeVP9PictureInfo flags(StdVideoDecodeVP9PictureInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoDecodeVP9PictureInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoDecodeVP9PictureInfo set(StdVideoDecodeVP9PictureInfo other) {
         return set(other.segment);
@@ -393,5 +393,5 @@ public final class StdVideoDecodeVP9PictureInfo
             segment -> new StdVideoDecodeVP9PictureInfo(segment)
         );
     }
-    
+
 }

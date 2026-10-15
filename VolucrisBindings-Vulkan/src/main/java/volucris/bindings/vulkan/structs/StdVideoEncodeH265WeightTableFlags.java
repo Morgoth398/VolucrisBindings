@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH265WeightTableFlags
 		implements Struct<StdVideoEncodeH265WeightTableFlags> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LUMA_WEIGHT_L0_FLAG_HANDLE;
-    public static final VarHandle CHROMA_WEIGHT_L0_FLAG_HANDLE;
-    public static final VarHandle LUMA_WEIGHT_L1_FLAG_HANDLE;
-    public static final VarHandle CHROMA_WEIGHT_L1_FLAG_HANDLE;
+	public static final VarHandle LUMA_WEIGHT_L0_FLAG_HANDLE;
+	public static final VarHandle CHROMA_WEIGHT_L0_FLAG_HANDLE;
+	public static final VarHandle LUMA_WEIGHT_L1_FLAG_HANDLE;
+	public static final VarHandle CHROMA_WEIGHT_L1_FLAG_HANDLE;
 
-    public static final long LUMA_WEIGHT_L0_FLAG_BYTE_OFFSET;
-    public static final long CHROMA_WEIGHT_L0_FLAG_BYTE_OFFSET;
-    public static final long LUMA_WEIGHT_L1_FLAG_BYTE_OFFSET;
-    public static final long CHROMA_WEIGHT_L1_FLAG_BYTE_OFFSET;
+	public static final long LUMA_WEIGHT_L0_FLAG_BYTE_OFFSET;
+	public static final long CHROMA_WEIGHT_L0_FLAG_BYTE_OFFSET;
+	public static final long LUMA_WEIGHT_L1_FLAG_BYTE_OFFSET;
+	public static final long CHROMA_WEIGHT_L1_FLAG_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_SHORT.withName("luma_weight_l0_flag"),
-            JAVA_SHORT.withName("chroma_weight_l0_flag"),
-            JAVA_SHORT.withName("luma_weight_l1_flag"),
-            JAVA_SHORT.withName("chroma_weight_l1_flag")
-        ).withName("StdVideoEncodeH265WeightTableFlags").withByteAlignment(2);
-        
-        LUMA_WEIGHT_L0_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l0_flag"));
-        CHROMA_WEIGHT_L0_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l0_flag"));
-        LUMA_WEIGHT_L1_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l1_flag"));
-        CHROMA_WEIGHT_L1_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l1_flag"));
-        
-        LUMA_WEIGHT_L0_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l0_flag"));
-        CHROMA_WEIGHT_L0_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l0_flag"));
-        LUMA_WEIGHT_L1_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l1_flag"));
-        CHROMA_WEIGHT_L1_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l1_flag"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_SHORT.withName("luma_weight_l0_flag"),
+		    JAVA_SHORT.withName("chroma_weight_l0_flag"),
+		    JAVA_SHORT.withName("luma_weight_l1_flag"),
+		    JAVA_SHORT.withName("chroma_weight_l1_flag")
+		).withName("StdVideoEncodeH265WeightTableFlags").withByteAlignment(2);
+		
+		LUMA_WEIGHT_L0_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l0_flag"));
+		CHROMA_WEIGHT_L0_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l0_flag"));
+		LUMA_WEIGHT_L1_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l1_flag"));
+		CHROMA_WEIGHT_L1_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l1_flag"));
+		
+		LUMA_WEIGHT_L0_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l0_flag"));
+		CHROMA_WEIGHT_L0_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l0_flag"));
+		LUMA_WEIGHT_L1_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l1_flag"));
+		CHROMA_WEIGHT_L1_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l1_flag"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH265WeightTableFlags() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoEncodeH265WeightTableFlags(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoEncodeH265WeightTableFlags(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoEncodeH265WeightTableFlags() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH265WeightTableFlags(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH265WeightTableFlags(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #luma_weight_l0_flag()
     public StdVideoEncodeH265WeightTableFlags luma_weight_l0_flag(short luma_weight_l0_flag) {
@@ -158,5 +158,5 @@ public final class StdVideoEncodeH265WeightTableFlags
             segment -> new StdVideoEncodeH265WeightTableFlags(segment)
         );
     }
-    
+
 }

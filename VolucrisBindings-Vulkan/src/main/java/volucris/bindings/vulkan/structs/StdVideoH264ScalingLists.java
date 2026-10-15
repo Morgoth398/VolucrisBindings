@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH264ScalingLists
 		implements Struct<StdVideoH264ScalingLists> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SCALING_LIST_PRESENT_MASK_HANDLE;
-    public static final VarHandle USE_DEFAULT_SCALING_MATRIX_MASK_HANDLE;
-    public static final VarHandle SCALING_LIST4X4_HANDLE;
-    public static final VarHandle SCALING_LIST8X8_HANDLE;
+	public static final VarHandle SCALING_LIST_PRESENT_MASK_HANDLE;
+	public static final VarHandle USE_DEFAULT_SCALING_MATRIX_MASK_HANDLE;
+	public static final VarHandle SCALING_LIST4X4_HANDLE;
+	public static final VarHandle SCALING_LIST8X8_HANDLE;
 
-    public static final long SCALING_LIST_PRESENT_MASK_BYTE_OFFSET;
-    public static final long USE_DEFAULT_SCALING_MATRIX_MASK_BYTE_OFFSET;
-    public static final long SCALING_LIST4X4_BYTE_OFFSET;
-    public static final long SCALING_LIST8X8_BYTE_OFFSET;
+	public static final long SCALING_LIST_PRESENT_MASK_BYTE_OFFSET;
+	public static final long USE_DEFAULT_SCALING_MATRIX_MASK_BYTE_OFFSET;
+	public static final long SCALING_LIST4X4_BYTE_OFFSET;
+	public static final long SCALING_LIST8X8_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_SHORT.withName("scaling_list_present_mask"),
-            JAVA_SHORT.withName("use_default_scaling_matrix_mask"),
-            MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(16, JAVA_BYTE)).withName("ScalingList4x4"),
-            MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList8x8")
-        ).withName("StdVideoH264ScalingLists").withByteAlignment(2);
-        
-        SCALING_LIST_PRESENT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scaling_list_present_mask"));
-        USE_DEFAULT_SCALING_MATRIX_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("use_default_scaling_matrix_mask"));
-        SCALING_LIST4X4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList4x4"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        SCALING_LIST8X8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList8x8"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        SCALING_LIST_PRESENT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scaling_list_present_mask"));
-        USE_DEFAULT_SCALING_MATRIX_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("use_default_scaling_matrix_mask"));
-        SCALING_LIST4X4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList4x4"));
-        SCALING_LIST8X8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList8x8"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_SHORT.withName("scaling_list_present_mask"),
+		    JAVA_SHORT.withName("use_default_scaling_matrix_mask"),
+		    MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(16, JAVA_BYTE)).withName("ScalingList4x4"),
+		    MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList8x8")
+		).withName("StdVideoH264ScalingLists").withByteAlignment(2);
+		
+		SCALING_LIST_PRESENT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scaling_list_present_mask"));
+		USE_DEFAULT_SCALING_MATRIX_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("use_default_scaling_matrix_mask"));
+		SCALING_LIST4X4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList4x4"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		SCALING_LIST8X8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList8x8"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		SCALING_LIST_PRESENT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scaling_list_present_mask"));
+		USE_DEFAULT_SCALING_MATRIX_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("use_default_scaling_matrix_mask"));
+		SCALING_LIST4X4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList4x4"));
+		SCALING_LIST8X8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList8x8"));
+		//@formatter:on
+	}
 
-    public StdVideoH264ScalingLists() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoH264ScalingLists(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoH264ScalingLists(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoH264ScalingLists() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH264ScalingLists(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH264ScalingLists(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #scaling_list_present_mask()
     public StdVideoH264ScalingLists scaling_list_present_mask(short scaling_list_present_mask) {
@@ -158,5 +158,5 @@ public final class StdVideoH264ScalingLists
             segment -> new StdVideoH264ScalingLists(segment)
         );
     }
-    
+
 }

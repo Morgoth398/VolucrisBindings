@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH265NaluSliceSegmentInfoKHR
 		implements Struct<VkVideoEncodeH265NaluSliceSegmentInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle CONSTANT_QP_HANDLE;
-    public static final VarHandle P_STD_SLICE_SEGMENT_HEADER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle CONSTANT_QP_HANDLE;
+	public static final VarHandle P_STD_SLICE_SEGMENT_HEADER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CONSTANT_QP_BYTE_OFFSET;
-    public static final long P_STD_SLICE_SEGMENT_HEADER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CONSTANT_QP_BYTE_OFFSET;
+	public static final long P_STD_SLICE_SEGMENT_HEADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("constantQp"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStdSliceSegmentHeader")
-        ).withName("VkVideoEncodeH265NaluSliceSegmentInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        CONSTANT_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("constantQp"));
-        P_STD_SLICE_SEGMENT_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdSliceSegmentHeader"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CONSTANT_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantQp"));
-        P_STD_SLICE_SEGMENT_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdSliceSegmentHeader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("constantQp"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStdSliceSegmentHeader")
+		).withName("VkVideoEncodeH265NaluSliceSegmentInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		CONSTANT_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("constantQp"));
+		P_STD_SLICE_SEGMENT_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdSliceSegmentHeader"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CONSTANT_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantQp"));
+		P_STD_SLICE_SEGMENT_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdSliceSegmentHeader"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH265NaluSliceSegmentInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH265NaluSliceSegmentInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH265NaluSliceSegmentInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH265NaluSliceSegmentInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH265NaluSliceSegmentInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH265NaluSliceSegmentInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH265NaluSliceSegmentInfoKHR sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkVideoEncodeH265NaluSliceSegmentInfoKHR
             segment -> new VkVideoEncodeH265NaluSliceSegmentInfoKHR(segment)
         );
     }
-    
+
 }

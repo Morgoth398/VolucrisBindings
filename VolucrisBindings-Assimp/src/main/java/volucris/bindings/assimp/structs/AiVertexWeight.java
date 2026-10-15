@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiVertexWeight
 		implements Struct<AiVertexWeight> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_VERTEX_ID_HANDLE;
-    public static final VarHandle M_WEIGHT_HANDLE;
+	public static final VarHandle M_VERTEX_ID_HANDLE;
+	public static final VarHandle M_WEIGHT_HANDLE;
 
-    public static final long M_VERTEX_ID_BYTE_OFFSET;
-    public static final long M_WEIGHT_BYTE_OFFSET;
+	public static final long M_VERTEX_ID_BYTE_OFFSET;
+	public static final long M_WEIGHT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mVertexId"),
-            JAVA_FLOAT.withName("mWeight")
-        ).withName("aiVertexWeight").withByteAlignment(4);
-        
-        M_VERTEX_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mVertexId"));
-        M_WEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeight"));
-        
-        M_VERTEX_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mVertexId"));
-        M_WEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeight"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mVertexId"),
+		    JAVA_FLOAT.withName("mWeight")
+		).withName("aiVertexWeight").withByteAlignment(4);
+		
+		M_VERTEX_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mVertexId"));
+		M_WEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeight"));
+		
+		M_VERTEX_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mVertexId"));
+		M_WEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeight"));
+		//@formatter:on
+	}
 
-    public AiVertexWeight() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiVertexWeight(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiVertexWeight(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiVertexWeight() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiVertexWeight(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiVertexWeight(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mVertexId()
     public AiVertexWeight mVertexId(int mVertexId) {
@@ -135,5 +135,5 @@ public final class AiVertexWeight
             segment -> new AiVertexWeight(segment)
         );
     }
-    
+
 }

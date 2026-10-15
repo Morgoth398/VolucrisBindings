@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGraphicsShaderGroupCreateInfoNV
 		implements Struct<VkGraphicsShaderGroupCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_COUNT_HANDLE;
-    public static final VarHandle P_STAGES_HANDLE;
-    public static final VarHandle P_VERTEX_INPUT_STATE_HANDLE;
-    public static final VarHandle P_TESSELLATION_STATE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_COUNT_HANDLE;
+	public static final VarHandle P_STAGES_HANDLE;
+	public static final VarHandle P_VERTEX_INPUT_STATE_HANDLE;
+	public static final VarHandle P_TESSELLATION_STATE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_COUNT_BYTE_OFFSET;
-    public static final long P_STAGES_BYTE_OFFSET;
-    public static final long P_VERTEX_INPUT_STATE_BYTE_OFFSET;
-    public static final long P_TESSELLATION_STATE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_COUNT_BYTE_OFFSET;
+	public static final long P_STAGES_BYTE_OFFSET;
+	public static final long P_VERTEX_INPUT_STATE_BYTE_OFFSET;
+	public static final long P_TESSELLATION_STATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stageCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStages"),
-            UNBOUNDED_ADDRESS.withName("pVertexInputState"),
-            UNBOUNDED_ADDRESS.withName("pTessellationState")
-        ).withName("VkGraphicsShaderGroupCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
-        P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
-        P_VERTEX_INPUT_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexInputState"));
-        P_TESSELLATION_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTessellationState"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
-        P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
-        P_VERTEX_INPUT_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexInputState"));
-        P_TESSELLATION_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTessellationState"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stageCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStages"),
+		    UNBOUNDED_ADDRESS.withName("pVertexInputState"),
+		    UNBOUNDED_ADDRESS.withName("pTessellationState")
+		).withName("VkGraphicsShaderGroupCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
+		P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
+		P_VERTEX_INPUT_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexInputState"));
+		P_TESSELLATION_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTessellationState"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
+		P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
+		P_VERTEX_INPUT_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexInputState"));
+		P_TESSELLATION_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTessellationState"));
+		//@formatter:on
+	}
 
-    public VkGraphicsShaderGroupCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGraphicsShaderGroupCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGraphicsShaderGroupCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGraphicsShaderGroupCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGraphicsShaderGroupCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGraphicsShaderGroupCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGraphicsShaderGroupCreateInfoNV sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkGraphicsShaderGroupCreateInfoNV
             segment -> new VkGraphicsShaderGroupCreateInfoNV(segment)
         );
     }
-    
+
 }

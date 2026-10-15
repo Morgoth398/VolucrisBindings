@@ -23,107 +23,107 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkConvertCooperativeVectorMatrixInfoNV
 		implements Struct<VkConvertCooperativeVectorMatrixInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_SIZE_HANDLE;
-    public static final VarHandle P_DST_SIZE_HANDLE;
-    public static final VarHandle SRC_COMPONENT_TYPE_HANDLE;
-    public static final VarHandle DST_COMPONENT_TYPE_HANDLE;
-    public static final VarHandle NUM_ROWS_HANDLE;
-    public static final VarHandle NUM_COLUMNS_HANDLE;
-    public static final VarHandle SRC_LAYOUT_HANDLE;
-    public static final VarHandle SRC_STRIDE_HANDLE;
-    public static final VarHandle DST_LAYOUT_HANDLE;
-    public static final VarHandle DST_STRIDE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_SIZE_HANDLE;
+	public static final VarHandle P_DST_SIZE_HANDLE;
+	public static final VarHandle SRC_COMPONENT_TYPE_HANDLE;
+	public static final VarHandle DST_COMPONENT_TYPE_HANDLE;
+	public static final VarHandle NUM_ROWS_HANDLE;
+	public static final VarHandle NUM_COLUMNS_HANDLE;
+	public static final VarHandle SRC_LAYOUT_HANDLE;
+	public static final VarHandle SRC_STRIDE_HANDLE;
+	public static final VarHandle DST_LAYOUT_HANDLE;
+	public static final VarHandle DST_STRIDE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_SIZE_BYTE_OFFSET;
-    public static final long SRC_DATA_BYTE_OFFSET;
-    public static final long P_DST_SIZE_BYTE_OFFSET;
-    public static final long DST_DATA_BYTE_OFFSET;
-    public static final long SRC_COMPONENT_TYPE_BYTE_OFFSET;
-    public static final long DST_COMPONENT_TYPE_BYTE_OFFSET;
-    public static final long NUM_ROWS_BYTE_OFFSET;
-    public static final long NUM_COLUMNS_BYTE_OFFSET;
-    public static final long SRC_LAYOUT_BYTE_OFFSET;
-    public static final long SRC_STRIDE_BYTE_OFFSET;
-    public static final long DST_LAYOUT_BYTE_OFFSET;
-    public static final long DST_STRIDE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_SIZE_BYTE_OFFSET;
+	public static final long SRC_DATA_BYTE_OFFSET;
+	public static final long P_DST_SIZE_BYTE_OFFSET;
+	public static final long DST_DATA_BYTE_OFFSET;
+	public static final long SRC_COMPONENT_TYPE_BYTE_OFFSET;
+	public static final long DST_COMPONENT_TYPE_BYTE_OFFSET;
+	public static final long NUM_ROWS_BYTE_OFFSET;
+	public static final long NUM_COLUMNS_BYTE_OFFSET;
+	public static final long SRC_LAYOUT_BYTE_OFFSET;
+	public static final long SRC_STRIDE_BYTE_OFFSET;
+	public static final long DST_LAYOUT_BYTE_OFFSET;
+	public static final long DST_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressConstKHR srcData;
-    private final VkDeviceOrHostAddressKHR dstData;
+	private final VkDeviceOrHostAddressConstKHR srcData;
+	private final VkDeviceOrHostAddressKHR dstData;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("srcSize"),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("srcData"),
-            UNBOUNDED_ADDRESS.withName("pDstSize"),
-            VkDeviceOrHostAddressKHR.LAYOUT.withName("dstData"),
-            JAVA_INT.withName("srcComponentType"),
-            JAVA_INT.withName("dstComponentType"),
-            JAVA_INT.withName("numRows"),
-            JAVA_INT.withName("numColumns"),
-            JAVA_INT.withName("srcLayout"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("srcStride"),
-            JAVA_INT.withName("dstLayout"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("dstStride")
-        ).withName("VkConvertCooperativeVectorMatrixInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcSize"));
-        P_DST_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDstSize"));
-        SRC_COMPONENT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcComponentType"));
-        DST_COMPONENT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstComponentType"));
-        NUM_ROWS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numRows"));
-        NUM_COLUMNS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numColumns"));
-        SRC_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcLayout"));
-        SRC_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStride"));
-        DST_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstLayout"));
-        DST_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStride"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSize"));
-        SRC_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcData"));
-        P_DST_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDstSize"));
-        DST_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstData"));
-        SRC_COMPONENT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcComponentType"));
-        DST_COMPONENT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstComponentType"));
-        NUM_ROWS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numRows"));
-        NUM_COLUMNS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numColumns"));
-        SRC_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcLayout"));
-        SRC_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStride"));
-        DST_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstLayout"));
-        DST_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("srcSize"),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("srcData"),
+		    UNBOUNDED_ADDRESS.withName("pDstSize"),
+		    VkDeviceOrHostAddressKHR.LAYOUT.withName("dstData"),
+		    JAVA_INT.withName("srcComponentType"),
+		    JAVA_INT.withName("dstComponentType"),
+		    JAVA_INT.withName("numRows"),
+		    JAVA_INT.withName("numColumns"),
+		    JAVA_INT.withName("srcLayout"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("srcStride"),
+		    JAVA_INT.withName("dstLayout"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("dstStride")
+		).withName("VkConvertCooperativeVectorMatrixInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcSize"));
+		P_DST_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDstSize"));
+		SRC_COMPONENT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcComponentType"));
+		DST_COMPONENT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstComponentType"));
+		NUM_ROWS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numRows"));
+		NUM_COLUMNS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numColumns"));
+		SRC_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcLayout"));
+		SRC_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStride"));
+		DST_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstLayout"));
+		DST_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStride"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSize"));
+		SRC_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcData"));
+		P_DST_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDstSize"));
+		DST_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstData"));
+		SRC_COMPONENT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcComponentType"));
+		DST_COMPONENT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstComponentType"));
+		NUM_ROWS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numRows"));
+		NUM_COLUMNS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numColumns"));
+		SRC_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcLayout"));
+		SRC_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStride"));
+		DST_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstLayout"));
+		DST_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStride"));
+		//@formatter:on
+	}
 
-    public VkConvertCooperativeVectorMatrixInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkConvertCooperativeVectorMatrixInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkConvertCooperativeVectorMatrixInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        srcData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(SRC_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-        dstData = new VkDeviceOrHostAddressKHR(segment.asSlice(DST_DATA_BYTE_OFFSET, VkDeviceOrHostAddressKHR.LAYOUT));
-    }
+	public VkConvertCooperativeVectorMatrixInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkConvertCooperativeVectorMatrixInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkConvertCooperativeVectorMatrixInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    srcData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(SRC_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	    dstData = new VkDeviceOrHostAddressKHR(segment.asSlice(DST_DATA_BYTE_OFFSET, VkDeviceOrHostAddressKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkConvertCooperativeVectorMatrixInfoNV sType(int sType) {
@@ -160,6 +160,22 @@ public final class VkConvertCooperativeVectorMatrixInfoNV
     	return (long) SRC_SIZE_HANDLE.get(segment, 0L);
     }
     
+    /// @see #srcData()
+    public VkConvertCooperativeVectorMatrixInfoNV srcData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
+    	consumer.accept(srcData);
+    	return this;
+    }
+    
+    /// @see #srcData()
+    public VkConvertCooperativeVectorMatrixInfoNV srcData(VkDeviceOrHostAddressConstKHR other) {
+    	srcData.set(other);
+    	return this;
+    }
+    
+    public VkDeviceOrHostAddressConstKHR srcData() {
+    	return srcData;
+    }
+    
     /// @see #pDstSize()
     public VkConvertCooperativeVectorMatrixInfoNV pDstSize(NativeLongArray pDstSize) {
     	P_DST_SIZE_HANDLE.set(segment, 0L, pDstSize.memorySegment());
@@ -173,6 +189,22 @@ public final class VkConvertCooperativeVectorMatrixInfoNV
     		return null;
     	
     	return new NativeLongArray(segment);
+    }
+    
+    /// @see #dstData()
+    public VkConvertCooperativeVectorMatrixInfoNV dstData(Consumer<VkDeviceOrHostAddressKHR> consumer) {
+    	consumer.accept(dstData);
+    	return this;
+    }
+    
+    /// @see #dstData()
+    public VkConvertCooperativeVectorMatrixInfoNV dstData(VkDeviceOrHostAddressKHR other) {
+    	dstData.set(other);
+    	return this;
+    }
+    
+    public VkDeviceOrHostAddressKHR dstData() {
+    	return dstData;
     }
     
     /// @see #srcComponentType()
@@ -255,38 +287,6 @@ public final class VkConvertCooperativeVectorMatrixInfoNV
     	return (long) DST_STRIDE_HANDLE.get(segment, 0L);
     }
     
-    /// @see #srcData()
-    public VkConvertCooperativeVectorMatrixInfoNV srcData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
-    	consumer.accept(srcData);
-    	return this;
-    }
-    
-    /// @see #srcData()
-    public VkConvertCooperativeVectorMatrixInfoNV srcData(VkDeviceOrHostAddressConstKHR other) {
-    	srcData.set(other);
-    	return this;
-    }
-    
-    public VkDeviceOrHostAddressConstKHR srcData() {
-    	return srcData;
-    }
-    
-    /// @see #dstData()
-    public VkConvertCooperativeVectorMatrixInfoNV dstData(Consumer<VkDeviceOrHostAddressKHR> consumer) {
-    	consumer.accept(dstData);
-    	return this;
-    }
-    
-    /// @see #dstData()
-    public VkConvertCooperativeVectorMatrixInfoNV dstData(VkDeviceOrHostAddressKHR other) {
-    	dstData.set(other);
-    	return this;
-    }
-    
-    public VkDeviceOrHostAddressKHR dstData() {
-    	return dstData;
-    }
-    
     @Override
     public VkConvertCooperativeVectorMatrixInfoNV set(VkConvertCooperativeVectorMatrixInfoNV other) {
         return set(other.segment);
@@ -338,5 +338,5 @@ public final class VkConvertCooperativeVectorMatrixInfoNV
             segment -> new VkConvertCooperativeVectorMatrixInfoNV(segment)
         );
     }
-    
+
 }

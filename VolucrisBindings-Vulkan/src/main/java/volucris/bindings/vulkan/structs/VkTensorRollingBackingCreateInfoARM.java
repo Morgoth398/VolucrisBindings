@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTensorRollingBackingCreateInfoARM
 		implements Struct<VkTensorRollingBackingCreateInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WRAPS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WRAPS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WRAPS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WRAPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(4, JAVA_INT).withName("wraps")
-        ).withName("VkTensorRollingBackingCreateInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WRAPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wraps"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WRAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wraps"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(4, JAVA_INT).withName("wraps")
+		).withName("VkTensorRollingBackingCreateInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WRAPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wraps"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WRAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wraps"));
+		//@formatter:on
+	}
 
-    public VkTensorRollingBackingCreateInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTensorRollingBackingCreateInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTensorRollingBackingCreateInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTensorRollingBackingCreateInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTensorRollingBackingCreateInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTensorRollingBackingCreateInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkTensorRollingBackingCreateInfoARM sType(int sType) {
@@ -151,5 +151,5 @@ public final class VkTensorRollingBackingCreateInfoARM
             segment -> new VkTensorRollingBackingCreateInfoARM(segment)
         );
     }
-    
+
 }

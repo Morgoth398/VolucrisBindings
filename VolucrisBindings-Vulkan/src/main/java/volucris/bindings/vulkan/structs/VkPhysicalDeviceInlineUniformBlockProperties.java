@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceInlineUniformBlockProperties
 		implements Struct<VkPhysicalDeviceInlineUniformBlockProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxInlineUniformBlockSize"),
-            JAVA_INT.withName("maxPerStageDescriptorInlineUniformBlocks"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"),
-            JAVA_INT.withName("maxDescriptorSetInlineUniformBlocks"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceInlineUniformBlockProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformBlockSize"));
-        MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformBlockSize"));
-        MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxInlineUniformBlockSize"),
+		    JAVA_INT.withName("maxPerStageDescriptorInlineUniformBlocks"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"),
+		    JAVA_INT.withName("maxDescriptorSetInlineUniformBlocks"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceInlineUniformBlockProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformBlockSize"));
+		MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformBlockSize"));
+		MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceInlineUniformBlockProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceInlineUniformBlockProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceInlineUniformBlockProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceInlineUniformBlockProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceInlineUniformBlockProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceInlineUniformBlockProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceInlineUniformBlockProperties sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceInlineUniformBlockProperties
             segment -> new VkPhysicalDeviceInlineUniformBlockProperties(segment)
         );
     }
-    
+
 }

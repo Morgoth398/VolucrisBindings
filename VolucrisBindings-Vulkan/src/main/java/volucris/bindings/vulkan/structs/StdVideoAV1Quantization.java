@@ -20,86 +20,102 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1Quantization
 		implements Struct<StdVideoAV1Quantization> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BASE_Q_IDX_HANDLE;
-    public static final VarHandle DELTA_QYDC_HANDLE;
-    public static final VarHandle DELTA_QUDC_HANDLE;
-    public static final VarHandle DELTA_QUAC_HANDLE;
-    public static final VarHandle DELTA_QVDC_HANDLE;
-    public static final VarHandle DELTA_QVAC_HANDLE;
-    public static final VarHandle QM_Y_HANDLE;
-    public static final VarHandle QM_U_HANDLE;
-    public static final VarHandle QM_V_HANDLE;
+	public static final VarHandle BASE_Q_IDX_HANDLE;
+	public static final VarHandle DELTA_QYDC_HANDLE;
+	public static final VarHandle DELTA_QUDC_HANDLE;
+	public static final VarHandle DELTA_QUAC_HANDLE;
+	public static final VarHandle DELTA_QVDC_HANDLE;
+	public static final VarHandle DELTA_QVAC_HANDLE;
+	public static final VarHandle QM_Y_HANDLE;
+	public static final VarHandle QM_U_HANDLE;
+	public static final VarHandle QM_V_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long BASE_Q_IDX_BYTE_OFFSET;
-    public static final long DELTA_QYDC_BYTE_OFFSET;
-    public static final long DELTA_QUDC_BYTE_OFFSET;
-    public static final long DELTA_QUAC_BYTE_OFFSET;
-    public static final long DELTA_QVDC_BYTE_OFFSET;
-    public static final long DELTA_QVAC_BYTE_OFFSET;
-    public static final long QM_Y_BYTE_OFFSET;
-    public static final long QM_U_BYTE_OFFSET;
-    public static final long QM_V_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long BASE_Q_IDX_BYTE_OFFSET;
+	public static final long DELTA_QYDC_BYTE_OFFSET;
+	public static final long DELTA_QUDC_BYTE_OFFSET;
+	public static final long DELTA_QUAC_BYTE_OFFSET;
+	public static final long DELTA_QVDC_BYTE_OFFSET;
+	public static final long DELTA_QVAC_BYTE_OFFSET;
+	public static final long QM_Y_BYTE_OFFSET;
+	public static final long QM_U_BYTE_OFFSET;
+	public static final long QM_V_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoAV1QuantizationFlags flags;
+	private final StdVideoAV1QuantizationFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoAV1QuantizationFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("base_q_idx"),
-            JAVA_BYTE.withName("DeltaQYDc"),
-            JAVA_BYTE.withName("DeltaQUDc"),
-            JAVA_BYTE.withName("DeltaQUAc"),
-            JAVA_BYTE.withName("DeltaQVDc"),
-            JAVA_BYTE.withName("DeltaQVAc"),
-            JAVA_BYTE.withName("qm_y"),
-            JAVA_BYTE.withName("qm_u"),
-            JAVA_BYTE.withName("qm_v"),
-            MemoryLayout.paddingLayout(3)
-        ).withName("StdVideoAV1Quantization").withByteAlignment(4);
-        
-        BASE_Q_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("base_q_idx"));
-        DELTA_QYDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQYDc"));
-        DELTA_QUDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQUDc"));
-        DELTA_QUAC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQUAc"));
-        DELTA_QVDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQVDc"));
-        DELTA_QVAC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQVAc"));
-        QM_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qm_y"));
-        QM_U_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qm_u"));
-        QM_V_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qm_v"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        BASE_Q_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("base_q_idx"));
-        DELTA_QYDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQYDc"));
-        DELTA_QUDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQUDc"));
-        DELTA_QUAC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQUAc"));
-        DELTA_QVDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQVDc"));
-        DELTA_QVAC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQVAc"));
-        QM_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qm_y"));
-        QM_U_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qm_u"));
-        QM_V_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qm_v"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoAV1QuantizationFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("base_q_idx"),
+		    JAVA_BYTE.withName("DeltaQYDc"),
+		    JAVA_BYTE.withName("DeltaQUDc"),
+		    JAVA_BYTE.withName("DeltaQUAc"),
+		    JAVA_BYTE.withName("DeltaQVDc"),
+		    JAVA_BYTE.withName("DeltaQVAc"),
+		    JAVA_BYTE.withName("qm_y"),
+		    JAVA_BYTE.withName("qm_u"),
+		    JAVA_BYTE.withName("qm_v"),
+		    MemoryLayout.paddingLayout(3)
+		).withName("StdVideoAV1Quantization").withByteAlignment(4);
+		
+		BASE_Q_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("base_q_idx"));
+		DELTA_QYDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQYDc"));
+		DELTA_QUDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQUDc"));
+		DELTA_QUAC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQUAc"));
+		DELTA_QVDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQVDc"));
+		DELTA_QVAC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("DeltaQVAc"));
+		QM_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qm_y"));
+		QM_U_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qm_u"));
+		QM_V_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qm_v"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		BASE_Q_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("base_q_idx"));
+		DELTA_QYDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQYDc"));
+		DELTA_QUDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQUDc"));
+		DELTA_QUAC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQUAc"));
+		DELTA_QVDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQVDc"));
+		DELTA_QVAC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("DeltaQVAc"));
+		QM_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qm_y"));
+		QM_U_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qm_u"));
+		QM_V_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qm_v"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1Quantization() {
-        this(Arena.ofAuto());
+	public StdVideoAV1Quantization() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1Quantization(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1Quantization(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoAV1QuantizationFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1QuantizationFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoAV1Quantization flags(Consumer<StdVideoAV1QuantizationFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoAV1Quantization(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoAV1Quantization flags(StdVideoAV1QuantizationFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoAV1Quantization(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoAV1QuantizationFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1QuantizationFlags.LAYOUT));
+    public StdVideoAV1QuantizationFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #base_q_idx()
     public StdVideoAV1Quantization base_q_idx(byte base_q_idx) {
     	BASE_Q_IDX_HANDLE.set(segment, 0L, base_q_idx);
@@ -190,22 +206,6 @@ public final class StdVideoAV1Quantization
     	return (byte) QM_V_HANDLE.get(segment, 0L);
     }
     
-    /// @see #flags()
-    public StdVideoAV1Quantization flags(Consumer<StdVideoAV1QuantizationFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1Quantization flags(StdVideoAV1QuantizationFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoAV1QuantizationFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoAV1Quantization set(StdVideoAV1Quantization other) {
         return set(other.segment);
@@ -257,5 +257,5 @@ public final class StdVideoAV1Quantization
             segment -> new StdVideoAV1Quantization(segment)
         );
     }
-    
+
 }

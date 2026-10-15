@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPartitionedAccelerationStructureUpdateInstanceDataNV
 		implements Struct<VkPartitionedAccelerationStructureUpdateInstanceDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle INSTANCE_INDEX_HANDLE;
-    public static final VarHandle INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle INSTANCE_INDEX_HANDLE;
+	public static final VarHandle INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
 
-    public static final long INSTANCE_INDEX_BYTE_OFFSET;
-    public static final long INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long INSTANCE_INDEX_BYTE_OFFSET;
+	public static final long INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("instanceIndex"),
-            JAVA_INT.withName("instanceContributionToHitGroupIndex"),
-            JAVA_LONG.withName("accelerationStructure")
-        ).withName("VkPartitionedAccelerationStructureUpdateInstanceDataNV").withByteAlignment(8);
-        
-        INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceIndex"));
-        INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceContributionToHitGroupIndex"));
-        ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
-        
-        INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceIndex"));
-        INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceContributionToHitGroupIndex"));
-        ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("instanceIndex"),
+		    JAVA_INT.withName("instanceContributionToHitGroupIndex"),
+		    JAVA_LONG.withName("accelerationStructure")
+		).withName("VkPartitionedAccelerationStructureUpdateInstanceDataNV").withByteAlignment(8);
+		
+		INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceIndex"));
+		INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceContributionToHitGroupIndex"));
+		ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
+		
+		INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceIndex"));
+		INSTANCE_CONTRIBUTION_TO_HIT_GROUP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceContributionToHitGroupIndex"));
+		ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
+		//@formatter:on
+	}
 
-    public VkPartitionedAccelerationStructureUpdateInstanceDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPartitionedAccelerationStructureUpdateInstanceDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPartitionedAccelerationStructureUpdateInstanceDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPartitionedAccelerationStructureUpdateInstanceDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPartitionedAccelerationStructureUpdateInstanceDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPartitionedAccelerationStructureUpdateInstanceDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #instanceIndex()
     public VkPartitionedAccelerationStructureUpdateInstanceDataNV instanceIndex(int instanceIndex) {
@@ -143,5 +143,5 @@ public final class VkPartitionedAccelerationStructureUpdateInstanceDataNV
             segment -> new VkPartitionedAccelerationStructureUpdateInstanceDataNV(segment)
         );
     }
-    
+
 }

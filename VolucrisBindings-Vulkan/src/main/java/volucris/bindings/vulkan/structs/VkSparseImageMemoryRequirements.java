@@ -20,60 +20,76 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSparseImageMemoryRequirements
 		implements Struct<VkSparseImageMemoryRequirements> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle IMAGE_MIP_TAIL_FIRST_LOD_HANDLE;
-    public static final VarHandle IMAGE_MIP_TAIL_SIZE_HANDLE;
-    public static final VarHandle IMAGE_MIP_TAIL_OFFSET_HANDLE;
-    public static final VarHandle IMAGE_MIP_TAIL_STRIDE_HANDLE;
+	public static final VarHandle IMAGE_MIP_TAIL_FIRST_LOD_HANDLE;
+	public static final VarHandle IMAGE_MIP_TAIL_SIZE_HANDLE;
+	public static final VarHandle IMAGE_MIP_TAIL_OFFSET_HANDLE;
+	public static final VarHandle IMAGE_MIP_TAIL_STRIDE_HANDLE;
 
-    public static final long FORMAT_PROPERTIES_BYTE_OFFSET;
-    public static final long IMAGE_MIP_TAIL_FIRST_LOD_BYTE_OFFSET;
-    public static final long IMAGE_MIP_TAIL_SIZE_BYTE_OFFSET;
-    public static final long IMAGE_MIP_TAIL_OFFSET_BYTE_OFFSET;
-    public static final long IMAGE_MIP_TAIL_STRIDE_BYTE_OFFSET;
+	public static final long FORMAT_PROPERTIES_BYTE_OFFSET;
+	public static final long IMAGE_MIP_TAIL_FIRST_LOD_BYTE_OFFSET;
+	public static final long IMAGE_MIP_TAIL_SIZE_BYTE_OFFSET;
+	public static final long IMAGE_MIP_TAIL_OFFSET_BYTE_OFFSET;
+	public static final long IMAGE_MIP_TAIL_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSparseImageFormatProperties formatProperties;
+	private final VkSparseImageFormatProperties formatProperties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkSparseImageFormatProperties.LAYOUT.withName("formatProperties"),
-            JAVA_INT.withName("imageMipTailFirstLod"),
-            JAVA_LONG.withName("imageMipTailSize"),
-            JAVA_LONG.withName("imageMipTailOffset"),
-            JAVA_LONG.withName("imageMipTailStride")
-        ).withName("VkSparseImageMemoryRequirements").withByteAlignment(8);
-        
-        IMAGE_MIP_TAIL_FIRST_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailFirstLod"));
-        IMAGE_MIP_TAIL_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailSize"));
-        IMAGE_MIP_TAIL_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailOffset"));
-        IMAGE_MIP_TAIL_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailStride"));
-        
-        FORMAT_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("formatProperties"));
-        IMAGE_MIP_TAIL_FIRST_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailFirstLod"));
-        IMAGE_MIP_TAIL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailSize"));
-        IMAGE_MIP_TAIL_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailOffset"));
-        IMAGE_MIP_TAIL_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkSparseImageFormatProperties.LAYOUT.withName("formatProperties"),
+		    JAVA_INT.withName("imageMipTailFirstLod"),
+		    JAVA_LONG.withName("imageMipTailSize"),
+		    JAVA_LONG.withName("imageMipTailOffset"),
+		    JAVA_LONG.withName("imageMipTailStride")
+		).withName("VkSparseImageMemoryRequirements").withByteAlignment(8);
+		
+		IMAGE_MIP_TAIL_FIRST_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailFirstLod"));
+		IMAGE_MIP_TAIL_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailSize"));
+		IMAGE_MIP_TAIL_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailOffset"));
+		IMAGE_MIP_TAIL_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMipTailStride"));
+		
+		FORMAT_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("formatProperties"));
+		IMAGE_MIP_TAIL_FIRST_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailFirstLod"));
+		IMAGE_MIP_TAIL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailSize"));
+		IMAGE_MIP_TAIL_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailOffset"));
+		IMAGE_MIP_TAIL_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMipTailStride"));
+		//@formatter:on
+	}
 
-    public VkSparseImageMemoryRequirements() {
-        this(Arena.ofAuto());
+	public VkSparseImageMemoryRequirements() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseImageMemoryRequirements(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseImageMemoryRequirements(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    formatProperties = new VkSparseImageFormatProperties(segment.asSlice(FORMAT_PROPERTIES_BYTE_OFFSET, VkSparseImageFormatProperties.LAYOUT));
+	}
+
+    /// @see #formatProperties()
+    public VkSparseImageMemoryRequirements formatProperties(Consumer<VkSparseImageFormatProperties> consumer) {
+    	consumer.accept(formatProperties);
+    	return this;
     }
     
-    public VkSparseImageMemoryRequirements(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #formatProperties()
+    public VkSparseImageMemoryRequirements formatProperties(VkSparseImageFormatProperties other) {
+    	formatProperties.set(other);
+    	return this;
     }
     
-    public VkSparseImageMemoryRequirements(MemorySegment segment) {
-        this.segment = segment;
-    
-        formatProperties = new VkSparseImageFormatProperties(segment.asSlice(FORMAT_PROPERTIES_BYTE_OFFSET, VkSparseImageFormatProperties.LAYOUT));
+    public VkSparseImageFormatProperties formatProperties() {
+    	return formatProperties;
     }
-
+    
     /// @see #imageMipTailFirstLod()
     public VkSparseImageMemoryRequirements imageMipTailFirstLod(int imageMipTailFirstLod) {
     	IMAGE_MIP_TAIL_FIRST_LOD_HANDLE.set(segment, 0L, imageMipTailFirstLod);
@@ -112,22 +128,6 @@ public final class VkSparseImageMemoryRequirements
     
     public long imageMipTailStride() {
     	return (long) IMAGE_MIP_TAIL_STRIDE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #formatProperties()
-    public VkSparseImageMemoryRequirements formatProperties(Consumer<VkSparseImageFormatProperties> consumer) {
-    	consumer.accept(formatProperties);
-    	return this;
-    }
-    
-    /// @see #formatProperties()
-    public VkSparseImageMemoryRequirements formatProperties(VkSparseImageFormatProperties other) {
-    	formatProperties.set(other);
-    	return this;
-    }
-    
-    public VkSparseImageFormatProperties formatProperties() {
-    	return formatProperties;
     }
     
     @Override
@@ -181,5 +181,5 @@ public final class VkSparseImageMemoryRequirements
             segment -> new VkSparseImageMemoryRequirements(segment)
         );
     }
-    
+
 }

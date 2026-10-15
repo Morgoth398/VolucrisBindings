@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
 		implements Struct<VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRIMITIVES_GENERATED_QUERY_HANDLE;
-    public static final VarHandle PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_HANDLE;
-    public static final VarHandle PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRIMITIVES_GENERATED_QUERY_HANDLE;
+	public static final VarHandle PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_HANDLE;
+	public static final VarHandle PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRIMITIVES_GENERATED_QUERY_BYTE_OFFSET;
-    public static final long PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_BYTE_OFFSET;
-    public static final long PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRIMITIVES_GENERATED_QUERY_BYTE_OFFSET;
+	public static final long PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_BYTE_OFFSET;
+	public static final long PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("primitivesGeneratedQuery"),
-            JAVA_INT.withName("primitivesGeneratedQueryWithRasterizerDiscard"),
-            JAVA_INT.withName("primitivesGeneratedQueryWithNonZeroStreams"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRIMITIVES_GENERATED_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitivesGeneratedQuery"));
-        PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitivesGeneratedQueryWithRasterizerDiscard"));
-        PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitivesGeneratedQueryWithNonZeroStreams"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRIMITIVES_GENERATED_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitivesGeneratedQuery"));
-        PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitivesGeneratedQueryWithRasterizerDiscard"));
-        PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitivesGeneratedQueryWithNonZeroStreams"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("primitivesGeneratedQuery"),
+		    JAVA_INT.withName("primitivesGeneratedQueryWithRasterizerDiscard"),
+		    JAVA_INT.withName("primitivesGeneratedQueryWithNonZeroStreams"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRIMITIVES_GENERATED_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitivesGeneratedQuery"));
+		PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitivesGeneratedQueryWithRasterizerDiscard"));
+		PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitivesGeneratedQueryWithNonZeroStreams"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRIMITIVES_GENERATED_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitivesGeneratedQuery"));
+		PRIMITIVES_GENERATED_QUERY_WITH_RASTERIZER_DISCARD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitivesGeneratedQueryWithRasterizerDiscard"));
+		PRIMITIVES_GENERATED_QUERY_WITH_NON_ZERO_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitivesGeneratedQueryWithNonZeroStreams"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT
             segment -> new VkPhysicalDevicePrimitivesGeneratedQueryFeaturesEXT(segment)
         );
     }
-    
+
 }

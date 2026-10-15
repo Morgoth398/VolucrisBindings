@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkWriteIndirectExecutionSetShaderEXT
 		implements Struct<VkWriteIndirectExecutionSetShaderEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INDEX_HANDLE;
-    public static final VarHandle SHADER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INDEX_HANDLE;
+	public static final VarHandle SHADER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INDEX_BYTE_OFFSET;
-    public static final long SHADER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INDEX_BYTE_OFFSET;
+	public static final long SHADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("index"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("shader")
-        ).withName("VkWriteIndirectExecutionSetShaderEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("index"));
-        SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shader"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("index"));
-        SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("index"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("shader")
+		).withName("VkWriteIndirectExecutionSetShaderEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("index"));
+		SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shader"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("index"));
+		SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shader"));
+		//@formatter:on
+	}
 
-    public VkWriteIndirectExecutionSetShaderEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkWriteIndirectExecutionSetShaderEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkWriteIndirectExecutionSetShaderEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkWriteIndirectExecutionSetShaderEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkWriteIndirectExecutionSetShaderEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkWriteIndirectExecutionSetShaderEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkWriteIndirectExecutionSetShaderEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkWriteIndirectExecutionSetShaderEXT
             segment -> new VkWriteIndirectExecutionSetShaderEXT(segment)
         );
     }
-    
+
 }

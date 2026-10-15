@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264SessionParametersGetInfoKHR
 		implements Struct<VkVideoEncodeH264SessionParametersGetInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WRITE_STD_SPS_HANDLE;
-    public static final VarHandle WRITE_STD_PPS_HANDLE;
-    public static final VarHandle STD_SPSID_HANDLE;
-    public static final VarHandle STD_PPSID_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WRITE_STD_SPS_HANDLE;
+	public static final VarHandle WRITE_STD_PPS_HANDLE;
+	public static final VarHandle STD_SPSID_HANDLE;
+	public static final VarHandle STD_PPSID_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WRITE_STD_SPS_BYTE_OFFSET;
-    public static final long WRITE_STD_PPS_BYTE_OFFSET;
-    public static final long STD_SPSID_BYTE_OFFSET;
-    public static final long STD_PPSID_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WRITE_STD_SPS_BYTE_OFFSET;
+	public static final long WRITE_STD_PPS_BYTE_OFFSET;
+	public static final long STD_SPSID_BYTE_OFFSET;
+	public static final long STD_PPSID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("writeStdSPS"),
-            JAVA_INT.withName("writeStdPPS"),
-            JAVA_INT.withName("stdSPSId"),
-            JAVA_INT.withName("stdPPSId")
-        ).withName("VkVideoEncodeH264SessionParametersGetInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WRITE_STD_SPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("writeStdSPS"));
-        WRITE_STD_PPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("writeStdPPS"));
-        STD_SPSID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdSPSId"));
-        STD_PPSID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdPPSId"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WRITE_STD_SPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("writeStdSPS"));
-        WRITE_STD_PPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("writeStdPPS"));
-        STD_SPSID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdSPSId"));
-        STD_PPSID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdPPSId"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("writeStdSPS"),
+		    JAVA_INT.withName("writeStdPPS"),
+		    JAVA_INT.withName("stdSPSId"),
+		    JAVA_INT.withName("stdPPSId")
+		).withName("VkVideoEncodeH264SessionParametersGetInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WRITE_STD_SPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("writeStdSPS"));
+		WRITE_STD_PPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("writeStdPPS"));
+		STD_SPSID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdSPSId"));
+		STD_PPSID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdPPSId"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WRITE_STD_SPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("writeStdSPS"));
+		WRITE_STD_PPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("writeStdPPS"));
+		STD_SPSID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdSPSId"));
+		STD_PPSID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdPPSId"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264SessionParametersGetInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264SessionParametersGetInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264SessionParametersGetInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH264SessionParametersGetInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264SessionParametersGetInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264SessionParametersGetInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264SessionParametersGetInfoKHR sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVideoEncodeH264SessionParametersGetInfoKHR
             segment -> new VkVideoEncodeH264SessionParametersGetInfoKHR(segment)
         );
     }
-    
+
 }

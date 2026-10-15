@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDataGraphModelFeaturesQCOM
 		implements Struct<VkPhysicalDeviceDataGraphModelFeaturesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DATA_GRAPH_MODEL_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DATA_GRAPH_MODEL_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DATA_GRAPH_MODEL_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DATA_GRAPH_MODEL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dataGraphModel"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDataGraphModelFeaturesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DATA_GRAPH_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphModel"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DATA_GRAPH_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphModel"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dataGraphModel"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDataGraphModelFeaturesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DATA_GRAPH_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphModel"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DATA_GRAPH_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphModel"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDataGraphModelFeaturesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDataGraphModelFeaturesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDataGraphModelFeaturesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDataGraphModelFeaturesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDataGraphModelFeaturesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDataGraphModelFeaturesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDataGraphModelFeaturesQCOM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDataGraphModelFeaturesQCOM
             segment -> new VkPhysicalDeviceDataGraphModelFeaturesQCOM(segment)
         );
     }
-    
+
 }

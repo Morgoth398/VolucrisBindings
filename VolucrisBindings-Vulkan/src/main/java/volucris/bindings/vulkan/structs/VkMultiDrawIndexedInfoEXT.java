@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMultiDrawIndexedInfoEXT
 		implements Struct<VkMultiDrawIndexedInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FIRST_INDEX_HANDLE;
-    public static final VarHandle INDEX_COUNT_HANDLE;
-    public static final VarHandle VERTEX_OFFSET_HANDLE;
+	public static final VarHandle FIRST_INDEX_HANDLE;
+	public static final VarHandle INDEX_COUNT_HANDLE;
+	public static final VarHandle VERTEX_OFFSET_HANDLE;
 
-    public static final long FIRST_INDEX_BYTE_OFFSET;
-    public static final long INDEX_COUNT_BYTE_OFFSET;
-    public static final long VERTEX_OFFSET_BYTE_OFFSET;
+	public static final long FIRST_INDEX_BYTE_OFFSET;
+	public static final long INDEX_COUNT_BYTE_OFFSET;
+	public static final long VERTEX_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("firstIndex"),
-            JAVA_INT.withName("indexCount"),
-            JAVA_INT.withName("vertexOffset")
-        ).withName("VkMultiDrawIndexedInfoEXT").withByteAlignment(4);
-        
-        FIRST_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstIndex"));
-        INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexCount"));
-        VERTEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexOffset"));
-        
-        FIRST_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstIndex"));
-        INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexCount"));
-        VERTEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("firstIndex"),
+		    JAVA_INT.withName("indexCount"),
+		    JAVA_INT.withName("vertexOffset")
+		).withName("VkMultiDrawIndexedInfoEXT").withByteAlignment(4);
+		
+		FIRST_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstIndex"));
+		INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexCount"));
+		VERTEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexOffset"));
+		
+		FIRST_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstIndex"));
+		INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexCount"));
+		VERTEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexOffset"));
+		//@formatter:on
+	}
 
-    public VkMultiDrawIndexedInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMultiDrawIndexedInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMultiDrawIndexedInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMultiDrawIndexedInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMultiDrawIndexedInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMultiDrawIndexedInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #firstIndex()
     public VkMultiDrawIndexedInfoEXT firstIndex(int firstIndex) {
@@ -143,5 +143,5 @@ public final class VkMultiDrawIndexedInfoEXT
             segment -> new VkMultiDrawIndexedInfoEXT(segment)
         );
     }
-    
+
 }

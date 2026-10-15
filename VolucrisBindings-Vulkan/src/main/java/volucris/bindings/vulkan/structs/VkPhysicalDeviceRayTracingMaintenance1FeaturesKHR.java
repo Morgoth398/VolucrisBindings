@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR
 		implements Struct<VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RAY_TRACING_MAINTENANCE1_HANDLE;
-    public static final VarHandle RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RAY_TRACING_MAINTENANCE1_HANDLE;
+	public static final VarHandle RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RAY_TRACING_MAINTENANCE1_BYTE_OFFSET;
-    public static final long RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RAY_TRACING_MAINTENANCE1_BYTE_OFFSET;
+	public static final long RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rayTracingMaintenance1"),
-            JAVA_INT.withName("rayTracingPipelineTraceRaysIndirect2")
-        ).withName("VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RAY_TRACING_MAINTENANCE1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingMaintenance1"));
-        RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect2"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RAY_TRACING_MAINTENANCE1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingMaintenance1"));
-        RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect2"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rayTracingMaintenance1"),
+		    JAVA_INT.withName("rayTracingPipelineTraceRaysIndirect2")
+		).withName("VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RAY_TRACING_MAINTENANCE1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingMaintenance1"));
+		RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect2"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RAY_TRACING_MAINTENANCE1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingMaintenance1"));
+		RAY_TRACING_PIPELINE_TRACE_RAYS_INDIRECT2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingPipelineTraceRaysIndirect2"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR
             segment -> new VkPhysicalDeviceRayTracingMaintenance1FeaturesKHR(segment)
         );
     }
-    
+
 }

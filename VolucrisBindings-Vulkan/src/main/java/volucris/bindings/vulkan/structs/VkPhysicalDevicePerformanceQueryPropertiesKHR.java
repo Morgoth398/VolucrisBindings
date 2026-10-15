@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePerformanceQueryPropertiesKHR
 		implements Struct<VkPhysicalDevicePerformanceQueryPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ALLOW_COMMAND_BUFFER_QUERY_COPIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ALLOW_COMMAND_BUFFER_QUERY_COPIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ALLOW_COMMAND_BUFFER_QUERY_COPIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ALLOW_COMMAND_BUFFER_QUERY_COPIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("allowCommandBufferQueryCopies"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePerformanceQueryPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ALLOW_COMMAND_BUFFER_QUERY_COPIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allowCommandBufferQueryCopies"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ALLOW_COMMAND_BUFFER_QUERY_COPIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allowCommandBufferQueryCopies"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("allowCommandBufferQueryCopies"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePerformanceQueryPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ALLOW_COMMAND_BUFFER_QUERY_COPIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allowCommandBufferQueryCopies"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ALLOW_COMMAND_BUFFER_QUERY_COPIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allowCommandBufferQueryCopies"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePerformanceQueryPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePerformanceQueryPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePerformanceQueryPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePerformanceQueryPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePerformanceQueryPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePerformanceQueryPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePerformanceQueryPropertiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePerformanceQueryPropertiesKHR
             segment -> new VkPhysicalDevicePerformanceQueryPropertiesKHR(segment)
         );
     }
-    
+
 }

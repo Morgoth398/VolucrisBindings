@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImportSemaphoreFdInfoKHR
 		implements Struct<VkImportSemaphoreFdInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SEMAPHORE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle HANDLE_TYPE_HANDLE;
-    public static final VarHandle FD_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SEMAPHORE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle HANDLE_TYPE_HANDLE;
+	public static final VarHandle FD_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SEMAPHORE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long HANDLE_TYPE_BYTE_OFFSET;
-    public static final long FD_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SEMAPHORE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long HANDLE_TYPE_BYTE_OFFSET;
+	public static final long FD_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("semaphore"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("handleType"),
-            JAVA_INT.withName("fd"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkImportSemaphoreFdInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SEMAPHORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("semaphore"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        HANDLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handleType"));
-        FD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fd"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SEMAPHORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("semaphore"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        HANDLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handleType"));
-        FD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fd"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("semaphore"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("handleType"),
+		    JAVA_INT.withName("fd"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkImportSemaphoreFdInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SEMAPHORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("semaphore"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		HANDLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handleType"));
+		FD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fd"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SEMAPHORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("semaphore"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		HANDLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handleType"));
+		FD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fd"));
+		//@formatter:on
+	}
 
-    public VkImportSemaphoreFdInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImportSemaphoreFdInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImportSemaphoreFdInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImportSemaphoreFdInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImportSemaphoreFdInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImportSemaphoreFdInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkImportSemaphoreFdInfoKHR sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkImportSemaphoreFdInfoKHR
             segment -> new VkImportSemaphoreFdInfoKHR(segment)
         );
     }
-    
+
 }

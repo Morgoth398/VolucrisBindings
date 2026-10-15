@@ -20,71 +20,87 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH265ReferenceListsInfo
 		implements Struct<StdVideoEncodeH265ReferenceListsInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle NUM_REF_IDX_L0_ACTIVE_MINUS1_HANDLE;
-    public static final VarHandle NUM_REF_IDX_L1_ACTIVE_MINUS1_HANDLE;
-    public static final VarHandle REF_PIC_LIST0_HANDLE;
-    public static final VarHandle REF_PIC_LIST1_HANDLE;
-    public static final VarHandle LIST_ENTRY_L0_HANDLE;
-    public static final VarHandle LIST_ENTRY_L1_HANDLE;
+	public static final VarHandle NUM_REF_IDX_L0_ACTIVE_MINUS1_HANDLE;
+	public static final VarHandle NUM_REF_IDX_L1_ACTIVE_MINUS1_HANDLE;
+	public static final VarHandle REF_PIC_LIST0_HANDLE;
+	public static final VarHandle REF_PIC_LIST1_HANDLE;
+	public static final VarHandle LIST_ENTRY_L0_HANDLE;
+	public static final VarHandle LIST_ENTRY_L1_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long NUM_REF_IDX_L0_ACTIVE_MINUS1_BYTE_OFFSET;
-    public static final long NUM_REF_IDX_L1_ACTIVE_MINUS1_BYTE_OFFSET;
-    public static final long REF_PIC_LIST0_BYTE_OFFSET;
-    public static final long REF_PIC_LIST1_BYTE_OFFSET;
-    public static final long LIST_ENTRY_L0_BYTE_OFFSET;
-    public static final long LIST_ENTRY_L1_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long NUM_REF_IDX_L0_ACTIVE_MINUS1_BYTE_OFFSET;
+	public static final long NUM_REF_IDX_L1_ACTIVE_MINUS1_BYTE_OFFSET;
+	public static final long REF_PIC_LIST0_BYTE_OFFSET;
+	public static final long REF_PIC_LIST1_BYTE_OFFSET;
+	public static final long LIST_ENTRY_L0_BYTE_OFFSET;
+	public static final long LIST_ENTRY_L1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH265ReferenceListsInfoFlags flags;
+	private final StdVideoEncodeH265ReferenceListsInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH265ReferenceListsInfoFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("num_ref_idx_l0_active_minus1"),
-            JAVA_BYTE.withName("num_ref_idx_l1_active_minus1"),
-            MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("RefPicList0"),
-            MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("RefPicList1"),
-            MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("list_entry_l0"),
-            MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("list_entry_l1"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("StdVideoEncodeH265ReferenceListsInfo").withByteAlignment(4);
-        
-        NUM_REF_IDX_L0_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l0_active_minus1"));
-        NUM_REF_IDX_L1_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l1_active_minus1"));
-        REF_PIC_LIST0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefPicList0"), PathElement.sequenceElement());
-        REF_PIC_LIST1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefPicList1"), PathElement.sequenceElement());
-        LIST_ENTRY_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("list_entry_l0"), PathElement.sequenceElement());
-        LIST_ENTRY_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("list_entry_l1"), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        NUM_REF_IDX_L0_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l0_active_minus1"));
-        NUM_REF_IDX_L1_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l1_active_minus1"));
-        REF_PIC_LIST0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefPicList0"));
-        REF_PIC_LIST1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefPicList1"));
-        LIST_ENTRY_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("list_entry_l0"));
-        LIST_ENTRY_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("list_entry_l1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH265ReferenceListsInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("num_ref_idx_l0_active_minus1"),
+		    JAVA_BYTE.withName("num_ref_idx_l1_active_minus1"),
+		    MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("RefPicList0"),
+		    MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("RefPicList1"),
+		    MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("list_entry_l0"),
+		    MemoryLayout.sequenceLayout(15, JAVA_BYTE).withName("list_entry_l1"),
+		    MemoryLayout.paddingLayout(2)
+		).withName("StdVideoEncodeH265ReferenceListsInfo").withByteAlignment(4);
+		
+		NUM_REF_IDX_L0_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l0_active_minus1"));
+		NUM_REF_IDX_L1_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l1_active_minus1"));
+		REF_PIC_LIST0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefPicList0"), PathElement.sequenceElement());
+		REF_PIC_LIST1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefPicList1"), PathElement.sequenceElement());
+		LIST_ENTRY_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("list_entry_l0"), PathElement.sequenceElement());
+		LIST_ENTRY_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("list_entry_l1"), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		NUM_REF_IDX_L0_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l0_active_minus1"));
+		NUM_REF_IDX_L1_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l1_active_minus1"));
+		REF_PIC_LIST0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefPicList0"));
+		REF_PIC_LIST1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefPicList1"));
+		LIST_ENTRY_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("list_entry_l0"));
+		LIST_ENTRY_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("list_entry_l1"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH265ReferenceListsInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH265ReferenceListsInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH265ReferenceListsInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH265ReferenceListsInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH265ReferenceListsInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265ReferenceListsInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH265ReferenceListsInfo flags(Consumer<StdVideoEncodeH265ReferenceListsInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH265ReferenceListsInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH265ReferenceListsInfo flags(StdVideoEncodeH265ReferenceListsInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH265ReferenceListsInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH265ReferenceListsInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265ReferenceListsInfoFlags.LAYOUT));
+    public StdVideoEncodeH265ReferenceListsInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #num_ref_idx_l0_active_minus1()
     public StdVideoEncodeH265ReferenceListsInfo num_ref_idx_l0_active_minus1(byte num_ref_idx_l0_active_minus1) {
     	NUM_REF_IDX_L0_ACTIVE_MINUS1_HANDLE.set(segment, 0L, num_ref_idx_l0_active_minus1);
@@ -145,22 +161,6 @@ public final class StdVideoEncodeH265ReferenceListsInfo
     	return (byte) LIST_ENTRY_L1_HANDLE.get(segment, 0L, index0);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH265ReferenceListsInfo flags(Consumer<StdVideoEncodeH265ReferenceListsInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH265ReferenceListsInfo flags(StdVideoEncodeH265ReferenceListsInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH265ReferenceListsInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH265ReferenceListsInfo set(StdVideoEncodeH265ReferenceListsInfo other) {
         return set(other.segment);
@@ -212,5 +212,5 @@ public final class StdVideoEncodeH265ReferenceListsInfo
             segment -> new StdVideoEncodeH265ReferenceListsInfo(segment)
         );
     }
-    
+
 }

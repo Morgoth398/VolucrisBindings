@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineBinaryInfoKHR
 		implements Struct<VkPipelineBinaryInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BINARY_COUNT_HANDLE;
-    public static final VarHandle P_PIPELINE_BINARIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BINARY_COUNT_HANDLE;
+	public static final VarHandle P_PIPELINE_BINARIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BINARY_COUNT_BYTE_OFFSET;
-    public static final long P_PIPELINE_BINARIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BINARY_COUNT_BYTE_OFFSET;
+	public static final long P_PIPELINE_BINARIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("binaryCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPipelineBinaries")
-        ).withName("VkPipelineBinaryInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BINARY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binaryCount"));
-        P_PIPELINE_BINARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineBinaries"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BINARY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binaryCount"));
-        P_PIPELINE_BINARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineBinaries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("binaryCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPipelineBinaries")
+		).withName("VkPipelineBinaryInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BINARY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binaryCount"));
+		P_PIPELINE_BINARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineBinaries"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BINARY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binaryCount"));
+		P_PIPELINE_BINARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineBinaries"));
+		//@formatter:on
+	}
 
-    public VkPipelineBinaryInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineBinaryInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineBinaryInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineBinaryInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineBinaryInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineBinaryInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineBinaryInfoKHR sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkPipelineBinaryInfoKHR
             segment -> new VkPipelineBinaryInfoKHR(segment)
         );
     }
-    
+
 }

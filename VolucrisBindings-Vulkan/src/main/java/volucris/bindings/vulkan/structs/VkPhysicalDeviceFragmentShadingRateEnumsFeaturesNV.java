@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV
 		implements Struct<VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_ENUMS_HANDLE;
-    public static final VarHandle SUPERSAMPLE_FRAGMENT_SHADING_RATES_HANDLE;
-    public static final VarHandle NO_INVOCATION_FRAGMENT_SHADING_RATES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_ENUMS_HANDLE;
+	public static final VarHandle SUPERSAMPLE_FRAGMENT_SHADING_RATES_HANDLE;
+	public static final VarHandle NO_INVOCATION_FRAGMENT_SHADING_RATES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_ENUMS_BYTE_OFFSET;
-    public static final long SUPERSAMPLE_FRAGMENT_SHADING_RATES_BYTE_OFFSET;
-    public static final long NO_INVOCATION_FRAGMENT_SHADING_RATES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_ENUMS_BYTE_OFFSET;
+	public static final long SUPERSAMPLE_FRAGMENT_SHADING_RATES_BYTE_OFFSET;
+	public static final long NO_INVOCATION_FRAGMENT_SHADING_RATES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("fragmentShadingRateEnums"),
-            JAVA_INT.withName("supersampleFragmentShadingRates"),
-            JAVA_INT.withName("noInvocationFragmentShadingRates"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FRAGMENT_SHADING_RATE_ENUMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateEnums"));
-        SUPERSAMPLE_FRAGMENT_SHADING_RATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supersampleFragmentShadingRates"));
-        NO_INVOCATION_FRAGMENT_SHADING_RATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("noInvocationFragmentShadingRates"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FRAGMENT_SHADING_RATE_ENUMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateEnums"));
-        SUPERSAMPLE_FRAGMENT_SHADING_RATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supersampleFragmentShadingRates"));
-        NO_INVOCATION_FRAGMENT_SHADING_RATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("noInvocationFragmentShadingRates"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("fragmentShadingRateEnums"),
+		    JAVA_INT.withName("supersampleFragmentShadingRates"),
+		    JAVA_INT.withName("noInvocationFragmentShadingRates"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FRAGMENT_SHADING_RATE_ENUMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateEnums"));
+		SUPERSAMPLE_FRAGMENT_SHADING_RATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supersampleFragmentShadingRates"));
+		NO_INVOCATION_FRAGMENT_SHADING_RATES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("noInvocationFragmentShadingRates"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FRAGMENT_SHADING_RATE_ENUMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateEnums"));
+		SUPERSAMPLE_FRAGMENT_SHADING_RATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supersampleFragmentShadingRates"));
+		NO_INVOCATION_FRAGMENT_SHADING_RATES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("noInvocationFragmentShadingRates"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV
             segment -> new VkPhysicalDeviceFragmentShadingRateEnumsFeaturesNV(segment)
         );
     }
-    
+
 }

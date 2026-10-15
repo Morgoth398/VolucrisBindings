@@ -21,104 +21,104 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
 		implements Struct<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_PIPELINE_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_SHADER_OBJECT_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_SEQUENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_HANDLE;
-    public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_HANDLE;
-    public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_HANDLE;
-    public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_HANDLE;
-    public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_HANDLE;
-    public static final VarHandle DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_HANDLE;
-    public static final VarHandle DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_PIPELINE_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_SHADER_OBJECT_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_SEQUENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_HANDLE;
+	public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_HANDLE;
+	public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_HANDLE;
+	public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_HANDLE;
+	public static final VarHandle SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_HANDLE;
+	public static final VarHandle DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_HANDLE;
+	public static final VarHandle DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_PIPELINE_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_SHADER_OBJECT_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_BYTE_OFFSET;
-    public static final long SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_BYTE_OFFSET;
-    public static final long SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_BYTE_OFFSET;
-    public static final long SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_BYTE_OFFSET;
-    public static final long SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_BYTE_OFFSET;
-    public static final long DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_BYTE_OFFSET;
-    public static final long DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_PIPELINE_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_SHADER_OBJECT_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_BYTE_OFFSET;
+	public static final long SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_BYTE_OFFSET;
+	public static final long SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_BYTE_OFFSET;
+	public static final long SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_BYTE_OFFSET;
+	public static final long SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_BYTE_OFFSET;
+	public static final long DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_BYTE_OFFSET;
+	public static final long DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxIndirectPipelineCount"),
-            JAVA_INT.withName("maxIndirectShaderObjectCount"),
-            JAVA_INT.withName("maxIndirectSequenceCount"),
-            JAVA_INT.withName("maxIndirectCommandsTokenCount"),
-            JAVA_INT.withName("maxIndirectCommandsTokenOffset"),
-            JAVA_INT.withName("maxIndirectCommandsIndirectStride"),
-            JAVA_INT.withName("supportedIndirectCommandsInputModes"),
-            JAVA_INT.withName("supportedIndirectCommandsShaderStages"),
-            JAVA_INT.withName("supportedIndirectCommandsShaderStagesPipelineBinding"),
-            JAVA_INT.withName("supportedIndirectCommandsShaderStagesShaderBinding"),
-            JAVA_INT.withName("deviceGeneratedCommandsTransformFeedback"),
-            JAVA_INT.withName("deviceGeneratedCommandsMultiDrawIndirectCount")
-        ).withName("VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_INDIRECT_PIPELINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectPipelineCount"));
-        MAX_INDIRECT_SHADER_OBJECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectShaderObjectCount"));
-        MAX_INDIRECT_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectSequenceCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
-        MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsIndirectStride"));
-        SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsInputModes"));
-        SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsShaderStages"));
-        SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsShaderStagesPipelineBinding"));
-        SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsShaderStagesShaderBinding"));
-        DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceGeneratedCommandsTransformFeedback"));
-        DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceGeneratedCommandsMultiDrawIndirectCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_INDIRECT_PIPELINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectPipelineCount"));
-        MAX_INDIRECT_SHADER_OBJECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectShaderObjectCount"));
-        MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectSequenceCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
-        MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsIndirectStride"));
-        SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsInputModes"));
-        SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsShaderStages"));
-        SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsShaderStagesPipelineBinding"));
-        SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsShaderStagesShaderBinding"));
-        DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceGeneratedCommandsTransformFeedback"));
-        DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceGeneratedCommandsMultiDrawIndirectCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxIndirectPipelineCount"),
+		    JAVA_INT.withName("maxIndirectShaderObjectCount"),
+		    JAVA_INT.withName("maxIndirectSequenceCount"),
+		    JAVA_INT.withName("maxIndirectCommandsTokenCount"),
+		    JAVA_INT.withName("maxIndirectCommandsTokenOffset"),
+		    JAVA_INT.withName("maxIndirectCommandsIndirectStride"),
+		    JAVA_INT.withName("supportedIndirectCommandsInputModes"),
+		    JAVA_INT.withName("supportedIndirectCommandsShaderStages"),
+		    JAVA_INT.withName("supportedIndirectCommandsShaderStagesPipelineBinding"),
+		    JAVA_INT.withName("supportedIndirectCommandsShaderStagesShaderBinding"),
+		    JAVA_INT.withName("deviceGeneratedCommandsTransformFeedback"),
+		    JAVA_INT.withName("deviceGeneratedCommandsMultiDrawIndirectCount")
+		).withName("VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_INDIRECT_PIPELINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectPipelineCount"));
+		MAX_INDIRECT_SHADER_OBJECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectShaderObjectCount"));
+		MAX_INDIRECT_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectSequenceCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
+		MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsIndirectStride"));
+		SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsInputModes"));
+		SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsShaderStages"));
+		SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsShaderStagesPipelineBinding"));
+		SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedIndirectCommandsShaderStagesShaderBinding"));
+		DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceGeneratedCommandsTransformFeedback"));
+		DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceGeneratedCommandsMultiDrawIndirectCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_INDIRECT_PIPELINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectPipelineCount"));
+		MAX_INDIRECT_SHADER_OBJECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectShaderObjectCount"));
+		MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectSequenceCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
+		MAX_INDIRECT_COMMANDS_INDIRECT_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsIndirectStride"));
+		SUPPORTED_INDIRECT_COMMANDS_INPUT_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsInputModes"));
+		SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsShaderStages"));
+		SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_PIPELINE_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsShaderStagesPipelineBinding"));
+		SUPPORTED_INDIRECT_COMMANDS_SHADER_STAGES_SHADER_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedIndirectCommandsShaderStagesShaderBinding"));
+		DEVICE_GENERATED_COMMANDS_TRANSFORM_FEEDBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceGeneratedCommandsTransformFeedback"));
+		DEVICE_GENERATED_COMMANDS_MULTI_DRAW_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceGeneratedCommandsMultiDrawIndirectCount"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT sType(int sType) {
@@ -316,5 +316,5 @@ public final class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT
             segment -> new VkPhysicalDeviceDeviceGeneratedCommandsPropertiesEXT(segment)
         );
     }
-    
+
 }

@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDescriptorBufferFeaturesEXT
 		implements Struct<VkPhysicalDeviceDescriptorBufferFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_BUFFER_HANDLE;
-    public static final VarHandle DESCRIPTOR_BUFFER_CAPTURE_REPLAY_HANDLE;
-    public static final VarHandle DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_HANDLE;
-    public static final VarHandle DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_BUFFER_HANDLE;
+	public static final VarHandle DESCRIPTOR_BUFFER_CAPTURE_REPLAY_HANDLE;
+	public static final VarHandle DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_HANDLE;
+	public static final VarHandle DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BUFFER_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BUFFER_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("descriptorBuffer"),
-            JAVA_INT.withName("descriptorBufferCaptureReplay"),
-            JAVA_INT.withName("descriptorBufferImageLayoutIgnored"),
-            JAVA_INT.withName("descriptorBufferPushDescriptors")
-        ).withName("VkPhysicalDeviceDescriptorBufferFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBuffer"));
-        DESCRIPTOR_BUFFER_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferCaptureReplay"));
-        DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferImageLayoutIgnored"));
-        DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferPushDescriptors"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBuffer"));
-        DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferCaptureReplay"));
-        DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferImageLayoutIgnored"));
-        DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferPushDescriptors"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("descriptorBuffer"),
+		    JAVA_INT.withName("descriptorBufferCaptureReplay"),
+		    JAVA_INT.withName("descriptorBufferImageLayoutIgnored"),
+		    JAVA_INT.withName("descriptorBufferPushDescriptors")
+		).withName("VkPhysicalDeviceDescriptorBufferFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBuffer"));
+		DESCRIPTOR_BUFFER_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferCaptureReplay"));
+		DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferImageLayoutIgnored"));
+		DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBufferPushDescriptors"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBuffer"));
+		DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferCaptureReplay"));
+		DESCRIPTOR_BUFFER_IMAGE_LAYOUT_IGNORED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferImageLayoutIgnored"));
+		DESCRIPTOR_BUFFER_PUSH_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBufferPushDescriptors"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDescriptorBufferFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDescriptorBufferFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDescriptorBufferFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDescriptorBufferFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDescriptorBufferFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDescriptorBufferFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDescriptorBufferFeaturesEXT sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceDescriptorBufferFeaturesEXT
             segment -> new VkPhysicalDeviceDescriptorBufferFeaturesEXT(segment)
         );
     }
-    
+
 }

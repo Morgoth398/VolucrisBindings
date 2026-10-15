@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeRgbConversionCapabilitiesVALVE
 		implements Struct<VkVideoEncodeRgbConversionCapabilitiesVALVE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RGB_MODELS_HANDLE;
-    public static final VarHandle RGB_RANGES_HANDLE;
-    public static final VarHandle X_CHROMA_OFFSETS_HANDLE;
-    public static final VarHandle Y_CHROMA_OFFSETS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RGB_MODELS_HANDLE;
+	public static final VarHandle RGB_RANGES_HANDLE;
+	public static final VarHandle X_CHROMA_OFFSETS_HANDLE;
+	public static final VarHandle Y_CHROMA_OFFSETS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RGB_MODELS_BYTE_OFFSET;
-    public static final long RGB_RANGES_BYTE_OFFSET;
-    public static final long X_CHROMA_OFFSETS_BYTE_OFFSET;
-    public static final long Y_CHROMA_OFFSETS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RGB_MODELS_BYTE_OFFSET;
+	public static final long RGB_RANGES_BYTE_OFFSET;
+	public static final long X_CHROMA_OFFSETS_BYTE_OFFSET;
+	public static final long Y_CHROMA_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rgbModels"),
-            JAVA_INT.withName("rgbRanges"),
-            JAVA_INT.withName("xChromaOffsets"),
-            JAVA_INT.withName("yChromaOffsets")
-        ).withName("VkVideoEncodeRgbConversionCapabilitiesVALVE").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RGB_MODELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rgbModels"));
-        RGB_RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rgbRanges"));
-        X_CHROMA_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xChromaOffsets"));
-        Y_CHROMA_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("yChromaOffsets"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RGB_MODELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rgbModels"));
-        RGB_RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rgbRanges"));
-        X_CHROMA_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xChromaOffsets"));
-        Y_CHROMA_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("yChromaOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rgbModels"),
+		    JAVA_INT.withName("rgbRanges"),
+		    JAVA_INT.withName("xChromaOffsets"),
+		    JAVA_INT.withName("yChromaOffsets")
+		).withName("VkVideoEncodeRgbConversionCapabilitiesVALVE").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RGB_MODELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rgbModels"));
+		RGB_RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rgbRanges"));
+		X_CHROMA_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xChromaOffsets"));
+		Y_CHROMA_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("yChromaOffsets"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RGB_MODELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rgbModels"));
+		RGB_RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rgbRanges"));
+		X_CHROMA_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xChromaOffsets"));
+		Y_CHROMA_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("yChromaOffsets"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeRgbConversionCapabilitiesVALVE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeRgbConversionCapabilitiesVALVE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeRgbConversionCapabilitiesVALVE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeRgbConversionCapabilitiesVALVE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeRgbConversionCapabilitiesVALVE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeRgbConversionCapabilitiesVALVE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeRgbConversionCapabilitiesVALVE sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVideoEncodeRgbConversionCapabilitiesVALVE
             segment -> new VkVideoEncodeRgbConversionCapabilitiesVALVE(segment)
         );
     }
-    
+
 }

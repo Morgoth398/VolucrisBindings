@@ -20,55 +20,45 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDisplayModeParametersKHR
 		implements Struct<VkDisplayModeParametersKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle REFRESH_RATE_HANDLE;
+	public static final VarHandle REFRESH_RATE_HANDLE;
 
-    public static final long VISIBLE_REGION_BYTE_OFFSET;
-    public static final long REFRESH_RATE_BYTE_OFFSET;
+	public static final long VISIBLE_REGION_BYTE_OFFSET;
+	public static final long REFRESH_RATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D visibleRegion;
+	private final VkExtent2D visibleRegion;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkExtent2D.LAYOUT.withName("visibleRegion"),
-            JAVA_INT.withName("refreshRate")
-        ).withName("VkDisplayModeParametersKHR").withByteAlignment(4);
-        
-        REFRESH_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refreshRate"));
-        
-        VISIBLE_REGION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("visibleRegion"));
-        REFRESH_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refreshRate"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkExtent2D.LAYOUT.withName("visibleRegion"),
+		    JAVA_INT.withName("refreshRate")
+		).withName("VkDisplayModeParametersKHR").withByteAlignment(4);
+		
+		REFRESH_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refreshRate"));
+		
+		VISIBLE_REGION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("visibleRegion"));
+		REFRESH_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refreshRate"));
+		//@formatter:on
+	}
 
-    public VkDisplayModeParametersKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayModeParametersKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayModeParametersKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        visibleRegion = new VkExtent2D(segment.asSlice(VISIBLE_REGION_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkDisplayModeParametersKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayModeParametersKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayModeParametersKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    visibleRegion = new VkExtent2D(segment.asSlice(VISIBLE_REGION_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
-    /// @see #refreshRate()
-    public VkDisplayModeParametersKHR refreshRate(int refreshRate) {
-    	REFRESH_RATE_HANDLE.set(segment, 0L, refreshRate);
-    	return this;
-    }
-    
-    public int refreshRate() {
-    	return (int) REFRESH_RATE_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #visibleRegion()
     public VkDisplayModeParametersKHR visibleRegion(Consumer<VkExtent2D> consumer) {
     	consumer.accept(visibleRegion);
@@ -83,6 +73,16 @@ public final class VkDisplayModeParametersKHR
     
     public VkExtent2D visibleRegion() {
     	return visibleRegion;
+    }
+    
+    /// @see #refreshRate()
+    public VkDisplayModeParametersKHR refreshRate(int refreshRate) {
+    	REFRESH_RATE_HANDLE.set(segment, 0L, refreshRate);
+    	return this;
+    }
+    
+    public int refreshRate() {
+    	return (int) REFRESH_RATE_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -136,5 +136,5 @@ public final class VkDisplayModeParametersKHR
             segment -> new VkDisplayModeParametersKHR(segment)
         );
     }
-    
+
 }

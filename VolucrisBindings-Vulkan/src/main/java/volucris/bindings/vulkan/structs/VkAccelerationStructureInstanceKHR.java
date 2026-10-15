@@ -20,55 +20,71 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAccelerationStructureInstanceKHR
 		implements Struct<VkAccelerationStructureInstanceKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_FIELDS0_HANDLE;
-    public static final VarHandle BIT_FIELDS1_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_REFERENCE_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle BIT_FIELDS1_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_REFERENCE_HANDLE;
 
-    public static final long TRANSFORM_BYTE_OFFSET;
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
-    public static final long BIT_FIELDS1_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET;
+	public static final long TRANSFORM_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long BIT_FIELDS1_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkTransformMatrixKHR transform;
+	private final VkTransformMatrixKHR transform;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkTransformMatrixKHR.LAYOUT.withName("transform"),
-            JAVA_INT.withName("bitFields0"),
-            JAVA_INT.withName("bitFields1"),
-            JAVA_LONG.withName("accelerationStructureReference")
-        ).withName("VkAccelerationStructureInstanceKHR").withByteAlignment(8);
-        
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        BIT_FIELDS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields1"));
-        ACCELERATION_STRUCTURE_REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureReference"));
-        
-        TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        BIT_FIELDS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields1"));
-        ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureReference"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkTransformMatrixKHR.LAYOUT.withName("transform"),
+		    JAVA_INT.withName("bitFields0"),
+		    JAVA_INT.withName("bitFields1"),
+		    JAVA_LONG.withName("accelerationStructureReference")
+		).withName("VkAccelerationStructureInstanceKHR").withByteAlignment(8);
+		
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		BIT_FIELDS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields1"));
+		ACCELERATION_STRUCTURE_REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureReference"));
+		
+		TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transform"));
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		BIT_FIELDS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields1"));
+		ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureReference"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureInstanceKHR() {
-        this(Arena.ofAuto());
+	public VkAccelerationStructureInstanceKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureInstanceKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureInstanceKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    transform = new VkTransformMatrixKHR(segment.asSlice(TRANSFORM_BYTE_OFFSET, VkTransformMatrixKHR.LAYOUT));
+	}
+
+    /// @see #transform()
+    public VkAccelerationStructureInstanceKHR transform(Consumer<VkTransformMatrixKHR> consumer) {
+    	consumer.accept(transform);
+    	return this;
     }
     
-    public VkAccelerationStructureInstanceKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #transform()
+    public VkAccelerationStructureInstanceKHR transform(VkTransformMatrixKHR other) {
+    	transform.set(other);
+    	return this;
     }
     
-    public VkAccelerationStructureInstanceKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        transform = new VkTransformMatrixKHR(segment.asSlice(TRANSFORM_BYTE_OFFSET, VkTransformMatrixKHR.LAYOUT));
+    public VkTransformMatrixKHR transform() {
+    	return transform;
     }
-
+    
     /// @see #bitFields0()
     public VkAccelerationStructureInstanceKHR bitFields0(int bitFields0) {
     	BIT_FIELDS0_HANDLE.set(segment, 0L, bitFields0);
@@ -107,22 +123,6 @@ public final class VkAccelerationStructureInstanceKHR
     
     public long accelerationStructureReference() {
     	return (long) ACCELERATION_STRUCTURE_REFERENCE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #transform()
-    public VkAccelerationStructureInstanceKHR transform(Consumer<VkTransformMatrixKHR> consumer) {
-    	consumer.accept(transform);
-    	return this;
-    }
-    
-    /// @see #transform()
-    public VkAccelerationStructureInstanceKHR transform(VkTransformMatrixKHR other) {
-    	transform.set(other);
-    	return this;
-    }
-    
-    public VkTransformMatrixKHR transform() {
-    	return transform;
     }
     
     @Override
@@ -176,5 +176,5 @@ public final class VkAccelerationStructureInstanceKHR
             segment -> new VkAccelerationStructureInstanceKHR(segment)
         );
     }
-    
+
 }

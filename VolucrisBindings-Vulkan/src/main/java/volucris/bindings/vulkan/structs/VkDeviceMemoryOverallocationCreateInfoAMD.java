@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceMemoryOverallocationCreateInfoAMD
 		implements Struct<VkDeviceMemoryOverallocationCreateInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OVERALLOCATION_BEHAVIOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OVERALLOCATION_BEHAVIOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OVERALLOCATION_BEHAVIOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OVERALLOCATION_BEHAVIOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("overallocationBehavior"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDeviceMemoryOverallocationCreateInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OVERALLOCATION_BEHAVIOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("overallocationBehavior"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OVERALLOCATION_BEHAVIOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("overallocationBehavior"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("overallocationBehavior"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDeviceMemoryOverallocationCreateInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OVERALLOCATION_BEHAVIOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("overallocationBehavior"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OVERALLOCATION_BEHAVIOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("overallocationBehavior"));
+		//@formatter:on
+	}
 
-    public VkDeviceMemoryOverallocationCreateInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceMemoryOverallocationCreateInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceMemoryOverallocationCreateInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceMemoryOverallocationCreateInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceMemoryOverallocationCreateInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceMemoryOverallocationCreateInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceMemoryOverallocationCreateInfoAMD sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDeviceMemoryOverallocationCreateInfoAMD
             segment -> new VkDeviceMemoryOverallocationCreateInfoAMD(segment)
         );
     }
-    
+
 }

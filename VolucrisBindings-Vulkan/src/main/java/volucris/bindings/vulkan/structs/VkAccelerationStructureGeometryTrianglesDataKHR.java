@@ -22,81 +22,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureGeometryTrianglesDataKHR
 		implements Struct<VkAccelerationStructureGeometryTrianglesDataKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VERTEX_FORMAT_HANDLE;
-    public static final VarHandle VERTEX_STRIDE_HANDLE;
-    public static final VarHandle MAX_VERTEX_HANDLE;
-    public static final VarHandle INDEX_TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VERTEX_FORMAT_HANDLE;
+	public static final VarHandle VERTEX_STRIDE_HANDLE;
+	public static final VarHandle MAX_VERTEX_HANDLE;
+	public static final VarHandle INDEX_TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VERTEX_FORMAT_BYTE_OFFSET;
-    public static final long VERTEX_DATA_BYTE_OFFSET;
-    public static final long VERTEX_STRIDE_BYTE_OFFSET;
-    public static final long MAX_VERTEX_BYTE_OFFSET;
-    public static final long INDEX_TYPE_BYTE_OFFSET;
-    public static final long INDEX_DATA_BYTE_OFFSET;
-    public static final long TRANSFORM_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VERTEX_FORMAT_BYTE_OFFSET;
+	public static final long VERTEX_DATA_BYTE_OFFSET;
+	public static final long VERTEX_STRIDE_BYTE_OFFSET;
+	public static final long MAX_VERTEX_BYTE_OFFSET;
+	public static final long INDEX_TYPE_BYTE_OFFSET;
+	public static final long INDEX_DATA_BYTE_OFFSET;
+	public static final long TRANSFORM_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressConstKHR vertexData;
-    private final VkDeviceOrHostAddressConstKHR indexData;
-    private final VkDeviceOrHostAddressConstKHR transformData;
+	private final VkDeviceOrHostAddressConstKHR vertexData;
+	private final VkDeviceOrHostAddressConstKHR indexData;
+	private final VkDeviceOrHostAddressConstKHR transformData;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vertexFormat"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("vertexData"),
-            JAVA_LONG.withName("vertexStride"),
-            JAVA_INT.withName("maxVertex"),
-            JAVA_INT.withName("indexType"),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("indexData"),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("transformData")
-        ).withName("VkAccelerationStructureGeometryTrianglesDataKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
-        VERTEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexStride"));
-        MAX_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertex"));
-        INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
-        VERTEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexData"));
-        VERTEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexStride"));
-        MAX_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertex"));
-        INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
-        INDEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexData"));
-        TRANSFORM_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vertexFormat"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("vertexData"),
+		    JAVA_LONG.withName("vertexStride"),
+		    JAVA_INT.withName("maxVertex"),
+		    JAVA_INT.withName("indexType"),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("indexData"),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("transformData")
+		).withName("VkAccelerationStructureGeometryTrianglesDataKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
+		VERTEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexStride"));
+		MAX_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertex"));
+		INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
+		VERTEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexData"));
+		VERTEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexStride"));
+		MAX_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertex"));
+		INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
+		INDEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexData"));
+		TRANSFORM_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformData"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureGeometryTrianglesDataKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureGeometryTrianglesDataKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureGeometryTrianglesDataKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        vertexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(VERTEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-        indexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(INDEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-        transformData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(TRANSFORM_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-    }
+	public VkAccelerationStructureGeometryTrianglesDataKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureGeometryTrianglesDataKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureGeometryTrianglesDataKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    vertexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(VERTEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	    indexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(INDEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	    transformData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(TRANSFORM_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkAccelerationStructureGeometryTrianglesDataKHR sType(int sType) {
@@ -133,6 +133,22 @@ public final class VkAccelerationStructureGeometryTrianglesDataKHR
     	return (int) VERTEX_FORMAT_HANDLE.get(segment, 0L);
     }
     
+    /// @see #vertexData()
+    public VkAccelerationStructureGeometryTrianglesDataKHR vertexData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
+    	consumer.accept(vertexData);
+    	return this;
+    }
+    
+    /// @see #vertexData()
+    public VkAccelerationStructureGeometryTrianglesDataKHR vertexData(VkDeviceOrHostAddressConstKHR other) {
+    	vertexData.set(other);
+    	return this;
+    }
+    
+    public VkDeviceOrHostAddressConstKHR vertexData() {
+    	return vertexData;
+    }
+    
     /// @see #vertexStride()
     public VkAccelerationStructureGeometryTrianglesDataKHR vertexStride(long vertexStride) {
     	VERTEX_STRIDE_HANDLE.set(segment, 0L, vertexStride);
@@ -161,22 +177,6 @@ public final class VkAccelerationStructureGeometryTrianglesDataKHR
     
     public int indexType() {
     	return (int) INDEX_TYPE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #vertexData()
-    public VkAccelerationStructureGeometryTrianglesDataKHR vertexData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
-    	consumer.accept(vertexData);
-    	return this;
-    }
-    
-    /// @see #vertexData()
-    public VkAccelerationStructureGeometryTrianglesDataKHR vertexData(VkDeviceOrHostAddressConstKHR other) {
-    	vertexData.set(other);
-    	return this;
-    }
-    
-    public VkDeviceOrHostAddressConstKHR vertexData() {
-    	return vertexData;
     }
     
     /// @see #indexData()
@@ -262,5 +262,5 @@ public final class VkAccelerationStructureGeometryTrianglesDataKHR
             segment -> new VkAccelerationStructureGeometryTrianglesDataKHR(segment)
         );
     }
-    
+
 }

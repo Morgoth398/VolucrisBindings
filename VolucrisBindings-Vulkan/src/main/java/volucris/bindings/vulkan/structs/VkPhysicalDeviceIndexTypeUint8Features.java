@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceIndexTypeUint8Features
 		implements Struct<VkPhysicalDeviceIndexTypeUint8Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INDEX_TYPE_UINT8_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INDEX_TYPE_UINT8_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INDEX_TYPE_UINT8_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INDEX_TYPE_UINT8_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("indexTypeUint8"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceIndexTypeUint8Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INDEX_TYPE_UINT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexTypeUint8"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INDEX_TYPE_UINT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexTypeUint8"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("indexTypeUint8"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceIndexTypeUint8Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INDEX_TYPE_UINT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexTypeUint8"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INDEX_TYPE_UINT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexTypeUint8"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceIndexTypeUint8Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceIndexTypeUint8Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceIndexTypeUint8Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceIndexTypeUint8Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceIndexTypeUint8Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceIndexTypeUint8Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceIndexTypeUint8Features sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceIndexTypeUint8Features
             segment -> new VkPhysicalDeviceIndexTypeUint8Features(segment)
         );
     }
-    
+
 }

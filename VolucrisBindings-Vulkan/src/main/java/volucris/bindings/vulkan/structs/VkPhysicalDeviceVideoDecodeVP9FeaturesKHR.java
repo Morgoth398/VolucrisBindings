@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVideoDecodeVP9FeaturesKHR
 		implements Struct<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIDEO_DECODE_VP9_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIDEO_DECODE_VP9_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIDEO_DECODE_VP9_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIDEO_DECODE_VP9_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("videoDecodeVP9"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVideoDecodeVP9FeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIDEO_DECODE_VP9_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoDecodeVP9"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIDEO_DECODE_VP9_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoDecodeVP9"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("videoDecodeVP9"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVideoDecodeVP9FeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIDEO_DECODE_VP9_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoDecodeVP9"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIDEO_DECODE_VP9_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoDecodeVP9"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceVideoDecodeVP9FeaturesKHR
             segment -> new VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(segment)
         );
     }
-    
+
 }

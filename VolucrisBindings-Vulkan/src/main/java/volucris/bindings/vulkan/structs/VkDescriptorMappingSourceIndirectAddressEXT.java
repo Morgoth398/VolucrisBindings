@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDescriptorMappingSourceIndirectAddressEXT
 		implements Struct<VkDescriptorMappingSourceIndirectAddressEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PUSH_OFFSET_HANDLE;
-    public static final VarHandle ADDRESS_OFFSET_HANDLE;
+	public static final VarHandle PUSH_OFFSET_HANDLE;
+	public static final VarHandle ADDRESS_OFFSET_HANDLE;
 
-    public static final long PUSH_OFFSET_BYTE_OFFSET;
-    public static final long ADDRESS_OFFSET_BYTE_OFFSET;
+	public static final long PUSH_OFFSET_BYTE_OFFSET;
+	public static final long ADDRESS_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("pushOffset"),
-            JAVA_INT.withName("addressOffset")
-        ).withName("VkDescriptorMappingSourceIndirectAddressEXT").withByteAlignment(4);
-        
-        PUSH_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushOffset"));
-        ADDRESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressOffset"));
-        
-        PUSH_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushOffset"));
-        ADDRESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("pushOffset"),
+		    JAVA_INT.withName("addressOffset")
+		).withName("VkDescriptorMappingSourceIndirectAddressEXT").withByteAlignment(4);
+		
+		PUSH_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushOffset"));
+		ADDRESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressOffset"));
+		
+		PUSH_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushOffset"));
+		ADDRESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressOffset"));
+		//@formatter:on
+	}
 
-    public VkDescriptorMappingSourceIndirectAddressEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorMappingSourceIndirectAddressEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorMappingSourceIndirectAddressEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorMappingSourceIndirectAddressEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorMappingSourceIndirectAddressEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorMappingSourceIndirectAddressEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pushOffset()
     public VkDescriptorMappingSourceIndirectAddressEXT pushOffset(int pushOffset) {
@@ -128,5 +128,5 @@ public final class VkDescriptorMappingSourceIndirectAddressEXT
             segment -> new VkDescriptorMappingSourceIndirectAddressEXT(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
 		implements Struct<VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRIMITIVE_TOPOLOGY_LIST_RESTART_HANDLE;
-    public static final VarHandle PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRIMITIVE_TOPOLOGY_LIST_RESTART_HANDLE;
+	public static final VarHandle PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRIMITIVE_TOPOLOGY_LIST_RESTART_BYTE_OFFSET;
-    public static final long PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRIMITIVE_TOPOLOGY_LIST_RESTART_BYTE_OFFSET;
+	public static final long PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("primitiveTopologyListRestart"),
-            JAVA_INT.withName("primitiveTopologyPatchListRestart")
-        ).withName("VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRIMITIVE_TOPOLOGY_LIST_RESTART_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveTopologyListRestart"));
-        PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveTopologyPatchListRestart"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRIMITIVE_TOPOLOGY_LIST_RESTART_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveTopologyListRestart"));
-        PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveTopologyPatchListRestart"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("primitiveTopologyListRestart"),
+		    JAVA_INT.withName("primitiveTopologyPatchListRestart")
+		).withName("VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRIMITIVE_TOPOLOGY_LIST_RESTART_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveTopologyListRestart"));
+		PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveTopologyPatchListRestart"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRIMITIVE_TOPOLOGY_LIST_RESTART_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveTopologyListRestart"));
+		PRIMITIVE_TOPOLOGY_PATCH_LIST_RESTART_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveTopologyPatchListRestart"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
             segment -> new VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT(segment)
         );
     }
-    
+
 }

@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentDensityMapPropertiesEXT
 		implements Struct<VkPhysicalDeviceFragmentDensityMapPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FRAGMENT_DENSITY_INVOCATIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FRAGMENT_DENSITY_INVOCATIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MIN_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_INVOCATIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MIN_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_INVOCATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D minFragmentDensityTexelSize;
-    private final VkExtent2D maxFragmentDensityTexelSize;
+	private final VkExtent2D minFragmentDensityTexelSize;
+	private final VkExtent2D maxFragmentDensityTexelSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("minFragmentDensityTexelSize"),
-            VkExtent2D.LAYOUT.withName("maxFragmentDensityTexelSize"),
-            JAVA_INT.withName("fragmentDensityInvocations"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFragmentDensityMapPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityInvocations"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MIN_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minFragmentDensityTexelSize"));
-        MAX_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentDensityTexelSize"));
-        FRAGMENT_DENSITY_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityInvocations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("minFragmentDensityTexelSize"),
+		    VkExtent2D.LAYOUT.withName("maxFragmentDensityTexelSize"),
+		    JAVA_INT.withName("fragmentDensityInvocations"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFragmentDensityMapPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityInvocations"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MIN_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minFragmentDensityTexelSize"));
+		MAX_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentDensityTexelSize"));
+		FRAGMENT_DENSITY_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityInvocations"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentDensityMapPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        minFragmentDensityTexelSize = new VkExtent2D(segment.asSlice(MIN_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxFragmentDensityTexelSize = new VkExtent2D(segment.asSlice(MAX_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceFragmentDensityMapPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minFragmentDensityTexelSize = new VkExtent2D(segment.asSlice(MIN_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxFragmentDensityTexelSize = new VkExtent2D(segment.asSlice(MAX_FRAGMENT_DENSITY_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentDensityMapPropertiesEXT sType(int sType) {
@@ -101,16 +101,6 @@ public final class VkPhysicalDeviceFragmentDensityMapPropertiesEXT
     		return null;
     	
     	return segment;
-    }
-    
-    /// @see #fragmentDensityInvocations()
-    public VkPhysicalDeviceFragmentDensityMapPropertiesEXT fragmentDensityInvocations(int fragmentDensityInvocations) {
-    	FRAGMENT_DENSITY_INVOCATIONS_HANDLE.set(segment, 0L, fragmentDensityInvocations);
-    	return this;
-    }
-    
-    public int fragmentDensityInvocations() {
-    	return (int) FRAGMENT_DENSITY_INVOCATIONS_HANDLE.get(segment, 0L);
     }
     
     /// @see #minFragmentDensityTexelSize()
@@ -143,6 +133,16 @@ public final class VkPhysicalDeviceFragmentDensityMapPropertiesEXT
     
     public VkExtent2D maxFragmentDensityTexelSize() {
     	return maxFragmentDensityTexelSize;
+    }
+    
+    /// @see #fragmentDensityInvocations()
+    public VkPhysicalDeviceFragmentDensityMapPropertiesEXT fragmentDensityInvocations(int fragmentDensityInvocations) {
+    	FRAGMENT_DENSITY_INVOCATIONS_HANDLE.set(segment, 0L, fragmentDensityInvocations);
+    	return this;
+    }
+    
+    public int fragmentDensityInvocations() {
+    	return (int) FRAGMENT_DENSITY_INVOCATIONS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceFragmentDensityMapPropertiesEXT
             segment -> new VkPhysicalDeviceFragmentDensityMapPropertiesEXT(segment)
         );
     }
-    
+
 }

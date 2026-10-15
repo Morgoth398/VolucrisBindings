@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTensorDescriptionARM
 		implements Struct<VkTensorDescriptionARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TILING_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle DIMENSION_COUNT_HANDLE;
-    public static final VarHandle P_DIMENSIONS_HANDLE;
-    public static final VarHandle P_STRIDES_HANDLE;
-    public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TILING_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle DIMENSION_COUNT_HANDLE;
+	public static final VarHandle P_DIMENSIONS_HANDLE;
+	public static final VarHandle P_STRIDES_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TILING_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long DIMENSION_COUNT_BYTE_OFFSET;
-    public static final long P_DIMENSIONS_BYTE_OFFSET;
-    public static final long P_STRIDES_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TILING_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long DIMENSION_COUNT_BYTE_OFFSET;
+	public static final long P_DIMENSIONS_BYTE_OFFSET;
+	public static final long P_STRIDES_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("tiling"),
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("dimensionCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDimensions"),
-            UNBOUNDED_ADDRESS.withName("pStrides"),
-            JAVA_LONG.withName("usage")
-        ).withName("VkTensorDescriptionARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TILING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tiling"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        DIMENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dimensionCount"));
-        P_DIMENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDimensions"));
-        P_STRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStrides"));
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TILING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tiling"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        DIMENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dimensionCount"));
-        P_DIMENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDimensions"));
-        P_STRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStrides"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("tiling"),
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("dimensionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDimensions"),
+		    UNBOUNDED_ADDRESS.withName("pStrides"),
+		    JAVA_LONG.withName("usage")
+		).withName("VkTensorDescriptionARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TILING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tiling"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		DIMENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dimensionCount"));
+		P_DIMENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDimensions"));
+		P_STRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStrides"));
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TILING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tiling"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		DIMENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dimensionCount"));
+		P_DIMENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDimensions"));
+		P_STRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStrides"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		//@formatter:on
+	}
 
-    public VkTensorDescriptionARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTensorDescriptionARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTensorDescriptionARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTensorDescriptionARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTensorDescriptionARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTensorDescriptionARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkTensorDescriptionARM sType(int sType) {
@@ -238,5 +238,5 @@ public final class VkTensorDescriptionARM
             segment -> new VkTensorDescriptionARM(segment)
         );
     }
-    
+
 }

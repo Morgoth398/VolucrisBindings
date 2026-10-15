@@ -22,44 +22,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXSourceRangeList
 		implements Struct<CXSourceRangeList> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle COUNT_HANDLE;
-    public static final VarHandle RANGES_HANDLE;
+	public static final VarHandle COUNT_HANDLE;
+	public static final VarHandle RANGES_HANDLE;
 
-    public static final long COUNT_BYTE_OFFSET;
-    public static final long RANGES_BYTE_OFFSET;
+	public static final long COUNT_BYTE_OFFSET;
+	public static final long RANGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("count"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("ranges")
-        ).withName("CXSourceRangeList").withByteAlignment(8);
-        
-        COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("count"));
-        RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ranges"));
-        
-        COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("count"));
-        RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ranges"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("count"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("ranges")
+		).withName("CXSourceRangeList").withByteAlignment(8);
+		
+		COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("count"));
+		RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ranges"));
+		
+		COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("count"));
+		RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ranges"));
+		//@formatter:on
+	}
 
-    public CXSourceRangeList() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXSourceRangeList(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXSourceRangeList(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXSourceRangeList() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXSourceRangeList(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXSourceRangeList(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #count()
     public CXSourceRangeList count(int count) {
@@ -144,5 +144,5 @@ public final class CXSourceRangeList
             segment -> new CXSourceRangeList(segment)
         );
     }
-    
+
 }

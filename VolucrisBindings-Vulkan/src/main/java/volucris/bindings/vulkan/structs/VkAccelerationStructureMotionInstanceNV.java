@@ -20,49 +20,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAccelerationStructureMotionInstanceNV
 		implements Struct<VkAccelerationStructureMotionInstanceNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkAccelerationStructureMotionInstanceDataNV data;
+	private final VkAccelerationStructureMotionInstanceDataNV data;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("flags"),
-            VkAccelerationStructureMotionInstanceDataNV.LAYOUT.withName("data")
-        ).withName("VkAccelerationStructureMotionInstanceNV").withByteAlignment(8);
-        
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("flags"),
+		    VkAccelerationStructureMotionInstanceDataNV.LAYOUT.withName("data")
+		).withName("VkAccelerationStructureMotionInstanceNV").withByteAlignment(8);
+		
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureMotionInstanceNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureMotionInstanceNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureMotionInstanceNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        data = new VkAccelerationStructureMotionInstanceDataNV(segment.asSlice(DATA_BYTE_OFFSET, VkAccelerationStructureMotionInstanceDataNV.LAYOUT));
-    }
+	public VkAccelerationStructureMotionInstanceNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureMotionInstanceNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureMotionInstanceNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    data = new VkAccelerationStructureMotionInstanceDataNV(segment.asSlice(DATA_BYTE_OFFSET, VkAccelerationStructureMotionInstanceDataNV.LAYOUT));
+	}
 
     /// @see #type()
     public VkAccelerationStructureMotionInstanceNV type(int type) {
@@ -151,5 +151,5 @@ public final class VkAccelerationStructureMotionInstanceNV
             segment -> new VkAccelerationStructureMotionInstanceNV(segment)
         );
     }
-    
+
 }

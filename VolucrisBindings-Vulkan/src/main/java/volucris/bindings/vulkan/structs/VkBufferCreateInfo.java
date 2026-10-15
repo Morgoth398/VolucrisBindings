@@ -22,76 +22,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBufferCreateInfo
 		implements Struct<VkBufferCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle USAGE_HANDLE;
-    public static final VarHandle SHARING_MODE_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_COUNT_HANDLE;
-    public static final VarHandle P_QUEUE_FAMILY_INDICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle SHARING_MODE_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_COUNT_HANDLE;
+	public static final VarHandle P_QUEUE_FAMILY_INDICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
-    public static final long SHARING_MODE_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET;
-    public static final long P_QUEUE_FAMILY_INDICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
+	public static final long SHARING_MODE_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET;
+	public static final long P_QUEUE_FAMILY_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("size"),
-            JAVA_INT.withName("usage"),
-            JAVA_INT.withName("sharingMode"),
-            JAVA_INT.withName("queueFamilyIndexCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pQueueFamilyIndices")
-        ).withName("VkBufferCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        SHARING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharingMode"));
-        QUEUE_FAMILY_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndexCount"));
-        P_QUEUE_FAMILY_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueFamilyIndices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        SHARING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharingMode"));
-        QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndexCount"));
-        P_QUEUE_FAMILY_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueFamilyIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("size"),
+		    JAVA_INT.withName("usage"),
+		    JAVA_INT.withName("sharingMode"),
+		    JAVA_INT.withName("queueFamilyIndexCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pQueueFamilyIndices")
+		).withName("VkBufferCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		SHARING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharingMode"));
+		QUEUE_FAMILY_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndexCount"));
+		P_QUEUE_FAMILY_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueFamilyIndices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		SHARING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharingMode"));
+		QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndexCount"));
+		P_QUEUE_FAMILY_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueFamilyIndices"));
+		//@formatter:on
+	}
 
-    public VkBufferCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBufferCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBufferCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBufferCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBufferCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBufferCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBufferCreateInfo sType(int sType) {
@@ -234,5 +234,5 @@ public final class VkBufferCreateInfo
             segment -> new VkBufferCreateInfo(segment)
         );
     }
-    
+
 }

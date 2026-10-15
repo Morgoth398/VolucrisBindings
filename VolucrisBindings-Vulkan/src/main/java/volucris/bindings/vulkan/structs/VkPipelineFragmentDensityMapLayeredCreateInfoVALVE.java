@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE
 		implements Struct<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_DENSITY_MAP_LAYERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_DENSITY_MAP_LAYERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_DENSITY_MAP_LAYERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_DENSITY_MAP_LAYERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxFragmentDensityMapLayers"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPipelineFragmentDensityMapLayeredCreateInfoVALVE").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_FRAGMENT_DENSITY_MAP_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentDensityMapLayers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_FRAGMENT_DENSITY_MAP_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentDensityMapLayers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxFragmentDensityMapLayers"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPipelineFragmentDensityMapLayeredCreateInfoVALVE").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_FRAGMENT_DENSITY_MAP_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentDensityMapLayers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_FRAGMENT_DENSITY_MAP_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentDensityMapLayers"));
+		//@formatter:on
+	}
 
-    public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE
             segment -> new VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(segment)
         );
     }
-    
+
 }

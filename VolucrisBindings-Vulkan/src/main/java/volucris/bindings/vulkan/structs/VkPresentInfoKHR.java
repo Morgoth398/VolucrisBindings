@@ -23,76 +23,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPresentInfoKHR
 		implements Struct<VkPresentInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_WAIT_SEMAPHORES_HANDLE;
-    public static final VarHandle SWAPCHAIN_COUNT_HANDLE;
-    public static final VarHandle P_SWAPCHAINS_HANDLE;
-    public static final VarHandle P_IMAGE_INDICES_HANDLE;
-    public static final VarHandle P_RESULTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_WAIT_SEMAPHORES_HANDLE;
+	public static final VarHandle SWAPCHAIN_COUNT_HANDLE;
+	public static final VarHandle P_SWAPCHAINS_HANDLE;
+	public static final VarHandle P_IMAGE_INDICES_HANDLE;
+	public static final VarHandle P_RESULTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_WAIT_SEMAPHORES_BYTE_OFFSET;
-    public static final long SWAPCHAIN_COUNT_BYTE_OFFSET;
-    public static final long P_SWAPCHAINS_BYTE_OFFSET;
-    public static final long P_IMAGE_INDICES_BYTE_OFFSET;
-    public static final long P_RESULTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_WAIT_SEMAPHORES_BYTE_OFFSET;
+	public static final long SWAPCHAIN_COUNT_BYTE_OFFSET;
+	public static final long P_SWAPCHAINS_BYTE_OFFSET;
+	public static final long P_IMAGE_INDICES_BYTE_OFFSET;
+	public static final long P_RESULTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("waitSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pWaitSemaphores"),
-            JAVA_INT.withName("swapchainCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSwapchains"),
-            UNBOUNDED_ADDRESS.withName("pImageIndices"),
-            UNBOUNDED_ADDRESS.withName("pResults")
-        ).withName("VkPresentInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphores"));
-        SWAPCHAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchainCount"));
-        P_SWAPCHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSwapchains"));
-        P_IMAGE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageIndices"));
-        P_RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pResults"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphores"));
-        SWAPCHAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchainCount"));
-        P_SWAPCHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSwapchains"));
-        P_IMAGE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageIndices"));
-        P_RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pResults"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("waitSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pWaitSemaphores"),
+		    JAVA_INT.withName("swapchainCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSwapchains"),
+		    UNBOUNDED_ADDRESS.withName("pImageIndices"),
+		    UNBOUNDED_ADDRESS.withName("pResults")
+		).withName("VkPresentInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphores"));
+		SWAPCHAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchainCount"));
+		P_SWAPCHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSwapchains"));
+		P_IMAGE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageIndices"));
+		P_RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pResults"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphores"));
+		SWAPCHAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchainCount"));
+		P_SWAPCHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSwapchains"));
+		P_IMAGE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageIndices"));
+		P_RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pResults"));
+		//@formatter:on
+	}
 
-    public VkPresentInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPresentInfoKHR sType(int sType) {
@@ -250,5 +250,5 @@ public final class VkPresentInfoKHR
             segment -> new VkPresentInfoKHR(segment)
         );
     }
-    
+
 }

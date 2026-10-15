@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM
 		implements Struct<VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DIMENSION_HANDLE;
-    public static final VarHandle ZERO_COUNT_HANDLE;
-    public static final VarHandle GROUP_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DIMENSION_HANDLE;
+	public static final VarHandle ZERO_COUNT_HANDLE;
+	public static final VarHandle GROUP_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DIMENSION_BYTE_OFFSET;
-    public static final long ZERO_COUNT_BYTE_OFFSET;
-    public static final long GROUP_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DIMENSION_BYTE_OFFSET;
+	public static final long ZERO_COUNT_BYTE_OFFSET;
+	public static final long GROUP_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dimension"),
-            JAVA_INT.withName("zeroCount"),
-            JAVA_INT.withName("groupSize"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DIMENSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dimension"));
-        ZERO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("zeroCount"));
-        GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DIMENSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dimension"));
-        ZERO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("zeroCount"));
-        GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dimension"),
+		    JAVA_INT.withName("zeroCount"),
+		    JAVA_INT.withName("groupSize"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DIMENSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dimension"));
+		ZERO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("zeroCount"));
+		GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DIMENSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dimension"));
+		ZERO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("zeroCount"));
+		GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupSize"));
+		//@formatter:on
+	}
 
-    public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoAR
             segment -> new VkDataGraphPipelineConstantTensorSemiStructuredSparsityInfoARM(segment)
         );
     }
-    
+
 }

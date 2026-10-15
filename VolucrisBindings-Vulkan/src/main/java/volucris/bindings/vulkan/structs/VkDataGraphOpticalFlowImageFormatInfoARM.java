@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphOpticalFlowImageFormatInfoARM
 		implements Struct<VkDataGraphOpticalFlowImageFormatInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("usage"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDataGraphOpticalFlowImageFormatInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("usage"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDataGraphOpticalFlowImageFormatInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		//@formatter:on
+	}
 
-    public VkDataGraphOpticalFlowImageFormatInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphOpticalFlowImageFormatInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphOpticalFlowImageFormatInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphOpticalFlowImageFormatInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphOpticalFlowImageFormatInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphOpticalFlowImageFormatInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphOpticalFlowImageFormatInfoARM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDataGraphOpticalFlowImageFormatInfoARM
             segment -> new VkDataGraphOpticalFlowImageFormatInfoARM(segment)
         );
     }
-    
+
 }

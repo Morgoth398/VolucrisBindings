@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiColor3D
 		implements Struct<AiColor3D> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle R_HANDLE;
-    public static final VarHandle G_HANDLE;
-    public static final VarHandle B_HANDLE;
+	public static final VarHandle R_HANDLE;
+	public static final VarHandle G_HANDLE;
+	public static final VarHandle B_HANDLE;
 
-    public static final long R_BYTE_OFFSET;
-    public static final long G_BYTE_OFFSET;
-    public static final long B_BYTE_OFFSET;
+	public static final long R_BYTE_OFFSET;
+	public static final long G_BYTE_OFFSET;
+	public static final long B_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("r"),
-            JAVA_FLOAT.withName("g"),
-            JAVA_FLOAT.withName("b")
-        ).withName("aiColor3D").withByteAlignment(4);
-        
-        R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
-        G_HANDLE = LAYOUT.varHandle(PathElement.groupElement("g"));
-        B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
-        
-        R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
-        G_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("g"));
-        B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("r"),
+		    JAVA_FLOAT.withName("g"),
+		    JAVA_FLOAT.withName("b")
+		).withName("aiColor3D").withByteAlignment(4);
+		
+		R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
+		G_HANDLE = LAYOUT.varHandle(PathElement.groupElement("g"));
+		B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
+		
+		R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
+		G_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("g"));
+		B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
+		//@formatter:on
+	}
 
-    public AiColor3D() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiColor3D(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiColor3D(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiColor3D() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiColor3D(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiColor3D(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #r()
     public AiColor3D r(float r) {
@@ -152,5 +152,5 @@ public final class AiColor3D
             segment -> new AiColor3D(segment)
         );
     }
-    
+
 }

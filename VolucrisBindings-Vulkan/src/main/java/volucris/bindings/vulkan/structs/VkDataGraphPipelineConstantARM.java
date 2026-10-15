@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphPipelineConstantARM
 		implements Struct<VkDataGraphPipelineConstantARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ID_HANDLE;
-    public static final VarHandle P_CONSTANT_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ID_HANDLE;
+	public static final VarHandle P_CONSTANT_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ID_BYTE_OFFSET;
-    public static final long P_CONSTANT_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ID_BYTE_OFFSET;
+	public static final long P_CONSTANT_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("id"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pConstantData")
-        ).withName("VkDataGraphPipelineConstantARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("id"));
-        P_CONSTANT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pConstantData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("id"));
-        P_CONSTANT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pConstantData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("id"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pConstantData")
+		).withName("VkDataGraphPipelineConstantARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("id"));
+		P_CONSTANT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pConstantData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("id"));
+		P_CONSTANT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pConstantData"));
+		//@formatter:on
+	}
 
-    public VkDataGraphPipelineConstantARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphPipelineConstantARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphPipelineConstantARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphPipelineConstantARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphPipelineConstantARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphPipelineConstantARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphPipelineConstantARM sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkDataGraphPipelineConstantARM
             segment -> new VkDataGraphPipelineConstantARM(segment)
         );
     }
-    
+
 }

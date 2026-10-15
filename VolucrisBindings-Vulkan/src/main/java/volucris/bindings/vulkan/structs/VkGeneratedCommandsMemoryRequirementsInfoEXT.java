@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGeneratedCommandsMemoryRequirementsInfoEXT
 		implements Struct<VkGeneratedCommandsMemoryRequirementsInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INDIRECT_EXECUTION_SET_HANDLE;
-    public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
-    public static final VarHandle MAX_SEQUENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_DRAW_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INDIRECT_EXECUTION_SET_HANDLE;
+	public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
+	public static final VarHandle MAX_SEQUENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_DRAW_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INDIRECT_EXECUTION_SET_BYTE_OFFSET;
-    public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
-    public static final long MAX_SEQUENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_DRAW_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INDIRECT_EXECUTION_SET_BYTE_OFFSET;
+	public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
+	public static final long MAX_SEQUENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_DRAW_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("indirectExecutionSet"),
-            UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
-            JAVA_INT.withName("maxSequenceCount"),
-            JAVA_INT.withName("maxDrawCount")
-        ).withName("VkGeneratedCommandsMemoryRequirementsInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INDIRECT_EXECUTION_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectExecutionSet"));
-        INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
-        MAX_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSequenceCount"));
-        MAX_DRAW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INDIRECT_EXECUTION_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectExecutionSet"));
-        INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
-        MAX_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSequenceCount"));
-        MAX_DRAW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("indirectExecutionSet"),
+		    UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
+		    JAVA_INT.withName("maxSequenceCount"),
+		    JAVA_INT.withName("maxDrawCount")
+		).withName("VkGeneratedCommandsMemoryRequirementsInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INDIRECT_EXECUTION_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectExecutionSet"));
+		INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
+		MAX_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSequenceCount"));
+		MAX_DRAW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INDIRECT_EXECUTION_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectExecutionSet"));
+		INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
+		MAX_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSequenceCount"));
+		MAX_DRAW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawCount"));
+		//@formatter:on
+	}
 
-    public VkGeneratedCommandsMemoryRequirementsInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeneratedCommandsMemoryRequirementsInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeneratedCommandsMemoryRequirementsInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGeneratedCommandsMemoryRequirementsInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeneratedCommandsMemoryRequirementsInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeneratedCommandsMemoryRequirementsInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGeneratedCommandsMemoryRequirementsInfoEXT sType(int sType) {
@@ -206,5 +206,5 @@ public final class VkGeneratedCommandsMemoryRequirementsInfoEXT
             segment -> new VkGeneratedCommandsMemoryRequirementsInfoEXT(segment)
         );
     }
-    
+
 }

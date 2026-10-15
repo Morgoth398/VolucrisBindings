@@ -18,43 +18,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXCursorAndRangeVisitor
 		implements Struct<CXCursorAndRangeVisitor> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CONTEXT_HANDLE;
-    public static final VarHandle VISIT_HANDLE;
+	public static final VarHandle CONTEXT_HANDLE;
+	public static final VarHandle VISIT_HANDLE;
 
-    public static final long CONTEXT_BYTE_OFFSET;
-    public static final long VISIT_BYTE_OFFSET;
+	public static final long CONTEXT_BYTE_OFFSET;
+	public static final long VISIT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("context"),
-            UNBOUNDED_ADDRESS.withName("visit")
-        ).withName("CXCursorAndRangeVisitor").withByteAlignment(8);
-        
-        CONTEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("context"));
-        VISIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("visit"));
-        
-        CONTEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("context"));
-        VISIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("visit"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("context"),
+		    UNBOUNDED_ADDRESS.withName("visit")
+		).withName("CXCursorAndRangeVisitor").withByteAlignment(8);
+		
+		CONTEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("context"));
+		VISIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("visit"));
+		
+		CONTEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("context"));
+		VISIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("visit"));
+		//@formatter:on
+	}
 
-    public CXCursorAndRangeVisitor() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXCursorAndRangeVisitor(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXCursorAndRangeVisitor(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXCursorAndRangeVisitor() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXCursorAndRangeVisitor(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXCursorAndRangeVisitor(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #context()
     public CXCursorAndRangeVisitor context(MemorySegment context) {
@@ -137,5 +137,5 @@ public final class CXCursorAndRangeVisitor
             segment -> new CXCursorAndRangeVisitor(segment)
         );
     }
-    
+
 }

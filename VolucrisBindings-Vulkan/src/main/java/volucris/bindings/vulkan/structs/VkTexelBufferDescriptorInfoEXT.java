@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTexelBufferDescriptorInfoEXT
 		implements Struct<VkTexelBufferDescriptorInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR addressRange;
+	private final VkDeviceAddressRangeKHR addressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("format"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange")
-        ).withName("VkTexelBufferDescriptorInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("format"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange")
+		).withName("VkTexelBufferDescriptorInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		//@formatter:on
+	}
 
-    public VkTexelBufferDescriptorInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTexelBufferDescriptorInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTexelBufferDescriptorInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkTexelBufferDescriptorInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTexelBufferDescriptorInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTexelBufferDescriptorInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkTexelBufferDescriptorInfoEXT sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkTexelBufferDescriptorInfoEXT
             segment -> new VkTexelBufferDescriptorInfoEXT(segment)
         );
     }
-    
+
 }

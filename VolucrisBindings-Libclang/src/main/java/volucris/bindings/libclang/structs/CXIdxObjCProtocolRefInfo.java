@@ -19,49 +19,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxObjCProtocolRefInfo
 		implements Struct<CXIdxObjCProtocolRefInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PROTOCOL_HANDLE;
+	public static final VarHandle PROTOCOL_HANDLE;
 
-    public static final long PROTOCOL_BYTE_OFFSET;
-    public static final long CURSOR_BYTE_OFFSET;
-    public static final long LOC_BYTE_OFFSET;
+	public static final long PROTOCOL_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
+	public static final long LOC_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
-    private final CXIdxLoc loc;
+	private final CXCursor cursor;
+	private final CXIdxLoc loc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("protocol"),
-            CXCursor.LAYOUT.withName("cursor"),
-            CXIdxLoc.LAYOUT.withName("loc")
-        ).withName("CXIdxObjCProtocolRefInfo").withByteAlignment(8);
-        
-        PROTOCOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocol"));
-        
-        PROTOCOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocol"));
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("protocol"),
+		    CXCursor.LAYOUT.withName("cursor"),
+		    CXIdxLoc.LAYOUT.withName("loc")
+		).withName("CXIdxObjCProtocolRefInfo").withByteAlignment(8);
+		
+		PROTOCOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocol"));
+		
+		PROTOCOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocol"));
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
+		//@formatter:on
+	}
 
-    public CXIdxObjCProtocolRefInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxObjCProtocolRefInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxObjCProtocolRefInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxObjCProtocolRefInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxObjCProtocolRefInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxObjCProtocolRefInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #protocol()
     public CXIdxObjCProtocolRefInfo protocol(CXIdxEntityInfo protocol) {
@@ -161,5 +161,5 @@ public final class CXIdxObjCProtocolRefInfo
             segment -> new CXIdxObjCProtocolRefInfo(segment)
         );
     }
-    
+
 }

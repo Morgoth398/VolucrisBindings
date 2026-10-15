@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderingFragmentShadingRateAttachmentInfoKHR
 		implements Struct<VkRenderingFragmentShadingRateAttachmentInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_VIEW_HANDLE;
-    public static final VarHandle IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_VIEW_HANDLE;
+	public static final VarHandle IMAGE_LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_VIEW_BYTE_OFFSET;
-    public static final long IMAGE_LAYOUT_BYTE_OFFSET;
-    public static final long SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_VIEW_BYTE_OFFSET;
+	public static final long IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D shadingRateAttachmentTexelSize;
+	private final VkExtent2D shadingRateAttachmentTexelSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("imageView"),
-            JAVA_INT.withName("imageLayout"),
-            VkExtent2D.LAYOUT.withName("shadingRateAttachmentTexelSize"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkRenderingFragmentShadingRateAttachmentInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
-        SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateAttachmentTexelSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("imageView"),
+		    JAVA_INT.withName("imageLayout"),
+		    VkExtent2D.LAYOUT.withName("shadingRateAttachmentTexelSize"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkRenderingFragmentShadingRateAttachmentInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
+		SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateAttachmentTexelSize"));
+		//@formatter:on
+	}
 
-    public VkRenderingFragmentShadingRateAttachmentInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderingFragmentShadingRateAttachmentInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderingFragmentShadingRateAttachmentInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        shadingRateAttachmentTexelSize = new VkExtent2D(segment.asSlice(SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkRenderingFragmentShadingRateAttachmentInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderingFragmentShadingRateAttachmentInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderingFragmentShadingRateAttachmentInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    shadingRateAttachmentTexelSize = new VkExtent2D(segment.asSlice(SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkRenderingFragmentShadingRateAttachmentInfoKHR sType(int sType) {
@@ -195,5 +195,5 @@ public final class VkRenderingFragmentShadingRateAttachmentInfoKHR
             segment -> new VkRenderingFragmentShadingRateAttachmentInfoKHR(segment)
         );
     }
-    
+
 }

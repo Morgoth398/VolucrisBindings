@@ -23,127 +23,127 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSwapchainCreateInfoKHR
 		implements Struct<VkSwapchainCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle SURFACE_HANDLE;
-    public static final VarHandle MIN_IMAGE_COUNT_HANDLE;
-    public static final VarHandle IMAGE_FORMAT_HANDLE;
-    public static final VarHandle IMAGE_COLOR_SPACE_HANDLE;
-    public static final VarHandle IMAGE_ARRAY_LAYERS_HANDLE;
-    public static final VarHandle IMAGE_USAGE_HANDLE;
-    public static final VarHandle IMAGE_SHARING_MODE_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_COUNT_HANDLE;
-    public static final VarHandle P_QUEUE_FAMILY_INDICES_HANDLE;
-    public static final VarHandle PRE_TRANSFORM_HANDLE;
-    public static final VarHandle COMPOSITE_ALPHA_HANDLE;
-    public static final VarHandle PRESENT_MODE_HANDLE;
-    public static final VarHandle CLIPPED_HANDLE;
-    public static final VarHandle OLD_SWAPCHAIN_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle SURFACE_HANDLE;
+	public static final VarHandle MIN_IMAGE_COUNT_HANDLE;
+	public static final VarHandle IMAGE_FORMAT_HANDLE;
+	public static final VarHandle IMAGE_COLOR_SPACE_HANDLE;
+	public static final VarHandle IMAGE_ARRAY_LAYERS_HANDLE;
+	public static final VarHandle IMAGE_USAGE_HANDLE;
+	public static final VarHandle IMAGE_SHARING_MODE_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_COUNT_HANDLE;
+	public static final VarHandle P_QUEUE_FAMILY_INDICES_HANDLE;
+	public static final VarHandle PRE_TRANSFORM_HANDLE;
+	public static final VarHandle COMPOSITE_ALPHA_HANDLE;
+	public static final VarHandle PRESENT_MODE_HANDLE;
+	public static final VarHandle CLIPPED_HANDLE;
+	public static final VarHandle OLD_SWAPCHAIN_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SURFACE_BYTE_OFFSET;
-    public static final long MIN_IMAGE_COUNT_BYTE_OFFSET;
-    public static final long IMAGE_FORMAT_BYTE_OFFSET;
-    public static final long IMAGE_COLOR_SPACE_BYTE_OFFSET;
-    public static final long IMAGE_EXTENT_BYTE_OFFSET;
-    public static final long IMAGE_ARRAY_LAYERS_BYTE_OFFSET;
-    public static final long IMAGE_USAGE_BYTE_OFFSET;
-    public static final long IMAGE_SHARING_MODE_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET;
-    public static final long P_QUEUE_FAMILY_INDICES_BYTE_OFFSET;
-    public static final long PRE_TRANSFORM_BYTE_OFFSET;
-    public static final long COMPOSITE_ALPHA_BYTE_OFFSET;
-    public static final long PRESENT_MODE_BYTE_OFFSET;
-    public static final long CLIPPED_BYTE_OFFSET;
-    public static final long OLD_SWAPCHAIN_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SURFACE_BYTE_OFFSET;
+	public static final long MIN_IMAGE_COUNT_BYTE_OFFSET;
+	public static final long IMAGE_FORMAT_BYTE_OFFSET;
+	public static final long IMAGE_COLOR_SPACE_BYTE_OFFSET;
+	public static final long IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long IMAGE_ARRAY_LAYERS_BYTE_OFFSET;
+	public static final long IMAGE_USAGE_BYTE_OFFSET;
+	public static final long IMAGE_SHARING_MODE_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET;
+	public static final long P_QUEUE_FAMILY_INDICES_BYTE_OFFSET;
+	public static final long PRE_TRANSFORM_BYTE_OFFSET;
+	public static final long COMPOSITE_ALPHA_BYTE_OFFSET;
+	public static final long PRESENT_MODE_BYTE_OFFSET;
+	public static final long CLIPPED_BYTE_OFFSET;
+	public static final long OLD_SWAPCHAIN_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D imageExtent;
+	private final VkExtent2D imageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("surface"),
-            JAVA_INT.withName("minImageCount"),
-            JAVA_INT.withName("imageFormat"),
-            JAVA_INT.withName("imageColorSpace"),
-            VkExtent2D.LAYOUT.withName("imageExtent"),
-            JAVA_INT.withName("imageArrayLayers"),
-            JAVA_INT.withName("imageUsage"),
-            JAVA_INT.withName("imageSharingMode"),
-            JAVA_INT.withName("queueFamilyIndexCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pQueueFamilyIndices"),
-            JAVA_INT.withName("preTransform"),
-            JAVA_INT.withName("compositeAlpha"),
-            JAVA_INT.withName("presentMode"),
-            JAVA_INT.withName("clipped"),
-            UNBOUNDED_ADDRESS.withName("oldSwapchain")
-        ).withName("VkSwapchainCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        SURFACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("surface"));
-        MIN_IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minImageCount"));
-        IMAGE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageFormat"));
-        IMAGE_COLOR_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageColorSpace"));
-        IMAGE_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageArrayLayers"));
-        IMAGE_USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageUsage"));
-        IMAGE_SHARING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageSharingMode"));
-        QUEUE_FAMILY_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndexCount"));
-        P_QUEUE_FAMILY_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueFamilyIndices"));
-        PRE_TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preTransform"));
-        COMPOSITE_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compositeAlpha"));
-        PRESENT_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentMode"));
-        CLIPPED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clipped"));
-        OLD_SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("oldSwapchain"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SURFACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("surface"));
-        MIN_IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageCount"));
-        IMAGE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageFormat"));
-        IMAGE_COLOR_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageColorSpace"));
-        IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
-        IMAGE_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageArrayLayers"));
-        IMAGE_USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageUsage"));
-        IMAGE_SHARING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSharingMode"));
-        QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndexCount"));
-        P_QUEUE_FAMILY_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueFamilyIndices"));
-        PRE_TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preTransform"));
-        COMPOSITE_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compositeAlpha"));
-        PRESENT_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentMode"));
-        CLIPPED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clipped"));
-        OLD_SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("oldSwapchain"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("surface"),
+		    JAVA_INT.withName("minImageCount"),
+		    JAVA_INT.withName("imageFormat"),
+		    JAVA_INT.withName("imageColorSpace"),
+		    VkExtent2D.LAYOUT.withName("imageExtent"),
+		    JAVA_INT.withName("imageArrayLayers"),
+		    JAVA_INT.withName("imageUsage"),
+		    JAVA_INT.withName("imageSharingMode"),
+		    JAVA_INT.withName("queueFamilyIndexCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pQueueFamilyIndices"),
+		    JAVA_INT.withName("preTransform"),
+		    JAVA_INT.withName("compositeAlpha"),
+		    JAVA_INT.withName("presentMode"),
+		    JAVA_INT.withName("clipped"),
+		    UNBOUNDED_ADDRESS.withName("oldSwapchain")
+		).withName("VkSwapchainCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		SURFACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("surface"));
+		MIN_IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minImageCount"));
+		IMAGE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageFormat"));
+		IMAGE_COLOR_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageColorSpace"));
+		IMAGE_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageArrayLayers"));
+		IMAGE_USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageUsage"));
+		IMAGE_SHARING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageSharingMode"));
+		QUEUE_FAMILY_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndexCount"));
+		P_QUEUE_FAMILY_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueFamilyIndices"));
+		PRE_TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preTransform"));
+		COMPOSITE_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compositeAlpha"));
+		PRESENT_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentMode"));
+		CLIPPED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clipped"));
+		OLD_SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("oldSwapchain"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SURFACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("surface"));
+		MIN_IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageCount"));
+		IMAGE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageFormat"));
+		IMAGE_COLOR_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageColorSpace"));
+		IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
+		IMAGE_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageArrayLayers"));
+		IMAGE_USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageUsage"));
+		IMAGE_SHARING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSharingMode"));
+		QUEUE_FAMILY_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndexCount"));
+		P_QUEUE_FAMILY_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueFamilyIndices"));
+		PRE_TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preTransform"));
+		COMPOSITE_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compositeAlpha"));
+		PRESENT_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentMode"));
+		CLIPPED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clipped"));
+		OLD_SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("oldSwapchain"));
+		//@formatter:on
+	}
 
-    public VkSwapchainCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSwapchainCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSwapchainCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        imageExtent = new VkExtent2D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkSwapchainCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSwapchainCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSwapchainCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    imageExtent = new VkExtent2D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSwapchainCreateInfoKHR sType(int sType) {
@@ -223,6 +223,22 @@ public final class VkSwapchainCreateInfoKHR
     
     public int imageColorSpace() {
     	return (int) IMAGE_COLOR_SPACE_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #imageExtent()
+    public VkSwapchainCreateInfoKHR imageExtent(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(imageExtent);
+    	return this;
+    }
+    
+    /// @see #imageExtent()
+    public VkSwapchainCreateInfoKHR imageExtent(VkExtent2D other) {
+    	imageExtent.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D imageExtent() {
+    	return imageExtent;
     }
     
     /// @see #imageArrayLayers()
@@ -335,22 +351,6 @@ public final class VkSwapchainCreateInfoKHR
     	return new VkSwapchainKHR(segment);
     }
     
-    /// @see #imageExtent()
-    public VkSwapchainCreateInfoKHR imageExtent(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(imageExtent);
-    	return this;
-    }
-    
-    /// @see #imageExtent()
-    public VkSwapchainCreateInfoKHR imageExtent(VkExtent2D other) {
-    	imageExtent.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D imageExtent() {
-    	return imageExtent;
-    }
-    
     @Override
     public VkSwapchainCreateInfoKHR set(VkSwapchainCreateInfoKHR other) {
         return set(other.segment);
@@ -402,5 +402,5 @@ public final class VkSwapchainCreateInfoKHR
             segment -> new VkSwapchainCreateInfoKHR(segment)
         );
     }
-    
+
 }

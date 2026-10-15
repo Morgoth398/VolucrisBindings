@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureGeometryInstancesDataKHR
 		implements Struct<VkAccelerationStructureGeometryInstancesDataKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ARRAY_OF_POINTERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ARRAY_OF_POINTERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ARRAY_OF_POINTERS_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ARRAY_OF_POINTERS_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressConstKHR data;
+	private final VkDeviceOrHostAddressConstKHR data;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("arrayOfPointers"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("data")
-        ).withName("VkAccelerationStructureGeometryInstancesDataKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ARRAY_OF_POINTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayOfPointers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ARRAY_OF_POINTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayOfPointers"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("arrayOfPointers"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("data")
+		).withName("VkAccelerationStructureGeometryInstancesDataKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ARRAY_OF_POINTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayOfPointers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ARRAY_OF_POINTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayOfPointers"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureGeometryInstancesDataKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureGeometryInstancesDataKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureGeometryInstancesDataKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        data = new VkDeviceOrHostAddressConstKHR(segment.asSlice(DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-    }
+	public VkAccelerationStructureGeometryInstancesDataKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureGeometryInstancesDataKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureGeometryInstancesDataKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    data = new VkDeviceOrHostAddressConstKHR(segment.asSlice(DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkAccelerationStructureGeometryInstancesDataKHR sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkAccelerationStructureGeometryInstancesDataKHR
             segment -> new VkAccelerationStructureGeometryInstancesDataKHR(segment)
         );
     }
-    
+
 }

@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRobustness2FeaturesKHR
 		implements Struct<VkPhysicalDeviceRobustness2FeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ROBUST_BUFFER_ACCESS2_HANDLE;
-    public static final VarHandle ROBUST_IMAGE_ACCESS2_HANDLE;
-    public static final VarHandle NULL_DESCRIPTOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ROBUST_BUFFER_ACCESS2_HANDLE;
+	public static final VarHandle ROBUST_IMAGE_ACCESS2_HANDLE;
+	public static final VarHandle NULL_DESCRIPTOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ROBUST_BUFFER_ACCESS2_BYTE_OFFSET;
-    public static final long ROBUST_IMAGE_ACCESS2_BYTE_OFFSET;
-    public static final long NULL_DESCRIPTOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ROBUST_BUFFER_ACCESS2_BYTE_OFFSET;
+	public static final long ROBUST_IMAGE_ACCESS2_BYTE_OFFSET;
+	public static final long NULL_DESCRIPTOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("robustBufferAccess2"),
-            JAVA_INT.withName("robustImageAccess2"),
-            JAVA_INT.withName("nullDescriptor"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRobustness2FeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ROBUST_BUFFER_ACCESS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccess2"));
-        ROBUST_IMAGE_ACCESS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustImageAccess2"));
-        NULL_DESCRIPTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nullDescriptor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ROBUST_BUFFER_ACCESS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccess2"));
-        ROBUST_IMAGE_ACCESS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustImageAccess2"));
-        NULL_DESCRIPTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nullDescriptor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("robustBufferAccess2"),
+		    JAVA_INT.withName("robustImageAccess2"),
+		    JAVA_INT.withName("nullDescriptor"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRobustness2FeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ROBUST_BUFFER_ACCESS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccess2"));
+		ROBUST_IMAGE_ACCESS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustImageAccess2"));
+		NULL_DESCRIPTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nullDescriptor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ROBUST_BUFFER_ACCESS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccess2"));
+		ROBUST_IMAGE_ACCESS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustImageAccess2"));
+		NULL_DESCRIPTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nullDescriptor"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRobustness2FeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRobustness2FeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRobustness2FeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRobustness2FeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRobustness2FeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRobustness2FeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRobustness2FeaturesKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceRobustness2FeaturesKHR
             segment -> new VkPhysicalDeviceRobustness2FeaturesKHR(segment)
         );
     }
-    
+
 }

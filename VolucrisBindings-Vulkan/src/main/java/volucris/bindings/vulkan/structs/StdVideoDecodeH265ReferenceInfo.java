@@ -20,55 +20,45 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoDecodeH265ReferenceInfo
 		implements Struct<StdVideoDecodeH265ReferenceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PIC_ORDER_CNT_VAL_HANDLE;
+	public static final VarHandle PIC_ORDER_CNT_VAL_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PIC_ORDER_CNT_VAL_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PIC_ORDER_CNT_VAL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoDecodeH265ReferenceInfoFlags flags;
+	private final StdVideoDecodeH265ReferenceInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoDecodeH265ReferenceInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("PicOrderCntVal")
-        ).withName("StdVideoDecodeH265ReferenceInfo").withByteAlignment(4);
-        
-        PIC_ORDER_CNT_VAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCntVal"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PIC_ORDER_CNT_VAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCntVal"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoDecodeH265ReferenceInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("PicOrderCntVal")
+		).withName("StdVideoDecodeH265ReferenceInfo").withByteAlignment(4);
+		
+		PIC_ORDER_CNT_VAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCntVal"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PIC_ORDER_CNT_VAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCntVal"));
+		//@formatter:on
+	}
 
-    public StdVideoDecodeH265ReferenceInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoDecodeH265ReferenceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoDecodeH265ReferenceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoDecodeH265ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeH265ReferenceInfoFlags.LAYOUT));
-    }
+	public StdVideoDecodeH265ReferenceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoDecodeH265ReferenceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoDecodeH265ReferenceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoDecodeH265ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeH265ReferenceInfoFlags.LAYOUT));
+	}
 
-    /// @see #picOrderCntVal()
-    public StdVideoDecodeH265ReferenceInfo picOrderCntVal(int picOrderCntVal) {
-    	PIC_ORDER_CNT_VAL_HANDLE.set(segment, 0L, picOrderCntVal);
-    	return this;
-    }
-    
-    public int picOrderCntVal() {
-    	return (int) PIC_ORDER_CNT_VAL_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #flags()
     public StdVideoDecodeH265ReferenceInfo flags(Consumer<StdVideoDecodeH265ReferenceInfoFlags> consumer) {
     	consumer.accept(flags);
@@ -83,6 +73,16 @@ public final class StdVideoDecodeH265ReferenceInfo
     
     public StdVideoDecodeH265ReferenceInfoFlags flags() {
     	return flags;
+    }
+    
+    /// @see #picOrderCntVal()
+    public StdVideoDecodeH265ReferenceInfo picOrderCntVal(int picOrderCntVal) {
+    	PIC_ORDER_CNT_VAL_HANDLE.set(segment, 0L, picOrderCntVal);
+    	return this;
+    }
+    
+    public int picOrderCntVal() {
+    	return (int) PIC_ORDER_CNT_VAL_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -136,5 +136,5 @@ public final class StdVideoDecodeH265ReferenceInfo
             segment -> new StdVideoDecodeH265ReferenceInfo(segment)
         );
     }
-    
+
 }

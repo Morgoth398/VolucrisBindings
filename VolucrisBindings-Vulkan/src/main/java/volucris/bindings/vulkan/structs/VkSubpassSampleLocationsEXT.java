@@ -20,45 +20,45 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSubpassSampleLocationsEXT
 		implements Struct<VkSubpassSampleLocationsEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SUBPASS_INDEX_HANDLE;
+	public static final VarHandle SUBPASS_INDEX_HANDLE;
 
-    public static final long SUBPASS_INDEX_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATIONS_INFO_BYTE_OFFSET;
+	public static final long SUBPASS_INDEX_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATIONS_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSampleLocationsInfoEXT sampleLocationsInfo;
+	private final VkSampleLocationsInfoEXT sampleLocationsInfo;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("subpassIndex"),
-            MemoryLayout.paddingLayout(4),
-            VkSampleLocationsInfoEXT.LAYOUT.withName("sampleLocationsInfo")
-        ).withName("VkSubpassSampleLocationsEXT").withByteAlignment(8);
-        
-        SUBPASS_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassIndex"));
-        
-        SUBPASS_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassIndex"));
-        SAMPLE_LOCATIONS_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("subpassIndex"),
+		    MemoryLayout.paddingLayout(4),
+		    VkSampleLocationsInfoEXT.LAYOUT.withName("sampleLocationsInfo")
+		).withName("VkSubpassSampleLocationsEXT").withByteAlignment(8);
+		
+		SUBPASS_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassIndex"));
+		
+		SUBPASS_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassIndex"));
+		SAMPLE_LOCATIONS_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsInfo"));
+		//@formatter:on
+	}
 
-    public VkSubpassSampleLocationsEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubpassSampleLocationsEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubpassSampleLocationsEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        sampleLocationsInfo = new VkSampleLocationsInfoEXT(segment.asSlice(SAMPLE_LOCATIONS_INFO_BYTE_OFFSET, VkSampleLocationsInfoEXT.LAYOUT));
-    }
+	public VkSubpassSampleLocationsEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubpassSampleLocationsEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubpassSampleLocationsEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    sampleLocationsInfo = new VkSampleLocationsInfoEXT(segment.asSlice(SAMPLE_LOCATIONS_INFO_BYTE_OFFSET, VkSampleLocationsInfoEXT.LAYOUT));
+	}
 
     /// @see #subpassIndex()
     public VkSubpassSampleLocationsEXT subpassIndex(int subpassIndex) {
@@ -137,5 +137,5 @@ public final class VkSubpassSampleLocationsEXT
             segment -> new VkSubpassSampleLocationsEXT(segment)
         );
     }
-    
+
 }

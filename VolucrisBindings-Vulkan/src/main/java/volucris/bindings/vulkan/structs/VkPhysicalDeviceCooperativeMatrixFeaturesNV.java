@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceCooperativeMatrixFeaturesNV
 		implements Struct<VkPhysicalDeviceCooperativeMatrixFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_HANDLE;
-    public static final VarHandle COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_HANDLE;
+	public static final VarHandle COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_BYTE_OFFSET;
-    public static final long COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_BYTE_OFFSET;
+	public static final long COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("cooperativeMatrix"),
-            JAVA_INT.withName("cooperativeMatrixRobustBufferAccess")
-        ).withName("VkPhysicalDeviceCooperativeMatrixFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COOPERATIVE_MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrix"));
-        COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixRobustBufferAccess"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COOPERATIVE_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrix"));
-        COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixRobustBufferAccess"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("cooperativeMatrix"),
+		    JAVA_INT.withName("cooperativeMatrixRobustBufferAccess")
+		).withName("VkPhysicalDeviceCooperativeMatrixFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COOPERATIVE_MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrix"));
+		COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeMatrixRobustBufferAccess"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COOPERATIVE_MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrix"));
+		COOPERATIVE_MATRIX_ROBUST_BUFFER_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeMatrixRobustBufferAccess"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceCooperativeMatrixFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceCooperativeMatrixFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceCooperativeMatrixFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceCooperativeMatrixFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceCooperativeMatrixFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceCooperativeMatrixFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceCooperativeMatrixFeaturesNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceCooperativeMatrixFeaturesNV
             segment -> new VkPhysicalDeviceCooperativeMatrixFeaturesNV(segment)
         );
     }
-    
+
 }

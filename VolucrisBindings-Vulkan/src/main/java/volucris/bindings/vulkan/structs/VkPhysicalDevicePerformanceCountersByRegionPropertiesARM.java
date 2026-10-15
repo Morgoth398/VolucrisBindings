@@ -22,70 +22,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM
 		implements Struct<VkPhysicalDevicePerformanceCountersByRegionPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_PER_REGION_PERFORMANCE_COUNTERS_HANDLE;
-    public static final VarHandle ROW_STRIDE_ALIGNMENT_HANDLE;
-    public static final VarHandle REGION_ALIGNMENT_HANDLE;
-    public static final VarHandle IDENTITY_TRANSFORM_ORDER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_PER_REGION_PERFORMANCE_COUNTERS_HANDLE;
+	public static final VarHandle ROW_STRIDE_ALIGNMENT_HANDLE;
+	public static final VarHandle REGION_ALIGNMENT_HANDLE;
+	public static final VarHandle IDENTITY_TRANSFORM_ORDER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_PER_REGION_PERFORMANCE_COUNTERS_BYTE_OFFSET;
-    public static final long PERFORMANCE_COUNTER_REGION_SIZE_BYTE_OFFSET;
-    public static final long ROW_STRIDE_ALIGNMENT_BYTE_OFFSET;
-    public static final long REGION_ALIGNMENT_BYTE_OFFSET;
-    public static final long IDENTITY_TRANSFORM_ORDER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_PER_REGION_PERFORMANCE_COUNTERS_BYTE_OFFSET;
+	public static final long PERFORMANCE_COUNTER_REGION_SIZE_BYTE_OFFSET;
+	public static final long ROW_STRIDE_ALIGNMENT_BYTE_OFFSET;
+	public static final long REGION_ALIGNMENT_BYTE_OFFSET;
+	public static final long IDENTITY_TRANSFORM_ORDER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D performanceCounterRegionSize;
+	private final VkExtent2D performanceCounterRegionSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxPerRegionPerformanceCounters"),
-            VkExtent2D.LAYOUT.withName("performanceCounterRegionSize"),
-            JAVA_INT.withName("rowStrideAlignment"),
-            JAVA_INT.withName("regionAlignment"),
-            JAVA_INT.withName("identityTransformOrder")
-        ).withName("VkPhysicalDevicePerformanceCountersByRegionPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_PER_REGION_PERFORMANCE_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerRegionPerformanceCounters"));
-        ROW_STRIDE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rowStrideAlignment"));
-        REGION_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionAlignment"));
-        IDENTITY_TRANSFORM_ORDER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identityTransformOrder"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_PER_REGION_PERFORMANCE_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerRegionPerformanceCounters"));
-        PERFORMANCE_COUNTER_REGION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceCounterRegionSize"));
-        ROW_STRIDE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rowStrideAlignment"));
-        REGION_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionAlignment"));
-        IDENTITY_TRANSFORM_ORDER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identityTransformOrder"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxPerRegionPerformanceCounters"),
+		    VkExtent2D.LAYOUT.withName("performanceCounterRegionSize"),
+		    JAVA_INT.withName("rowStrideAlignment"),
+		    JAVA_INT.withName("regionAlignment"),
+		    JAVA_INT.withName("identityTransformOrder")
+		).withName("VkPhysicalDevicePerformanceCountersByRegionPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_PER_REGION_PERFORMANCE_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerRegionPerformanceCounters"));
+		ROW_STRIDE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rowStrideAlignment"));
+		REGION_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionAlignment"));
+		IDENTITY_TRANSFORM_ORDER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identityTransformOrder"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_PER_REGION_PERFORMANCE_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerRegionPerformanceCounters"));
+		PERFORMANCE_COUNTER_REGION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceCounterRegionSize"));
+		ROW_STRIDE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rowStrideAlignment"));
+		REGION_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionAlignment"));
+		IDENTITY_TRANSFORM_ORDER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identityTransformOrder"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-        performanceCounterRegionSize = new VkExtent2D(segment.asSlice(PERFORMANCE_COUNTER_REGION_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    performanceCounterRegionSize = new VkExtent2D(segment.asSlice(PERFORMANCE_COUNTER_REGION_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM sType(int sType) {
@@ -122,6 +122,22 @@ public final class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM
     	return (int) MAX_PER_REGION_PERFORMANCE_COUNTERS_HANDLE.get(segment, 0L);
     }
     
+    /// @see #performanceCounterRegionSize()
+    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM performanceCounterRegionSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(performanceCounterRegionSize);
+    	return this;
+    }
+    
+    /// @see #performanceCounterRegionSize()
+    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM performanceCounterRegionSize(VkExtent2D other) {
+    	performanceCounterRegionSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D performanceCounterRegionSize() {
+    	return performanceCounterRegionSize;
+    }
+    
     /// @see #rowStrideAlignment()
     public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM rowStrideAlignment(int rowStrideAlignment) {
     	ROW_STRIDE_ALIGNMENT_HANDLE.set(segment, 0L, rowStrideAlignment);
@@ -150,22 +166,6 @@ public final class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM
     
     public int identityTransformOrder() {
     	return (int) IDENTITY_TRANSFORM_ORDER_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #performanceCounterRegionSize()
-    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM performanceCounterRegionSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(performanceCounterRegionSize);
-    	return this;
-    }
-    
-    /// @see #performanceCounterRegionSize()
-    public VkPhysicalDevicePerformanceCountersByRegionPropertiesARM performanceCounterRegionSize(VkExtent2D other) {
-    	performanceCounterRegionSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D performanceCounterRegionSize() {
-    	return performanceCounterRegionSize;
     }
     
     @Override
@@ -219,5 +219,5 @@ public final class VkPhysicalDevicePerformanceCountersByRegionPropertiesARM
             segment -> new VkPhysicalDevicePerformanceCountersByRegionPropertiesARM(segment)
         );
     }
-    
+
 }

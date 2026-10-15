@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentShadingRateFeaturesKHR
 		implements Struct<VkPhysicalDeviceFragmentShadingRateFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PIPELINE_FRAGMENT_SHADING_RATE_HANDLE;
-    public static final VarHandle PRIMITIVE_FRAGMENT_SHADING_RATE_HANDLE;
-    public static final VarHandle ATTACHMENT_FRAGMENT_SHADING_RATE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PIPELINE_FRAGMENT_SHADING_RATE_HANDLE;
+	public static final VarHandle PRIMITIVE_FRAGMENT_SHADING_RATE_HANDLE;
+	public static final VarHandle ATTACHMENT_FRAGMENT_SHADING_RATE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PIPELINE_FRAGMENT_SHADING_RATE_BYTE_OFFSET;
-    public static final long PRIMITIVE_FRAGMENT_SHADING_RATE_BYTE_OFFSET;
-    public static final long ATTACHMENT_FRAGMENT_SHADING_RATE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PIPELINE_FRAGMENT_SHADING_RATE_BYTE_OFFSET;
+	public static final long PRIMITIVE_FRAGMENT_SHADING_RATE_BYTE_OFFSET;
+	public static final long ATTACHMENT_FRAGMENT_SHADING_RATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("pipelineFragmentShadingRate"),
-            JAVA_INT.withName("primitiveFragmentShadingRate"),
-            JAVA_INT.withName("attachmentFragmentShadingRate"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFragmentShadingRateFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PIPELINE_FRAGMENT_SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineFragmentShadingRate"));
-        PRIMITIVE_FRAGMENT_SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveFragmentShadingRate"));
-        ATTACHMENT_FRAGMENT_SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentFragmentShadingRate"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PIPELINE_FRAGMENT_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineFragmentShadingRate"));
-        PRIMITIVE_FRAGMENT_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveFragmentShadingRate"));
-        ATTACHMENT_FRAGMENT_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentFragmentShadingRate"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("pipelineFragmentShadingRate"),
+		    JAVA_INT.withName("primitiveFragmentShadingRate"),
+		    JAVA_INT.withName("attachmentFragmentShadingRate"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFragmentShadingRateFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PIPELINE_FRAGMENT_SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineFragmentShadingRate"));
+		PRIMITIVE_FRAGMENT_SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveFragmentShadingRate"));
+		ATTACHMENT_FRAGMENT_SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentFragmentShadingRate"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PIPELINE_FRAGMENT_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineFragmentShadingRate"));
+		PRIMITIVE_FRAGMENT_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveFragmentShadingRate"));
+		ATTACHMENT_FRAGMENT_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentFragmentShadingRate"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentShadingRateFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRateFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRateFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFragmentShadingRateFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRateFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRateFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentShadingRateFeaturesKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceFragmentShadingRateFeaturesKHR
             segment -> new VkPhysicalDeviceFragmentShadingRateFeaturesKHR(segment)
         );
     }
-    
+
 }

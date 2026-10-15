@@ -22,51 +22,51 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSurfaceCapabilities2KHR
 		implements Struct<VkSurfaceCapabilities2KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SURFACE_CAPABILITIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SURFACE_CAPABILITIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSurfaceCapabilitiesKHR surfaceCapabilities;
+	private final VkSurfaceCapabilitiesKHR surfaceCapabilities;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkSurfaceCapabilitiesKHR.LAYOUT.withName("surfaceCapabilities"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSurfaceCapabilities2KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SURFACE_CAPABILITIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("surfaceCapabilities"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkSurfaceCapabilitiesKHR.LAYOUT.withName("surfaceCapabilities"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSurfaceCapabilities2KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SURFACE_CAPABILITIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("surfaceCapabilities"));
+		//@formatter:on
+	}
 
-    public VkSurfaceCapabilities2KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSurfaceCapabilities2KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSurfaceCapabilities2KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        surfaceCapabilities = new VkSurfaceCapabilitiesKHR(segment.asSlice(SURFACE_CAPABILITIES_BYTE_OFFSET, VkSurfaceCapabilitiesKHR.LAYOUT));
-    }
+	public VkSurfaceCapabilities2KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSurfaceCapabilities2KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSurfaceCapabilities2KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    surfaceCapabilities = new VkSurfaceCapabilitiesKHR(segment.asSlice(SURFACE_CAPABILITIES_BYTE_OFFSET, VkSurfaceCapabilitiesKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSurfaceCapabilities2KHR sType(int sType) {
@@ -160,5 +160,5 @@ public final class VkSurfaceCapabilities2KHR
             segment -> new VkSurfaceCapabilities2KHR(segment)
         );
     }
-    
+
 }

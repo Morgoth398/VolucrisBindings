@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePushDescriptorProperties
 		implements Struct<VkPhysicalDevicePushDescriptorProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_PUSH_DESCRIPTORS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_PUSH_DESCRIPTORS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_PUSH_DESCRIPTORS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_PUSH_DESCRIPTORS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxPushDescriptors"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePushDescriptorProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_PUSH_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushDescriptors"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_PUSH_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushDescriptors"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxPushDescriptors"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePushDescriptorProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_PUSH_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushDescriptors"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_PUSH_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushDescriptors"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePushDescriptorProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePushDescriptorProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePushDescriptorProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePushDescriptorProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePushDescriptorProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePushDescriptorProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePushDescriptorProperties sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePushDescriptorProperties
             segment -> new VkPhysicalDevicePushDescriptorProperties(segment)
         );
     }
-    
+
 }

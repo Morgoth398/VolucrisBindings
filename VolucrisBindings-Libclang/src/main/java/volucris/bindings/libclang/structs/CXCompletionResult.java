@@ -22,44 +22,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXCompletionResult
 		implements Struct<CXCompletionResult> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CURSOR_KIND_HANDLE;
-    public static final VarHandle COMPLETION_STRING_HANDLE;
+	public static final VarHandle CURSOR_KIND_HANDLE;
+	public static final VarHandle COMPLETION_STRING_HANDLE;
 
-    public static final long CURSOR_KIND_BYTE_OFFSET;
-    public static final long COMPLETION_STRING_BYTE_OFFSET;
+	public static final long CURSOR_KIND_BYTE_OFFSET;
+	public static final long COMPLETION_STRING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("CursorKind"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("CompletionString")
-        ).withName("CXCompletionResult").withByteAlignment(8);
-        
-        CURSOR_KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CursorKind"));
-        COMPLETION_STRING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CompletionString"));
-        
-        CURSOR_KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CursorKind"));
-        COMPLETION_STRING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CompletionString"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("CursorKind"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("CompletionString")
+		).withName("CXCompletionResult").withByteAlignment(8);
+		
+		CURSOR_KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CursorKind"));
+		COMPLETION_STRING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CompletionString"));
+		
+		CURSOR_KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CursorKind"));
+		COMPLETION_STRING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CompletionString"));
+		//@formatter:on
+	}
 
-    public CXCompletionResult() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXCompletionResult(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXCompletionResult(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXCompletionResult() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXCompletionResult(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXCompletionResult(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #cursorKind()
     public CXCompletionResult cursorKind(int cursorKind) {
@@ -153,5 +153,5 @@ public final class CXCompletionResult
             segment -> new CXCompletionResult(segment)
         );
     }
-    
+
 }

@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClearDepthStencilValue
 		implements Struct<VkClearDepthStencilValue> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DEPTH_HANDLE;
-    public static final VarHandle STENCIL_HANDLE;
+	public static final VarHandle DEPTH_HANDLE;
+	public static final VarHandle STENCIL_HANDLE;
 
-    public static final long DEPTH_BYTE_OFFSET;
-    public static final long STENCIL_BYTE_OFFSET;
+	public static final long DEPTH_BYTE_OFFSET;
+	public static final long STENCIL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("depth"),
-            JAVA_INT.withName("stencil")
-        ).withName("VkClearDepthStencilValue").withByteAlignment(4);
-        
-        DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
-        STENCIL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencil"));
-        
-        DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
-        STENCIL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencil"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("depth"),
+		    JAVA_INT.withName("stencil")
+		).withName("VkClearDepthStencilValue").withByteAlignment(4);
+		
+		DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
+		STENCIL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencil"));
+		
+		DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
+		STENCIL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencil"));
+		//@formatter:on
+	}
 
-    public VkClearDepthStencilValue() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClearDepthStencilValue(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClearDepthStencilValue(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClearDepthStencilValue() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClearDepthStencilValue(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClearDepthStencilValue(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #depth()
     public VkClearDepthStencilValue depth(float depth) {
@@ -128,5 +128,5 @@ public final class VkClearDepthStencilValue
             segment -> new VkClearDepthStencilValue(segment)
         );
     }
-    
+
 }

@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineDiscardRectangleStateCreateInfoEXT
 		implements Struct<VkPipelineDiscardRectangleStateCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DISCARD_RECTANGLE_MODE_HANDLE;
-    public static final VarHandle DISCARD_RECTANGLE_COUNT_HANDLE;
-    public static final VarHandle P_DISCARD_RECTANGLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DISCARD_RECTANGLE_MODE_HANDLE;
+	public static final VarHandle DISCARD_RECTANGLE_COUNT_HANDLE;
+	public static final VarHandle P_DISCARD_RECTANGLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DISCARD_RECTANGLE_MODE_BYTE_OFFSET;
-    public static final long DISCARD_RECTANGLE_COUNT_BYTE_OFFSET;
-    public static final long P_DISCARD_RECTANGLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DISCARD_RECTANGLE_MODE_BYTE_OFFSET;
+	public static final long DISCARD_RECTANGLE_COUNT_BYTE_OFFSET;
+	public static final long P_DISCARD_RECTANGLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("discardRectangleMode"),
-            JAVA_INT.withName("discardRectangleCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDiscardRectangles")
-        ).withName("VkPipelineDiscardRectangleStateCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DISCARD_RECTANGLE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discardRectangleMode"));
-        DISCARD_RECTANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discardRectangleCount"));
-        P_DISCARD_RECTANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDiscardRectangles"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DISCARD_RECTANGLE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discardRectangleMode"));
-        DISCARD_RECTANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discardRectangleCount"));
-        P_DISCARD_RECTANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDiscardRectangles"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("discardRectangleMode"),
+		    JAVA_INT.withName("discardRectangleCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDiscardRectangles")
+		).withName("VkPipelineDiscardRectangleStateCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DISCARD_RECTANGLE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discardRectangleMode"));
+		DISCARD_RECTANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discardRectangleCount"));
+		P_DISCARD_RECTANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDiscardRectangles"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DISCARD_RECTANGLE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discardRectangleMode"));
+		DISCARD_RECTANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discardRectangleCount"));
+		P_DISCARD_RECTANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDiscardRectangles"));
+		//@formatter:on
+	}
 
-    public VkPipelineDiscardRectangleStateCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineDiscardRectangleStateCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineDiscardRectangleStateCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineDiscardRectangleStateCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineDiscardRectangleStateCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineDiscardRectangleStateCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineDiscardRectangleStateCreateInfoEXT sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkPipelineDiscardRectangleStateCreateInfoEXT
             segment -> new VkPipelineDiscardRectangleStateCreateInfoEXT(segment)
         );
     }
-    
+
 }

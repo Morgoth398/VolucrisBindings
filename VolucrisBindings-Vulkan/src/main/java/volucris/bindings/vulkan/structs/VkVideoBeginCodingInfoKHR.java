@@ -21,71 +21,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoBeginCodingInfoKHR
 		implements Struct<VkVideoBeginCodingInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle VIDEO_SESSION_HANDLE;
-    public static final VarHandle VIDEO_SESSION_PARAMETERS_HANDLE;
-    public static final VarHandle REFERENCE_SLOT_COUNT_HANDLE;
-    public static final VarHandle P_REFERENCE_SLOTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle VIDEO_SESSION_HANDLE;
+	public static final VarHandle VIDEO_SESSION_PARAMETERS_HANDLE;
+	public static final VarHandle REFERENCE_SLOT_COUNT_HANDLE;
+	public static final VarHandle P_REFERENCE_SLOTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long VIDEO_SESSION_BYTE_OFFSET;
-    public static final long VIDEO_SESSION_PARAMETERS_BYTE_OFFSET;
-    public static final long REFERENCE_SLOT_COUNT_BYTE_OFFSET;
-    public static final long P_REFERENCE_SLOTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long VIDEO_SESSION_BYTE_OFFSET;
+	public static final long VIDEO_SESSION_PARAMETERS_BYTE_OFFSET;
+	public static final long REFERENCE_SLOT_COUNT_BYTE_OFFSET;
+	public static final long P_REFERENCE_SLOTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("videoSession"),
-            UNBOUNDED_ADDRESS.withName("videoSessionParameters"),
-            JAVA_INT.withName("referenceSlotCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pReferenceSlots")
-        ).withName("VkVideoBeginCodingInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        VIDEO_SESSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoSession"));
-        VIDEO_SESSION_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoSessionParameters"));
-        REFERENCE_SLOT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceSlotCount"));
-        P_REFERENCE_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pReferenceSlots"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        VIDEO_SESSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoSession"));
-        VIDEO_SESSION_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoSessionParameters"));
-        REFERENCE_SLOT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceSlotCount"));
-        P_REFERENCE_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pReferenceSlots"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("videoSession"),
+		    UNBOUNDED_ADDRESS.withName("videoSessionParameters"),
+		    JAVA_INT.withName("referenceSlotCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pReferenceSlots")
+		).withName("VkVideoBeginCodingInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		VIDEO_SESSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoSession"));
+		VIDEO_SESSION_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoSessionParameters"));
+		REFERENCE_SLOT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceSlotCount"));
+		P_REFERENCE_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pReferenceSlots"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		VIDEO_SESSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoSession"));
+		VIDEO_SESSION_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoSessionParameters"));
+		REFERENCE_SLOT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceSlotCount"));
+		P_REFERENCE_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pReferenceSlots"));
+		//@formatter:on
+	}
 
-    public VkVideoBeginCodingInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoBeginCodingInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoBeginCodingInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoBeginCodingInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoBeginCodingInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoBeginCodingInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoBeginCodingInfoKHR sType(int sType) {
@@ -228,5 +228,5 @@ public final class VkVideoBeginCodingInfoKHR
             segment -> new VkVideoBeginCodingInfoKHR(segment)
         );
     }
-    
+
 }

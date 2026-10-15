@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVertexInputAttributeDescription
 		implements Struct<VkVertexInputAttributeDescription> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LOCATION_HANDLE;
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle LOCATION_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
 
-    public static final long LOCATION_BYTE_OFFSET;
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
+	public static final long LOCATION_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("location"),
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("offset")
-        ).withName("VkVertexInputAttributeDescription").withByteAlignment(4);
-        
-        LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("location"));
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        
-        LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("location"));
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("location"),
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("offset")
+		).withName("VkVertexInputAttributeDescription").withByteAlignment(4);
+		
+		LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("location"));
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		
+		LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("location"));
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		//@formatter:on
+	}
 
-    public VkVertexInputAttributeDescription() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVertexInputAttributeDescription(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVertexInputAttributeDescription(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVertexInputAttributeDescription() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVertexInputAttributeDescription(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVertexInputAttributeDescription(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #location()
     public VkVertexInputAttributeDescription location(int location) {
@@ -158,5 +158,5 @@ public final class VkVertexInputAttributeDescription
             segment -> new VkVertexInputAttributeDescription(segment)
         );
     }
-    
+
 }

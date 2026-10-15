@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSamplerFilterMinmaxProperties
 		implements Struct<VkPhysicalDeviceSamplerFilterMinmaxProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE;
-    public static final VarHandle FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE;
+	public static final VarHandle FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET;
-    public static final long FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET;
+	public static final long FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("filterMinmaxSingleComponentFormats"),
-            JAVA_INT.withName("filterMinmaxImageComponentMapping")
-        ).withName("VkPhysicalDeviceSamplerFilterMinmaxProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
-        FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxImageComponentMapping"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
-        FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxImageComponentMapping"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("filterMinmaxSingleComponentFormats"),
+		    JAVA_INT.withName("filterMinmaxImageComponentMapping")
+		).withName("VkPhysicalDeviceSamplerFilterMinmaxProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
+		FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filterMinmaxImageComponentMapping"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FILTER_MINMAX_SINGLE_COMPONENT_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxSingleComponentFormats"));
+		FILTER_MINMAX_IMAGE_COMPONENT_MAPPING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterMinmaxImageComponentMapping"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSamplerFilterMinmaxProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSamplerFilterMinmaxProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSamplerFilterMinmaxProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSamplerFilterMinmaxProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSamplerFilterMinmaxProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSamplerFilterMinmaxProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSamplerFilterMinmaxProperties sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceSamplerFilterMinmaxProperties
             segment -> new VkPhysicalDeviceSamplerFilterMinmaxProperties(segment)
         );
     }
-    
+
 }

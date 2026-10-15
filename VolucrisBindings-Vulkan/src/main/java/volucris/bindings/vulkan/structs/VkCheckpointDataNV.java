@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCheckpointDataNV
 		implements Struct<VkCheckpointDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle P_CHECKPOINT_MARKER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle P_CHECKPOINT_MARKER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long P_CHECKPOINT_MARKER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long P_CHECKPOINT_MARKER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stage"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCheckpointMarker")
-        ).withName("VkCheckpointDataNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        P_CHECKPOINT_MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCheckpointMarker"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        P_CHECKPOINT_MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCheckpointMarker"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stage"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCheckpointMarker")
+		).withName("VkCheckpointDataNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		P_CHECKPOINT_MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCheckpointMarker"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		P_CHECKPOINT_MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCheckpointMarker"));
+		//@formatter:on
+	}
 
-    public VkCheckpointDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCheckpointDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCheckpointDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCheckpointDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCheckpointDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCheckpointDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCheckpointDataNV sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkCheckpointDataNV
             segment -> new VkCheckpointDataNV(segment)
         );
     }
-    
+
 }

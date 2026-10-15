@@ -20,81 +20,81 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPhysicalDeviceProperties
 		implements Struct<VkPhysicalDeviceProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle API_VERSION_HANDLE;
-    public static final VarHandle DRIVER_VERSION_HANDLE;
-    public static final VarHandle VENDOR_ID_HANDLE;
-    public static final VarHandle DEVICE_ID_HANDLE;
-    public static final VarHandle DEVICE_TYPE_HANDLE;
-    public static final VarHandle DEVICE_NAME_HANDLE;
-    public static final VarHandle PIPELINE_CACHE_UUID_HANDLE;
+	public static final VarHandle API_VERSION_HANDLE;
+	public static final VarHandle DRIVER_VERSION_HANDLE;
+	public static final VarHandle VENDOR_ID_HANDLE;
+	public static final VarHandle DEVICE_ID_HANDLE;
+	public static final VarHandle DEVICE_TYPE_HANDLE;
+	public static final VarHandle DEVICE_NAME_HANDLE;
+	public static final VarHandle PIPELINE_CACHE_UUID_HANDLE;
 
-    public static final long API_VERSION_BYTE_OFFSET;
-    public static final long DRIVER_VERSION_BYTE_OFFSET;
-    public static final long VENDOR_ID_BYTE_OFFSET;
-    public static final long DEVICE_ID_BYTE_OFFSET;
-    public static final long DEVICE_TYPE_BYTE_OFFSET;
-    public static final long DEVICE_NAME_BYTE_OFFSET;
-    public static final long PIPELINE_CACHE_UUID_BYTE_OFFSET;
-    public static final long LIMITS_BYTE_OFFSET;
-    public static final long SPARSE_PROPERTIES_BYTE_OFFSET;
+	public static final long API_VERSION_BYTE_OFFSET;
+	public static final long DRIVER_VERSION_BYTE_OFFSET;
+	public static final long VENDOR_ID_BYTE_OFFSET;
+	public static final long DEVICE_ID_BYTE_OFFSET;
+	public static final long DEVICE_TYPE_BYTE_OFFSET;
+	public static final long DEVICE_NAME_BYTE_OFFSET;
+	public static final long PIPELINE_CACHE_UUID_BYTE_OFFSET;
+	public static final long LIMITS_BYTE_OFFSET;
+	public static final long SPARSE_PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPhysicalDeviceLimits limits;
-    private final VkPhysicalDeviceSparseProperties sparseProperties;
+	private final VkPhysicalDeviceLimits limits;
+	private final VkPhysicalDeviceSparseProperties sparseProperties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("apiVersion"),
-            JAVA_INT.withName("driverVersion"),
-            JAVA_INT.withName("vendorID"),
-            JAVA_INT.withName("deviceID"),
-            JAVA_INT.withName("deviceType"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("deviceName"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pipelineCacheUUID"),
-            MemoryLayout.paddingLayout(4),
-            VkPhysicalDeviceLimits.LAYOUT.withName("limits"),
-            VkPhysicalDeviceSparseProperties.LAYOUT.withName("sparseProperties"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceProperties").withByteAlignment(8);
-        
-        API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("apiVersion"));
-        DRIVER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverVersion"));
-        VENDOR_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorID"));
-        DEVICE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceID"));
-        DEVICE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceType"));
-        DEVICE_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceName"), PathElement.sequenceElement());
-        PIPELINE_CACHE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCacheUUID"), PathElement.sequenceElement());
-        
-        API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apiVersion"));
-        DRIVER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverVersion"));
-        VENDOR_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorID"));
-        DEVICE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceID"));
-        DEVICE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceType"));
-        DEVICE_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceName"));
-        PIPELINE_CACHE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCacheUUID"));
-        LIMITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("limits"));
-        SPARSE_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseProperties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("apiVersion"),
+		    JAVA_INT.withName("driverVersion"),
+		    JAVA_INT.withName("vendorID"),
+		    JAVA_INT.withName("deviceID"),
+		    JAVA_INT.withName("deviceType"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("deviceName"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pipelineCacheUUID"),
+		    MemoryLayout.paddingLayout(4),
+		    VkPhysicalDeviceLimits.LAYOUT.withName("limits"),
+		    VkPhysicalDeviceSparseProperties.LAYOUT.withName("sparseProperties"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceProperties").withByteAlignment(8);
+		
+		API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("apiVersion"));
+		DRIVER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverVersion"));
+		VENDOR_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorID"));
+		DEVICE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceID"));
+		DEVICE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceType"));
+		DEVICE_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceName"), PathElement.sequenceElement());
+		PIPELINE_CACHE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCacheUUID"), PathElement.sequenceElement());
+		
+		API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apiVersion"));
+		DRIVER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverVersion"));
+		VENDOR_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorID"));
+		DEVICE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceID"));
+		DEVICE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceType"));
+		DEVICE_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceName"));
+		PIPELINE_CACHE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCacheUUID"));
+		LIMITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("limits"));
+		SPARSE_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseProperties"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-        limits = new VkPhysicalDeviceLimits(segment.asSlice(LIMITS_BYTE_OFFSET, VkPhysicalDeviceLimits.LAYOUT));
-        sparseProperties = new VkPhysicalDeviceSparseProperties(segment.asSlice(SPARSE_PROPERTIES_BYTE_OFFSET, VkPhysicalDeviceSparseProperties.LAYOUT));
-    }
+	public VkPhysicalDeviceProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    limits = new VkPhysicalDeviceLimits(segment.asSlice(LIMITS_BYTE_OFFSET, VkPhysicalDeviceLimits.LAYOUT));
+	    sparseProperties = new VkPhysicalDeviceSparseProperties(segment.asSlice(SPARSE_PROPERTIES_BYTE_OFFSET, VkPhysicalDeviceSparseProperties.LAYOUT));
+	}
 
     /// @see #apiVersion()
     public VkPhysicalDeviceProperties apiVersion(int apiVersion) {
@@ -156,6 +156,10 @@ public final class VkPhysicalDeviceProperties
     	return (byte) DEVICE_NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String deviceName() {
+        return segment.getString(DEVICE_NAME_BYTE_OFFSET);
+    }
+    
     /// @see #pipelineCacheUUID(int)
     public VkPhysicalDeviceProperties pipelineCacheUUID(byte pipelineCacheUUID, int index0) {
     	PIPELINE_CACHE_UUID_HANDLE.set(segment, 0L, index0, pipelineCacheUUID);
@@ -196,10 +200,6 @@ public final class VkPhysicalDeviceProperties
     
     public VkPhysicalDeviceSparseProperties sparseProperties() {
     	return sparseProperties;
-    }
-    
-    public String deviceName() {
-        return segment.getString(DEVICE_NAME_BYTE_OFFSET);
     }
     
     @Override
@@ -253,5 +253,5 @@ public final class VkPhysicalDeviceProperties
             segment -> new VkPhysicalDeviceProperties(segment)
         );
     }
-    
+
 }

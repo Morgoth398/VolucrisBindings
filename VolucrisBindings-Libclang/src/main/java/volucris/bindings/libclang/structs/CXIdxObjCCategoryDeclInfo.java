@@ -19,59 +19,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxObjCCategoryDeclInfo
 		implements Struct<CXIdxObjCCategoryDeclInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CONTAINER_INFO_HANDLE;
-    public static final VarHandle OBJC_CLASS_HANDLE;
-    public static final VarHandle PROTOCOLS_HANDLE;
+	public static final VarHandle CONTAINER_INFO_HANDLE;
+	public static final VarHandle OBJC_CLASS_HANDLE;
+	public static final VarHandle PROTOCOLS_HANDLE;
 
-    public static final long CONTAINER_INFO_BYTE_OFFSET;
-    public static final long OBJC_CLASS_BYTE_OFFSET;
-    public static final long CLASS_CURSOR_BYTE_OFFSET;
-    public static final long CLASS_LOC_BYTE_OFFSET;
-    public static final long PROTOCOLS_BYTE_OFFSET;
+	public static final long CONTAINER_INFO_BYTE_OFFSET;
+	public static final long OBJC_CLASS_BYTE_OFFSET;
+	public static final long CLASS_CURSOR_BYTE_OFFSET;
+	public static final long CLASS_LOC_BYTE_OFFSET;
+	public static final long PROTOCOLS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor classCursor;
-    private final CXIdxLoc classLoc;
+	private final CXCursor classCursor;
+	private final CXIdxLoc classLoc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("containerInfo"),
-            UNBOUNDED_ADDRESS.withName("objcClass"),
-            CXCursor.LAYOUT.withName("classCursor"),
-            CXIdxLoc.LAYOUT.withName("classLoc"),
-            UNBOUNDED_ADDRESS.withName("protocols")
-        ).withName("CXIdxObjCCategoryDeclInfo").withByteAlignment(8);
-        
-        CONTAINER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("containerInfo"));
-        OBJC_CLASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objcClass"));
-        PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocols"));
-        
-        CONTAINER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("containerInfo"));
-        OBJC_CLASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objcClass"));
-        CLASS_CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classCursor"));
-        CLASS_LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classLoc"));
-        PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocols"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("containerInfo"),
+		    UNBOUNDED_ADDRESS.withName("objcClass"),
+		    CXCursor.LAYOUT.withName("classCursor"),
+		    CXIdxLoc.LAYOUT.withName("classLoc"),
+		    UNBOUNDED_ADDRESS.withName("protocols")
+		).withName("CXIdxObjCCategoryDeclInfo").withByteAlignment(8);
+		
+		CONTAINER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("containerInfo"));
+		OBJC_CLASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objcClass"));
+		PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocols"));
+		
+		CONTAINER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("containerInfo"));
+		OBJC_CLASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objcClass"));
+		CLASS_CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classCursor"));
+		CLASS_LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classLoc"));
+		PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocols"));
+		//@formatter:on
+	}
 
-    public CXIdxObjCCategoryDeclInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxObjCCategoryDeclInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxObjCCategoryDeclInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        classCursor = new CXCursor(segment.asSlice(CLASS_CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        classLoc = new CXIdxLoc(segment.asSlice(CLASS_LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxObjCCategoryDeclInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxObjCCategoryDeclInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxObjCCategoryDeclInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    classCursor = new CXCursor(segment.asSlice(CLASS_CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    classLoc = new CXIdxLoc(segment.asSlice(CLASS_LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #containerInfo()
     public CXIdxObjCCategoryDeclInfo containerInfo(CXIdxObjCContainerDeclInfo containerInfo) {
@@ -101,21 +101,6 @@ public final class CXIdxObjCCategoryDeclInfo
     		return null;
     	
     	return new CXIdxEntityInfo(segment);
-    }
-    
-    /// @see #protocols()
-    public CXIdxObjCCategoryDeclInfo protocols(CXIdxObjCProtocolRefListInfo protocols) {
-    	PROTOCOLS_HANDLE.set(segment, 0L, protocols.memorySegment());
-    	return this;
-    }
-    
-    public @Nullable CXIdxObjCProtocolRefListInfo protocols() {
-    	MemorySegment segment = (MemorySegment) PROTOCOLS_HANDLE.get(this.segment, 0L);
-    
-    	if (segment.equals(MemorySegment.NULL))
-    		return null;
-    	
-    	return new CXIdxObjCProtocolRefListInfo(segment);
     }
     
     /// @see #classCursor()
@@ -148,6 +133,21 @@ public final class CXIdxObjCCategoryDeclInfo
     
     public CXIdxLoc classLoc() {
     	return classLoc;
+    }
+    
+    /// @see #protocols()
+    public CXIdxObjCCategoryDeclInfo protocols(CXIdxObjCProtocolRefListInfo protocols) {
+    	PROTOCOLS_HANDLE.set(segment, 0L, protocols.memorySegment());
+    	return this;
+    }
+    
+    public @Nullable CXIdxObjCProtocolRefListInfo protocols() {
+    	MemorySegment segment = (MemorySegment) PROTOCOLS_HANDLE.get(this.segment, 0L);
+    
+    	if (segment.equals(MemorySegment.NULL))
+    		return null;
+    	
+    	return new CXIdxObjCProtocolRefListInfo(segment);
     }
     
     @Override
@@ -201,5 +201,5 @@ public final class CXIdxObjCCategoryDeclInfo
             segment -> new CXIdxObjCCategoryDeclInfo(segment)
         );
     }
-    
+
 }

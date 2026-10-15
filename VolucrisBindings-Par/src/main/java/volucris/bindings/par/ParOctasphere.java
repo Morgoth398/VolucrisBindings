@@ -11,18 +11,18 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class ParOctasphere {
 
-    private static final LazyConstant<MethodHandle> PAR_OCTASPHERE_GET_COUNTS;
-    private static final LazyConstant<MethodHandle> PAR_OCTASPHERE_POPULATE;
+	private static final LazyConstant<MethodHandle> PAR_OCTASPHERE_GET_COUNTS;
+	private static final LazyConstant<MethodHandle> PAR_OCTASPHERE_POPULATE;
 
-    static {
-        //@formatter:off
-        PAR_OCTASPHERE_GET_COUNTS = downcallHandleVoid("par_octasphere_get_counts", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_OCTASPHERE_POPULATE = downcallHandleVoid("par_octasphere_populate", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		PAR_OCTASPHERE_GET_COUNTS = downcallHandleVoid("par_octasphere_get_counts", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_OCTASPHERE_POPULATE = downcallHandleVoid("par_octasphere_populate", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		//@formatter:on
+	}
 
-    private ParOctasphere() {
-    }
+	private ParOctasphere() {
+	}
 
     /// ```
     /// Computes the maximum possible number of indices and vertices for the given octasphere config.
@@ -85,5 +85,5 @@ public final class ParOctasphere {
     		mesh.memorySegment()
     	);
     }
-    
+
 }

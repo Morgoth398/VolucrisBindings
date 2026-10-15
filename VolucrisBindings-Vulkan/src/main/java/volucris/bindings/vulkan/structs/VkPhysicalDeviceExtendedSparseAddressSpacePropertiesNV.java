@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV
 		implements Struct<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_HANDLE;
-    public static final VarHandle EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_HANDLE;
-    public static final VarHandle EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_HANDLE;
+	public static final VarHandle EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_HANDLE;
+	public static final VarHandle EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET;
-    public static final long EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_BYTE_OFFSET;
-    public static final long EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET;
+	public static final long EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_BYTE_OFFSET;
+	public static final long EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("extendedSparseAddressSpaceSize"),
-            JAVA_INT.withName("extendedSparseImageUsageFlags"),
-            JAVA_INT.withName("extendedSparseBufferUsageFlags")
-        ).withName("VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseAddressSpaceSize"));
-        EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseImageUsageFlags"));
-        EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseBufferUsageFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseAddressSpaceSize"));
-        EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseImageUsageFlags"));
-        EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseBufferUsageFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("extendedSparseAddressSpaceSize"),
+		    JAVA_INT.withName("extendedSparseImageUsageFlags"),
+		    JAVA_INT.withName("extendedSparseBufferUsageFlags")
+		).withName("VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseAddressSpaceSize"));
+		EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseImageUsageFlags"));
+		EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseBufferUsageFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXTENDED_SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseAddressSpaceSize"));
+		EXTENDED_SPARSE_IMAGE_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseImageUsageFlags"));
+		EXTENDED_SPARSE_BUFFER_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseBufferUsageFlags"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV
             segment -> new VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(segment)
         );
     }
-    
+
 }

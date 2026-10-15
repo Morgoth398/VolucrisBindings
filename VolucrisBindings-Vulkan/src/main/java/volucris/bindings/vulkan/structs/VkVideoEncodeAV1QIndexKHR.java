@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVideoEncodeAV1QIndexKHR
 		implements Struct<VkVideoEncodeAV1QIndexKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle INTRA_QINDEX_HANDLE;
-    public static final VarHandle PREDICTIVE_QINDEX_HANDLE;
-    public static final VarHandle BIPREDICTIVE_QINDEX_HANDLE;
+	public static final VarHandle INTRA_QINDEX_HANDLE;
+	public static final VarHandle PREDICTIVE_QINDEX_HANDLE;
+	public static final VarHandle BIPREDICTIVE_QINDEX_HANDLE;
 
-    public static final long INTRA_QINDEX_BYTE_OFFSET;
-    public static final long PREDICTIVE_QINDEX_BYTE_OFFSET;
-    public static final long BIPREDICTIVE_QINDEX_BYTE_OFFSET;
+	public static final long INTRA_QINDEX_BYTE_OFFSET;
+	public static final long PREDICTIVE_QINDEX_BYTE_OFFSET;
+	public static final long BIPREDICTIVE_QINDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("intraQIndex"),
-            JAVA_INT.withName("predictiveQIndex"),
-            JAVA_INT.withName("bipredictiveQIndex")
-        ).withName("VkVideoEncodeAV1QIndexKHR").withByteAlignment(4);
-        
-        INTRA_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraQIndex"));
-        PREDICTIVE_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("predictiveQIndex"));
-        BIPREDICTIVE_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bipredictiveQIndex"));
-        
-        INTRA_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraQIndex"));
-        PREDICTIVE_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("predictiveQIndex"));
-        BIPREDICTIVE_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bipredictiveQIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("intraQIndex"),
+		    JAVA_INT.withName("predictiveQIndex"),
+		    JAVA_INT.withName("bipredictiveQIndex")
+		).withName("VkVideoEncodeAV1QIndexKHR").withByteAlignment(4);
+		
+		INTRA_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraQIndex"));
+		PREDICTIVE_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("predictiveQIndex"));
+		BIPREDICTIVE_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bipredictiveQIndex"));
+		
+		INTRA_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraQIndex"));
+		PREDICTIVE_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("predictiveQIndex"));
+		BIPREDICTIVE_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bipredictiveQIndex"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1QIndexKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1QIndexKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1QIndexKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1QIndexKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1QIndexKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1QIndexKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #intraQIndex()
     public VkVideoEncodeAV1QIndexKHR intraQIndex(int intraQIndex) {
@@ -143,5 +143,5 @@ public final class VkVideoEncodeAV1QIndexKHR
             segment -> new VkVideoEncodeAV1QIndexKHR(segment)
         );
     }
-    
+
 }

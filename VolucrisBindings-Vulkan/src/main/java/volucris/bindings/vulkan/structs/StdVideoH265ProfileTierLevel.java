@@ -20,50 +20,66 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265ProfileTierLevel
 		implements Struct<StdVideoH265ProfileTierLevel> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle GENERAL_PROFILE_IDC_HANDLE;
-    public static final VarHandle GENERAL_LEVEL_IDC_HANDLE;
+	public static final VarHandle GENERAL_PROFILE_IDC_HANDLE;
+	public static final VarHandle GENERAL_LEVEL_IDC_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long GENERAL_PROFILE_IDC_BYTE_OFFSET;
-    public static final long GENERAL_LEVEL_IDC_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long GENERAL_PROFILE_IDC_BYTE_OFFSET;
+	public static final long GENERAL_LEVEL_IDC_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH265ProfileTierLevelFlags flags;
+	private final StdVideoH265ProfileTierLevelFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH265ProfileTierLevelFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("general_profile_idc"),
-            JAVA_INT.withName("general_level_idc")
-        ).withName("StdVideoH265ProfileTierLevel").withByteAlignment(4);
-        
-        GENERAL_PROFILE_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("general_profile_idc"));
-        GENERAL_LEVEL_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("general_level_idc"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        GENERAL_PROFILE_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("general_profile_idc"));
-        GENERAL_LEVEL_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("general_level_idc"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH265ProfileTierLevelFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("general_profile_idc"),
+		    JAVA_INT.withName("general_level_idc")
+		).withName("StdVideoH265ProfileTierLevel").withByteAlignment(4);
+		
+		GENERAL_PROFILE_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("general_profile_idc"));
+		GENERAL_LEVEL_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("general_level_idc"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		GENERAL_PROFILE_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("general_profile_idc"));
+		GENERAL_LEVEL_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("general_level_idc"));
+		//@formatter:on
+	}
 
-    public StdVideoH265ProfileTierLevel() {
-        this(Arena.ofAuto());
+	public StdVideoH265ProfileTierLevel() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265ProfileTierLevel(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265ProfileTierLevel(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH265ProfileTierLevelFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265ProfileTierLevelFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH265ProfileTierLevel flags(Consumer<StdVideoH265ProfileTierLevelFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH265ProfileTierLevel(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH265ProfileTierLevel flags(StdVideoH265ProfileTierLevelFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH265ProfileTierLevel(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH265ProfileTierLevelFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265ProfileTierLevelFlags.LAYOUT));
+    public StdVideoH265ProfileTierLevelFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #general_profile_idc()
     public StdVideoH265ProfileTierLevel general_profile_idc(int general_profile_idc) {
     	GENERAL_PROFILE_IDC_HANDLE.set(segment, 0L, general_profile_idc);
@@ -82,22 +98,6 @@ public final class StdVideoH265ProfileTierLevel
     
     public int general_level_idc() {
     	return (int) GENERAL_LEVEL_IDC_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #flags()
-    public StdVideoH265ProfileTierLevel flags(Consumer<StdVideoH265ProfileTierLevelFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH265ProfileTierLevel flags(StdVideoH265ProfileTierLevelFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH265ProfileTierLevelFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -151,5 +151,5 @@ public final class StdVideoH265ProfileTierLevel
             segment -> new StdVideoH265ProfileTierLevel(segment)
         );
     }
-    
+
 }

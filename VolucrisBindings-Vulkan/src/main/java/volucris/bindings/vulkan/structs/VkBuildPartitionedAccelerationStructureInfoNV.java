@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBuildPartitionedAccelerationStructureInfoNV
 		implements Struct<VkBuildPartitionedAccelerationStructureInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_ACCELERATION_STRUCTURE_DATA_HANDLE;
-    public static final VarHandle DST_ACCELERATION_STRUCTURE_DATA_HANDLE;
-    public static final VarHandle SCRATCH_DATA_HANDLE;
-    public static final VarHandle SRC_INFOS_HANDLE;
-    public static final VarHandle SRC_INFOS_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_ACCELERATION_STRUCTURE_DATA_HANDLE;
+	public static final VarHandle DST_ACCELERATION_STRUCTURE_DATA_HANDLE;
+	public static final VarHandle SCRATCH_DATA_HANDLE;
+	public static final VarHandle SRC_INFOS_HANDLE;
+	public static final VarHandle SRC_INFOS_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INPUT_BYTE_OFFSET;
-    public static final long SRC_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET;
-    public static final long DST_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET;
-    public static final long SCRATCH_DATA_BYTE_OFFSET;
-    public static final long SRC_INFOS_BYTE_OFFSET;
-    public static final long SRC_INFOS_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INPUT_BYTE_OFFSET;
+	public static final long SRC_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET;
+	public static final long DST_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET;
+	public static final long SCRATCH_DATA_BYTE_OFFSET;
+	public static final long SRC_INFOS_BYTE_OFFSET;
+	public static final long SRC_INFOS_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPartitionedAccelerationStructureInstancesInputNV input;
+	private final VkPartitionedAccelerationStructureInstancesInputNV input;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkPartitionedAccelerationStructureInstancesInputNV.LAYOUT.withName("input"),
-            JAVA_LONG.withName("srcAccelerationStructureData"),
-            JAVA_LONG.withName("dstAccelerationStructureData"),
-            JAVA_LONG.withName("scratchData"),
-            JAVA_LONG.withName("srcInfos"),
-            JAVA_LONG.withName("srcInfosCount")
-        ).withName("VkBuildPartitionedAccelerationStructureInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_ACCELERATION_STRUCTURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccelerationStructureData"));
-        DST_ACCELERATION_STRUCTURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccelerationStructureData"));
-        SCRATCH_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scratchData"));
-        SRC_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcInfos"));
-        SRC_INFOS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcInfosCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("input"));
-        SRC_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccelerationStructureData"));
-        DST_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccelerationStructureData"));
-        SCRATCH_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchData"));
-        SRC_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcInfos"));
-        SRC_INFOS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcInfosCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkPartitionedAccelerationStructureInstancesInputNV.LAYOUT.withName("input"),
+		    JAVA_LONG.withName("srcAccelerationStructureData"),
+		    JAVA_LONG.withName("dstAccelerationStructureData"),
+		    JAVA_LONG.withName("scratchData"),
+		    JAVA_LONG.withName("srcInfos"),
+		    JAVA_LONG.withName("srcInfosCount")
+		).withName("VkBuildPartitionedAccelerationStructureInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_ACCELERATION_STRUCTURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccelerationStructureData"));
+		DST_ACCELERATION_STRUCTURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccelerationStructureData"));
+		SCRATCH_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scratchData"));
+		SRC_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcInfos"));
+		SRC_INFOS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcInfosCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INPUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("input"));
+		SRC_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccelerationStructureData"));
+		DST_ACCELERATION_STRUCTURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccelerationStructureData"));
+		SCRATCH_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchData"));
+		SRC_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcInfos"));
+		SRC_INFOS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcInfosCount"));
+		//@formatter:on
+	}
 
-    public VkBuildPartitionedAccelerationStructureInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBuildPartitionedAccelerationStructureInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBuildPartitionedAccelerationStructureInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        input = new VkPartitionedAccelerationStructureInstancesInputNV(segment.asSlice(INPUT_BYTE_OFFSET, VkPartitionedAccelerationStructureInstancesInputNV.LAYOUT));
-    }
+	public VkBuildPartitionedAccelerationStructureInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBuildPartitionedAccelerationStructureInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBuildPartitionedAccelerationStructureInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    input = new VkPartitionedAccelerationStructureInstancesInputNV(segment.asSlice(INPUT_BYTE_OFFSET, VkPartitionedAccelerationStructureInstancesInputNV.LAYOUT));
+	}
 
     /// @see #sType()
     public VkBuildPartitionedAccelerationStructureInfoNV sType(int sType) {
@@ -115,6 +115,22 @@ public final class VkBuildPartitionedAccelerationStructureInfoNV
     		return null;
     	
     	return segment;
+    }
+    
+    /// @see #input()
+    public VkBuildPartitionedAccelerationStructureInfoNV input(Consumer<VkPartitionedAccelerationStructureInstancesInputNV> consumer) {
+    	consumer.accept(input);
+    	return this;
+    }
+    
+    /// @see #input()
+    public VkBuildPartitionedAccelerationStructureInfoNV input(VkPartitionedAccelerationStructureInstancesInputNV other) {
+    	input.set(other);
+    	return this;
+    }
+    
+    public VkPartitionedAccelerationStructureInstancesInputNV input() {
+    	return input;
     }
     
     /// @see #srcAccelerationStructureData()
@@ -165,22 +181,6 @@ public final class VkBuildPartitionedAccelerationStructureInfoNV
     
     public long srcInfosCount() {
     	return (long) SRC_INFOS_COUNT_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #input()
-    public VkBuildPartitionedAccelerationStructureInfoNV input(Consumer<VkPartitionedAccelerationStructureInstancesInputNV> consumer) {
-    	consumer.accept(input);
-    	return this;
-    }
-    
-    /// @see #input()
-    public VkBuildPartitionedAccelerationStructureInfoNV input(VkPartitionedAccelerationStructureInstancesInputNV other) {
-    	input.set(other);
-    	return this;
-    }
-    
-    public VkPartitionedAccelerationStructureInstancesInputNV input() {
-    	return input;
     }
     
     @Override
@@ -234,5 +234,5 @@ public final class VkBuildPartitionedAccelerationStructureInfoNV
             segment -> new VkBuildPartitionedAccelerationStructureInfoNV(segment)
         );
     }
-    
+
 }

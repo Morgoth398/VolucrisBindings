@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDrawIndexedIndirectCommand
 		implements Struct<VkDrawIndexedIndirectCommand> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle INDEX_COUNT_HANDLE;
-    public static final VarHandle INSTANCE_COUNT_HANDLE;
-    public static final VarHandle FIRST_INDEX_HANDLE;
-    public static final VarHandle VERTEX_OFFSET_HANDLE;
-    public static final VarHandle FIRST_INSTANCE_HANDLE;
+	public static final VarHandle INDEX_COUNT_HANDLE;
+	public static final VarHandle INSTANCE_COUNT_HANDLE;
+	public static final VarHandle FIRST_INDEX_HANDLE;
+	public static final VarHandle VERTEX_OFFSET_HANDLE;
+	public static final VarHandle FIRST_INSTANCE_HANDLE;
 
-    public static final long INDEX_COUNT_BYTE_OFFSET;
-    public static final long INSTANCE_COUNT_BYTE_OFFSET;
-    public static final long FIRST_INDEX_BYTE_OFFSET;
-    public static final long VERTEX_OFFSET_BYTE_OFFSET;
-    public static final long FIRST_INSTANCE_BYTE_OFFSET;
+	public static final long INDEX_COUNT_BYTE_OFFSET;
+	public static final long INSTANCE_COUNT_BYTE_OFFSET;
+	public static final long FIRST_INDEX_BYTE_OFFSET;
+	public static final long VERTEX_OFFSET_BYTE_OFFSET;
+	public static final long FIRST_INSTANCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("indexCount"),
-            JAVA_INT.withName("instanceCount"),
-            JAVA_INT.withName("firstIndex"),
-            JAVA_INT.withName("vertexOffset"),
-            JAVA_INT.withName("firstInstance")
-        ).withName("VkDrawIndexedIndirectCommand").withByteAlignment(4);
-        
-        INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexCount"));
-        INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceCount"));
-        FIRST_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstIndex"));
-        VERTEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexOffset"));
-        FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstInstance"));
-        
-        INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexCount"));
-        INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceCount"));
-        FIRST_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstIndex"));
-        VERTEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexOffset"));
-        FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstInstance"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("indexCount"),
+		    JAVA_INT.withName("instanceCount"),
+		    JAVA_INT.withName("firstIndex"),
+		    JAVA_INT.withName("vertexOffset"),
+		    JAVA_INT.withName("firstInstance")
+		).withName("VkDrawIndexedIndirectCommand").withByteAlignment(4);
+		
+		INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexCount"));
+		INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceCount"));
+		FIRST_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstIndex"));
+		VERTEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexOffset"));
+		FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstInstance"));
+		
+		INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexCount"));
+		INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceCount"));
+		FIRST_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstIndex"));
+		VERTEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexOffset"));
+		FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstInstance"));
+		//@formatter:on
+	}
 
-    public VkDrawIndexedIndirectCommand() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrawIndexedIndirectCommand(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrawIndexedIndirectCommand(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrawIndexedIndirectCommand() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrawIndexedIndirectCommand(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrawIndexedIndirectCommand(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #indexCount()
     public VkDrawIndexedIndirectCommand indexCount(int indexCount) {
@@ -173,5 +173,5 @@ public final class VkDrawIndexedIndirectCommand
             segment -> new VkDrawIndexedIndirectCommand(segment)
         );
     }
-    
+
 }

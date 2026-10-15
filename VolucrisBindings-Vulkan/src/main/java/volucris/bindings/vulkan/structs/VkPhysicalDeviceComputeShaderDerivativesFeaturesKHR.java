@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR
 		implements Struct<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COMPUTE_DERIVATIVE_GROUP_QUADS_HANDLE;
-    public static final VarHandle COMPUTE_DERIVATIVE_GROUP_LINEAR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COMPUTE_DERIVATIVE_GROUP_QUADS_HANDLE;
+	public static final VarHandle COMPUTE_DERIVATIVE_GROUP_LINEAR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COMPUTE_DERIVATIVE_GROUP_QUADS_BYTE_OFFSET;
-    public static final long COMPUTE_DERIVATIVE_GROUP_LINEAR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COMPUTE_DERIVATIVE_GROUP_QUADS_BYTE_OFFSET;
+	public static final long COMPUTE_DERIVATIVE_GROUP_LINEAR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("computeDerivativeGroupQuads"),
-            JAVA_INT.withName("computeDerivativeGroupLinear")
-        ).withName("VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COMPUTE_DERIVATIVE_GROUP_QUADS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeDerivativeGroupQuads"));
-        COMPUTE_DERIVATIVE_GROUP_LINEAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeDerivativeGroupLinear"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COMPUTE_DERIVATIVE_GROUP_QUADS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeDerivativeGroupQuads"));
-        COMPUTE_DERIVATIVE_GROUP_LINEAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeDerivativeGroupLinear"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("computeDerivativeGroupQuads"),
+		    JAVA_INT.withName("computeDerivativeGroupLinear")
+		).withName("VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COMPUTE_DERIVATIVE_GROUP_QUADS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeDerivativeGroupQuads"));
+		COMPUTE_DERIVATIVE_GROUP_LINEAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeDerivativeGroupLinear"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COMPUTE_DERIVATIVE_GROUP_QUADS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeDerivativeGroupQuads"));
+		COMPUTE_DERIVATIVE_GROUP_LINEAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeDerivativeGroupLinear"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR
             segment -> new VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(segment)
         );
     }
-    
+
 }

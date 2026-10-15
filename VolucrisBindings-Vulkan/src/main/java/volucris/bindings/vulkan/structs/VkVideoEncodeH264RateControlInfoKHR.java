@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264RateControlInfoKHR
 		implements Struct<VkVideoEncodeH264RateControlInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle GOP_FRAME_COUNT_HANDLE;
-    public static final VarHandle IDR_PERIOD_HANDLE;
-    public static final VarHandle CONSECUTIVE_BFRAME_COUNT_HANDLE;
-    public static final VarHandle TEMPORAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle GOP_FRAME_COUNT_HANDLE;
+	public static final VarHandle IDR_PERIOD_HANDLE;
+	public static final VarHandle CONSECUTIVE_BFRAME_COUNT_HANDLE;
+	public static final VarHandle TEMPORAL_LAYER_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long GOP_FRAME_COUNT_BYTE_OFFSET;
-    public static final long IDR_PERIOD_BYTE_OFFSET;
-    public static final long CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET;
-    public static final long TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long GOP_FRAME_COUNT_BYTE_OFFSET;
+	public static final long IDR_PERIOD_BYTE_OFFSET;
+	public static final long CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET;
+	public static final long TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("gopFrameCount"),
-            JAVA_INT.withName("idrPeriod"),
-            JAVA_INT.withName("consecutiveBFrameCount"),
-            JAVA_INT.withName("temporalLayerCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeH264RateControlInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopFrameCount"));
-        IDR_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("idrPeriod"));
-        CONSECUTIVE_BFRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("consecutiveBFrameCount"));
-        TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporalLayerCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopFrameCount"));
-        IDR_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("idrPeriod"));
-        CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("consecutiveBFrameCount"));
-        TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporalLayerCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("gopFrameCount"),
+		    JAVA_INT.withName("idrPeriod"),
+		    JAVA_INT.withName("consecutiveBFrameCount"),
+		    JAVA_INT.withName("temporalLayerCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeH264RateControlInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopFrameCount"));
+		IDR_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("idrPeriod"));
+		CONSECUTIVE_BFRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("consecutiveBFrameCount"));
+		TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporalLayerCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopFrameCount"));
+		IDR_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("idrPeriod"));
+		CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("consecutiveBFrameCount"));
+		TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporalLayerCount"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264RateControlInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264RateControlInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264RateControlInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH264RateControlInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264RateControlInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264RateControlInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264RateControlInfoKHR sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkVideoEncodeH264RateControlInfoKHR
             segment -> new VkVideoEncodeH264RateControlInfoKHR(segment)
         );
     }
-    
+
 }

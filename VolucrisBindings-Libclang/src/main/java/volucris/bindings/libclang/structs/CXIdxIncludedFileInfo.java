@@ -24,66 +24,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxIncludedFileInfo
 		implements Struct<CXIdxIncludedFileInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FILENAME_HANDLE;
-    public static final VarHandle FILE_HANDLE;
-    public static final VarHandle IS_IMPORT_HANDLE;
-    public static final VarHandle IS_ANGLED_HANDLE;
-    public static final VarHandle IS_MODULE_IMPORT_HANDLE;
+	public static final VarHandle FILENAME_HANDLE;
+	public static final VarHandle FILE_HANDLE;
+	public static final VarHandle IS_IMPORT_HANDLE;
+	public static final VarHandle IS_ANGLED_HANDLE;
+	public static final VarHandle IS_MODULE_IMPORT_HANDLE;
 
-    public static final long HASH_LOC_BYTE_OFFSET;
-    public static final long FILENAME_BYTE_OFFSET;
-    public static final long FILE_BYTE_OFFSET;
-    public static final long IS_IMPORT_BYTE_OFFSET;
-    public static final long IS_ANGLED_BYTE_OFFSET;
-    public static final long IS_MODULE_IMPORT_BYTE_OFFSET;
+	public static final long HASH_LOC_BYTE_OFFSET;
+	public static final long FILENAME_BYTE_OFFSET;
+	public static final long FILE_BYTE_OFFSET;
+	public static final long IS_IMPORT_BYTE_OFFSET;
+	public static final long IS_ANGLED_BYTE_OFFSET;
+	public static final long IS_MODULE_IMPORT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXIdxLoc hashLoc;
+	private final CXIdxLoc hashLoc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            CXIdxLoc.LAYOUT.withName("hashLoc"),
-            UNBOUNDED_ADDRESS.withName("filename"),
-            UNBOUNDED_ADDRESS.withName("file"),
-            JAVA_INT.withName("isImport"),
-            JAVA_INT.withName("isAngled"),
-            JAVA_INT.withName("isModuleImport"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxIncludedFileInfo").withByteAlignment(8);
-        
-        FILENAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filename"));
-        FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("file"));
-        IS_IMPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isImport"));
-        IS_ANGLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isAngled"));
-        IS_MODULE_IMPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isModuleImport"));
-        
-        HASH_LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hashLoc"));
-        FILENAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filename"));
-        FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("file"));
-        IS_IMPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isImport"));
-        IS_ANGLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isAngled"));
-        IS_MODULE_IMPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isModuleImport"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    CXIdxLoc.LAYOUT.withName("hashLoc"),
+		    UNBOUNDED_ADDRESS.withName("filename"),
+		    UNBOUNDED_ADDRESS.withName("file"),
+		    JAVA_INT.withName("isImport"),
+		    JAVA_INT.withName("isAngled"),
+		    JAVA_INT.withName("isModuleImport"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxIncludedFileInfo").withByteAlignment(8);
+		
+		FILENAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filename"));
+		FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("file"));
+		IS_IMPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isImport"));
+		IS_ANGLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isAngled"));
+		IS_MODULE_IMPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isModuleImport"));
+		
+		HASH_LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hashLoc"));
+		FILENAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filename"));
+		FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("file"));
+		IS_IMPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isImport"));
+		IS_ANGLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isAngled"));
+		IS_MODULE_IMPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isModuleImport"));
+		//@formatter:on
+	}
 
-    public CXIdxIncludedFileInfo() {
-        this(Arena.ofAuto());
+	public CXIdxIncludedFileInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxIncludedFileInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxIncludedFileInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    hashLoc = new CXIdxLoc(segment.asSlice(HASH_LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
+
+    /// @see #hashLoc()
+    public CXIdxIncludedFileInfo hashLoc(Consumer<CXIdxLoc> consumer) {
+    	consumer.accept(hashLoc);
+    	return this;
     }
     
-    public CXIdxIncludedFileInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #hashLoc()
+    public CXIdxIncludedFileInfo hashLoc(CXIdxLoc other) {
+    	hashLoc.set(other);
+    	return this;
     }
     
-    public CXIdxIncludedFileInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        hashLoc = new CXIdxLoc(segment.asSlice(HASH_LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+    /// ```
+    /// 
+    /// Location of '#' in the \#include/\#import directive.
+    /// ```
+    public CXIdxLoc hashLoc() {
+    	return hashLoc;
     }
-
+    
     /// @see #filename()
     public CXIdxIncludedFileInfo filename(NativeByteArray filename) {
     	FILENAME_HANDLE.set(segment, 0L, filename.memorySegment());
@@ -157,26 +177,6 @@ public final class CXIdxIncludedFileInfo
     	return (int) IS_MODULE_IMPORT_HANDLE.get(segment, 0L);
     }
     
-    /// @see #hashLoc()
-    public CXIdxIncludedFileInfo hashLoc(Consumer<CXIdxLoc> consumer) {
-    	consumer.accept(hashLoc);
-    	return this;
-    }
-    
-    /// @see #hashLoc()
-    public CXIdxIncludedFileInfo hashLoc(CXIdxLoc other) {
-    	hashLoc.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// 
-    /// Location of '#' in the \#include/\#import directive.
-    /// ```
-    public CXIdxLoc hashLoc() {
-    	return hashLoc;
-    }
-    
     @Override
     public CXIdxIncludedFileInfo set(CXIdxIncludedFileInfo other) {
         return set(other.segment);
@@ -228,5 +228,5 @@ public final class CXIdxIncludedFileInfo
             segment -> new CXIdxIncludedFileInfo(segment)
         );
     }
-    
+
 }

@@ -18,48 +18,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxObjCPropertyDeclInfo
 		implements Struct<CXIdxObjCPropertyDeclInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DECL_INFO_HANDLE;
-    public static final VarHandle GETTER_HANDLE;
-    public static final VarHandle SETTER_HANDLE;
+	public static final VarHandle DECL_INFO_HANDLE;
+	public static final VarHandle GETTER_HANDLE;
+	public static final VarHandle SETTER_HANDLE;
 
-    public static final long DECL_INFO_BYTE_OFFSET;
-    public static final long GETTER_BYTE_OFFSET;
-    public static final long SETTER_BYTE_OFFSET;
+	public static final long DECL_INFO_BYTE_OFFSET;
+	public static final long GETTER_BYTE_OFFSET;
+	public static final long SETTER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("declInfo"),
-            UNBOUNDED_ADDRESS.withName("getter"),
-            UNBOUNDED_ADDRESS.withName("setter")
-        ).withName("CXIdxObjCPropertyDeclInfo").withByteAlignment(8);
-        
-        DECL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declInfo"));
-        GETTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("getter"));
-        SETTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setter"));
-        
-        DECL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declInfo"));
-        GETTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("getter"));
-        SETTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setter"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("declInfo"),
+		    UNBOUNDED_ADDRESS.withName("getter"),
+		    UNBOUNDED_ADDRESS.withName("setter")
+		).withName("CXIdxObjCPropertyDeclInfo").withByteAlignment(8);
+		
+		DECL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declInfo"));
+		GETTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("getter"));
+		SETTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setter"));
+		
+		DECL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declInfo"));
+		GETTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("getter"));
+		SETTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setter"));
+		//@formatter:on
+	}
 
-    public CXIdxObjCPropertyDeclInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxObjCPropertyDeclInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxObjCPropertyDeclInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIdxObjCPropertyDeclInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxObjCPropertyDeclInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxObjCPropertyDeclInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #declInfo()
     public CXIdxObjCPropertyDeclInfo declInfo(CXIdxDeclInfo declInfo) {
@@ -157,5 +157,5 @@ public final class CXIdxObjCPropertyDeclInfo
             segment -> new CXIdxObjCPropertyDeclInfo(segment)
         );
     }
-    
+
 }

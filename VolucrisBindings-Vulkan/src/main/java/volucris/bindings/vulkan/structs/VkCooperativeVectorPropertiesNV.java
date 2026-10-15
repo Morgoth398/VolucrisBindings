@@ -21,74 +21,74 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCooperativeVectorPropertiesNV
 		implements Struct<VkCooperativeVectorPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INPUT_TYPE_HANDLE;
-    public static final VarHandle INPUT_INTERPRETATION_HANDLE;
-    public static final VarHandle MATRIX_INTERPRETATION_HANDLE;
-    public static final VarHandle BIAS_INTERPRETATION_HANDLE;
-    public static final VarHandle RESULT_TYPE_HANDLE;
-    public static final VarHandle TRANSPOSE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INPUT_TYPE_HANDLE;
+	public static final VarHandle INPUT_INTERPRETATION_HANDLE;
+	public static final VarHandle MATRIX_INTERPRETATION_HANDLE;
+	public static final VarHandle BIAS_INTERPRETATION_HANDLE;
+	public static final VarHandle RESULT_TYPE_HANDLE;
+	public static final VarHandle TRANSPOSE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INPUT_TYPE_BYTE_OFFSET;
-    public static final long INPUT_INTERPRETATION_BYTE_OFFSET;
-    public static final long MATRIX_INTERPRETATION_BYTE_OFFSET;
-    public static final long BIAS_INTERPRETATION_BYTE_OFFSET;
-    public static final long RESULT_TYPE_BYTE_OFFSET;
-    public static final long TRANSPOSE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INPUT_TYPE_BYTE_OFFSET;
+	public static final long INPUT_INTERPRETATION_BYTE_OFFSET;
+	public static final long MATRIX_INTERPRETATION_BYTE_OFFSET;
+	public static final long BIAS_INTERPRETATION_BYTE_OFFSET;
+	public static final long RESULT_TYPE_BYTE_OFFSET;
+	public static final long TRANSPOSE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("inputType"),
-            JAVA_INT.withName("inputInterpretation"),
-            JAVA_INT.withName("matrixInterpretation"),
-            JAVA_INT.withName("biasInterpretation"),
-            JAVA_INT.withName("resultType"),
-            JAVA_INT.withName("transpose")
-        ).withName("VkCooperativeVectorPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INPUT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputType"));
-        INPUT_INTERPRETATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputInterpretation"));
-        MATRIX_INTERPRETATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrixInterpretation"));
-        BIAS_INTERPRETATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("biasInterpretation"));
-        RESULT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resultType"));
-        TRANSPOSE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transpose"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INPUT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputType"));
-        INPUT_INTERPRETATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputInterpretation"));
-        MATRIX_INTERPRETATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrixInterpretation"));
-        BIAS_INTERPRETATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("biasInterpretation"));
-        RESULT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resultType"));
-        TRANSPOSE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transpose"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("inputType"),
+		    JAVA_INT.withName("inputInterpretation"),
+		    JAVA_INT.withName("matrixInterpretation"),
+		    JAVA_INT.withName("biasInterpretation"),
+		    JAVA_INT.withName("resultType"),
+		    JAVA_INT.withName("transpose")
+		).withName("VkCooperativeVectorPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INPUT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputType"));
+		INPUT_INTERPRETATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputInterpretation"));
+		MATRIX_INTERPRETATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrixInterpretation"));
+		BIAS_INTERPRETATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("biasInterpretation"));
+		RESULT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resultType"));
+		TRANSPOSE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transpose"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INPUT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputType"));
+		INPUT_INTERPRETATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputInterpretation"));
+		MATRIX_INTERPRETATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrixInterpretation"));
+		BIAS_INTERPRETATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("biasInterpretation"));
+		RESULT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resultType"));
+		TRANSPOSE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transpose"));
+		//@formatter:on
+	}
 
-    public VkCooperativeVectorPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCooperativeVectorPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCooperativeVectorPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCooperativeVectorPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCooperativeVectorPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCooperativeVectorPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCooperativeVectorPropertiesNV sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkCooperativeVectorPropertiesNV
             segment -> new VkCooperativeVectorPropertiesNV(segment)
         );
     }
-    
+
 }

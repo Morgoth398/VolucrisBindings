@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceCornerSampledImageFeaturesNV
 		implements Struct<VkPhysicalDeviceCornerSampledImageFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle CORNER_SAMPLED_IMAGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle CORNER_SAMPLED_IMAGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CORNER_SAMPLED_IMAGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CORNER_SAMPLED_IMAGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("cornerSampledImage"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceCornerSampledImageFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        CORNER_SAMPLED_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cornerSampledImage"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CORNER_SAMPLED_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cornerSampledImage"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("cornerSampledImage"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceCornerSampledImageFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		CORNER_SAMPLED_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cornerSampledImage"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CORNER_SAMPLED_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cornerSampledImage"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceCornerSampledImageFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceCornerSampledImageFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceCornerSampledImageFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceCornerSampledImageFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceCornerSampledImageFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceCornerSampledImageFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceCornerSampledImageFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceCornerSampledImageFeaturesNV
             segment -> new VkPhysicalDeviceCornerSampledImageFeaturesNV(segment)
         );
     }
-    
+
 }

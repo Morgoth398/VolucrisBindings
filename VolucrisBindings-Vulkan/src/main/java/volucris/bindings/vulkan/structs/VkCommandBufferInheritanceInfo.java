@@ -21,76 +21,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCommandBufferInheritanceInfo
 		implements Struct<VkCommandBufferInheritanceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RENDER_PASS_HANDLE;
-    public static final VarHandle SUBPASS_HANDLE;
-    public static final VarHandle FRAMEBUFFER_HANDLE;
-    public static final VarHandle OCCLUSION_QUERY_ENABLE_HANDLE;
-    public static final VarHandle QUERY_FLAGS_HANDLE;
-    public static final VarHandle PIPELINE_STATISTICS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RENDER_PASS_HANDLE;
+	public static final VarHandle SUBPASS_HANDLE;
+	public static final VarHandle FRAMEBUFFER_HANDLE;
+	public static final VarHandle OCCLUSION_QUERY_ENABLE_HANDLE;
+	public static final VarHandle QUERY_FLAGS_HANDLE;
+	public static final VarHandle PIPELINE_STATISTICS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RENDER_PASS_BYTE_OFFSET;
-    public static final long SUBPASS_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_BYTE_OFFSET;
-    public static final long OCCLUSION_QUERY_ENABLE_BYTE_OFFSET;
-    public static final long QUERY_FLAGS_BYTE_OFFSET;
-    public static final long PIPELINE_STATISTICS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RENDER_PASS_BYTE_OFFSET;
+	public static final long SUBPASS_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_BYTE_OFFSET;
+	public static final long OCCLUSION_QUERY_ENABLE_BYTE_OFFSET;
+	public static final long QUERY_FLAGS_BYTE_OFFSET;
+	public static final long PIPELINE_STATISTICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("renderPass"),
-            JAVA_INT.withName("subpass"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("framebuffer"),
-            JAVA_INT.withName("occlusionQueryEnable"),
-            JAVA_INT.withName("queryFlags"),
-            JAVA_INT.withName("pipelineStatistics"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCommandBufferInheritanceInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RENDER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPass"));
-        SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpass"));
-        FRAMEBUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebuffer"));
-        OCCLUSION_QUERY_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occlusionQueryEnable"));
-        QUERY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryFlags"));
-        PIPELINE_STATISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStatistics"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RENDER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPass"));
-        SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpass"));
-        FRAMEBUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebuffer"));
-        OCCLUSION_QUERY_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occlusionQueryEnable"));
-        QUERY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryFlags"));
-        PIPELINE_STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStatistics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("renderPass"),
+		    JAVA_INT.withName("subpass"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("framebuffer"),
+		    JAVA_INT.withName("occlusionQueryEnable"),
+		    JAVA_INT.withName("queryFlags"),
+		    JAVA_INT.withName("pipelineStatistics"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCommandBufferInheritanceInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RENDER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPass"));
+		SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpass"));
+		FRAMEBUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebuffer"));
+		OCCLUSION_QUERY_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occlusionQueryEnable"));
+		QUERY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryFlags"));
+		PIPELINE_STATISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStatistics"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RENDER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPass"));
+		SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpass"));
+		FRAMEBUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebuffer"));
+		OCCLUSION_QUERY_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occlusionQueryEnable"));
+		QUERY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryFlags"));
+		PIPELINE_STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStatistics"));
+		//@formatter:on
+	}
 
-    public VkCommandBufferInheritanceInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCommandBufferInheritanceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCommandBufferInheritanceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCommandBufferInheritanceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCommandBufferInheritanceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCommandBufferInheritanceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCommandBufferInheritanceInfo sType(int sType) {
@@ -238,5 +238,5 @@ public final class VkCommandBufferInheritanceInfo
             segment -> new VkCommandBufferInheritanceInfo(segment)
         );
     }
-    
+
 }

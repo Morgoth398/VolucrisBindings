@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderAtomicInt64Features
 		implements Struct<VkPhysicalDeviceShaderAtomicInt64Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_BUFFER_INT64_ATOMICS_HANDLE;
-    public static final VarHandle SHADER_SHARED_INT64_ATOMICS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_BUFFER_INT64_ATOMICS_HANDLE;
+	public static final VarHandle SHADER_SHARED_INT64_ATOMICS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET;
-    public static final long SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET;
+	public static final long SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderBufferInt64Atomics"),
-            JAVA_INT.withName("shaderSharedInt64Atomics")
-        ).withName("VkPhysicalDeviceShaderAtomicInt64Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_BUFFER_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferInt64Atomics"));
-        SHADER_SHARED_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedInt64Atomics"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferInt64Atomics"));
-        SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedInt64Atomics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderBufferInt64Atomics"),
+		    JAVA_INT.withName("shaderSharedInt64Atomics")
+		).withName("VkPhysicalDeviceShaderAtomicInt64Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_BUFFER_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferInt64Atomics"));
+		SHADER_SHARED_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedInt64Atomics"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferInt64Atomics"));
+		SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedInt64Atomics"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderAtomicInt64Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderAtomicInt64Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderAtomicInt64Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderAtomicInt64Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderAtomicInt64Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderAtomicInt64Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderAtomicInt64Features sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShaderAtomicInt64Features
             segment -> new VkPhysicalDeviceShaderAtomicInt64Features(segment)
         );
     }
-    
+
 }

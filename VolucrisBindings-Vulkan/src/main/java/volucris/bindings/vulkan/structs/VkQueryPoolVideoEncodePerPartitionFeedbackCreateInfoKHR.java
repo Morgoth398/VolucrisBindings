@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR
 		implements Struct<VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_PER_PARTITION_FEEDBACK_ENTRIES_HANDLE;
-    public static final VarHandle PER_PARTITION_ENCODE_FEEDBACK_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_PER_PARTITION_FEEDBACK_ENTRIES_HANDLE;
+	public static final VarHandle PER_PARTITION_ENCODE_FEEDBACK_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_PER_PARTITION_FEEDBACK_ENTRIES_BYTE_OFFSET;
-    public static final long PER_PARTITION_ENCODE_FEEDBACK_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_PER_PARTITION_FEEDBACK_ENTRIES_BYTE_OFFSET;
+	public static final long PER_PARTITION_ENCODE_FEEDBACK_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxPerPartitionFeedbackEntries"),
-            JAVA_INT.withName("perPartitionEncodeFeedbackFlags")
-        ).withName("VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_PER_PARTITION_FEEDBACK_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerPartitionFeedbackEntries"));
-        PER_PARTITION_ENCODE_FEEDBACK_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perPartitionEncodeFeedbackFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_PER_PARTITION_FEEDBACK_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerPartitionFeedbackEntries"));
-        PER_PARTITION_ENCODE_FEEDBACK_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perPartitionEncodeFeedbackFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxPerPartitionFeedbackEntries"),
+		    JAVA_INT.withName("perPartitionEncodeFeedbackFlags")
+		).withName("VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_PER_PARTITION_FEEDBACK_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerPartitionFeedbackEntries"));
+		PER_PARTITION_ENCODE_FEEDBACK_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perPartitionEncodeFeedbackFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_PER_PARTITION_FEEDBACK_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerPartitionFeedbackEntries"));
+		PER_PARTITION_ENCODE_FEEDBACK_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perPartitionEncodeFeedbackFlags"));
+		//@formatter:on
+	}
 
-    public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR
             segment -> new VkQueryPoolVideoEncodePerPartitionFeedbackCreateInfoKHR(segment)
         );
     }
-    
+
 }

@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkRenderPassSubpassFeedbackInfoEXT
 		implements Struct<VkRenderPassSubpassFeedbackInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SUBPASS_MERGE_STATUS_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
-    public static final VarHandle POST_MERGE_INDEX_HANDLE;
+	public static final VarHandle SUBPASS_MERGE_STATUS_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle POST_MERGE_INDEX_HANDLE;
 
-    public static final long SUBPASS_MERGE_STATUS_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
-    public static final long POST_MERGE_INDEX_BYTE_OFFSET;
+	public static final long SUBPASS_MERGE_STATUS_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long POST_MERGE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("subpassMergeStatus"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            JAVA_INT.withName("postMergeIndex")
-        ).withName("VkRenderPassSubpassFeedbackInfoEXT").withByteAlignment(4);
-        
-        SUBPASS_MERGE_STATUS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassMergeStatus"));
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        POST_MERGE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("postMergeIndex"));
-        
-        SUBPASS_MERGE_STATUS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassMergeStatus"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        POST_MERGE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("postMergeIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("subpassMergeStatus"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    JAVA_INT.withName("postMergeIndex")
+		).withName("VkRenderPassSubpassFeedbackInfoEXT").withByteAlignment(4);
+		
+		SUBPASS_MERGE_STATUS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassMergeStatus"));
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		POST_MERGE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("postMergeIndex"));
+		
+		SUBPASS_MERGE_STATUS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassMergeStatus"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		POST_MERGE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("postMergeIndex"));
+		//@formatter:on
+	}
 
-    public VkRenderPassSubpassFeedbackInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassSubpassFeedbackInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassSubpassFeedbackInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassSubpassFeedbackInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassSubpassFeedbackInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassSubpassFeedbackInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #subpassMergeStatus()
     public VkRenderPassSubpassFeedbackInfoEXT subpassMergeStatus(int subpassMergeStatus) {
@@ -82,6 +82,10 @@ public final class VkRenderPassSubpassFeedbackInfoEXT
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
     }
     
+    public String description() {
+        return segment.getString(DESCRIPTION_BYTE_OFFSET);
+    }
+    
     /// @see #postMergeIndex()
     public VkRenderPassSubpassFeedbackInfoEXT postMergeIndex(int postMergeIndex) {
     	POST_MERGE_INDEX_HANDLE.set(segment, 0L, postMergeIndex);
@@ -90,10 +94,6 @@ public final class VkRenderPassSubpassFeedbackInfoEXT
     
     public int postMergeIndex() {
     	return (int) POST_MERGE_INDEX_HANDLE.get(segment, 0L);
-    }
-    
-    public String description() {
-        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     @Override
@@ -147,5 +147,5 @@ public final class VkRenderPassSubpassFeedbackInfoEXT
             segment -> new VkRenderPassSubpassFeedbackInfoEXT(segment)
         );
     }
-    
+
 }

@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageViewSampleWeightCreateInfoQCOM
 		implements Struct<VkImageViewSampleWeightCreateInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NUM_PHASES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NUM_PHASES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FILTER_CENTER_BYTE_OFFSET;
-    public static final long FILTER_SIZE_BYTE_OFFSET;
-    public static final long NUM_PHASES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FILTER_CENTER_BYTE_OFFSET;
+	public static final long FILTER_SIZE_BYTE_OFFSET;
+	public static final long NUM_PHASES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkOffset2D filterCenter;
-    private final VkExtent2D filterSize;
+	private final VkOffset2D filterCenter;
+	private final VkExtent2D filterSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkOffset2D.LAYOUT.withName("filterCenter"),
-            VkExtent2D.LAYOUT.withName("filterSize"),
-            JAVA_INT.withName("numPhases"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkImageViewSampleWeightCreateInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NUM_PHASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numPhases"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FILTER_CENTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterCenter"));
-        FILTER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterSize"));
-        NUM_PHASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numPhases"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkOffset2D.LAYOUT.withName("filterCenter"),
+		    VkExtent2D.LAYOUT.withName("filterSize"),
+		    JAVA_INT.withName("numPhases"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkImageViewSampleWeightCreateInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NUM_PHASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numPhases"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FILTER_CENTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterCenter"));
+		FILTER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filterSize"));
+		NUM_PHASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numPhases"));
+		//@formatter:on
+	}
 
-    public VkImageViewSampleWeightCreateInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageViewSampleWeightCreateInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageViewSampleWeightCreateInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        filterCenter = new VkOffset2D(segment.asSlice(FILTER_CENTER_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        filterSize = new VkExtent2D(segment.asSlice(FILTER_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkImageViewSampleWeightCreateInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageViewSampleWeightCreateInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageViewSampleWeightCreateInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    filterCenter = new VkOffset2D(segment.asSlice(FILTER_CENTER_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    filterSize = new VkExtent2D(segment.asSlice(FILTER_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkImageViewSampleWeightCreateInfoQCOM sType(int sType) {
@@ -101,16 +101,6 @@ public final class VkImageViewSampleWeightCreateInfoQCOM
     		return null;
     	
     	return segment;
-    }
-    
-    /// @see #numPhases()
-    public VkImageViewSampleWeightCreateInfoQCOM numPhases(int numPhases) {
-    	NUM_PHASES_HANDLE.set(segment, 0L, numPhases);
-    	return this;
-    }
-    
-    public int numPhases() {
-    	return (int) NUM_PHASES_HANDLE.get(segment, 0L);
     }
     
     /// @see #filterCenter()
@@ -143,6 +133,16 @@ public final class VkImageViewSampleWeightCreateInfoQCOM
     
     public VkExtent2D filterSize() {
     	return filterSize;
+    }
+    
+    /// @see #numPhases()
+    public VkImageViewSampleWeightCreateInfoQCOM numPhases(int numPhases) {
+    	NUM_PHASES_HANDLE.set(segment, 0L, numPhases);
+    	return this;
+    }
+    
+    public int numPhases() {
+    	return (int) NUM_PHASES_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -196,5 +196,5 @@ public final class VkImageViewSampleWeightCreateInfoQCOM
             segment -> new VkImageViewSampleWeightCreateInfoQCOM(segment)
         );
     }
-    
+
 }

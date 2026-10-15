@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264RateControlLayerInfoKHR
 		implements Struct<VkVideoEncodeH264RateControlLayerInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USE_MIN_QP_HANDLE;
-    public static final VarHandle USE_MAX_QP_HANDLE;
-    public static final VarHandle USE_MAX_FRAME_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USE_MIN_QP_HANDLE;
+	public static final VarHandle USE_MAX_QP_HANDLE;
+	public static final VarHandle USE_MAX_FRAME_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USE_MIN_QP_BYTE_OFFSET;
-    public static final long MIN_QP_BYTE_OFFSET;
-    public static final long USE_MAX_QP_BYTE_OFFSET;
-    public static final long MAX_QP_BYTE_OFFSET;
-    public static final long USE_MAX_FRAME_SIZE_BYTE_OFFSET;
-    public static final long MAX_FRAME_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USE_MIN_QP_BYTE_OFFSET;
+	public static final long MIN_QP_BYTE_OFFSET;
+	public static final long USE_MAX_QP_BYTE_OFFSET;
+	public static final long MAX_QP_BYTE_OFFSET;
+	public static final long USE_MAX_FRAME_SIZE_BYTE_OFFSET;
+	public static final long MAX_FRAME_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkVideoEncodeH264QpKHR minQp;
-    private final VkVideoEncodeH264QpKHR maxQp;
-    private final VkVideoEncodeH264FrameSizeKHR maxFrameSize;
+	private final VkVideoEncodeH264QpKHR minQp;
+	private final VkVideoEncodeH264QpKHR maxQp;
+	private final VkVideoEncodeH264FrameSizeKHR maxFrameSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("useMinQp"),
-            VkVideoEncodeH264QpKHR.LAYOUT.withName("minQp"),
-            JAVA_INT.withName("useMaxQp"),
-            VkVideoEncodeH264QpKHR.LAYOUT.withName("maxQp"),
-            JAVA_INT.withName("useMaxFrameSize"),
-            VkVideoEncodeH264FrameSizeKHR.LAYOUT.withName("maxFrameSize")
-        ).withName("VkVideoEncodeH264RateControlLayerInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USE_MIN_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMinQp"));
-        USE_MAX_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxQp"));
-        USE_MAX_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxFrameSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USE_MIN_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMinQp"));
-        MIN_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQp"));
-        USE_MAX_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxQp"));
-        MAX_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQp"));
-        USE_MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxFrameSize"));
-        MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFrameSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("useMinQp"),
+		    VkVideoEncodeH264QpKHR.LAYOUT.withName("minQp"),
+		    JAVA_INT.withName("useMaxQp"),
+		    VkVideoEncodeH264QpKHR.LAYOUT.withName("maxQp"),
+		    JAVA_INT.withName("useMaxFrameSize"),
+		    VkVideoEncodeH264FrameSizeKHR.LAYOUT.withName("maxFrameSize")
+		).withName("VkVideoEncodeH264RateControlLayerInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USE_MIN_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMinQp"));
+		USE_MAX_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxQp"));
+		USE_MAX_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxFrameSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USE_MIN_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMinQp"));
+		MIN_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQp"));
+		USE_MAX_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxQp"));
+		MAX_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQp"));
+		USE_MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxFrameSize"));
+		MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFrameSize"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264RateControlLayerInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264RateControlLayerInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264RateControlLayerInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        minQp = new VkVideoEncodeH264QpKHR(segment.asSlice(MIN_QP_BYTE_OFFSET, VkVideoEncodeH264QpKHR.LAYOUT));
-        maxQp = new VkVideoEncodeH264QpKHR(segment.asSlice(MAX_QP_BYTE_OFFSET, VkVideoEncodeH264QpKHR.LAYOUT));
-        maxFrameSize = new VkVideoEncodeH264FrameSizeKHR(segment.asSlice(MAX_FRAME_SIZE_BYTE_OFFSET, VkVideoEncodeH264FrameSizeKHR.LAYOUT));
-    }
+	public VkVideoEncodeH264RateControlLayerInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264RateControlLayerInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264RateControlLayerInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minQp = new VkVideoEncodeH264QpKHR(segment.asSlice(MIN_QP_BYTE_OFFSET, VkVideoEncodeH264QpKHR.LAYOUT));
+	    maxQp = new VkVideoEncodeH264QpKHR(segment.asSlice(MAX_QP_BYTE_OFFSET, VkVideoEncodeH264QpKHR.LAYOUT));
+	    maxFrameSize = new VkVideoEncodeH264FrameSizeKHR(segment.asSlice(MAX_FRAME_SIZE_BYTE_OFFSET, VkVideoEncodeH264FrameSizeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264RateControlLayerInfoKHR sType(int sType) {
@@ -127,26 +127,6 @@ public final class VkVideoEncodeH264RateControlLayerInfoKHR
     	return (int) USE_MIN_QP_HANDLE.get(segment, 0L);
     }
     
-    /// @see #useMaxQp()
-    public VkVideoEncodeH264RateControlLayerInfoKHR useMaxQp(int useMaxQp) {
-    	USE_MAX_QP_HANDLE.set(segment, 0L, useMaxQp);
-    	return this;
-    }
-    
-    public int useMaxQp() {
-    	return (int) USE_MAX_QP_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #useMaxFrameSize()
-    public VkVideoEncodeH264RateControlLayerInfoKHR useMaxFrameSize(int useMaxFrameSize) {
-    	USE_MAX_FRAME_SIZE_HANDLE.set(segment, 0L, useMaxFrameSize);
-    	return this;
-    }
-    
-    public int useMaxFrameSize() {
-    	return (int) USE_MAX_FRAME_SIZE_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #minQp()
     public VkVideoEncodeH264RateControlLayerInfoKHR minQp(Consumer<VkVideoEncodeH264QpKHR> consumer) {
     	consumer.accept(minQp);
@@ -163,6 +143,16 @@ public final class VkVideoEncodeH264RateControlLayerInfoKHR
     	return minQp;
     }
     
+    /// @see #useMaxQp()
+    public VkVideoEncodeH264RateControlLayerInfoKHR useMaxQp(int useMaxQp) {
+    	USE_MAX_QP_HANDLE.set(segment, 0L, useMaxQp);
+    	return this;
+    }
+    
+    public int useMaxQp() {
+    	return (int) USE_MAX_QP_HANDLE.get(segment, 0L);
+    }
+    
     /// @see #maxQp()
     public VkVideoEncodeH264RateControlLayerInfoKHR maxQp(Consumer<VkVideoEncodeH264QpKHR> consumer) {
     	consumer.accept(maxQp);
@@ -177,6 +167,16 @@ public final class VkVideoEncodeH264RateControlLayerInfoKHR
     
     public VkVideoEncodeH264QpKHR maxQp() {
     	return maxQp;
+    }
+    
+    /// @see #useMaxFrameSize()
+    public VkVideoEncodeH264RateControlLayerInfoKHR useMaxFrameSize(int useMaxFrameSize) {
+    	USE_MAX_FRAME_SIZE_HANDLE.set(segment, 0L, useMaxFrameSize);
+    	return this;
+    }
+    
+    public int useMaxFrameSize() {
+    	return (int) USE_MAX_FRAME_SIZE_HANDLE.get(segment, 0L);
     }
     
     /// @see #maxFrameSize()
@@ -246,5 +246,5 @@ public final class VkVideoEncodeH264RateControlLayerInfoKHR
             segment -> new VkVideoEncodeH264RateControlLayerInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureMotionInfoNV
 		implements Struct<VkAccelerationStructureMotionInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_INSTANCES_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_INSTANCES_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_INSTANCES_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_INSTANCES_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxInstances"),
-            JAVA_INT.withName("flags")
-        ).withName("VkAccelerationStructureMotionInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_INSTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInstances"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_INSTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInstances"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxInstances"),
+		    JAVA_INT.withName("flags")
+		).withName("VkAccelerationStructureMotionInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_INSTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInstances"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_INSTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInstances"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureMotionInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureMotionInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureMotionInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAccelerationStructureMotionInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureMotionInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureMotionInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAccelerationStructureMotionInfoNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkAccelerationStructureMotionInfoNV
             segment -> new VkAccelerationStructureMotionInfoNV(segment)
         );
     }
-    
+
 }

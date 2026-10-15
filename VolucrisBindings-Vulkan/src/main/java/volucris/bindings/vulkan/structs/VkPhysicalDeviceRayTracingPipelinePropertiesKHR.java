@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRayTracingPipelinePropertiesKHR
 		implements Struct<VkPhysicalDeviceRayTracingPipelinePropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_GROUP_HANDLE_SIZE_HANDLE;
-    public static final VarHandle MAX_RAY_RECURSION_DEPTH_HANDLE;
-    public static final VarHandle MAX_SHADER_GROUP_STRIDE_HANDLE;
-    public static final VarHandle SHADER_GROUP_BASE_ALIGNMENT_HANDLE;
-    public static final VarHandle SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_HANDLE;
-    public static final VarHandle MAX_RAY_DISPATCH_INVOCATION_COUNT_HANDLE;
-    public static final VarHandle SHADER_GROUP_HANDLE_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_RAY_HIT_ATTRIBUTE_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_GROUP_HANDLE_SIZE_HANDLE;
+	public static final VarHandle MAX_RAY_RECURSION_DEPTH_HANDLE;
+	public static final VarHandle MAX_SHADER_GROUP_STRIDE_HANDLE;
+	public static final VarHandle SHADER_GROUP_BASE_ALIGNMENT_HANDLE;
+	public static final VarHandle SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_HANDLE;
+	public static final VarHandle MAX_RAY_DISPATCH_INVOCATION_COUNT_HANDLE;
+	public static final VarHandle SHADER_GROUP_HANDLE_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_RAY_HIT_ATTRIBUTE_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET;
-    public static final long MAX_RAY_RECURSION_DEPTH_BYTE_OFFSET;
-    public static final long MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET;
-    public static final long SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET;
-    public static final long SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_BYTE_OFFSET;
-    public static final long MAX_RAY_DISPATCH_INVOCATION_COUNT_BYTE_OFFSET;
-    public static final long SHADER_GROUP_HANDLE_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_RAY_HIT_ATTRIBUTE_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET;
+	public static final long MAX_RAY_RECURSION_DEPTH_BYTE_OFFSET;
+	public static final long MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET;
+	public static final long SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET;
+	public static final long SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_BYTE_OFFSET;
+	public static final long MAX_RAY_DISPATCH_INVOCATION_COUNT_BYTE_OFFSET;
+	public static final long SHADER_GROUP_HANDLE_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_RAY_HIT_ATTRIBUTE_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderGroupHandleSize"),
-            JAVA_INT.withName("maxRayRecursionDepth"),
-            JAVA_INT.withName("maxShaderGroupStride"),
-            JAVA_INT.withName("shaderGroupBaseAlignment"),
-            JAVA_INT.withName("shaderGroupHandleCaptureReplaySize"),
-            JAVA_INT.withName("maxRayDispatchInvocationCount"),
-            JAVA_INT.withName("shaderGroupHandleAlignment"),
-            JAVA_INT.withName("maxRayHitAttributeSize")
-        ).withName("VkPhysicalDeviceRayTracingPipelinePropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_GROUP_HANDLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleSize"));
-        MAX_RAY_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRayRecursionDepth"));
-        MAX_SHADER_GROUP_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderGroupStride"));
-        SHADER_GROUP_BASE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupBaseAlignment"));
-        SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleCaptureReplaySize"));
-        MAX_RAY_DISPATCH_INVOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRayDispatchInvocationCount"));
-        SHADER_GROUP_HANDLE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleAlignment"));
-        MAX_RAY_HIT_ATTRIBUTE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRayHitAttributeSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleSize"));
-        MAX_RAY_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRayRecursionDepth"));
-        MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderGroupStride"));
-        SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupBaseAlignment"));
-        SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleCaptureReplaySize"));
-        MAX_RAY_DISPATCH_INVOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRayDispatchInvocationCount"));
-        SHADER_GROUP_HANDLE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleAlignment"));
-        MAX_RAY_HIT_ATTRIBUTE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRayHitAttributeSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderGroupHandleSize"),
+		    JAVA_INT.withName("maxRayRecursionDepth"),
+		    JAVA_INT.withName("maxShaderGroupStride"),
+		    JAVA_INT.withName("shaderGroupBaseAlignment"),
+		    JAVA_INT.withName("shaderGroupHandleCaptureReplaySize"),
+		    JAVA_INT.withName("maxRayDispatchInvocationCount"),
+		    JAVA_INT.withName("shaderGroupHandleAlignment"),
+		    JAVA_INT.withName("maxRayHitAttributeSize")
+		).withName("VkPhysicalDeviceRayTracingPipelinePropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_GROUP_HANDLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleSize"));
+		MAX_RAY_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRayRecursionDepth"));
+		MAX_SHADER_GROUP_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderGroupStride"));
+		SHADER_GROUP_BASE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupBaseAlignment"));
+		SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleCaptureReplaySize"));
+		MAX_RAY_DISPATCH_INVOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRayDispatchInvocationCount"));
+		SHADER_GROUP_HANDLE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleAlignment"));
+		MAX_RAY_HIT_ATTRIBUTE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRayHitAttributeSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleSize"));
+		MAX_RAY_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRayRecursionDepth"));
+		MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderGroupStride"));
+		SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupBaseAlignment"));
+		SHADER_GROUP_HANDLE_CAPTURE_REPLAY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleCaptureReplaySize"));
+		MAX_RAY_DISPATCH_INVOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRayDispatchInvocationCount"));
+		SHADER_GROUP_HANDLE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleAlignment"));
+		MAX_RAY_HIT_ATTRIBUTE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRayHitAttributeSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRayTracingPipelinePropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRayTracingPipelinePropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRayTracingPipelinePropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRayTracingPipelinePropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRayTracingPipelinePropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRayTracingPipelinePropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRayTracingPipelinePropertiesKHR sType(int sType) {
@@ -256,5 +256,5 @@ public final class VkPhysicalDeviceRayTracingPipelinePropertiesKHR
             segment -> new VkPhysicalDeviceRayTracingPipelinePropertiesKHR(segment)
         );
     }
-    
+
 }

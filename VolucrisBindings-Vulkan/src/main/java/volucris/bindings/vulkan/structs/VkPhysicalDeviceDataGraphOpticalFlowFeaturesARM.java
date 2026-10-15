@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM
 		implements Struct<VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DATA_GRAPH_OPTICAL_FLOW_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DATA_GRAPH_OPTICAL_FLOW_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DATA_GRAPH_OPTICAL_FLOW_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DATA_GRAPH_OPTICAL_FLOW_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dataGraphOpticalFlow"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DATA_GRAPH_OPTICAL_FLOW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphOpticalFlow"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DATA_GRAPH_OPTICAL_FLOW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphOpticalFlow"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dataGraphOpticalFlow"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DATA_GRAPH_OPTICAL_FLOW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphOpticalFlow"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DATA_GRAPH_OPTICAL_FLOW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphOpticalFlow"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM
             segment -> new VkPhysicalDeviceDataGraphOpticalFlowFeaturesARM(segment)
         );
     }
-    
+
 }

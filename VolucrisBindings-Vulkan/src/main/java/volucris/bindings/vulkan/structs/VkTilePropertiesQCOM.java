@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTilePropertiesQCOM
 		implements Struct<VkTilePropertiesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TILE_SIZE_BYTE_OFFSET;
-    public static final long APRON_SIZE_BYTE_OFFSET;
-    public static final long ORIGIN_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TILE_SIZE_BYTE_OFFSET;
+	public static final long APRON_SIZE_BYTE_OFFSET;
+	public static final long ORIGIN_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent3D tileSize;
-    private final VkExtent2D apronSize;
-    private final VkOffset2D origin;
+	private final VkExtent3D tileSize;
+	private final VkExtent2D apronSize;
+	private final VkOffset2D origin;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent3D.LAYOUT.withName("tileSize"),
-            VkExtent2D.LAYOUT.withName("apronSize"),
-            VkOffset2D.LAYOUT.withName("origin"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkTilePropertiesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TILE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileSize"));
-        APRON_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apronSize"));
-        ORIGIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("origin"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent3D.LAYOUT.withName("tileSize"),
+		    VkExtent2D.LAYOUT.withName("apronSize"),
+		    VkOffset2D.LAYOUT.withName("origin"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkTilePropertiesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TILE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileSize"));
+		APRON_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apronSize"));
+		ORIGIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("origin"));
+		//@formatter:on
+	}
 
-    public VkTilePropertiesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTilePropertiesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTilePropertiesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        tileSize = new VkExtent3D(segment.asSlice(TILE_SIZE_BYTE_OFFSET, VkExtent3D.LAYOUT));
-        apronSize = new VkExtent2D(segment.asSlice(APRON_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        origin = new VkOffset2D(segment.asSlice(ORIGIN_BYTE_OFFSET, VkOffset2D.LAYOUT));
-    }
+	public VkTilePropertiesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTilePropertiesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTilePropertiesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    tileSize = new VkExtent3D(segment.asSlice(TILE_SIZE_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	    apronSize = new VkExtent2D(segment.asSlice(APRON_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    origin = new VkOffset2D(segment.asSlice(ORIGIN_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkTilePropertiesQCOM sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkTilePropertiesQCOM
             segment -> new VkTilePropertiesQCOM(segment)
         );
     }
-    
+
 }

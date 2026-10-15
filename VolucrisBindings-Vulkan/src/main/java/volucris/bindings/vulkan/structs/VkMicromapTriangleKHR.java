@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMicromapTriangleKHR
 		implements Struct<VkMicromapTriangleKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_OFFSET_HANDLE;
-    public static final VarHandle SUBDIVISION_LEVEL_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle DATA_OFFSET_HANDLE;
+	public static final VarHandle SUBDIVISION_LEVEL_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
 
-    public static final long DATA_OFFSET_BYTE_OFFSET;
-    public static final long SUBDIVISION_LEVEL_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
+	public static final long DATA_OFFSET_BYTE_OFFSET;
+	public static final long SUBDIVISION_LEVEL_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("dataOffset"),
-            JAVA_SHORT.withName("subdivisionLevel"),
-            JAVA_SHORT.withName("format")
-        ).withName("VkMicromapTriangleKHR").withByteAlignment(4);
-        
-        DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataOffset"));
-        SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subdivisionLevel"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        
-        DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataOffset"));
-        SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subdivisionLevel"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("dataOffset"),
+		    JAVA_SHORT.withName("subdivisionLevel"),
+		    JAVA_SHORT.withName("format")
+		).withName("VkMicromapTriangleKHR").withByteAlignment(4);
+		
+		DATA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataOffset"));
+		SUBDIVISION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subdivisionLevel"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		
+		DATA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataOffset"));
+		SUBDIVISION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subdivisionLevel"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		//@formatter:on
+	}
 
-    public VkMicromapTriangleKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMicromapTriangleKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMicromapTriangleKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMicromapTriangleKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMicromapTriangleKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMicromapTriangleKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #dataOffset()
     public VkMicromapTriangleKHR dataOffset(int dataOffset) {
@@ -143,5 +143,5 @@ public final class VkMicromapTriangleKHR
             segment -> new VkMicromapTriangleKHR(segment)
         );
     }
-    
+
 }

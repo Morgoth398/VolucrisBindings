@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSampleLocationEXT
 		implements Struct<VkSampleLocationEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle X_HANDLE;
-    public static final VarHandle Y_HANDLE;
+	public static final VarHandle X_HANDLE;
+	public static final VarHandle Y_HANDLE;
 
-    public static final long X_BYTE_OFFSET;
-    public static final long Y_BYTE_OFFSET;
+	public static final long X_BYTE_OFFSET;
+	public static final long Y_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("x"),
-            JAVA_FLOAT.withName("y")
-        ).withName("VkSampleLocationEXT").withByteAlignment(4);
-        
-        X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
-        Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
-        
-        X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
-        Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("x"),
+		    JAVA_FLOAT.withName("y")
+		).withName("VkSampleLocationEXT").withByteAlignment(4);
+		
+		X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
+		Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
+		
+		X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
+		Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
+		//@formatter:on
+	}
 
-    public VkSampleLocationEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSampleLocationEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSampleLocationEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSampleLocationEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSampleLocationEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSampleLocationEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #x()
     public VkSampleLocationEXT x(float x) {
@@ -128,5 +128,5 @@ public final class VkSampleLocationEXT
             segment -> new VkSampleLocationEXT(segment)
         );
     }
-    
+
 }

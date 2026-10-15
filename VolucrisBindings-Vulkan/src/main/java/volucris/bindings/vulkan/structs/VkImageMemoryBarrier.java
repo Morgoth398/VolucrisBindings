@@ -22,86 +22,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageMemoryBarrier
 		implements Struct<VkImageMemoryBarrier> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_ACCESS_MASK_HANDLE;
-    public static final VarHandle DST_ACCESS_MASK_HANDLE;
-    public static final VarHandle OLD_LAYOUT_HANDLE;
-    public static final VarHandle NEW_LAYOUT_HANDLE;
-    public static final VarHandle SRC_QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle DST_QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle IMAGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_ACCESS_MASK_HANDLE;
+	public static final VarHandle DST_ACCESS_MASK_HANDLE;
+	public static final VarHandle OLD_LAYOUT_HANDLE;
+	public static final VarHandle NEW_LAYOUT_HANDLE;
+	public static final VarHandle SRC_QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle DST_QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle IMAGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
-    public static final long DST_ACCESS_MASK_BYTE_OFFSET;
-    public static final long OLD_LAYOUT_BYTE_OFFSET;
-    public static final long NEW_LAYOUT_BYTE_OFFSET;
-    public static final long SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long IMAGE_BYTE_OFFSET;
-    public static final long SUBRESOURCE_RANGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
+	public static final long DST_ACCESS_MASK_BYTE_OFFSET;
+	public static final long OLD_LAYOUT_BYTE_OFFSET;
+	public static final long NEW_LAYOUT_BYTE_OFFSET;
+	public static final long SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long IMAGE_BYTE_OFFSET;
+	public static final long SUBRESOURCE_RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceRange subresourceRange;
+	private final VkImageSubresourceRange subresourceRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("srcAccessMask"),
-            JAVA_INT.withName("dstAccessMask"),
-            JAVA_INT.withName("oldLayout"),
-            JAVA_INT.withName("newLayout"),
-            JAVA_INT.withName("srcQueueFamilyIndex"),
-            JAVA_INT.withName("dstQueueFamilyIndex"),
-            UNBOUNDED_ADDRESS.withName("image"),
-            VkImageSubresourceRange.LAYOUT.withName("subresourceRange"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkImageMemoryBarrier").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
-        DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
-        OLD_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("oldLayout"));
-        NEW_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("newLayout"));
-        SRC_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcQueueFamilyIndex"));
-        DST_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstQueueFamilyIndex"));
-        IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
-        DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
-        OLD_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("oldLayout"));
-        NEW_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("newLayout"));
-        SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcQueueFamilyIndex"));
-        DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstQueueFamilyIndex"));
-        IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
-        SUBRESOURCE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresourceRange"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("srcAccessMask"),
+		    JAVA_INT.withName("dstAccessMask"),
+		    JAVA_INT.withName("oldLayout"),
+		    JAVA_INT.withName("newLayout"),
+		    JAVA_INT.withName("srcQueueFamilyIndex"),
+		    JAVA_INT.withName("dstQueueFamilyIndex"),
+		    UNBOUNDED_ADDRESS.withName("image"),
+		    VkImageSubresourceRange.LAYOUT.withName("subresourceRange"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkImageMemoryBarrier").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
+		DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
+		OLD_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("oldLayout"));
+		NEW_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("newLayout"));
+		SRC_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcQueueFamilyIndex"));
+		DST_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstQueueFamilyIndex"));
+		IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
+		DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
+		OLD_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("oldLayout"));
+		NEW_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("newLayout"));
+		SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcQueueFamilyIndex"));
+		DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstQueueFamilyIndex"));
+		IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
+		SUBRESOURCE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresourceRange"));
+		//@formatter:on
+	}
 
-    public VkImageMemoryBarrier() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageMemoryBarrier(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageMemoryBarrier(MemorySegment segment) {
-        this.segment = segment;
-    
-        subresourceRange = new VkImageSubresourceRange(segment.asSlice(SUBRESOURCE_RANGE_BYTE_OFFSET, VkImageSubresourceRange.LAYOUT));
-    }
+	public VkImageMemoryBarrier() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageMemoryBarrier(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageMemoryBarrier(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    subresourceRange = new VkImageSubresourceRange(segment.asSlice(SUBRESOURCE_RANGE_BYTE_OFFSET, VkImageSubresourceRange.LAYOUT));
+	}
 
     /// @see #sType()
     public VkImageMemoryBarrier sType(int sType) {
@@ -270,5 +270,5 @@ public final class VkImageMemoryBarrier
             segment -> new VkImageMemoryBarrier(segment)
         );
     }
-    
+
 }

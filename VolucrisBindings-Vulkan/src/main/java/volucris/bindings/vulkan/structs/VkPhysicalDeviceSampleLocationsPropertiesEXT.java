@@ -22,71 +22,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSampleLocationsPropertiesEXT
 		implements Struct<VkPhysicalDeviceSampleLocationsPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLE_LOCATION_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle SAMPLE_LOCATION_COORDINATE_RANGE_HANDLE;
-    public static final VarHandle SAMPLE_LOCATION_SUB_PIXEL_BITS_HANDLE;
-    public static final VarHandle VARIABLE_SAMPLE_LOCATIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLE_LOCATION_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle SAMPLE_LOCATION_COORDINATE_RANGE_HANDLE;
+	public static final VarHandle SAMPLE_LOCATION_SUB_PIXEL_BITS_HANDLE;
+	public static final VarHandle VARIABLE_SAMPLE_LOCATIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATION_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long MAX_SAMPLE_LOCATION_GRID_SIZE_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATION_COORDINATE_RANGE_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATION_SUB_PIXEL_BITS_BYTE_OFFSET;
-    public static final long VARIABLE_SAMPLE_LOCATIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATION_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long MAX_SAMPLE_LOCATION_GRID_SIZE_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATION_COORDINATE_RANGE_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATION_SUB_PIXEL_BITS_BYTE_OFFSET;
+	public static final long VARIABLE_SAMPLE_LOCATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D maxSampleLocationGridSize;
+	private final VkExtent2D maxSampleLocationGridSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("sampleLocationSampleCounts"),
-            VkExtent2D.LAYOUT.withName("maxSampleLocationGridSize"),
-            MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("sampleLocationCoordinateRange"),
-            JAVA_INT.withName("sampleLocationSubPixelBits"),
-            JAVA_INT.withName("variableSampleLocations"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceSampleLocationsPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLE_LOCATION_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationSampleCounts"));
-        SAMPLE_LOCATION_COORDINATE_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationCoordinateRange"), PathElement.sequenceElement());
-        SAMPLE_LOCATION_SUB_PIXEL_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationSubPixelBits"));
-        VARIABLE_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variableSampleLocations"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLE_LOCATION_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationSampleCounts"));
-        MAX_SAMPLE_LOCATION_GRID_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSampleLocationGridSize"));
-        SAMPLE_LOCATION_COORDINATE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationCoordinateRange"));
-        SAMPLE_LOCATION_SUB_PIXEL_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationSubPixelBits"));
-        VARIABLE_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variableSampleLocations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("sampleLocationSampleCounts"),
+		    VkExtent2D.LAYOUT.withName("maxSampleLocationGridSize"),
+		    MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("sampleLocationCoordinateRange"),
+		    JAVA_INT.withName("sampleLocationSubPixelBits"),
+		    JAVA_INT.withName("variableSampleLocations"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceSampleLocationsPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLE_LOCATION_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationSampleCounts"));
+		SAMPLE_LOCATION_COORDINATE_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationCoordinateRange"), PathElement.sequenceElement());
+		SAMPLE_LOCATION_SUB_PIXEL_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationSubPixelBits"));
+		VARIABLE_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variableSampleLocations"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLE_LOCATION_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationSampleCounts"));
+		MAX_SAMPLE_LOCATION_GRID_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSampleLocationGridSize"));
+		SAMPLE_LOCATION_COORDINATE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationCoordinateRange"));
+		SAMPLE_LOCATION_SUB_PIXEL_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationSubPixelBits"));
+		VARIABLE_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variableSampleLocations"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSampleLocationsPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSampleLocationsPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSampleLocationsPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        maxSampleLocationGridSize = new VkExtent2D(segment.asSlice(MAX_SAMPLE_LOCATION_GRID_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceSampleLocationsPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSampleLocationsPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSampleLocationsPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    maxSampleLocationGridSize = new VkExtent2D(segment.asSlice(MAX_SAMPLE_LOCATION_GRID_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSampleLocationsPropertiesEXT sType(int sType) {
@@ -123,6 +123,22 @@ public final class VkPhysicalDeviceSampleLocationsPropertiesEXT
     	return (int) SAMPLE_LOCATION_SAMPLE_COUNTS_HANDLE.get(segment, 0L);
     }
     
+    /// @see #maxSampleLocationGridSize()
+    public VkPhysicalDeviceSampleLocationsPropertiesEXT maxSampleLocationGridSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxSampleLocationGridSize);
+    	return this;
+    }
+    
+    /// @see #maxSampleLocationGridSize()
+    public VkPhysicalDeviceSampleLocationsPropertiesEXT maxSampleLocationGridSize(VkExtent2D other) {
+    	maxSampleLocationGridSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxSampleLocationGridSize() {
+    	return maxSampleLocationGridSize;
+    }
+    
     /// @see #sampleLocationCoordinateRange(int)
     public VkPhysicalDeviceSampleLocationsPropertiesEXT sampleLocationCoordinateRange(float sampleLocationCoordinateRange, int index0) {
     	SAMPLE_LOCATION_COORDINATE_RANGE_HANDLE.set(segment, 0L, index0, sampleLocationCoordinateRange);
@@ -151,22 +167,6 @@ public final class VkPhysicalDeviceSampleLocationsPropertiesEXT
     
     public int variableSampleLocations() {
     	return (int) VARIABLE_SAMPLE_LOCATIONS_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #maxSampleLocationGridSize()
-    public VkPhysicalDeviceSampleLocationsPropertiesEXT maxSampleLocationGridSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxSampleLocationGridSize);
-    	return this;
-    }
-    
-    /// @see #maxSampleLocationGridSize()
-    public VkPhysicalDeviceSampleLocationsPropertiesEXT maxSampleLocationGridSize(VkExtent2D other) {
-    	maxSampleLocationGridSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxSampleLocationGridSize() {
-    	return maxSampleLocationGridSize;
     }
     
     @Override
@@ -220,5 +220,5 @@ public final class VkPhysicalDeviceSampleLocationsPropertiesEXT
             segment -> new VkPhysicalDeviceSampleLocationsPropertiesEXT(segment)
         );
     }
-    
+
 }

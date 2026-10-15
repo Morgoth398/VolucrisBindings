@@ -22,65 +22,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoEncodeAV1ReferenceInfo
 		implements Struct<StdVideoEncodeAV1ReferenceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle REF_FRAME_ID_HANDLE;
-    public static final VarHandle FRAME_TYPE_HANDLE;
-    public static final VarHandle ORDER_HINT_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_EXTENSION_HEADER_HANDLE;
+	public static final VarHandle REF_FRAME_ID_HANDLE;
+	public static final VarHandle FRAME_TYPE_HANDLE;
+	public static final VarHandle ORDER_HINT_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_EXTENSION_HEADER_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long REF_FRAME_ID_BYTE_OFFSET;
-    public static final long FRAME_TYPE_BYTE_OFFSET;
-    public static final long ORDER_HINT_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_EXTENSION_HEADER_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long REF_FRAME_ID_BYTE_OFFSET;
+	public static final long FRAME_TYPE_BYTE_OFFSET;
+	public static final long ORDER_HINT_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_EXTENSION_HEADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeAV1ReferenceInfoFlags flags;
+	private final StdVideoEncodeAV1ReferenceInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeAV1ReferenceInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("RefFrameId"),
-            JAVA_INT.withName("frame_type"),
-            JAVA_BYTE.withName("OrderHint"),
-            MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pExtensionHeader")
-        ).withName("StdVideoEncodeAV1ReferenceInfo").withByteAlignment(8);
-        
-        REF_FRAME_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefFrameId"));
-        FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
-        ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("OrderHint"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
-        P_EXTENSION_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtensionHeader"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        REF_FRAME_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefFrameId"));
-        FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
-        ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("OrderHint"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_EXTENSION_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtensionHeader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeAV1ReferenceInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("RefFrameId"),
+		    JAVA_INT.withName("frame_type"),
+		    JAVA_BYTE.withName("OrderHint"),
+		    MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pExtensionHeader")
+		).withName("StdVideoEncodeAV1ReferenceInfo").withByteAlignment(8);
+		
+		REF_FRAME_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefFrameId"));
+		FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
+		ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("OrderHint"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
+		P_EXTENSION_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtensionHeader"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		REF_FRAME_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefFrameId"));
+		FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
+		ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("OrderHint"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_EXTENSION_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtensionHeader"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeAV1ReferenceInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeAV1ReferenceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeAV1ReferenceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeAV1ReferenceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeAV1ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeAV1ReferenceInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeAV1ReferenceInfo flags(Consumer<StdVideoEncodeAV1ReferenceInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeAV1ReferenceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeAV1ReferenceInfo flags(StdVideoEncodeAV1ReferenceInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeAV1ReferenceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeAV1ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeAV1ReferenceInfoFlags.LAYOUT));
+    public StdVideoEncodeAV1ReferenceInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #refFrameId()
     public StdVideoEncodeAV1ReferenceInfo refFrameId(int refFrameId) {
     	REF_FRAME_ID_HANDLE.set(segment, 0L, refFrameId);
@@ -136,22 +152,6 @@ public final class StdVideoEncodeAV1ReferenceInfo
     	return new StdVideoEncodeAV1ExtensionHeader(segment);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeAV1ReferenceInfo flags(Consumer<StdVideoEncodeAV1ReferenceInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeAV1ReferenceInfo flags(StdVideoEncodeAV1ReferenceInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeAV1ReferenceInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeAV1ReferenceInfo set(StdVideoEncodeAV1ReferenceInfo other) {
         return set(other.segment);
@@ -203,5 +203,5 @@ public final class StdVideoEncodeAV1ReferenceInfo
             segment -> new StdVideoEncodeAV1ReferenceInfo(segment)
         );
     }
-    
+
 }

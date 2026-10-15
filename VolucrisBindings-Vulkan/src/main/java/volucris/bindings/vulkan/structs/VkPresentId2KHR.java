@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPresentId2KHR
 		implements Struct<VkPresentId2KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SWAPCHAIN_COUNT_HANDLE;
-    public static final VarHandle P_PRESENT_IDS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SWAPCHAIN_COUNT_HANDLE;
+	public static final VarHandle P_PRESENT_IDS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SWAPCHAIN_COUNT_BYTE_OFFSET;
-    public static final long P_PRESENT_IDS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SWAPCHAIN_COUNT_BYTE_OFFSET;
+	public static final long P_PRESENT_IDS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("swapchainCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPresentIds")
-        ).withName("VkPresentId2KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SWAPCHAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchainCount"));
-        P_PRESENT_IDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPresentIds"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SWAPCHAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchainCount"));
-        P_PRESENT_IDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPresentIds"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("swapchainCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPresentIds")
+		).withName("VkPresentId2KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SWAPCHAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchainCount"));
+		P_PRESENT_IDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPresentIds"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SWAPCHAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchainCount"));
+		P_PRESENT_IDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPresentIds"));
+		//@formatter:on
+	}
 
-    public VkPresentId2KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentId2KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentId2KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentId2KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentId2KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentId2KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPresentId2KHR sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkPresentId2KHR
             segment -> new VkPresentId2KHR(segment)
         );
     }
-    
+
 }

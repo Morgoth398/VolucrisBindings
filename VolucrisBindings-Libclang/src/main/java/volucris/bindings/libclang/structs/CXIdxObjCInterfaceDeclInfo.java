@@ -18,48 +18,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxObjCInterfaceDeclInfo
 		implements Struct<CXIdxObjCInterfaceDeclInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CONTAINER_INFO_HANDLE;
-    public static final VarHandle SUPER_INFO_HANDLE;
-    public static final VarHandle PROTOCOLS_HANDLE;
+	public static final VarHandle CONTAINER_INFO_HANDLE;
+	public static final VarHandle SUPER_INFO_HANDLE;
+	public static final VarHandle PROTOCOLS_HANDLE;
 
-    public static final long CONTAINER_INFO_BYTE_OFFSET;
-    public static final long SUPER_INFO_BYTE_OFFSET;
-    public static final long PROTOCOLS_BYTE_OFFSET;
+	public static final long CONTAINER_INFO_BYTE_OFFSET;
+	public static final long SUPER_INFO_BYTE_OFFSET;
+	public static final long PROTOCOLS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("containerInfo"),
-            UNBOUNDED_ADDRESS.withName("superInfo"),
-            UNBOUNDED_ADDRESS.withName("protocols")
-        ).withName("CXIdxObjCInterfaceDeclInfo").withByteAlignment(8);
-        
-        CONTAINER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("containerInfo"));
-        SUPER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("superInfo"));
-        PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocols"));
-        
-        CONTAINER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("containerInfo"));
-        SUPER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("superInfo"));
-        PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocols"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("containerInfo"),
+		    UNBOUNDED_ADDRESS.withName("superInfo"),
+		    UNBOUNDED_ADDRESS.withName("protocols")
+		).withName("CXIdxObjCInterfaceDeclInfo").withByteAlignment(8);
+		
+		CONTAINER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("containerInfo"));
+		SUPER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("superInfo"));
+		PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocols"));
+		
+		CONTAINER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("containerInfo"));
+		SUPER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("superInfo"));
+		PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocols"));
+		//@formatter:on
+	}
 
-    public CXIdxObjCInterfaceDeclInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxObjCInterfaceDeclInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxObjCInterfaceDeclInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIdxObjCInterfaceDeclInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxObjCInterfaceDeclInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxObjCInterfaceDeclInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #containerInfo()
     public CXIdxObjCInterfaceDeclInfo containerInfo(CXIdxObjCContainerDeclInfo containerInfo) {
@@ -157,5 +157,5 @@ public final class CXIdxObjCInterfaceDeclInfo
             segment -> new CXIdxObjCInterfaceDeclInfo(segment)
         );
     }
-    
+
 }

@@ -21,53 +21,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiTexel
 		implements Struct<AiTexel> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle B_HANDLE;
-    public static final VarHandle G_HANDLE;
-    public static final VarHandle R_HANDLE;
-    public static final VarHandle A_HANDLE;
+	public static final VarHandle B_HANDLE;
+	public static final VarHandle G_HANDLE;
+	public static final VarHandle R_HANDLE;
+	public static final VarHandle A_HANDLE;
 
-    public static final long B_BYTE_OFFSET;
-    public static final long G_BYTE_OFFSET;
-    public static final long R_BYTE_OFFSET;
-    public static final long A_BYTE_OFFSET;
+	public static final long B_BYTE_OFFSET;
+	public static final long G_BYTE_OFFSET;
+	public static final long R_BYTE_OFFSET;
+	public static final long A_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_BYTE.withName("b"),
-            JAVA_BYTE.withName("g"),
-            JAVA_BYTE.withName("r"),
-            JAVA_BYTE.withName("a")
-        ).withName("aiTexel").withByteAlignment(1);
-        
-        B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
-        G_HANDLE = LAYOUT.varHandle(PathElement.groupElement("g"));
-        R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
-        A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
-        
-        B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
-        G_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("g"));
-        R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
-        A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_BYTE.withName("b"),
+		    JAVA_BYTE.withName("g"),
+		    JAVA_BYTE.withName("r"),
+		    JAVA_BYTE.withName("a")
+		).withName("aiTexel").withByteAlignment(1);
+		
+		B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
+		G_HANDLE = LAYOUT.varHandle(PathElement.groupElement("g"));
+		R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
+		A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
+		
+		B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
+		G_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("g"));
+		R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
+		A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
+		//@formatter:on
+	}
 
-    public AiTexel() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiTexel(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiTexel(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiTexel() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiTexel(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiTexel(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #b()
     public AiTexel b(byte b) {
@@ -160,5 +160,5 @@ public final class AiTexel
             segment -> new AiTexel(segment)
         );
     }
-    
+
 }

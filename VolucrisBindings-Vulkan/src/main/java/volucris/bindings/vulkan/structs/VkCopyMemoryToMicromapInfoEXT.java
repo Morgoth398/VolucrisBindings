@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyMemoryToMicromapInfoEXT
 		implements Struct<VkCopyMemoryToMicromapInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DST_HANDLE;
-    public static final VarHandle MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DST_HANDLE;
+	public static final VarHandle MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_BYTE_OFFSET;
-    public static final long DST_BYTE_OFFSET;
-    public static final long MODE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_BYTE_OFFSET;
+	public static final long DST_BYTE_OFFSET;
+	public static final long MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressConstKHR src;
+	private final VkDeviceOrHostAddressConstKHR src;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("src"),
-            UNBOUNDED_ADDRESS.withName("dst"),
-            JAVA_INT.withName("mode"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCopyMemoryToMicromapInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dst"));
-        MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("src"));
-        DST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dst"));
-        MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("src"),
+		    UNBOUNDED_ADDRESS.withName("dst"),
+		    JAVA_INT.withName("mode"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCopyMemoryToMicromapInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dst"));
+		MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("src"));
+		DST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dst"));
+		MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
+		//@formatter:on
+	}
 
-    public VkCopyMemoryToMicromapInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyMemoryToMicromapInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyMemoryToMicromapInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        src = new VkDeviceOrHostAddressConstKHR(segment.asSlice(SRC_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-    }
+	public VkCopyMemoryToMicromapInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyMemoryToMicromapInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyMemoryToMicromapInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    src = new VkDeviceOrHostAddressConstKHR(segment.asSlice(SRC_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkCopyMemoryToMicromapInfoEXT sType(int sType) {
@@ -103,6 +103,22 @@ public final class VkCopyMemoryToMicromapInfoEXT
     	return segment;
     }
     
+    /// @see #src()
+    public VkCopyMemoryToMicromapInfoEXT src(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
+    	consumer.accept(src);
+    	return this;
+    }
+    
+    /// @see #src()
+    public VkCopyMemoryToMicromapInfoEXT src(VkDeviceOrHostAddressConstKHR other) {
+    	src.set(other);
+    	return this;
+    }
+    
+    public VkDeviceOrHostAddressConstKHR src() {
+    	return src;
+    }
+    
     /// @see #dst()
     public VkCopyMemoryToMicromapInfoEXT dst(VkMicromapEXT dst) {
     	DST_HANDLE.set(segment, 0L, dst.memorySegment());
@@ -126,22 +142,6 @@ public final class VkCopyMemoryToMicromapInfoEXT
     
     public int mode() {
     	return (int) MODE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #src()
-    public VkCopyMemoryToMicromapInfoEXT src(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
-    	consumer.accept(src);
-    	return this;
-    }
-    
-    /// @see #src()
-    public VkCopyMemoryToMicromapInfoEXT src(VkDeviceOrHostAddressConstKHR other) {
-    	src.set(other);
-    	return this;
-    }
-    
-    public VkDeviceOrHostAddressConstKHR src() {
-    	return src;
     }
     
     @Override
@@ -195,5 +195,5 @@ public final class VkCopyMemoryToMicromapInfoEXT
             segment -> new VkCopyMemoryToMicromapInfoEXT(segment)
         );
     }
-    
+
 }

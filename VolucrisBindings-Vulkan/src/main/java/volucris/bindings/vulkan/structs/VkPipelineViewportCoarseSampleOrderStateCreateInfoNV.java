@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineViewportCoarseSampleOrderStateCreateInfoNV
 		implements Struct<VkPipelineViewportCoarseSampleOrderStateCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLE_ORDER_TYPE_HANDLE;
-    public static final VarHandle CUSTOM_SAMPLE_ORDER_COUNT_HANDLE;
-    public static final VarHandle P_CUSTOM_SAMPLE_ORDERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLE_ORDER_TYPE_HANDLE;
+	public static final VarHandle CUSTOM_SAMPLE_ORDER_COUNT_HANDLE;
+	public static final VarHandle P_CUSTOM_SAMPLE_ORDERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLE_ORDER_TYPE_BYTE_OFFSET;
-    public static final long CUSTOM_SAMPLE_ORDER_COUNT_BYTE_OFFSET;
-    public static final long P_CUSTOM_SAMPLE_ORDERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLE_ORDER_TYPE_BYTE_OFFSET;
+	public static final long CUSTOM_SAMPLE_ORDER_COUNT_BYTE_OFFSET;
+	public static final long P_CUSTOM_SAMPLE_ORDERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("sampleOrderType"),
-            JAVA_INT.withName("customSampleOrderCount"),
-            UNBOUNDED_ADDRESS.withName("pCustomSampleOrders")
-        ).withName("VkPipelineViewportCoarseSampleOrderStateCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLE_ORDER_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleOrderType"));
-        CUSTOM_SAMPLE_ORDER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("customSampleOrderCount"));
-        P_CUSTOM_SAMPLE_ORDERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCustomSampleOrders"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLE_ORDER_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleOrderType"));
-        CUSTOM_SAMPLE_ORDER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("customSampleOrderCount"));
-        P_CUSTOM_SAMPLE_ORDERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCustomSampleOrders"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("sampleOrderType"),
+		    JAVA_INT.withName("customSampleOrderCount"),
+		    UNBOUNDED_ADDRESS.withName("pCustomSampleOrders")
+		).withName("VkPipelineViewportCoarseSampleOrderStateCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLE_ORDER_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleOrderType"));
+		CUSTOM_SAMPLE_ORDER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("customSampleOrderCount"));
+		P_CUSTOM_SAMPLE_ORDERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCustomSampleOrders"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLE_ORDER_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleOrderType"));
+		CUSTOM_SAMPLE_ORDER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("customSampleOrderCount"));
+		P_CUSTOM_SAMPLE_ORDERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCustomSampleOrders"));
+		//@formatter:on
+	}
 
-    public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineViewportCoarseSampleOrderStateCreateInfoNV sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkPipelineViewportCoarseSampleOrderStateCreateInfoNV
             segment -> new VkPipelineViewportCoarseSampleOrderStateCreateInfoNV(segment)
         );
     }
-    
+
 }

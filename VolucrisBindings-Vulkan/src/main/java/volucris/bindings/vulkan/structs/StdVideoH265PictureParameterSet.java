@@ -22,215 +22,231 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoH265PictureParameterSet
 		implements Struct<StdVideoH265PictureParameterSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PPS_PIC_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle PPS_SEQ_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle SPS_VIDEO_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle NUM_EXTRA_SLICE_HEADER_BITS_HANDLE;
-    public static final VarHandle NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE;
-    public static final VarHandle NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE;
-    public static final VarHandle INIT_QP_MINUS26_HANDLE;
-    public static final VarHandle DIFF_CU_QP_DELTA_DEPTH_HANDLE;
-    public static final VarHandle PPS_CB_QP_OFFSET_HANDLE;
-    public static final VarHandle PPS_CR_QP_OFFSET_HANDLE;
-    public static final VarHandle PPS_BETA_OFFSET_DIV2_HANDLE;
-    public static final VarHandle PPS_TC_OFFSET_DIV2_HANDLE;
-    public static final VarHandle LOG2_PARALLEL_MERGE_LEVEL_MINUS2_HANDLE;
-    public static final VarHandle LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_HANDLE;
-    public static final VarHandle DIFF_CU_CHROMA_QP_OFFSET_DEPTH_HANDLE;
-    public static final VarHandle CHROMA_QP_OFFSET_LIST_LEN_MINUS1_HANDLE;
-    public static final VarHandle CB_QP_OFFSET_LIST_HANDLE;
-    public static final VarHandle CR_QP_OFFSET_LIST_HANDLE;
-    public static final VarHandle LOG2_SAO_OFFSET_SCALE_LUMA_HANDLE;
-    public static final VarHandle LOG2_SAO_OFFSET_SCALE_CHROMA_HANDLE;
-    public static final VarHandle PPS_ACT_Y_QP_OFFSET_PLUS5_HANDLE;
-    public static final VarHandle PPS_ACT_CB_QP_OFFSET_PLUS5_HANDLE;
-    public static final VarHandle PPS_ACT_CR_QP_OFFSET_PLUS3_HANDLE;
-    public static final VarHandle PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_HANDLE;
-    public static final VarHandle LUMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE;
-    public static final VarHandle CHROMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE;
-    public static final VarHandle NUM_TILE_COLUMNS_MINUS1_HANDLE;
-    public static final VarHandle NUM_TILE_ROWS_MINUS1_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle RESERVED2_HANDLE;
-    public static final VarHandle COLUMN_WIDTH_MINUS1_HANDLE;
-    public static final VarHandle ROW_HEIGHT_MINUS1_HANDLE;
-    public static final VarHandle RESERVED3_HANDLE;
-    public static final VarHandle P_SCALING_LISTS_HANDLE;
-    public static final VarHandle P_PREDICTOR_PALETTE_ENTRIES_HANDLE;
+	public static final VarHandle PPS_PIC_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle PPS_SEQ_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle SPS_VIDEO_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle NUM_EXTRA_SLICE_HEADER_BITS_HANDLE;
+	public static final VarHandle NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE;
+	public static final VarHandle NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE;
+	public static final VarHandle INIT_QP_MINUS26_HANDLE;
+	public static final VarHandle DIFF_CU_QP_DELTA_DEPTH_HANDLE;
+	public static final VarHandle PPS_CB_QP_OFFSET_HANDLE;
+	public static final VarHandle PPS_CR_QP_OFFSET_HANDLE;
+	public static final VarHandle PPS_BETA_OFFSET_DIV2_HANDLE;
+	public static final VarHandle PPS_TC_OFFSET_DIV2_HANDLE;
+	public static final VarHandle LOG2_PARALLEL_MERGE_LEVEL_MINUS2_HANDLE;
+	public static final VarHandle LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_HANDLE;
+	public static final VarHandle DIFF_CU_CHROMA_QP_OFFSET_DEPTH_HANDLE;
+	public static final VarHandle CHROMA_QP_OFFSET_LIST_LEN_MINUS1_HANDLE;
+	public static final VarHandle CB_QP_OFFSET_LIST_HANDLE;
+	public static final VarHandle CR_QP_OFFSET_LIST_HANDLE;
+	public static final VarHandle LOG2_SAO_OFFSET_SCALE_LUMA_HANDLE;
+	public static final VarHandle LOG2_SAO_OFFSET_SCALE_CHROMA_HANDLE;
+	public static final VarHandle PPS_ACT_Y_QP_OFFSET_PLUS5_HANDLE;
+	public static final VarHandle PPS_ACT_CB_QP_OFFSET_PLUS5_HANDLE;
+	public static final VarHandle PPS_ACT_CR_QP_OFFSET_PLUS3_HANDLE;
+	public static final VarHandle PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_HANDLE;
+	public static final VarHandle LUMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE;
+	public static final VarHandle CHROMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE;
+	public static final VarHandle NUM_TILE_COLUMNS_MINUS1_HANDLE;
+	public static final VarHandle NUM_TILE_ROWS_MINUS1_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle RESERVED2_HANDLE;
+	public static final VarHandle COLUMN_WIDTH_MINUS1_HANDLE;
+	public static final VarHandle ROW_HEIGHT_MINUS1_HANDLE;
+	public static final VarHandle RESERVED3_HANDLE;
+	public static final VarHandle P_SCALING_LISTS_HANDLE;
+	public static final VarHandle P_PREDICTOR_PALETTE_ENTRIES_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long NUM_EXTRA_SLICE_HEADER_BITS_BYTE_OFFSET;
-    public static final long NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
-    public static final long NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
-    public static final long INIT_QP_MINUS26_BYTE_OFFSET;
-    public static final long DIFF_CU_QP_DELTA_DEPTH_BYTE_OFFSET;
-    public static final long PPS_CB_QP_OFFSET_BYTE_OFFSET;
-    public static final long PPS_CR_QP_OFFSET_BYTE_OFFSET;
-    public static final long PPS_BETA_OFFSET_DIV2_BYTE_OFFSET;
-    public static final long PPS_TC_OFFSET_DIV2_BYTE_OFFSET;
-    public static final long LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BYTE_OFFSET;
-    public static final long LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_BYTE_OFFSET;
-    public static final long DIFF_CU_CHROMA_QP_OFFSET_DEPTH_BYTE_OFFSET;
-    public static final long CHROMA_QP_OFFSET_LIST_LEN_MINUS1_BYTE_OFFSET;
-    public static final long CB_QP_OFFSET_LIST_BYTE_OFFSET;
-    public static final long CR_QP_OFFSET_LIST_BYTE_OFFSET;
-    public static final long LOG2_SAO_OFFSET_SCALE_LUMA_BYTE_OFFSET;
-    public static final long LOG2_SAO_OFFSET_SCALE_CHROMA_BYTE_OFFSET;
-    public static final long PPS_ACT_Y_QP_OFFSET_PLUS5_BYTE_OFFSET;
-    public static final long PPS_ACT_CB_QP_OFFSET_PLUS5_BYTE_OFFSET;
-    public static final long PPS_ACT_CR_QP_OFFSET_PLUS3_BYTE_OFFSET;
-    public static final long PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_BYTE_OFFSET;
-    public static final long LUMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET;
-    public static final long CHROMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET;
-    public static final long NUM_TILE_COLUMNS_MINUS1_BYTE_OFFSET;
-    public static final long NUM_TILE_ROWS_MINUS1_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long RESERVED2_BYTE_OFFSET;
-    public static final long COLUMN_WIDTH_MINUS1_BYTE_OFFSET;
-    public static final long ROW_HEIGHT_MINUS1_BYTE_OFFSET;
-    public static final long RESERVED3_BYTE_OFFSET;
-    public static final long P_SCALING_LISTS_BYTE_OFFSET;
-    public static final long P_PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long NUM_EXTRA_SLICE_HEADER_BITS_BYTE_OFFSET;
+	public static final long NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
+	public static final long NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
+	public static final long INIT_QP_MINUS26_BYTE_OFFSET;
+	public static final long DIFF_CU_QP_DELTA_DEPTH_BYTE_OFFSET;
+	public static final long PPS_CB_QP_OFFSET_BYTE_OFFSET;
+	public static final long PPS_CR_QP_OFFSET_BYTE_OFFSET;
+	public static final long PPS_BETA_OFFSET_DIV2_BYTE_OFFSET;
+	public static final long PPS_TC_OFFSET_DIV2_BYTE_OFFSET;
+	public static final long LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BYTE_OFFSET;
+	public static final long LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_BYTE_OFFSET;
+	public static final long DIFF_CU_CHROMA_QP_OFFSET_DEPTH_BYTE_OFFSET;
+	public static final long CHROMA_QP_OFFSET_LIST_LEN_MINUS1_BYTE_OFFSET;
+	public static final long CB_QP_OFFSET_LIST_BYTE_OFFSET;
+	public static final long CR_QP_OFFSET_LIST_BYTE_OFFSET;
+	public static final long LOG2_SAO_OFFSET_SCALE_LUMA_BYTE_OFFSET;
+	public static final long LOG2_SAO_OFFSET_SCALE_CHROMA_BYTE_OFFSET;
+	public static final long PPS_ACT_Y_QP_OFFSET_PLUS5_BYTE_OFFSET;
+	public static final long PPS_ACT_CB_QP_OFFSET_PLUS5_BYTE_OFFSET;
+	public static final long PPS_ACT_CR_QP_OFFSET_PLUS3_BYTE_OFFSET;
+	public static final long PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_BYTE_OFFSET;
+	public static final long LUMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET;
+	public static final long CHROMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET;
+	public static final long NUM_TILE_COLUMNS_MINUS1_BYTE_OFFSET;
+	public static final long NUM_TILE_ROWS_MINUS1_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long RESERVED2_BYTE_OFFSET;
+	public static final long COLUMN_WIDTH_MINUS1_BYTE_OFFSET;
+	public static final long ROW_HEIGHT_MINUS1_BYTE_OFFSET;
+	public static final long RESERVED3_BYTE_OFFSET;
+	public static final long P_SCALING_LISTS_BYTE_OFFSET;
+	public static final long P_PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH265PpsFlags flags;
+	private final StdVideoH265PpsFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH265PpsFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("pps_pic_parameter_set_id"),
-            JAVA_BYTE.withName("pps_seq_parameter_set_id"),
-            JAVA_BYTE.withName("sps_video_parameter_set_id"),
-            JAVA_BYTE.withName("num_extra_slice_header_bits"),
-            JAVA_BYTE.withName("num_ref_idx_l0_default_active_minus1"),
-            JAVA_BYTE.withName("num_ref_idx_l1_default_active_minus1"),
-            JAVA_BYTE.withName("init_qp_minus26"),
-            JAVA_BYTE.withName("diff_cu_qp_delta_depth"),
-            JAVA_BYTE.withName("pps_cb_qp_offset"),
-            JAVA_BYTE.withName("pps_cr_qp_offset"),
-            JAVA_BYTE.withName("pps_beta_offset_div2"),
-            JAVA_BYTE.withName("pps_tc_offset_div2"),
-            JAVA_BYTE.withName("log2_parallel_merge_level_minus2"),
-            JAVA_BYTE.withName("log2_max_transform_skip_block_size_minus2"),
-            JAVA_BYTE.withName("diff_cu_chroma_qp_offset_depth"),
-            JAVA_BYTE.withName("chroma_qp_offset_list_len_minus1"),
-            MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("cb_qp_offset_list"),
-            MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("cr_qp_offset_list"),
-            JAVA_BYTE.withName("log2_sao_offset_scale_luma"),
-            JAVA_BYTE.withName("log2_sao_offset_scale_chroma"),
-            JAVA_BYTE.withName("pps_act_y_qp_offset_plus5"),
-            JAVA_BYTE.withName("pps_act_cb_qp_offset_plus5"),
-            JAVA_BYTE.withName("pps_act_cr_qp_offset_plus3"),
-            JAVA_BYTE.withName("pps_num_palette_predictor_initializers"),
-            JAVA_BYTE.withName("luma_bit_depth_entry_minus8"),
-            JAVA_BYTE.withName("chroma_bit_depth_entry_minus8"),
-            JAVA_BYTE.withName("num_tile_columns_minus1"),
-            JAVA_BYTE.withName("num_tile_rows_minus1"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_BYTE.withName("reserved2"),
-            MemoryLayout.sequenceLayout(19, JAVA_SHORT).withName("column_width_minus1"),
-            MemoryLayout.sequenceLayout(21, JAVA_SHORT).withName("row_height_minus1"),
-            JAVA_INT.withName("reserved3"),
-            UNBOUNDED_ADDRESS.withName("pScalingLists"),
-            UNBOUNDED_ADDRESS.withName("pPredictorPaletteEntries")
-        ).withName("StdVideoH265PictureParameterSet").withByteAlignment(8);
-        
-        PPS_PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_pic_parameter_set_id"));
-        PPS_SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_seq_parameter_set_id"));
-        SPS_VIDEO_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sps_video_parameter_set_id"));
-        NUM_EXTRA_SLICE_HEADER_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_extra_slice_header_bits"));
-        NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
-        NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
-        INIT_QP_MINUS26_HANDLE = LAYOUT.varHandle(PathElement.groupElement("init_qp_minus26"));
-        DIFF_CU_QP_DELTA_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("diff_cu_qp_delta_depth"));
-        PPS_CB_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_cb_qp_offset"));
-        PPS_CR_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_cr_qp_offset"));
-        PPS_BETA_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_beta_offset_div2"));
-        PPS_TC_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_tc_offset_div2"));
-        LOG2_PARALLEL_MERGE_LEVEL_MINUS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_parallel_merge_level_minus2"));
-        LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_max_transform_skip_block_size_minus2"));
-        DIFF_CU_CHROMA_QP_OFFSET_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("diff_cu_chroma_qp_offset_depth"));
-        CHROMA_QP_OFFSET_LIST_LEN_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_qp_offset_list_len_minus1"));
-        CB_QP_OFFSET_LIST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_qp_offset_list"), PathElement.sequenceElement());
-        CR_QP_OFFSET_LIST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_qp_offset_list"), PathElement.sequenceElement());
-        LOG2_SAO_OFFSET_SCALE_LUMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_sao_offset_scale_luma"));
-        LOG2_SAO_OFFSET_SCALE_CHROMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_sao_offset_scale_chroma"));
-        PPS_ACT_Y_QP_OFFSET_PLUS5_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_act_y_qp_offset_plus5"));
-        PPS_ACT_CB_QP_OFFSET_PLUS5_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_act_cb_qp_offset_plus5"));
-        PPS_ACT_CR_QP_OFFSET_PLUS3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_act_cr_qp_offset_plus3"));
-        PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_num_palette_predictor_initializers"));
-        LUMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_bit_depth_entry_minus8"));
-        CHROMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_bit_depth_entry_minus8"));
-        NUM_TILE_COLUMNS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_tile_columns_minus1"));
-        NUM_TILE_ROWS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_tile_rows_minus1"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
-        COLUMN_WIDTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("column_width_minus1"), PathElement.sequenceElement());
-        ROW_HEIGHT_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("row_height_minus1"), PathElement.sequenceElement());
-        RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
-        P_SCALING_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pScalingLists"));
-        P_PREDICTOR_PALETTE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPredictorPaletteEntries"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_pic_parameter_set_id"));
-        PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_seq_parameter_set_id"));
-        SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sps_video_parameter_set_id"));
-        NUM_EXTRA_SLICE_HEADER_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_extra_slice_header_bits"));
-        NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
-        NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
-        INIT_QP_MINUS26_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("init_qp_minus26"));
-        DIFF_CU_QP_DELTA_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("diff_cu_qp_delta_depth"));
-        PPS_CB_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_cb_qp_offset"));
-        PPS_CR_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_cr_qp_offset"));
-        PPS_BETA_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_beta_offset_div2"));
-        PPS_TC_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_tc_offset_div2"));
-        LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_parallel_merge_level_minus2"));
-        LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_max_transform_skip_block_size_minus2"));
-        DIFF_CU_CHROMA_QP_OFFSET_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("diff_cu_chroma_qp_offset_depth"));
-        CHROMA_QP_OFFSET_LIST_LEN_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_qp_offset_list_len_minus1"));
-        CB_QP_OFFSET_LIST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_qp_offset_list"));
-        CR_QP_OFFSET_LIST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_qp_offset_list"));
-        LOG2_SAO_OFFSET_SCALE_LUMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_sao_offset_scale_luma"));
-        LOG2_SAO_OFFSET_SCALE_CHROMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_sao_offset_scale_chroma"));
-        PPS_ACT_Y_QP_OFFSET_PLUS5_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_act_y_qp_offset_plus5"));
-        PPS_ACT_CB_QP_OFFSET_PLUS5_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_act_cb_qp_offset_plus5"));
-        PPS_ACT_CR_QP_OFFSET_PLUS3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_act_cr_qp_offset_plus3"));
-        PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_num_palette_predictor_initializers"));
-        LUMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_bit_depth_entry_minus8"));
-        CHROMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_bit_depth_entry_minus8"));
-        NUM_TILE_COLUMNS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_tile_columns_minus1"));
-        NUM_TILE_ROWS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_tile_rows_minus1"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
-        COLUMN_WIDTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("column_width_minus1"));
-        ROW_HEIGHT_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("row_height_minus1"));
-        RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
-        P_SCALING_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pScalingLists"));
-        P_PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPredictorPaletteEntries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH265PpsFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("pps_pic_parameter_set_id"),
+		    JAVA_BYTE.withName("pps_seq_parameter_set_id"),
+		    JAVA_BYTE.withName("sps_video_parameter_set_id"),
+		    JAVA_BYTE.withName("num_extra_slice_header_bits"),
+		    JAVA_BYTE.withName("num_ref_idx_l0_default_active_minus1"),
+		    JAVA_BYTE.withName("num_ref_idx_l1_default_active_minus1"),
+		    JAVA_BYTE.withName("init_qp_minus26"),
+		    JAVA_BYTE.withName("diff_cu_qp_delta_depth"),
+		    JAVA_BYTE.withName("pps_cb_qp_offset"),
+		    JAVA_BYTE.withName("pps_cr_qp_offset"),
+		    JAVA_BYTE.withName("pps_beta_offset_div2"),
+		    JAVA_BYTE.withName("pps_tc_offset_div2"),
+		    JAVA_BYTE.withName("log2_parallel_merge_level_minus2"),
+		    JAVA_BYTE.withName("log2_max_transform_skip_block_size_minus2"),
+		    JAVA_BYTE.withName("diff_cu_chroma_qp_offset_depth"),
+		    JAVA_BYTE.withName("chroma_qp_offset_list_len_minus1"),
+		    MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("cb_qp_offset_list"),
+		    MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("cr_qp_offset_list"),
+		    JAVA_BYTE.withName("log2_sao_offset_scale_luma"),
+		    JAVA_BYTE.withName("log2_sao_offset_scale_chroma"),
+		    JAVA_BYTE.withName("pps_act_y_qp_offset_plus5"),
+		    JAVA_BYTE.withName("pps_act_cb_qp_offset_plus5"),
+		    JAVA_BYTE.withName("pps_act_cr_qp_offset_plus3"),
+		    JAVA_BYTE.withName("pps_num_palette_predictor_initializers"),
+		    JAVA_BYTE.withName("luma_bit_depth_entry_minus8"),
+		    JAVA_BYTE.withName("chroma_bit_depth_entry_minus8"),
+		    JAVA_BYTE.withName("num_tile_columns_minus1"),
+		    JAVA_BYTE.withName("num_tile_rows_minus1"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_BYTE.withName("reserved2"),
+		    MemoryLayout.sequenceLayout(19, JAVA_SHORT).withName("column_width_minus1"),
+		    MemoryLayout.sequenceLayout(21, JAVA_SHORT).withName("row_height_minus1"),
+		    JAVA_INT.withName("reserved3"),
+		    UNBOUNDED_ADDRESS.withName("pScalingLists"),
+		    UNBOUNDED_ADDRESS.withName("pPredictorPaletteEntries")
+		).withName("StdVideoH265PictureParameterSet").withByteAlignment(8);
+		
+		PPS_PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_pic_parameter_set_id"));
+		PPS_SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_seq_parameter_set_id"));
+		SPS_VIDEO_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sps_video_parameter_set_id"));
+		NUM_EXTRA_SLICE_HEADER_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_extra_slice_header_bits"));
+		NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
+		NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
+		INIT_QP_MINUS26_HANDLE = LAYOUT.varHandle(PathElement.groupElement("init_qp_minus26"));
+		DIFF_CU_QP_DELTA_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("diff_cu_qp_delta_depth"));
+		PPS_CB_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_cb_qp_offset"));
+		PPS_CR_QP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_cr_qp_offset"));
+		PPS_BETA_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_beta_offset_div2"));
+		PPS_TC_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_tc_offset_div2"));
+		LOG2_PARALLEL_MERGE_LEVEL_MINUS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_parallel_merge_level_minus2"));
+		LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_max_transform_skip_block_size_minus2"));
+		DIFF_CU_CHROMA_QP_OFFSET_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("diff_cu_chroma_qp_offset_depth"));
+		CHROMA_QP_OFFSET_LIST_LEN_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_qp_offset_list_len_minus1"));
+		CB_QP_OFFSET_LIST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_qp_offset_list"), PathElement.sequenceElement());
+		CR_QP_OFFSET_LIST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_qp_offset_list"), PathElement.sequenceElement());
+		LOG2_SAO_OFFSET_SCALE_LUMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_sao_offset_scale_luma"));
+		LOG2_SAO_OFFSET_SCALE_CHROMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_sao_offset_scale_chroma"));
+		PPS_ACT_Y_QP_OFFSET_PLUS5_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_act_y_qp_offset_plus5"));
+		PPS_ACT_CB_QP_OFFSET_PLUS5_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_act_cb_qp_offset_plus5"));
+		PPS_ACT_CR_QP_OFFSET_PLUS3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_act_cr_qp_offset_plus3"));
+		PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_num_palette_predictor_initializers"));
+		LUMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_bit_depth_entry_minus8"));
+		CHROMA_BIT_DEPTH_ENTRY_MINUS8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_bit_depth_entry_minus8"));
+		NUM_TILE_COLUMNS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_tile_columns_minus1"));
+		NUM_TILE_ROWS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_tile_rows_minus1"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
+		COLUMN_WIDTH_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("column_width_minus1"), PathElement.sequenceElement());
+		ROW_HEIGHT_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("row_height_minus1"), PathElement.sequenceElement());
+		RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
+		P_SCALING_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pScalingLists"));
+		P_PREDICTOR_PALETTE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPredictorPaletteEntries"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_pic_parameter_set_id"));
+		PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_seq_parameter_set_id"));
+		SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sps_video_parameter_set_id"));
+		NUM_EXTRA_SLICE_HEADER_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_extra_slice_header_bits"));
+		NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
+		NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
+		INIT_QP_MINUS26_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("init_qp_minus26"));
+		DIFF_CU_QP_DELTA_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("diff_cu_qp_delta_depth"));
+		PPS_CB_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_cb_qp_offset"));
+		PPS_CR_QP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_cr_qp_offset"));
+		PPS_BETA_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_beta_offset_div2"));
+		PPS_TC_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_tc_offset_div2"));
+		LOG2_PARALLEL_MERGE_LEVEL_MINUS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_parallel_merge_level_minus2"));
+		LOG2_MAX_TRANSFORM_SKIP_BLOCK_SIZE_MINUS2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_max_transform_skip_block_size_minus2"));
+		DIFF_CU_CHROMA_QP_OFFSET_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("diff_cu_chroma_qp_offset_depth"));
+		CHROMA_QP_OFFSET_LIST_LEN_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_qp_offset_list_len_minus1"));
+		CB_QP_OFFSET_LIST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_qp_offset_list"));
+		CR_QP_OFFSET_LIST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_qp_offset_list"));
+		LOG2_SAO_OFFSET_SCALE_LUMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_sao_offset_scale_luma"));
+		LOG2_SAO_OFFSET_SCALE_CHROMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_sao_offset_scale_chroma"));
+		PPS_ACT_Y_QP_OFFSET_PLUS5_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_act_y_qp_offset_plus5"));
+		PPS_ACT_CB_QP_OFFSET_PLUS5_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_act_cb_qp_offset_plus5"));
+		PPS_ACT_CR_QP_OFFSET_PLUS3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_act_cr_qp_offset_plus3"));
+		PPS_NUM_PALETTE_PREDICTOR_INITIALIZERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_num_palette_predictor_initializers"));
+		LUMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_bit_depth_entry_minus8"));
+		CHROMA_BIT_DEPTH_ENTRY_MINUS8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_bit_depth_entry_minus8"));
+		NUM_TILE_COLUMNS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_tile_columns_minus1"));
+		NUM_TILE_ROWS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_tile_rows_minus1"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
+		COLUMN_WIDTH_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("column_width_minus1"));
+		ROW_HEIGHT_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("row_height_minus1"));
+		RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
+		P_SCALING_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pScalingLists"));
+		P_PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPredictorPaletteEntries"));
+		//@formatter:on
+	}
 
-    public StdVideoH265PictureParameterSet() {
-        this(Arena.ofAuto());
+	public StdVideoH265PictureParameterSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265PictureParameterSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265PictureParameterSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH265PpsFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265PpsFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH265PictureParameterSet flags(Consumer<StdVideoH265PpsFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH265PictureParameterSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH265PictureParameterSet flags(StdVideoH265PpsFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH265PictureParameterSet(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH265PpsFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265PpsFlags.LAYOUT));
+    public StdVideoH265PpsFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #pps_pic_parameter_set_id()
     public StdVideoH265PictureParameterSet pps_pic_parameter_set_id(byte pps_pic_parameter_set_id) {
     	PPS_PIC_PARAMETER_SET_ID_HANDLE.set(segment, 0L, pps_pic_parameter_set_id);
@@ -591,22 +607,6 @@ public final class StdVideoH265PictureParameterSet
     	return new StdVideoH265PredictorPaletteEntries(segment);
     }
     
-    /// @see #flags()
-    public StdVideoH265PictureParameterSet flags(Consumer<StdVideoH265PpsFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH265PictureParameterSet flags(StdVideoH265PpsFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH265PpsFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH265PictureParameterSet set(StdVideoH265PictureParameterSet other) {
         return set(other.segment);
@@ -658,5 +658,5 @@ public final class StdVideoH265PictureParameterSet
             segment -> new StdVideoH265PictureParameterSet(segment)
         );
     }
-    
+
 }

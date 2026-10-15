@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
 		implements Struct<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dynamicRenderingUnusedAttachments"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingUnusedAttachments"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingUnusedAttachments"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dynamicRenderingUnusedAttachments"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingUnusedAttachments"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DYNAMIC_RENDERING_UNUSED_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingUnusedAttachments"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
             segment -> new VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(segment)
         );
     }
-    
+
 }

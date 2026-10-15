@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryFdPropertiesKHR
 		implements Struct<VkMemoryFdPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MEMORY_TYPE_BITS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MEMORY_TYPE_BITS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MEMORY_TYPE_BITS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_BITS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("memoryTypeBits"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMemoryFdPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MEMORY_TYPE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeBits"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MEMORY_TYPE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeBits"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("memoryTypeBits"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMemoryFdPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MEMORY_TYPE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeBits"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MEMORY_TYPE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeBits"));
+		//@formatter:on
+	}
 
-    public VkMemoryFdPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryFdPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryFdPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryFdPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryFdPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryFdPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMemoryFdPropertiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkMemoryFdPropertiesKHR
             segment -> new VkMemoryFdPropertiesKHR(segment)
         );
     }
-    
+
 }

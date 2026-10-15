@@ -29,84 +29,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiImporterDesc
 		implements Struct<AiImporterDesc> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_NAME_HANDLE;
-    public static final VarHandle M_AUTHOR_HANDLE;
-    public static final VarHandle M_MAINTAINER_HANDLE;
-    public static final VarHandle M_COMMENTS_HANDLE;
-    public static final VarHandle M_FLAGS_HANDLE;
-    public static final VarHandle M_MIN_MAJOR_HANDLE;
-    public static final VarHandle M_MIN_MINOR_HANDLE;
-    public static final VarHandle M_MAX_MAJOR_HANDLE;
-    public static final VarHandle M_MAX_MINOR_HANDLE;
-    public static final VarHandle M_FILE_EXTENSIONS_HANDLE;
+	public static final VarHandle M_NAME_HANDLE;
+	public static final VarHandle M_AUTHOR_HANDLE;
+	public static final VarHandle M_MAINTAINER_HANDLE;
+	public static final VarHandle M_COMMENTS_HANDLE;
+	public static final VarHandle M_FLAGS_HANDLE;
+	public static final VarHandle M_MIN_MAJOR_HANDLE;
+	public static final VarHandle M_MIN_MINOR_HANDLE;
+	public static final VarHandle M_MAX_MAJOR_HANDLE;
+	public static final VarHandle M_MAX_MINOR_HANDLE;
+	public static final VarHandle M_FILE_EXTENSIONS_HANDLE;
 
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_AUTHOR_BYTE_OFFSET;
-    public static final long M_MAINTAINER_BYTE_OFFSET;
-    public static final long M_COMMENTS_BYTE_OFFSET;
-    public static final long M_FLAGS_BYTE_OFFSET;
-    public static final long M_MIN_MAJOR_BYTE_OFFSET;
-    public static final long M_MIN_MINOR_BYTE_OFFSET;
-    public static final long M_MAX_MAJOR_BYTE_OFFSET;
-    public static final long M_MAX_MINOR_BYTE_OFFSET;
-    public static final long M_FILE_EXTENSIONS_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_AUTHOR_BYTE_OFFSET;
+	public static final long M_MAINTAINER_BYTE_OFFSET;
+	public static final long M_COMMENTS_BYTE_OFFSET;
+	public static final long M_FLAGS_BYTE_OFFSET;
+	public static final long M_MIN_MAJOR_BYTE_OFFSET;
+	public static final long M_MIN_MINOR_BYTE_OFFSET;
+	public static final long M_MAX_MAJOR_BYTE_OFFSET;
+	public static final long M_MAX_MINOR_BYTE_OFFSET;
+	public static final long M_FILE_EXTENSIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("mName"),
-            UNBOUNDED_ADDRESS.withName("mAuthor"),
-            UNBOUNDED_ADDRESS.withName("mMaintainer"),
-            UNBOUNDED_ADDRESS.withName("mComments"),
-            JAVA_INT.withName("mFlags"),
-            JAVA_INT.withName("mMinMajor"),
-            JAVA_INT.withName("mMinMinor"),
-            JAVA_INT.withName("mMaxMajor"),
-            JAVA_INT.withName("mMaxMinor"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mFileExtensions")
-        ).withName("aiImporterDesc").withByteAlignment(8);
-        
-        M_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mName"));
-        M_AUTHOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mAuthor"));
-        M_MAINTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaintainer"));
-        M_COMMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mComments"));
-        M_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mFlags"));
-        M_MIN_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMinMajor"));
-        M_MIN_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMinMinor"));
-        M_MAX_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaxMajor"));
-        M_MAX_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaxMinor"));
-        M_FILE_EXTENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mFileExtensions"));
-        
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_AUTHOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mAuthor"));
-        M_MAINTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaintainer"));
-        M_COMMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mComments"));
-        M_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFlags"));
-        M_MIN_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMinMajor"));
-        M_MIN_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMinMinor"));
-        M_MAX_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaxMajor"));
-        M_MAX_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaxMinor"));
-        M_FILE_EXTENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFileExtensions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("mName"),
+		    UNBOUNDED_ADDRESS.withName("mAuthor"),
+		    UNBOUNDED_ADDRESS.withName("mMaintainer"),
+		    UNBOUNDED_ADDRESS.withName("mComments"),
+		    JAVA_INT.withName("mFlags"),
+		    JAVA_INT.withName("mMinMajor"),
+		    JAVA_INT.withName("mMinMinor"),
+		    JAVA_INT.withName("mMaxMajor"),
+		    JAVA_INT.withName("mMaxMinor"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mFileExtensions")
+		).withName("aiImporterDesc").withByteAlignment(8);
+		
+		M_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mName"));
+		M_AUTHOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mAuthor"));
+		M_MAINTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaintainer"));
+		M_COMMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mComments"));
+		M_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mFlags"));
+		M_MIN_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMinMajor"));
+		M_MIN_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMinMinor"));
+		M_MAX_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaxMajor"));
+		M_MAX_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMaxMinor"));
+		M_FILE_EXTENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mFileExtensions"));
+		
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_AUTHOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mAuthor"));
+		M_MAINTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaintainer"));
+		M_COMMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mComments"));
+		M_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFlags"));
+		M_MIN_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMinMajor"));
+		M_MIN_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMinMinor"));
+		M_MAX_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaxMajor"));
+		M_MAX_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMaxMinor"));
+		M_FILE_EXTENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFileExtensions"));
+		//@formatter:on
+	}
 
-    public AiImporterDesc() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiImporterDesc(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiImporterDesc(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiImporterDesc() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiImporterDesc(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiImporterDesc(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mName()
     public AiImporterDesc mName(NativeByteArray mName) {
@@ -327,5 +327,5 @@ public final class AiImporterDesc
             segment -> new AiImporterDesc(segment)
         );
     }
-    
+
 }

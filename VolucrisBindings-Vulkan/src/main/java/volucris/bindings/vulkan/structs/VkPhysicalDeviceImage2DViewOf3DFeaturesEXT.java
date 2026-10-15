@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImage2DViewOf3DFeaturesEXT
 		implements Struct<VkPhysicalDeviceImage2DViewOf3DFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE2_DVIEW_OF3_D_HANDLE;
-    public static final VarHandle SAMPLER2_DVIEW_OF3_D_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE2_DVIEW_OF3_D_HANDLE;
+	public static final VarHandle SAMPLER2_DVIEW_OF3_D_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE2_DVIEW_OF3_D_BYTE_OFFSET;
-    public static final long SAMPLER2_DVIEW_OF3_D_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE2_DVIEW_OF3_D_BYTE_OFFSET;
+	public static final long SAMPLER2_DVIEW_OF3_D_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("image2DViewOf3D"),
-            JAVA_INT.withName("sampler2DViewOf3D")
-        ).withName("VkPhysicalDeviceImage2DViewOf3DFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE2_DVIEW_OF3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image2DViewOf3D"));
-        SAMPLER2_DVIEW_OF3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampler2DViewOf3D"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE2_DVIEW_OF3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image2DViewOf3D"));
-        SAMPLER2_DVIEW_OF3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampler2DViewOf3D"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("image2DViewOf3D"),
+		    JAVA_INT.withName("sampler2DViewOf3D")
+		).withName("VkPhysicalDeviceImage2DViewOf3DFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE2_DVIEW_OF3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image2DViewOf3D"));
+		SAMPLER2_DVIEW_OF3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampler2DViewOf3D"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE2_DVIEW_OF3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image2DViewOf3D"));
+		SAMPLER2_DVIEW_OF3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampler2DViewOf3D"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImage2DViewOf3DFeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceImage2DViewOf3DFeaturesEXT
             segment -> new VkPhysicalDeviceImage2DViewOf3DFeaturesEXT(segment)
         );
     }
-    
+
 }

@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkCopyMemoryIndirectCommandKHR
 		implements Struct<VkCopyMemoryIndirectCommandKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SRC_ADDRESS_HANDLE;
-    public static final VarHandle DST_ADDRESS_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle SRC_ADDRESS_HANDLE;
+	public static final VarHandle DST_ADDRESS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long SRC_ADDRESS_BYTE_OFFSET;
-    public static final long DST_ADDRESS_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long SRC_ADDRESS_BYTE_OFFSET;
+	public static final long DST_ADDRESS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("srcAddress"),
-            JAVA_LONG.withName("dstAddress"),
-            JAVA_LONG.withName("size")
-        ).withName("VkCopyMemoryIndirectCommandKHR").withByteAlignment(8);
-        
-        SRC_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAddress"));
-        DST_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAddress"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        SRC_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAddress"));
-        DST_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAddress"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("srcAddress"),
+		    JAVA_LONG.withName("dstAddress"),
+		    JAVA_LONG.withName("size")
+		).withName("VkCopyMemoryIndirectCommandKHR").withByteAlignment(8);
+		
+		SRC_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAddress"));
+		DST_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAddress"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		SRC_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAddress"));
+		DST_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAddress"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkCopyMemoryIndirectCommandKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyMemoryIndirectCommandKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyMemoryIndirectCommandKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCopyMemoryIndirectCommandKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyMemoryIndirectCommandKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyMemoryIndirectCommandKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #srcAddress()
     public VkCopyMemoryIndirectCommandKHR srcAddress(long srcAddress) {
@@ -143,5 +143,5 @@ public final class VkCopyMemoryIndirectCommandKHR
             segment -> new VkCopyMemoryIndirectCommandKHR(segment)
         );
     }
-    
+
 }

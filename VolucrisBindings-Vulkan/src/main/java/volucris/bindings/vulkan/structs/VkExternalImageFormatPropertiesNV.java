@@ -20,56 +20,72 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkExternalImageFormatPropertiesNV
 		implements Struct<VkExternalImageFormatPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle EXTERNAL_MEMORY_FEATURES_HANDLE;
-    public static final VarHandle EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE;
-    public static final VarHandle COMPATIBLE_HANDLE_TYPES_HANDLE;
+	public static final VarHandle EXTERNAL_MEMORY_FEATURES_HANDLE;
+	public static final VarHandle EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE;
+	public static final VarHandle COMPATIBLE_HANDLE_TYPES_HANDLE;
 
-    public static final long IMAGE_FORMAT_PROPERTIES_BYTE_OFFSET;
-    public static final long EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET;
-    public static final long EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET;
-    public static final long COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long IMAGE_FORMAT_PROPERTIES_BYTE_OFFSET;
+	public static final long EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET;
+	public static final long EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageFormatProperties imageFormatProperties;
+	private final VkImageFormatProperties imageFormatProperties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkImageFormatProperties.LAYOUT.withName("imageFormatProperties"),
-            JAVA_INT.withName("externalMemoryFeatures"),
-            JAVA_INT.withName("exportFromImportedHandleTypes"),
-            JAVA_INT.withName("compatibleHandleTypes"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkExternalImageFormatPropertiesNV").withByteAlignment(8);
-        
-        EXTERNAL_MEMORY_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalMemoryFeatures"));
-        EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exportFromImportedHandleTypes"));
-        COMPATIBLE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleHandleTypes"));
-        
-        IMAGE_FORMAT_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageFormatProperties"));
-        EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalMemoryFeatures"));
-        EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exportFromImportedHandleTypes"));
-        COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleHandleTypes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkImageFormatProperties.LAYOUT.withName("imageFormatProperties"),
+		    JAVA_INT.withName("externalMemoryFeatures"),
+		    JAVA_INT.withName("exportFromImportedHandleTypes"),
+		    JAVA_INT.withName("compatibleHandleTypes"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkExternalImageFormatPropertiesNV").withByteAlignment(8);
+		
+		EXTERNAL_MEMORY_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalMemoryFeatures"));
+		EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exportFromImportedHandleTypes"));
+		COMPATIBLE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleHandleTypes"));
+		
+		IMAGE_FORMAT_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageFormatProperties"));
+		EXTERNAL_MEMORY_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalMemoryFeatures"));
+		EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exportFromImportedHandleTypes"));
+		COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleHandleTypes"));
+		//@formatter:on
+	}
 
-    public VkExternalImageFormatPropertiesNV() {
-        this(Arena.ofAuto());
+	public VkExternalImageFormatPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkExternalImageFormatPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkExternalImageFormatPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    imageFormatProperties = new VkImageFormatProperties(segment.asSlice(IMAGE_FORMAT_PROPERTIES_BYTE_OFFSET, VkImageFormatProperties.LAYOUT));
+	}
+
+    /// @see #imageFormatProperties()
+    public VkExternalImageFormatPropertiesNV imageFormatProperties(Consumer<VkImageFormatProperties> consumer) {
+    	consumer.accept(imageFormatProperties);
+    	return this;
     }
     
-    public VkExternalImageFormatPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #imageFormatProperties()
+    public VkExternalImageFormatPropertiesNV imageFormatProperties(VkImageFormatProperties other) {
+    	imageFormatProperties.set(other);
+    	return this;
     }
     
-    public VkExternalImageFormatPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        imageFormatProperties = new VkImageFormatProperties(segment.asSlice(IMAGE_FORMAT_PROPERTIES_BYTE_OFFSET, VkImageFormatProperties.LAYOUT));
+    public VkImageFormatProperties imageFormatProperties() {
+    	return imageFormatProperties;
     }
-
+    
     /// @see #externalMemoryFeatures()
     public VkExternalImageFormatPropertiesNV externalMemoryFeatures(int externalMemoryFeatures) {
     	EXTERNAL_MEMORY_FEATURES_HANDLE.set(segment, 0L, externalMemoryFeatures);
@@ -98,22 +114,6 @@ public final class VkExternalImageFormatPropertiesNV
     
     public int compatibleHandleTypes() {
     	return (int) COMPATIBLE_HANDLE_TYPES_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #imageFormatProperties()
-    public VkExternalImageFormatPropertiesNV imageFormatProperties(Consumer<VkImageFormatProperties> consumer) {
-    	consumer.accept(imageFormatProperties);
-    	return this;
-    }
-    
-    /// @see #imageFormatProperties()
-    public VkExternalImageFormatPropertiesNV imageFormatProperties(VkImageFormatProperties other) {
-    	imageFormatProperties.set(other);
-    	return this;
-    }
-    
-    public VkImageFormatProperties imageFormatProperties() {
-    	return imageFormatProperties;
     }
     
     @Override
@@ -167,5 +167,5 @@ public final class VkExternalImageFormatPropertiesNV
             segment -> new VkExternalImageFormatPropertiesNV(segment)
         );
     }
-    
+
 }

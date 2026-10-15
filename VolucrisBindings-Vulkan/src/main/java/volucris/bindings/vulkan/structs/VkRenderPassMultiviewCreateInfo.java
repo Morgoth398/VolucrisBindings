@@ -22,77 +22,77 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassMultiviewCreateInfo
 		implements Struct<VkRenderPassMultiviewCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SUBPASS_COUNT_HANDLE;
-    public static final VarHandle P_VIEW_MASKS_HANDLE;
-    public static final VarHandle DEPENDENCY_COUNT_HANDLE;
-    public static final VarHandle P_VIEW_OFFSETS_HANDLE;
-    public static final VarHandle CORRELATION_MASK_COUNT_HANDLE;
-    public static final VarHandle P_CORRELATION_MASKS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SUBPASS_COUNT_HANDLE;
+	public static final VarHandle P_VIEW_MASKS_HANDLE;
+	public static final VarHandle DEPENDENCY_COUNT_HANDLE;
+	public static final VarHandle P_VIEW_OFFSETS_HANDLE;
+	public static final VarHandle CORRELATION_MASK_COUNT_HANDLE;
+	public static final VarHandle P_CORRELATION_MASKS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SUBPASS_COUNT_BYTE_OFFSET;
-    public static final long P_VIEW_MASKS_BYTE_OFFSET;
-    public static final long DEPENDENCY_COUNT_BYTE_OFFSET;
-    public static final long P_VIEW_OFFSETS_BYTE_OFFSET;
-    public static final long CORRELATION_MASK_COUNT_BYTE_OFFSET;
-    public static final long P_CORRELATION_MASKS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SUBPASS_COUNT_BYTE_OFFSET;
+	public static final long P_VIEW_MASKS_BYTE_OFFSET;
+	public static final long DEPENDENCY_COUNT_BYTE_OFFSET;
+	public static final long P_VIEW_OFFSETS_BYTE_OFFSET;
+	public static final long CORRELATION_MASK_COUNT_BYTE_OFFSET;
+	public static final long P_CORRELATION_MASKS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("subpassCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pViewMasks"),
-            JAVA_INT.withName("dependencyCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pViewOffsets"),
-            JAVA_INT.withName("correlationMaskCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCorrelationMasks")
-        ).withName("VkRenderPassMultiviewCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SUBPASS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassCount"));
-        P_VIEW_MASKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewMasks"));
-        DEPENDENCY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyCount"));
-        P_VIEW_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewOffsets"));
-        CORRELATION_MASK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("correlationMaskCount"));
-        P_CORRELATION_MASKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCorrelationMasks"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SUBPASS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassCount"));
-        P_VIEW_MASKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewMasks"));
-        DEPENDENCY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyCount"));
-        P_VIEW_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewOffsets"));
-        CORRELATION_MASK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("correlationMaskCount"));
-        P_CORRELATION_MASKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCorrelationMasks"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("subpassCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pViewMasks"),
+		    JAVA_INT.withName("dependencyCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pViewOffsets"),
+		    JAVA_INT.withName("correlationMaskCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCorrelationMasks")
+		).withName("VkRenderPassMultiviewCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SUBPASS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassCount"));
+		P_VIEW_MASKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewMasks"));
+		DEPENDENCY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyCount"));
+		P_VIEW_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewOffsets"));
+		CORRELATION_MASK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("correlationMaskCount"));
+		P_CORRELATION_MASKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCorrelationMasks"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SUBPASS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassCount"));
+		P_VIEW_MASKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewMasks"));
+		DEPENDENCY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyCount"));
+		P_VIEW_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewOffsets"));
+		CORRELATION_MASK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("correlationMaskCount"));
+		P_CORRELATION_MASKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCorrelationMasks"));
+		//@formatter:on
+	}
 
-    public VkRenderPassMultiviewCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassMultiviewCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassMultiviewCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassMultiviewCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassMultiviewCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassMultiviewCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderPassMultiviewCreateInfo sType(int sType) {
@@ -245,5 +245,5 @@ public final class VkRenderPassMultiviewCreateInfo
             segment -> new VkRenderPassMultiviewCreateInfo(segment)
         );
     }
-    
+
 }

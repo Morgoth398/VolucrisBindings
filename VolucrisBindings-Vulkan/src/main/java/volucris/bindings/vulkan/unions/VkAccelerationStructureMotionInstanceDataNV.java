@@ -19,47 +19,47 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAccelerationStructureMotionInstanceDataNV
 		implements Struct<VkAccelerationStructureMotionInstanceDataNV> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final long STATIC_INSTANCE_BYTE_OFFSET;
-    public static final long MATRIX_MOTION_INSTANCE_BYTE_OFFSET;
-    public static final long SRT_MOTION_INSTANCE_BYTE_OFFSET;
+	public static final long STATIC_INSTANCE_BYTE_OFFSET;
+	public static final long MATRIX_MOTION_INSTANCE_BYTE_OFFSET;
+	public static final long SRT_MOTION_INSTANCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkAccelerationStructureInstanceKHR staticInstance;
-    private final VkAccelerationStructureMatrixMotionInstanceNV matrixMotionInstance;
-    private final VkAccelerationStructureSRTMotionInstanceNV srtMotionInstance;
+	private final VkAccelerationStructureInstanceKHR staticInstance;
+	private final VkAccelerationStructureMatrixMotionInstanceNV matrixMotionInstance;
+	private final VkAccelerationStructureSRTMotionInstanceNV srtMotionInstance;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            VkAccelerationStructureInstanceKHR.LAYOUT.withName("staticInstance"),
-            VkAccelerationStructureMatrixMotionInstanceNV.LAYOUT.withName("matrixMotionInstance"),
-            VkAccelerationStructureSRTMotionInstanceNV.LAYOUT.withName("srtMotionInstance")
-        ).withName("VkAccelerationStructureMotionInstanceDataNV").withByteAlignment(8);
-        
-        STATIC_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("staticInstance"));
-        MATRIX_MOTION_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrixMotionInstance"));
-        SRT_MOTION_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srtMotionInstance"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    VkAccelerationStructureInstanceKHR.LAYOUT.withName("staticInstance"),
+		    VkAccelerationStructureMatrixMotionInstanceNV.LAYOUT.withName("matrixMotionInstance"),
+		    VkAccelerationStructureSRTMotionInstanceNV.LAYOUT.withName("srtMotionInstance")
+		).withName("VkAccelerationStructureMotionInstanceDataNV").withByteAlignment(8);
+		
+		STATIC_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("staticInstance"));
+		MATRIX_MOTION_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrixMotionInstance"));
+		SRT_MOTION_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srtMotionInstance"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureMotionInstanceDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureMotionInstanceDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureMotionInstanceDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        staticInstance = new VkAccelerationStructureInstanceKHR(segment.asSlice(STATIC_INSTANCE_BYTE_OFFSET, VkAccelerationStructureInstanceKHR.LAYOUT));
-        matrixMotionInstance = new VkAccelerationStructureMatrixMotionInstanceNV(segment.asSlice(MATRIX_MOTION_INSTANCE_BYTE_OFFSET, VkAccelerationStructureMatrixMotionInstanceNV.LAYOUT));
-        srtMotionInstance = new VkAccelerationStructureSRTMotionInstanceNV(segment.asSlice(SRT_MOTION_INSTANCE_BYTE_OFFSET, VkAccelerationStructureSRTMotionInstanceNV.LAYOUT));
-    }
+	public VkAccelerationStructureMotionInstanceDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureMotionInstanceDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureMotionInstanceDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    staticInstance = new VkAccelerationStructureInstanceKHR(segment.asSlice(STATIC_INSTANCE_BYTE_OFFSET, VkAccelerationStructureInstanceKHR.LAYOUT));
+	    matrixMotionInstance = new VkAccelerationStructureMatrixMotionInstanceNV(segment.asSlice(MATRIX_MOTION_INSTANCE_BYTE_OFFSET, VkAccelerationStructureMatrixMotionInstanceNV.LAYOUT));
+	    srtMotionInstance = new VkAccelerationStructureSRTMotionInstanceNV(segment.asSlice(SRT_MOTION_INSTANCE_BYTE_OFFSET, VkAccelerationStructureSRTMotionInstanceNV.LAYOUT));
+	}
 
     /// @see #staticInstance()
     public VkAccelerationStructureMotionInstanceDataNV staticInstance(Consumer<VkAccelerationStructureInstanceKHR> consumer) {
@@ -160,5 +160,5 @@ public final class VkAccelerationStructureMotionInstanceDataNV
             segment -> new VkAccelerationStructureMotionInstanceDataNV(segment)
         );
     }
-    
+
 }

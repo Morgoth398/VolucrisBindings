@@ -20,63 +20,63 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class ParOctasphereMesh
 		implements Struct<ParOctasphereMesh> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle POSITIONS_HANDLE;
-    public static final VarHandle NORMALS_HANDLE;
-    public static final VarHandle TEXCOORDS_HANDLE;
-    public static final VarHandle INDICES_HANDLE;
-    public static final VarHandle NUM_INDICES_HANDLE;
-    public static final VarHandle NUM_VERTICES_HANDLE;
+	public static final VarHandle POSITIONS_HANDLE;
+	public static final VarHandle NORMALS_HANDLE;
+	public static final VarHandle TEXCOORDS_HANDLE;
+	public static final VarHandle INDICES_HANDLE;
+	public static final VarHandle NUM_INDICES_HANDLE;
+	public static final VarHandle NUM_VERTICES_HANDLE;
 
-    public static final long POSITIONS_BYTE_OFFSET;
-    public static final long NORMALS_BYTE_OFFSET;
-    public static final long TEXCOORDS_BYTE_OFFSET;
-    public static final long INDICES_BYTE_OFFSET;
-    public static final long NUM_INDICES_BYTE_OFFSET;
-    public static final long NUM_VERTICES_BYTE_OFFSET;
+	public static final long POSITIONS_BYTE_OFFSET;
+	public static final long NORMALS_BYTE_OFFSET;
+	public static final long TEXCOORDS_BYTE_OFFSET;
+	public static final long INDICES_BYTE_OFFSET;
+	public static final long NUM_INDICES_BYTE_OFFSET;
+	public static final long NUM_VERTICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("positions"),
-            UNBOUNDED_ADDRESS.withName("normals"),
-            UNBOUNDED_ADDRESS.withName("texcoords"),
-            UNBOUNDED_ADDRESS.withName("indices"),
-            JAVA_INT.withName("num_indices"),
-            JAVA_INT.withName("num_vertices")
-        ).withName("par_octasphere_mesh").withByteAlignment(8);
-        
-        POSITIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("positions"));
-        NORMALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("normals"));
-        TEXCOORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("texcoords"));
-        INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indices"));
-        NUM_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_indices"));
-        NUM_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_vertices"));
-        
-        POSITIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("positions"));
-        NORMALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("normals"));
-        TEXCOORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("texcoords"));
-        INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indices"));
-        NUM_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_indices"));
-        NUM_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_vertices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("positions"),
+		    UNBOUNDED_ADDRESS.withName("normals"),
+		    UNBOUNDED_ADDRESS.withName("texcoords"),
+		    UNBOUNDED_ADDRESS.withName("indices"),
+		    JAVA_INT.withName("num_indices"),
+		    JAVA_INT.withName("num_vertices")
+		).withName("par_octasphere_mesh").withByteAlignment(8);
+		
+		POSITIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("positions"));
+		NORMALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("normals"));
+		TEXCOORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("texcoords"));
+		INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indices"));
+		NUM_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_indices"));
+		NUM_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_vertices"));
+		
+		POSITIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("positions"));
+		NORMALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("normals"));
+		TEXCOORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("texcoords"));
+		INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indices"));
+		NUM_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_indices"));
+		NUM_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_vertices"));
+		//@formatter:on
+	}
 
-    public ParOctasphereMesh() {
-        this(Arena.ofAuto());
-    }
-    
-    public ParOctasphereMesh(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public ParOctasphereMesh(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public ParOctasphereMesh() {
+	    this(Arena.ofAuto());
+	}
+	
+	public ParOctasphereMesh(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public ParOctasphereMesh(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #positions()
     public ParOctasphereMesh positions(NativeFloatArray positions) {
@@ -209,5 +209,5 @@ public final class ParOctasphereMesh
             segment -> new ParOctasphereMesh(segment)
         );
     }
-    
+
 }

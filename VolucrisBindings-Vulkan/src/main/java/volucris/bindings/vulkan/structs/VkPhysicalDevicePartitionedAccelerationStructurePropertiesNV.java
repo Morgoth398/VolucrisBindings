@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV
 		implements Struct<VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_PARTITION_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_PARTITION_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_PARTITION_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_PARTITION_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxPartitionCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_PARTITION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPartitionCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_PARTITION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPartitionCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxPartitionCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_PARTITION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPartitionCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_PARTITION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPartitionCount"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV
             segment -> new VkPhysicalDevicePartitionedAccelerationStructurePropertiesNV(segment)
         );
     }
-    
+
 }

@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageViewHandleInfoNVX
 		implements Struct<VkImageViewHandleInfoNVX> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_VIEW_HANDLE;
-    public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
-    public static final VarHandle SAMPLER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_VIEW_HANDLE;
+	public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
+	public static final VarHandle SAMPLER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_VIEW_BYTE_OFFSET;
-    public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
-    public static final long SAMPLER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_VIEW_BYTE_OFFSET;
+	public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
+	public static final long SAMPLER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("imageView"),
-            JAVA_INT.withName("descriptorType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("sampler")
-        ).withName("VkImageViewHandleInfoNVX").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
-        DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
-        SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampler"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
-        DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
-        SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampler"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("imageView"),
+		    JAVA_INT.withName("descriptorType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("sampler")
+		).withName("VkImageViewHandleInfoNVX").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
+		DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
+		SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampler"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
+		DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
+		SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampler"));
+		//@formatter:on
+	}
 
-    public VkImageViewHandleInfoNVX() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageViewHandleInfoNVX(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageViewHandleInfoNVX(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageViewHandleInfoNVX() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageViewHandleInfoNVX(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageViewHandleInfoNVX(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkImageViewHandleInfoNVX sType(int sType) {
@@ -192,5 +192,5 @@ public final class VkImageViewHandleInfoNVX
             segment -> new VkImageViewHandleInfoNVX(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRenderPassStripedFeaturesARM
 		implements Struct<VkPhysicalDeviceRenderPassStripedFeaturesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RENDER_PASS_STRIPED_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RENDER_PASS_STRIPED_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RENDER_PASS_STRIPED_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RENDER_PASS_STRIPED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("renderPassStriped"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRenderPassStripedFeaturesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RENDER_PASS_STRIPED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPassStriped"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RENDER_PASS_STRIPED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPassStriped"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("renderPassStriped"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRenderPassStripedFeaturesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RENDER_PASS_STRIPED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPassStriped"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RENDER_PASS_STRIPED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPassStriped"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRenderPassStripedFeaturesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRenderPassStripedFeaturesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRenderPassStripedFeaturesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRenderPassStripedFeaturesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRenderPassStripedFeaturesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRenderPassStripedFeaturesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRenderPassStripedFeaturesARM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceRenderPassStripedFeaturesARM
             segment -> new VkPhysicalDeviceRenderPassStripedFeaturesARM(segment)
         );
     }
-    
+
 }

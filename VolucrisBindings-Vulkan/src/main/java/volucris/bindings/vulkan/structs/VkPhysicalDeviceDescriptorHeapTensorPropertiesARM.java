@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDescriptorHeapTensorPropertiesARM
 		implements Struct<VkPhysicalDeviceDescriptorHeapTensorPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TENSOR_DESCRIPTOR_SIZE_HANDLE;
-    public static final VarHandle TENSOR_DESCRIPTOR_ALIGNMENT_HANDLE;
-    public static final VarHandle TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TENSOR_DESCRIPTOR_SIZE_HANDLE;
+	public static final VarHandle TENSOR_DESCRIPTOR_ALIGNMENT_HANDLE;
+	public static final VarHandle TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TENSOR_DESCRIPTOR_SIZE_BYTE_OFFSET;
-    public static final long TENSOR_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
-    public static final long TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TENSOR_DESCRIPTOR_SIZE_BYTE_OFFSET;
+	public static final long TENSOR_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
+	public static final long TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("tensorDescriptorSize"),
-            JAVA_LONG.withName("tensorDescriptorAlignment"),
-            JAVA_LONG.withName("tensorCaptureReplayOpaqueDataSize")
-        ).withName("VkPhysicalDeviceDescriptorHeapTensorPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TENSOR_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorDescriptorSize"));
-        TENSOR_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorDescriptorAlignment"));
-        TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorCaptureReplayOpaqueDataSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TENSOR_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorDescriptorSize"));
-        TENSOR_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorDescriptorAlignment"));
-        TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorCaptureReplayOpaqueDataSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("tensorDescriptorSize"),
+		    JAVA_LONG.withName("tensorDescriptorAlignment"),
+		    JAVA_LONG.withName("tensorCaptureReplayOpaqueDataSize")
+		).withName("VkPhysicalDeviceDescriptorHeapTensorPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TENSOR_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorDescriptorSize"));
+		TENSOR_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorDescriptorAlignment"));
+		TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorCaptureReplayOpaqueDataSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TENSOR_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorDescriptorSize"));
+		TENSOR_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorDescriptorAlignment"));
+		TENSOR_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorCaptureReplayOpaqueDataSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDescriptorHeapTensorPropertiesARM sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkPhysicalDeviceDescriptorHeapTensorPropertiesARM
             segment -> new VkPhysicalDeviceDescriptorHeapTensorPropertiesARM(segment)
         );
     }
-    
+
 }

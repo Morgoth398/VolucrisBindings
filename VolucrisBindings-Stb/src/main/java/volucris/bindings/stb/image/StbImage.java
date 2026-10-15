@@ -19,88 +19,88 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class StbImage {
 
-    private static final LazyConstant<MethodHandle> STBI_LOAD_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_LOAD_FROM_CALLBACKS;
-    private static final LazyConstant<MethodHandle> STBI_LOAD;
-    private static final LazyConstant<MethodHandle> STBI_LOAD_GIF_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_LOAD_16_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_LOAD_16_FROM_CALLBACKS;
-    private static final LazyConstant<MethodHandle> STBI_LOAD_16;
-    private static final LazyConstant<MethodHandle> STBI_LOADF_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_LOADF_FROM_CALLBACKS;
-    private static final LazyConstant<MethodHandle> STBI_LOADF;
-    private static final LazyConstant<MethodHandle> STBI_HDR_TO_LDR_GAMMA;
-    private static final LazyConstant<MethodHandle> STBI_HDR_TO_LDR_SCALE;
-    private static final LazyConstant<MethodHandle> STBI_LDR_TO_HDR_GAMMA;
-    private static final LazyConstant<MethodHandle> STBI_LDR_TO_HDR_SCALE;
-    private static final LazyConstant<MethodHandle> STBI_IS_HDR_FROM_CALLBACKS;
-    private static final LazyConstant<MethodHandle> STBI_IS_HDR_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_IS_HDR;
-    private static final LazyConstant<MethodHandle> STBI_FAILURE_REASON;
-    private static final LazyConstant<MethodHandle> STBI_IMAGE_FREE;
-    private static final LazyConstant<MethodHandle> STBI_INFO_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_INFO_FROM_CALLBACKS;
-    private static final LazyConstant<MethodHandle> STBI_IS_16_BIT_FROM_MEMORY;
-    private static final LazyConstant<MethodHandle> STBI_IS_16_BIT_FROM_CALLBACKS;
-    private static final LazyConstant<MethodHandle> STBI_INFO;
-    private static final LazyConstant<MethodHandle> STBI_IS_16_BIT;
-    private static final LazyConstant<MethodHandle> STBI_SET_UNPREMULTIPLY_ON_LOAD;
-    private static final LazyConstant<MethodHandle> STBI_CONVERT_IPHONE_PNG_TO_RGB;
-    private static final LazyConstant<MethodHandle> STBI_SET_FLIP_VERTICALLY_ON_LOAD;
-    private static final LazyConstant<MethodHandle> STBI_SET_UNPREMULTIPLY_ON_LOAD_THREAD;
-    private static final LazyConstant<MethodHandle> STBI_CONVERT_IPHONE_PNG_TO_RGB_THREAD;
-    private static final LazyConstant<MethodHandle> STBI_SET_FLIP_VERTICALLY_ON_LOAD_THREAD;
-    private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_MALLOC_GUESSSIZE;
-    private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_MALLOC_GUESSSIZE_HEADERFLAG;
-    private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_MALLOC;
-    private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_BUFFER;
-    private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_NOHEADER_MALLOC;
-    private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_NOHEADER_BUFFER;
+	private static final LazyConstant<MethodHandle> STBI_LOAD_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_LOAD_FROM_CALLBACKS;
+	private static final LazyConstant<MethodHandle> STBI_LOAD;
+	private static final LazyConstant<MethodHandle> STBI_LOAD_GIF_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_LOAD_16_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_LOAD_16_FROM_CALLBACKS;
+	private static final LazyConstant<MethodHandle> STBI_LOAD_16;
+	private static final LazyConstant<MethodHandle> STBI_LOADF_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_LOADF_FROM_CALLBACKS;
+	private static final LazyConstant<MethodHandle> STBI_LOADF;
+	private static final LazyConstant<MethodHandle> STBI_HDR_TO_LDR_GAMMA;
+	private static final LazyConstant<MethodHandle> STBI_HDR_TO_LDR_SCALE;
+	private static final LazyConstant<MethodHandle> STBI_LDR_TO_HDR_GAMMA;
+	private static final LazyConstant<MethodHandle> STBI_LDR_TO_HDR_SCALE;
+	private static final LazyConstant<MethodHandle> STBI_IS_HDR_FROM_CALLBACKS;
+	private static final LazyConstant<MethodHandle> STBI_IS_HDR_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_IS_HDR;
+	private static final LazyConstant<MethodHandle> STBI_FAILURE_REASON;
+	private static final LazyConstant<MethodHandle> STBI_IMAGE_FREE;
+	private static final LazyConstant<MethodHandle> STBI_INFO_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_INFO_FROM_CALLBACKS;
+	private static final LazyConstant<MethodHandle> STBI_IS_16_BIT_FROM_MEMORY;
+	private static final LazyConstant<MethodHandle> STBI_IS_16_BIT_FROM_CALLBACKS;
+	private static final LazyConstant<MethodHandle> STBI_INFO;
+	private static final LazyConstant<MethodHandle> STBI_IS_16_BIT;
+	private static final LazyConstant<MethodHandle> STBI_SET_UNPREMULTIPLY_ON_LOAD;
+	private static final LazyConstant<MethodHandle> STBI_CONVERT_IPHONE_PNG_TO_RGB;
+	private static final LazyConstant<MethodHandle> STBI_SET_FLIP_VERTICALLY_ON_LOAD;
+	private static final LazyConstant<MethodHandle> STBI_SET_UNPREMULTIPLY_ON_LOAD_THREAD;
+	private static final LazyConstant<MethodHandle> STBI_CONVERT_IPHONE_PNG_TO_RGB_THREAD;
+	private static final LazyConstant<MethodHandle> STBI_SET_FLIP_VERTICALLY_ON_LOAD_THREAD;
+	private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_MALLOC_GUESSSIZE;
+	private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_MALLOC_GUESSSIZE_HEADERFLAG;
+	private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_MALLOC;
+	private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_BUFFER;
+	private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_NOHEADER_MALLOC;
+	private static final LazyConstant<MethodHandle> STBI_ZLIB_DECODE_NOHEADER_BUFFER;
 
-    static {
-        //@formatter:off
-        STBI_LOAD_FROM_MEMORY = downcallHandle("stbi_load_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOAD_FROM_CALLBACKS = downcallHandle("stbi_load_from_callbacks", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOAD = downcallHandle("stbi_load", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOAD_GIF_FROM_MEMORY = downcallHandle("stbi_load_gif_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOAD_16_FROM_MEMORY = downcallHandle("stbi_load_16_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOAD_16_FROM_CALLBACKS = downcallHandle("stbi_load_16_from_callbacks", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOAD_16 = downcallHandle("stbi_load_16", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOADF_FROM_MEMORY = downcallHandle("stbi_loadf_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOADF_FROM_CALLBACKS = downcallHandle("stbi_loadf_from_callbacks", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_LOADF = downcallHandle("stbi_loadf", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_HDR_TO_LDR_GAMMA = downcallHandleVoid("stbi_hdr_to_ldr_gamma", JAVA_FLOAT);
-        STBI_HDR_TO_LDR_SCALE = downcallHandleVoid("stbi_hdr_to_ldr_scale", JAVA_FLOAT);
-        STBI_LDR_TO_HDR_GAMMA = downcallHandleVoid("stbi_ldr_to_hdr_gamma", JAVA_FLOAT);
-        STBI_LDR_TO_HDR_SCALE = downcallHandleVoid("stbi_ldr_to_hdr_scale", JAVA_FLOAT);
-        STBI_IS_HDR_FROM_CALLBACKS = downcallHandle("stbi_is_hdr_from_callbacks", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        STBI_IS_HDR_FROM_MEMORY = downcallHandle("stbi_is_hdr_from_memory", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_IS_HDR = downcallHandle("stbi_is_hdr", JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_FAILURE_REASON = downcallHandle("stbi_failure_reason", UNBOUNDED_ADDRESS);
-        STBI_IMAGE_FREE = downcallHandleVoid("stbi_image_free", UNBOUNDED_ADDRESS);
-        STBI_INFO_FROM_MEMORY = downcallHandle("stbi_info_from_memory", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        STBI_INFO_FROM_CALLBACKS = downcallHandle("stbi_info_from_callbacks", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        STBI_IS_16_BIT_FROM_MEMORY = downcallHandle("stbi_is_16_bit_from_memory", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_IS_16_BIT_FROM_CALLBACKS = downcallHandle("stbi_is_16_bit_from_callbacks", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        STBI_INFO = downcallHandle("stbi_info", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        STBI_IS_16_BIT = downcallHandle("stbi_is_16_bit", JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_SET_UNPREMULTIPLY_ON_LOAD = downcallHandleVoid("stbi_set_unpremultiply_on_load", JAVA_INT);
-        STBI_CONVERT_IPHONE_PNG_TO_RGB = downcallHandleVoid("stbi_convert_iphone_png_to_rgb", JAVA_INT);
-        STBI_SET_FLIP_VERTICALLY_ON_LOAD = downcallHandleVoid("stbi_set_flip_vertically_on_load", JAVA_INT);
-        STBI_SET_UNPREMULTIPLY_ON_LOAD_THREAD = downcallHandleVoid("stbi_set_unpremultiply_on_load_thread", JAVA_INT);
-        STBI_CONVERT_IPHONE_PNG_TO_RGB_THREAD = downcallHandleVoid("stbi_convert_iphone_png_to_rgb_thread", JAVA_INT);
-        STBI_SET_FLIP_VERTICALLY_ON_LOAD_THREAD = downcallHandleVoid("stbi_set_flip_vertically_on_load_thread", JAVA_INT);
-        STBI_ZLIB_DECODE_MALLOC_GUESSSIZE = downcallHandle("stbi_zlib_decode_malloc_guesssize", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_ZLIB_DECODE_MALLOC_GUESSSIZE_HEADERFLAG = downcallHandle("stbi_zlib_decode_malloc_guesssize_headerflag", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_ZLIB_DECODE_MALLOC = downcallHandle("stbi_zlib_decode_malloc", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_ZLIB_DECODE_BUFFER = downcallHandle("stbi_zlib_decode_buffer", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_ZLIB_DECODE_NOHEADER_MALLOC = downcallHandle("stbi_zlib_decode_noheader_malloc", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_ZLIB_DECODE_NOHEADER_BUFFER = downcallHandle("stbi_zlib_decode_noheader_buffer", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		STBI_LOAD_FROM_MEMORY = downcallHandle("stbi_load_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOAD_FROM_CALLBACKS = downcallHandle("stbi_load_from_callbacks", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOAD = downcallHandle("stbi_load", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOAD_GIF_FROM_MEMORY = downcallHandle("stbi_load_gif_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOAD_16_FROM_MEMORY = downcallHandle("stbi_load_16_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOAD_16_FROM_CALLBACKS = downcallHandle("stbi_load_16_from_callbacks", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOAD_16 = downcallHandle("stbi_load_16", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOADF_FROM_MEMORY = downcallHandle("stbi_loadf_from_memory", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOADF_FROM_CALLBACKS = downcallHandle("stbi_loadf_from_callbacks", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_LOADF = downcallHandle("stbi_loadf", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_HDR_TO_LDR_GAMMA = downcallHandleVoid("stbi_hdr_to_ldr_gamma", JAVA_FLOAT);
+		STBI_HDR_TO_LDR_SCALE = downcallHandleVoid("stbi_hdr_to_ldr_scale", JAVA_FLOAT);
+		STBI_LDR_TO_HDR_GAMMA = downcallHandleVoid("stbi_ldr_to_hdr_gamma", JAVA_FLOAT);
+		STBI_LDR_TO_HDR_SCALE = downcallHandleVoid("stbi_ldr_to_hdr_scale", JAVA_FLOAT);
+		STBI_IS_HDR_FROM_CALLBACKS = downcallHandle("stbi_is_hdr_from_callbacks", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		STBI_IS_HDR_FROM_MEMORY = downcallHandle("stbi_is_hdr_from_memory", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_IS_HDR = downcallHandle("stbi_is_hdr", JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_FAILURE_REASON = downcallHandle("stbi_failure_reason", UNBOUNDED_ADDRESS);
+		STBI_IMAGE_FREE = downcallHandleVoid("stbi_image_free", UNBOUNDED_ADDRESS);
+		STBI_INFO_FROM_MEMORY = downcallHandle("stbi_info_from_memory", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		STBI_INFO_FROM_CALLBACKS = downcallHandle("stbi_info_from_callbacks", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		STBI_IS_16_BIT_FROM_MEMORY = downcallHandle("stbi_is_16_bit_from_memory", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_IS_16_BIT_FROM_CALLBACKS = downcallHandle("stbi_is_16_bit_from_callbacks", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		STBI_INFO = downcallHandle("stbi_info", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		STBI_IS_16_BIT = downcallHandle("stbi_is_16_bit", JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_SET_UNPREMULTIPLY_ON_LOAD = downcallHandleVoid("stbi_set_unpremultiply_on_load", JAVA_INT);
+		STBI_CONVERT_IPHONE_PNG_TO_RGB = downcallHandleVoid("stbi_convert_iphone_png_to_rgb", JAVA_INT);
+		STBI_SET_FLIP_VERTICALLY_ON_LOAD = downcallHandleVoid("stbi_set_flip_vertically_on_load", JAVA_INT);
+		STBI_SET_UNPREMULTIPLY_ON_LOAD_THREAD = downcallHandleVoid("stbi_set_unpremultiply_on_load_thread", JAVA_INT);
+		STBI_CONVERT_IPHONE_PNG_TO_RGB_THREAD = downcallHandleVoid("stbi_convert_iphone_png_to_rgb_thread", JAVA_INT);
+		STBI_SET_FLIP_VERTICALLY_ON_LOAD_THREAD = downcallHandleVoid("stbi_set_flip_vertically_on_load_thread", JAVA_INT);
+		STBI_ZLIB_DECODE_MALLOC_GUESSSIZE = downcallHandle("stbi_zlib_decode_malloc_guesssize", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_ZLIB_DECODE_MALLOC_GUESSSIZE_HEADERFLAG = downcallHandle("stbi_zlib_decode_malloc_guesssize_headerflag", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_ZLIB_DECODE_MALLOC = downcallHandle("stbi_zlib_decode_malloc", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_ZLIB_DECODE_BUFFER = downcallHandle("stbi_zlib_decode_buffer", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_ZLIB_DECODE_NOHEADER_MALLOC = downcallHandle("stbi_zlib_decode_noheader_malloc", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_ZLIB_DECODE_NOHEADER_BUFFER = downcallHandle("stbi_zlib_decode_noheader_buffer", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		//@formatter:on
+	}
 
-    private StbImage() {
-    }
+	private StbImage() {
+	}
 
     /// ```
     /// /////////////////////////////////
@@ -1219,5 +1219,5 @@ public final class StbImage {
     		ilen
     	);
     }
-    
+
 }

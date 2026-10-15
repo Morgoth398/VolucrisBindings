@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShadingRateImageFeaturesNV
 		implements Struct<VkPhysicalDeviceShadingRateImageFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADING_RATE_IMAGE_HANDLE;
-    public static final VarHandle SHADING_RATE_COARSE_SAMPLE_ORDER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADING_RATE_IMAGE_HANDLE;
+	public static final VarHandle SHADING_RATE_COARSE_SAMPLE_ORDER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADING_RATE_IMAGE_BYTE_OFFSET;
-    public static final long SHADING_RATE_COARSE_SAMPLE_ORDER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADING_RATE_IMAGE_BYTE_OFFSET;
+	public static final long SHADING_RATE_COARSE_SAMPLE_ORDER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shadingRateImage"),
-            JAVA_INT.withName("shadingRateCoarseSampleOrder")
-        ).withName("VkPhysicalDeviceShadingRateImageFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADING_RATE_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateImage"));
-        SHADING_RATE_COARSE_SAMPLE_ORDER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateCoarseSampleOrder"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADING_RATE_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateImage"));
-        SHADING_RATE_COARSE_SAMPLE_ORDER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateCoarseSampleOrder"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shadingRateImage"),
+		    JAVA_INT.withName("shadingRateCoarseSampleOrder")
+		).withName("VkPhysicalDeviceShadingRateImageFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADING_RATE_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateImage"));
+		SHADING_RATE_COARSE_SAMPLE_ORDER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateCoarseSampleOrder"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADING_RATE_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateImage"));
+		SHADING_RATE_COARSE_SAMPLE_ORDER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateCoarseSampleOrder"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShadingRateImageFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShadingRateImageFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShadingRateImageFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShadingRateImageFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShadingRateImageFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShadingRateImageFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShadingRateImageFeaturesNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShadingRateImageFeaturesNV
             segment -> new VkPhysicalDeviceShadingRateImageFeaturesNV(segment)
         );
     }
-    
+
 }

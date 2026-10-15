@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSubresourceLayout
 		implements Struct<VkSubresourceLayout> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle ROW_PITCH_HANDLE;
-    public static final VarHandle ARRAY_PITCH_HANDLE;
-    public static final VarHandle DEPTH_PITCH_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle ROW_PITCH_HANDLE;
+	public static final VarHandle ARRAY_PITCH_HANDLE;
+	public static final VarHandle DEPTH_PITCH_HANDLE;
 
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long ROW_PITCH_BYTE_OFFSET;
-    public static final long ARRAY_PITCH_BYTE_OFFSET;
-    public static final long DEPTH_PITCH_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long ROW_PITCH_BYTE_OFFSET;
+	public static final long ARRAY_PITCH_BYTE_OFFSET;
+	public static final long DEPTH_PITCH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("size"),
-            JAVA_LONG.withName("rowPitch"),
-            JAVA_LONG.withName("arrayPitch"),
-            JAVA_LONG.withName("depthPitch")
-        ).withName("VkSubresourceLayout").withByteAlignment(8);
-        
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        ROW_PITCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rowPitch"));
-        ARRAY_PITCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayPitch"));
-        DEPTH_PITCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthPitch"));
-        
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        ROW_PITCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rowPitch"));
-        ARRAY_PITCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayPitch"));
-        DEPTH_PITCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthPitch"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("size"),
+		    JAVA_LONG.withName("rowPitch"),
+		    JAVA_LONG.withName("arrayPitch"),
+		    JAVA_LONG.withName("depthPitch")
+		).withName("VkSubresourceLayout").withByteAlignment(8);
+		
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		ROW_PITCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rowPitch"));
+		ARRAY_PITCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayPitch"));
+		DEPTH_PITCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthPitch"));
+		
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		ROW_PITCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rowPitch"));
+		ARRAY_PITCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayPitch"));
+		DEPTH_PITCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthPitch"));
+		//@formatter:on
+	}
 
-    public VkSubresourceLayout() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubresourceLayout(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubresourceLayout(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubresourceLayout() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubresourceLayout(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubresourceLayout(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #offset()
     public VkSubresourceLayout offset(long offset) {
@@ -173,5 +173,5 @@ public final class VkSubresourceLayout
             segment -> new VkSubresourceLayout(segment)
         );
     }
-    
+
 }

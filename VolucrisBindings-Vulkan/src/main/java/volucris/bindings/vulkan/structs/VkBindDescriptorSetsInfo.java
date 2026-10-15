@@ -23,81 +23,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindDescriptorSetsInfo
 		implements Struct<VkBindDescriptorSetsInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_FLAGS_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle FIRST_SET_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_COUNT_HANDLE;
-    public static final VarHandle P_DESCRIPTOR_SETS_HANDLE;
-    public static final VarHandle DYNAMIC_OFFSET_COUNT_HANDLE;
-    public static final VarHandle P_DYNAMIC_OFFSETS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_FLAGS_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle FIRST_SET_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_COUNT_HANDLE;
+	public static final VarHandle P_DESCRIPTOR_SETS_HANDLE;
+	public static final VarHandle DYNAMIC_OFFSET_COUNT_HANDLE;
+	public static final VarHandle P_DYNAMIC_OFFSETS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_FLAGS_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long FIRST_SET_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_COUNT_BYTE_OFFSET;
-    public static final long P_DESCRIPTOR_SETS_BYTE_OFFSET;
-    public static final long DYNAMIC_OFFSET_COUNT_BYTE_OFFSET;
-    public static final long P_DYNAMIC_OFFSETS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_FLAGS_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long FIRST_SET_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_COUNT_BYTE_OFFSET;
+	public static final long P_DESCRIPTOR_SETS_BYTE_OFFSET;
+	public static final long DYNAMIC_OFFSET_COUNT_BYTE_OFFSET;
+	public static final long P_DYNAMIC_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stageFlags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            JAVA_INT.withName("firstSet"),
-            JAVA_INT.withName("descriptorSetCount"),
-            UNBOUNDED_ADDRESS.withName("pDescriptorSets"),
-            JAVA_INT.withName("dynamicOffsetCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDynamicOffsets")
-        ).withName("VkBindDescriptorSetsInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        FIRST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstSet"));
-        DESCRIPTOR_SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetCount"));
-        P_DESCRIPTOR_SETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorSets"));
-        DYNAMIC_OFFSET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicOffsetCount"));
-        P_DYNAMIC_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicOffsets"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        FIRST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstSet"));
-        DESCRIPTOR_SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetCount"));
-        P_DESCRIPTOR_SETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorSets"));
-        DYNAMIC_OFFSET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicOffsetCount"));
-        P_DYNAMIC_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stageFlags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    JAVA_INT.withName("firstSet"),
+		    JAVA_INT.withName("descriptorSetCount"),
+		    UNBOUNDED_ADDRESS.withName("pDescriptorSets"),
+		    JAVA_INT.withName("dynamicOffsetCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDynamicOffsets")
+		).withName("VkBindDescriptorSetsInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		FIRST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstSet"));
+		DESCRIPTOR_SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetCount"));
+		P_DESCRIPTOR_SETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescriptorSets"));
+		DYNAMIC_OFFSET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicOffsetCount"));
+		P_DYNAMIC_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicOffsets"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		FIRST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstSet"));
+		DESCRIPTOR_SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetCount"));
+		P_DESCRIPTOR_SETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescriptorSets"));
+		DYNAMIC_OFFSET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicOffsetCount"));
+		P_DYNAMIC_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicOffsets"));
+		//@formatter:on
+	}
 
-    public VkBindDescriptorSetsInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindDescriptorSetsInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindDescriptorSetsInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindDescriptorSetsInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindDescriptorSetsInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindDescriptorSetsInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBindDescriptorSetsInfo sType(int sType) {
@@ -260,5 +260,5 @@ public final class VkBindDescriptorSetsInfo
             segment -> new VkBindDescriptorSetsInfo(segment)
         );
     }
-    
+
 }

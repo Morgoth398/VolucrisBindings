@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRawAccessChainsFeaturesNV
 		implements Struct<VkPhysicalDeviceRawAccessChainsFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_RAW_ACCESS_CHAINS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_RAW_ACCESS_CHAINS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_RAW_ACCESS_CHAINS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_RAW_ACCESS_CHAINS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderRawAccessChains"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRawAccessChainsFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_RAW_ACCESS_CHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRawAccessChains"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_RAW_ACCESS_CHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRawAccessChains"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderRawAccessChains"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRawAccessChainsFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_RAW_ACCESS_CHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRawAccessChains"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_RAW_ACCESS_CHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRawAccessChains"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRawAccessChainsFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRawAccessChainsFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRawAccessChainsFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRawAccessChainsFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRawAccessChainsFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRawAccessChainsFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRawAccessChainsFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceRawAccessChainsFeaturesNV
             segment -> new VkPhysicalDeviceRawAccessChainsFeaturesNV(segment)
         );
     }
-    
+
 }

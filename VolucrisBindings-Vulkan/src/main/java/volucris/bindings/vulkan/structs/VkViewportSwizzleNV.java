@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkViewportSwizzleNV
 		implements Struct<VkViewportSwizzleNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle X_HANDLE;
-    public static final VarHandle Y_HANDLE;
-    public static final VarHandle Z_HANDLE;
-    public static final VarHandle W_HANDLE;
+	public static final VarHandle X_HANDLE;
+	public static final VarHandle Y_HANDLE;
+	public static final VarHandle Z_HANDLE;
+	public static final VarHandle W_HANDLE;
 
-    public static final long X_BYTE_OFFSET;
-    public static final long Y_BYTE_OFFSET;
-    public static final long Z_BYTE_OFFSET;
-    public static final long W_BYTE_OFFSET;
+	public static final long X_BYTE_OFFSET;
+	public static final long Y_BYTE_OFFSET;
+	public static final long Z_BYTE_OFFSET;
+	public static final long W_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("x"),
-            JAVA_INT.withName("y"),
-            JAVA_INT.withName("z"),
-            JAVA_INT.withName("w")
-        ).withName("VkViewportSwizzleNV").withByteAlignment(4);
-        
-        X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
-        Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
-        Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("z"));
-        W_HANDLE = LAYOUT.varHandle(PathElement.groupElement("w"));
-        
-        X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
-        Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
-        Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("z"));
-        W_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("w"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("x"),
+		    JAVA_INT.withName("y"),
+		    JAVA_INT.withName("z"),
+		    JAVA_INT.withName("w")
+		).withName("VkViewportSwizzleNV").withByteAlignment(4);
+		
+		X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
+		Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
+		Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("z"));
+		W_HANDLE = LAYOUT.varHandle(PathElement.groupElement("w"));
+		
+		X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
+		Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
+		Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("z"));
+		W_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("w"));
+		//@formatter:on
+	}
 
-    public VkViewportSwizzleNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkViewportSwizzleNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkViewportSwizzleNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkViewportSwizzleNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkViewportSwizzleNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkViewportSwizzleNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #x()
     public VkViewportSwizzleNV x(int x) {
@@ -158,5 +158,5 @@ public final class VkViewportSwizzleNV
             segment -> new VkViewportSwizzleNV(segment)
         );
     }
-    
+
 }

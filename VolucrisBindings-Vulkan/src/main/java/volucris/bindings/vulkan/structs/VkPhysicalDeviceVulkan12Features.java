@@ -21,280 +21,280 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan12Features
 		implements Struct<VkPhysicalDeviceVulkan12Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLER_MIRROR_CLAMP_TO_EDGE_HANDLE;
-    public static final VarHandle DRAW_INDIRECT_COUNT_HANDLE;
-    public static final VarHandle STORAGE_BUFFER8_BIT_ACCESS_HANDLE;
-    public static final VarHandle UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_HANDLE;
-    public static final VarHandle STORAGE_PUSH_CONSTANT8_HANDLE;
-    public static final VarHandle SHADER_BUFFER_INT64_ATOMICS_HANDLE;
-    public static final VarHandle SHADER_SHARED_INT64_ATOMICS_HANDLE;
-    public static final VarHandle SHADER_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_INT8_HANDLE;
-    public static final VarHandle DESCRIPTOR_INDEXING_HANDLE;
-    public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle RUNTIME_DESCRIPTOR_ARRAY_HANDLE;
-    public static final VarHandle SAMPLER_FILTER_MINMAX_HANDLE;
-    public static final VarHandle SCALAR_BLOCK_LAYOUT_HANDLE;
-    public static final VarHandle IMAGELESS_FRAMEBUFFER_HANDLE;
-    public static final VarHandle UNIFORM_BUFFER_STANDARD_LAYOUT_HANDLE;
-    public static final VarHandle SHADER_SUBGROUP_EXTENDED_TYPES_HANDLE;
-    public static final VarHandle SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE;
-    public static final VarHandle HOST_QUERY_RESET_HANDLE;
-    public static final VarHandle TIMELINE_SEMAPHORE_HANDLE;
-    public static final VarHandle BUFFER_DEVICE_ADDRESS_HANDLE;
-    public static final VarHandle BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_HANDLE;
-    public static final VarHandle BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_HANDLE;
-    public static final VarHandle VULKAN_MEMORY_MODEL_HANDLE;
-    public static final VarHandle VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE;
-    public static final VarHandle VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE;
-    public static final VarHandle SHADER_OUTPUT_VIEWPORT_INDEX_HANDLE;
-    public static final VarHandle SHADER_OUTPUT_LAYER_HANDLE;
-    public static final VarHandle SUBGROUP_BROADCAST_DYNAMIC_ID_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLER_MIRROR_CLAMP_TO_EDGE_HANDLE;
+	public static final VarHandle DRAW_INDIRECT_COUNT_HANDLE;
+	public static final VarHandle STORAGE_BUFFER8_BIT_ACCESS_HANDLE;
+	public static final VarHandle UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_HANDLE;
+	public static final VarHandle STORAGE_PUSH_CONSTANT8_HANDLE;
+	public static final VarHandle SHADER_BUFFER_INT64_ATOMICS_HANDLE;
+	public static final VarHandle SHADER_SHARED_INT64_ATOMICS_HANDLE;
+	public static final VarHandle SHADER_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_INT8_HANDLE;
+	public static final VarHandle DESCRIPTOR_INDEXING_HANDLE;
+	public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle RUNTIME_DESCRIPTOR_ARRAY_HANDLE;
+	public static final VarHandle SAMPLER_FILTER_MINMAX_HANDLE;
+	public static final VarHandle SCALAR_BLOCK_LAYOUT_HANDLE;
+	public static final VarHandle IMAGELESS_FRAMEBUFFER_HANDLE;
+	public static final VarHandle UNIFORM_BUFFER_STANDARD_LAYOUT_HANDLE;
+	public static final VarHandle SHADER_SUBGROUP_EXTENDED_TYPES_HANDLE;
+	public static final VarHandle SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE;
+	public static final VarHandle HOST_QUERY_RESET_HANDLE;
+	public static final VarHandle TIMELINE_SEMAPHORE_HANDLE;
+	public static final VarHandle BUFFER_DEVICE_ADDRESS_HANDLE;
+	public static final VarHandle BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_HANDLE;
+	public static final VarHandle BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_HANDLE;
+	public static final VarHandle VULKAN_MEMORY_MODEL_HANDLE;
+	public static final VarHandle VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE;
+	public static final VarHandle VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE;
+	public static final VarHandle SHADER_OUTPUT_VIEWPORT_INDEX_HANDLE;
+	public static final VarHandle SHADER_OUTPUT_LAYER_HANDLE;
+	public static final VarHandle SUBGROUP_BROADCAST_DYNAMIC_ID_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLER_MIRROR_CLAMP_TO_EDGE_BYTE_OFFSET;
-    public static final long DRAW_INDIRECT_COUNT_BYTE_OFFSET;
-    public static final long STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET;
-    public static final long UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET;
-    public static final long STORAGE_PUSH_CONSTANT8_BYTE_OFFSET;
-    public static final long SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET;
-    public static final long SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET;
-    public static final long SHADER_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_INT8_BYTE_OFFSET;
-    public static final long DESCRIPTOR_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET;
-    public static final long SAMPLER_FILTER_MINMAX_BYTE_OFFSET;
-    public static final long SCALAR_BLOCK_LAYOUT_BYTE_OFFSET;
-    public static final long IMAGELESS_FRAMEBUFFER_BYTE_OFFSET;
-    public static final long UNIFORM_BUFFER_STANDARD_LAYOUT_BYTE_OFFSET;
-    public static final long SHADER_SUBGROUP_EXTENDED_TYPES_BYTE_OFFSET;
-    public static final long SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET;
-    public static final long HOST_QUERY_RESET_BYTE_OFFSET;
-    public static final long TIMELINE_SEMAPHORE_BYTE_OFFSET;
-    public static final long BUFFER_DEVICE_ADDRESS_BYTE_OFFSET;
-    public static final long BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_BYTE_OFFSET;
-    public static final long BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_BYTE_OFFSET;
-    public static final long VULKAN_MEMORY_MODEL_BYTE_OFFSET;
-    public static final long VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET;
-    public static final long VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET;
-    public static final long SHADER_OUTPUT_VIEWPORT_INDEX_BYTE_OFFSET;
-    public static final long SHADER_OUTPUT_LAYER_BYTE_OFFSET;
-    public static final long SUBGROUP_BROADCAST_DYNAMIC_ID_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLER_MIRROR_CLAMP_TO_EDGE_BYTE_OFFSET;
+	public static final long DRAW_INDIRECT_COUNT_BYTE_OFFSET;
+	public static final long STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET;
+	public static final long UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET;
+	public static final long STORAGE_PUSH_CONSTANT8_BYTE_OFFSET;
+	public static final long SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET;
+	public static final long SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET;
+	public static final long SHADER_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_INT8_BYTE_OFFSET;
+	public static final long DESCRIPTOR_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET;
+	public static final long SAMPLER_FILTER_MINMAX_BYTE_OFFSET;
+	public static final long SCALAR_BLOCK_LAYOUT_BYTE_OFFSET;
+	public static final long IMAGELESS_FRAMEBUFFER_BYTE_OFFSET;
+	public static final long UNIFORM_BUFFER_STANDARD_LAYOUT_BYTE_OFFSET;
+	public static final long SHADER_SUBGROUP_EXTENDED_TYPES_BYTE_OFFSET;
+	public static final long SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET;
+	public static final long HOST_QUERY_RESET_BYTE_OFFSET;
+	public static final long TIMELINE_SEMAPHORE_BYTE_OFFSET;
+	public static final long BUFFER_DEVICE_ADDRESS_BYTE_OFFSET;
+	public static final long BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_BYTE_OFFSET;
+	public static final long BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_BYTE_OFFSET;
+	public static final long VULKAN_MEMORY_MODEL_BYTE_OFFSET;
+	public static final long VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET;
+	public static final long VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET;
+	public static final long SHADER_OUTPUT_VIEWPORT_INDEX_BYTE_OFFSET;
+	public static final long SHADER_OUTPUT_LAYER_BYTE_OFFSET;
+	public static final long SUBGROUP_BROADCAST_DYNAMIC_ID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("samplerMirrorClampToEdge"),
-            JAVA_INT.withName("drawIndirectCount"),
-            JAVA_INT.withName("storageBuffer8BitAccess"),
-            JAVA_INT.withName("uniformAndStorageBuffer8BitAccess"),
-            JAVA_INT.withName("storagePushConstant8"),
-            JAVA_INT.withName("shaderBufferInt64Atomics"),
-            JAVA_INT.withName("shaderSharedInt64Atomics"),
-            JAVA_INT.withName("shaderFloat16"),
-            JAVA_INT.withName("shaderInt8"),
-            JAVA_INT.withName("descriptorIndexing"),
-            JAVA_INT.withName("shaderInputAttachmentArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderUniformTexelBufferArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderStorageTexelBufferArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderUniformTexelBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderStorageTexelBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("descriptorBindingUniformBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingSampledImageUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingStorageImageUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingStorageBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingUniformTexelBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingStorageTexelBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingUpdateUnusedWhilePending"),
-            JAVA_INT.withName("descriptorBindingPartiallyBound"),
-            JAVA_INT.withName("descriptorBindingVariableDescriptorCount"),
-            JAVA_INT.withName("runtimeDescriptorArray"),
-            JAVA_INT.withName("samplerFilterMinmax"),
-            JAVA_INT.withName("scalarBlockLayout"),
-            JAVA_INT.withName("imagelessFramebuffer"),
-            JAVA_INT.withName("uniformBufferStandardLayout"),
-            JAVA_INT.withName("shaderSubgroupExtendedTypes"),
-            JAVA_INT.withName("separateDepthStencilLayouts"),
-            JAVA_INT.withName("hostQueryReset"),
-            JAVA_INT.withName("timelineSemaphore"),
-            JAVA_INT.withName("bufferDeviceAddress"),
-            JAVA_INT.withName("bufferDeviceAddressCaptureReplay"),
-            JAVA_INT.withName("bufferDeviceAddressMultiDevice"),
-            JAVA_INT.withName("vulkanMemoryModel"),
-            JAVA_INT.withName("vulkanMemoryModelDeviceScope"),
-            JAVA_INT.withName("vulkanMemoryModelAvailabilityVisibilityChains"),
-            JAVA_INT.withName("shaderOutputViewportIndex"),
-            JAVA_INT.withName("shaderOutputLayer"),
-            JAVA_INT.withName("subgroupBroadcastDynamicId"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVulkan12Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLER_MIRROR_CLAMP_TO_EDGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerMirrorClampToEdge"));
-        DRAW_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drawIndirectCount"));
-        STORAGE_BUFFER8_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageBuffer8BitAccess"));
-        UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformAndStorageBuffer8BitAccess"));
-        STORAGE_PUSH_CONSTANT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storagePushConstant8"));
-        SHADER_BUFFER_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferInt64Atomics"));
-        SHADER_SHARED_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedInt64Atomics"));
-        SHADER_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat16"));
-        SHADER_INT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt8"));
-        DESCRIPTOR_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorIndexing"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
-        DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
-        DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingPartiallyBound"));
-        DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
-        RUNTIME_DESCRIPTOR_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("runtimeDescriptorArray"));
-        SAMPLER_FILTER_MINMAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerFilterMinmax"));
-        SCALAR_BLOCK_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scalarBlockLayout"));
-        IMAGELESS_FRAMEBUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imagelessFramebuffer"));
-        UNIFORM_BUFFER_STANDARD_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformBufferStandardLayout"));
-        SHADER_SUBGROUP_EXTENDED_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupExtendedTypes"));
-        SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("separateDepthStencilLayouts"));
-        HOST_QUERY_RESET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hostQueryReset"));
-        TIMELINE_SEMAPHORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timelineSemaphore"));
-        BUFFER_DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDeviceAddress"));
-        BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDeviceAddressCaptureReplay"));
-        BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDeviceAddressMultiDevice"));
-        VULKAN_MEMORY_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModel"));
-        VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
-        VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
-        SHADER_OUTPUT_VIEWPORT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderOutputViewportIndex"));
-        SHADER_OUTPUT_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderOutputLayer"));
-        SUBGROUP_BROADCAST_DYNAMIC_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupBroadcastDynamicId"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLER_MIRROR_CLAMP_TO_EDGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerMirrorClampToEdge"));
-        DRAW_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drawIndirectCount"));
-        STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageBuffer8BitAccess"));
-        UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformAndStorageBuffer8BitAccess"));
-        STORAGE_PUSH_CONSTANT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storagePushConstant8"));
-        SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferInt64Atomics"));
-        SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedInt64Atomics"));
-        SHADER_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat16"));
-        SHADER_INT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt8"));
-        DESCRIPTOR_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorIndexing"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
-        DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
-        DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingPartiallyBound"));
-        DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
-        RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("runtimeDescriptorArray"));
-        SAMPLER_FILTER_MINMAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerFilterMinmax"));
-        SCALAR_BLOCK_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scalarBlockLayout"));
-        IMAGELESS_FRAMEBUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imagelessFramebuffer"));
-        UNIFORM_BUFFER_STANDARD_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformBufferStandardLayout"));
-        SHADER_SUBGROUP_EXTENDED_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupExtendedTypes"));
-        SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("separateDepthStencilLayouts"));
-        HOST_QUERY_RESET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hostQueryReset"));
-        TIMELINE_SEMAPHORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timelineSemaphore"));
-        BUFFER_DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDeviceAddress"));
-        BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDeviceAddressCaptureReplay"));
-        BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDeviceAddressMultiDevice"));
-        VULKAN_MEMORY_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModel"));
-        VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
-        VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
-        SHADER_OUTPUT_VIEWPORT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderOutputViewportIndex"));
-        SHADER_OUTPUT_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderOutputLayer"));
-        SUBGROUP_BROADCAST_DYNAMIC_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupBroadcastDynamicId"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("samplerMirrorClampToEdge"),
+		    JAVA_INT.withName("drawIndirectCount"),
+		    JAVA_INT.withName("storageBuffer8BitAccess"),
+		    JAVA_INT.withName("uniformAndStorageBuffer8BitAccess"),
+		    JAVA_INT.withName("storagePushConstant8"),
+		    JAVA_INT.withName("shaderBufferInt64Atomics"),
+		    JAVA_INT.withName("shaderSharedInt64Atomics"),
+		    JAVA_INT.withName("shaderFloat16"),
+		    JAVA_INT.withName("shaderInt8"),
+		    JAVA_INT.withName("descriptorIndexing"),
+		    JAVA_INT.withName("shaderInputAttachmentArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderUniformTexelBufferArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderStorageTexelBufferArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderUniformTexelBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderStorageTexelBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("descriptorBindingUniformBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingSampledImageUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingStorageImageUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingStorageBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingUniformTexelBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingStorageTexelBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingUpdateUnusedWhilePending"),
+		    JAVA_INT.withName("descriptorBindingPartiallyBound"),
+		    JAVA_INT.withName("descriptorBindingVariableDescriptorCount"),
+		    JAVA_INT.withName("runtimeDescriptorArray"),
+		    JAVA_INT.withName("samplerFilterMinmax"),
+		    JAVA_INT.withName("scalarBlockLayout"),
+		    JAVA_INT.withName("imagelessFramebuffer"),
+		    JAVA_INT.withName("uniformBufferStandardLayout"),
+		    JAVA_INT.withName("shaderSubgroupExtendedTypes"),
+		    JAVA_INT.withName("separateDepthStencilLayouts"),
+		    JAVA_INT.withName("hostQueryReset"),
+		    JAVA_INT.withName("timelineSemaphore"),
+		    JAVA_INT.withName("bufferDeviceAddress"),
+		    JAVA_INT.withName("bufferDeviceAddressCaptureReplay"),
+		    JAVA_INT.withName("bufferDeviceAddressMultiDevice"),
+		    JAVA_INT.withName("vulkanMemoryModel"),
+		    JAVA_INT.withName("vulkanMemoryModelDeviceScope"),
+		    JAVA_INT.withName("vulkanMemoryModelAvailabilityVisibilityChains"),
+		    JAVA_INT.withName("shaderOutputViewportIndex"),
+		    JAVA_INT.withName("shaderOutputLayer"),
+		    JAVA_INT.withName("subgroupBroadcastDynamicId"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVulkan12Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLER_MIRROR_CLAMP_TO_EDGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerMirrorClampToEdge"));
+		DRAW_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drawIndirectCount"));
+		STORAGE_BUFFER8_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageBuffer8BitAccess"));
+		UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformAndStorageBuffer8BitAccess"));
+		STORAGE_PUSH_CONSTANT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storagePushConstant8"));
+		SHADER_BUFFER_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderBufferInt64Atomics"));
+		SHADER_SHARED_INT64_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSharedInt64Atomics"));
+		SHADER_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat16"));
+		SHADER_INT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt8"));
+		DESCRIPTOR_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorIndexing"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
+		DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
+		DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingPartiallyBound"));
+		DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
+		RUNTIME_DESCRIPTOR_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("runtimeDescriptorArray"));
+		SAMPLER_FILTER_MINMAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerFilterMinmax"));
+		SCALAR_BLOCK_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scalarBlockLayout"));
+		IMAGELESS_FRAMEBUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imagelessFramebuffer"));
+		UNIFORM_BUFFER_STANDARD_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformBufferStandardLayout"));
+		SHADER_SUBGROUP_EXTENDED_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSubgroupExtendedTypes"));
+		SEPARATE_DEPTH_STENCIL_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("separateDepthStencilLayouts"));
+		HOST_QUERY_RESET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hostQueryReset"));
+		TIMELINE_SEMAPHORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timelineSemaphore"));
+		BUFFER_DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDeviceAddress"));
+		BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDeviceAddressCaptureReplay"));
+		BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDeviceAddressMultiDevice"));
+		VULKAN_MEMORY_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModel"));
+		VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
+		VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
+		SHADER_OUTPUT_VIEWPORT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderOutputViewportIndex"));
+		SHADER_OUTPUT_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderOutputLayer"));
+		SUBGROUP_BROADCAST_DYNAMIC_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupBroadcastDynamicId"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLER_MIRROR_CLAMP_TO_EDGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerMirrorClampToEdge"));
+		DRAW_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drawIndirectCount"));
+		STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageBuffer8BitAccess"));
+		UNIFORM_AND_STORAGE_BUFFER8_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformAndStorageBuffer8BitAccess"));
+		STORAGE_PUSH_CONSTANT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storagePushConstant8"));
+		SHADER_BUFFER_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderBufferInt64Atomics"));
+		SHADER_SHARED_INT64_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSharedInt64Atomics"));
+		SHADER_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat16"));
+		SHADER_INT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt8"));
+		DESCRIPTOR_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorIndexing"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
+		DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
+		DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingPartiallyBound"));
+		DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
+		RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("runtimeDescriptorArray"));
+		SAMPLER_FILTER_MINMAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerFilterMinmax"));
+		SCALAR_BLOCK_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scalarBlockLayout"));
+		IMAGELESS_FRAMEBUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imagelessFramebuffer"));
+		UNIFORM_BUFFER_STANDARD_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformBufferStandardLayout"));
+		SHADER_SUBGROUP_EXTENDED_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSubgroupExtendedTypes"));
+		SEPARATE_DEPTH_STENCIL_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("separateDepthStencilLayouts"));
+		HOST_QUERY_RESET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hostQueryReset"));
+		TIMELINE_SEMAPHORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timelineSemaphore"));
+		BUFFER_DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDeviceAddress"));
+		BUFFER_DEVICE_ADDRESS_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDeviceAddressCaptureReplay"));
+		BUFFER_DEVICE_ADDRESS_MULTI_DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDeviceAddressMultiDevice"));
+		VULKAN_MEMORY_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModel"));
+		VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
+		VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
+		SHADER_OUTPUT_VIEWPORT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderOutputViewportIndex"));
+		SHADER_OUTPUT_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderOutputLayer"));
+		SUBGROUP_BROADCAST_DYNAMIC_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupBroadcastDynamicId"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan12Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan12Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan12Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkan12Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan12Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan12Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan12Features sType(int sType) {
@@ -842,5 +842,5 @@ public final class VkPhysicalDeviceVulkan12Features
             segment -> new VkPhysicalDeviceVulkan12Features(segment)
         );
     }
-    
+
 }

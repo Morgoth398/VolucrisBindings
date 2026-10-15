@@ -22,85 +22,85 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceMemoryImageCopyKHR
 		implements Struct<VkDeviceMemoryImageCopyKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADDRESS_FLAGS_HANDLE;
-    public static final VarHandle ADDRESS_ROW_LENGTH_HANDLE;
-    public static final VarHandle ADDRESS_IMAGE_HEIGHT_HANDLE;
-    public static final VarHandle IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADDRESS_FLAGS_HANDLE;
+	public static final VarHandle ADDRESS_ROW_LENGTH_HANDLE;
+	public static final VarHandle ADDRESS_IMAGE_HEIGHT_HANDLE;
+	public static final VarHandle IMAGE_LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long ADDRESS_FLAGS_BYTE_OFFSET;
-    public static final long ADDRESS_ROW_LENGTH_BYTE_OFFSET;
-    public static final long ADDRESS_IMAGE_HEIGHT_BYTE_OFFSET;
-    public static final long IMAGE_SUBRESOURCE_BYTE_OFFSET;
-    public static final long IMAGE_LAYOUT_BYTE_OFFSET;
-    public static final long IMAGE_OFFSET_BYTE_OFFSET;
-    public static final long IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long ADDRESS_FLAGS_BYTE_OFFSET;
+	public static final long ADDRESS_ROW_LENGTH_BYTE_OFFSET;
+	public static final long ADDRESS_IMAGE_HEIGHT_BYTE_OFFSET;
+	public static final long IMAGE_SUBRESOURCE_BYTE_OFFSET;
+	public static final long IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long IMAGE_OFFSET_BYTE_OFFSET;
+	public static final long IMAGE_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR addressRange;
-    private final VkImageSubresourceLayers imageSubresource;
-    private final VkOffset3D imageOffset;
-    private final VkExtent3D imageExtent;
+	private final VkDeviceAddressRangeKHR addressRange;
+	private final VkImageSubresourceLayers imageSubresource;
+	private final VkOffset3D imageOffset;
+	private final VkExtent3D imageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
-            JAVA_INT.withName("addressFlags"),
-            JAVA_INT.withName("addressRowLength"),
-            JAVA_INT.withName("addressImageHeight"),
-            VkImageSubresourceLayers.LAYOUT.withName("imageSubresource"),
-            JAVA_INT.withName("imageLayout"),
-            VkOffset3D.LAYOUT.withName("imageOffset"),
-            VkExtent3D.LAYOUT.withName("imageExtent")
-        ).withName("VkDeviceMemoryImageCopyKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
-        ADDRESS_ROW_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressRowLength"));
-        ADDRESS_IMAGE_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressImageHeight"));
-        IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
-        ADDRESS_ROW_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRowLength"));
-        ADDRESS_IMAGE_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressImageHeight"));
-        IMAGE_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSubresource"));
-        IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
-        IMAGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOffset"));
-        IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
+		    JAVA_INT.withName("addressFlags"),
+		    JAVA_INT.withName("addressRowLength"),
+		    JAVA_INT.withName("addressImageHeight"),
+		    VkImageSubresourceLayers.LAYOUT.withName("imageSubresource"),
+		    JAVA_INT.withName("imageLayout"),
+		    VkOffset3D.LAYOUT.withName("imageOffset"),
+		    VkExtent3D.LAYOUT.withName("imageExtent")
+		).withName("VkDeviceMemoryImageCopyKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
+		ADDRESS_ROW_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressRowLength"));
+		ADDRESS_IMAGE_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressImageHeight"));
+		IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
+		ADDRESS_ROW_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRowLength"));
+		ADDRESS_IMAGE_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressImageHeight"));
+		IMAGE_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSubresource"));
+		IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
+		IMAGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOffset"));
+		IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
+		//@formatter:on
+	}
 
-    public VkDeviceMemoryImageCopyKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceMemoryImageCopyKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceMemoryImageCopyKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-        imageSubresource = new VkImageSubresourceLayers(segment.asSlice(IMAGE_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        imageOffset = new VkOffset3D(segment.asSlice(IMAGE_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
-        imageExtent = new VkExtent3D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkDeviceMemoryImageCopyKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceMemoryImageCopyKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceMemoryImageCopyKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	    imageSubresource = new VkImageSubresourceLayers(segment.asSlice(IMAGE_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    imageOffset = new VkOffset3D(segment.asSlice(IMAGE_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
+	    imageExtent = new VkExtent3D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDeviceMemoryImageCopyKHR sType(int sType) {
@@ -125,6 +125,22 @@ public final class VkDeviceMemoryImageCopyKHR
     		return null;
     	
     	return segment;
+    }
+    
+    /// @see #addressRange()
+    public VkDeviceMemoryImageCopyKHR addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(addressRange);
+    	return this;
+    }
+    
+    /// @see #addressRange()
+    public VkDeviceMemoryImageCopyKHR addressRange(VkDeviceAddressRangeKHR other) {
+    	addressRange.set(other);
+    	return this;
+    }
+    
+    public VkDeviceAddressRangeKHR addressRange() {
+    	return addressRange;
     }
     
     /// @see #addressFlags()
@@ -157,32 +173,6 @@ public final class VkDeviceMemoryImageCopyKHR
     	return (int) ADDRESS_IMAGE_HEIGHT_HANDLE.get(segment, 0L);
     }
     
-    /// @see #imageLayout()
-    public VkDeviceMemoryImageCopyKHR imageLayout(int imageLayout) {
-    	IMAGE_LAYOUT_HANDLE.set(segment, 0L, imageLayout);
-    	return this;
-    }
-    
-    public int imageLayout() {
-    	return (int) IMAGE_LAYOUT_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #addressRange()
-    public VkDeviceMemoryImageCopyKHR addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(addressRange);
-    	return this;
-    }
-    
-    /// @see #addressRange()
-    public VkDeviceMemoryImageCopyKHR addressRange(VkDeviceAddressRangeKHR other) {
-    	addressRange.set(other);
-    	return this;
-    }
-    
-    public VkDeviceAddressRangeKHR addressRange() {
-    	return addressRange;
-    }
-    
     /// @see #imageSubresource()
     public VkDeviceMemoryImageCopyKHR imageSubresource(Consumer<VkImageSubresourceLayers> consumer) {
     	consumer.accept(imageSubresource);
@@ -197,6 +187,16 @@ public final class VkDeviceMemoryImageCopyKHR
     
     public VkImageSubresourceLayers imageSubresource() {
     	return imageSubresource;
+    }
+    
+    /// @see #imageLayout()
+    public VkDeviceMemoryImageCopyKHR imageLayout(int imageLayout) {
+    	IMAGE_LAYOUT_HANDLE.set(segment, 0L, imageLayout);
+    	return this;
+    }
+    
+    public int imageLayout() {
+    	return (int) IMAGE_LAYOUT_HANDLE.get(segment, 0L);
     }
     
     /// @see #imageOffset()
@@ -282,5 +282,5 @@ public final class VkDeviceMemoryImageCopyKHR
             segment -> new VkDeviceMemoryImageCopyKHR(segment)
         );
     }
-    
+
 }

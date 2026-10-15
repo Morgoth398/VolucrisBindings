@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeSessionIntraRefreshCreateInfoKHR
 		implements Struct<VkVideoEncodeSessionIntraRefreshCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INTRA_REFRESH_MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INTRA_REFRESH_MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INTRA_REFRESH_MODE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INTRA_REFRESH_MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("intraRefreshMode"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeSessionIntraRefreshCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INTRA_REFRESH_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshMode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INTRA_REFRESH_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshMode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("intraRefreshMode"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeSessionIntraRefreshCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INTRA_REFRESH_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshMode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INTRA_REFRESH_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshMode"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeSessionIntraRefreshCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeSessionIntraRefreshCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeSessionIntraRefreshCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeSessionIntraRefreshCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeSessionIntraRefreshCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeSessionIntraRefreshCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeSessionIntraRefreshCreateInfoKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkVideoEncodeSessionIntraRefreshCreateInfoKHR
             segment -> new VkVideoEncodeSessionIntraRefreshCreateInfoKHR(segment)
         );
     }
-    
+
 }

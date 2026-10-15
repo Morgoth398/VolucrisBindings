@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkInputAttachmentAspectReference
 		implements Struct<VkInputAttachmentAspectReference> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SUBPASS_HANDLE;
-    public static final VarHandle INPUT_ATTACHMENT_INDEX_HANDLE;
-    public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle SUBPASS_HANDLE;
+	public static final VarHandle INPUT_ATTACHMENT_INDEX_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
 
-    public static final long SUBPASS_BYTE_OFFSET;
-    public static final long INPUT_ATTACHMENT_INDEX_BYTE_OFFSET;
-    public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long SUBPASS_BYTE_OFFSET;
+	public static final long INPUT_ATTACHMENT_INDEX_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("subpass"),
-            JAVA_INT.withName("inputAttachmentIndex"),
-            JAVA_INT.withName("aspectMask")
-        ).withName("VkInputAttachmentAspectReference").withByteAlignment(4);
-        
-        SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpass"));
-        INPUT_ATTACHMENT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputAttachmentIndex"));
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        
-        SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpass"));
-        INPUT_ATTACHMENT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputAttachmentIndex"));
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("subpass"),
+		    JAVA_INT.withName("inputAttachmentIndex"),
+		    JAVA_INT.withName("aspectMask")
+		).withName("VkInputAttachmentAspectReference").withByteAlignment(4);
+		
+		SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpass"));
+		INPUT_ATTACHMENT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputAttachmentIndex"));
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		
+		SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpass"));
+		INPUT_ATTACHMENT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputAttachmentIndex"));
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		//@formatter:on
+	}
 
-    public VkInputAttachmentAspectReference() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkInputAttachmentAspectReference(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkInputAttachmentAspectReference(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkInputAttachmentAspectReference() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkInputAttachmentAspectReference(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkInputAttachmentAspectReference(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #subpass()
     public VkInputAttachmentAspectReference subpass(int subpass) {
@@ -143,5 +143,5 @@ public final class VkInputAttachmentAspectReference
             segment -> new VkInputAttachmentAspectReference(segment)
         );
     }
-    
+
 }

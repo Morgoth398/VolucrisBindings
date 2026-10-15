@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDrawMeshTasksIndirectCommandNV
 		implements Struct<VkDrawMeshTasksIndirectCommandNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TASK_COUNT_HANDLE;
-    public static final VarHandle FIRST_TASK_HANDLE;
+	public static final VarHandle TASK_COUNT_HANDLE;
+	public static final VarHandle FIRST_TASK_HANDLE;
 
-    public static final long TASK_COUNT_BYTE_OFFSET;
-    public static final long FIRST_TASK_BYTE_OFFSET;
+	public static final long TASK_COUNT_BYTE_OFFSET;
+	public static final long FIRST_TASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("taskCount"),
-            JAVA_INT.withName("firstTask")
-        ).withName("VkDrawMeshTasksIndirectCommandNV").withByteAlignment(4);
-        
-        TASK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("taskCount"));
-        FIRST_TASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstTask"));
-        
-        TASK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("taskCount"));
-        FIRST_TASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstTask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("taskCount"),
+		    JAVA_INT.withName("firstTask")
+		).withName("VkDrawMeshTasksIndirectCommandNV").withByteAlignment(4);
+		
+		TASK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("taskCount"));
+		FIRST_TASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstTask"));
+		
+		TASK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("taskCount"));
+		FIRST_TASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstTask"));
+		//@formatter:on
+	}
 
-    public VkDrawMeshTasksIndirectCommandNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrawMeshTasksIndirectCommandNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrawMeshTasksIndirectCommandNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrawMeshTasksIndirectCommandNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrawMeshTasksIndirectCommandNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrawMeshTasksIndirectCommandNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #taskCount()
     public VkDrawMeshTasksIndirectCommandNV taskCount(int taskCount) {
@@ -128,5 +128,5 @@ public final class VkDrawMeshTasksIndirectCommandNV
             segment -> new VkDrawMeshTasksIndirectCommandNV(segment)
         );
     }
-    
+
 }

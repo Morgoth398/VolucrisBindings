@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyAccelerationStructureInfoKHR
 		implements Struct<VkCopyAccelerationStructureInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_HANDLE;
-    public static final VarHandle DST_HANDLE;
-    public static final VarHandle MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_HANDLE;
+	public static final VarHandle DST_HANDLE;
+	public static final VarHandle MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_BYTE_OFFSET;
-    public static final long DST_BYTE_OFFSET;
-    public static final long MODE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_BYTE_OFFSET;
+	public static final long DST_BYTE_OFFSET;
+	public static final long MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("src"),
-            UNBOUNDED_ADDRESS.withName("dst"),
-            JAVA_INT.withName("mode"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCopyAccelerationStructureInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("src"));
-        DST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dst"));
-        MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("src"));
-        DST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dst"));
-        MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("src"),
+		    UNBOUNDED_ADDRESS.withName("dst"),
+		    JAVA_INT.withName("mode"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCopyAccelerationStructureInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("src"));
+		DST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dst"));
+		MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("src"));
+		DST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dst"));
+		MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
+		//@formatter:on
+	}
 
-    public VkCopyAccelerationStructureInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyAccelerationStructureInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyAccelerationStructureInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCopyAccelerationStructureInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyAccelerationStructureInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyAccelerationStructureInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCopyAccelerationStructureInfoKHR sType(int sType) {
@@ -192,5 +192,5 @@ public final class VkCopyAccelerationStructureInfoKHR
             segment -> new VkCopyAccelerationStructureInfoKHR(segment)
         );
     }
-    
+
 }

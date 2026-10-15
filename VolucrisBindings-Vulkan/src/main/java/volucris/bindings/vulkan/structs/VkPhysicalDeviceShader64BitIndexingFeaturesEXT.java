@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShader64BitIndexingFeaturesEXT
 		implements Struct<VkPhysicalDeviceShader64BitIndexingFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER64_BIT_INDEXING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER64_BIT_INDEXING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER64_BIT_INDEXING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER64_BIT_INDEXING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shader64BitIndexing"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShader64BitIndexingFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER64_BIT_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shader64BitIndexing"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER64_BIT_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shader64BitIndexing"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shader64BitIndexing"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShader64BitIndexingFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER64_BIT_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shader64BitIndexing"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER64_BIT_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shader64BitIndexing"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShader64BitIndexingFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShader64BitIndexingFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShader64BitIndexingFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShader64BitIndexingFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShader64BitIndexingFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShader64BitIndexingFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShader64BitIndexingFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceShader64BitIndexingFeaturesEXT
             segment -> new VkPhysicalDeviceShader64BitIndexingFeaturesEXT(segment)
         );
     }
-    
+
 }

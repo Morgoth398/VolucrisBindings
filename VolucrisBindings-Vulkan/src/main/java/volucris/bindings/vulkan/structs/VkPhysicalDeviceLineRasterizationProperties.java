@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceLineRasterizationProperties
 		implements Struct<VkPhysicalDeviceLineRasterizationProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LINE_SUB_PIXEL_PRECISION_BITS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LINE_SUB_PIXEL_PRECISION_BITS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("lineSubPixelPrecisionBits"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceLineRasterizationProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LINE_SUB_PIXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineSubPixelPrecisionBits"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineSubPixelPrecisionBits"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("lineSubPixelPrecisionBits"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceLineRasterizationProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LINE_SUB_PIXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineSubPixelPrecisionBits"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineSubPixelPrecisionBits"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceLineRasterizationProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceLineRasterizationProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceLineRasterizationProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceLineRasterizationProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceLineRasterizationProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceLineRasterizationProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceLineRasterizationProperties sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceLineRasterizationProperties
             segment -> new VkPhysicalDeviceLineRasterizationProperties(segment)
         );
     }
-    
+
 }

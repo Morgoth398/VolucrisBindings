@@ -19,63 +19,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkViewport
 		implements Struct<VkViewport> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle X_HANDLE;
-    public static final VarHandle Y_HANDLE;
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle MIN_DEPTH_HANDLE;
-    public static final VarHandle MAX_DEPTH_HANDLE;
+	public static final VarHandle X_HANDLE;
+	public static final VarHandle Y_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle MIN_DEPTH_HANDLE;
+	public static final VarHandle MAX_DEPTH_HANDLE;
 
-    public static final long X_BYTE_OFFSET;
-    public static final long Y_BYTE_OFFSET;
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long MIN_DEPTH_BYTE_OFFSET;
-    public static final long MAX_DEPTH_BYTE_OFFSET;
+	public static final long X_BYTE_OFFSET;
+	public static final long Y_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long MIN_DEPTH_BYTE_OFFSET;
+	public static final long MAX_DEPTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("x"),
-            JAVA_FLOAT.withName("y"),
-            JAVA_FLOAT.withName("width"),
-            JAVA_FLOAT.withName("height"),
-            JAVA_FLOAT.withName("minDepth"),
-            JAVA_FLOAT.withName("maxDepth")
-        ).withName("VkViewport").withByteAlignment(4);
-        
-        X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
-        Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        MIN_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minDepth"));
-        MAX_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDepth"));
-        
-        X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
-        Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        MIN_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDepth"));
-        MAX_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDepth"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("x"),
+		    JAVA_FLOAT.withName("y"),
+		    JAVA_FLOAT.withName("width"),
+		    JAVA_FLOAT.withName("height"),
+		    JAVA_FLOAT.withName("minDepth"),
+		    JAVA_FLOAT.withName("maxDepth")
+		).withName("VkViewport").withByteAlignment(4);
+		
+		X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
+		Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		MIN_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minDepth"));
+		MAX_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDepth"));
+		
+		X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
+		Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		MIN_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDepth"));
+		MAX_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDepth"));
+		//@formatter:on
+	}
 
-    public VkViewport() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkViewport(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkViewport(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkViewport() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkViewport(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkViewport(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #x()
     public VkViewport x(float x) {
@@ -188,5 +188,5 @@ public final class VkViewport
             segment -> new VkViewport(segment)
         );
     }
-    
+
 }

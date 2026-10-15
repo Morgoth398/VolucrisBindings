@@ -21,73 +21,73 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiMemoryInfo
 		implements Struct<AiMemoryInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TEXTURES_HANDLE;
-    public static final VarHandle MATERIALS_HANDLE;
-    public static final VarHandle MESHES_HANDLE;
-    public static final VarHandle NODES_HANDLE;
-    public static final VarHandle ANIMATIONS_HANDLE;
-    public static final VarHandle CAMERAS_HANDLE;
-    public static final VarHandle LIGHTS_HANDLE;
-    public static final VarHandle TOTAL_HANDLE;
+	public static final VarHandle TEXTURES_HANDLE;
+	public static final VarHandle MATERIALS_HANDLE;
+	public static final VarHandle MESHES_HANDLE;
+	public static final VarHandle NODES_HANDLE;
+	public static final VarHandle ANIMATIONS_HANDLE;
+	public static final VarHandle CAMERAS_HANDLE;
+	public static final VarHandle LIGHTS_HANDLE;
+	public static final VarHandle TOTAL_HANDLE;
 
-    public static final long TEXTURES_BYTE_OFFSET;
-    public static final long MATERIALS_BYTE_OFFSET;
-    public static final long MESHES_BYTE_OFFSET;
-    public static final long NODES_BYTE_OFFSET;
-    public static final long ANIMATIONS_BYTE_OFFSET;
-    public static final long CAMERAS_BYTE_OFFSET;
-    public static final long LIGHTS_BYTE_OFFSET;
-    public static final long TOTAL_BYTE_OFFSET;
+	public static final long TEXTURES_BYTE_OFFSET;
+	public static final long MATERIALS_BYTE_OFFSET;
+	public static final long MESHES_BYTE_OFFSET;
+	public static final long NODES_BYTE_OFFSET;
+	public static final long ANIMATIONS_BYTE_OFFSET;
+	public static final long CAMERAS_BYTE_OFFSET;
+	public static final long LIGHTS_BYTE_OFFSET;
+	public static final long TOTAL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("textures"),
-            JAVA_INT.withName("materials"),
-            JAVA_INT.withName("meshes"),
-            JAVA_INT.withName("nodes"),
-            JAVA_INT.withName("animations"),
-            JAVA_INT.withName("cameras"),
-            JAVA_INT.withName("lights"),
-            JAVA_INT.withName("total")
-        ).withName("aiMemoryInfo").withByteAlignment(4);
-        
-        TEXTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textures"));
-        MATERIALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("materials"));
-        MESHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshes"));
-        NODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nodes"));
-        ANIMATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("animations"));
-        CAMERAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cameras"));
-        LIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lights"));
-        TOTAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("total"));
-        
-        TEXTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textures"));
-        MATERIALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("materials"));
-        MESHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshes"));
-        NODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nodes"));
-        ANIMATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("animations"));
-        CAMERAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cameras"));
-        LIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lights"));
-        TOTAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("total"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("textures"),
+		    JAVA_INT.withName("materials"),
+		    JAVA_INT.withName("meshes"),
+		    JAVA_INT.withName("nodes"),
+		    JAVA_INT.withName("animations"),
+		    JAVA_INT.withName("cameras"),
+		    JAVA_INT.withName("lights"),
+		    JAVA_INT.withName("total")
+		).withName("aiMemoryInfo").withByteAlignment(4);
+		
+		TEXTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textures"));
+		MATERIALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("materials"));
+		MESHES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshes"));
+		NODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nodes"));
+		ANIMATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("animations"));
+		CAMERAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cameras"));
+		LIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lights"));
+		TOTAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("total"));
+		
+		TEXTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textures"));
+		MATERIALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("materials"));
+		MESHES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshes"));
+		NODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nodes"));
+		ANIMATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("animations"));
+		CAMERAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cameras"));
+		LIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lights"));
+		TOTAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("total"));
+		//@formatter:on
+	}
 
-    public AiMemoryInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMemoryInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMemoryInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMemoryInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMemoryInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMemoryInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #textures()
     public AiMemoryInfo textures(int textures) {
@@ -244,5 +244,5 @@ public final class AiMemoryInfo
             segment -> new AiMemoryInfo(segment)
         );
     }
-    
+
 }

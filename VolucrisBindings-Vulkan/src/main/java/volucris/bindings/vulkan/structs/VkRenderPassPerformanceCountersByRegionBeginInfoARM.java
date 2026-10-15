@@ -23,70 +23,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassPerformanceCountersByRegionBeginInfoARM
 		implements Struct<VkRenderPassPerformanceCountersByRegionBeginInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COUNTER_ADDRESS_COUNT_HANDLE;
-    public static final VarHandle P_COUNTER_ADDRESSES_HANDLE;
-    public static final VarHandle SERIALIZE_REGIONS_HANDLE;
-    public static final VarHandle COUNTER_INDEX_COUNT_HANDLE;
-    public static final VarHandle P_COUNTER_INDICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COUNTER_ADDRESS_COUNT_HANDLE;
+	public static final VarHandle P_COUNTER_ADDRESSES_HANDLE;
+	public static final VarHandle SERIALIZE_REGIONS_HANDLE;
+	public static final VarHandle COUNTER_INDEX_COUNT_HANDLE;
+	public static final VarHandle P_COUNTER_INDICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COUNTER_ADDRESS_COUNT_BYTE_OFFSET;
-    public static final long P_COUNTER_ADDRESSES_BYTE_OFFSET;
-    public static final long SERIALIZE_REGIONS_BYTE_OFFSET;
-    public static final long COUNTER_INDEX_COUNT_BYTE_OFFSET;
-    public static final long P_COUNTER_INDICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COUNTER_ADDRESS_COUNT_BYTE_OFFSET;
+	public static final long P_COUNTER_ADDRESSES_BYTE_OFFSET;
+	public static final long SERIALIZE_REGIONS_BYTE_OFFSET;
+	public static final long COUNTER_INDEX_COUNT_BYTE_OFFSET;
+	public static final long P_COUNTER_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("counterAddressCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCounterAddresses"),
-            JAVA_INT.withName("serializeRegions"),
-            JAVA_INT.withName("counterIndexCount"),
-            UNBOUNDED_ADDRESS.withName("pCounterIndices")
-        ).withName("VkRenderPassPerformanceCountersByRegionBeginInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COUNTER_ADDRESS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("counterAddressCount"));
-        P_COUNTER_ADDRESSES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCounterAddresses"));
-        SERIALIZE_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("serializeRegions"));
-        COUNTER_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("counterIndexCount"));
-        P_COUNTER_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCounterIndices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COUNTER_ADDRESS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("counterAddressCount"));
-        P_COUNTER_ADDRESSES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCounterAddresses"));
-        SERIALIZE_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("serializeRegions"));
-        COUNTER_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("counterIndexCount"));
-        P_COUNTER_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCounterIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("counterAddressCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCounterAddresses"),
+		    JAVA_INT.withName("serializeRegions"),
+		    JAVA_INT.withName("counterIndexCount"),
+		    UNBOUNDED_ADDRESS.withName("pCounterIndices")
+		).withName("VkRenderPassPerformanceCountersByRegionBeginInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COUNTER_ADDRESS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("counterAddressCount"));
+		P_COUNTER_ADDRESSES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCounterAddresses"));
+		SERIALIZE_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("serializeRegions"));
+		COUNTER_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("counterIndexCount"));
+		P_COUNTER_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCounterIndices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COUNTER_ADDRESS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("counterAddressCount"));
+		P_COUNTER_ADDRESSES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCounterAddresses"));
+		SERIALIZE_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("serializeRegions"));
+		COUNTER_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("counterIndexCount"));
+		P_COUNTER_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCounterIndices"));
+		//@formatter:on
+	}
 
-    public VkRenderPassPerformanceCountersByRegionBeginInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassPerformanceCountersByRegionBeginInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassPerformanceCountersByRegionBeginInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassPerformanceCountersByRegionBeginInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassPerformanceCountersByRegionBeginInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassPerformanceCountersByRegionBeginInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderPassPerformanceCountersByRegionBeginInfoARM sType(int sType) {
@@ -224,5 +224,5 @@ public final class VkRenderPassPerformanceCountersByRegionBeginInfoARM
             segment -> new VkRenderPassPerformanceCountersByRegionBeginInfoARM(segment)
         );
     }
-    
+
 }

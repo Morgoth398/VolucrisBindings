@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceGlobalPriorityQueryFeatures
 		implements Struct<VkPhysicalDeviceGlobalPriorityQueryFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle GLOBAL_PRIORITY_QUERY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle GLOBAL_PRIORITY_QUERY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long GLOBAL_PRIORITY_QUERY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long GLOBAL_PRIORITY_QUERY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("globalPriorityQuery"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceGlobalPriorityQueryFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        GLOBAL_PRIORITY_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalPriorityQuery"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        GLOBAL_PRIORITY_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalPriorityQuery"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("globalPriorityQuery"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceGlobalPriorityQueryFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		GLOBAL_PRIORITY_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalPriorityQuery"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		GLOBAL_PRIORITY_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalPriorityQuery"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceGlobalPriorityQueryFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceGlobalPriorityQueryFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceGlobalPriorityQueryFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceGlobalPriorityQueryFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceGlobalPriorityQueryFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceGlobalPriorityQueryFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceGlobalPriorityQueryFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceGlobalPriorityQueryFeatures
             segment -> new VkPhysicalDeviceGlobalPriorityQueryFeatures(segment)
         );
     }
-    
+
 }

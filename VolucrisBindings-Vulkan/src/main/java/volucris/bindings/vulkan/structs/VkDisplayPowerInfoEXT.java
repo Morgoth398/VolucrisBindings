@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayPowerInfoEXT
 		implements Struct<VkDisplayPowerInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle POWER_STATE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle POWER_STATE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long POWER_STATE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long POWER_STATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("powerState"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDisplayPowerInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        POWER_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("powerState"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        POWER_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("powerState"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("powerState"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDisplayPowerInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		POWER_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("powerState"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		POWER_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("powerState"));
+		//@formatter:on
+	}
 
-    public VkDisplayPowerInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayPowerInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayPowerInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDisplayPowerInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayPowerInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayPowerInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDisplayPowerInfoEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDisplayPowerInfoEXT
             segment -> new VkDisplayPowerInfoEXT(segment)
         );
     }
-    
+
 }

@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineBinaryKeysAndDataKHR
 		implements Struct<VkPipelineBinaryKeysAndDataKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BINARY_COUNT_HANDLE;
-    public static final VarHandle P_PIPELINE_BINARY_KEYS_HANDLE;
-    public static final VarHandle P_PIPELINE_BINARY_DATA_HANDLE;
+	public static final VarHandle BINARY_COUNT_HANDLE;
+	public static final VarHandle P_PIPELINE_BINARY_KEYS_HANDLE;
+	public static final VarHandle P_PIPELINE_BINARY_DATA_HANDLE;
 
-    public static final long BINARY_COUNT_BYTE_OFFSET;
-    public static final long P_PIPELINE_BINARY_KEYS_BYTE_OFFSET;
-    public static final long P_PIPELINE_BINARY_DATA_BYTE_OFFSET;
+	public static final long BINARY_COUNT_BYTE_OFFSET;
+	public static final long P_PIPELINE_BINARY_KEYS_BYTE_OFFSET;
+	public static final long P_PIPELINE_BINARY_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("binaryCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPipelineBinaryKeys"),
-            UNBOUNDED_ADDRESS.withName("pPipelineBinaryData")
-        ).withName("VkPipelineBinaryKeysAndDataKHR").withByteAlignment(8);
-        
-        BINARY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binaryCount"));
-        P_PIPELINE_BINARY_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineBinaryKeys"));
-        P_PIPELINE_BINARY_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineBinaryData"));
-        
-        BINARY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binaryCount"));
-        P_PIPELINE_BINARY_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineBinaryKeys"));
-        P_PIPELINE_BINARY_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineBinaryData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("binaryCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPipelineBinaryKeys"),
+		    UNBOUNDED_ADDRESS.withName("pPipelineBinaryData")
+		).withName("VkPipelineBinaryKeysAndDataKHR").withByteAlignment(8);
+		
+		BINARY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binaryCount"));
+		P_PIPELINE_BINARY_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineBinaryKeys"));
+		P_PIPELINE_BINARY_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineBinaryData"));
+		
+		BINARY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binaryCount"));
+		P_PIPELINE_BINARY_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineBinaryKeys"));
+		P_PIPELINE_BINARY_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineBinaryData"));
+		//@formatter:on
+	}
 
-    public VkPipelineBinaryKeysAndDataKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineBinaryKeysAndDataKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineBinaryKeysAndDataKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineBinaryKeysAndDataKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineBinaryKeysAndDataKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineBinaryKeysAndDataKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #binaryCount()
     public VkPipelineBinaryKeysAndDataKHR binaryCount(int binaryCount) {
@@ -156,5 +156,5 @@ public final class VkPipelineBinaryKeysAndDataKHR
             segment -> new VkPipelineBinaryKeysAndDataKHR(segment)
         );
     }
-    
+
 }

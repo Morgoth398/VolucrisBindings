@@ -22,54 +22,54 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaVirtualAllocationCreateInfo
 		implements Struct<VmaVirtualAllocationCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle ALIGNMENT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle ALIGNMENT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
 
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long ALIGNMENT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long ALIGNMENT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("size"),
-            JAVA_LONG.withName("alignment"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pUserData")
-        ).withName("VmaVirtualAllocationCreateInfo").withByteAlignment(8);
-        
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alignment"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alignment"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("size"),
+		    JAVA_LONG.withName("alignment"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pUserData")
+		).withName("VmaVirtualAllocationCreateInfo").withByteAlignment(8);
+		
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alignment"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alignment"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		//@formatter:on
+	}
 
-    public VmaVirtualAllocationCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaVirtualAllocationCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaVirtualAllocationCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaVirtualAllocationCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaVirtualAllocationCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaVirtualAllocationCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #size()
     public VmaVirtualAllocationCreateInfo size(long size) {
@@ -185,5 +185,5 @@ public final class VmaVirtualAllocationCreateInfo
             segment -> new VmaVirtualAllocationCreateInfo(segment)
         );
     }
-    
+
 }

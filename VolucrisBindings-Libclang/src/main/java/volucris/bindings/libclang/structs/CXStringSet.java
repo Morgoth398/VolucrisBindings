@@ -18,44 +18,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXStringSet
 		implements Struct<CXStringSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle STRINGS_HANDLE;
-    public static final VarHandle COUNT_HANDLE;
+	public static final VarHandle STRINGS_HANDLE;
+	public static final VarHandle COUNT_HANDLE;
 
-    public static final long STRINGS_BYTE_OFFSET;
-    public static final long COUNT_BYTE_OFFSET;
+	public static final long STRINGS_BYTE_OFFSET;
+	public static final long COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("Strings"),
-            JAVA_INT.withName("Count"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXStringSet").withByteAlignment(8);
-        
-        STRINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Strings"));
-        COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Count"));
-        
-        STRINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Strings"));
-        COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Count"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("Strings"),
+		    JAVA_INT.withName("Count"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXStringSet").withByteAlignment(8);
+		
+		STRINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Strings"));
+		COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Count"));
+		
+		STRINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Strings"));
+		COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Count"));
+		//@formatter:on
+	}
 
-    public CXStringSet() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXStringSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXStringSet(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXStringSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXStringSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXStringSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #strings()
     public CXStringSet strings(CXString strings) {
@@ -133,5 +133,5 @@ public final class CXStringSet
             segment -> new CXStringSet(segment)
         );
     }
-    
+
 }

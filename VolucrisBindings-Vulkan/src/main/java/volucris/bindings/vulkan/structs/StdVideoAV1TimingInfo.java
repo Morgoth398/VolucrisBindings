@@ -20,55 +20,71 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1TimingInfo
 		implements Struct<StdVideoAV1TimingInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle NUM_UNITS_IN_DISPLAY_TICK_HANDLE;
-    public static final VarHandle TIME_SCALE_HANDLE;
-    public static final VarHandle NUM_TICKS_PER_PICTURE_MINUS_1_HANDLE;
+	public static final VarHandle NUM_UNITS_IN_DISPLAY_TICK_HANDLE;
+	public static final VarHandle TIME_SCALE_HANDLE;
+	public static final VarHandle NUM_TICKS_PER_PICTURE_MINUS_1_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long NUM_UNITS_IN_DISPLAY_TICK_BYTE_OFFSET;
-    public static final long TIME_SCALE_BYTE_OFFSET;
-    public static final long NUM_TICKS_PER_PICTURE_MINUS_1_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long NUM_UNITS_IN_DISPLAY_TICK_BYTE_OFFSET;
+	public static final long TIME_SCALE_BYTE_OFFSET;
+	public static final long NUM_TICKS_PER_PICTURE_MINUS_1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoAV1TimingInfoFlags flags;
+	private final StdVideoAV1TimingInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoAV1TimingInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("num_units_in_display_tick"),
-            JAVA_INT.withName("time_scale"),
-            JAVA_INT.withName("num_ticks_per_picture_minus_1")
-        ).withName("StdVideoAV1TimingInfo").withByteAlignment(4);
-        
-        NUM_UNITS_IN_DISPLAY_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_units_in_display_tick"));
-        TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("time_scale"));
-        NUM_TICKS_PER_PICTURE_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ticks_per_picture_minus_1"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        NUM_UNITS_IN_DISPLAY_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_units_in_display_tick"));
-        TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("time_scale"));
-        NUM_TICKS_PER_PICTURE_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ticks_per_picture_minus_1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoAV1TimingInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("num_units_in_display_tick"),
+		    JAVA_INT.withName("time_scale"),
+		    JAVA_INT.withName("num_ticks_per_picture_minus_1")
+		).withName("StdVideoAV1TimingInfo").withByteAlignment(4);
+		
+		NUM_UNITS_IN_DISPLAY_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_units_in_display_tick"));
+		TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("time_scale"));
+		NUM_TICKS_PER_PICTURE_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ticks_per_picture_minus_1"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		NUM_UNITS_IN_DISPLAY_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_units_in_display_tick"));
+		TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("time_scale"));
+		NUM_TICKS_PER_PICTURE_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ticks_per_picture_minus_1"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1TimingInfo() {
-        this(Arena.ofAuto());
+	public StdVideoAV1TimingInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1TimingInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1TimingInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoAV1TimingInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1TimingInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoAV1TimingInfo flags(Consumer<StdVideoAV1TimingInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoAV1TimingInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoAV1TimingInfo flags(StdVideoAV1TimingInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoAV1TimingInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoAV1TimingInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1TimingInfoFlags.LAYOUT));
+    public StdVideoAV1TimingInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #num_units_in_display_tick()
     public StdVideoAV1TimingInfo num_units_in_display_tick(int num_units_in_display_tick) {
     	NUM_UNITS_IN_DISPLAY_TICK_HANDLE.set(segment, 0L, num_units_in_display_tick);
@@ -97,22 +113,6 @@ public final class StdVideoAV1TimingInfo
     
     public int num_ticks_per_picture_minus_1() {
     	return (int) NUM_TICKS_PER_PICTURE_MINUS_1_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1TimingInfo flags(Consumer<StdVideoAV1TimingInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1TimingInfo flags(StdVideoAV1TimingInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoAV1TimingInfoFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -166,5 +166,5 @@ public final class StdVideoAV1TimingInfo
             segment -> new StdVideoAV1TimingInfo(segment)
         );
     }
-    
+
 }

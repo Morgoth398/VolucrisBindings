@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryRangeBarriersInfoKHR
 		implements Struct<VkMemoryRangeBarriersInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MEMORY_RANGE_BARRIER_COUNT_HANDLE;
-    public static final VarHandle P_MEMORY_RANGE_BARRIERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MEMORY_RANGE_BARRIER_COUNT_HANDLE;
+	public static final VarHandle P_MEMORY_RANGE_BARRIERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MEMORY_RANGE_BARRIER_COUNT_BYTE_OFFSET;
-    public static final long P_MEMORY_RANGE_BARRIERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MEMORY_RANGE_BARRIER_COUNT_BYTE_OFFSET;
+	public static final long P_MEMORY_RANGE_BARRIERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("memoryRangeBarrierCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pMemoryRangeBarriers")
-        ).withName("VkMemoryRangeBarriersInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MEMORY_RANGE_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryRangeBarrierCount"));
-        P_MEMORY_RANGE_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMemoryRangeBarriers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MEMORY_RANGE_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryRangeBarrierCount"));
-        P_MEMORY_RANGE_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMemoryRangeBarriers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("memoryRangeBarrierCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pMemoryRangeBarriers")
+		).withName("VkMemoryRangeBarriersInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MEMORY_RANGE_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryRangeBarrierCount"));
+		P_MEMORY_RANGE_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMemoryRangeBarriers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MEMORY_RANGE_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryRangeBarrierCount"));
+		P_MEMORY_RANGE_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMemoryRangeBarriers"));
+		//@formatter:on
+	}
 
-    public VkMemoryRangeBarriersInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryRangeBarriersInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryRangeBarriersInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryRangeBarriersInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryRangeBarriersInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryRangeBarriersInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMemoryRangeBarriersInfoKHR sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkMemoryRangeBarriersInfoKHR
             segment -> new VkMemoryRangeBarriersInfoKHR(segment)
         );
     }
-    
+
 }

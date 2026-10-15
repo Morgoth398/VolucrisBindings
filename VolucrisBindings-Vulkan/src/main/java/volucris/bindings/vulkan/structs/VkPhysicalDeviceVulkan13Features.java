@@ -21,120 +21,120 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan13Features
 		implements Struct<VkPhysicalDeviceVulkan13Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ROBUST_IMAGE_ACCESS_HANDLE;
-    public static final VarHandle INLINE_UNIFORM_BLOCK_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle PIPELINE_CREATION_CACHE_CONTROL_HANDLE;
-    public static final VarHandle PRIVATE_DATA_HANDLE;
-    public static final VarHandle SHADER_DEMOTE_TO_HELPER_INVOCATION_HANDLE;
-    public static final VarHandle SHADER_TERMINATE_INVOCATION_HANDLE;
-    public static final VarHandle SUBGROUP_SIZE_CONTROL_HANDLE;
-    public static final VarHandle COMPUTE_FULL_SUBGROUPS_HANDLE;
-    public static final VarHandle SYNCHRONIZATION2_HANDLE;
-    public static final VarHandle TEXTURE_COMPRESSION_ASTC_HDR_HANDLE;
-    public static final VarHandle SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE;
-    public static final VarHandle DYNAMIC_RENDERING_HANDLE;
-    public static final VarHandle SHADER_INTEGER_DOT_PRODUCT_HANDLE;
-    public static final VarHandle MAINTENANCE4_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ROBUST_IMAGE_ACCESS_HANDLE;
+	public static final VarHandle INLINE_UNIFORM_BLOCK_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle PIPELINE_CREATION_CACHE_CONTROL_HANDLE;
+	public static final VarHandle PRIVATE_DATA_HANDLE;
+	public static final VarHandle SHADER_DEMOTE_TO_HELPER_INVOCATION_HANDLE;
+	public static final VarHandle SHADER_TERMINATE_INVOCATION_HANDLE;
+	public static final VarHandle SUBGROUP_SIZE_CONTROL_HANDLE;
+	public static final VarHandle COMPUTE_FULL_SUBGROUPS_HANDLE;
+	public static final VarHandle SYNCHRONIZATION2_HANDLE;
+	public static final VarHandle TEXTURE_COMPRESSION_ASTC_HDR_HANDLE;
+	public static final VarHandle SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE;
+	public static final VarHandle DYNAMIC_RENDERING_HANDLE;
+	public static final VarHandle SHADER_INTEGER_DOT_PRODUCT_HANDLE;
+	public static final VarHandle MAINTENANCE4_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ROBUST_IMAGE_ACCESS_BYTE_OFFSET;
-    public static final long INLINE_UNIFORM_BLOCK_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long PIPELINE_CREATION_CACHE_CONTROL_BYTE_OFFSET;
-    public static final long PRIVATE_DATA_BYTE_OFFSET;
-    public static final long SHADER_DEMOTE_TO_HELPER_INVOCATION_BYTE_OFFSET;
-    public static final long SHADER_TERMINATE_INVOCATION_BYTE_OFFSET;
-    public static final long SUBGROUP_SIZE_CONTROL_BYTE_OFFSET;
-    public static final long COMPUTE_FULL_SUBGROUPS_BYTE_OFFSET;
-    public static final long SYNCHRONIZATION2_BYTE_OFFSET;
-    public static final long TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET;
-    public static final long SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET;
-    public static final long DYNAMIC_RENDERING_BYTE_OFFSET;
-    public static final long SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET;
-    public static final long MAINTENANCE4_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ROBUST_IMAGE_ACCESS_BYTE_OFFSET;
+	public static final long INLINE_UNIFORM_BLOCK_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long PIPELINE_CREATION_CACHE_CONTROL_BYTE_OFFSET;
+	public static final long PRIVATE_DATA_BYTE_OFFSET;
+	public static final long SHADER_DEMOTE_TO_HELPER_INVOCATION_BYTE_OFFSET;
+	public static final long SHADER_TERMINATE_INVOCATION_BYTE_OFFSET;
+	public static final long SUBGROUP_SIZE_CONTROL_BYTE_OFFSET;
+	public static final long COMPUTE_FULL_SUBGROUPS_BYTE_OFFSET;
+	public static final long SYNCHRONIZATION2_BYTE_OFFSET;
+	public static final long TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET;
+	public static final long SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET;
+	public static final long DYNAMIC_RENDERING_BYTE_OFFSET;
+	public static final long SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET;
+	public static final long MAINTENANCE4_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("robustImageAccess"),
-            JAVA_INT.withName("inlineUniformBlock"),
-            JAVA_INT.withName("descriptorBindingInlineUniformBlockUpdateAfterBind"),
-            JAVA_INT.withName("pipelineCreationCacheControl"),
-            JAVA_INT.withName("privateData"),
-            JAVA_INT.withName("shaderDemoteToHelperInvocation"),
-            JAVA_INT.withName("shaderTerminateInvocation"),
-            JAVA_INT.withName("subgroupSizeControl"),
-            JAVA_INT.withName("computeFullSubgroups"),
-            JAVA_INT.withName("synchronization2"),
-            JAVA_INT.withName("textureCompressionASTC_HDR"),
-            JAVA_INT.withName("shaderZeroInitializeWorkgroupMemory"),
-            JAVA_INT.withName("dynamicRendering"),
-            JAVA_INT.withName("shaderIntegerDotProduct"),
-            JAVA_INT.withName("maintenance4"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVulkan13Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ROBUST_IMAGE_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustImageAccess"));
-        INLINE_UNIFORM_BLOCK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inlineUniformBlock"));
-        DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
-        PIPELINE_CREATION_CACHE_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCreationCacheControl"));
-        PRIVATE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("privateData"));
-        SHADER_DEMOTE_TO_HELPER_INVOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDemoteToHelperInvocation"));
-        SHADER_TERMINATE_INVOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTerminateInvocation"));
-        SUBGROUP_SIZE_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSizeControl"));
-        COMPUTE_FULL_SUBGROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeFullSubgroups"));
-        SYNCHRONIZATION2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("synchronization2"));
-        TEXTURE_COMPRESSION_ASTC_HDR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionASTC_HDR"));
-        SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
-        DYNAMIC_RENDERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRendering"));
-        SHADER_INTEGER_DOT_PRODUCT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderIntegerDotProduct"));
-        MAINTENANCE4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance4"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ROBUST_IMAGE_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustImageAccess"));
-        INLINE_UNIFORM_BLOCK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inlineUniformBlock"));
-        DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
-        PIPELINE_CREATION_CACHE_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCreationCacheControl"));
-        PRIVATE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("privateData"));
-        SHADER_DEMOTE_TO_HELPER_INVOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDemoteToHelperInvocation"));
-        SHADER_TERMINATE_INVOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTerminateInvocation"));
-        SUBGROUP_SIZE_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSizeControl"));
-        COMPUTE_FULL_SUBGROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeFullSubgroups"));
-        SYNCHRONIZATION2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("synchronization2"));
-        TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionASTC_HDR"));
-        SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
-        DYNAMIC_RENDERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRendering"));
-        SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderIntegerDotProduct"));
-        MAINTENANCE4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance4"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("robustImageAccess"),
+		    JAVA_INT.withName("inlineUniformBlock"),
+		    JAVA_INT.withName("descriptorBindingInlineUniformBlockUpdateAfterBind"),
+		    JAVA_INT.withName("pipelineCreationCacheControl"),
+		    JAVA_INT.withName("privateData"),
+		    JAVA_INT.withName("shaderDemoteToHelperInvocation"),
+		    JAVA_INT.withName("shaderTerminateInvocation"),
+		    JAVA_INT.withName("subgroupSizeControl"),
+		    JAVA_INT.withName("computeFullSubgroups"),
+		    JAVA_INT.withName("synchronization2"),
+		    JAVA_INT.withName("textureCompressionASTC_HDR"),
+		    JAVA_INT.withName("shaderZeroInitializeWorkgroupMemory"),
+		    JAVA_INT.withName("dynamicRendering"),
+		    JAVA_INT.withName("shaderIntegerDotProduct"),
+		    JAVA_INT.withName("maintenance4"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVulkan13Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ROBUST_IMAGE_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustImageAccess"));
+		INLINE_UNIFORM_BLOCK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inlineUniformBlock"));
+		DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
+		PIPELINE_CREATION_CACHE_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCreationCacheControl"));
+		PRIVATE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("privateData"));
+		SHADER_DEMOTE_TO_HELPER_INVOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDemoteToHelperInvocation"));
+		SHADER_TERMINATE_INVOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTerminateInvocation"));
+		SUBGROUP_SIZE_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSizeControl"));
+		COMPUTE_FULL_SUBGROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeFullSubgroups"));
+		SYNCHRONIZATION2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("synchronization2"));
+		TEXTURE_COMPRESSION_ASTC_HDR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionASTC_HDR"));
+		SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
+		DYNAMIC_RENDERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRendering"));
+		SHADER_INTEGER_DOT_PRODUCT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderIntegerDotProduct"));
+		MAINTENANCE4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance4"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ROBUST_IMAGE_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustImageAccess"));
+		INLINE_UNIFORM_BLOCK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inlineUniformBlock"));
+		DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
+		PIPELINE_CREATION_CACHE_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCreationCacheControl"));
+		PRIVATE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("privateData"));
+		SHADER_DEMOTE_TO_HELPER_INVOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDemoteToHelperInvocation"));
+		SHADER_TERMINATE_INVOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTerminateInvocation"));
+		SUBGROUP_SIZE_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSizeControl"));
+		COMPUTE_FULL_SUBGROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeFullSubgroups"));
+		SYNCHRONIZATION2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("synchronization2"));
+		TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionASTC_HDR"));
+		SHADER_ZERO_INITIALIZE_WORKGROUP_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderZeroInitializeWorkgroupMemory"));
+		DYNAMIC_RENDERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRendering"));
+		SHADER_INTEGER_DOT_PRODUCT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderIntegerDotProduct"));
+		MAINTENANCE4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance4"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan13Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan13Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan13Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkan13Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan13Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan13Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan13Features sType(int sType) {
@@ -362,5 +362,5 @@ public final class VkPhysicalDeviceVulkan13Features
             segment -> new VkPhysicalDeviceVulkan13Features(segment)
         );
     }
-    
+
 }

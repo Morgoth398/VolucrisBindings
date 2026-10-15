@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
 		implements Struct<VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_HANDLE;
-    public static final VarHandle GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_HANDLE;
+	public static final VarHandle GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_BYTE_OFFSET;
-    public static final long GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_BYTE_OFFSET;
+	public static final long GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("graphicsPipelineLibraryFastLinking"),
-            JAVA_INT.withName("graphicsPipelineLibraryIndependentInterpolationDecoration")
-        ).withName("VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("graphicsPipelineLibraryFastLinking"));
-        GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("graphicsPipelineLibraryIndependentInterpolationDecoration"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("graphicsPipelineLibraryFastLinking"));
-        GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("graphicsPipelineLibraryIndependentInterpolationDecoration"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("graphicsPipelineLibraryFastLinking"),
+		    JAVA_INT.withName("graphicsPipelineLibraryIndependentInterpolationDecoration")
+		).withName("VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("graphicsPipelineLibraryFastLinking"));
+		GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("graphicsPipelineLibraryIndependentInterpolationDecoration"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		GRAPHICS_PIPELINE_LIBRARY_FAST_LINKING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("graphicsPipelineLibraryFastLinking"));
+		GRAPHICS_PIPELINE_LIBRARY_INDEPENDENT_INTERPOLATION_DECORATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("graphicsPipelineLibraryIndependentInterpolationDecoration"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
             segment -> new VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(segment)
         );
     }
-    
+
 }

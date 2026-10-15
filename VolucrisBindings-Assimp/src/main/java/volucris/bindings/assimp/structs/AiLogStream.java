@@ -27,43 +27,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiLogStream
 		implements Struct<AiLogStream> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CALLBACK_HANDLE;
-    public static final VarHandle USER_HANDLE;
+	public static final VarHandle CALLBACK_HANDLE;
+	public static final VarHandle USER_HANDLE;
 
-    public static final long CALLBACK_BYTE_OFFSET;
-    public static final long USER_BYTE_OFFSET;
+	public static final long CALLBACK_BYTE_OFFSET;
+	public static final long USER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("callback"),
-            UNBOUNDED_ADDRESS.withName("user")
-        ).withName("aiLogStream").withByteAlignment(8);
-        
-        CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callback"));
-        USER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("user"));
-        
-        CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callback"));
-        USER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("user"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("callback"),
+		    UNBOUNDED_ADDRESS.withName("user")
+		).withName("aiLogStream").withByteAlignment(8);
+		
+		CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callback"));
+		USER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("user"));
+		
+		CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callback"));
+		USER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("user"));
+		//@formatter:on
+	}
 
-    public AiLogStream() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiLogStream(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiLogStream(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiLogStream() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiLogStream(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiLogStream(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #callback()
     public AiLogStream callback(AiLogStreamCallback callback) {
@@ -152,5 +152,5 @@ public final class AiLogStream
             segment -> new AiLogStream(segment)
         );
     }
-    
+
 }

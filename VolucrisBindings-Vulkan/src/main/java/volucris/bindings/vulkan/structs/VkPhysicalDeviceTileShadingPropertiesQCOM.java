@@ -22,65 +22,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTileShadingPropertiesQCOM
 		implements Struct<VkPhysicalDeviceTileShadingPropertiesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_APRON_SIZE_HANDLE;
-    public static final VarHandle PREFER_NON_COHERENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_APRON_SIZE_HANDLE;
+	public static final VarHandle PREFER_NON_COHERENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_APRON_SIZE_BYTE_OFFSET;
-    public static final long PREFER_NON_COHERENT_BYTE_OFFSET;
-    public static final long TILE_GRANULARITY_BYTE_OFFSET;
-    public static final long MAX_TILE_SHADING_RATE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_APRON_SIZE_BYTE_OFFSET;
+	public static final long PREFER_NON_COHERENT_BYTE_OFFSET;
+	public static final long TILE_GRANULARITY_BYTE_OFFSET;
+	public static final long MAX_TILE_SHADING_RATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D tileGranularity;
-    private final VkExtent2D maxTileShadingRate;
+	private final VkExtent2D tileGranularity;
+	private final VkExtent2D maxTileShadingRate;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxApronSize"),
-            JAVA_INT.withName("preferNonCoherent"),
-            VkExtent2D.LAYOUT.withName("tileGranularity"),
-            VkExtent2D.LAYOUT.withName("maxTileShadingRate")
-        ).withName("VkPhysicalDeviceTileShadingPropertiesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_APRON_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxApronSize"));
-        PREFER_NON_COHERENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferNonCoherent"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_APRON_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxApronSize"));
-        PREFER_NON_COHERENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferNonCoherent"));
-        TILE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileGranularity"));
-        MAX_TILE_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTileShadingRate"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxApronSize"),
+		    JAVA_INT.withName("preferNonCoherent"),
+		    VkExtent2D.LAYOUT.withName("tileGranularity"),
+		    VkExtent2D.LAYOUT.withName("maxTileShadingRate")
+		).withName("VkPhysicalDeviceTileShadingPropertiesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_APRON_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxApronSize"));
+		PREFER_NON_COHERENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferNonCoherent"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_APRON_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxApronSize"));
+		PREFER_NON_COHERENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferNonCoherent"));
+		TILE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileGranularity"));
+		MAX_TILE_SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTileShadingRate"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTileShadingPropertiesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTileShadingPropertiesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTileShadingPropertiesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        tileGranularity = new VkExtent2D(segment.asSlice(TILE_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxTileShadingRate = new VkExtent2D(segment.asSlice(MAX_TILE_SHADING_RATE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceTileShadingPropertiesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTileShadingPropertiesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTileShadingPropertiesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    tileGranularity = new VkExtent2D(segment.asSlice(TILE_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxTileShadingRate = new VkExtent2D(segment.asSlice(MAX_TILE_SHADING_RATE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTileShadingPropertiesQCOM sType(int sType) {
@@ -210,5 +210,5 @@ public final class VkPhysicalDeviceTileShadingPropertiesQCOM
             segment -> new VkPhysicalDeviceTileShadingPropertiesQCOM(segment)
         );
     }
-    
+
 }

@@ -22,10 +22,10 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public class VulkanBase {
 
-    private static final LazyConstant<MethodHandle> VK_CREATE_INSTANCE;
-    private static final LazyConstant<MethodHandle> VK_ENUMERATE_INSTANCE_EXTENSION_PROPERTIES;
-    private static final LazyConstant<MethodHandle> VK_ENUMERATE_INSTANCE_LAYER_PROPERTIES;
-    private static final LazyConstant<MethodHandle> VK_ENUMERATE_INSTANCE_VERSION;
+	private static final LazyConstant<MethodHandle> VK_CREATE_INSTANCE;
+	private static final LazyConstant<MethodHandle> VK_ENUMERATE_INSTANCE_EXTENSION_PROPERTIES;
+	private static final LazyConstant<MethodHandle> VK_ENUMERATE_INSTANCE_LAYER_PROPERTIES;
+	private static final LazyConstant<MethodHandle> VK_ENUMERATE_INSTANCE_VERSION;
 
     static {
         //@formatter:off

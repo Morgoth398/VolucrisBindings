@@ -35,82 +35,102 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiNodeAnim
 		implements Struct<AiNodeAnim> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_NUM_POSITION_KEYS_HANDLE;
-    public static final VarHandle M_POSITION_KEYS_HANDLE;
-    public static final VarHandle M_NUM_ROTATION_KEYS_HANDLE;
-    public static final VarHandle M_ROTATION_KEYS_HANDLE;
-    public static final VarHandle M_NUM_SCALING_KEYS_HANDLE;
-    public static final VarHandle M_SCALING_KEYS_HANDLE;
-    public static final VarHandle M_PRE_STATE_HANDLE;
-    public static final VarHandle M_POST_STATE_HANDLE;
+	public static final VarHandle M_NUM_POSITION_KEYS_HANDLE;
+	public static final VarHandle M_POSITION_KEYS_HANDLE;
+	public static final VarHandle M_NUM_ROTATION_KEYS_HANDLE;
+	public static final VarHandle M_ROTATION_KEYS_HANDLE;
+	public static final VarHandle M_NUM_SCALING_KEYS_HANDLE;
+	public static final VarHandle M_SCALING_KEYS_HANDLE;
+	public static final VarHandle M_PRE_STATE_HANDLE;
+	public static final VarHandle M_POST_STATE_HANDLE;
 
-    public static final long M_NODE_NAME_BYTE_OFFSET;
-    public static final long M_NUM_POSITION_KEYS_BYTE_OFFSET;
-    public static final long M_POSITION_KEYS_BYTE_OFFSET;
-    public static final long M_NUM_ROTATION_KEYS_BYTE_OFFSET;
-    public static final long M_ROTATION_KEYS_BYTE_OFFSET;
-    public static final long M_NUM_SCALING_KEYS_BYTE_OFFSET;
-    public static final long M_SCALING_KEYS_BYTE_OFFSET;
-    public static final long M_PRE_STATE_BYTE_OFFSET;
-    public static final long M_POST_STATE_BYTE_OFFSET;
+	public static final long M_NODE_NAME_BYTE_OFFSET;
+	public static final long M_NUM_POSITION_KEYS_BYTE_OFFSET;
+	public static final long M_POSITION_KEYS_BYTE_OFFSET;
+	public static final long M_NUM_ROTATION_KEYS_BYTE_OFFSET;
+	public static final long M_ROTATION_KEYS_BYTE_OFFSET;
+	public static final long M_NUM_SCALING_KEYS_BYTE_OFFSET;
+	public static final long M_SCALING_KEYS_BYTE_OFFSET;
+	public static final long M_PRE_STATE_BYTE_OFFSET;
+	public static final long M_POST_STATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mNodeName;
+	private final AiString mNodeName;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mNodeName"),
-            JAVA_INT.withName("mNumPositionKeys"),
-            UNBOUNDED_ADDRESS.withName("mPositionKeys"),
-            JAVA_INT.withName("mNumRotationKeys"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mRotationKeys"),
-            JAVA_INT.withName("mNumScalingKeys"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mScalingKeys"),
-            JAVA_INT.withName("mPreState"),
-            JAVA_INT.withName("mPostState")
-        ).withName("aiNodeAnim").withByteAlignment(8);
-        
-        M_NUM_POSITION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumPositionKeys"));
-        M_POSITION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPositionKeys"));
-        M_NUM_ROTATION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumRotationKeys"));
-        M_ROTATION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mRotationKeys"));
-        M_NUM_SCALING_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumScalingKeys"));
-        M_SCALING_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mScalingKeys"));
-        M_PRE_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPreState"));
-        M_POST_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPostState"));
-        
-        M_NODE_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNodeName"));
-        M_NUM_POSITION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumPositionKeys"));
-        M_POSITION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPositionKeys"));
-        M_NUM_ROTATION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumRotationKeys"));
-        M_ROTATION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mRotationKeys"));
-        M_NUM_SCALING_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumScalingKeys"));
-        M_SCALING_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mScalingKeys"));
-        M_PRE_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPreState"));
-        M_POST_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPostState"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mNodeName"),
+		    JAVA_INT.withName("mNumPositionKeys"),
+		    UNBOUNDED_ADDRESS.withName("mPositionKeys"),
+		    JAVA_INT.withName("mNumRotationKeys"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mRotationKeys"),
+		    JAVA_INT.withName("mNumScalingKeys"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mScalingKeys"),
+		    JAVA_INT.withName("mPreState"),
+		    JAVA_INT.withName("mPostState")
+		).withName("aiNodeAnim").withByteAlignment(8);
+		
+		M_NUM_POSITION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumPositionKeys"));
+		M_POSITION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPositionKeys"));
+		M_NUM_ROTATION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumRotationKeys"));
+		M_ROTATION_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mRotationKeys"));
+		M_NUM_SCALING_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumScalingKeys"));
+		M_SCALING_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mScalingKeys"));
+		M_PRE_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPreState"));
+		M_POST_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mPostState"));
+		
+		M_NODE_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNodeName"));
+		M_NUM_POSITION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumPositionKeys"));
+		M_POSITION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPositionKeys"));
+		M_NUM_ROTATION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumRotationKeys"));
+		M_ROTATION_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mRotationKeys"));
+		M_NUM_SCALING_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumScalingKeys"));
+		M_SCALING_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mScalingKeys"));
+		M_PRE_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPreState"));
+		M_POST_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPostState"));
+		//@formatter:on
+	}
 
-    public AiNodeAnim() {
-        this(Arena.ofAuto());
+	public AiNodeAnim() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiNodeAnim(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiNodeAnim(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mNodeName = new AiString(segment.asSlice(M_NODE_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	}
+
+    /// @see #mNodeName()
+    public AiNodeAnim mNodeName(Consumer<AiString> consumer) {
+    	consumer.accept(mNodeName);
+    	return this;
     }
     
-    public AiNodeAnim(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #mNodeName()
+    public AiNodeAnim mNodeName(AiString other) {
+    	mNodeName.set(other);
+    	return this;
     }
     
-    public AiNodeAnim(MemorySegment segment) {
-        this.segment = segment;
-    
-        mNodeName = new AiString(segment.asSlice(M_NODE_NAME_BYTE_OFFSET, AiString.LAYOUT));
+    /// ```
+    /// The name of the node affected by this animation. The node
+    /// must exist and it must be unique.
+    /// ```
+    public AiString mNodeName() {
+    	return mNodeName;
     }
-
+    
     /// @see #mNumPositionKeys()
     public AiNodeAnim mNumPositionKeys(int mNumPositionKeys) {
     	M_NUM_POSITION_KEYS_HANDLE.set(segment, 0L, mNumPositionKeys);
@@ -251,26 +271,6 @@ public final class AiNodeAnim
     	return (int) M_POST_STATE_HANDLE.get(segment, 0L);
     }
     
-    /// @see #mNodeName()
-    public AiNodeAnim mNodeName(Consumer<AiString> consumer) {
-    	consumer.accept(mNodeName);
-    	return this;
-    }
-    
-    /// @see #mNodeName()
-    public AiNodeAnim mNodeName(AiString other) {
-    	mNodeName.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// The name of the node affected by this animation. The node
-    /// must exist and it must be unique.
-    /// ```
-    public AiString mNodeName() {
-    	return mNodeName;
-    }
-    
     @Override
     public AiNodeAnim set(AiNodeAnim other) {
         return set(other.segment);
@@ -322,5 +322,5 @@ public final class AiNodeAnim
             segment -> new AiNodeAnim(segment)
         );
     }
-    
+
 }

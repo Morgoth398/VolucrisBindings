@@ -22,50 +22,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayPlaneProperties2KHR
 		implements Struct<VkDisplayPlaneProperties2KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DISPLAY_PLANE_PROPERTIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DISPLAY_PLANE_PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDisplayPlanePropertiesKHR displayPlaneProperties;
+	private final VkDisplayPlanePropertiesKHR displayPlaneProperties;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDisplayPlanePropertiesKHR.LAYOUT.withName("displayPlaneProperties")
-        ).withName("VkDisplayPlaneProperties2KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DISPLAY_PLANE_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayPlaneProperties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDisplayPlanePropertiesKHR.LAYOUT.withName("displayPlaneProperties")
+		).withName("VkDisplayPlaneProperties2KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DISPLAY_PLANE_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayPlaneProperties"));
+		//@formatter:on
+	}
 
-    public VkDisplayPlaneProperties2KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayPlaneProperties2KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayPlaneProperties2KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        displayPlaneProperties = new VkDisplayPlanePropertiesKHR(segment.asSlice(DISPLAY_PLANE_PROPERTIES_BYTE_OFFSET, VkDisplayPlanePropertiesKHR.LAYOUT));
-    }
+	public VkDisplayPlaneProperties2KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayPlaneProperties2KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayPlaneProperties2KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    displayPlaneProperties = new VkDisplayPlanePropertiesKHR(segment.asSlice(DISPLAY_PLANE_PROPERTIES_BYTE_OFFSET, VkDisplayPlanePropertiesKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDisplayPlaneProperties2KHR sType(int sType) {
@@ -159,5 +159,5 @@ public final class VkDisplayPlaneProperties2KHR
             segment -> new VkDisplayPlaneProperties2KHR(segment)
         );
     }
-    
+
 }

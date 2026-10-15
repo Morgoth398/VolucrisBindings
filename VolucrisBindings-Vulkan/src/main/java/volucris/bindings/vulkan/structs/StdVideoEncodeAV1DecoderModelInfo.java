@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeAV1DecoderModelInfo
 		implements Struct<StdVideoEncodeAV1DecoderModelInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUFFER_DELAY_LENGTH_MINUS_1_HANDLE;
-    public static final VarHandle BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_HANDLE;
-    public static final VarHandle FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle NUM_UNITS_IN_DECODING_TICK_HANDLE;
+	public static final VarHandle BUFFER_DELAY_LENGTH_MINUS_1_HANDLE;
+	public static final VarHandle BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_HANDLE;
+	public static final VarHandle FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle NUM_UNITS_IN_DECODING_TICK_HANDLE;
 
-    public static final long BUFFER_DELAY_LENGTH_MINUS_1_BYTE_OFFSET;
-    public static final long BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_BYTE_OFFSET;
-    public static final long FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long NUM_UNITS_IN_DECODING_TICK_BYTE_OFFSET;
+	public static final long BUFFER_DELAY_LENGTH_MINUS_1_BYTE_OFFSET;
+	public static final long BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_BYTE_OFFSET;
+	public static final long FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long NUM_UNITS_IN_DECODING_TICK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_BYTE.withName("buffer_delay_length_minus_1"),
-            JAVA_BYTE.withName("buffer_removal_time_length_minus_1"),
-            JAVA_BYTE.withName("frame_presentation_time_length_minus_1"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_INT.withName("num_units_in_decoding_tick")
-        ).withName("StdVideoEncodeAV1DecoderModelInfo").withByteAlignment(4);
-        
-        BUFFER_DELAY_LENGTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer_delay_length_minus_1"));
-        BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer_removal_time_length_minus_1"));
-        FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_presentation_time_length_minus_1"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        NUM_UNITS_IN_DECODING_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_units_in_decoding_tick"));
-        
-        BUFFER_DELAY_LENGTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer_delay_length_minus_1"));
-        BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer_removal_time_length_minus_1"));
-        FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_presentation_time_length_minus_1"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        NUM_UNITS_IN_DECODING_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_units_in_decoding_tick"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_BYTE.withName("buffer_delay_length_minus_1"),
+		    JAVA_BYTE.withName("buffer_removal_time_length_minus_1"),
+		    JAVA_BYTE.withName("frame_presentation_time_length_minus_1"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_INT.withName("num_units_in_decoding_tick")
+		).withName("StdVideoEncodeAV1DecoderModelInfo").withByteAlignment(4);
+		
+		BUFFER_DELAY_LENGTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer_delay_length_minus_1"));
+		BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer_removal_time_length_minus_1"));
+		FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_presentation_time_length_minus_1"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		NUM_UNITS_IN_DECODING_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_units_in_decoding_tick"));
+		
+		BUFFER_DELAY_LENGTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer_delay_length_minus_1"));
+		BUFFER_REMOVAL_TIME_LENGTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer_removal_time_length_minus_1"));
+		FRAME_PRESENTATION_TIME_LENGTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_presentation_time_length_minus_1"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		NUM_UNITS_IN_DECODING_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_units_in_decoding_tick"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeAV1DecoderModelInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoEncodeAV1DecoderModelInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoEncodeAV1DecoderModelInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoEncodeAV1DecoderModelInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeAV1DecoderModelInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeAV1DecoderModelInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #buffer_delay_length_minus_1()
     public StdVideoEncodeAV1DecoderModelInfo buffer_delay_length_minus_1(byte buffer_delay_length_minus_1) {
@@ -173,5 +173,5 @@ public final class StdVideoEncodeAV1DecoderModelInfo
             segment -> new StdVideoEncodeAV1DecoderModelInfo(segment)
         );
     }
-    
+
 }

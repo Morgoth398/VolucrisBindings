@@ -24,84 +24,105 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiAnimation
 		implements Struct<AiAnimation> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_DURATION_HANDLE;
-    public static final VarHandle M_TICKS_PER_SECOND_HANDLE;
-    public static final VarHandle M_NUM_CHANNELS_HANDLE;
-    public static final VarHandle M_CHANNELS_HANDLE;
-    public static final VarHandle M_NUM_MESH_CHANNELS_HANDLE;
-    public static final VarHandle M_MESH_CHANNELS_HANDLE;
-    public static final VarHandle M_NUM_MORPH_MESH_CHANNELS_HANDLE;
-    public static final VarHandle M_MORPH_MESH_CHANNELS_HANDLE;
+	public static final VarHandle M_DURATION_HANDLE;
+	public static final VarHandle M_TICKS_PER_SECOND_HANDLE;
+	public static final VarHandle M_NUM_CHANNELS_HANDLE;
+	public static final VarHandle M_CHANNELS_HANDLE;
+	public static final VarHandle M_NUM_MESH_CHANNELS_HANDLE;
+	public static final VarHandle M_MESH_CHANNELS_HANDLE;
+	public static final VarHandle M_NUM_MORPH_MESH_CHANNELS_HANDLE;
+	public static final VarHandle M_MORPH_MESH_CHANNELS_HANDLE;
 
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_DURATION_BYTE_OFFSET;
-    public static final long M_TICKS_PER_SECOND_BYTE_OFFSET;
-    public static final long M_NUM_CHANNELS_BYTE_OFFSET;
-    public static final long M_CHANNELS_BYTE_OFFSET;
-    public static final long M_NUM_MESH_CHANNELS_BYTE_OFFSET;
-    public static final long M_MESH_CHANNELS_BYTE_OFFSET;
-    public static final long M_NUM_MORPH_MESH_CHANNELS_BYTE_OFFSET;
-    public static final long M_MORPH_MESH_CHANNELS_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_DURATION_BYTE_OFFSET;
+	public static final long M_TICKS_PER_SECOND_BYTE_OFFSET;
+	public static final long M_NUM_CHANNELS_BYTE_OFFSET;
+	public static final long M_CHANNELS_BYTE_OFFSET;
+	public static final long M_NUM_MESH_CHANNELS_BYTE_OFFSET;
+	public static final long M_MESH_CHANNELS_BYTE_OFFSET;
+	public static final long M_NUM_MORPH_MESH_CHANNELS_BYTE_OFFSET;
+	public static final long M_MORPH_MESH_CHANNELS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mName;
+	private final AiString mName;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mName"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_DOUBLE.withName("mDuration"),
-            JAVA_DOUBLE.withName("mTicksPerSecond"),
-            JAVA_INT.withName("mNumChannels"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mChannels"),
-            JAVA_INT.withName("mNumMeshChannels"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mMeshChannels"),
-            JAVA_INT.withName("mNumMorphMeshChannels"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mMorphMeshChannels")
-        ).withName("aiAnimation").withByteAlignment(8);
-        
-        M_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mDuration"));
-        M_TICKS_PER_SECOND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTicksPerSecond"));
-        M_NUM_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumChannels"));
-        M_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mChannels"));
-        M_NUM_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMeshChannels"));
-        M_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMeshChannels"));
-        M_NUM_MORPH_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMorphMeshChannels"));
-        M_MORPH_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMorphMeshChannels"));
-        
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mDuration"));
-        M_TICKS_PER_SECOND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTicksPerSecond"));
-        M_NUM_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumChannels"));
-        M_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mChannels"));
-        M_NUM_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMeshChannels"));
-        M_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMeshChannels"));
-        M_NUM_MORPH_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMorphMeshChannels"));
-        M_MORPH_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMorphMeshChannels"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mName"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_DOUBLE.withName("mDuration"),
+		    JAVA_DOUBLE.withName("mTicksPerSecond"),
+		    JAVA_INT.withName("mNumChannels"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mChannels"),
+		    JAVA_INT.withName("mNumMeshChannels"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mMeshChannels"),
+		    JAVA_INT.withName("mNumMorphMeshChannels"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mMorphMeshChannels")
+		).withName("aiAnimation").withByteAlignment(8);
+		
+		M_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mDuration"));
+		M_TICKS_PER_SECOND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTicksPerSecond"));
+		M_NUM_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumChannels"));
+		M_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mChannels"));
+		M_NUM_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMeshChannels"));
+		M_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMeshChannels"));
+		M_NUM_MORPH_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumMorphMeshChannels"));
+		M_MORPH_MESH_CHANNELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mMorphMeshChannels"));
+		
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mDuration"));
+		M_TICKS_PER_SECOND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTicksPerSecond"));
+		M_NUM_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumChannels"));
+		M_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mChannels"));
+		M_NUM_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMeshChannels"));
+		M_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMeshChannels"));
+		M_NUM_MORPH_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumMorphMeshChannels"));
+		M_MORPH_MESH_CHANNELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMorphMeshChannels"));
+		//@formatter:on
+	}
 
-    public AiAnimation() {
-        this(Arena.ofAuto());
+	public AiAnimation() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiAnimation(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiAnimation(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	}
+
+    /// @see #mName()
+    public AiAnimation mName(Consumer<AiString> consumer) {
+    	consumer.accept(mName);
+    	return this;
     }
     
-    public AiAnimation(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #mName()
+    public AiAnimation mName(AiString other) {
+    	mName.set(other);
+    	return this;
     }
     
-    public AiAnimation(MemorySegment segment) {
-        this.segment = segment;
-    
-        mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+    /// ```
+    /// The name of the animation. If the modeling package this data was
+    /// exported from does support only a single animation channel, this
+    /// name is usually empty (length is zero).
+    /// ```
+    public AiString mName() {
+    	return mName;
     }
-
+    
     /// @see #mDuration()
     public AiAnimation mDuration(double mDuration) {
     	M_DURATION_HANDLE.set(segment, 0L, mDuration);
@@ -227,27 +248,6 @@ public final class AiAnimation
     	return new NativePointerArray(segment);
     }
     
-    /// @see #mName()
-    public AiAnimation mName(Consumer<AiString> consumer) {
-    	consumer.accept(mName);
-    	return this;
-    }
-    
-    /// @see #mName()
-    public AiAnimation mName(AiString other) {
-    	mName.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// The name of the animation. If the modeling package this data was
-    /// exported from does support only a single animation channel, this
-    /// name is usually empty (length is zero).
-    /// ```
-    public AiString mName() {
-    	return mName;
-    }
-    
     @Override
     public AiAnimation set(AiAnimation other) {
         return set(other.segment);
@@ -299,5 +299,5 @@ public final class AiAnimation
             segment -> new AiAnimation(segment)
         );
     }
-    
+
 }

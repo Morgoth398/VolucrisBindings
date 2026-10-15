@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphPipelineSessionBindPointRequirementARM
 		implements Struct<VkDataGraphPipelineSessionBindPointRequirementARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BIND_POINT_HANDLE;
-    public static final VarHandle BIND_POINT_TYPE_HANDLE;
-    public static final VarHandle NUM_OBJECTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BIND_POINT_HANDLE;
+	public static final VarHandle BIND_POINT_TYPE_HANDLE;
+	public static final VarHandle NUM_OBJECTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BIND_POINT_BYTE_OFFSET;
-    public static final long BIND_POINT_TYPE_BYTE_OFFSET;
-    public static final long NUM_OBJECTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BIND_POINT_BYTE_OFFSET;
+	public static final long BIND_POINT_TYPE_BYTE_OFFSET;
+	public static final long NUM_OBJECTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("bindPoint"),
-            JAVA_INT.withName("bindPointType"),
-            JAVA_INT.withName("numObjects"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDataGraphPipelineSessionBindPointRequirementARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindPoint"));
-        BIND_POINT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindPointType"));
-        NUM_OBJECTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numObjects"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindPoint"));
-        BIND_POINT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindPointType"));
-        NUM_OBJECTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numObjects"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("bindPoint"),
+		    JAVA_INT.withName("bindPointType"),
+		    JAVA_INT.withName("numObjects"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDataGraphPipelineSessionBindPointRequirementARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindPoint"));
+		BIND_POINT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindPointType"));
+		NUM_OBJECTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numObjects"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindPoint"));
+		BIND_POINT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindPointType"));
+		NUM_OBJECTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numObjects"));
+		//@formatter:on
+	}
 
-    public VkDataGraphPipelineSessionBindPointRequirementARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphPipelineSessionBindPointRequirementARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphPipelineSessionBindPointRequirementARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphPipelineSessionBindPointRequirementARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphPipelineSessionBindPointRequirementARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphPipelineSessionBindPointRequirementARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphPipelineSessionBindPointRequirementARM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDataGraphPipelineSessionBindPointRequirementARM
             segment -> new VkDataGraphPipelineSessionBindPointRequirementARM(segment)
         );
     }
-    
+
 }

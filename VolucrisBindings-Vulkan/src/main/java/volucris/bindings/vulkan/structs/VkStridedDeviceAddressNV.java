@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkStridedDeviceAddressNV
 		implements Struct<VkStridedDeviceAddressNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle START_ADDRESS_HANDLE;
-    public static final VarHandle STRIDE_IN_BYTES_HANDLE;
+	public static final VarHandle START_ADDRESS_HANDLE;
+	public static final VarHandle STRIDE_IN_BYTES_HANDLE;
 
-    public static final long START_ADDRESS_BYTE_OFFSET;
-    public static final long STRIDE_IN_BYTES_BYTE_OFFSET;
+	public static final long START_ADDRESS_BYTE_OFFSET;
+	public static final long STRIDE_IN_BYTES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("startAddress"),
-            JAVA_LONG.withName("strideInBytes")
-        ).withName("VkStridedDeviceAddressNV").withByteAlignment(8);
-        
-        START_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("startAddress"));
-        STRIDE_IN_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("strideInBytes"));
-        
-        START_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("startAddress"));
-        STRIDE_IN_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("strideInBytes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("startAddress"),
+		    JAVA_LONG.withName("strideInBytes")
+		).withName("VkStridedDeviceAddressNV").withByteAlignment(8);
+		
+		START_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("startAddress"));
+		STRIDE_IN_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("strideInBytes"));
+		
+		START_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("startAddress"));
+		STRIDE_IN_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("strideInBytes"));
+		//@formatter:on
+	}
 
-    public VkStridedDeviceAddressNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkStridedDeviceAddressNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkStridedDeviceAddressNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkStridedDeviceAddressNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkStridedDeviceAddressNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkStridedDeviceAddressNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #startAddress()
     public VkStridedDeviceAddressNV startAddress(long startAddress) {
@@ -128,5 +128,5 @@ public final class VkStridedDeviceAddressNV
             segment -> new VkStridedDeviceAddressNV(segment)
         );
     }
-    
+
 }

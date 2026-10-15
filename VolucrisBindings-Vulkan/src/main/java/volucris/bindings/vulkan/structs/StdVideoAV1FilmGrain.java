@@ -20,160 +20,176 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1FilmGrain
 		implements Struct<StdVideoAV1FilmGrain> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle GRAIN_SCALING_MINUS_8_HANDLE;
-    public static final VarHandle AR_COEFF_LAG_HANDLE;
-    public static final VarHandle AR_COEFF_SHIFT_MINUS_6_HANDLE;
-    public static final VarHandle GRAIN_SCALE_SHIFT_HANDLE;
-    public static final VarHandle GRAIN_SEED_HANDLE;
-    public static final VarHandle FILM_GRAIN_PARAMS_REF_IDX_HANDLE;
-    public static final VarHandle NUM_Y_POINTS_HANDLE;
-    public static final VarHandle POINT_Y_VALUE_HANDLE;
-    public static final VarHandle POINT_Y_SCALING_HANDLE;
-    public static final VarHandle NUM_CB_POINTS_HANDLE;
-    public static final VarHandle POINT_CB_VALUE_HANDLE;
-    public static final VarHandle POINT_CB_SCALING_HANDLE;
-    public static final VarHandle NUM_CR_POINTS_HANDLE;
-    public static final VarHandle POINT_CR_VALUE_HANDLE;
-    public static final VarHandle POINT_CR_SCALING_HANDLE;
-    public static final VarHandle AR_COEFFS_Y_PLUS_128_HANDLE;
-    public static final VarHandle AR_COEFFS_CB_PLUS_128_HANDLE;
-    public static final VarHandle AR_COEFFS_CR_PLUS_128_HANDLE;
-    public static final VarHandle CB_MULT_HANDLE;
-    public static final VarHandle CB_LUMA_MULT_HANDLE;
-    public static final VarHandle CB_OFFSET_HANDLE;
-    public static final VarHandle CR_MULT_HANDLE;
-    public static final VarHandle CR_LUMA_MULT_HANDLE;
-    public static final VarHandle CR_OFFSET_HANDLE;
+	public static final VarHandle GRAIN_SCALING_MINUS_8_HANDLE;
+	public static final VarHandle AR_COEFF_LAG_HANDLE;
+	public static final VarHandle AR_COEFF_SHIFT_MINUS_6_HANDLE;
+	public static final VarHandle GRAIN_SCALE_SHIFT_HANDLE;
+	public static final VarHandle GRAIN_SEED_HANDLE;
+	public static final VarHandle FILM_GRAIN_PARAMS_REF_IDX_HANDLE;
+	public static final VarHandle NUM_Y_POINTS_HANDLE;
+	public static final VarHandle POINT_Y_VALUE_HANDLE;
+	public static final VarHandle POINT_Y_SCALING_HANDLE;
+	public static final VarHandle NUM_CB_POINTS_HANDLE;
+	public static final VarHandle POINT_CB_VALUE_HANDLE;
+	public static final VarHandle POINT_CB_SCALING_HANDLE;
+	public static final VarHandle NUM_CR_POINTS_HANDLE;
+	public static final VarHandle POINT_CR_VALUE_HANDLE;
+	public static final VarHandle POINT_CR_SCALING_HANDLE;
+	public static final VarHandle AR_COEFFS_Y_PLUS_128_HANDLE;
+	public static final VarHandle AR_COEFFS_CB_PLUS_128_HANDLE;
+	public static final VarHandle AR_COEFFS_CR_PLUS_128_HANDLE;
+	public static final VarHandle CB_MULT_HANDLE;
+	public static final VarHandle CB_LUMA_MULT_HANDLE;
+	public static final VarHandle CB_OFFSET_HANDLE;
+	public static final VarHandle CR_MULT_HANDLE;
+	public static final VarHandle CR_LUMA_MULT_HANDLE;
+	public static final VarHandle CR_OFFSET_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long GRAIN_SCALING_MINUS_8_BYTE_OFFSET;
-    public static final long AR_COEFF_LAG_BYTE_OFFSET;
-    public static final long AR_COEFF_SHIFT_MINUS_6_BYTE_OFFSET;
-    public static final long GRAIN_SCALE_SHIFT_BYTE_OFFSET;
-    public static final long GRAIN_SEED_BYTE_OFFSET;
-    public static final long FILM_GRAIN_PARAMS_REF_IDX_BYTE_OFFSET;
-    public static final long NUM_Y_POINTS_BYTE_OFFSET;
-    public static final long POINT_Y_VALUE_BYTE_OFFSET;
-    public static final long POINT_Y_SCALING_BYTE_OFFSET;
-    public static final long NUM_CB_POINTS_BYTE_OFFSET;
-    public static final long POINT_CB_VALUE_BYTE_OFFSET;
-    public static final long POINT_CB_SCALING_BYTE_OFFSET;
-    public static final long NUM_CR_POINTS_BYTE_OFFSET;
-    public static final long POINT_CR_VALUE_BYTE_OFFSET;
-    public static final long POINT_CR_SCALING_BYTE_OFFSET;
-    public static final long AR_COEFFS_Y_PLUS_128_BYTE_OFFSET;
-    public static final long AR_COEFFS_CB_PLUS_128_BYTE_OFFSET;
-    public static final long AR_COEFFS_CR_PLUS_128_BYTE_OFFSET;
-    public static final long CB_MULT_BYTE_OFFSET;
-    public static final long CB_LUMA_MULT_BYTE_OFFSET;
-    public static final long CB_OFFSET_BYTE_OFFSET;
-    public static final long CR_MULT_BYTE_OFFSET;
-    public static final long CR_LUMA_MULT_BYTE_OFFSET;
-    public static final long CR_OFFSET_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long GRAIN_SCALING_MINUS_8_BYTE_OFFSET;
+	public static final long AR_COEFF_LAG_BYTE_OFFSET;
+	public static final long AR_COEFF_SHIFT_MINUS_6_BYTE_OFFSET;
+	public static final long GRAIN_SCALE_SHIFT_BYTE_OFFSET;
+	public static final long GRAIN_SEED_BYTE_OFFSET;
+	public static final long FILM_GRAIN_PARAMS_REF_IDX_BYTE_OFFSET;
+	public static final long NUM_Y_POINTS_BYTE_OFFSET;
+	public static final long POINT_Y_VALUE_BYTE_OFFSET;
+	public static final long POINT_Y_SCALING_BYTE_OFFSET;
+	public static final long NUM_CB_POINTS_BYTE_OFFSET;
+	public static final long POINT_CB_VALUE_BYTE_OFFSET;
+	public static final long POINT_CB_SCALING_BYTE_OFFSET;
+	public static final long NUM_CR_POINTS_BYTE_OFFSET;
+	public static final long POINT_CR_VALUE_BYTE_OFFSET;
+	public static final long POINT_CR_SCALING_BYTE_OFFSET;
+	public static final long AR_COEFFS_Y_PLUS_128_BYTE_OFFSET;
+	public static final long AR_COEFFS_CB_PLUS_128_BYTE_OFFSET;
+	public static final long AR_COEFFS_CR_PLUS_128_BYTE_OFFSET;
+	public static final long CB_MULT_BYTE_OFFSET;
+	public static final long CB_LUMA_MULT_BYTE_OFFSET;
+	public static final long CB_OFFSET_BYTE_OFFSET;
+	public static final long CR_MULT_BYTE_OFFSET;
+	public static final long CR_LUMA_MULT_BYTE_OFFSET;
+	public static final long CR_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoAV1FilmGrainFlags flags;
+	private final StdVideoAV1FilmGrainFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoAV1FilmGrainFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("grain_scaling_minus_8"),
-            JAVA_BYTE.withName("ar_coeff_lag"),
-            JAVA_BYTE.withName("ar_coeff_shift_minus_6"),
-            JAVA_BYTE.withName("grain_scale_shift"),
-            JAVA_SHORT.withName("grain_seed"),
-            JAVA_BYTE.withName("film_grain_params_ref_idx"),
-            JAVA_BYTE.withName("num_y_points"),
-            MemoryLayout.sequenceLayout(14, JAVA_BYTE).withName("point_y_value"),
-            MemoryLayout.sequenceLayout(14, JAVA_BYTE).withName("point_y_scaling"),
-            JAVA_BYTE.withName("num_cb_points"),
-            MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cb_value"),
-            MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cb_scaling"),
-            JAVA_BYTE.withName("num_cr_points"),
-            MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cr_value"),
-            MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cr_scaling"),
-            MemoryLayout.sequenceLayout(24, JAVA_BYTE).withName("ar_coeffs_y_plus_128"),
-            MemoryLayout.sequenceLayout(25, JAVA_BYTE).withName("ar_coeffs_cb_plus_128"),
-            MemoryLayout.sequenceLayout(25, JAVA_BYTE).withName("ar_coeffs_cr_plus_128"),
-            JAVA_BYTE.withName("cb_mult"),
-            JAVA_BYTE.withName("cb_luma_mult"),
-            JAVA_SHORT.withName("cb_offset"),
-            JAVA_BYTE.withName("cr_mult"),
-            JAVA_BYTE.withName("cr_luma_mult"),
-            JAVA_SHORT.withName("cr_offset")
-        ).withName("StdVideoAV1FilmGrain").withByteAlignment(4);
-        
-        GRAIN_SCALING_MINUS_8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("grain_scaling_minus_8"));
-        AR_COEFF_LAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeff_lag"));
-        AR_COEFF_SHIFT_MINUS_6_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeff_shift_minus_6"));
-        GRAIN_SCALE_SHIFT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("grain_scale_shift"));
-        GRAIN_SEED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("grain_seed"));
-        FILM_GRAIN_PARAMS_REF_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("film_grain_params_ref_idx"));
-        NUM_Y_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_y_points"));
-        POINT_Y_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_y_value"), PathElement.sequenceElement());
-        POINT_Y_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_y_scaling"), PathElement.sequenceElement());
-        NUM_CB_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_cb_points"));
-        POINT_CB_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cb_value"), PathElement.sequenceElement());
-        POINT_CB_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cb_scaling"), PathElement.sequenceElement());
-        NUM_CR_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_cr_points"));
-        POINT_CR_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cr_value"), PathElement.sequenceElement());
-        POINT_CR_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cr_scaling"), PathElement.sequenceElement());
-        AR_COEFFS_Y_PLUS_128_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeffs_y_plus_128"), PathElement.sequenceElement());
-        AR_COEFFS_CB_PLUS_128_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeffs_cb_plus_128"), PathElement.sequenceElement());
-        AR_COEFFS_CR_PLUS_128_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeffs_cr_plus_128"), PathElement.sequenceElement());
-        CB_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_mult"));
-        CB_LUMA_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_luma_mult"));
-        CB_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_offset"));
-        CR_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_mult"));
-        CR_LUMA_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_luma_mult"));
-        CR_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_offset"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        GRAIN_SCALING_MINUS_8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("grain_scaling_minus_8"));
-        AR_COEFF_LAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeff_lag"));
-        AR_COEFF_SHIFT_MINUS_6_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeff_shift_minus_6"));
-        GRAIN_SCALE_SHIFT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("grain_scale_shift"));
-        GRAIN_SEED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("grain_seed"));
-        FILM_GRAIN_PARAMS_REF_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("film_grain_params_ref_idx"));
-        NUM_Y_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_y_points"));
-        POINT_Y_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_y_value"));
-        POINT_Y_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_y_scaling"));
-        NUM_CB_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_cb_points"));
-        POINT_CB_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cb_value"));
-        POINT_CB_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cb_scaling"));
-        NUM_CR_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_cr_points"));
-        POINT_CR_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cr_value"));
-        POINT_CR_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cr_scaling"));
-        AR_COEFFS_Y_PLUS_128_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeffs_y_plus_128"));
-        AR_COEFFS_CB_PLUS_128_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeffs_cb_plus_128"));
-        AR_COEFFS_CR_PLUS_128_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeffs_cr_plus_128"));
-        CB_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_mult"));
-        CB_LUMA_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_luma_mult"));
-        CB_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_offset"));
-        CR_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_mult"));
-        CR_LUMA_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_luma_mult"));
-        CR_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_offset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoAV1FilmGrainFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("grain_scaling_minus_8"),
+		    JAVA_BYTE.withName("ar_coeff_lag"),
+		    JAVA_BYTE.withName("ar_coeff_shift_minus_6"),
+		    JAVA_BYTE.withName("grain_scale_shift"),
+		    JAVA_SHORT.withName("grain_seed"),
+		    JAVA_BYTE.withName("film_grain_params_ref_idx"),
+		    JAVA_BYTE.withName("num_y_points"),
+		    MemoryLayout.sequenceLayout(14, JAVA_BYTE).withName("point_y_value"),
+		    MemoryLayout.sequenceLayout(14, JAVA_BYTE).withName("point_y_scaling"),
+		    JAVA_BYTE.withName("num_cb_points"),
+		    MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cb_value"),
+		    MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cb_scaling"),
+		    JAVA_BYTE.withName("num_cr_points"),
+		    MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cr_value"),
+		    MemoryLayout.sequenceLayout(10, JAVA_BYTE).withName("point_cr_scaling"),
+		    MemoryLayout.sequenceLayout(24, JAVA_BYTE).withName("ar_coeffs_y_plus_128"),
+		    MemoryLayout.sequenceLayout(25, JAVA_BYTE).withName("ar_coeffs_cb_plus_128"),
+		    MemoryLayout.sequenceLayout(25, JAVA_BYTE).withName("ar_coeffs_cr_plus_128"),
+		    JAVA_BYTE.withName("cb_mult"),
+		    JAVA_BYTE.withName("cb_luma_mult"),
+		    JAVA_SHORT.withName("cb_offset"),
+		    JAVA_BYTE.withName("cr_mult"),
+		    JAVA_BYTE.withName("cr_luma_mult"),
+		    JAVA_SHORT.withName("cr_offset")
+		).withName("StdVideoAV1FilmGrain").withByteAlignment(4);
+		
+		GRAIN_SCALING_MINUS_8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("grain_scaling_minus_8"));
+		AR_COEFF_LAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeff_lag"));
+		AR_COEFF_SHIFT_MINUS_6_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeff_shift_minus_6"));
+		GRAIN_SCALE_SHIFT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("grain_scale_shift"));
+		GRAIN_SEED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("grain_seed"));
+		FILM_GRAIN_PARAMS_REF_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("film_grain_params_ref_idx"));
+		NUM_Y_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_y_points"));
+		POINT_Y_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_y_value"), PathElement.sequenceElement());
+		POINT_Y_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_y_scaling"), PathElement.sequenceElement());
+		NUM_CB_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_cb_points"));
+		POINT_CB_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cb_value"), PathElement.sequenceElement());
+		POINT_CB_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cb_scaling"), PathElement.sequenceElement());
+		NUM_CR_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_cr_points"));
+		POINT_CR_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cr_value"), PathElement.sequenceElement());
+		POINT_CR_SCALING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("point_cr_scaling"), PathElement.sequenceElement());
+		AR_COEFFS_Y_PLUS_128_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeffs_y_plus_128"), PathElement.sequenceElement());
+		AR_COEFFS_CB_PLUS_128_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeffs_cb_plus_128"), PathElement.sequenceElement());
+		AR_COEFFS_CR_PLUS_128_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ar_coeffs_cr_plus_128"), PathElement.sequenceElement());
+		CB_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_mult"));
+		CB_LUMA_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_luma_mult"));
+		CB_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cb_offset"));
+		CR_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_mult"));
+		CR_LUMA_MULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_luma_mult"));
+		CR_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cr_offset"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		GRAIN_SCALING_MINUS_8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("grain_scaling_minus_8"));
+		AR_COEFF_LAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeff_lag"));
+		AR_COEFF_SHIFT_MINUS_6_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeff_shift_minus_6"));
+		GRAIN_SCALE_SHIFT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("grain_scale_shift"));
+		GRAIN_SEED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("grain_seed"));
+		FILM_GRAIN_PARAMS_REF_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("film_grain_params_ref_idx"));
+		NUM_Y_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_y_points"));
+		POINT_Y_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_y_value"));
+		POINT_Y_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_y_scaling"));
+		NUM_CB_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_cb_points"));
+		POINT_CB_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cb_value"));
+		POINT_CB_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cb_scaling"));
+		NUM_CR_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_cr_points"));
+		POINT_CR_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cr_value"));
+		POINT_CR_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("point_cr_scaling"));
+		AR_COEFFS_Y_PLUS_128_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeffs_y_plus_128"));
+		AR_COEFFS_CB_PLUS_128_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeffs_cb_plus_128"));
+		AR_COEFFS_CR_PLUS_128_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ar_coeffs_cr_plus_128"));
+		CB_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_mult"));
+		CB_LUMA_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_luma_mult"));
+		CB_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cb_offset"));
+		CR_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_mult"));
+		CR_LUMA_MULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_luma_mult"));
+		CR_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cr_offset"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1FilmGrain() {
-        this(Arena.ofAuto());
+	public StdVideoAV1FilmGrain() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1FilmGrain(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1FilmGrain(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoAV1FilmGrainFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1FilmGrainFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoAV1FilmGrain flags(Consumer<StdVideoAV1FilmGrainFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoAV1FilmGrain(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoAV1FilmGrain flags(StdVideoAV1FilmGrainFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoAV1FilmGrain(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoAV1FilmGrainFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1FilmGrainFlags.LAYOUT));
+    public StdVideoAV1FilmGrainFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #grain_scaling_minus_8()
     public StdVideoAV1FilmGrain grain_scaling_minus_8(byte grain_scaling_minus_8) {
     	GRAIN_SCALING_MINUS_8_HANDLE.set(segment, 0L, grain_scaling_minus_8);
@@ -414,22 +430,6 @@ public final class StdVideoAV1FilmGrain
     	return (short) CR_OFFSET_HANDLE.get(segment, 0L);
     }
     
-    /// @see #flags()
-    public StdVideoAV1FilmGrain flags(Consumer<StdVideoAV1FilmGrainFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1FilmGrain flags(StdVideoAV1FilmGrainFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoAV1FilmGrainFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoAV1FilmGrain set(StdVideoAV1FilmGrain other) {
         return set(other.segment);
@@ -481,5 +481,5 @@ public final class StdVideoAV1FilmGrain
             segment -> new StdVideoAV1FilmGrain(segment)
         );
     }
-    
+
 }

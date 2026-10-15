@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkLatencySleepModeInfoNV
 		implements Struct<VkLatencySleepModeInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LOW_LATENCY_MODE_HANDLE;
-    public static final VarHandle LOW_LATENCY_BOOST_HANDLE;
-    public static final VarHandle MINIMUM_INTERVAL_US_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LOW_LATENCY_MODE_HANDLE;
+	public static final VarHandle LOW_LATENCY_BOOST_HANDLE;
+	public static final VarHandle MINIMUM_INTERVAL_US_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LOW_LATENCY_MODE_BYTE_OFFSET;
-    public static final long LOW_LATENCY_BOOST_BYTE_OFFSET;
-    public static final long MINIMUM_INTERVAL_US_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LOW_LATENCY_MODE_BYTE_OFFSET;
+	public static final long LOW_LATENCY_BOOST_BYTE_OFFSET;
+	public static final long MINIMUM_INTERVAL_US_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("lowLatencyMode"),
-            JAVA_INT.withName("lowLatencyBoost"),
-            JAVA_INT.withName("minimumIntervalUs"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkLatencySleepModeInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LOW_LATENCY_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lowLatencyMode"));
-        LOW_LATENCY_BOOST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lowLatencyBoost"));
-        MINIMUM_INTERVAL_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minimumIntervalUs"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LOW_LATENCY_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lowLatencyMode"));
-        LOW_LATENCY_BOOST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lowLatencyBoost"));
-        MINIMUM_INTERVAL_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minimumIntervalUs"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("lowLatencyMode"),
+		    JAVA_INT.withName("lowLatencyBoost"),
+		    JAVA_INT.withName("minimumIntervalUs"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkLatencySleepModeInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LOW_LATENCY_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lowLatencyMode"));
+		LOW_LATENCY_BOOST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lowLatencyBoost"));
+		MINIMUM_INTERVAL_US_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minimumIntervalUs"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LOW_LATENCY_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lowLatencyMode"));
+		LOW_LATENCY_BOOST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lowLatencyBoost"));
+		MINIMUM_INTERVAL_US_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minimumIntervalUs"));
+		//@formatter:on
+	}
 
-    public VkLatencySleepModeInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkLatencySleepModeInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkLatencySleepModeInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkLatencySleepModeInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkLatencySleepModeInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkLatencySleepModeInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkLatencySleepModeInfoNV sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkLatencySleepModeInfoNV
             segment -> new VkLatencySleepModeInfoNV(segment)
         );
     }
-    
+
 }

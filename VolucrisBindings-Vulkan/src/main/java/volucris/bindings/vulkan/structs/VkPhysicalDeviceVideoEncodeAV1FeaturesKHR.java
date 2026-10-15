@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVideoEncodeAV1FeaturesKHR
 		implements Struct<VkPhysicalDeviceVideoEncodeAV1FeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIDEO_ENCODE_AV1_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIDEO_ENCODE_AV1_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIDEO_ENCODE_AV1_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIDEO_ENCODE_AV1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("videoEncodeAV1"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVideoEncodeAV1FeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIDEO_ENCODE_AV1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoEncodeAV1"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIDEO_ENCODE_AV1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoEncodeAV1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("videoEncodeAV1"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVideoEncodeAV1FeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIDEO_ENCODE_AV1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoEncodeAV1"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIDEO_ENCODE_AV1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoEncodeAV1"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVideoEncodeAV1FeaturesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceVideoEncodeAV1FeaturesKHR
             segment -> new VkPhysicalDeviceVideoEncodeAV1FeaturesKHR(segment)
         );
     }
-    
+
 }

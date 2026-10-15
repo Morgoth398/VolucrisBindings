@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSubpassDescriptionDepthStencilResolve
 		implements Struct<VkSubpassDescriptionDepthStencilResolve> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEPTH_RESOLVE_MODE_HANDLE;
-    public static final VarHandle STENCIL_RESOLVE_MODE_HANDLE;
-    public static final VarHandle P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEPTH_RESOLVE_MODE_HANDLE;
+	public static final VarHandle STENCIL_RESOLVE_MODE_HANDLE;
+	public static final VarHandle P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEPTH_RESOLVE_MODE_BYTE_OFFSET;
-    public static final long STENCIL_RESOLVE_MODE_BYTE_OFFSET;
-    public static final long P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEPTH_RESOLVE_MODE_BYTE_OFFSET;
+	public static final long STENCIL_RESOLVE_MODE_BYTE_OFFSET;
+	public static final long P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("depthResolveMode"),
-            JAVA_INT.withName("stencilResolveMode"),
-            UNBOUNDED_ADDRESS.withName("pDepthStencilResolveAttachment")
-        ).withName("VkSubpassDescriptionDepthStencilResolve").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEPTH_RESOLVE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthResolveMode"));
-        STENCIL_RESOLVE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilResolveMode"));
-        P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthStencilResolveAttachment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEPTH_RESOLVE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthResolveMode"));
-        STENCIL_RESOLVE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilResolveMode"));
-        P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthStencilResolveAttachment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("depthResolveMode"),
+		    JAVA_INT.withName("stencilResolveMode"),
+		    UNBOUNDED_ADDRESS.withName("pDepthStencilResolveAttachment")
+		).withName("VkSubpassDescriptionDepthStencilResolve").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEPTH_RESOLVE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthResolveMode"));
+		STENCIL_RESOLVE_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilResolveMode"));
+		P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthStencilResolveAttachment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEPTH_RESOLVE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthResolveMode"));
+		STENCIL_RESOLVE_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilResolveMode"));
+		P_DEPTH_STENCIL_RESOLVE_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthStencilResolveAttachment"));
+		//@formatter:on
+	}
 
-    public VkSubpassDescriptionDepthStencilResolve() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubpassDescriptionDepthStencilResolve(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubpassDescriptionDepthStencilResolve(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubpassDescriptionDepthStencilResolve() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubpassDescriptionDepthStencilResolve(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubpassDescriptionDepthStencilResolve(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSubpassDescriptionDepthStencilResolve sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkSubpassDescriptionDepthStencilResolve
             segment -> new VkSubpassDescriptionDepthStencilResolve(segment)
         );
     }
-    
+
 }

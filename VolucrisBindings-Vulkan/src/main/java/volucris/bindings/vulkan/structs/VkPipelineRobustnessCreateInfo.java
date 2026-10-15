@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineRobustnessCreateInfo
 		implements Struct<VkPipelineRobustnessCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle VERTEX_INPUTS_HANDLE;
-    public static final VarHandle IMAGES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle VERTEX_INPUTS_HANDLE;
+	public static final VarHandle IMAGES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long VERTEX_INPUTS_BYTE_OFFSET;
-    public static final long IMAGES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long VERTEX_INPUTS_BYTE_OFFSET;
+	public static final long IMAGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("storageBuffers"),
-            JAVA_INT.withName("uniformBuffers"),
-            JAVA_INT.withName("vertexInputs"),
-            JAVA_INT.withName("images")
-        ).withName("VkPipelineRobustnessCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageBuffers"));
-        UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformBuffers"));
-        VERTEX_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexInputs"));
-        IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("images"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageBuffers"));
-        UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformBuffers"));
-        VERTEX_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexInputs"));
-        IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("images"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("storageBuffers"),
+		    JAVA_INT.withName("uniformBuffers"),
+		    JAVA_INT.withName("vertexInputs"),
+		    JAVA_INT.withName("images")
+		).withName("VkPipelineRobustnessCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageBuffers"));
+		UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformBuffers"));
+		VERTEX_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexInputs"));
+		IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("images"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageBuffers"));
+		UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformBuffers"));
+		VERTEX_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexInputs"));
+		IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("images"));
+		//@formatter:on
+	}
 
-    public VkPipelineRobustnessCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineRobustnessCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineRobustnessCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineRobustnessCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineRobustnessCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineRobustnessCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineRobustnessCreateInfo sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPipelineRobustnessCreateInfo
             segment -> new VkPipelineRobustnessCreateInfo(segment)
         );
     }
-    
+
 }

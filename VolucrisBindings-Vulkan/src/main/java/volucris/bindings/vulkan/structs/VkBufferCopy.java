@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkBufferCopy
 		implements Struct<VkBufferCopy> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SRC_OFFSET_HANDLE;
-    public static final VarHandle DST_OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle SRC_OFFSET_HANDLE;
+	public static final VarHandle DST_OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long SRC_OFFSET_BYTE_OFFSET;
-    public static final long DST_OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long SRC_OFFSET_BYTE_OFFSET;
+	public static final long DST_OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("srcOffset"),
-            JAVA_LONG.withName("dstOffset"),
-            JAVA_LONG.withName("size")
-        ).withName("VkBufferCopy").withByteAlignment(8);
-        
-        SRC_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcOffset"));
-        DST_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstOffset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        SRC_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffset"));
-        DST_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("srcOffset"),
+		    JAVA_LONG.withName("dstOffset"),
+		    JAVA_LONG.withName("size")
+		).withName("VkBufferCopy").withByteAlignment(8);
+		
+		SRC_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcOffset"));
+		DST_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstOffset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		SRC_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffset"));
+		DST_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkBufferCopy() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBufferCopy(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBufferCopy(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBufferCopy() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBufferCopy(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBufferCopy(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #srcOffset()
     public VkBufferCopy srcOffset(long srcOffset) {
@@ -143,5 +143,5 @@ public final class VkBufferCopy
             segment -> new VkBufferCopy(segment)
         );
     }
-    
+
 }

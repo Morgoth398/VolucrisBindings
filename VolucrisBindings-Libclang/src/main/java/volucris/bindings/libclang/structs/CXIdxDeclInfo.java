@@ -20,101 +20,101 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxDeclInfo
 		implements Struct<CXIdxDeclInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ENTITY_INFO_HANDLE;
-    public static final VarHandle SEMANTIC_CONTAINER_HANDLE;
-    public static final VarHandle LEXICAL_CONTAINER_HANDLE;
-    public static final VarHandle IS_REDECLARATION_HANDLE;
-    public static final VarHandle IS_DEFINITION_HANDLE;
-    public static final VarHandle IS_CONTAINER_HANDLE;
-    public static final VarHandle DECL_AS_CONTAINER_HANDLE;
-    public static final VarHandle IS_IMPLICIT_HANDLE;
-    public static final VarHandle ATTRIBUTES_HANDLE;
-    public static final VarHandle NUM_ATTRIBUTES_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle ENTITY_INFO_HANDLE;
+	public static final VarHandle SEMANTIC_CONTAINER_HANDLE;
+	public static final VarHandle LEXICAL_CONTAINER_HANDLE;
+	public static final VarHandle IS_REDECLARATION_HANDLE;
+	public static final VarHandle IS_DEFINITION_HANDLE;
+	public static final VarHandle IS_CONTAINER_HANDLE;
+	public static final VarHandle DECL_AS_CONTAINER_HANDLE;
+	public static final VarHandle IS_IMPLICIT_HANDLE;
+	public static final VarHandle ATTRIBUTES_HANDLE;
+	public static final VarHandle NUM_ATTRIBUTES_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long ENTITY_INFO_BYTE_OFFSET;
-    public static final long CURSOR_BYTE_OFFSET;
-    public static final long LOC_BYTE_OFFSET;
-    public static final long SEMANTIC_CONTAINER_BYTE_OFFSET;
-    public static final long LEXICAL_CONTAINER_BYTE_OFFSET;
-    public static final long IS_REDECLARATION_BYTE_OFFSET;
-    public static final long IS_DEFINITION_BYTE_OFFSET;
-    public static final long IS_CONTAINER_BYTE_OFFSET;
-    public static final long DECL_AS_CONTAINER_BYTE_OFFSET;
-    public static final long IS_IMPLICIT_BYTE_OFFSET;
-    public static final long ATTRIBUTES_BYTE_OFFSET;
-    public static final long NUM_ATTRIBUTES_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long ENTITY_INFO_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
+	public static final long LOC_BYTE_OFFSET;
+	public static final long SEMANTIC_CONTAINER_BYTE_OFFSET;
+	public static final long LEXICAL_CONTAINER_BYTE_OFFSET;
+	public static final long IS_REDECLARATION_BYTE_OFFSET;
+	public static final long IS_DEFINITION_BYTE_OFFSET;
+	public static final long IS_CONTAINER_BYTE_OFFSET;
+	public static final long DECL_AS_CONTAINER_BYTE_OFFSET;
+	public static final long IS_IMPLICIT_BYTE_OFFSET;
+	public static final long ATTRIBUTES_BYTE_OFFSET;
+	public static final long NUM_ATTRIBUTES_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
-    private final CXIdxLoc loc;
+	private final CXCursor cursor;
+	private final CXIdxLoc loc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("entityInfo"),
-            CXCursor.LAYOUT.withName("cursor"),
-            CXIdxLoc.LAYOUT.withName("loc"),
-            UNBOUNDED_ADDRESS.withName("semanticContainer"),
-            UNBOUNDED_ADDRESS.withName("lexicalContainer"),
-            JAVA_INT.withName("isRedeclaration"),
-            JAVA_INT.withName("isDefinition"),
-            JAVA_INT.withName("isContainer"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("declAsContainer"),
-            JAVA_INT.withName("isImplicit"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("attributes"),
-            JAVA_INT.withName("numAttributes"),
-            JAVA_INT.withName("flags")
-        ).withName("CXIdxDeclInfo").withByteAlignment(8);
-        
-        ENTITY_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("entityInfo"));
-        SEMANTIC_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("semanticContainer"));
-        LEXICAL_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lexicalContainer"));
-        IS_REDECLARATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isRedeclaration"));
-        IS_DEFINITION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isDefinition"));
-        IS_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isContainer"));
-        DECL_AS_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declAsContainer"));
-        IS_IMPLICIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isImplicit"));
-        ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attributes"));
-        NUM_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAttributes"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        ENTITY_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("entityInfo"));
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
-        SEMANTIC_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("semanticContainer"));
-        LEXICAL_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lexicalContainer"));
-        IS_REDECLARATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isRedeclaration"));
-        IS_DEFINITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isDefinition"));
-        IS_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isContainer"));
-        DECL_AS_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declAsContainer"));
-        IS_IMPLICIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isImplicit"));
-        ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attributes"));
-        NUM_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAttributes"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("entityInfo"),
+		    CXCursor.LAYOUT.withName("cursor"),
+		    CXIdxLoc.LAYOUT.withName("loc"),
+		    UNBOUNDED_ADDRESS.withName("semanticContainer"),
+		    UNBOUNDED_ADDRESS.withName("lexicalContainer"),
+		    JAVA_INT.withName("isRedeclaration"),
+		    JAVA_INT.withName("isDefinition"),
+		    JAVA_INT.withName("isContainer"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("declAsContainer"),
+		    JAVA_INT.withName("isImplicit"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("attributes"),
+		    JAVA_INT.withName("numAttributes"),
+		    JAVA_INT.withName("flags")
+		).withName("CXIdxDeclInfo").withByteAlignment(8);
+		
+		ENTITY_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("entityInfo"));
+		SEMANTIC_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("semanticContainer"));
+		LEXICAL_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lexicalContainer"));
+		IS_REDECLARATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isRedeclaration"));
+		IS_DEFINITION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isDefinition"));
+		IS_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isContainer"));
+		DECL_AS_CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declAsContainer"));
+		IS_IMPLICIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isImplicit"));
+		ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attributes"));
+		NUM_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAttributes"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		ENTITY_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("entityInfo"));
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
+		SEMANTIC_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("semanticContainer"));
+		LEXICAL_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lexicalContainer"));
+		IS_REDECLARATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isRedeclaration"));
+		IS_DEFINITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isDefinition"));
+		IS_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isContainer"));
+		DECL_AS_CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declAsContainer"));
+		IS_IMPLICIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isImplicit"));
+		ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attributes"));
+		NUM_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAttributes"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public CXIdxDeclInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxDeclInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxDeclInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxDeclInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxDeclInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxDeclInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #entityInfo()
     public CXIdxDeclInfo entityInfo(CXIdxEntityInfo entityInfo) {
@@ -129,6 +129,38 @@ public final class CXIdxDeclInfo
     		return null;
     	
     	return new CXIdxEntityInfo(segment);
+    }
+    
+    /// @see #cursor()
+    public CXIdxDeclInfo cursor(Consumer<CXCursor> consumer) {
+    	consumer.accept(cursor);
+    	return this;
+    }
+    
+    /// @see #cursor()
+    public CXIdxDeclInfo cursor(CXCursor other) {
+    	cursor.set(other);
+    	return this;
+    }
+    
+    public CXCursor cursor() {
+    	return cursor;
+    }
+    
+    /// @see #loc()
+    public CXIdxDeclInfo loc(Consumer<CXIdxLoc> consumer) {
+    	consumer.accept(loc);
+    	return this;
+    }
+    
+    /// @see #loc()
+    public CXIdxDeclInfo loc(CXIdxLoc other) {
+    	loc.set(other);
+    	return this;
+    }
+    
+    public CXIdxLoc loc() {
+    	return loc;
     }
     
     /// @see #semanticContainer()
@@ -261,38 +293,6 @@ public final class CXIdxDeclInfo
     	return (int) FLAGS_HANDLE.get(segment, 0L);
     }
     
-    /// @see #cursor()
-    public CXIdxDeclInfo cursor(Consumer<CXCursor> consumer) {
-    	consumer.accept(cursor);
-    	return this;
-    }
-    
-    /// @see #cursor()
-    public CXIdxDeclInfo cursor(CXCursor other) {
-    	cursor.set(other);
-    	return this;
-    }
-    
-    public CXCursor cursor() {
-    	return cursor;
-    }
-    
-    /// @see #loc()
-    public CXIdxDeclInfo loc(Consumer<CXIdxLoc> consumer) {
-    	consumer.accept(loc);
-    	return this;
-    }
-    
-    /// @see #loc()
-    public CXIdxDeclInfo loc(CXIdxLoc other) {
-    	loc.set(other);
-    	return this;
-    }
-    
-    public CXIdxLoc loc() {
-    	return loc;
-    }
-    
     @Override
     public CXIdxDeclInfo set(CXIdxDeclInfo other) {
         return set(other.segment);
@@ -344,5 +344,5 @@ public final class CXIdxDeclInfo
             segment -> new CXIdxDeclInfo(segment)
         );
     }
-    
+
 }

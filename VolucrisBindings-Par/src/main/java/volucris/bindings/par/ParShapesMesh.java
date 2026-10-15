@@ -20,65 +20,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class ParShapesMesh
 		implements Struct<ParShapesMesh> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle POINTS_HANDLE;
-    public static final VarHandle NPOINTS_HANDLE;
-    public static final VarHandle TRIANGLES_HANDLE;
-    public static final VarHandle NTRIANGLES_HANDLE;
-    public static final VarHandle NORMALS_HANDLE;
-    public static final VarHandle TCOORDS_HANDLE;
+	public static final VarHandle POINTS_HANDLE;
+	public static final VarHandle NPOINTS_HANDLE;
+	public static final VarHandle TRIANGLES_HANDLE;
+	public static final VarHandle NTRIANGLES_HANDLE;
+	public static final VarHandle NORMALS_HANDLE;
+	public static final VarHandle TCOORDS_HANDLE;
 
-    public static final long POINTS_BYTE_OFFSET;
-    public static final long NPOINTS_BYTE_OFFSET;
-    public static final long TRIANGLES_BYTE_OFFSET;
-    public static final long NTRIANGLES_BYTE_OFFSET;
-    public static final long NORMALS_BYTE_OFFSET;
-    public static final long TCOORDS_BYTE_OFFSET;
+	public static final long POINTS_BYTE_OFFSET;
+	public static final long NPOINTS_BYTE_OFFSET;
+	public static final long TRIANGLES_BYTE_OFFSET;
+	public static final long NTRIANGLES_BYTE_OFFSET;
+	public static final long NORMALS_BYTE_OFFSET;
+	public static final long TCOORDS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("points"),
-            JAVA_INT.withName("npoints"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("triangles"),
-            JAVA_INT.withName("ntriangles"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("normals"),
-            UNBOUNDED_ADDRESS.withName("tcoords")
-        ).withName("par_shapes_mesh_s").withByteAlignment(8);
-        
-        POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("points"));
-        NPOINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("npoints"));
-        TRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangles"));
-        NTRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ntriangles"));
-        NORMALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("normals"));
-        TCOORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tcoords"));
-        
-        POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("points"));
-        NPOINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("npoints"));
-        TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangles"));
-        NTRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ntriangles"));
-        NORMALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("normals"));
-        TCOORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tcoords"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("points"),
+		    JAVA_INT.withName("npoints"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("triangles"),
+		    JAVA_INT.withName("ntriangles"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("normals"),
+		    UNBOUNDED_ADDRESS.withName("tcoords")
+		).withName("par_shapes_mesh_s").withByteAlignment(8);
+		
+		POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("points"));
+		NPOINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("npoints"));
+		TRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangles"));
+		NTRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ntriangles"));
+		NORMALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("normals"));
+		TCOORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tcoords"));
+		
+		POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("points"));
+		NPOINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("npoints"));
+		TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangles"));
+		NTRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ntriangles"));
+		NORMALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("normals"));
+		TCOORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tcoords"));
+		//@formatter:on
+	}
 
-    public ParShapesMesh() {
-        this(Arena.ofAuto());
-    }
-    
-    public ParShapesMesh(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public ParShapesMesh(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public ParShapesMesh() {
+	    this(Arena.ofAuto());
+	}
+	
+	public ParShapesMesh(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public ParShapesMesh(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #points()
     public ParShapesMesh points(NativeFloatArray points) {
@@ -229,5 +229,5 @@ public final class ParShapesMesh
             segment -> new ParShapesMesh(segment)
         );
     }
-    
+
 }

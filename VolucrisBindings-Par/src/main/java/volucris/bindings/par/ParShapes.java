@@ -15,90 +15,90 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class ParShapes {
 
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_FREE_MESH;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_CYLINDER;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_CONE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PARAMETRIC_DISK;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_TORUS;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PARAMETRIC_SPHERE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_SUBDIVIDED_SPHERE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_KLEIN_BOTTLE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_TREFOIL_KNOT;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_HEMISPHERE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PLANE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PARAMETRIC;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_ICOSAHEDRON;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_DODECAHEDRON;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_OCTAHEDRON;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_TETRAHEDRON;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_CUBE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_DISK;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_EMPTY;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_ROCK;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_LSYSTEM;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_EXPORT;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_COMPUTE_AABB;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_CLONE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_MERGE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_TRANSLATE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_ROTATE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_SCALE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_MERGE_AND_FREE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_INVERT;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_REMOVE_DEGENERATE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_UNWELD;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_WELD;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_COMPUTE_NORMALS;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_SET_EPSILON_WELDED_NORMALS;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES_SET_EPSILON_DEGENERATE_SPHERE;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES__COMPUTE_WELDED_NORMALS;
-    private static final LazyConstant<MethodHandle> PAR_SHAPES__CONNECT;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_FREE_MESH;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_CYLINDER;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_CONE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PARAMETRIC_DISK;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_TORUS;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PARAMETRIC_SPHERE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_SUBDIVIDED_SPHERE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_KLEIN_BOTTLE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_TREFOIL_KNOT;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_HEMISPHERE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PLANE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_PARAMETRIC;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_ICOSAHEDRON;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_DODECAHEDRON;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_OCTAHEDRON;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_TETRAHEDRON;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_CUBE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_DISK;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_EMPTY;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_ROCK;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CREATE_LSYSTEM;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_EXPORT;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_COMPUTE_AABB;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_CLONE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_MERGE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_TRANSLATE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_ROTATE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_SCALE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_MERGE_AND_FREE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_INVERT;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_REMOVE_DEGENERATE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_UNWELD;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_WELD;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_COMPUTE_NORMALS;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_SET_EPSILON_WELDED_NORMALS;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES_SET_EPSILON_DEGENERATE_SPHERE;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES__COMPUTE_WELDED_NORMALS;
+	private static final LazyConstant<MethodHandle> PAR_SHAPES__CONNECT;
 
-    static {
-        //@formatter:off
-        PAR_SHAPES_FREE_MESH = downcallHandleVoid("par_shapes_free_mesh", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_CYLINDER = downcallHandle("par_shapes_create_cylinder", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_CONE = downcallHandle("par_shapes_create_cone", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_PARAMETRIC_DISK = downcallHandle("par_shapes_create_parametric_disk", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_TORUS = downcallHandle("par_shapes_create_torus", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_FLOAT);
-        PAR_SHAPES_CREATE_PARAMETRIC_SPHERE = downcallHandle("par_shapes_create_parametric_sphere", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_SUBDIVIDED_SPHERE = downcallHandle("par_shapes_create_subdivided_sphere", UNBOUNDED_ADDRESS, JAVA_INT);
-        PAR_SHAPES_CREATE_KLEIN_BOTTLE = downcallHandle("par_shapes_create_klein_bottle", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_TREFOIL_KNOT = downcallHandle("par_shapes_create_trefoil_knot", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_FLOAT);
-        PAR_SHAPES_CREATE_HEMISPHERE = downcallHandle("par_shapes_create_hemisphere", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_PLANE = downcallHandle("par_shapes_create_plane", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_PARAMETRIC = downcallHandle("par_shapes_create_parametric", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_ICOSAHEDRON = downcallHandle("par_shapes_create_icosahedron", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_DODECAHEDRON = downcallHandle("par_shapes_create_dodecahedron", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_OCTAHEDRON = downcallHandle("par_shapes_create_octahedron", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_TETRAHEDRON = downcallHandle("par_shapes_create_tetrahedron", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_CUBE = downcallHandle("par_shapes_create_cube", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_DISK = downcallHandle("par_shapes_create_disk", UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_EMPTY = downcallHandle("par_shapes_create_empty", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CREATE_ROCK = downcallHandle("par_shapes_create_rock", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_CREATE_LSYSTEM = downcallHandle("par_shapes_create_lsystem", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_EXPORT = downcallHandleVoid("par_shapes_export", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_COMPUTE_AABB = downcallHandleVoid("par_shapes_compute_aabb", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_CLONE = downcallHandle("par_shapes_clone", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_MERGE = downcallHandleVoid("par_shapes_merge", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_TRANSLATE = downcallHandleVoid("par_shapes_translate", UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT);
-        PAR_SHAPES_ROTATE = downcallHandleVoid("par_shapes_rotate", UNBOUNDED_ADDRESS, JAVA_FLOAT, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_SCALE = downcallHandleVoid("par_shapes_scale", UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT);
-        PAR_SHAPES_MERGE_AND_FREE = downcallHandleVoid("par_shapes_merge_and_free", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_INVERT = downcallHandleVoid("par_shapes_invert", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
-        PAR_SHAPES_REMOVE_DEGENERATE = downcallHandleVoid("par_shapes_remove_degenerate", UNBOUNDED_ADDRESS, JAVA_FLOAT);
-        PAR_SHAPES_UNWELD = downcallHandleVoid("par_shapes_unweld", UNBOUNDED_ADDRESS, JAVA_BOOLEAN);
-        PAR_SHAPES_WELD = downcallHandle("par_shapes_weld", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, UNBOUNDED_ADDRESS);
-        PAR_SHAPES_COMPUTE_NORMALS = downcallHandleVoid("par_shapes_compute_normals", UNBOUNDED_ADDRESS);
-        PAR_SHAPES_SET_EPSILON_WELDED_NORMALS = downcallHandleVoid("par_shapes_set_epsilon_welded_normals", JAVA_FLOAT);
-        PAR_SHAPES_SET_EPSILON_DEGENERATE_SPHERE = downcallHandleVoid("par_shapes_set_epsilon_degenerate_sphere", JAVA_FLOAT);
-        PAR_SHAPES__COMPUTE_WELDED_NORMALS = downcallHandleVoid("par_shapes__compute_welded_normals", UNBOUNDED_ADDRESS);
-        PAR_SHAPES__CONNECT = downcallHandleVoid("par_shapes__connect", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		PAR_SHAPES_FREE_MESH = downcallHandleVoid("par_shapes_free_mesh", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_CYLINDER = downcallHandle("par_shapes_create_cylinder", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_CONE = downcallHandle("par_shapes_create_cone", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_PARAMETRIC_DISK = downcallHandle("par_shapes_create_parametric_disk", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_TORUS = downcallHandle("par_shapes_create_torus", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_FLOAT);
+		PAR_SHAPES_CREATE_PARAMETRIC_SPHERE = downcallHandle("par_shapes_create_parametric_sphere", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_SUBDIVIDED_SPHERE = downcallHandle("par_shapes_create_subdivided_sphere", UNBOUNDED_ADDRESS, JAVA_INT);
+		PAR_SHAPES_CREATE_KLEIN_BOTTLE = downcallHandle("par_shapes_create_klein_bottle", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_TREFOIL_KNOT = downcallHandle("par_shapes_create_trefoil_knot", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_FLOAT);
+		PAR_SHAPES_CREATE_HEMISPHERE = downcallHandle("par_shapes_create_hemisphere", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_PLANE = downcallHandle("par_shapes_create_plane", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_PARAMETRIC = downcallHandle("par_shapes_create_parametric", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_ICOSAHEDRON = downcallHandle("par_shapes_create_icosahedron", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_DODECAHEDRON = downcallHandle("par_shapes_create_dodecahedron", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_OCTAHEDRON = downcallHandle("par_shapes_create_octahedron", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_TETRAHEDRON = downcallHandle("par_shapes_create_tetrahedron", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_CUBE = downcallHandle("par_shapes_create_cube", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_DISK = downcallHandle("par_shapes_create_disk", UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_EMPTY = downcallHandle("par_shapes_create_empty", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CREATE_ROCK = downcallHandle("par_shapes_create_rock", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_CREATE_LSYSTEM = downcallHandle("par_shapes_create_lsystem", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_EXPORT = downcallHandleVoid("par_shapes_export", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_COMPUTE_AABB = downcallHandleVoid("par_shapes_compute_aabb", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_CLONE = downcallHandle("par_shapes_clone", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_MERGE = downcallHandleVoid("par_shapes_merge", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_TRANSLATE = downcallHandleVoid("par_shapes_translate", UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT);
+		PAR_SHAPES_ROTATE = downcallHandleVoid("par_shapes_rotate", UNBOUNDED_ADDRESS, JAVA_FLOAT, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_SCALE = downcallHandleVoid("par_shapes_scale", UNBOUNDED_ADDRESS, JAVA_FLOAT, JAVA_FLOAT, JAVA_FLOAT);
+		PAR_SHAPES_MERGE_AND_FREE = downcallHandleVoid("par_shapes_merge_and_free", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_INVERT = downcallHandleVoid("par_shapes_invert", UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT);
+		PAR_SHAPES_REMOVE_DEGENERATE = downcallHandleVoid("par_shapes_remove_degenerate", UNBOUNDED_ADDRESS, JAVA_FLOAT);
+		PAR_SHAPES_UNWELD = downcallHandleVoid("par_shapes_unweld", UNBOUNDED_ADDRESS, JAVA_BOOLEAN);
+		PAR_SHAPES_WELD = downcallHandle("par_shapes_weld", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_FLOAT, UNBOUNDED_ADDRESS);
+		PAR_SHAPES_COMPUTE_NORMALS = downcallHandleVoid("par_shapes_compute_normals", UNBOUNDED_ADDRESS);
+		PAR_SHAPES_SET_EPSILON_WELDED_NORMALS = downcallHandleVoid("par_shapes_set_epsilon_welded_normals", JAVA_FLOAT);
+		PAR_SHAPES_SET_EPSILON_DEGENERATE_SPHERE = downcallHandleVoid("par_shapes_set_epsilon_degenerate_sphere", JAVA_FLOAT);
+		PAR_SHAPES__COMPUTE_WELDED_NORMALS = downcallHandleVoid("par_shapes__compute_welded_normals", UNBOUNDED_ADDRESS);
+		PAR_SHAPES__CONNECT = downcallHandleVoid("par_shapes__connect", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		//@formatter:on
+	}
 
-    private ParShapes() {
-    }
+	private ParShapes() {
+	}
 
     public static void free_mesh(
     	MemorySegment param0
@@ -1241,5 +1241,5 @@ public final class ParShapes {
     		slices
     	);
     }
-    
+
 }

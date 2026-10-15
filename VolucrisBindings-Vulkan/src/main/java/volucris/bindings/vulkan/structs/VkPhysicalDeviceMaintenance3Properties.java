@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance3Properties
 		implements Struct<VkPhysicalDeviceMaintenance3Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_PER_SET_DESCRIPTORS_HANDLE;
-    public static final VarHandle MAX_MEMORY_ALLOCATION_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_PER_SET_DESCRIPTORS_HANDLE;
+	public static final VarHandle MAX_MEMORY_ALLOCATION_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET;
-    public static final long MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET;
+	public static final long MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxPerSetDescriptors"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("maxMemoryAllocationSize")
-        ).withName("VkPhysicalDeviceMaintenance3Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_PER_SET_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerSetDescriptors"));
-        MAX_MEMORY_ALLOCATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMemoryAllocationSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerSetDescriptors"));
-        MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMemoryAllocationSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxPerSetDescriptors"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("maxMemoryAllocationSize")
+		).withName("VkPhysicalDeviceMaintenance3Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_PER_SET_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerSetDescriptors"));
+		MAX_MEMORY_ALLOCATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMemoryAllocationSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerSetDescriptors"));
+		MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMemoryAllocationSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance3Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance3Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance3Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance3Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance3Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance3Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance3Properties sType(int sType) {
@@ -167,5 +167,5 @@ public final class VkPhysicalDeviceMaintenance3Properties
             segment -> new VkPhysicalDeviceMaintenance3Properties(segment)
         );
     }
-    
+
 }

@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSubresourceHostMemcpySize
 		implements Struct<VkSubresourceHostMemcpySize> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("size")
-        ).withName("VkSubresourceHostMemcpySize").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("size")
+		).withName("VkSubresourceHostMemcpySize").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkSubresourceHostMemcpySize() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubresourceHostMemcpySize(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubresourceHostMemcpySize(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubresourceHostMemcpySize() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubresourceHostMemcpySize(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubresourceHostMemcpySize(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSubresourceHostMemcpySize sType(int sType) {
@@ -151,5 +151,5 @@ public final class VkSubresourceHostMemcpySize
             segment -> new VkSubresourceHostMemcpySize(segment)
         );
     }
-    
+
 }

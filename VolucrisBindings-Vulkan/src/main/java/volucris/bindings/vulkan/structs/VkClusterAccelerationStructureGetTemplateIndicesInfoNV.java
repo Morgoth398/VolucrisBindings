@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClusterAccelerationStructureGetTemplateIndicesInfoNV
 		implements Struct<VkClusterAccelerationStructureGetTemplateIndicesInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CLUSTER_TEMPLATE_ADDRESS_HANDLE;
+	public static final VarHandle CLUSTER_TEMPLATE_ADDRESS_HANDLE;
 
-    public static final long CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET;
+	public static final long CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("clusterTemplateAddress")
-        ).withName("VkClusterAccelerationStructureGetTemplateIndicesInfoNV").withByteAlignment(8);
-        
-        CLUSTER_TEMPLATE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateAddress"));
-        
-        CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateAddress"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("clusterTemplateAddress")
+		).withName("VkClusterAccelerationStructureGetTemplateIndicesInfoNV").withByteAlignment(8);
+		
+		CLUSTER_TEMPLATE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateAddress"));
+		
+		CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateAddress"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureGetTemplateIndicesInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClusterAccelerationStructureGetTemplateIndicesInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #clusterTemplateAddress()
     public VkClusterAccelerationStructureGetTemplateIndicesInfoNV clusterTemplateAddress(long clusterTemplateAddress) {
@@ -113,5 +113,5 @@ public final class VkClusterAccelerationStructureGetTemplateIndicesInfoNV
             segment -> new VkClusterAccelerationStructureGetTemplateIndicesInfoNV(segment)
         );
     }
-    
+
 }

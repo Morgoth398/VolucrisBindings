@@ -21,48 +21,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorBufferInfo
 		implements Struct<VkDescriptorBufferInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUFFER_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle RANGE_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle RANGE_HANDLE;
 
-    public static final long BUFFER_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long RANGE_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("buffer"),
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("range")
-        ).withName("VkDescriptorBufferInfo").withByteAlignment(8);
-        
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("range"));
-        
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("range"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("buffer"),
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("range")
+		).withName("VkDescriptorBufferInfo").withByteAlignment(8);
+		
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("range"));
+		
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("range"));
+		//@formatter:on
+	}
 
-    public VkDescriptorBufferInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorBufferInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorBufferInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorBufferInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorBufferInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorBufferInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #buffer()
     public VkDescriptorBufferInfo buffer(VkBuffer buffer) {
@@ -150,5 +150,5 @@ public final class VkDescriptorBufferInfo
             segment -> new VkDescriptorBufferInfo(segment)
         );
     }
-    
+
 }

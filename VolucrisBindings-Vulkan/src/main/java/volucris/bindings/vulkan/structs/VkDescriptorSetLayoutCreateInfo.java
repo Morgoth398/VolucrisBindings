@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetLayoutCreateInfo
 		implements Struct<VkDescriptorSetLayoutCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle BINDING_COUNT_HANDLE;
-    public static final VarHandle P_BINDINGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle BINDING_COUNT_HANDLE;
+	public static final VarHandle P_BINDINGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long BINDING_COUNT_BYTE_OFFSET;
-    public static final long P_BINDINGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long BINDING_COUNT_BYTE_OFFSET;
+	public static final long P_BINDINGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("bindingCount"),
-            UNBOUNDED_ADDRESS.withName("pBindings")
-        ).withName("VkDescriptorSetLayoutCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        BINDING_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindingCount"));
-        P_BINDINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBindings"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        BINDING_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindingCount"));
-        P_BINDINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBindings"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("bindingCount"),
+		    UNBOUNDED_ADDRESS.withName("pBindings")
+		).withName("VkDescriptorSetLayoutCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		BINDING_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindingCount"));
+		P_BINDINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBindings"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		BINDING_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindingCount"));
+		P_BINDINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBindings"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetLayoutCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetLayoutCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetLayoutCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorSetLayoutCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetLayoutCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetLayoutCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorSetLayoutCreateInfo sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkDescriptorSetLayoutCreateInfo
             segment -> new VkDescriptorSetLayoutCreateInfo(segment)
         );
     }
-    
+
 }

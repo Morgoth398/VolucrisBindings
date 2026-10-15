@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeAV1OperatingPointInfoFlags
 		implements Struct<StdVideoEncodeAV1OperatingPointInfoFlags> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
 
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("bitFields0")
-        ).withName("StdVideoEncodeAV1OperatingPointInfoFlags").withByteAlignment(4);
-        
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("bitFields0")
+		).withName("StdVideoEncodeAV1OperatingPointInfoFlags").withByteAlignment(4);
+		
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeAV1OperatingPointInfoFlags() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoEncodeAV1OperatingPointInfoFlags(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoEncodeAV1OperatingPointInfoFlags(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoEncodeAV1OperatingPointInfoFlags() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeAV1OperatingPointInfoFlags(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeAV1OperatingPointInfoFlags(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #bitFields0()
     public StdVideoEncodeAV1OperatingPointInfoFlags bitFields0(int bitFields0) {
@@ -120,5 +120,5 @@ public final class StdVideoEncodeAV1OperatingPointInfoFlags
             segment -> new StdVideoEncodeAV1OperatingPointInfoFlags(segment)
         );
     }
-    
+
 }

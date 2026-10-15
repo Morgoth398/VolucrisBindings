@@ -19,42 +19,42 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiRay
 		implements Struct<AiRay> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long POS_BYTE_OFFSET;
-    public static final long DIR_BYTE_OFFSET;
+	public static final long POS_BYTE_OFFSET;
+	public static final long DIR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiVector3D pos;
-    private final AiVector3D dir;
+	private final AiVector3D pos;
+	private final AiVector3D dir;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiVector3D.LAYOUT.withName("pos"),
-            AiVector3D.LAYOUT.withName("dir")
-        ).withName("aiRay").withByteAlignment(4);
-        
-        POS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pos"));
-        DIR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dir"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiVector3D.LAYOUT.withName("pos"),
+		    AiVector3D.LAYOUT.withName("dir")
+		).withName("aiRay").withByteAlignment(4);
+		
+		POS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pos"));
+		DIR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dir"));
+		//@formatter:on
+	}
 
-    public AiRay() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiRay(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiRay(MemorySegment segment) {
-        this.segment = segment;
-    
-        pos = new AiVector3D(segment.asSlice(POS_BYTE_OFFSET, AiVector3D.LAYOUT));
-        dir = new AiVector3D(segment.asSlice(DIR_BYTE_OFFSET, AiVector3D.LAYOUT));
-    }
+	public AiRay() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiRay(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiRay(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    pos = new AiVector3D(segment.asSlice(POS_BYTE_OFFSET, AiVector3D.LAYOUT));
+	    dir = new AiVector3D(segment.asSlice(DIR_BYTE_OFFSET, AiVector3D.LAYOUT));
+	}
 
     /// @see #pos()
     public AiRay pos(Consumer<AiVector3D> consumer) {
@@ -145,5 +145,5 @@ public final class AiRay
             segment -> new AiRay(segment)
         );
     }
-    
+
 }

@@ -20,42 +20,42 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiAABB
 		implements Struct<AiAABB> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long M_MIN_BYTE_OFFSET;
-    public static final long M_MAX_BYTE_OFFSET;
+	public static final long M_MIN_BYTE_OFFSET;
+	public static final long M_MAX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiVector3D mMin;
-    private final AiVector3D mMax;
+	private final AiVector3D mMin;
+	private final AiVector3D mMax;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiVector3D.LAYOUT.withName("mMin"),
-            AiVector3D.LAYOUT.withName("mMax")
-        ).withName("aiAABB").withByteAlignment(4);
-        
-        M_MIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMin"));
-        M_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMax"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiVector3D.LAYOUT.withName("mMin"),
+		    AiVector3D.LAYOUT.withName("mMax")
+		).withName("aiAABB").withByteAlignment(4);
+		
+		M_MIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMin"));
+		M_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mMax"));
+		//@formatter:on
+	}
 
-    public AiAABB() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiAABB(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiAABB(MemorySegment segment) {
-        this.segment = segment;
-    
-        mMin = new AiVector3D(segment.asSlice(M_MIN_BYTE_OFFSET, AiVector3D.LAYOUT));
-        mMax = new AiVector3D(segment.asSlice(M_MAX_BYTE_OFFSET, AiVector3D.LAYOUT));
-    }
+	public AiAABB() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiAABB(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiAABB(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mMin = new AiVector3D(segment.asSlice(M_MIN_BYTE_OFFSET, AiVector3D.LAYOUT));
+	    mMax = new AiVector3D(segment.asSlice(M_MAX_BYTE_OFFSET, AiVector3D.LAYOUT));
+	}
 
     /// @see #mMin()
     public AiAABB mMin(Consumer<AiVector3D> consumer) {
@@ -140,5 +140,5 @@ public final class AiAABB
             segment -> new AiAABB(segment)
         );
     }
-    
+
 }

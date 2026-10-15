@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPerfHintInfoQCOM
 		implements Struct<VkPerfHintInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle SCALE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle SCALE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long SCALE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long SCALE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("scale")
-        ).withName("VkPerfHintInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scale"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scale"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("scale")
+		).withName("VkPerfHintInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scale"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scale"));
+		//@formatter:on
+	}
 
-    public VkPerfHintInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerfHintInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerfHintInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPerfHintInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerfHintInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerfHintInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPerfHintInfoQCOM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPerfHintInfoQCOM
             segment -> new VkPerfHintInfoQCOM(segment)
         );
     }
-    
+
 }

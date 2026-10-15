@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV
 		implements Struct<VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PARTITIONED_ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PARTITIONED_ACCELERATION_STRUCTURE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PARTITIONED_ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PARTITIONED_ACCELERATION_STRUCTURE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("partitionedAccelerationStructure"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PARTITIONED_ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionedAccelerationStructure"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PARTITIONED_ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionedAccelerationStructure"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("partitionedAccelerationStructure"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PARTITIONED_ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionedAccelerationStructure"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PARTITIONED_ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionedAccelerationStructure"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV
             segment -> new VkPhysicalDevicePartitionedAccelerationStructureFeaturesNV(segment)
         );
     }
-    
+
 }

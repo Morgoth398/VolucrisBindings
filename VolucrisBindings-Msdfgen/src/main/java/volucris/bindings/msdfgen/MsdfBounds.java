@@ -16,53 +16,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class MsdfBounds
 		implements Struct<MsdfBounds> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle L_HANDLE;
-    public static final VarHandle B_HANDLE;
-    public static final VarHandle R_HANDLE;
-    public static final VarHandle T_HANDLE;
+	public static final VarHandle L_HANDLE;
+	public static final VarHandle B_HANDLE;
+	public static final VarHandle R_HANDLE;
+	public static final VarHandle T_HANDLE;
 
-    public static final long L_BYTE_OFFSET;
-    public static final long B_BYTE_OFFSET;
-    public static final long R_BYTE_OFFSET;
-    public static final long T_BYTE_OFFSET;
+	public static final long L_BYTE_OFFSET;
+	public static final long B_BYTE_OFFSET;
+	public static final long R_BYTE_OFFSET;
+	public static final long T_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_DOUBLE.withName("l"),
-            JAVA_DOUBLE.withName("b"),
-            JAVA_DOUBLE.withName("r"),
-            JAVA_DOUBLE.withName("t")
-        ).withName("msdf_bounds").withByteAlignment(8);
-        
-        L_HANDLE = LAYOUT.varHandle(PathElement.groupElement("l"));
-        B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
-        R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
-        T_HANDLE = LAYOUT.varHandle(PathElement.groupElement("t"));
-        
-        L_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("l"));
-        B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
-        R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
-        T_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("t"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_DOUBLE.withName("l"),
+		    JAVA_DOUBLE.withName("b"),
+		    JAVA_DOUBLE.withName("r"),
+		    JAVA_DOUBLE.withName("t")
+		).withName("msdf_bounds").withByteAlignment(8);
+		
+		L_HANDLE = LAYOUT.varHandle(PathElement.groupElement("l"));
+		B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
+		R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
+		T_HANDLE = LAYOUT.varHandle(PathElement.groupElement("t"));
+		
+		L_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("l"));
+		B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
+		R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
+		T_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("t"));
+		//@formatter:on
+	}
 
-    public MsdfBounds() {
-        this(Arena.ofAuto());
-    }
-    
-    public MsdfBounds(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public MsdfBounds(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public MsdfBounds() {
+	    this(Arena.ofAuto());
+	}
+	
+	public MsdfBounds(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public MsdfBounds(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #l()
     public MsdfBounds l(double l) {
@@ -155,5 +155,5 @@ public final class MsdfBounds
             segment -> new MsdfBounds(segment)
         );
     }
-    
+
 }

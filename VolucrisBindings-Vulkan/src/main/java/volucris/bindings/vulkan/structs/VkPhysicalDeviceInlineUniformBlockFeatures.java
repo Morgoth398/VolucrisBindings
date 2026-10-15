@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceInlineUniformBlockFeatures
 		implements Struct<VkPhysicalDeviceInlineUniformBlockFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INLINE_UNIFORM_BLOCK_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INLINE_UNIFORM_BLOCK_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INLINE_UNIFORM_BLOCK_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INLINE_UNIFORM_BLOCK_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("inlineUniformBlock"),
-            JAVA_INT.withName("descriptorBindingInlineUniformBlockUpdateAfterBind")
-        ).withName("VkPhysicalDeviceInlineUniformBlockFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INLINE_UNIFORM_BLOCK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inlineUniformBlock"));
-        DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INLINE_UNIFORM_BLOCK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inlineUniformBlock"));
-        DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("inlineUniformBlock"),
+		    JAVA_INT.withName("descriptorBindingInlineUniformBlockUpdateAfterBind")
+		).withName("VkPhysicalDeviceInlineUniformBlockFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INLINE_UNIFORM_BLOCK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inlineUniformBlock"));
+		DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INLINE_UNIFORM_BLOCK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inlineUniformBlock"));
+		DESCRIPTOR_BINDING_INLINE_UNIFORM_BLOCK_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingInlineUniformBlockUpdateAfterBind"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceInlineUniformBlockFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceInlineUniformBlockFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceInlineUniformBlockFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceInlineUniformBlockFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceInlineUniformBlockFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceInlineUniformBlockFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceInlineUniformBlockFeatures sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceInlineUniformBlockFeatures
             segment -> new VkPhysicalDeviceInlineUniformBlockFeatures(segment)
         );
     }
-    
+
 }

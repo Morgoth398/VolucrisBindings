@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCommandBufferSubmitInfo
 		implements Struct<VkCommandBufferSubmitInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COMMAND_BUFFER_HANDLE;
-    public static final VarHandle DEVICE_MASK_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COMMAND_BUFFER_HANDLE;
+	public static final VarHandle DEVICE_MASK_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COMMAND_BUFFER_BYTE_OFFSET;
-    public static final long DEVICE_MASK_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COMMAND_BUFFER_BYTE_OFFSET;
+	public static final long DEVICE_MASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("commandBuffer"),
-            JAVA_INT.withName("deviceMask"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCommandBufferSubmitInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COMMAND_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBuffer"));
-        DEVICE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMask"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COMMAND_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBuffer"));
-        DEVICE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("commandBuffer"),
+		    JAVA_INT.withName("deviceMask"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCommandBufferSubmitInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COMMAND_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBuffer"));
+		DEVICE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMask"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COMMAND_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBuffer"));
+		DEVICE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMask"));
+		//@formatter:on
+	}
 
-    public VkCommandBufferSubmitInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCommandBufferSubmitInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCommandBufferSubmitInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCommandBufferSubmitInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCommandBufferSubmitInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCommandBufferSubmitInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCommandBufferSubmitInfo sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkCommandBufferSubmitInfo
             segment -> new VkCommandBufferSubmitInfo(segment)
         );
     }
-    
+
 }

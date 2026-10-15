@@ -21,61 +21,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceGroupProperties
 		implements Struct<VkPhysicalDeviceGroupProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PHYSICAL_DEVICE_COUNT_HANDLE;
-    public static final VarHandle PHYSICAL_DEVICES_HANDLE;
-    public static final VarHandle SUBSET_ALLOCATION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PHYSICAL_DEVICE_COUNT_HANDLE;
+	public static final VarHandle PHYSICAL_DEVICES_HANDLE;
+	public static final VarHandle SUBSET_ALLOCATION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PHYSICAL_DEVICE_COUNT_BYTE_OFFSET;
-    public static final long PHYSICAL_DEVICES_BYTE_OFFSET;
-    public static final long SUBSET_ALLOCATION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PHYSICAL_DEVICE_COUNT_BYTE_OFFSET;
+	public static final long PHYSICAL_DEVICES_BYTE_OFFSET;
+	public static final long SUBSET_ALLOCATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("physicalDeviceCount"),
-            MemoryLayout.paddingLayout(4),
-            MemoryLayout.sequenceLayout(32, UNBOUNDED_ADDRESS).withName("physicalDevices"),
-            JAVA_INT.withName("subsetAllocation"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceGroupProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PHYSICAL_DEVICE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDeviceCount"));
-        PHYSICAL_DEVICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDevices"), PathElement.sequenceElement());
-        SUBSET_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsetAllocation"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PHYSICAL_DEVICE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDeviceCount"));
-        PHYSICAL_DEVICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDevices"));
-        SUBSET_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsetAllocation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("physicalDeviceCount"),
+		    MemoryLayout.paddingLayout(4),
+		    MemoryLayout.sequenceLayout(32, UNBOUNDED_ADDRESS).withName("physicalDevices"),
+		    JAVA_INT.withName("subsetAllocation"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceGroupProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PHYSICAL_DEVICE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDeviceCount"));
+		PHYSICAL_DEVICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDevices"), PathElement.sequenceElement());
+		SUBSET_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsetAllocation"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PHYSICAL_DEVICE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDeviceCount"));
+		PHYSICAL_DEVICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDevices"));
+		SUBSET_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsetAllocation"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceGroupProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceGroupProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceGroupProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceGroupProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceGroupProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceGroupProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceGroupProperties sType(int sType) {
@@ -188,5 +188,5 @@ public final class VkPhysicalDeviceGroupProperties
             segment -> new VkPhysicalDeviceGroupProperties(segment)
         );
     }
-    
+
 }

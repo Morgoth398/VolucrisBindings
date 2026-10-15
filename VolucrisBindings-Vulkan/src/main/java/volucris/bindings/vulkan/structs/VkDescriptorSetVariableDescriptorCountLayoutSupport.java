@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetVariableDescriptorCountLayoutSupport
 		implements Struct<VkDescriptorSetVariableDescriptorCountLayoutSupport> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_VARIABLE_DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_VARIABLE_DESCRIPTOR_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxVariableDescriptorCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDescriptorSetVariableDescriptorCountLayoutSupport").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_VARIABLE_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVariableDescriptorCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVariableDescriptorCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxVariableDescriptorCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDescriptorSetVariableDescriptorCountLayoutSupport").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_VARIABLE_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVariableDescriptorCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVariableDescriptorCount"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetVariableDescriptorCountLayoutSupport() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetVariableDescriptorCountLayoutSupport(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetVariableDescriptorCountLayoutSupport(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorSetVariableDescriptorCountLayoutSupport() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetVariableDescriptorCountLayoutSupport(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetVariableDescriptorCountLayoutSupport(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorSetVariableDescriptorCountLayoutSupport sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDescriptorSetVariableDescriptorCountLayoutSupport
             segment -> new VkDescriptorSetVariableDescriptorCountLayoutSupport(segment)
         );
     }
-    
+
 }

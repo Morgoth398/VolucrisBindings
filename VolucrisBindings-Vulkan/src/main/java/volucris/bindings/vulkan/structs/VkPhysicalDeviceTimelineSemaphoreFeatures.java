@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTimelineSemaphoreFeatures
 		implements Struct<VkPhysicalDeviceTimelineSemaphoreFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TIMELINE_SEMAPHORE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TIMELINE_SEMAPHORE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TIMELINE_SEMAPHORE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TIMELINE_SEMAPHORE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("timelineSemaphore"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceTimelineSemaphoreFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TIMELINE_SEMAPHORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timelineSemaphore"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TIMELINE_SEMAPHORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timelineSemaphore"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("timelineSemaphore"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceTimelineSemaphoreFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TIMELINE_SEMAPHORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timelineSemaphore"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TIMELINE_SEMAPHORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timelineSemaphore"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTimelineSemaphoreFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTimelineSemaphoreFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTimelineSemaphoreFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTimelineSemaphoreFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTimelineSemaphoreFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTimelineSemaphoreFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTimelineSemaphoreFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceTimelineSemaphoreFeatures
             segment -> new VkPhysicalDeviceTimelineSemaphoreFeatures(segment)
         );
     }
-    
+
 }

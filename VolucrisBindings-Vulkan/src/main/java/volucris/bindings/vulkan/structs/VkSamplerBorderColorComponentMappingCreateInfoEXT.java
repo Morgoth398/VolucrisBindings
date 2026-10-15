@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerBorderColorComponentMappingCreateInfoEXT
 		implements Struct<VkSamplerBorderColorComponentMappingCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRGB_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRGB_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COMPONENTS_BYTE_OFFSET;
-    public static final long SRGB_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COMPONENTS_BYTE_OFFSET;
+	public static final long SRGB_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkComponentMapping components;
+	private final VkComponentMapping components;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkComponentMapping.LAYOUT.withName("components"),
-            JAVA_INT.withName("srgb"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSamplerBorderColorComponentMappingCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRGB_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srgb"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("components"));
-        SRGB_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srgb"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkComponentMapping.LAYOUT.withName("components"),
+		    JAVA_INT.withName("srgb"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSamplerBorderColorComponentMappingCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRGB_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srgb"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("components"));
+		SRGB_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srgb"));
+		//@formatter:on
+	}
 
-    public VkSamplerBorderColorComponentMappingCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerBorderColorComponentMappingCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerBorderColorComponentMappingCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        components = new VkComponentMapping(segment.asSlice(COMPONENTS_BYTE_OFFSET, VkComponentMapping.LAYOUT));
-    }
+	public VkSamplerBorderColorComponentMappingCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerBorderColorComponentMappingCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerBorderColorComponentMappingCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    components = new VkComponentMapping(segment.asSlice(COMPONENTS_BYTE_OFFSET, VkComponentMapping.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSamplerBorderColorComponentMappingCreateInfoEXT sType(int sType) {
@@ -98,16 +98,6 @@ public final class VkSamplerBorderColorComponentMappingCreateInfoEXT
     	return segment;
     }
     
-    /// @see #srgb()
-    public VkSamplerBorderColorComponentMappingCreateInfoEXT srgb(int srgb) {
-    	SRGB_HANDLE.set(segment, 0L, srgb);
-    	return this;
-    }
-    
-    public int srgb() {
-    	return (int) SRGB_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #components()
     public VkSamplerBorderColorComponentMappingCreateInfoEXT components(Consumer<VkComponentMapping> consumer) {
     	consumer.accept(components);
@@ -122,6 +112,16 @@ public final class VkSamplerBorderColorComponentMappingCreateInfoEXT
     
     public VkComponentMapping components() {
     	return components;
+    }
+    
+    /// @see #srgb()
+    public VkSamplerBorderColorComponentMappingCreateInfoEXT srgb(int srgb) {
+    	SRGB_HANDLE.set(segment, 0L, srgb);
+    	return this;
+    }
+    
+    public int srgb() {
+    	return (int) SRGB_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -175,5 +175,5 @@ public final class VkSamplerBorderColorComponentMappingCreateInfoEXT
             segment -> new VkSamplerBorderColorComponentMappingCreateInfoEXT(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineRasterizationStateStreamCreateInfoEXT
 		implements Struct<VkPipelineRasterizationStateStreamCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle RASTERIZATION_STREAM_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle RASTERIZATION_STREAM_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long RASTERIZATION_STREAM_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long RASTERIZATION_STREAM_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("rasterizationStream")
-        ).withName("VkPipelineRasterizationStateStreamCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        RASTERIZATION_STREAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationStream"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        RASTERIZATION_STREAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationStream"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("rasterizationStream")
+		).withName("VkPipelineRasterizationStateStreamCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		RASTERIZATION_STREAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationStream"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		RASTERIZATION_STREAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationStream"));
+		//@formatter:on
+	}
 
-    public VkPipelineRasterizationStateStreamCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineRasterizationStateStreamCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineRasterizationStateStreamCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineRasterizationStateStreamCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineRasterizationStateStreamCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineRasterizationStateStreamCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineRasterizationStateStreamCreateInfoEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPipelineRasterizationStateStreamCreateInfoEXT
             segment -> new VkPipelineRasterizationStateStreamCreateInfoEXT(segment)
         );
     }
-    
+
 }

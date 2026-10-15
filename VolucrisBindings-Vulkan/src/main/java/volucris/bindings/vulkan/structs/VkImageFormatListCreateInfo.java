@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageFormatListCreateInfo
 		implements Struct<VkImageFormatListCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIEW_FORMAT_COUNT_HANDLE;
-    public static final VarHandle P_VIEW_FORMATS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIEW_FORMAT_COUNT_HANDLE;
+	public static final VarHandle P_VIEW_FORMATS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIEW_FORMAT_COUNT_BYTE_OFFSET;
-    public static final long P_VIEW_FORMATS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIEW_FORMAT_COUNT_BYTE_OFFSET;
+	public static final long P_VIEW_FORMATS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("viewFormatCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pViewFormats")
-        ).withName("VkImageFormatListCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIEW_FORMAT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewFormatCount"));
-        P_VIEW_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewFormats"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIEW_FORMAT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewFormatCount"));
-        P_VIEW_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewFormats"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("viewFormatCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pViewFormats")
+		).withName("VkImageFormatListCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIEW_FORMAT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewFormatCount"));
+		P_VIEW_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewFormats"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIEW_FORMAT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewFormatCount"));
+		P_VIEW_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewFormats"));
+		//@formatter:on
+	}
 
-    public VkImageFormatListCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageFormatListCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageFormatListCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageFormatListCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageFormatListCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageFormatListCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkImageFormatListCreateInfo sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkImageFormatListCreateInfo
             segment -> new VkImageFormatListCreateInfo(segment)
         );
     }
-    
+
 }

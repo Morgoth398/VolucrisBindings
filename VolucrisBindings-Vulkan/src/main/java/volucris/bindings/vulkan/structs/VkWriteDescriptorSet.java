@@ -22,84 +22,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkWriteDescriptorSet
 		implements Struct<VkWriteDescriptorSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DST_SET_HANDLE;
-    public static final VarHandle DST_BINDING_HANDLE;
-    public static final VarHandle DST_ARRAY_ELEMENT_HANDLE;
-    public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
-    public static final VarHandle P_IMAGE_INFO_HANDLE;
-    public static final VarHandle P_BUFFER_INFO_HANDLE;
-    public static final VarHandle P_TEXEL_BUFFER_VIEW_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DST_SET_HANDLE;
+	public static final VarHandle DST_BINDING_HANDLE;
+	public static final VarHandle DST_ARRAY_ELEMENT_HANDLE;
+	public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
+	public static final VarHandle P_IMAGE_INFO_HANDLE;
+	public static final VarHandle P_BUFFER_INFO_HANDLE;
+	public static final VarHandle P_TEXEL_BUFFER_VIEW_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DST_SET_BYTE_OFFSET;
-    public static final long DST_BINDING_BYTE_OFFSET;
-    public static final long DST_ARRAY_ELEMENT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
-    public static final long P_IMAGE_INFO_BYTE_OFFSET;
-    public static final long P_BUFFER_INFO_BYTE_OFFSET;
-    public static final long P_TEXEL_BUFFER_VIEW_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DST_SET_BYTE_OFFSET;
+	public static final long DST_BINDING_BYTE_OFFSET;
+	public static final long DST_ARRAY_ELEMENT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
+	public static final long P_IMAGE_INFO_BYTE_OFFSET;
+	public static final long P_BUFFER_INFO_BYTE_OFFSET;
+	public static final long P_TEXEL_BUFFER_VIEW_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("dstSet"),
-            JAVA_INT.withName("dstBinding"),
-            JAVA_INT.withName("dstArrayElement"),
-            JAVA_INT.withName("descriptorCount"),
-            JAVA_INT.withName("descriptorType"),
-            UNBOUNDED_ADDRESS.withName("pImageInfo"),
-            UNBOUNDED_ADDRESS.withName("pBufferInfo"),
-            UNBOUNDED_ADDRESS.withName("pTexelBufferView")
-        ).withName("VkWriteDescriptorSet").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstSet"));
-        DST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBinding"));
-        DST_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstArrayElement"));
-        DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
-        DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
-        P_IMAGE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageInfo"));
-        P_BUFFER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferInfo"));
-        P_TEXEL_BUFFER_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTexelBufferView"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSet"));
-        DST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBinding"));
-        DST_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstArrayElement"));
-        DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
-        DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
-        P_IMAGE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageInfo"));
-        P_BUFFER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferInfo"));
-        P_TEXEL_BUFFER_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTexelBufferView"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("dstSet"),
+		    JAVA_INT.withName("dstBinding"),
+		    JAVA_INT.withName("dstArrayElement"),
+		    JAVA_INT.withName("descriptorCount"),
+		    JAVA_INT.withName("descriptorType"),
+		    UNBOUNDED_ADDRESS.withName("pImageInfo"),
+		    UNBOUNDED_ADDRESS.withName("pBufferInfo"),
+		    UNBOUNDED_ADDRESS.withName("pTexelBufferView")
+		).withName("VkWriteDescriptorSet").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstSet"));
+		DST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBinding"));
+		DST_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstArrayElement"));
+		DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
+		DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
+		P_IMAGE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageInfo"));
+		P_BUFFER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferInfo"));
+		P_TEXEL_BUFFER_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTexelBufferView"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSet"));
+		DST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBinding"));
+		DST_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstArrayElement"));
+		DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
+		DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
+		P_IMAGE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageInfo"));
+		P_BUFFER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferInfo"));
+		P_TEXEL_BUFFER_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTexelBufferView"));
+		//@formatter:on
+	}
 
-    public VkWriteDescriptorSet() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkWriteDescriptorSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkWriteDescriptorSet(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkWriteDescriptorSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkWriteDescriptorSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkWriteDescriptorSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkWriteDescriptorSet sType(int sType) {
@@ -277,5 +277,5 @@ public final class VkWriteDescriptorSet
             segment -> new VkWriteDescriptorSet(segment)
         );
     }
-    
+
 }

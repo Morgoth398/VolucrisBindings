@@ -19,49 +19,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxBaseClassInfo
 		implements Struct<CXIdxBaseClassInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BASE_HANDLE;
+	public static final VarHandle BASE_HANDLE;
 
-    public static final long BASE_BYTE_OFFSET;
-    public static final long CURSOR_BYTE_OFFSET;
-    public static final long LOC_BYTE_OFFSET;
+	public static final long BASE_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
+	public static final long LOC_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
-    private final CXIdxLoc loc;
+	private final CXCursor cursor;
+	private final CXIdxLoc loc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("base"),
-            CXCursor.LAYOUT.withName("cursor"),
-            CXIdxLoc.LAYOUT.withName("loc")
-        ).withName("CXIdxBaseClassInfo").withByteAlignment(8);
-        
-        BASE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("base"));
-        
-        BASE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("base"));
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("base"),
+		    CXCursor.LAYOUT.withName("cursor"),
+		    CXIdxLoc.LAYOUT.withName("loc")
+		).withName("CXIdxBaseClassInfo").withByteAlignment(8);
+		
+		BASE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("base"));
+		
+		BASE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("base"));
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
+		//@formatter:on
+	}
 
-    public CXIdxBaseClassInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxBaseClassInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxBaseClassInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxBaseClassInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxBaseClassInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxBaseClassInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #base()
     public CXIdxBaseClassInfo base(CXIdxEntityInfo base) {
@@ -161,5 +161,5 @@ public final class CXIdxBaseClassInfo
             segment -> new CXIdxBaseClassInfo(segment)
         );
     }
-    
+
 }

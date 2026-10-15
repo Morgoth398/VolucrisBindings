@@ -23,54 +23,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiMeshMorphKey
 		implements Struct<AiMeshMorphKey> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_TIME_HANDLE;
-    public static final VarHandle M_VALUES_HANDLE;
-    public static final VarHandle M_WEIGHTS_HANDLE;
-    public static final VarHandle M_NUM_VALUES_AND_WEIGHTS_HANDLE;
+	public static final VarHandle M_TIME_HANDLE;
+	public static final VarHandle M_VALUES_HANDLE;
+	public static final VarHandle M_WEIGHTS_HANDLE;
+	public static final VarHandle M_NUM_VALUES_AND_WEIGHTS_HANDLE;
 
-    public static final long M_TIME_BYTE_OFFSET;
-    public static final long M_VALUES_BYTE_OFFSET;
-    public static final long M_WEIGHTS_BYTE_OFFSET;
-    public static final long M_NUM_VALUES_AND_WEIGHTS_BYTE_OFFSET;
+	public static final long M_TIME_BYTE_OFFSET;
+	public static final long M_VALUES_BYTE_OFFSET;
+	public static final long M_WEIGHTS_BYTE_OFFSET;
+	public static final long M_NUM_VALUES_AND_WEIGHTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_DOUBLE.withName("mTime"),
-            UNBOUNDED_ADDRESS.withName("mValues"),
-            UNBOUNDED_ADDRESS.withName("mWeights"),
-            JAVA_INT.withName("mNumValuesAndWeights"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("aiMeshMorphKey").withByteAlignment(8);
-        
-        M_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTime"));
-        M_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mValues"));
-        M_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeights"));
-        M_NUM_VALUES_AND_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumValuesAndWeights"));
-        
-        M_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTime"));
-        M_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValues"));
-        M_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeights"));
-        M_NUM_VALUES_AND_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumValuesAndWeights"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_DOUBLE.withName("mTime"),
+		    UNBOUNDED_ADDRESS.withName("mValues"),
+		    UNBOUNDED_ADDRESS.withName("mWeights"),
+		    JAVA_INT.withName("mNumValuesAndWeights"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("aiMeshMorphKey").withByteAlignment(8);
+		
+		M_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTime"));
+		M_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mValues"));
+		M_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeights"));
+		M_NUM_VALUES_AND_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumValuesAndWeights"));
+		
+		M_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTime"));
+		M_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValues"));
+		M_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeights"));
+		M_NUM_VALUES_AND_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumValuesAndWeights"));
+		//@formatter:on
+	}
 
-    public AiMeshMorphKey() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMeshMorphKey(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMeshMorphKey(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMeshMorphKey() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMeshMorphKey(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMeshMorphKey(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mTime()
     public AiMeshMorphKey mTime(double mTime) {
@@ -184,5 +184,5 @@ public final class AiMeshMorphKey
             segment -> new AiMeshMorphKey(segment)
         );
     }
-    
+
 }

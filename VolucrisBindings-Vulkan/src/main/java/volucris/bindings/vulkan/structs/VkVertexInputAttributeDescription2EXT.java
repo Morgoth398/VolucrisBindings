@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVertexInputAttributeDescription2EXT
 		implements Struct<VkVertexInputAttributeDescription2EXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LOCATION_HANDLE;
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LOCATION_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LOCATION_BYTE_OFFSET;
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LOCATION_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("location"),
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("offset")
-        ).withName("VkVertexInputAttributeDescription2EXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("location"));
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("location"));
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("location"),
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("offset")
+		).withName("VkVertexInputAttributeDescription2EXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("location"));
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("location"));
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		//@formatter:on
+	}
 
-    public VkVertexInputAttributeDescription2EXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVertexInputAttributeDescription2EXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVertexInputAttributeDescription2EXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVertexInputAttributeDescription2EXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVertexInputAttributeDescription2EXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVertexInputAttributeDescription2EXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVertexInputAttributeDescription2EXT sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVertexInputAttributeDescription2EXT
             segment -> new VkVertexInputAttributeDescription2EXT(segment)
         );
     }
-    
+
 }

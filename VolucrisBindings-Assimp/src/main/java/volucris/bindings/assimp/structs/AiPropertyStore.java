@@ -26,38 +26,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiPropertyStore
 		implements Struct<AiPropertyStore> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SENTINEL_HANDLE;
+	public static final VarHandle SENTINEL_HANDLE;
 
-    public static final long SENTINEL_BYTE_OFFSET;
+	public static final long SENTINEL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_BYTE.withName("sentinel")
-        ).withName("aiPropertyStore").withByteAlignment(1);
-        
-        SENTINEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sentinel"));
-        
-        SENTINEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sentinel"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_BYTE.withName("sentinel")
+		).withName("aiPropertyStore").withByteAlignment(1);
+		
+		SENTINEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sentinel"));
+		
+		SENTINEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sentinel"));
+		//@formatter:on
+	}
 
-    public AiPropertyStore() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiPropertyStore(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiPropertyStore(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiPropertyStore() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiPropertyStore(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiPropertyStore(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sentinel()
     public AiPropertyStore sentinel(byte sentinel) {
@@ -120,5 +120,5 @@ public final class AiPropertyStore
             segment -> new AiPropertyStore(segment)
         );
     }
-    
+
 }

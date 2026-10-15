@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMultiviewFeatures
 		implements Struct<VkPhysicalDeviceMultiviewFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MULTIVIEW_HANDLE;
-    public static final VarHandle MULTIVIEW_GEOMETRY_SHADER_HANDLE;
-    public static final VarHandle MULTIVIEW_TESSELLATION_SHADER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MULTIVIEW_HANDLE;
+	public static final VarHandle MULTIVIEW_GEOMETRY_SHADER_HANDLE;
+	public static final VarHandle MULTIVIEW_TESSELLATION_SHADER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MULTIVIEW_BYTE_OFFSET;
-    public static final long MULTIVIEW_GEOMETRY_SHADER_BYTE_OFFSET;
-    public static final long MULTIVIEW_TESSELLATION_SHADER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MULTIVIEW_BYTE_OFFSET;
+	public static final long MULTIVIEW_GEOMETRY_SHADER_BYTE_OFFSET;
+	public static final long MULTIVIEW_TESSELLATION_SHADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("multiview"),
-            JAVA_INT.withName("multiviewGeometryShader"),
-            JAVA_INT.withName("multiviewTessellationShader"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMultiviewFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MULTIVIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiview"));
-        MULTIVIEW_GEOMETRY_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewGeometryShader"));
-        MULTIVIEW_TESSELLATION_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewTessellationShader"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MULTIVIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiview"));
-        MULTIVIEW_GEOMETRY_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewGeometryShader"));
-        MULTIVIEW_TESSELLATION_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewTessellationShader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("multiview"),
+		    JAVA_INT.withName("multiviewGeometryShader"),
+		    JAVA_INT.withName("multiviewTessellationShader"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMultiviewFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MULTIVIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiview"));
+		MULTIVIEW_GEOMETRY_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewGeometryShader"));
+		MULTIVIEW_TESSELLATION_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewTessellationShader"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MULTIVIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiview"));
+		MULTIVIEW_GEOMETRY_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewGeometryShader"));
+		MULTIVIEW_TESSELLATION_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewTessellationShader"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMultiviewFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMultiviewFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMultiviewFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMultiviewFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMultiviewFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMultiviewFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMultiviewFeatures sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceMultiviewFeatures
             segment -> new VkPhysicalDeviceMultiviewFeatures(segment)
         );
     }
-    
+
 }

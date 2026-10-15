@@ -19,44 +19,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMemoryHeap
 		implements Struct<VkMemoryHeap> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("size"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMemoryHeap").withByteAlignment(8);
-        
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("size"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMemoryHeap").withByteAlignment(8);
+		
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkMemoryHeap() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryHeap(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryHeap(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryHeap() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryHeap(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryHeap(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #size()
     public VkMemoryHeap size(long size) {
@@ -129,5 +129,5 @@ public final class VkMemoryHeap
             segment -> new VkMemoryHeap(segment)
         );
     }
-    
+
 }

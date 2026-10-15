@@ -19,49 +19,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMemoryRequirements
 		implements Struct<VkMemoryRequirements> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle ALIGNMENT_HANDLE;
-    public static final VarHandle MEMORY_TYPE_BITS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle ALIGNMENT_HANDLE;
+	public static final VarHandle MEMORY_TYPE_BITS_HANDLE;
 
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long ALIGNMENT_BYTE_OFFSET;
-    public static final long MEMORY_TYPE_BITS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long ALIGNMENT_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_BITS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("size"),
-            JAVA_LONG.withName("alignment"),
-            JAVA_INT.withName("memoryTypeBits"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMemoryRequirements").withByteAlignment(8);
-        
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alignment"));
-        MEMORY_TYPE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeBits"));
-        
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alignment"));
-        MEMORY_TYPE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeBits"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("size"),
+		    JAVA_LONG.withName("alignment"),
+		    JAVA_INT.withName("memoryTypeBits"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMemoryRequirements").withByteAlignment(8);
+		
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alignment"));
+		MEMORY_TYPE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeBits"));
+		
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alignment"));
+		MEMORY_TYPE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeBits"));
+		//@formatter:on
+	}
 
-    public VkMemoryRequirements() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryRequirements(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryRequirements(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryRequirements() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryRequirements(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryRequirements(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #size()
     public VkMemoryRequirements size(long size) {
@@ -144,5 +144,5 @@ public final class VkMemoryRequirements
             segment -> new VkMemoryRequirements(segment)
         );
     }
-    
+
 }

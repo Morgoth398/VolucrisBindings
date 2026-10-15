@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkComponentMapping
 		implements Struct<VkComponentMapping> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle R_HANDLE;
-    public static final VarHandle G_HANDLE;
-    public static final VarHandle B_HANDLE;
-    public static final VarHandle A_HANDLE;
+	public static final VarHandle R_HANDLE;
+	public static final VarHandle G_HANDLE;
+	public static final VarHandle B_HANDLE;
+	public static final VarHandle A_HANDLE;
 
-    public static final long R_BYTE_OFFSET;
-    public static final long G_BYTE_OFFSET;
-    public static final long B_BYTE_OFFSET;
-    public static final long A_BYTE_OFFSET;
+	public static final long R_BYTE_OFFSET;
+	public static final long G_BYTE_OFFSET;
+	public static final long B_BYTE_OFFSET;
+	public static final long A_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("r"),
-            JAVA_INT.withName("g"),
-            JAVA_INT.withName("b"),
-            JAVA_INT.withName("a")
-        ).withName("VkComponentMapping").withByteAlignment(4);
-        
-        R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
-        G_HANDLE = LAYOUT.varHandle(PathElement.groupElement("g"));
-        B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
-        A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
-        
-        R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
-        G_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("g"));
-        B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
-        A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("r"),
+		    JAVA_INT.withName("g"),
+		    JAVA_INT.withName("b"),
+		    JAVA_INT.withName("a")
+		).withName("VkComponentMapping").withByteAlignment(4);
+		
+		R_HANDLE = LAYOUT.varHandle(PathElement.groupElement("r"));
+		G_HANDLE = LAYOUT.varHandle(PathElement.groupElement("g"));
+		B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
+		A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
+		
+		R_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("r"));
+		G_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("g"));
+		B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
+		A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
+		//@formatter:on
+	}
 
-    public VkComponentMapping() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkComponentMapping(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkComponentMapping(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkComponentMapping() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkComponentMapping(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkComponentMapping(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #r()
     public VkComponentMapping r(int r) {
@@ -158,5 +158,5 @@ public final class VkComponentMapping
             segment -> new VkComponentMapping(segment)
         );
     }
-    
+
 }

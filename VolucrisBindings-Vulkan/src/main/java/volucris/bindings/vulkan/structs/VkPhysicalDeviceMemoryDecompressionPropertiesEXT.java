@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMemoryDecompressionPropertiesEXT
 		implements Struct<VkPhysicalDeviceMemoryDecompressionPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DECOMPRESSION_METHODS_HANDLE;
-    public static final VarHandle MAX_DECOMPRESSION_INDIRECT_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DECOMPRESSION_METHODS_HANDLE;
+	public static final VarHandle MAX_DECOMPRESSION_INDIRECT_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DECOMPRESSION_METHODS_BYTE_OFFSET;
-    public static final long MAX_DECOMPRESSION_INDIRECT_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DECOMPRESSION_METHODS_BYTE_OFFSET;
+	public static final long MAX_DECOMPRESSION_INDIRECT_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("decompressionMethods"),
-            JAVA_LONG.withName("maxDecompressionIndirectCount")
-        ).withName("VkPhysicalDeviceMemoryDecompressionPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DECOMPRESSION_METHODS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decompressionMethods"));
-        MAX_DECOMPRESSION_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDecompressionIndirectCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DECOMPRESSION_METHODS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decompressionMethods"));
-        MAX_DECOMPRESSION_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDecompressionIndirectCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("decompressionMethods"),
+		    JAVA_LONG.withName("maxDecompressionIndirectCount")
+		).withName("VkPhysicalDeviceMemoryDecompressionPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DECOMPRESSION_METHODS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decompressionMethods"));
+		MAX_DECOMPRESSION_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDecompressionIndirectCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DECOMPRESSION_METHODS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decompressionMethods"));
+		MAX_DECOMPRESSION_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDecompressionIndirectCount"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMemoryDecompressionPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMemoryDecompressionPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMemoryDecompressionPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMemoryDecompressionPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMemoryDecompressionPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMemoryDecompressionPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMemoryDecompressionPropertiesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceMemoryDecompressionPropertiesEXT
             segment -> new VkPhysicalDeviceMemoryDecompressionPropertiesEXT(segment)
         );
     }
-    
+
 }

@@ -40,66 +40,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiMaterialProperty
 		implements Struct<AiMaterialProperty> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_SEMANTIC_HANDLE;
-    public static final VarHandle M_INDEX_HANDLE;
-    public static final VarHandle M_DATA_LENGTH_HANDLE;
-    public static final VarHandle M_TYPE_HANDLE;
-    public static final VarHandle M_DATA_HANDLE;
+	public static final VarHandle M_SEMANTIC_HANDLE;
+	public static final VarHandle M_INDEX_HANDLE;
+	public static final VarHandle M_DATA_LENGTH_HANDLE;
+	public static final VarHandle M_TYPE_HANDLE;
+	public static final VarHandle M_DATA_HANDLE;
 
-    public static final long M_KEY_BYTE_OFFSET;
-    public static final long M_SEMANTIC_BYTE_OFFSET;
-    public static final long M_INDEX_BYTE_OFFSET;
-    public static final long M_DATA_LENGTH_BYTE_OFFSET;
-    public static final long M_TYPE_BYTE_OFFSET;
-    public static final long M_DATA_BYTE_OFFSET;
+	public static final long M_KEY_BYTE_OFFSET;
+	public static final long M_SEMANTIC_BYTE_OFFSET;
+	public static final long M_INDEX_BYTE_OFFSET;
+	public static final long M_DATA_LENGTH_BYTE_OFFSET;
+	public static final long M_TYPE_BYTE_OFFSET;
+	public static final long M_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mKey;
+	private final AiString mKey;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mKey"),
-            JAVA_INT.withName("mSemantic"),
-            JAVA_INT.withName("mIndex"),
-            JAVA_INT.withName("mDataLength"),
-            JAVA_INT.withName("mType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mData")
-        ).withName("aiMaterialProperty").withByteAlignment(8);
-        
-        M_SEMANTIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mSemantic"));
-        M_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mIndex"));
-        M_DATA_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mDataLength"));
-        M_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mType"));
-        M_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mData"));
-        
-        M_KEY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mKey"));
-        M_SEMANTIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mSemantic"));
-        M_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mIndex"));
-        M_DATA_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mDataLength"));
-        M_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mType"));
-        M_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mKey"),
+		    JAVA_INT.withName("mSemantic"),
+		    JAVA_INT.withName("mIndex"),
+		    JAVA_INT.withName("mDataLength"),
+		    JAVA_INT.withName("mType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mData")
+		).withName("aiMaterialProperty").withByteAlignment(8);
+		
+		M_SEMANTIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mSemantic"));
+		M_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mIndex"));
+		M_DATA_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mDataLength"));
+		M_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mType"));
+		M_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mData"));
+		
+		M_KEY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mKey"));
+		M_SEMANTIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mSemantic"));
+		M_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mIndex"));
+		M_DATA_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mDataLength"));
+		M_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mType"));
+		M_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mData"));
+		//@formatter:on
+	}
 
-    public AiMaterialProperty() {
-        this(Arena.ofAuto());
+	public AiMaterialProperty() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMaterialProperty(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMaterialProperty(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mKey = new AiString(segment.asSlice(M_KEY_BYTE_OFFSET, AiString.LAYOUT));
+	}
+
+    /// @see #mKey()
+    public AiMaterialProperty mKey(Consumer<AiString> consumer) {
+    	consumer.accept(mKey);
+    	return this;
     }
     
-    public AiMaterialProperty(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #mKey()
+    public AiMaterialProperty mKey(AiString other) {
+    	mKey.set(other);
+    	return this;
     }
     
-    public AiMaterialProperty(MemorySegment segment) {
-        this.segment = segment;
-    
-        mKey = new AiString(segment.asSlice(M_KEY_BYTE_OFFSET, AiString.LAYOUT));
+    /// ```
+    /// Specifies the name of the property (key)
+    /// Keys are generally case insensitive.
+    /// ```
+    public AiString mKey() {
+    	return mKey;
     }
-
+    
     /// @see #mSemantic()
     public AiMaterialProperty mSemantic(int mSemantic) {
     	M_SEMANTIC_HANDLE.set(segment, 0L, mSemantic);
@@ -180,26 +200,6 @@ public final class AiMaterialProperty
     	return new NativeByteArray(segment);
     }
     
-    /// @see #mKey()
-    public AiMaterialProperty mKey(Consumer<AiString> consumer) {
-    	consumer.accept(mKey);
-    	return this;
-    }
-    
-    /// @see #mKey()
-    public AiMaterialProperty mKey(AiString other) {
-    	mKey.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// Specifies the name of the property (key)
-    /// Keys are generally case insensitive.
-    /// ```
-    public AiString mKey() {
-    	return mKey;
-    }
-    
     @Override
     public AiMaterialProperty set(AiMaterialProperty other) {
         return set(other.segment);
@@ -251,5 +251,5 @@ public final class AiMaterialProperty
             segment -> new AiMaterialProperty(segment)
         );
     }
-    
+
 }

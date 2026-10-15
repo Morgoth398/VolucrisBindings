@@ -16,43 +16,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class YGSize
 		implements Struct<YGSize> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
 
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("width"),
-            JAVA_FLOAT.withName("height")
-        ).withName("YGSize").withByteAlignment(4);
-        
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("width"),
+		    JAVA_FLOAT.withName("height")
+		).withName("YGSize").withByteAlignment(4);
+		
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		//@formatter:on
+	}
 
-    public YGSize() {
-        this(Arena.ofAuto());
-    }
-    
-    public YGSize(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public YGSize(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public YGSize() {
+	    this(Arena.ofAuto());
+	}
+	
+	public YGSize(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public YGSize(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #width()
     public YGSize width(float width) {
@@ -125,5 +125,5 @@ public final class YGSize
             segment -> new YGSize(segment)
         );
     }
-    
+
 }

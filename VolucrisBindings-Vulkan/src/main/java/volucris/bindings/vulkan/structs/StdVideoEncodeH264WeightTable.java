@@ -20,91 +20,107 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH264WeightTable
 		implements Struct<StdVideoEncodeH264WeightTable> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LUMA_LOG2_WEIGHT_DENOM_HANDLE;
-    public static final VarHandle CHROMA_LOG2_WEIGHT_DENOM_HANDLE;
-    public static final VarHandle LUMA_WEIGHT_L0_HANDLE;
-    public static final VarHandle LUMA_OFFSET_L0_HANDLE;
-    public static final VarHandle CHROMA_WEIGHT_L0_HANDLE;
-    public static final VarHandle CHROMA_OFFSET_L0_HANDLE;
-    public static final VarHandle LUMA_WEIGHT_L1_HANDLE;
-    public static final VarHandle LUMA_OFFSET_L1_HANDLE;
-    public static final VarHandle CHROMA_WEIGHT_L1_HANDLE;
-    public static final VarHandle CHROMA_OFFSET_L1_HANDLE;
+	public static final VarHandle LUMA_LOG2_WEIGHT_DENOM_HANDLE;
+	public static final VarHandle CHROMA_LOG2_WEIGHT_DENOM_HANDLE;
+	public static final VarHandle LUMA_WEIGHT_L0_HANDLE;
+	public static final VarHandle LUMA_OFFSET_L0_HANDLE;
+	public static final VarHandle CHROMA_WEIGHT_L0_HANDLE;
+	public static final VarHandle CHROMA_OFFSET_L0_HANDLE;
+	public static final VarHandle LUMA_WEIGHT_L1_HANDLE;
+	public static final VarHandle LUMA_OFFSET_L1_HANDLE;
+	public static final VarHandle CHROMA_WEIGHT_L1_HANDLE;
+	public static final VarHandle CHROMA_OFFSET_L1_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long LUMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET;
-    public static final long CHROMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET;
-    public static final long LUMA_WEIGHT_L0_BYTE_OFFSET;
-    public static final long LUMA_OFFSET_L0_BYTE_OFFSET;
-    public static final long CHROMA_WEIGHT_L0_BYTE_OFFSET;
-    public static final long CHROMA_OFFSET_L0_BYTE_OFFSET;
-    public static final long LUMA_WEIGHT_L1_BYTE_OFFSET;
-    public static final long LUMA_OFFSET_L1_BYTE_OFFSET;
-    public static final long CHROMA_WEIGHT_L1_BYTE_OFFSET;
-    public static final long CHROMA_OFFSET_L1_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long LUMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET;
+	public static final long CHROMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET;
+	public static final long LUMA_WEIGHT_L0_BYTE_OFFSET;
+	public static final long LUMA_OFFSET_L0_BYTE_OFFSET;
+	public static final long CHROMA_WEIGHT_L0_BYTE_OFFSET;
+	public static final long CHROMA_OFFSET_L0_BYTE_OFFSET;
+	public static final long LUMA_WEIGHT_L1_BYTE_OFFSET;
+	public static final long LUMA_OFFSET_L1_BYTE_OFFSET;
+	public static final long CHROMA_WEIGHT_L1_BYTE_OFFSET;
+	public static final long CHROMA_OFFSET_L1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH264WeightTableFlags flags;
+	private final StdVideoEncodeH264WeightTableFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH264WeightTableFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("luma_log2_weight_denom"),
-            JAVA_BYTE.withName("chroma_log2_weight_denom"),
-            MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_weight_l0"),
-            MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_offset_l0"),
-            MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_weight_l0"),
-            MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_offset_l0"),
-            MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_weight_l1"),
-            MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_offset_l1"),
-            MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_weight_l1"),
-            MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_offset_l1"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("StdVideoEncodeH264WeightTable").withByteAlignment(4);
-        
-        LUMA_LOG2_WEIGHT_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_log2_weight_denom"));
-        CHROMA_LOG2_WEIGHT_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_log2_weight_denom"));
-        LUMA_WEIGHT_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l0"), PathElement.sequenceElement());
-        LUMA_OFFSET_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_offset_l0"), PathElement.sequenceElement());
-        CHROMA_WEIGHT_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l0"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        CHROMA_OFFSET_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_offset_l0"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        LUMA_WEIGHT_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l1"), PathElement.sequenceElement());
-        LUMA_OFFSET_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_offset_l1"), PathElement.sequenceElement());
-        CHROMA_WEIGHT_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l1"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        CHROMA_OFFSET_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_offset_l1"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        LUMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_log2_weight_denom"));
-        CHROMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_log2_weight_denom"));
-        LUMA_WEIGHT_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l0"));
-        LUMA_OFFSET_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_offset_l0"));
-        CHROMA_WEIGHT_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l0"));
-        CHROMA_OFFSET_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_offset_l0"));
-        LUMA_WEIGHT_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l1"));
-        LUMA_OFFSET_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_offset_l1"));
-        CHROMA_WEIGHT_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l1"));
-        CHROMA_OFFSET_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_offset_l1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH264WeightTableFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("luma_log2_weight_denom"),
+		    JAVA_BYTE.withName("chroma_log2_weight_denom"),
+		    MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_weight_l0"),
+		    MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_offset_l0"),
+		    MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_weight_l0"),
+		    MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_offset_l0"),
+		    MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_weight_l1"),
+		    MemoryLayout.sequenceLayout(32, JAVA_BYTE).withName("luma_offset_l1"),
+		    MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_weight_l1"),
+		    MemoryLayout.sequenceLayout(32, MemoryLayout.sequenceLayout(2, JAVA_BYTE)).withName("chroma_offset_l1"),
+		    MemoryLayout.paddingLayout(2)
+		).withName("StdVideoEncodeH264WeightTable").withByteAlignment(4);
+		
+		LUMA_LOG2_WEIGHT_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_log2_weight_denom"));
+		CHROMA_LOG2_WEIGHT_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_log2_weight_denom"));
+		LUMA_WEIGHT_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l0"), PathElement.sequenceElement());
+		LUMA_OFFSET_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_offset_l0"), PathElement.sequenceElement());
+		CHROMA_WEIGHT_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l0"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		CHROMA_OFFSET_L0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_offset_l0"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		LUMA_WEIGHT_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_weight_l1"), PathElement.sequenceElement());
+		LUMA_OFFSET_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("luma_offset_l1"), PathElement.sequenceElement());
+		CHROMA_WEIGHT_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_weight_l1"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		CHROMA_OFFSET_L1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_offset_l1"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		LUMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_log2_weight_denom"));
+		CHROMA_LOG2_WEIGHT_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_log2_weight_denom"));
+		LUMA_WEIGHT_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l0"));
+		LUMA_OFFSET_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_offset_l0"));
+		CHROMA_WEIGHT_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l0"));
+		CHROMA_OFFSET_L0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_offset_l0"));
+		LUMA_WEIGHT_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_weight_l1"));
+		LUMA_OFFSET_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("luma_offset_l1"));
+		CHROMA_WEIGHT_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_weight_l1"));
+		CHROMA_OFFSET_L1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_offset_l1"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH264WeightTable() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH264WeightTable() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH264WeightTable(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH264WeightTable(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH264WeightTableFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264WeightTableFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH264WeightTable flags(Consumer<StdVideoEncodeH264WeightTableFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH264WeightTable(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH264WeightTable flags(StdVideoEncodeH264WeightTableFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH264WeightTable(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH264WeightTableFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264WeightTableFlags.LAYOUT));
+    public StdVideoEncodeH264WeightTableFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #luma_log2_weight_denom()
     public StdVideoEncodeH264WeightTable luma_log2_weight_denom(byte luma_log2_weight_denom) {
     	LUMA_LOG2_WEIGHT_DENOM_HANDLE.set(segment, 0L, luma_log2_weight_denom);
@@ -205,22 +221,6 @@ public final class StdVideoEncodeH264WeightTable
     	return (byte) CHROMA_OFFSET_L1_HANDLE.get(segment, 0L, index0, index1);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH264WeightTable flags(Consumer<StdVideoEncodeH264WeightTableFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH264WeightTable flags(StdVideoEncodeH264WeightTableFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH264WeightTableFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH264WeightTable set(StdVideoEncodeH264WeightTable other) {
         return set(other.segment);
@@ -272,5 +272,5 @@ public final class StdVideoEncodeH264WeightTable
             segment -> new StdVideoEncodeH264WeightTable(segment)
         );
     }
-    
+
 }

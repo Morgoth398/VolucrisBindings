@@ -22,50 +22,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT
 		implements Struct<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_OFFSET_GRANULARITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_OFFSET_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D fragmentDensityOffsetGranularity;
+	private final VkExtent2D fragmentDensityOffsetGranularity;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("fragmentDensityOffsetGranularity")
-        ).withName("VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_OFFSET_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityOffsetGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("fragmentDensityOffsetGranularity")
+		).withName("VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_OFFSET_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityOffsetGranularity"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        fragmentDensityOffsetGranularity = new VkExtent2D(segment.asSlice(FRAGMENT_DENSITY_OFFSET_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    fragmentDensityOffsetGranularity = new VkExtent2D(segment.asSlice(FRAGMENT_DENSITY_OFFSET_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT sType(int sType) {
@@ -159,5 +159,5 @@ public final class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT
             segment -> new VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(segment)
         );
     }
-    
+
 }

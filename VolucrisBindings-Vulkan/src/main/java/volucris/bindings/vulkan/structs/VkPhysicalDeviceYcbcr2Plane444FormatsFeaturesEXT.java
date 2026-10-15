@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
 		implements Struct<VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle YCBCR2PLANE444_FORMATS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle YCBCR2PLANE444_FORMATS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long YCBCR2PLANE444_FORMATS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long YCBCR2PLANE444_FORMATS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("ycbcr2plane444Formats"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        YCBCR2PLANE444_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycbcr2plane444Formats"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        YCBCR2PLANE444_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycbcr2plane444Formats"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("ycbcr2plane444Formats"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		YCBCR2PLANE444_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycbcr2plane444Formats"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		YCBCR2PLANE444_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycbcr2plane444Formats"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT
             segment -> new VkPhysicalDeviceYcbcr2Plane444FormatsFeaturesEXT(segment)
         );
     }
-    
+
 }

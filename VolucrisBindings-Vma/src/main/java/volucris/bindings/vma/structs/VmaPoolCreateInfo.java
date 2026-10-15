@@ -22,74 +22,74 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaPoolCreateInfo
 		implements Struct<VmaPoolCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MEMORY_TYPE_INDEX_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle BLOCK_SIZE_HANDLE;
-    public static final VarHandle MIN_BLOCK_COUNT_HANDLE;
-    public static final VarHandle MAX_BLOCK_COUNT_HANDLE;
-    public static final VarHandle PRIORITY_HANDLE;
-    public static final VarHandle MIN_ALLOCATION_ALIGNMENT_HANDLE;
-    public static final VarHandle P_MEMORY_ALLOCATE_NEXT_HANDLE;
+	public static final VarHandle MEMORY_TYPE_INDEX_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle BLOCK_SIZE_HANDLE;
+	public static final VarHandle MIN_BLOCK_COUNT_HANDLE;
+	public static final VarHandle MAX_BLOCK_COUNT_HANDLE;
+	public static final VarHandle PRIORITY_HANDLE;
+	public static final VarHandle MIN_ALLOCATION_ALIGNMENT_HANDLE;
+	public static final VarHandle P_MEMORY_ALLOCATE_NEXT_HANDLE;
 
-    public static final long MEMORY_TYPE_INDEX_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long BLOCK_SIZE_BYTE_OFFSET;
-    public static final long MIN_BLOCK_COUNT_BYTE_OFFSET;
-    public static final long MAX_BLOCK_COUNT_BYTE_OFFSET;
-    public static final long PRIORITY_BYTE_OFFSET;
-    public static final long MIN_ALLOCATION_ALIGNMENT_BYTE_OFFSET;
-    public static final long P_MEMORY_ALLOCATE_NEXT_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_INDEX_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long BLOCK_SIZE_BYTE_OFFSET;
+	public static final long MIN_BLOCK_COUNT_BYTE_OFFSET;
+	public static final long MAX_BLOCK_COUNT_BYTE_OFFSET;
+	public static final long PRIORITY_BYTE_OFFSET;
+	public static final long MIN_ALLOCATION_ALIGNMENT_BYTE_OFFSET;
+	public static final long P_MEMORY_ALLOCATE_NEXT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("memoryTypeIndex"),
-            JAVA_INT.withName("flags"),
-            JAVA_LONG.withName("blockSize"),
-            JAVA_LONG.withName("minBlockCount"),
-            JAVA_LONG.withName("maxBlockCount"),
-            JAVA_FLOAT.withName("priority"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("minAllocationAlignment"),
-            UNBOUNDED_ADDRESS.withName("pMemoryAllocateNext")
-        ).withName("VmaPoolCreateInfo").withByteAlignment(8);
-        
-        MEMORY_TYPE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeIndex"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockSize"));
-        MIN_BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minBlockCount"));
-        MAX_BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBlockCount"));
-        PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
-        MIN_ALLOCATION_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minAllocationAlignment"));
-        P_MEMORY_ALLOCATE_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMemoryAllocateNext"));
-        
-        MEMORY_TYPE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeIndex"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockSize"));
-        MIN_BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minBlockCount"));
-        MAX_BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBlockCount"));
-        PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
-        MIN_ALLOCATION_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minAllocationAlignment"));
-        P_MEMORY_ALLOCATE_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMemoryAllocateNext"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("memoryTypeIndex"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_LONG.withName("blockSize"),
+		    JAVA_LONG.withName("minBlockCount"),
+		    JAVA_LONG.withName("maxBlockCount"),
+		    JAVA_FLOAT.withName("priority"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("minAllocationAlignment"),
+		    UNBOUNDED_ADDRESS.withName("pMemoryAllocateNext")
+		).withName("VmaPoolCreateInfo").withByteAlignment(8);
+		
+		MEMORY_TYPE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeIndex"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockSize"));
+		MIN_BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minBlockCount"));
+		MAX_BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBlockCount"));
+		PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
+		MIN_ALLOCATION_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minAllocationAlignment"));
+		P_MEMORY_ALLOCATE_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMemoryAllocateNext"));
+		
+		MEMORY_TYPE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeIndex"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockSize"));
+		MIN_BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minBlockCount"));
+		MAX_BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBlockCount"));
+		PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
+		MIN_ALLOCATION_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minAllocationAlignment"));
+		P_MEMORY_ALLOCATE_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMemoryAllocateNext"));
+		//@formatter:on
+	}
 
-    public VmaPoolCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaPoolCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaPoolCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaPoolCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaPoolCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaPoolCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #memoryTypeIndex()
     public VmaPoolCreateInfo memoryTypeIndex(int memoryTypeIndex) {
@@ -279,5 +279,5 @@ public final class VmaPoolCreateInfo
             segment -> new VmaPoolCreateInfo(segment)
         );
     }
-    
+
 }

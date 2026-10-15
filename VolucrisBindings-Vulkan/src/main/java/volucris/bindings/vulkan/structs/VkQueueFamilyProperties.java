@@ -20,54 +20,54 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkQueueFamilyProperties
 		implements Struct<VkQueueFamilyProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle QUEUE_FLAGS_HANDLE;
-    public static final VarHandle QUEUE_COUNT_HANDLE;
-    public static final VarHandle TIMESTAMP_VALID_BITS_HANDLE;
+	public static final VarHandle QUEUE_FLAGS_HANDLE;
+	public static final VarHandle QUEUE_COUNT_HANDLE;
+	public static final VarHandle TIMESTAMP_VALID_BITS_HANDLE;
 
-    public static final long QUEUE_FLAGS_BYTE_OFFSET;
-    public static final long QUEUE_COUNT_BYTE_OFFSET;
-    public static final long TIMESTAMP_VALID_BITS_BYTE_OFFSET;
-    public static final long MIN_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET;
+	public static final long QUEUE_FLAGS_BYTE_OFFSET;
+	public static final long QUEUE_COUNT_BYTE_OFFSET;
+	public static final long TIMESTAMP_VALID_BITS_BYTE_OFFSET;
+	public static final long MIN_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent3D minImageTransferGranularity;
+	private final VkExtent3D minImageTransferGranularity;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("queueFlags"),
-            JAVA_INT.withName("queueCount"),
-            JAVA_INT.withName("timestampValidBits"),
-            VkExtent3D.LAYOUT.withName("minImageTransferGranularity")
-        ).withName("VkQueueFamilyProperties").withByteAlignment(4);
-        
-        QUEUE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFlags"));
-        QUEUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueCount"));
-        TIMESTAMP_VALID_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timestampValidBits"));
-        
-        QUEUE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFlags"));
-        QUEUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueCount"));
-        TIMESTAMP_VALID_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timestampValidBits"));
-        MIN_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageTransferGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("queueFlags"),
+		    JAVA_INT.withName("queueCount"),
+		    JAVA_INT.withName("timestampValidBits"),
+		    VkExtent3D.LAYOUT.withName("minImageTransferGranularity")
+		).withName("VkQueueFamilyProperties").withByteAlignment(4);
+		
+		QUEUE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFlags"));
+		QUEUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueCount"));
+		TIMESTAMP_VALID_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timestampValidBits"));
+		
+		QUEUE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFlags"));
+		QUEUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueCount"));
+		TIMESTAMP_VALID_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timestampValidBits"));
+		MIN_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageTransferGranularity"));
+		//@formatter:on
+	}
 
-    public VkQueueFamilyProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueueFamilyProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueueFamilyProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-        minImageTransferGranularity = new VkExtent3D(segment.asSlice(MIN_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkQueueFamilyProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueueFamilyProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueueFamilyProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minImageTransferGranularity = new VkExtent3D(segment.asSlice(MIN_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #queueFlags()
     public VkQueueFamilyProperties queueFlags(int queueFlags) {
@@ -166,5 +166,5 @@ public final class VkQueueFamilyProperties
             segment -> new VkQueueFamilyProperties(segment)
         );
     }
-    
+
 }

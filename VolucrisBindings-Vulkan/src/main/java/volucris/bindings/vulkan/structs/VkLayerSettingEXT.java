@@ -21,58 +21,58 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkLayerSettingEXT
 		implements Struct<VkLayerSettingEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle P_LAYER_NAME_HANDLE;
-    public static final VarHandle P_SETTING_NAME_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle VALUE_COUNT_HANDLE;
-    public static final VarHandle P_VALUES_HANDLE;
+	public static final VarHandle P_LAYER_NAME_HANDLE;
+	public static final VarHandle P_SETTING_NAME_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle VALUE_COUNT_HANDLE;
+	public static final VarHandle P_VALUES_HANDLE;
 
-    public static final long P_LAYER_NAME_BYTE_OFFSET;
-    public static final long P_SETTING_NAME_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long VALUE_COUNT_BYTE_OFFSET;
-    public static final long P_VALUES_BYTE_OFFSET;
+	public static final long P_LAYER_NAME_BYTE_OFFSET;
+	public static final long P_SETTING_NAME_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long VALUE_COUNT_BYTE_OFFSET;
+	public static final long P_VALUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("pLayerName"),
-            UNBOUNDED_ADDRESS.withName("pSettingName"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("valueCount"),
-            UNBOUNDED_ADDRESS.withName("pValues")
-        ).withName("VkLayerSettingEXT").withByteAlignment(8);
-        
-        P_LAYER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLayerName"));
-        P_SETTING_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSettingName"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        VALUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueCount"));
-        P_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pValues"));
-        
-        P_LAYER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLayerName"));
-        P_SETTING_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSettingName"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        VALUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueCount"));
-        P_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pValues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("pLayerName"),
+		    UNBOUNDED_ADDRESS.withName("pSettingName"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("valueCount"),
+		    UNBOUNDED_ADDRESS.withName("pValues")
+		).withName("VkLayerSettingEXT").withByteAlignment(8);
+		
+		P_LAYER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLayerName"));
+		P_SETTING_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSettingName"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		VALUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueCount"));
+		P_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pValues"));
+		
+		P_LAYER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLayerName"));
+		P_SETTING_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSettingName"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		VALUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueCount"));
+		P_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pValues"));
+		//@formatter:on
+	}
 
-    public VkLayerSettingEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkLayerSettingEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkLayerSettingEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkLayerSettingEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkLayerSettingEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkLayerSettingEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pLayerName()
     public VkLayerSettingEXT pLayerName(Arena arena, String pLayerName) {
@@ -190,5 +190,5 @@ public final class VkLayerSettingEXT
             segment -> new VkLayerSettingEXT(segment)
         );
     }
-    
+
 }

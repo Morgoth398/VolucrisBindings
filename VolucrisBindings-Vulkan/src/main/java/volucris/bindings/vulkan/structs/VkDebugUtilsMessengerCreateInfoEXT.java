@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDebugUtilsMessengerCreateInfoEXT
 		implements Struct<VkDebugUtilsMessengerCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MESSAGE_SEVERITY_HANDLE;
-    public static final VarHandle MESSAGE_TYPE_HANDLE;
-    public static final VarHandle PFN_USER_CALLBACK_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MESSAGE_SEVERITY_HANDLE;
+	public static final VarHandle MESSAGE_TYPE_HANDLE;
+	public static final VarHandle PFN_USER_CALLBACK_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MESSAGE_SEVERITY_BYTE_OFFSET;
-    public static final long MESSAGE_TYPE_BYTE_OFFSET;
-    public static final long PFN_USER_CALLBACK_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MESSAGE_SEVERITY_BYTE_OFFSET;
+	public static final long MESSAGE_TYPE_BYTE_OFFSET;
+	public static final long PFN_USER_CALLBACK_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("messageSeverity"),
-            JAVA_INT.withName("messageType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pfnUserCallback"),
-            UNBOUNDED_ADDRESS.withName("pUserData")
-        ).withName("VkDebugUtilsMessengerCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MESSAGE_SEVERITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("messageSeverity"));
-        MESSAGE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("messageType"));
-        PFN_USER_CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnUserCallback"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MESSAGE_SEVERITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("messageSeverity"));
-        MESSAGE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("messageType"));
-        PFN_USER_CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnUserCallback"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("messageSeverity"),
+		    JAVA_INT.withName("messageType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pfnUserCallback"),
+		    UNBOUNDED_ADDRESS.withName("pUserData")
+		).withName("VkDebugUtilsMessengerCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MESSAGE_SEVERITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("messageSeverity"));
+		MESSAGE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("messageType"));
+		PFN_USER_CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnUserCallback"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MESSAGE_SEVERITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("messageSeverity"));
+		MESSAGE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("messageType"));
+		PFN_USER_CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnUserCallback"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		//@formatter:on
+	}
 
-    public VkDebugUtilsMessengerCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDebugUtilsMessengerCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDebugUtilsMessengerCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDebugUtilsMessengerCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDebugUtilsMessengerCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDebugUtilsMessengerCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDebugUtilsMessengerCreateInfoEXT sType(int sType) {
@@ -222,5 +222,5 @@ public final class VkDebugUtilsMessengerCreateInfoEXT
             segment -> new VkDebugUtilsMessengerCreateInfoEXT(segment)
         );
     }
-    
+
 }

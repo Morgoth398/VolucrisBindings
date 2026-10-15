@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPhysicalDeviceDataGraphProcessingEngineARM
 		implements Struct<VkPhysicalDeviceDataGraphProcessingEngineARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle IS_FOREIGN_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle IS_FOREIGN_HANDLE;
 
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long IS_FOREIGN_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long IS_FOREIGN_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("isForeign")
-        ).withName("VkPhysicalDeviceDataGraphProcessingEngineARM").withByteAlignment(4);
-        
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        IS_FOREIGN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isForeign"));
-        
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        IS_FOREIGN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isForeign"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("isForeign")
+		).withName("VkPhysicalDeviceDataGraphProcessingEngineARM").withByteAlignment(4);
+		
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		IS_FOREIGN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("isForeign"));
+		
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		IS_FOREIGN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("isForeign"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDataGraphProcessingEngineARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDataGraphProcessingEngineARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDataGraphProcessingEngineARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDataGraphProcessingEngineARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDataGraphProcessingEngineARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDataGraphProcessingEngineARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #type()
     public VkPhysicalDeviceDataGraphProcessingEngineARM type(int type) {
@@ -128,5 +128,5 @@ public final class VkPhysicalDeviceDataGraphProcessingEngineARM
             segment -> new VkPhysicalDeviceDataGraphProcessingEngineARM(segment)
         );
     }
-    
+
 }

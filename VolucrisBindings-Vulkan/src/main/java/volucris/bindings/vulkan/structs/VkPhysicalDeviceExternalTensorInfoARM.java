@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceExternalTensorInfoARM
 		implements Struct<VkPhysicalDeviceExternalTensorInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle P_DESCRIPTION_HANDLE;
-    public static final VarHandle HANDLE_TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle P_DESCRIPTION_HANDLE;
+	public static final VarHandle HANDLE_TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long P_DESCRIPTION_BYTE_OFFSET;
-    public static final long HANDLE_TYPE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long P_DESCRIPTION_BYTE_OFFSET;
+	public static final long HANDLE_TYPE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("flags"),
-            UNBOUNDED_ADDRESS.withName("pDescription"),
-            JAVA_INT.withName("handleType"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceExternalTensorInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        P_DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescription"));
-        HANDLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handleType"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        P_DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescription"));
-        HANDLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handleType"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("flags"),
+		    UNBOUNDED_ADDRESS.withName("pDescription"),
+		    JAVA_INT.withName("handleType"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceExternalTensorInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		P_DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDescription"));
+		HANDLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handleType"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		P_DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDescription"));
+		HANDLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handleType"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceExternalTensorInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceExternalTensorInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceExternalTensorInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceExternalTensorInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceExternalTensorInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceExternalTensorInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceExternalTensorInfoARM sType(int sType) {
@@ -187,5 +187,5 @@ public final class VkPhysicalDeviceExternalTensorInfoARM
             segment -> new VkPhysicalDeviceExternalTensorInfoARM(segment)
         );
     }
-    
+
 }

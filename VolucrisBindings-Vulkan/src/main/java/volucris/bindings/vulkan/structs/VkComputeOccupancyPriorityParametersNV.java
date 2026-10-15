@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkComputeOccupancyPriorityParametersNV
 		implements Struct<VkComputeOccupancyPriorityParametersNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OCCUPANCY_PRIORITY_HANDLE;
-    public static final VarHandle OCCUPANCY_THROTTLING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OCCUPANCY_PRIORITY_HANDLE;
+	public static final VarHandle OCCUPANCY_THROTTLING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OCCUPANCY_PRIORITY_BYTE_OFFSET;
-    public static final long OCCUPANCY_THROTTLING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OCCUPANCY_PRIORITY_BYTE_OFFSET;
+	public static final long OCCUPANCY_THROTTLING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_FLOAT.withName("occupancyPriority"),
-            JAVA_FLOAT.withName("occupancyThrottling")
-        ).withName("VkComputeOccupancyPriorityParametersNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OCCUPANCY_PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occupancyPriority"));
-        OCCUPANCY_THROTTLING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occupancyThrottling"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OCCUPANCY_PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occupancyPriority"));
-        OCCUPANCY_THROTTLING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occupancyThrottling"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_FLOAT.withName("occupancyPriority"),
+		    JAVA_FLOAT.withName("occupancyThrottling")
+		).withName("VkComputeOccupancyPriorityParametersNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OCCUPANCY_PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occupancyPriority"));
+		OCCUPANCY_THROTTLING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occupancyThrottling"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OCCUPANCY_PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occupancyPriority"));
+		OCCUPANCY_THROTTLING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occupancyThrottling"));
+		//@formatter:on
+	}
 
-    public VkComputeOccupancyPriorityParametersNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkComputeOccupancyPriorityParametersNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkComputeOccupancyPriorityParametersNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkComputeOccupancyPriorityParametersNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkComputeOccupancyPriorityParametersNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkComputeOccupancyPriorityParametersNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkComputeOccupancyPriorityParametersNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkComputeOccupancyPriorityParametersNV
             segment -> new VkComputeOccupancyPriorityParametersNV(segment)
         );
     }
-    
+
 }

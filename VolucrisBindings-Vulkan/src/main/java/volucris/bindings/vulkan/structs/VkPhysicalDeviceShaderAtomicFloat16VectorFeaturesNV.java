@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
 		implements Struct<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_FLOAT16_VECTOR_ATOMICS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_FLOAT16_VECTOR_ATOMICS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_FLOAT16_VECTOR_ATOMICS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_FLOAT16_VECTOR_ATOMICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderFloat16VectorAtomics"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_FLOAT16_VECTOR_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat16VectorAtomics"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_FLOAT16_VECTOR_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat16VectorAtomics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderFloat16VectorAtomics"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_FLOAT16_VECTOR_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat16VectorAtomics"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_FLOAT16_VECTOR_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat16VectorAtomics"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
             segment -> new VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(segment)
         );
     }
-    
+
 }

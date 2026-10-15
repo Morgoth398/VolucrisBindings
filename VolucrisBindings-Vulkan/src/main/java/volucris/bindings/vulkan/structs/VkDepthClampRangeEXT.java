@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDepthClampRangeEXT
 		implements Struct<VkDepthClampRangeEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MIN_DEPTH_CLAMP_HANDLE;
-    public static final VarHandle MAX_DEPTH_CLAMP_HANDLE;
+	public static final VarHandle MIN_DEPTH_CLAMP_HANDLE;
+	public static final VarHandle MAX_DEPTH_CLAMP_HANDLE;
 
-    public static final long MIN_DEPTH_CLAMP_BYTE_OFFSET;
-    public static final long MAX_DEPTH_CLAMP_BYTE_OFFSET;
+	public static final long MIN_DEPTH_CLAMP_BYTE_OFFSET;
+	public static final long MAX_DEPTH_CLAMP_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("minDepthClamp"),
-            JAVA_FLOAT.withName("maxDepthClamp")
-        ).withName("VkDepthClampRangeEXT").withByteAlignment(4);
-        
-        MIN_DEPTH_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minDepthClamp"));
-        MAX_DEPTH_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDepthClamp"));
-        
-        MIN_DEPTH_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDepthClamp"));
-        MAX_DEPTH_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDepthClamp"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("minDepthClamp"),
+		    JAVA_FLOAT.withName("maxDepthClamp")
+		).withName("VkDepthClampRangeEXT").withByteAlignment(4);
+		
+		MIN_DEPTH_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minDepthClamp"));
+		MAX_DEPTH_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDepthClamp"));
+		
+		MIN_DEPTH_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDepthClamp"));
+		MAX_DEPTH_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDepthClamp"));
+		//@formatter:on
+	}
 
-    public VkDepthClampRangeEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDepthClampRangeEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDepthClampRangeEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDepthClampRangeEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDepthClampRangeEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDepthClampRangeEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #minDepthClamp()
     public VkDepthClampRangeEXT minDepthClamp(float minDepthClamp) {
@@ -128,5 +128,5 @@ public final class VkDepthClampRangeEXT
             segment -> new VkDepthClampRangeEXT(segment)
         );
     }
-    
+
 }

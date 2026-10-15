@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineCoverageToColorStateCreateInfoNV
 		implements Struct<VkPipelineCoverageToColorStateCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle COVERAGE_TO_COLOR_ENABLE_HANDLE;
-    public static final VarHandle COVERAGE_TO_COLOR_LOCATION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle COVERAGE_TO_COLOR_ENABLE_HANDLE;
+	public static final VarHandle COVERAGE_TO_COLOR_LOCATION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET;
-    public static final long COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET;
+	public static final long COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("coverageToColorEnable"),
-            JAVA_INT.withName("coverageToColorLocation"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPipelineCoverageToColorStateCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        COVERAGE_TO_COLOR_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coverageToColorEnable"));
-        COVERAGE_TO_COLOR_LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coverageToColorLocation"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coverageToColorEnable"));
-        COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coverageToColorLocation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("coverageToColorEnable"),
+		    JAVA_INT.withName("coverageToColorLocation"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPipelineCoverageToColorStateCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		COVERAGE_TO_COLOR_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coverageToColorEnable"));
+		COVERAGE_TO_COLOR_LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coverageToColorLocation"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coverageToColorEnable"));
+		COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coverageToColorLocation"));
+		//@formatter:on
+	}
 
-    public VkPipelineCoverageToColorStateCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineCoverageToColorStateCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineCoverageToColorStateCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineCoverageToColorStateCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineCoverageToColorStateCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineCoverageToColorStateCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineCoverageToColorStateCreateInfoNV sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPipelineCoverageToColorStateCreateInfoNV
             segment -> new VkPipelineCoverageToColorStateCreateInfoNV(segment)
         );
     }
-    
+
 }

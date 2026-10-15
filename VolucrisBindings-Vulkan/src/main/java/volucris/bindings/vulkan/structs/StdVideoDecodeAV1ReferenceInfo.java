@@ -20,61 +20,77 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoDecodeAV1ReferenceInfo
 		implements Struct<StdVideoDecodeAV1ReferenceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FRAME_TYPE_HANDLE;
-    public static final VarHandle REF_FRAME_SIGN_BIAS_HANDLE;
-    public static final VarHandle ORDER_HINT_HANDLE;
-    public static final VarHandle SAVED_ORDER_HINTS_HANDLE;
+	public static final VarHandle FRAME_TYPE_HANDLE;
+	public static final VarHandle REF_FRAME_SIGN_BIAS_HANDLE;
+	public static final VarHandle ORDER_HINT_HANDLE;
+	public static final VarHandle SAVED_ORDER_HINTS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long FRAME_TYPE_BYTE_OFFSET;
-    public static final long REF_FRAME_SIGN_BIAS_BYTE_OFFSET;
-    public static final long ORDER_HINT_BYTE_OFFSET;
-    public static final long SAVED_ORDER_HINTS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long FRAME_TYPE_BYTE_OFFSET;
+	public static final long REF_FRAME_SIGN_BIAS_BYTE_OFFSET;
+	public static final long ORDER_HINT_BYTE_OFFSET;
+	public static final long SAVED_ORDER_HINTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoDecodeAV1ReferenceInfoFlags flags;
+	private final StdVideoDecodeAV1ReferenceInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoDecodeAV1ReferenceInfoFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("frame_type"),
-            JAVA_BYTE.withName("RefFrameSignBias"),
-            JAVA_BYTE.withName("OrderHint"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("SavedOrderHints"),
-            MemoryLayout.paddingLayout(1)
-        ).withName("StdVideoDecodeAV1ReferenceInfo").withByteAlignment(4);
-        
-        FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
-        REF_FRAME_SIGN_BIAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefFrameSignBias"));
-        ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("OrderHint"));
-        SAVED_ORDER_HINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("SavedOrderHints"), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
-        REF_FRAME_SIGN_BIAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefFrameSignBias"));
-        ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("OrderHint"));
-        SAVED_ORDER_HINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("SavedOrderHints"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoDecodeAV1ReferenceInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("frame_type"),
+		    JAVA_BYTE.withName("RefFrameSignBias"),
+		    JAVA_BYTE.withName("OrderHint"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("SavedOrderHints"),
+		    MemoryLayout.paddingLayout(1)
+		).withName("StdVideoDecodeAV1ReferenceInfo").withByteAlignment(4);
+		
+		FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
+		REF_FRAME_SIGN_BIAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("RefFrameSignBias"));
+		ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("OrderHint"));
+		SAVED_ORDER_HINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("SavedOrderHints"), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
+		REF_FRAME_SIGN_BIAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("RefFrameSignBias"));
+		ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("OrderHint"));
+		SAVED_ORDER_HINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("SavedOrderHints"));
+		//@formatter:on
+	}
 
-    public StdVideoDecodeAV1ReferenceInfo() {
-        this(Arena.ofAuto());
+	public StdVideoDecodeAV1ReferenceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoDecodeAV1ReferenceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoDecodeAV1ReferenceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoDecodeAV1ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeAV1ReferenceInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoDecodeAV1ReferenceInfo flags(Consumer<StdVideoDecodeAV1ReferenceInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoDecodeAV1ReferenceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoDecodeAV1ReferenceInfo flags(StdVideoDecodeAV1ReferenceInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoDecodeAV1ReferenceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoDecodeAV1ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoDecodeAV1ReferenceInfoFlags.LAYOUT));
+    public StdVideoDecodeAV1ReferenceInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #frame_type()
     public StdVideoDecodeAV1ReferenceInfo frame_type(byte frame_type) {
     	FRAME_TYPE_HANDLE.set(segment, 0L, frame_type);
@@ -113,22 +129,6 @@ public final class StdVideoDecodeAV1ReferenceInfo
     
     public byte savedOrderHints(int index0) {
     	return (byte) SAVED_ORDER_HINTS_HANDLE.get(segment, 0L, index0);
-    }
-    
-    /// @see #flags()
-    public StdVideoDecodeAV1ReferenceInfo flags(Consumer<StdVideoDecodeAV1ReferenceInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoDecodeAV1ReferenceInfo flags(StdVideoDecodeAV1ReferenceInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoDecodeAV1ReferenceInfoFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -182,5 +182,5 @@ public final class StdVideoDecodeAV1ReferenceInfo
             segment -> new StdVideoDecodeAV1ReferenceInfo(segment)
         );
     }
-    
+
 }

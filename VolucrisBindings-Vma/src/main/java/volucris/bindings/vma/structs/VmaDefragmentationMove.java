@@ -23,49 +23,49 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaDefragmentationMove
 		implements Struct<VmaDefragmentationMove> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OPERATION_HANDLE;
-    public static final VarHandle SRC_ALLOCATION_HANDLE;
-    public static final VarHandle DST_TMP_ALLOCATION_HANDLE;
+	public static final VarHandle OPERATION_HANDLE;
+	public static final VarHandle SRC_ALLOCATION_HANDLE;
+	public static final VarHandle DST_TMP_ALLOCATION_HANDLE;
 
-    public static final long OPERATION_BYTE_OFFSET;
-    public static final long SRC_ALLOCATION_BYTE_OFFSET;
-    public static final long DST_TMP_ALLOCATION_BYTE_OFFSET;
+	public static final long OPERATION_BYTE_OFFSET;
+	public static final long SRC_ALLOCATION_BYTE_OFFSET;
+	public static final long DST_TMP_ALLOCATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("operation"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("srcAllocation"),
-            UNBOUNDED_ADDRESS.withName("dstTmpAllocation")
-        ).withName("VmaDefragmentationMove").withByteAlignment(8);
-        
-        OPERATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("operation"));
-        SRC_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAllocation"));
-        DST_TMP_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstTmpAllocation"));
-        
-        OPERATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("operation"));
-        SRC_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAllocation"));
-        DST_TMP_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstTmpAllocation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("operation"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("srcAllocation"),
+		    UNBOUNDED_ADDRESS.withName("dstTmpAllocation")
+		).withName("VmaDefragmentationMove").withByteAlignment(8);
+		
+		OPERATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("operation"));
+		SRC_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAllocation"));
+		DST_TMP_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstTmpAllocation"));
+		
+		OPERATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("operation"));
+		SRC_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAllocation"));
+		DST_TMP_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstTmpAllocation"));
+		//@formatter:on
+	}
 
-    public VmaDefragmentationMove() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaDefragmentationMove(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaDefragmentationMove(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaDefragmentationMove() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaDefragmentationMove(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaDefragmentationMove(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #operation()
     public VmaDefragmentationMove operation(int operation) {
@@ -171,5 +171,5 @@ public final class VmaDefragmentationMove
             segment -> new VmaDefragmentationMove(segment)
         );
     }
-    
+
 }

@@ -19,49 +19,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDeviceFaultAddressInfoKHR
 		implements Struct<VkDeviceFaultAddressInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ADDRESS_TYPE_HANDLE;
-    public static final VarHandle REPORTED_ADDRESS_HANDLE;
-    public static final VarHandle ADDRESS_PRECISION_HANDLE;
+	public static final VarHandle ADDRESS_TYPE_HANDLE;
+	public static final VarHandle REPORTED_ADDRESS_HANDLE;
+	public static final VarHandle ADDRESS_PRECISION_HANDLE;
 
-    public static final long ADDRESS_TYPE_BYTE_OFFSET;
-    public static final long REPORTED_ADDRESS_BYTE_OFFSET;
-    public static final long ADDRESS_PRECISION_BYTE_OFFSET;
+	public static final long ADDRESS_TYPE_BYTE_OFFSET;
+	public static final long REPORTED_ADDRESS_BYTE_OFFSET;
+	public static final long ADDRESS_PRECISION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("addressType"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("reportedAddress"),
-            JAVA_LONG.withName("addressPrecision")
-        ).withName("VkDeviceFaultAddressInfoKHR").withByteAlignment(8);
-        
-        ADDRESS_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressType"));
-        REPORTED_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reportedAddress"));
-        ADDRESS_PRECISION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressPrecision"));
-        
-        ADDRESS_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressType"));
-        REPORTED_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reportedAddress"));
-        ADDRESS_PRECISION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressPrecision"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("addressType"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("reportedAddress"),
+		    JAVA_LONG.withName("addressPrecision")
+		).withName("VkDeviceFaultAddressInfoKHR").withByteAlignment(8);
+		
+		ADDRESS_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressType"));
+		REPORTED_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reportedAddress"));
+		ADDRESS_PRECISION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressPrecision"));
+		
+		ADDRESS_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressType"));
+		REPORTED_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reportedAddress"));
+		ADDRESS_PRECISION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressPrecision"));
+		//@formatter:on
+	}
 
-    public VkDeviceFaultAddressInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceFaultAddressInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceFaultAddressInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceFaultAddressInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceFaultAddressInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceFaultAddressInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #addressType()
     public VkDeviceFaultAddressInfoKHR addressType(int addressType) {
@@ -144,5 +144,5 @@ public final class VkDeviceFaultAddressInfoKHR
             segment -> new VkDeviceFaultAddressInfoKHR(segment)
         );
     }
-    
+
 }

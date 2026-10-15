@@ -22,72 +22,72 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkComputePipelineCreateInfo
 		implements Struct<VkComputePipelineCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
-    public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
+	public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPipelineShaderStageCreateInfo stage;
+	private final VkPipelineShaderStageCreateInfo stage;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            VkPipelineShaderStageCreateInfo.LAYOUT.withName("stage"),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
-            JAVA_INT.withName("basePipelineIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkComputePipelineCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    VkPipelineShaderStageCreateInfo.LAYOUT.withName("stage"),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
+		    JAVA_INT.withName("basePipelineIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkComputePipelineCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
+		//@formatter:on
+	}
 
-    public VkComputePipelineCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkComputePipelineCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkComputePipelineCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        stage = new VkPipelineShaderStageCreateInfo(segment.asSlice(STAGE_BYTE_OFFSET, VkPipelineShaderStageCreateInfo.LAYOUT));
-    }
+	public VkComputePipelineCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkComputePipelineCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkComputePipelineCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    stage = new VkPipelineShaderStageCreateInfo(segment.asSlice(STAGE_BYTE_OFFSET, VkPipelineShaderStageCreateInfo.LAYOUT));
+	}
 
     /// @see #sType()
     public VkComputePipelineCreateInfo sType(int sType) {
@@ -122,6 +122,22 @@ public final class VkComputePipelineCreateInfo
     
     public int flags() {
     	return (int) FLAGS_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #stage()
+    public VkComputePipelineCreateInfo stage(Consumer<VkPipelineShaderStageCreateInfo> consumer) {
+    	consumer.accept(stage);
+    	return this;
+    }
+    
+    /// @see #stage()
+    public VkComputePipelineCreateInfo stage(VkPipelineShaderStageCreateInfo other) {
+    	stage.set(other);
+    	return this;
+    }
+    
+    public VkPipelineShaderStageCreateInfo stage() {
+    	return stage;
     }
     
     /// @see #layout()
@@ -162,22 +178,6 @@ public final class VkComputePipelineCreateInfo
     
     public int basePipelineIndex() {
     	return (int) BASE_PIPELINE_INDEX_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #stage()
-    public VkComputePipelineCreateInfo stage(Consumer<VkPipelineShaderStageCreateInfo> consumer) {
-    	consumer.accept(stage);
-    	return this;
-    }
-    
-    /// @see #stage()
-    public VkComputePipelineCreateInfo stage(VkPipelineShaderStageCreateInfo other) {
-    	stage.set(other);
-    	return this;
-    }
-    
-    public VkPipelineShaderStageCreateInfo stage() {
-    	return stage;
     }
     
     @Override
@@ -231,5 +231,5 @@ public final class VkComputePipelineCreateInfo
             segment -> new VkComputePipelineCreateInfo(segment)
         );
     }
-    
+
 }

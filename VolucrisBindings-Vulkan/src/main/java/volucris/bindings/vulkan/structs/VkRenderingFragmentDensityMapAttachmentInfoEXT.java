@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderingFragmentDensityMapAttachmentInfoEXT
 		implements Struct<VkRenderingFragmentDensityMapAttachmentInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_VIEW_HANDLE;
-    public static final VarHandle IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_VIEW_HANDLE;
+	public static final VarHandle IMAGE_LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_VIEW_BYTE_OFFSET;
-    public static final long IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_VIEW_BYTE_OFFSET;
+	public static final long IMAGE_LAYOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("imageView"),
-            JAVA_INT.withName("imageLayout"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkRenderingFragmentDensityMapAttachmentInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
-        IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("imageView"),
+		    JAVA_INT.withName("imageLayout"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkRenderingFragmentDensityMapAttachmentInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageLayout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_VIEW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageView"));
+		IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageLayout"));
+		//@formatter:on
+	}
 
-    public VkRenderingFragmentDensityMapAttachmentInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderingFragmentDensityMapAttachmentInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderingFragmentDensityMapAttachmentInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderingFragmentDensityMapAttachmentInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderingFragmentDensityMapAttachmentInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderingFragmentDensityMapAttachmentInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderingFragmentDensityMapAttachmentInfoEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkRenderingFragmentDensityMapAttachmentInfoEXT
             segment -> new VkRenderingFragmentDensityMapAttachmentInfoEXT(segment)
         );
     }
-    
+
 }

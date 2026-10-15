@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineSampleLocationsStateCreateInfoEXT
 		implements Struct<VkPipelineSampleLocationsStateCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLE_LOCATIONS_ENABLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLE_LOCATIONS_ENABLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATIONS_INFO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATIONS_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSampleLocationsInfoEXT sampleLocationsInfo;
+	private final VkSampleLocationsInfoEXT sampleLocationsInfo;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("sampleLocationsEnable"),
-            MemoryLayout.paddingLayout(4),
-            VkSampleLocationsInfoEXT.LAYOUT.withName("sampleLocationsInfo")
-        ).withName("VkPipelineSampleLocationsStateCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLE_LOCATIONS_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationsEnable"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsEnable"));
-        SAMPLE_LOCATIONS_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("sampleLocationsEnable"),
+		    MemoryLayout.paddingLayout(4),
+		    VkSampleLocationsInfoEXT.LAYOUT.withName("sampleLocationsInfo")
+		).withName("VkPipelineSampleLocationsStateCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLE_LOCATIONS_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationsEnable"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsEnable"));
+		SAMPLE_LOCATIONS_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationsInfo"));
+		//@formatter:on
+	}
 
-    public VkPipelineSampleLocationsStateCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineSampleLocationsStateCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineSampleLocationsStateCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        sampleLocationsInfo = new VkSampleLocationsInfoEXT(segment.asSlice(SAMPLE_LOCATIONS_INFO_BYTE_OFFSET, VkSampleLocationsInfoEXT.LAYOUT));
-    }
+	public VkPipelineSampleLocationsStateCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineSampleLocationsStateCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineSampleLocationsStateCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    sampleLocationsInfo = new VkSampleLocationsInfoEXT(segment.asSlice(SAMPLE_LOCATIONS_INFO_BYTE_OFFSET, VkSampleLocationsInfoEXT.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPipelineSampleLocationsStateCreateInfoEXT sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkPipelineSampleLocationsStateCreateInfoEXT
             segment -> new VkPipelineSampleLocationsStateCreateInfoEXT(segment)
         );
     }
-    
+
 }

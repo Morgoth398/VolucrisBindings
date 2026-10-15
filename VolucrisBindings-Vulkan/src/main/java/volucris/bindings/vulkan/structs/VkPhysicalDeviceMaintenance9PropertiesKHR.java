@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance9PropertiesKHR
 		implements Struct<VkPhysicalDeviceMaintenance9PropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE2_DVIEW_OF3_DSPARSE_HANDLE;
-    public static final VarHandle DEFAULT_VERTEX_ATTRIBUTE_VALUE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE2_DVIEW_OF3_DSPARSE_HANDLE;
+	public static final VarHandle DEFAULT_VERTEX_ATTRIBUTE_VALUE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE2_DVIEW_OF3_DSPARSE_BYTE_OFFSET;
-    public static final long DEFAULT_VERTEX_ATTRIBUTE_VALUE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE2_DVIEW_OF3_DSPARSE_BYTE_OFFSET;
+	public static final long DEFAULT_VERTEX_ATTRIBUTE_VALUE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("image2DViewOf3DSparse"),
-            JAVA_INT.withName("defaultVertexAttributeValue")
-        ).withName("VkPhysicalDeviceMaintenance9PropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE2_DVIEW_OF3_DSPARSE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image2DViewOf3DSparse"));
-        DEFAULT_VERTEX_ATTRIBUTE_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultVertexAttributeValue"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE2_DVIEW_OF3_DSPARSE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image2DViewOf3DSparse"));
-        DEFAULT_VERTEX_ATTRIBUTE_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultVertexAttributeValue"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("image2DViewOf3DSparse"),
+		    JAVA_INT.withName("defaultVertexAttributeValue")
+		).withName("VkPhysicalDeviceMaintenance9PropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE2_DVIEW_OF3_DSPARSE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image2DViewOf3DSparse"));
+		DEFAULT_VERTEX_ATTRIBUTE_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultVertexAttributeValue"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE2_DVIEW_OF3_DSPARSE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image2DViewOf3DSparse"));
+		DEFAULT_VERTEX_ATTRIBUTE_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultVertexAttributeValue"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance9PropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance9PropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance9PropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance9PropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance9PropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance9PropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance9PropertiesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceMaintenance9PropertiesKHR
             segment -> new VkPhysicalDeviceMaintenance9PropertiesKHR(segment)
         );
     }
-    
+
 }

@@ -12,52 +12,52 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class GLBindlessTextures {
 
-    public static final int GL_UNSIGNED_INT64_ARB = 0x140F;
+	public static final int GL_UNSIGNED_INT64_ARB = 0x140F;
 
-    private static final LazyConstant<Boolean> GL_ARB_BINDLESS_TEXTURE;
+	private static final LazyConstant<Boolean> GL_ARB_BINDLESS_TEXTURE;
 
-    private static final LazyConstant<MethodHandle> GLAD_GL_GET_TEXTURE_HANDLE_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_GET_TEXTURE_SAMPLER_HANDLE_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_TEXTURE_HANDLE_RESIDENT_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_TEXTURE_HANDLE_NON_RESIDENT_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_GET_IMAGE_HANDLE_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_IMAGE_HANDLE_RESIDENT_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_IMAGE_HANDLE_NON_RESIDENT_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_UNIFORM_HANDLEUI64_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_UNIFORM_HANDLEUI64V_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64V_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_IS_TEXTURE_HANDLE_RESIDENT_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_IS_IMAGE_HANDLE_RESIDENT_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_VERTEX_ATTRIB_L1UI64_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_VERTEX_ATTRIB_L1UI64V_ARB;
-    private static final LazyConstant<MethodHandle> GLAD_GL_GET_VERTEX_ATTRIB_LUI64V_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_GET_TEXTURE_HANDLE_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_GET_TEXTURE_SAMPLER_HANDLE_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_TEXTURE_HANDLE_RESIDENT_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_TEXTURE_HANDLE_NON_RESIDENT_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_GET_IMAGE_HANDLE_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_IMAGE_HANDLE_RESIDENT_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_MAKE_IMAGE_HANDLE_NON_RESIDENT_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_UNIFORM_HANDLEUI64_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_UNIFORM_HANDLEUI64V_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64V_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_IS_TEXTURE_HANDLE_RESIDENT_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_IS_IMAGE_HANDLE_RESIDENT_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_VERTEX_ATTRIB_L1UI64_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_VERTEX_ATTRIB_L1UI64V_ARB;
+	private static final LazyConstant<MethodHandle> GLAD_GL_GET_VERTEX_ATTRIB_LUI64V_ARB;
 
-    static {
-        //@formatter:off
-        GL_ARB_BINDLESS_TEXTURE = booleanSymbol("GLAD_GL_ARB_bindless_texture", true);
-        
-        GLAD_GL_GET_TEXTURE_HANDLE_ARB = downcallHandle(true, "glad_glGetTextureHandleARB", JAVA_LONG, JAVA_INT);
-        GLAD_GL_GET_TEXTURE_SAMPLER_HANDLE_ARB = downcallHandle(true, "glad_glGetTextureSamplerHandleARB", JAVA_LONG, JAVA_INT, JAVA_INT);
-        GLAD_GL_MAKE_TEXTURE_HANDLE_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeTextureHandleResidentARB", JAVA_LONG);
-        GLAD_GL_MAKE_TEXTURE_HANDLE_NON_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeTextureHandleNonResidentARB", JAVA_LONG);
-        GLAD_GL_GET_IMAGE_HANDLE_ARB = downcallHandle(true, "glad_glGetImageHandleARB", JAVA_LONG, JAVA_INT, JAVA_INT, JAVA_BYTE, JAVA_INT, JAVA_INT);
-        GLAD_GL_MAKE_IMAGE_HANDLE_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeImageHandleResidentARB", JAVA_LONG, JAVA_INT);
-        GLAD_GL_MAKE_IMAGE_HANDLE_NON_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeImageHandleNonResidentARB", JAVA_LONG);
-        GLAD_GL_UNIFORM_HANDLEUI64_ARB = downcallHandleVoid(true, "glad_glUniformHandleui64ARB", JAVA_INT, JAVA_LONG);
-        GLAD_GL_UNIFORM_HANDLEUI64V_ARB = downcallHandleVoid(true, "glad_glUniformHandleui64vARB", JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64_ARB = downcallHandleVoid(true, "glad_glProgramUniformHandleui64ARB", JAVA_INT, JAVA_INT, JAVA_LONG);
-        GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64V_ARB = downcallHandleVoid(true, "glad_glProgramUniformHandleui64vARB", JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        GLAD_GL_IS_TEXTURE_HANDLE_RESIDENT_ARB = downcallHandle(true, "glad_glIsTextureHandleResidentARB", JAVA_BYTE, JAVA_LONG);
-        GLAD_GL_IS_IMAGE_HANDLE_RESIDENT_ARB = downcallHandle(true, "glad_glIsImageHandleResidentARB", JAVA_BYTE, JAVA_LONG);
-        GLAD_GL_VERTEX_ATTRIB_L1UI64_ARB = downcallHandleVoid(true, "glad_glVertexAttribL1ui64ARB", JAVA_INT, JAVA_LONG);
-        GLAD_GL_VERTEX_ATTRIB_L1UI64V_ARB = downcallHandleVoid(true, "glad_glVertexAttribL1ui64vARB", JAVA_INT, UNBOUNDED_ADDRESS);
-        GLAD_GL_GET_VERTEX_ATTRIB_LUI64V_ARB = downcallHandleVoid(true, "glad_glGetVertexAttribLui64vARB", JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		GL_ARB_BINDLESS_TEXTURE = booleanSymbol("GLAD_GL_ARB_bindless_texture", true);
+		
+		GLAD_GL_GET_TEXTURE_HANDLE_ARB = downcallHandle(true, "glad_glGetTextureHandleARB", JAVA_LONG, JAVA_INT);
+		GLAD_GL_GET_TEXTURE_SAMPLER_HANDLE_ARB = downcallHandle(true, "glad_glGetTextureSamplerHandleARB", JAVA_LONG, JAVA_INT, JAVA_INT);
+		GLAD_GL_MAKE_TEXTURE_HANDLE_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeTextureHandleResidentARB", JAVA_LONG);
+		GLAD_GL_MAKE_TEXTURE_HANDLE_NON_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeTextureHandleNonResidentARB", JAVA_LONG);
+		GLAD_GL_GET_IMAGE_HANDLE_ARB = downcallHandle(true, "glad_glGetImageHandleARB", JAVA_LONG, JAVA_INT, JAVA_INT, JAVA_BYTE, JAVA_INT, JAVA_INT);
+		GLAD_GL_MAKE_IMAGE_HANDLE_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeImageHandleResidentARB", JAVA_LONG, JAVA_INT);
+		GLAD_GL_MAKE_IMAGE_HANDLE_NON_RESIDENT_ARB = downcallHandleVoid(true, "glad_glMakeImageHandleNonResidentARB", JAVA_LONG);
+		GLAD_GL_UNIFORM_HANDLEUI64_ARB = downcallHandleVoid(true, "glad_glUniformHandleui64ARB", JAVA_INT, JAVA_LONG);
+		GLAD_GL_UNIFORM_HANDLEUI64V_ARB = downcallHandleVoid(true, "glad_glUniformHandleui64vARB", JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64_ARB = downcallHandleVoid(true, "glad_glProgramUniformHandleui64ARB", JAVA_INT, JAVA_INT, JAVA_LONG);
+		GLAD_GL_PROGRAM_UNIFORM_HANDLEUI64V_ARB = downcallHandleVoid(true, "glad_glProgramUniformHandleui64vARB", JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		GLAD_GL_IS_TEXTURE_HANDLE_RESIDENT_ARB = downcallHandle(true, "glad_glIsTextureHandleResidentARB", JAVA_BYTE, JAVA_LONG);
+		GLAD_GL_IS_IMAGE_HANDLE_RESIDENT_ARB = downcallHandle(true, "glad_glIsImageHandleResidentARB", JAVA_BYTE, JAVA_LONG);
+		GLAD_GL_VERTEX_ATTRIB_L1UI64_ARB = downcallHandleVoid(true, "glad_glVertexAttribL1ui64ARB", JAVA_INT, JAVA_LONG);
+		GLAD_GL_VERTEX_ATTRIB_L1UI64V_ARB = downcallHandleVoid(true, "glad_glVertexAttribL1ui64vARB", JAVA_INT, UNBOUNDED_ADDRESS);
+		GLAD_GL_GET_VERTEX_ATTRIB_LUI64V_ARB = downcallHandleVoid(true, "glad_glGetVertexAttribLui64vARB", JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		//@formatter:on
+	}
 
-    private GLBindlessTextures() {
-    }
+	private GLBindlessTextures() {
+	}
 
     public static final boolean GL_ARB_bindless_texture() {
         return GL_ARB_BINDLESS_TEXTURE.get();
@@ -358,5 +358,5 @@ public final class GLBindlessTextures {
     		params.memorySegment()
     	);
     }
-    
+
 }

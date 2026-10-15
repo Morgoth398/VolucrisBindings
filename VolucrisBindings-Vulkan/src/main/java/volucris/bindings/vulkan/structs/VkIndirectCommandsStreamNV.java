@@ -21,43 +21,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectCommandsStreamNV
 		implements Struct<VkIndirectCommandsStreamNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUFFER_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
 
-    public static final long BUFFER_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("buffer"),
-            JAVA_LONG.withName("offset")
-        ).withName("VkIndirectCommandsStreamNV").withByteAlignment(8);
-        
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("buffer"),
+		    JAVA_LONG.withName("offset")
+		).withName("VkIndirectCommandsStreamNV").withByteAlignment(8);
+		
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsStreamNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsStreamNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsStreamNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsStreamNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsStreamNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsStreamNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #buffer()
     public VkIndirectCommandsStreamNV buffer(VkBuffer buffer) {
@@ -135,5 +135,5 @@ public final class VkIndirectCommandsStreamNV
             segment -> new VkIndirectCommandsStreamNV(segment)
         );
     }
-    
+
 }

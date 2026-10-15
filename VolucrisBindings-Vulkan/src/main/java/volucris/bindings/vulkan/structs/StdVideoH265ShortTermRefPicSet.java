@@ -20,105 +20,121 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265ShortTermRefPicSet
 		implements Struct<StdVideoH265ShortTermRefPicSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DELTA_IDX_MINUS1_HANDLE;
-    public static final VarHandle USE_DELTA_FLAG_HANDLE;
-    public static final VarHandle ABS_DELTA_RPS_MINUS1_HANDLE;
-    public static final VarHandle USED_BY_CURR_PIC_FLAG_HANDLE;
-    public static final VarHandle USED_BY_CURR_PIC_S0_FLAG_HANDLE;
-    public static final VarHandle USED_BY_CURR_PIC_S1_FLAG_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle RESERVED2_HANDLE;
-    public static final VarHandle RESERVED3_HANDLE;
-    public static final VarHandle NUM_NEGATIVE_PICS_HANDLE;
-    public static final VarHandle NUM_POSITIVE_PICS_HANDLE;
-    public static final VarHandle DELTA_POC_S0_MINUS1_HANDLE;
-    public static final VarHandle DELTA_POC_S1_MINUS1_HANDLE;
+	public static final VarHandle DELTA_IDX_MINUS1_HANDLE;
+	public static final VarHandle USE_DELTA_FLAG_HANDLE;
+	public static final VarHandle ABS_DELTA_RPS_MINUS1_HANDLE;
+	public static final VarHandle USED_BY_CURR_PIC_FLAG_HANDLE;
+	public static final VarHandle USED_BY_CURR_PIC_S0_FLAG_HANDLE;
+	public static final VarHandle USED_BY_CURR_PIC_S1_FLAG_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle RESERVED2_HANDLE;
+	public static final VarHandle RESERVED3_HANDLE;
+	public static final VarHandle NUM_NEGATIVE_PICS_HANDLE;
+	public static final VarHandle NUM_POSITIVE_PICS_HANDLE;
+	public static final VarHandle DELTA_POC_S0_MINUS1_HANDLE;
+	public static final VarHandle DELTA_POC_S1_MINUS1_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DELTA_IDX_MINUS1_BYTE_OFFSET;
-    public static final long USE_DELTA_FLAG_BYTE_OFFSET;
-    public static final long ABS_DELTA_RPS_MINUS1_BYTE_OFFSET;
-    public static final long USED_BY_CURR_PIC_FLAG_BYTE_OFFSET;
-    public static final long USED_BY_CURR_PIC_S0_FLAG_BYTE_OFFSET;
-    public static final long USED_BY_CURR_PIC_S1_FLAG_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long RESERVED2_BYTE_OFFSET;
-    public static final long RESERVED3_BYTE_OFFSET;
-    public static final long NUM_NEGATIVE_PICS_BYTE_OFFSET;
-    public static final long NUM_POSITIVE_PICS_BYTE_OFFSET;
-    public static final long DELTA_POC_S0_MINUS1_BYTE_OFFSET;
-    public static final long DELTA_POC_S1_MINUS1_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DELTA_IDX_MINUS1_BYTE_OFFSET;
+	public static final long USE_DELTA_FLAG_BYTE_OFFSET;
+	public static final long ABS_DELTA_RPS_MINUS1_BYTE_OFFSET;
+	public static final long USED_BY_CURR_PIC_FLAG_BYTE_OFFSET;
+	public static final long USED_BY_CURR_PIC_S0_FLAG_BYTE_OFFSET;
+	public static final long USED_BY_CURR_PIC_S1_FLAG_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long RESERVED2_BYTE_OFFSET;
+	public static final long RESERVED3_BYTE_OFFSET;
+	public static final long NUM_NEGATIVE_PICS_BYTE_OFFSET;
+	public static final long NUM_POSITIVE_PICS_BYTE_OFFSET;
+	public static final long DELTA_POC_S0_MINUS1_BYTE_OFFSET;
+	public static final long DELTA_POC_S1_MINUS1_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH265ShortTermRefPicSetFlags flags;
+	private final StdVideoH265ShortTermRefPicSetFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH265ShortTermRefPicSetFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("delta_idx_minus1"),
-            JAVA_SHORT.withName("use_delta_flag"),
-            JAVA_SHORT.withName("abs_delta_rps_minus1"),
-            JAVA_SHORT.withName("used_by_curr_pic_flag"),
-            JAVA_SHORT.withName("used_by_curr_pic_s0_flag"),
-            JAVA_SHORT.withName("used_by_curr_pic_s1_flag"),
-            JAVA_SHORT.withName("reserved1"),
-            JAVA_BYTE.withName("reserved2"),
-            JAVA_BYTE.withName("reserved3"),
-            JAVA_BYTE.withName("num_negative_pics"),
-            JAVA_BYTE.withName("num_positive_pics"),
-            MemoryLayout.sequenceLayout(16, JAVA_SHORT).withName("delta_poc_s0_minus1"),
-            MemoryLayout.sequenceLayout(16, JAVA_SHORT).withName("delta_poc_s1_minus1")
-        ).withName("StdVideoH265ShortTermRefPicSet").withByteAlignment(4);
-        
-        DELTA_IDX_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_idx_minus1"));
-        USE_DELTA_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("use_delta_flag"));
-        ABS_DELTA_RPS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("abs_delta_rps_minus1"));
-        USED_BY_CURR_PIC_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_flag"));
-        USED_BY_CURR_PIC_S0_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_s0_flag"));
-        USED_BY_CURR_PIC_S1_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_s1_flag"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
-        RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
-        NUM_NEGATIVE_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_negative_pics"));
-        NUM_POSITIVE_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_positive_pics"));
-        DELTA_POC_S0_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_poc_s0_minus1"), PathElement.sequenceElement());
-        DELTA_POC_S1_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_poc_s1_minus1"), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DELTA_IDX_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_idx_minus1"));
-        USE_DELTA_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("use_delta_flag"));
-        ABS_DELTA_RPS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("abs_delta_rps_minus1"));
-        USED_BY_CURR_PIC_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_flag"));
-        USED_BY_CURR_PIC_S0_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_s0_flag"));
-        USED_BY_CURR_PIC_S1_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_s1_flag"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
-        RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
-        NUM_NEGATIVE_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_negative_pics"));
-        NUM_POSITIVE_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_positive_pics"));
-        DELTA_POC_S0_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_poc_s0_minus1"));
-        DELTA_POC_S1_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_poc_s1_minus1"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH265ShortTermRefPicSetFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("delta_idx_minus1"),
+		    JAVA_SHORT.withName("use_delta_flag"),
+		    JAVA_SHORT.withName("abs_delta_rps_minus1"),
+		    JAVA_SHORT.withName("used_by_curr_pic_flag"),
+		    JAVA_SHORT.withName("used_by_curr_pic_s0_flag"),
+		    JAVA_SHORT.withName("used_by_curr_pic_s1_flag"),
+		    JAVA_SHORT.withName("reserved1"),
+		    JAVA_BYTE.withName("reserved2"),
+		    JAVA_BYTE.withName("reserved3"),
+		    JAVA_BYTE.withName("num_negative_pics"),
+		    JAVA_BYTE.withName("num_positive_pics"),
+		    MemoryLayout.sequenceLayout(16, JAVA_SHORT).withName("delta_poc_s0_minus1"),
+		    MemoryLayout.sequenceLayout(16, JAVA_SHORT).withName("delta_poc_s1_minus1")
+		).withName("StdVideoH265ShortTermRefPicSet").withByteAlignment(4);
+		
+		DELTA_IDX_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_idx_minus1"));
+		USE_DELTA_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("use_delta_flag"));
+		ABS_DELTA_RPS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("abs_delta_rps_minus1"));
+		USED_BY_CURR_PIC_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_flag"));
+		USED_BY_CURR_PIC_S0_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_s0_flag"));
+		USED_BY_CURR_PIC_S1_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("used_by_curr_pic_s1_flag"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
+		RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
+		NUM_NEGATIVE_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_negative_pics"));
+		NUM_POSITIVE_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_positive_pics"));
+		DELTA_POC_S0_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_poc_s0_minus1"), PathElement.sequenceElement());
+		DELTA_POC_S1_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_poc_s1_minus1"), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DELTA_IDX_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_idx_minus1"));
+		USE_DELTA_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("use_delta_flag"));
+		ABS_DELTA_RPS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("abs_delta_rps_minus1"));
+		USED_BY_CURR_PIC_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_flag"));
+		USED_BY_CURR_PIC_S0_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_s0_flag"));
+		USED_BY_CURR_PIC_S1_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("used_by_curr_pic_s1_flag"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
+		RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
+		NUM_NEGATIVE_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_negative_pics"));
+		NUM_POSITIVE_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_positive_pics"));
+		DELTA_POC_S0_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_poc_s0_minus1"));
+		DELTA_POC_S1_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_poc_s1_minus1"));
+		//@formatter:on
+	}
 
-    public StdVideoH265ShortTermRefPicSet() {
-        this(Arena.ofAuto());
+	public StdVideoH265ShortTermRefPicSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265ShortTermRefPicSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265ShortTermRefPicSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH265ShortTermRefPicSetFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265ShortTermRefPicSetFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH265ShortTermRefPicSet flags(Consumer<StdVideoH265ShortTermRefPicSetFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH265ShortTermRefPicSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH265ShortTermRefPicSet flags(StdVideoH265ShortTermRefPicSetFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH265ShortTermRefPicSet(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH265ShortTermRefPicSetFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265ShortTermRefPicSetFlags.LAYOUT));
+    public StdVideoH265ShortTermRefPicSetFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #delta_idx_minus1()
     public StdVideoH265ShortTermRefPicSet delta_idx_minus1(int delta_idx_minus1) {
     	DELTA_IDX_MINUS1_HANDLE.set(segment, 0L, delta_idx_minus1);
@@ -249,22 +265,6 @@ public final class StdVideoH265ShortTermRefPicSet
     	return (short) DELTA_POC_S1_MINUS1_HANDLE.get(segment, 0L, index0);
     }
     
-    /// @see #flags()
-    public StdVideoH265ShortTermRefPicSet flags(Consumer<StdVideoH265ShortTermRefPicSetFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH265ShortTermRefPicSet flags(StdVideoH265ShortTermRefPicSetFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH265ShortTermRefPicSetFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH265ShortTermRefPicSet set(StdVideoH265ShortTermRefPicSet other) {
         return set(other.segment);
@@ -316,5 +316,5 @@ public final class StdVideoH265ShortTermRefPicSet
             segment -> new StdVideoH265ShortTermRefPicSet(segment)
         );
     }
-    
+
 }

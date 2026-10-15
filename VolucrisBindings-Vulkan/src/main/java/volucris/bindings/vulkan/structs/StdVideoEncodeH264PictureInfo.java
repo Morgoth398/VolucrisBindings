@@ -22,85 +22,101 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoEncodeH264PictureInfo
 		implements Struct<StdVideoEncodeH264PictureInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SEQ_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle PIC_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle IDR_PIC_ID_HANDLE;
-    public static final VarHandle PRIMARY_PIC_TYPE_HANDLE;
-    public static final VarHandle FRAME_NUM_HANDLE;
-    public static final VarHandle PIC_ORDER_CNT_HANDLE;
-    public static final VarHandle TEMPORAL_ID_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_REF_LISTS_HANDLE;
+	public static final VarHandle SEQ_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle PIC_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle IDR_PIC_ID_HANDLE;
+	public static final VarHandle PRIMARY_PIC_TYPE_HANDLE;
+	public static final VarHandle FRAME_NUM_HANDLE;
+	public static final VarHandle PIC_ORDER_CNT_HANDLE;
+	public static final VarHandle TEMPORAL_ID_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_REF_LISTS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long PIC_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long IDR_PIC_ID_BYTE_OFFSET;
-    public static final long PRIMARY_PIC_TYPE_BYTE_OFFSET;
-    public static final long FRAME_NUM_BYTE_OFFSET;
-    public static final long PIC_ORDER_CNT_BYTE_OFFSET;
-    public static final long TEMPORAL_ID_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_REF_LISTS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long PIC_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long IDR_PIC_ID_BYTE_OFFSET;
+	public static final long PRIMARY_PIC_TYPE_BYTE_OFFSET;
+	public static final long FRAME_NUM_BYTE_OFFSET;
+	public static final long PIC_ORDER_CNT_BYTE_OFFSET;
+	public static final long TEMPORAL_ID_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_REF_LISTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH264PictureInfoFlags flags;
+	private final StdVideoEncodeH264PictureInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH264PictureInfoFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("seq_parameter_set_id"),
-            JAVA_BYTE.withName("pic_parameter_set_id"),
-            JAVA_SHORT.withName("idr_pic_id"),
-            JAVA_INT.withName("primary_pic_type"),
-            JAVA_INT.withName("frame_num"),
-            JAVA_INT.withName("PicOrderCnt"),
-            JAVA_BYTE.withName("temporal_id"),
-            MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pRefLists")
-        ).withName("StdVideoEncodeH264PictureInfo").withByteAlignment(8);
-        
-        SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_parameter_set_id"));
-        PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_parameter_set_id"));
-        IDR_PIC_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("idr_pic_id"));
-        PRIMARY_PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primary_pic_type"));
-        FRAME_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_num"));
-        PIC_ORDER_CNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCnt"));
-        TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporal_id"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
-        P_REF_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRefLists"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_parameter_set_id"));
-        PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_parameter_set_id"));
-        IDR_PIC_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("idr_pic_id"));
-        PRIMARY_PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primary_pic_type"));
-        FRAME_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_num"));
-        PIC_ORDER_CNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCnt"));
-        TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporal_id"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_REF_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRefLists"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH264PictureInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("seq_parameter_set_id"),
+		    JAVA_BYTE.withName("pic_parameter_set_id"),
+		    JAVA_SHORT.withName("idr_pic_id"),
+		    JAVA_INT.withName("primary_pic_type"),
+		    JAVA_INT.withName("frame_num"),
+		    JAVA_INT.withName("PicOrderCnt"),
+		    JAVA_BYTE.withName("temporal_id"),
+		    MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pRefLists")
+		).withName("StdVideoEncodeH264PictureInfo").withByteAlignment(8);
+		
+		SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_parameter_set_id"));
+		PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_parameter_set_id"));
+		IDR_PIC_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("idr_pic_id"));
+		PRIMARY_PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primary_pic_type"));
+		FRAME_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_num"));
+		PIC_ORDER_CNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCnt"));
+		TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporal_id"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
+		P_REF_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRefLists"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_parameter_set_id"));
+		PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_parameter_set_id"));
+		IDR_PIC_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("idr_pic_id"));
+		PRIMARY_PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primary_pic_type"));
+		FRAME_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_num"));
+		PIC_ORDER_CNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCnt"));
+		TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporal_id"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_REF_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRefLists"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH264PictureInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH264PictureInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH264PictureInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH264PictureInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH264PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264PictureInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH264PictureInfo flags(Consumer<StdVideoEncodeH264PictureInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH264PictureInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH264PictureInfo flags(StdVideoEncodeH264PictureInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH264PictureInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH264PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264PictureInfoFlags.LAYOUT));
+    public StdVideoEncodeH264PictureInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #seq_parameter_set_id()
     public StdVideoEncodeH264PictureInfo seq_parameter_set_id(byte seq_parameter_set_id) {
     	SEQ_PARAMETER_SET_ID_HANDLE.set(segment, 0L, seq_parameter_set_id);
@@ -196,22 +212,6 @@ public final class StdVideoEncodeH264PictureInfo
     	return new StdVideoEncodeH264ReferenceListsInfo(segment);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH264PictureInfo flags(Consumer<StdVideoEncodeH264PictureInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH264PictureInfo flags(StdVideoEncodeH264PictureInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH264PictureInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH264PictureInfo set(StdVideoEncodeH264PictureInfo other) {
         return set(other.segment);
@@ -263,5 +263,5 @@ public final class StdVideoEncodeH264PictureInfo
             segment -> new StdVideoEncodeH264PictureInfo(segment)
         );
     }
-    
+
 }

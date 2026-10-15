@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAmigoProfilingSubmitInfoSEC
 		implements Struct<VkAmigoProfilingSubmitInfoSEC> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FIRST_DRAW_TIMESTAMP_HANDLE;
-    public static final VarHandle SWAP_BUFFER_TIMESTAMP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FIRST_DRAW_TIMESTAMP_HANDLE;
+	public static final VarHandle SWAP_BUFFER_TIMESTAMP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FIRST_DRAW_TIMESTAMP_BYTE_OFFSET;
-    public static final long SWAP_BUFFER_TIMESTAMP_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FIRST_DRAW_TIMESTAMP_BYTE_OFFSET;
+	public static final long SWAP_BUFFER_TIMESTAMP_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("firstDrawTimestamp"),
-            JAVA_LONG.withName("swapBufferTimestamp")
-        ).withName("VkAmigoProfilingSubmitInfoSEC").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FIRST_DRAW_TIMESTAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstDrawTimestamp"));
-        SWAP_BUFFER_TIMESTAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapBufferTimestamp"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FIRST_DRAW_TIMESTAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstDrawTimestamp"));
-        SWAP_BUFFER_TIMESTAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapBufferTimestamp"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("firstDrawTimestamp"),
+		    JAVA_LONG.withName("swapBufferTimestamp")
+		).withName("VkAmigoProfilingSubmitInfoSEC").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FIRST_DRAW_TIMESTAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstDrawTimestamp"));
+		SWAP_BUFFER_TIMESTAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapBufferTimestamp"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FIRST_DRAW_TIMESTAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstDrawTimestamp"));
+		SWAP_BUFFER_TIMESTAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapBufferTimestamp"));
+		//@formatter:on
+	}
 
-    public VkAmigoProfilingSubmitInfoSEC() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAmigoProfilingSubmitInfoSEC(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAmigoProfilingSubmitInfoSEC(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAmigoProfilingSubmitInfoSEC() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAmigoProfilingSubmitInfoSEC(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAmigoProfilingSubmitInfoSEC(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAmigoProfilingSubmitInfoSEC sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkAmigoProfilingSubmitInfoSEC
             segment -> new VkAmigoProfilingSubmitInfoSEC(segment)
         );
     }
-    
+
 }

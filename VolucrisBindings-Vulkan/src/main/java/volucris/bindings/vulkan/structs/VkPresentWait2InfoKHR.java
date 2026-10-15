@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPresentWait2InfoKHR
 		implements Struct<VkPresentWait2InfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_ID_HANDLE;
-    public static final VarHandle TIMEOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_ID_HANDLE;
+	public static final VarHandle TIMEOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_ID_BYTE_OFFSET;
-    public static final long TIMEOUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_ID_BYTE_OFFSET;
+	public static final long TIMEOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("presentId"),
-            JAVA_LONG.withName("timeout")
-        ).withName("VkPresentWait2InfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentId"));
-        TIMEOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentId"));
-        TIMEOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("presentId"),
+		    JAVA_LONG.withName("timeout")
+		).withName("VkPresentWait2InfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentId"));
+		TIMEOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentId"));
+		TIMEOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeout"));
+		//@formatter:on
+	}
 
-    public VkPresentWait2InfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentWait2InfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentWait2InfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentWait2InfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentWait2InfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentWait2InfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPresentWait2InfoKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPresentWait2InfoKHR
             segment -> new VkPresentWait2InfoKHR(segment)
         );
     }
-    
+
 }

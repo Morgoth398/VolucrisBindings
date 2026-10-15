@@ -21,95 +21,95 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTransformFeedbackPropertiesEXT
 		implements Struct<VkPhysicalDeviceTransformFeedbackPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_TRANSFORM_FEEDBACK_STREAMS_HANDLE;
-    public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFERS_HANDLE;
-    public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_HANDLE;
-    public static final VarHandle MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_HANDLE;
-    public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_HANDLE;
-    public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_QUERIES_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_DRAW_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_TRANSFORM_FEEDBACK_STREAMS_HANDLE;
+	public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFERS_HANDLE;
+	public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_HANDLE;
+	public static final VarHandle MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_HANDLE;
+	public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_HANDLE;
+	public static final VarHandle MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_QUERIES_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_DRAW_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_TRANSFORM_FEEDBACK_STREAMS_BYTE_OFFSET;
-    public static final long MAX_TRANSFORM_FEEDBACK_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_BYTE_OFFSET;
-    public static final long MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_BYTE_OFFSET;
-    public static final long MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_BYTE_OFFSET;
-    public static final long MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_QUERIES_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_DRAW_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_TRANSFORM_FEEDBACK_STREAMS_BYTE_OFFSET;
+	public static final long MAX_TRANSFORM_FEEDBACK_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_BYTE_OFFSET;
+	public static final long MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_BYTE_OFFSET;
+	public static final long MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_BYTE_OFFSET;
+	public static final long MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_QUERIES_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_DRAW_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxTransformFeedbackStreams"),
-            JAVA_INT.withName("maxTransformFeedbackBuffers"),
-            JAVA_LONG.withName("maxTransformFeedbackBufferSize"),
-            JAVA_INT.withName("maxTransformFeedbackStreamDataSize"),
-            JAVA_INT.withName("maxTransformFeedbackBufferDataSize"),
-            JAVA_INT.withName("maxTransformFeedbackBufferDataStride"),
-            JAVA_INT.withName("transformFeedbackQueries"),
-            JAVA_INT.withName("transformFeedbackStreamsLinesTriangles"),
-            JAVA_INT.withName("transformFeedbackRasterizationStreamSelect"),
-            JAVA_INT.withName("transformFeedbackDraw"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceTransformFeedbackPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_TRANSFORM_FEEDBACK_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackStreams"));
-        MAX_TRANSFORM_FEEDBACK_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBuffers"));
-        MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBufferSize"));
-        MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackStreamDataSize"));
-        MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBufferDataSize"));
-        MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBufferDataStride"));
-        TRANSFORM_FEEDBACK_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackQueries"));
-        TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackStreamsLinesTriangles"));
-        TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackRasterizationStreamSelect"));
-        TRANSFORM_FEEDBACK_DRAW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackDraw"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_TRANSFORM_FEEDBACK_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackStreams"));
-        MAX_TRANSFORM_FEEDBACK_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBuffers"));
-        MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBufferSize"));
-        MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackStreamDataSize"));
-        MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBufferDataSize"));
-        MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBufferDataStride"));
-        TRANSFORM_FEEDBACK_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackQueries"));
-        TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackStreamsLinesTriangles"));
-        TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackRasterizationStreamSelect"));
-        TRANSFORM_FEEDBACK_DRAW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackDraw"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxTransformFeedbackStreams"),
+		    JAVA_INT.withName("maxTransformFeedbackBuffers"),
+		    JAVA_LONG.withName("maxTransformFeedbackBufferSize"),
+		    JAVA_INT.withName("maxTransformFeedbackStreamDataSize"),
+		    JAVA_INT.withName("maxTransformFeedbackBufferDataSize"),
+		    JAVA_INT.withName("maxTransformFeedbackBufferDataStride"),
+		    JAVA_INT.withName("transformFeedbackQueries"),
+		    JAVA_INT.withName("transformFeedbackStreamsLinesTriangles"),
+		    JAVA_INT.withName("transformFeedbackRasterizationStreamSelect"),
+		    JAVA_INT.withName("transformFeedbackDraw"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceTransformFeedbackPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_TRANSFORM_FEEDBACK_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackStreams"));
+		MAX_TRANSFORM_FEEDBACK_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBuffers"));
+		MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBufferSize"));
+		MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackStreamDataSize"));
+		MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBufferDataSize"));
+		MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTransformFeedbackBufferDataStride"));
+		TRANSFORM_FEEDBACK_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackQueries"));
+		TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackStreamsLinesTriangles"));
+		TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackRasterizationStreamSelect"));
+		TRANSFORM_FEEDBACK_DRAW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackDraw"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_TRANSFORM_FEEDBACK_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackStreams"));
+		MAX_TRANSFORM_FEEDBACK_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBuffers"));
+		MAX_TRANSFORM_FEEDBACK_BUFFER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBufferSize"));
+		MAX_TRANSFORM_FEEDBACK_STREAM_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackStreamDataSize"));
+		MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBufferDataSize"));
+		MAX_TRANSFORM_FEEDBACK_BUFFER_DATA_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTransformFeedbackBufferDataStride"));
+		TRANSFORM_FEEDBACK_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackQueries"));
+		TRANSFORM_FEEDBACK_STREAMS_LINES_TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackStreamsLinesTriangles"));
+		TRANSFORM_FEEDBACK_RASTERIZATION_STREAM_SELECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackRasterizationStreamSelect"));
+		TRANSFORM_FEEDBACK_DRAW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackDraw"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTransformFeedbackPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTransformFeedbackPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTransformFeedbackPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTransformFeedbackPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTransformFeedbackPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTransformFeedbackPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTransformFeedbackPropertiesEXT sType(int sType) {
@@ -287,5 +287,5 @@ public final class VkPhysicalDeviceTransformFeedbackPropertiesEXT
             segment -> new VkPhysicalDeviceTransformFeedbackPropertiesEXT(segment)
         );
     }
-    
+
 }

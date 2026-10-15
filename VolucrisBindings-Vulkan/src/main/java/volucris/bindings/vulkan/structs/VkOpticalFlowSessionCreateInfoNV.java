@@ -21,90 +21,90 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkOpticalFlowSessionCreateInfoNV
 		implements Struct<VkOpticalFlowSessionCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle IMAGE_FORMAT_HANDLE;
-    public static final VarHandle FLOW_VECTOR_FORMAT_HANDLE;
-    public static final VarHandle COST_FORMAT_HANDLE;
-    public static final VarHandle OUTPUT_GRID_SIZE_HANDLE;
-    public static final VarHandle HINT_GRID_SIZE_HANDLE;
-    public static final VarHandle PERFORMANCE_LEVEL_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle IMAGE_FORMAT_HANDLE;
+	public static final VarHandle FLOW_VECTOR_FORMAT_HANDLE;
+	public static final VarHandle COST_FORMAT_HANDLE;
+	public static final VarHandle OUTPUT_GRID_SIZE_HANDLE;
+	public static final VarHandle HINT_GRID_SIZE_HANDLE;
+	public static final VarHandle PERFORMANCE_LEVEL_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long IMAGE_FORMAT_BYTE_OFFSET;
-    public static final long FLOW_VECTOR_FORMAT_BYTE_OFFSET;
-    public static final long COST_FORMAT_BYTE_OFFSET;
-    public static final long OUTPUT_GRID_SIZE_BYTE_OFFSET;
-    public static final long HINT_GRID_SIZE_BYTE_OFFSET;
-    public static final long PERFORMANCE_LEVEL_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long IMAGE_FORMAT_BYTE_OFFSET;
+	public static final long FLOW_VECTOR_FORMAT_BYTE_OFFSET;
+	public static final long COST_FORMAT_BYTE_OFFSET;
+	public static final long OUTPUT_GRID_SIZE_BYTE_OFFSET;
+	public static final long HINT_GRID_SIZE_BYTE_OFFSET;
+	public static final long PERFORMANCE_LEVEL_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height"),
-            JAVA_INT.withName("imageFormat"),
-            JAVA_INT.withName("flowVectorFormat"),
-            JAVA_INT.withName("costFormat"),
-            JAVA_INT.withName("outputGridSize"),
-            JAVA_INT.withName("hintGridSize"),
-            JAVA_INT.withName("performanceLevel"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkOpticalFlowSessionCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        IMAGE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageFormat"));
-        FLOW_VECTOR_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flowVectorFormat"));
-        COST_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("costFormat"));
-        OUTPUT_GRID_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("outputGridSize"));
-        HINT_GRID_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hintGridSize"));
-        PERFORMANCE_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performanceLevel"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        IMAGE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageFormat"));
-        FLOW_VECTOR_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flowVectorFormat"));
-        COST_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("costFormat"));
-        OUTPUT_GRID_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("outputGridSize"));
-        HINT_GRID_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hintGridSize"));
-        PERFORMANCE_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceLevel"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height"),
+		    JAVA_INT.withName("imageFormat"),
+		    JAVA_INT.withName("flowVectorFormat"),
+		    JAVA_INT.withName("costFormat"),
+		    JAVA_INT.withName("outputGridSize"),
+		    JAVA_INT.withName("hintGridSize"),
+		    JAVA_INT.withName("performanceLevel"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkOpticalFlowSessionCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		IMAGE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageFormat"));
+		FLOW_VECTOR_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flowVectorFormat"));
+		COST_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("costFormat"));
+		OUTPUT_GRID_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("outputGridSize"));
+		HINT_GRID_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hintGridSize"));
+		PERFORMANCE_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performanceLevel"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		IMAGE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageFormat"));
+		FLOW_VECTOR_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flowVectorFormat"));
+		COST_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("costFormat"));
+		OUTPUT_GRID_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("outputGridSize"));
+		HINT_GRID_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hintGridSize"));
+		PERFORMANCE_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceLevel"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkOpticalFlowSessionCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkOpticalFlowSessionCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkOpticalFlowSessionCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkOpticalFlowSessionCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkOpticalFlowSessionCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkOpticalFlowSessionCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkOpticalFlowSessionCreateInfoNV sType(int sType) {
@@ -272,5 +272,5 @@ public final class VkOpticalFlowSessionCreateInfoNV
             segment -> new VkOpticalFlowSessionCreateInfoNV(segment)
         );
     }
-    
+
 }

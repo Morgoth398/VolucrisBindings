@@ -23,71 +23,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxEntityRefInfo
 		implements Struct<CXIdxEntityRefInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle KIND_HANDLE;
-    public static final VarHandle REFERENCED_ENTITY_HANDLE;
-    public static final VarHandle PARENT_ENTITY_HANDLE;
-    public static final VarHandle CONTAINER_HANDLE;
-    public static final VarHandle ROLE_HANDLE;
+	public static final VarHandle KIND_HANDLE;
+	public static final VarHandle REFERENCED_ENTITY_HANDLE;
+	public static final VarHandle PARENT_ENTITY_HANDLE;
+	public static final VarHandle CONTAINER_HANDLE;
+	public static final VarHandle ROLE_HANDLE;
 
-    public static final long KIND_BYTE_OFFSET;
-    public static final long CURSOR_BYTE_OFFSET;
-    public static final long LOC_BYTE_OFFSET;
-    public static final long REFERENCED_ENTITY_BYTE_OFFSET;
-    public static final long PARENT_ENTITY_BYTE_OFFSET;
-    public static final long CONTAINER_BYTE_OFFSET;
-    public static final long ROLE_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
+	public static final long LOC_BYTE_OFFSET;
+	public static final long REFERENCED_ENTITY_BYTE_OFFSET;
+	public static final long PARENT_ENTITY_BYTE_OFFSET;
+	public static final long CONTAINER_BYTE_OFFSET;
+	public static final long ROLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
-    private final CXIdxLoc loc;
+	private final CXCursor cursor;
+	private final CXIdxLoc loc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("kind"),
-            MemoryLayout.paddingLayout(4),
-            CXCursor.LAYOUT.withName("cursor"),
-            CXIdxLoc.LAYOUT.withName("loc"),
-            UNBOUNDED_ADDRESS.withName("referencedEntity"),
-            UNBOUNDED_ADDRESS.withName("parentEntity"),
-            UNBOUNDED_ADDRESS.withName("container"),
-            JAVA_INT.withName("role"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxEntityRefInfo").withByteAlignment(8);
-        
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        REFERENCED_ENTITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referencedEntity"));
-        PARENT_ENTITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("parentEntity"));
-        CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("container"));
-        ROLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("role"));
-        
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
-        REFERENCED_ENTITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referencedEntity"));
-        PARENT_ENTITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("parentEntity"));
-        CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("container"));
-        ROLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("role"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("kind"),
+		    MemoryLayout.paddingLayout(4),
+		    CXCursor.LAYOUT.withName("cursor"),
+		    CXIdxLoc.LAYOUT.withName("loc"),
+		    UNBOUNDED_ADDRESS.withName("referencedEntity"),
+		    UNBOUNDED_ADDRESS.withName("parentEntity"),
+		    UNBOUNDED_ADDRESS.withName("container"),
+		    JAVA_INT.withName("role"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxEntityRefInfo").withByteAlignment(8);
+		
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		REFERENCED_ENTITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referencedEntity"));
+		PARENT_ENTITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("parentEntity"));
+		CONTAINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("container"));
+		ROLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("role"));
+		
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
+		REFERENCED_ENTITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referencedEntity"));
+		PARENT_ENTITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("parentEntity"));
+		CONTAINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("container"));
+		ROLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("role"));
+		//@formatter:on
+	}
 
-    public CXIdxEntityRefInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxEntityRefInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxEntityRefInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxEntityRefInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxEntityRefInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxEntityRefInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #kind()
     public CXIdxEntityRefInfo kind(int kind) {
@@ -97,6 +97,42 @@ public final class CXIdxEntityRefInfo
     
     public int kind() {
     	return (int) KIND_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #cursor()
+    public CXIdxEntityRefInfo cursor(Consumer<CXCursor> consumer) {
+    	consumer.accept(cursor);
+    	return this;
+    }
+    
+    /// @see #cursor()
+    public CXIdxEntityRefInfo cursor(CXCursor other) {
+    	cursor.set(other);
+    	return this;
+    }
+    
+    /// ```
+    /// 
+    /// Reference cursor.
+    /// ```
+    public CXCursor cursor() {
+    	return cursor;
+    }
+    
+    /// @see #loc()
+    public CXIdxEntityRefInfo loc(Consumer<CXIdxLoc> consumer) {
+    	consumer.accept(loc);
+    	return this;
+    }
+    
+    /// @see #loc()
+    public CXIdxEntityRefInfo loc(CXIdxLoc other) {
+    	loc.set(other);
+    	return this;
+    }
+    
+    public CXIdxLoc loc() {
+    	return loc;
     }
     
     /// @see #referencedEntity()
@@ -178,42 +214,6 @@ public final class CXIdxEntityRefInfo
     	return (int) ROLE_HANDLE.get(segment, 0L);
     }
     
-    /// @see #cursor()
-    public CXIdxEntityRefInfo cursor(Consumer<CXCursor> consumer) {
-    	consumer.accept(cursor);
-    	return this;
-    }
-    
-    /// @see #cursor()
-    public CXIdxEntityRefInfo cursor(CXCursor other) {
-    	cursor.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// 
-    /// Reference cursor.
-    /// ```
-    public CXCursor cursor() {
-    	return cursor;
-    }
-    
-    /// @see #loc()
-    public CXIdxEntityRefInfo loc(Consumer<CXIdxLoc> consumer) {
-    	consumer.accept(loc);
-    	return this;
-    }
-    
-    /// @see #loc()
-    public CXIdxEntityRefInfo loc(CXIdxLoc other) {
-    	loc.set(other);
-    	return this;
-    }
-    
-    public CXIdxLoc loc() {
-    	return loc;
-    }
-    
     @Override
     public CXIdxEntityRefInfo set(CXIdxEntityRefInfo other) {
         return set(other.segment);
@@ -265,5 +265,5 @@ public final class CXIdxEntityRefInfo
             segment -> new CXIdxEntityRefInfo(segment)
         );
     }
-    
+
 }

@@ -32,66 +32,85 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VmaDetailedStatistics
 		implements Struct<VmaDetailedStatistics> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle UNUSED_RANGE_COUNT_HANDLE;
-    public static final VarHandle ALLOCATION_SIZE_MIN_HANDLE;
-    public static final VarHandle ALLOCATION_SIZE_MAX_HANDLE;
-    public static final VarHandle UNUSED_RANGE_SIZE_MIN_HANDLE;
-    public static final VarHandle UNUSED_RANGE_SIZE_MAX_HANDLE;
+	public static final VarHandle UNUSED_RANGE_COUNT_HANDLE;
+	public static final VarHandle ALLOCATION_SIZE_MIN_HANDLE;
+	public static final VarHandle ALLOCATION_SIZE_MAX_HANDLE;
+	public static final VarHandle UNUSED_RANGE_SIZE_MIN_HANDLE;
+	public static final VarHandle UNUSED_RANGE_SIZE_MAX_HANDLE;
 
-    public static final long STATISTICS_BYTE_OFFSET;
-    public static final long UNUSED_RANGE_COUNT_BYTE_OFFSET;
-    public static final long ALLOCATION_SIZE_MIN_BYTE_OFFSET;
-    public static final long ALLOCATION_SIZE_MAX_BYTE_OFFSET;
-    public static final long UNUSED_RANGE_SIZE_MIN_BYTE_OFFSET;
-    public static final long UNUSED_RANGE_SIZE_MAX_BYTE_OFFSET;
+	public static final long STATISTICS_BYTE_OFFSET;
+	public static final long UNUSED_RANGE_COUNT_BYTE_OFFSET;
+	public static final long ALLOCATION_SIZE_MIN_BYTE_OFFSET;
+	public static final long ALLOCATION_SIZE_MAX_BYTE_OFFSET;
+	public static final long UNUSED_RANGE_SIZE_MIN_BYTE_OFFSET;
+	public static final long UNUSED_RANGE_SIZE_MAX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VmaStatistics statistics;
+	private final VmaStatistics statistics;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VmaStatistics.LAYOUT.withName("statistics"),
-            JAVA_INT.withName("unusedRangeCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("allocationSizeMin"),
-            JAVA_LONG.withName("allocationSizeMax"),
-            JAVA_LONG.withName("unusedRangeSizeMin"),
-            JAVA_LONG.withName("unusedRangeSizeMax")
-        ).withName("VmaDetailedStatistics").withByteAlignment(8);
-        
-        UNUSED_RANGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unusedRangeCount"));
-        ALLOCATION_SIZE_MIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationSizeMin"));
-        ALLOCATION_SIZE_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationSizeMax"));
-        UNUSED_RANGE_SIZE_MIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unusedRangeSizeMin"));
-        UNUSED_RANGE_SIZE_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unusedRangeSizeMax"));
-        
-        STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("statistics"));
-        UNUSED_RANGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unusedRangeCount"));
-        ALLOCATION_SIZE_MIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationSizeMin"));
-        ALLOCATION_SIZE_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationSizeMax"));
-        UNUSED_RANGE_SIZE_MIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unusedRangeSizeMin"));
-        UNUSED_RANGE_SIZE_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unusedRangeSizeMax"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VmaStatistics.LAYOUT.withName("statistics"),
+		    JAVA_INT.withName("unusedRangeCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("allocationSizeMin"),
+		    JAVA_LONG.withName("allocationSizeMax"),
+		    JAVA_LONG.withName("unusedRangeSizeMin"),
+		    JAVA_LONG.withName("unusedRangeSizeMax")
+		).withName("VmaDetailedStatistics").withByteAlignment(8);
+		
+		UNUSED_RANGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unusedRangeCount"));
+		ALLOCATION_SIZE_MIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationSizeMin"));
+		ALLOCATION_SIZE_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationSizeMax"));
+		UNUSED_RANGE_SIZE_MIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unusedRangeSizeMin"));
+		UNUSED_RANGE_SIZE_MAX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unusedRangeSizeMax"));
+		
+		STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("statistics"));
+		UNUSED_RANGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unusedRangeCount"));
+		ALLOCATION_SIZE_MIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationSizeMin"));
+		ALLOCATION_SIZE_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationSizeMax"));
+		UNUSED_RANGE_SIZE_MIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unusedRangeSizeMin"));
+		UNUSED_RANGE_SIZE_MAX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unusedRangeSizeMax"));
+		//@formatter:on
+	}
 
-    public VmaDetailedStatistics() {
-        this(Arena.ofAuto());
+	public VmaDetailedStatistics() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaDetailedStatistics(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaDetailedStatistics(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    statistics = new VmaStatistics(segment.asSlice(STATISTICS_BYTE_OFFSET, VmaStatistics.LAYOUT));
+	}
+
+    /// @see #statistics()
+    public VmaDetailedStatistics statistics(Consumer<VmaStatistics> consumer) {
+    	consumer.accept(statistics);
+    	return this;
     }
     
-    public VmaDetailedStatistics(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #statistics()
+    public VmaDetailedStatistics statistics(VmaStatistics other) {
+    	statistics.set(other);
+    	return this;
     }
     
-    public VmaDetailedStatistics(MemorySegment segment) {
-        this.segment = segment;
-    
-        statistics = new VmaStatistics(segment.asSlice(STATISTICS_BYTE_OFFSET, VmaStatistics.LAYOUT));
+    /// ```
+    /// Basic statistics.
+    /// ```
+    public VmaStatistics statistics() {
+    	return statistics;
     }
-
+    
     /// @see #unusedRangeCount()
     public VmaDetailedStatistics unusedRangeCount(int unusedRangeCount) {
     	UNUSED_RANGE_COUNT_HANDLE.set(segment, 0L, unusedRangeCount);
@@ -157,25 +176,6 @@ public final class VmaDetailedStatistics
     	return (long) UNUSED_RANGE_SIZE_MAX_HANDLE.get(segment, 0L);
     }
     
-    /// @see #statistics()
-    public VmaDetailedStatistics statistics(Consumer<VmaStatistics> consumer) {
-    	consumer.accept(statistics);
-    	return this;
-    }
-    
-    /// @see #statistics()
-    public VmaDetailedStatistics statistics(VmaStatistics other) {
-    	statistics.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// Basic statistics.
-    /// ```
-    public VmaStatistics statistics() {
-    	return statistics;
-    }
-    
     @Override
     public VmaDetailedStatistics set(VmaDetailedStatistics other) {
         return set(other.segment);
@@ -227,5 +227,5 @@ public final class VmaDetailedStatistics
             segment -> new VmaDetailedStatistics(segment)
         );
     }
-    
+
 }

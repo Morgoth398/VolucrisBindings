@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeIntraRefreshCapabilitiesKHR
 		implements Struct<VkVideoEncodeIntraRefreshCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INTRA_REFRESH_MODES_HANDLE;
-    public static final VarHandle MAX_INTRA_REFRESH_CYCLE_DURATION_HANDLE;
-    public static final VarHandle MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_HANDLE;
-    public static final VarHandle PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_HANDLE;
-    public static final VarHandle NON_RECTANGULAR_INTRA_REFRESH_REGIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INTRA_REFRESH_MODES_HANDLE;
+	public static final VarHandle MAX_INTRA_REFRESH_CYCLE_DURATION_HANDLE;
+	public static final VarHandle MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_HANDLE;
+	public static final VarHandle PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_HANDLE;
+	public static final VarHandle NON_RECTANGULAR_INTRA_REFRESH_REGIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INTRA_REFRESH_MODES_BYTE_OFFSET;
-    public static final long MAX_INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET;
-    public static final long MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET;
-    public static final long PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_BYTE_OFFSET;
-    public static final long NON_RECTANGULAR_INTRA_REFRESH_REGIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INTRA_REFRESH_MODES_BYTE_OFFSET;
+	public static final long MAX_INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET;
+	public static final long MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET;
+	public static final long PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_BYTE_OFFSET;
+	public static final long NON_RECTANGULAR_INTRA_REFRESH_REGIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("intraRefreshModes"),
-            JAVA_INT.withName("maxIntraRefreshCycleDuration"),
-            JAVA_INT.withName("maxIntraRefreshActiveReferencePictures"),
-            JAVA_INT.withName("partitionIndependentIntraRefreshRegions"),
-            JAVA_INT.withName("nonRectangularIntraRefreshRegions"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeIntraRefreshCapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INTRA_REFRESH_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshModes"));
-        MAX_INTRA_REFRESH_CYCLE_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIntraRefreshCycleDuration"));
-        MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIntraRefreshActiveReferencePictures"));
-        PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionIndependentIntraRefreshRegions"));
-        NON_RECTANGULAR_INTRA_REFRESH_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonRectangularIntraRefreshRegions"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INTRA_REFRESH_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshModes"));
-        MAX_INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIntraRefreshCycleDuration"));
-        MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIntraRefreshActiveReferencePictures"));
-        PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionIndependentIntraRefreshRegions"));
-        NON_RECTANGULAR_INTRA_REFRESH_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonRectangularIntraRefreshRegions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("intraRefreshModes"),
+		    JAVA_INT.withName("maxIntraRefreshCycleDuration"),
+		    JAVA_INT.withName("maxIntraRefreshActiveReferencePictures"),
+		    JAVA_INT.withName("partitionIndependentIntraRefreshRegions"),
+		    JAVA_INT.withName("nonRectangularIntraRefreshRegions"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeIntraRefreshCapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INTRA_REFRESH_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshModes"));
+		MAX_INTRA_REFRESH_CYCLE_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIntraRefreshCycleDuration"));
+		MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIntraRefreshActiveReferencePictures"));
+		PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("partitionIndependentIntraRefreshRegions"));
+		NON_RECTANGULAR_INTRA_REFRESH_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonRectangularIntraRefreshRegions"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INTRA_REFRESH_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshModes"));
+		MAX_INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIntraRefreshCycleDuration"));
+		MAX_INTRA_REFRESH_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIntraRefreshActiveReferencePictures"));
+		PARTITION_INDEPENDENT_INTRA_REFRESH_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("partitionIndependentIntraRefreshRegions"));
+		NON_RECTANGULAR_INTRA_REFRESH_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonRectangularIntraRefreshRegions"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeIntraRefreshCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeIntraRefreshCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeIntraRefreshCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeIntraRefreshCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeIntraRefreshCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeIntraRefreshCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeIntraRefreshCapabilitiesKHR sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkVideoEncodeIntraRefreshCapabilitiesKHR
             segment -> new VkVideoEncodeIntraRefreshCapabilitiesKHR(segment)
         );
     }
-    
+
 }

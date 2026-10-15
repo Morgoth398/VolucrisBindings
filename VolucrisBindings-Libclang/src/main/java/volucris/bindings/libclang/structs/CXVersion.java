@@ -20,48 +20,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class CXVersion
 		implements Struct<CXVersion> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MAJOR_HANDLE;
-    public static final VarHandle MINOR_HANDLE;
-    public static final VarHandle SUBMINOR_HANDLE;
+	public static final VarHandle MAJOR_HANDLE;
+	public static final VarHandle MINOR_HANDLE;
+	public static final VarHandle SUBMINOR_HANDLE;
 
-    public static final long MAJOR_BYTE_OFFSET;
-    public static final long MINOR_BYTE_OFFSET;
-    public static final long SUBMINOR_BYTE_OFFSET;
+	public static final long MAJOR_BYTE_OFFSET;
+	public static final long MINOR_BYTE_OFFSET;
+	public static final long SUBMINOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("Major"),
-            JAVA_INT.withName("Minor"),
-            JAVA_INT.withName("Subminor")
-        ).withName("CXVersion").withByteAlignment(4);
-        
-        MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Major"));
-        MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Minor"));
-        SUBMINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Subminor"));
-        
-        MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Major"));
-        MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Minor"));
-        SUBMINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Subminor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("Major"),
+		    JAVA_INT.withName("Minor"),
+		    JAVA_INT.withName("Subminor")
+		).withName("CXVersion").withByteAlignment(4);
+		
+		MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Major"));
+		MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Minor"));
+		SUBMINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Subminor"));
+		
+		MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Major"));
+		MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Minor"));
+		SUBMINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Subminor"));
+		//@formatter:on
+	}
 
-    public CXVersion() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXVersion(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXVersion(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXVersion() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXVersion(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXVersion(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #major()
     public CXVersion major(int major) {
@@ -161,5 +161,5 @@ public final class CXVersion
             segment -> new CXVersion(segment)
         );
     }
-    
+
 }

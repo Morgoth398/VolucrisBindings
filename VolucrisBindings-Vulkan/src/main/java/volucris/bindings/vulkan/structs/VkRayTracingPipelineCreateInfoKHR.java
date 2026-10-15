@@ -21,107 +21,107 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRayTracingPipelineCreateInfoKHR
 		implements Struct<VkRayTracingPipelineCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle STAGE_COUNT_HANDLE;
-    public static final VarHandle P_STAGES_HANDLE;
-    public static final VarHandle GROUP_COUNT_HANDLE;
-    public static final VarHandle P_GROUPS_HANDLE;
-    public static final VarHandle MAX_PIPELINE_RAY_RECURSION_DEPTH_HANDLE;
-    public static final VarHandle P_LIBRARY_INFO_HANDLE;
-    public static final VarHandle P_LIBRARY_INTERFACE_HANDLE;
-    public static final VarHandle P_DYNAMIC_STATE_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
-    public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle STAGE_COUNT_HANDLE;
+	public static final VarHandle P_STAGES_HANDLE;
+	public static final VarHandle GROUP_COUNT_HANDLE;
+	public static final VarHandle P_GROUPS_HANDLE;
+	public static final VarHandle MAX_PIPELINE_RAY_RECURSION_DEPTH_HANDLE;
+	public static final VarHandle P_LIBRARY_INFO_HANDLE;
+	public static final VarHandle P_LIBRARY_INTERFACE_HANDLE;
+	public static final VarHandle P_DYNAMIC_STATE_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
+	public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long STAGE_COUNT_BYTE_OFFSET;
-    public static final long P_STAGES_BYTE_OFFSET;
-    public static final long GROUP_COUNT_BYTE_OFFSET;
-    public static final long P_GROUPS_BYTE_OFFSET;
-    public static final long MAX_PIPELINE_RAY_RECURSION_DEPTH_BYTE_OFFSET;
-    public static final long P_LIBRARY_INFO_BYTE_OFFSET;
-    public static final long P_LIBRARY_INTERFACE_BYTE_OFFSET;
-    public static final long P_DYNAMIC_STATE_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long STAGE_COUNT_BYTE_OFFSET;
+	public static final long P_STAGES_BYTE_OFFSET;
+	public static final long GROUP_COUNT_BYTE_OFFSET;
+	public static final long P_GROUPS_BYTE_OFFSET;
+	public static final long MAX_PIPELINE_RAY_RECURSION_DEPTH_BYTE_OFFSET;
+	public static final long P_LIBRARY_INFO_BYTE_OFFSET;
+	public static final long P_LIBRARY_INTERFACE_BYTE_OFFSET;
+	public static final long P_DYNAMIC_STATE_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("stageCount"),
-            UNBOUNDED_ADDRESS.withName("pStages"),
-            JAVA_INT.withName("groupCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pGroups"),
-            JAVA_INT.withName("maxPipelineRayRecursionDepth"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pLibraryInfo"),
-            UNBOUNDED_ADDRESS.withName("pLibraryInterface"),
-            UNBOUNDED_ADDRESS.withName("pDynamicState"),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
-            JAVA_INT.withName("basePipelineIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkRayTracingPipelineCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
-        P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
-        GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCount"));
-        P_GROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGroups"));
-        MAX_PIPELINE_RAY_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPipelineRayRecursionDepth"));
-        P_LIBRARY_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLibraryInfo"));
-        P_LIBRARY_INTERFACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLibraryInterface"));
-        P_DYNAMIC_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicState"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
-        P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
-        GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCount"));
-        P_GROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGroups"));
-        MAX_PIPELINE_RAY_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPipelineRayRecursionDepth"));
-        P_LIBRARY_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLibraryInfo"));
-        P_LIBRARY_INTERFACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLibraryInterface"));
-        P_DYNAMIC_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicState"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("stageCount"),
+		    UNBOUNDED_ADDRESS.withName("pStages"),
+		    JAVA_INT.withName("groupCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pGroups"),
+		    JAVA_INT.withName("maxPipelineRayRecursionDepth"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pLibraryInfo"),
+		    UNBOUNDED_ADDRESS.withName("pLibraryInterface"),
+		    UNBOUNDED_ADDRESS.withName("pDynamicState"),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
+		    JAVA_INT.withName("basePipelineIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkRayTracingPipelineCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
+		P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
+		GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCount"));
+		P_GROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGroups"));
+		MAX_PIPELINE_RAY_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPipelineRayRecursionDepth"));
+		P_LIBRARY_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLibraryInfo"));
+		P_LIBRARY_INTERFACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLibraryInterface"));
+		P_DYNAMIC_STATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDynamicState"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
+		P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
+		GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCount"));
+		P_GROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGroups"));
+		MAX_PIPELINE_RAY_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPipelineRayRecursionDepth"));
+		P_LIBRARY_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLibraryInfo"));
+		P_LIBRARY_INTERFACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLibraryInterface"));
+		P_DYNAMIC_STATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDynamicState"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
+		//@formatter:on
+	}
 
-    public VkRayTracingPipelineCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRayTracingPipelineCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRayTracingPipelineCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRayTracingPipelineCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRayTracingPipelineCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRayTracingPipelineCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRayTracingPipelineCreateInfoKHR sType(int sType) {
@@ -354,5 +354,5 @@ public final class VkRayTracingPipelineCreateInfoKHR
             segment -> new VkRayTracingPipelineCreateInfoKHR(segment)
         );
     }
-    
+
 }

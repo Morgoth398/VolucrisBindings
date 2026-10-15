@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM
 		implements Struct<VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_MULTIPLE_WAIT_QUEUES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_MULTIPLE_WAIT_QUEUES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_MULTIPLE_WAIT_QUEUES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_MULTIPLE_WAIT_QUEUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderMultipleWaitQueues"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_MULTIPLE_WAIT_QUEUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMultipleWaitQueues"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_MULTIPLE_WAIT_QUEUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMultipleWaitQueues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderMultipleWaitQueues"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_MULTIPLE_WAIT_QUEUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderMultipleWaitQueues"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_MULTIPLE_WAIT_QUEUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderMultipleWaitQueues"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM
             segment -> new VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(segment)
         );
     }
-    
+
 }

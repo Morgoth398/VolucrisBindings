@@ -16,43 +16,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class CXTUResourceUsageEntry
 		implements Struct<CXTUResourceUsageEntry> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle KIND_HANDLE;
-    public static final VarHandle AMOUNT_HANDLE;
+	public static final VarHandle KIND_HANDLE;
+	public static final VarHandle AMOUNT_HANDLE;
 
-    public static final long KIND_BYTE_OFFSET;
-    public static final long AMOUNT_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
+	public static final long AMOUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("kind"),
-            JAVA_INT.withName("amount")
-        ).withName("CXTUResourceUsageEntry").withByteAlignment(4);
-        
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        AMOUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("amount"));
-        
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        AMOUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("amount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("kind"),
+		    JAVA_INT.withName("amount")
+		).withName("CXTUResourceUsageEntry").withByteAlignment(4);
+		
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		AMOUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("amount"));
+		
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		AMOUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("amount"));
+		//@formatter:on
+	}
 
-    public CXTUResourceUsageEntry() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXTUResourceUsageEntry(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXTUResourceUsageEntry(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXTUResourceUsageEntry() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXTUResourceUsageEntry(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXTUResourceUsageEntry(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #kind()
     public CXTUResourceUsageEntry kind(int kind) {
@@ -125,5 +125,5 @@ public final class CXTUResourceUsageEntry
             segment -> new CXTUResourceUsageEntry(segment)
         );
     }
-    
+
 }

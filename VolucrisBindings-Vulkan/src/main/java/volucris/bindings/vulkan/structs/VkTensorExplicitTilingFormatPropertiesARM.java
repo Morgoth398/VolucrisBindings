@@ -21,69 +21,69 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTensorExplicitTilingFormatPropertiesARM
 		implements Struct<VkTensorExplicitTilingFormatPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BRICK16_TILING_TENSOR_FEATURES_HANDLE;
-    public static final VarHandle BRICK8_TILING_TENSOR_FEATURES_HANDLE;
-    public static final VarHandle BRICK4_TILING_TENSOR_FEATURES_HANDLE;
-    public static final VarHandle BLOCK_UTILING_TENSOR_FEATURES_HANDLE;
-    public static final VarHandle BLOCK_U64K_TILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BRICK16_TILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle BRICK8_TILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle BRICK4_TILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle BLOCK_UTILING_TENSOR_FEATURES_HANDLE;
+	public static final VarHandle BLOCK_U64K_TILING_TENSOR_FEATURES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BRICK16_TILING_TENSOR_FEATURES_BYTE_OFFSET;
-    public static final long BRICK8_TILING_TENSOR_FEATURES_BYTE_OFFSET;
-    public static final long BRICK4_TILING_TENSOR_FEATURES_BYTE_OFFSET;
-    public static final long BLOCK_UTILING_TENSOR_FEATURES_BYTE_OFFSET;
-    public static final long BLOCK_U64K_TILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BRICK16_TILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long BRICK8_TILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long BRICK4_TILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long BLOCK_UTILING_TENSOR_FEATURES_BYTE_OFFSET;
+	public static final long BLOCK_U64K_TILING_TENSOR_FEATURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("brick16TilingTensorFeatures"),
-            JAVA_LONG.withName("brick8TilingTensorFeatures"),
-            JAVA_LONG.withName("brick4TilingTensorFeatures"),
-            JAVA_LONG.withName("blockUTilingTensorFeatures"),
-            JAVA_LONG.withName("blockU64kTilingTensorFeatures")
-        ).withName("VkTensorExplicitTilingFormatPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BRICK16_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("brick16TilingTensorFeatures"));
-        BRICK8_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("brick8TilingTensorFeatures"));
-        BRICK4_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("brick4TilingTensorFeatures"));
-        BLOCK_UTILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockUTilingTensorFeatures"));
-        BLOCK_U64K_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockU64kTilingTensorFeatures"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BRICK16_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("brick16TilingTensorFeatures"));
-        BRICK8_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("brick8TilingTensorFeatures"));
-        BRICK4_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("brick4TilingTensorFeatures"));
-        BLOCK_UTILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockUTilingTensorFeatures"));
-        BLOCK_U64K_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockU64kTilingTensorFeatures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("brick16TilingTensorFeatures"),
+		    JAVA_LONG.withName("brick8TilingTensorFeatures"),
+		    JAVA_LONG.withName("brick4TilingTensorFeatures"),
+		    JAVA_LONG.withName("blockUTilingTensorFeatures"),
+		    JAVA_LONG.withName("blockU64kTilingTensorFeatures")
+		).withName("VkTensorExplicitTilingFormatPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BRICK16_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("brick16TilingTensorFeatures"));
+		BRICK8_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("brick8TilingTensorFeatures"));
+		BRICK4_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("brick4TilingTensorFeatures"));
+		BLOCK_UTILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockUTilingTensorFeatures"));
+		BLOCK_U64K_TILING_TENSOR_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockU64kTilingTensorFeatures"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BRICK16_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("brick16TilingTensorFeatures"));
+		BRICK8_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("brick8TilingTensorFeatures"));
+		BRICK4_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("brick4TilingTensorFeatures"));
+		BLOCK_UTILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockUTilingTensorFeatures"));
+		BLOCK_U64K_TILING_TENSOR_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockU64kTilingTensorFeatures"));
+		//@formatter:on
+	}
 
-    public VkTensorExplicitTilingFormatPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTensorExplicitTilingFormatPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTensorExplicitTilingFormatPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTensorExplicitTilingFormatPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTensorExplicitTilingFormatPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTensorExplicitTilingFormatPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkTensorExplicitTilingFormatPropertiesARM sType(int sType) {
@@ -211,5 +211,5 @@ public final class VkTensorExplicitTilingFormatPropertiesARM
             segment -> new VkTensorExplicitTilingFormatPropertiesARM(segment)
         );
     }
-    
+
 }

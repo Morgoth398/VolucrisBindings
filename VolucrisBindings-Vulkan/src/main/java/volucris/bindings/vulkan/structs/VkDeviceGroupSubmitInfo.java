@@ -22,77 +22,77 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceGroupSubmitInfo
 		implements Struct<VkDeviceGroupSubmitInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_WAIT_SEMAPHORE_DEVICE_INDICES_HANDLE;
-    public static final VarHandle COMMAND_BUFFER_COUNT_HANDLE;
-    public static final VarHandle P_COMMAND_BUFFER_DEVICE_MASKS_HANDLE;
-    public static final VarHandle SIGNAL_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_SIGNAL_SEMAPHORE_DEVICE_INDICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_WAIT_SEMAPHORE_DEVICE_INDICES_HANDLE;
+	public static final VarHandle COMMAND_BUFFER_COUNT_HANDLE;
+	public static final VarHandle P_COMMAND_BUFFER_DEVICE_MASKS_HANDLE;
+	public static final VarHandle SIGNAL_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_SIGNAL_SEMAPHORE_DEVICE_INDICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_WAIT_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET;
-    public static final long COMMAND_BUFFER_COUNT_BYTE_OFFSET;
-    public static final long P_COMMAND_BUFFER_DEVICE_MASKS_BYTE_OFFSET;
-    public static final long SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_SIGNAL_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_WAIT_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET;
+	public static final long COMMAND_BUFFER_COUNT_BYTE_OFFSET;
+	public static final long P_COMMAND_BUFFER_DEVICE_MASKS_BYTE_OFFSET;
+	public static final long SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_SIGNAL_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("waitSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pWaitSemaphoreDeviceIndices"),
-            JAVA_INT.withName("commandBufferCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCommandBufferDeviceMasks"),
-            JAVA_INT.withName("signalSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSignalSemaphoreDeviceIndices")
-        ).withName("VkDeviceGroupSubmitInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORE_DEVICE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphoreDeviceIndices"));
-        COMMAND_BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferCount"));
-        P_COMMAND_BUFFER_DEVICE_MASKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCommandBufferDeviceMasks"));
-        SIGNAL_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreCount"));
-        P_SIGNAL_SEMAPHORE_DEVICE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphoreDeviceIndices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphoreDeviceIndices"));
-        COMMAND_BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferCount"));
-        P_COMMAND_BUFFER_DEVICE_MASKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCommandBufferDeviceMasks"));
-        SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreCount"));
-        P_SIGNAL_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphoreDeviceIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("waitSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pWaitSemaphoreDeviceIndices"),
+		    JAVA_INT.withName("commandBufferCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCommandBufferDeviceMasks"),
+		    JAVA_INT.withName("signalSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSignalSemaphoreDeviceIndices")
+		).withName("VkDeviceGroupSubmitInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORE_DEVICE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphoreDeviceIndices"));
+		COMMAND_BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferCount"));
+		P_COMMAND_BUFFER_DEVICE_MASKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCommandBufferDeviceMasks"));
+		SIGNAL_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreCount"));
+		P_SIGNAL_SEMAPHORE_DEVICE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphoreDeviceIndices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphoreDeviceIndices"));
+		COMMAND_BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferCount"));
+		P_COMMAND_BUFFER_DEVICE_MASKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCommandBufferDeviceMasks"));
+		SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreCount"));
+		P_SIGNAL_SEMAPHORE_DEVICE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphoreDeviceIndices"));
+		//@formatter:on
+	}
 
-    public VkDeviceGroupSubmitInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceGroupSubmitInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceGroupSubmitInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceGroupSubmitInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceGroupSubmitInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceGroupSubmitInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceGroupSubmitInfo sType(int sType) {
@@ -245,5 +245,5 @@ public final class VkDeviceGroupSubmitInfo
             segment -> new VkDeviceGroupSubmitInfo(segment)
         );
     }
-    
+
 }

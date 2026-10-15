@@ -23,57 +23,55 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VmaTotalStatistics
 		implements Struct<VmaTotalStatistics> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long MEMORY_TYPE_BYTE_OFFSET;
-    public static final long MEMORY_HEAP_BYTE_OFFSET;
-    public static final long TOTAL_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_BYTE_OFFSET;
+	public static final long MEMORY_HEAP_BYTE_OFFSET;
+	public static final long TOTAL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VmaDetailedStatistics[] memoryType;
-    private final VmaDetailedStatistics[] memoryHeap;
-    private final VmaDetailedStatistics total;
+	private final VmaDetailedStatistics[] memoryType;
+	private final VmaDetailedStatistics[] memoryHeap;
+	private final VmaDetailedStatistics total;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(32, VmaDetailedStatistics.LAYOUT).withName("memoryType"),
-            MemoryLayout.sequenceLayout(16, VmaDetailedStatistics.LAYOUT).withName("memoryHeap"),
-            VmaDetailedStatistics.LAYOUT.withName("total")
-        ).withName("VmaTotalStatistics").withByteAlignment(8);
-        
-        MEMORY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryType"));
-        MEMORY_HEAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryHeap"));
-        TOTAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("total"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(32, VmaDetailedStatistics.LAYOUT).withName("memoryType"),
+		    MemoryLayout.sequenceLayout(16, VmaDetailedStatistics.LAYOUT).withName("memoryHeap"),
+		    VmaDetailedStatistics.LAYOUT.withName("total")
+		).withName("VmaTotalStatistics").withByteAlignment(8);
+		
+		MEMORY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryType"));
+		MEMORY_HEAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryHeap"));
+		TOTAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("total"));
+		//@formatter:on
+	}
 
-    public VmaTotalStatistics() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaTotalStatistics(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaTotalStatistics(MemorySegment segment) {
-        this.segment = segment;
-    
-        memoryType = new VmaDetailedStatistics[32];
-        for (int i = 0; i < 32; i++) {
-            long offset = MEMORY_TYPE_BYTE_OFFSET + i * VmaDetailedStatistics.LAYOUT.byteSize();
-            memoryType[i] = new VmaDetailedStatistics(segment.asSlice(offset, VmaDetailedStatistics.LAYOUT));
-        }
-    
-        memoryHeap = new VmaDetailedStatistics[16];
-        for (int i = 0; i < 16; i++) {
-            long offset = MEMORY_HEAP_BYTE_OFFSET + i * VmaDetailedStatistics.LAYOUT.byteSize();
-            memoryHeap[i] = new VmaDetailedStatistics(segment.asSlice(offset, VmaDetailedStatistics.LAYOUT));
-        }
-    
-        total = new VmaDetailedStatistics(segment.asSlice(TOTAL_BYTE_OFFSET, VmaDetailedStatistics.LAYOUT));
-    }
+	public VmaTotalStatistics() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaTotalStatistics(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaTotalStatistics(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    memoryType = new VmaDetailedStatistics[32];
+	    for (int i = 0; i < 32; i++) {
+	        long offset = MEMORY_TYPE_BYTE_OFFSET + i * VmaDetailedStatistics.LAYOUT.byteSize();
+	        memoryType[i] = new VmaDetailedStatistics(segment.asSlice(offset, VmaDetailedStatistics.LAYOUT));
+	    }
+	    memoryHeap = new VmaDetailedStatistics[16];
+	    for (int i = 0; i < 16; i++) {
+	        long offset = MEMORY_HEAP_BYTE_OFFSET + i * VmaDetailedStatistics.LAYOUT.byteSize();
+	        memoryHeap[i] = new VmaDetailedStatistics(segment.asSlice(offset, VmaDetailedStatistics.LAYOUT));
+	    }
+	    total = new VmaDetailedStatistics(segment.asSlice(TOTAL_BYTE_OFFSET, VmaDetailedStatistics.LAYOUT));
+	}
 
     /// @see #memoryType(int)
     public VmaTotalStatistics memoryType(Consumer<VmaDetailedStatistics> consumer, int index) {
@@ -174,5 +172,5 @@ public final class VmaTotalStatistics
             segment -> new VmaTotalStatistics(segment)
         );
     }
-    
+
 }

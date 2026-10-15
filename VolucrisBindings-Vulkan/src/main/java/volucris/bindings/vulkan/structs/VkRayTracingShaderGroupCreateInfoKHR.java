@@ -21,75 +21,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRayTracingShaderGroupCreateInfoKHR
 		implements Struct<VkRayTracingShaderGroupCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle GENERAL_SHADER_HANDLE;
-    public static final VarHandle CLOSEST_HIT_SHADER_HANDLE;
-    public static final VarHandle ANY_HIT_SHADER_HANDLE;
-    public static final VarHandle INTERSECTION_SHADER_HANDLE;
-    public static final VarHandle P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle GENERAL_SHADER_HANDLE;
+	public static final VarHandle CLOSEST_HIT_SHADER_HANDLE;
+	public static final VarHandle ANY_HIT_SHADER_HANDLE;
+	public static final VarHandle INTERSECTION_SHADER_HANDLE;
+	public static final VarHandle P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long GENERAL_SHADER_BYTE_OFFSET;
-    public static final long CLOSEST_HIT_SHADER_BYTE_OFFSET;
-    public static final long ANY_HIT_SHADER_BYTE_OFFSET;
-    public static final long INTERSECTION_SHADER_BYTE_OFFSET;
-    public static final long P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long GENERAL_SHADER_BYTE_OFFSET;
+	public static final long CLOSEST_HIT_SHADER_BYTE_OFFSET;
+	public static final long ANY_HIT_SHADER_BYTE_OFFSET;
+	public static final long INTERSECTION_SHADER_BYTE_OFFSET;
+	public static final long P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("generalShader"),
-            JAVA_INT.withName("closestHitShader"),
-            JAVA_INT.withName("anyHitShader"),
-            JAVA_INT.withName("intersectionShader"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pShaderGroupCaptureReplayHandle")
-        ).withName("VkRayTracingShaderGroupCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        GENERAL_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("generalShader"));
-        CLOSEST_HIT_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("closestHitShader"));
-        ANY_HIT_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("anyHitShader"));
-        INTERSECTION_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intersectionShader"));
-        P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShaderGroupCaptureReplayHandle"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        GENERAL_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("generalShader"));
-        CLOSEST_HIT_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("closestHitShader"));
-        ANY_HIT_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("anyHitShader"));
-        INTERSECTION_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intersectionShader"));
-        P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShaderGroupCaptureReplayHandle"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("generalShader"),
+		    JAVA_INT.withName("closestHitShader"),
+		    JAVA_INT.withName("anyHitShader"),
+		    JAVA_INT.withName("intersectionShader"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pShaderGroupCaptureReplayHandle")
+		).withName("VkRayTracingShaderGroupCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		GENERAL_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("generalShader"));
+		CLOSEST_HIT_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("closestHitShader"));
+		ANY_HIT_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("anyHitShader"));
+		INTERSECTION_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intersectionShader"));
+		P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShaderGroupCaptureReplayHandle"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		GENERAL_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("generalShader"));
+		CLOSEST_HIT_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("closestHitShader"));
+		ANY_HIT_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("anyHitShader"));
+		INTERSECTION_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intersectionShader"));
+		P_SHADER_GROUP_CAPTURE_REPLAY_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShaderGroupCaptureReplayHandle"));
+		//@formatter:on
+	}
 
-    public VkRayTracingShaderGroupCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRayTracingShaderGroupCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRayTracingShaderGroupCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRayTracingShaderGroupCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRayTracingShaderGroupCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRayTracingShaderGroupCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRayTracingShaderGroupCreateInfoKHR sType(int sType) {
@@ -232,5 +232,5 @@ public final class VkRayTracingShaderGroupCreateInfoKHR
             segment -> new VkRayTracingShaderGroupCreateInfoKHR(segment)
         );
     }
-    
+
 }

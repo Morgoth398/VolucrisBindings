@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceFaultInfoEXT
 		implements Struct<VkDeviceFaultInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
-    public static final VarHandle P_ADDRESS_INFOS_HANDLE;
-    public static final VarHandle P_VENDOR_INFOS_HANDLE;
-    public static final VarHandle P_VENDOR_BINARY_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle P_ADDRESS_INFOS_HANDLE;
+	public static final VarHandle P_VENDOR_INFOS_HANDLE;
+	public static final VarHandle P_VENDOR_BINARY_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
-    public static final long P_ADDRESS_INFOS_BYTE_OFFSET;
-    public static final long P_VENDOR_INFOS_BYTE_OFFSET;
-    public static final long P_VENDOR_BINARY_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long P_ADDRESS_INFOS_BYTE_OFFSET;
+	public static final long P_VENDOR_INFOS_BYTE_OFFSET;
+	public static final long P_VENDOR_BINARY_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            UNBOUNDED_ADDRESS.withName("pAddressInfos"),
-            UNBOUNDED_ADDRESS.withName("pVendorInfos"),
-            UNBOUNDED_ADDRESS.withName("pVendorBinaryData")
-        ).withName("VkDeviceFaultInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        P_ADDRESS_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAddressInfos"));
-        P_VENDOR_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVendorInfos"));
-        P_VENDOR_BINARY_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVendorBinaryData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        P_ADDRESS_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAddressInfos"));
-        P_VENDOR_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVendorInfos"));
-        P_VENDOR_BINARY_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVendorBinaryData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    UNBOUNDED_ADDRESS.withName("pAddressInfos"),
+		    UNBOUNDED_ADDRESS.withName("pVendorInfos"),
+		    UNBOUNDED_ADDRESS.withName("pVendorBinaryData")
+		).withName("VkDeviceFaultInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		P_ADDRESS_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAddressInfos"));
+		P_VENDOR_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVendorInfos"));
+		P_VENDOR_BINARY_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVendorBinaryData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		P_ADDRESS_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAddressInfos"));
+		P_VENDOR_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVendorInfos"));
+		P_VENDOR_BINARY_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVendorBinaryData"));
+		//@formatter:on
+	}
 
-    public VkDeviceFaultInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceFaultInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceFaultInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceFaultInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceFaultInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceFaultInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceFaultInfoEXT sType(int sType) {
@@ -113,6 +113,10 @@ public final class VkDeviceFaultInfoEXT
     
     public byte description(int index0) {
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String description() {
+        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     /// @see #pAddressInfos()
@@ -158,10 +162,6 @@ public final class VkDeviceFaultInfoEXT
     		return null;
     	
     	return segment;
-    }
-    
-    public String description() {
-        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     @Override
@@ -215,5 +215,5 @@ public final class VkDeviceFaultInfoEXT
             segment -> new VkDeviceFaultInfoEXT(segment)
         );
     }
-    
+
 }

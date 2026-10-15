@@ -22,83 +22,83 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorDataEXT
 		implements Struct<VkDescriptorDataEXT> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle P_SAMPLER_HANDLE;
-    public static final VarHandle P_COMBINED_IMAGE_SAMPLER_HANDLE;
-    public static final VarHandle P_INPUT_ATTACHMENT_IMAGE_HANDLE;
-    public static final VarHandle P_SAMPLED_IMAGE_HANDLE;
-    public static final VarHandle P_STORAGE_IMAGE_HANDLE;
-    public static final VarHandle P_UNIFORM_TEXEL_BUFFER_HANDLE;
-    public static final VarHandle P_STORAGE_TEXEL_BUFFER_HANDLE;
-    public static final VarHandle P_UNIFORM_BUFFER_HANDLE;
-    public static final VarHandle P_STORAGE_BUFFER_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle P_SAMPLER_HANDLE;
+	public static final VarHandle P_COMBINED_IMAGE_SAMPLER_HANDLE;
+	public static final VarHandle P_INPUT_ATTACHMENT_IMAGE_HANDLE;
+	public static final VarHandle P_SAMPLED_IMAGE_HANDLE;
+	public static final VarHandle P_STORAGE_IMAGE_HANDLE;
+	public static final VarHandle P_UNIFORM_TEXEL_BUFFER_HANDLE;
+	public static final VarHandle P_STORAGE_TEXEL_BUFFER_HANDLE;
+	public static final VarHandle P_UNIFORM_BUFFER_HANDLE;
+	public static final VarHandle P_STORAGE_BUFFER_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
 
-    public static final long P_SAMPLER_BYTE_OFFSET;
-    public static final long P_COMBINED_IMAGE_SAMPLER_BYTE_OFFSET;
-    public static final long P_INPUT_ATTACHMENT_IMAGE_BYTE_OFFSET;
-    public static final long P_SAMPLED_IMAGE_BYTE_OFFSET;
-    public static final long P_STORAGE_IMAGE_BYTE_OFFSET;
-    public static final long P_UNIFORM_TEXEL_BUFFER_BYTE_OFFSET;
-    public static final long P_STORAGE_TEXEL_BUFFER_BYTE_OFFSET;
-    public static final long P_UNIFORM_BUFFER_BYTE_OFFSET;
-    public static final long P_STORAGE_BUFFER_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long P_SAMPLER_BYTE_OFFSET;
+	public static final long P_COMBINED_IMAGE_SAMPLER_BYTE_OFFSET;
+	public static final long P_INPUT_ATTACHMENT_IMAGE_BYTE_OFFSET;
+	public static final long P_SAMPLED_IMAGE_BYTE_OFFSET;
+	public static final long P_STORAGE_IMAGE_BYTE_OFFSET;
+	public static final long P_UNIFORM_TEXEL_BUFFER_BYTE_OFFSET;
+	public static final long P_STORAGE_TEXEL_BUFFER_BYTE_OFFSET;
+	public static final long P_UNIFORM_BUFFER_BYTE_OFFSET;
+	public static final long P_STORAGE_BUFFER_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            UNBOUNDED_ADDRESS.withName("pSampler"),
-            UNBOUNDED_ADDRESS.withName("pCombinedImageSampler"),
-            UNBOUNDED_ADDRESS.withName("pInputAttachmentImage"),
-            UNBOUNDED_ADDRESS.withName("pSampledImage"),
-            UNBOUNDED_ADDRESS.withName("pStorageImage"),
-            UNBOUNDED_ADDRESS.withName("pUniformTexelBuffer"),
-            UNBOUNDED_ADDRESS.withName("pStorageTexelBuffer"),
-            UNBOUNDED_ADDRESS.withName("pUniformBuffer"),
-            UNBOUNDED_ADDRESS.withName("pStorageBuffer"),
-            JAVA_LONG.withName("accelerationStructure")
-        ).withName("VkDescriptorDataEXT").withByteAlignment(8);
-        
-        P_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampler"));
-        P_COMBINED_IMAGE_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCombinedImageSampler"));
-        P_INPUT_ATTACHMENT_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInputAttachmentImage"));
-        P_SAMPLED_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampledImage"));
-        P_STORAGE_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStorageImage"));
-        P_UNIFORM_TEXEL_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUniformTexelBuffer"));
-        P_STORAGE_TEXEL_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStorageTexelBuffer"));
-        P_UNIFORM_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUniformBuffer"));
-        P_STORAGE_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStorageBuffer"));
-        ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
-        
-        P_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampler"));
-        P_COMBINED_IMAGE_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCombinedImageSampler"));
-        P_INPUT_ATTACHMENT_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInputAttachmentImage"));
-        P_SAMPLED_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampledImage"));
-        P_STORAGE_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStorageImage"));
-        P_UNIFORM_TEXEL_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUniformTexelBuffer"));
-        P_STORAGE_TEXEL_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStorageTexelBuffer"));
-        P_UNIFORM_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUniformBuffer"));
-        P_STORAGE_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStorageBuffer"));
-        ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    UNBOUNDED_ADDRESS.withName("pSampler"),
+		    UNBOUNDED_ADDRESS.withName("pCombinedImageSampler"),
+		    UNBOUNDED_ADDRESS.withName("pInputAttachmentImage"),
+		    UNBOUNDED_ADDRESS.withName("pSampledImage"),
+		    UNBOUNDED_ADDRESS.withName("pStorageImage"),
+		    UNBOUNDED_ADDRESS.withName("pUniformTexelBuffer"),
+		    UNBOUNDED_ADDRESS.withName("pStorageTexelBuffer"),
+		    UNBOUNDED_ADDRESS.withName("pUniformBuffer"),
+		    UNBOUNDED_ADDRESS.withName("pStorageBuffer"),
+		    JAVA_LONG.withName("accelerationStructure")
+		).withName("VkDescriptorDataEXT").withByteAlignment(8);
+		
+		P_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampler"));
+		P_COMBINED_IMAGE_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCombinedImageSampler"));
+		P_INPUT_ATTACHMENT_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInputAttachmentImage"));
+		P_SAMPLED_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampledImage"));
+		P_STORAGE_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStorageImage"));
+		P_UNIFORM_TEXEL_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUniformTexelBuffer"));
+		P_STORAGE_TEXEL_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStorageTexelBuffer"));
+		P_UNIFORM_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUniformBuffer"));
+		P_STORAGE_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStorageBuffer"));
+		ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
+		
+		P_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampler"));
+		P_COMBINED_IMAGE_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCombinedImageSampler"));
+		P_INPUT_ATTACHMENT_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInputAttachmentImage"));
+		P_SAMPLED_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampledImage"));
+		P_STORAGE_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStorageImage"));
+		P_UNIFORM_TEXEL_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUniformTexelBuffer"));
+		P_STORAGE_TEXEL_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStorageTexelBuffer"));
+		P_UNIFORM_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUniformBuffer"));
+		P_STORAGE_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStorageBuffer"));
+		ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
+		//@formatter:on
+	}
 
-    public VkDescriptorDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pSampler()
     public VkDescriptorDataEXT pSampler(NativePointerArray pSampler) {
@@ -296,5 +296,5 @@ public final class VkDescriptorDataEXT
             segment -> new VkDescriptorDataEXT(segment)
         );
     }
-    
+
 }

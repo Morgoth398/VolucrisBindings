@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryBarrierAccessFlags3KHR
 		implements Struct<VkMemoryBarrierAccessFlags3KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_ACCESS_MASK3_HANDLE;
-    public static final VarHandle DST_ACCESS_MASK3_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_ACCESS_MASK3_HANDLE;
+	public static final VarHandle DST_ACCESS_MASK3_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_ACCESS_MASK3_BYTE_OFFSET;
-    public static final long DST_ACCESS_MASK3_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_ACCESS_MASK3_BYTE_OFFSET;
+	public static final long DST_ACCESS_MASK3_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("srcAccessMask3"),
-            JAVA_LONG.withName("dstAccessMask3")
-        ).withName("VkMemoryBarrierAccessFlags3KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_ACCESS_MASK3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask3"));
-        DST_ACCESS_MASK3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask3"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_ACCESS_MASK3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask3"));
-        DST_ACCESS_MASK3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask3"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("srcAccessMask3"),
+		    JAVA_LONG.withName("dstAccessMask3")
+		).withName("VkMemoryBarrierAccessFlags3KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_ACCESS_MASK3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask3"));
+		DST_ACCESS_MASK3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask3"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_ACCESS_MASK3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask3"));
+		DST_ACCESS_MASK3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask3"));
+		//@formatter:on
+	}
 
-    public VkMemoryBarrierAccessFlags3KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryBarrierAccessFlags3KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryBarrierAccessFlags3KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryBarrierAccessFlags3KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryBarrierAccessFlags3KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryBarrierAccessFlags3KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMemoryBarrierAccessFlags3KHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkMemoryBarrierAccessFlags3KHR
             segment -> new VkMemoryBarrierAccessFlags3KHR(segment)
         );
     }
-    
+
 }

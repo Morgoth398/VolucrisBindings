@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT
 		implements Struct<VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_VERTEX_ATTRIB_DIVISOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_VERTEX_ATTRIB_DIVISOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxVertexAttribDivisor"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_VERTEX_ATTRIB_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexAttribDivisor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexAttribDivisor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxVertexAttribDivisor"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_VERTEX_ATTRIB_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexAttribDivisor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexAttribDivisor"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT
             segment -> new VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT(segment)
         );
     }
-    
+
 }

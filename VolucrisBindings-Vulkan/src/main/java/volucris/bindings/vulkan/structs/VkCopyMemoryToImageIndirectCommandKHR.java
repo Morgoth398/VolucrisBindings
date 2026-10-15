@@ -20,64 +20,64 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkCopyMemoryToImageIndirectCommandKHR
 		implements Struct<VkCopyMemoryToImageIndirectCommandKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SRC_ADDRESS_HANDLE;
-    public static final VarHandle BUFFER_ROW_LENGTH_HANDLE;
-    public static final VarHandle BUFFER_IMAGE_HEIGHT_HANDLE;
+	public static final VarHandle SRC_ADDRESS_HANDLE;
+	public static final VarHandle BUFFER_ROW_LENGTH_HANDLE;
+	public static final VarHandle BUFFER_IMAGE_HEIGHT_HANDLE;
 
-    public static final long SRC_ADDRESS_BYTE_OFFSET;
-    public static final long BUFFER_ROW_LENGTH_BYTE_OFFSET;
-    public static final long BUFFER_IMAGE_HEIGHT_BYTE_OFFSET;
-    public static final long IMAGE_SUBRESOURCE_BYTE_OFFSET;
-    public static final long IMAGE_OFFSET_BYTE_OFFSET;
-    public static final long IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long SRC_ADDRESS_BYTE_OFFSET;
+	public static final long BUFFER_ROW_LENGTH_BYTE_OFFSET;
+	public static final long BUFFER_IMAGE_HEIGHT_BYTE_OFFSET;
+	public static final long IMAGE_SUBRESOURCE_BYTE_OFFSET;
+	public static final long IMAGE_OFFSET_BYTE_OFFSET;
+	public static final long IMAGE_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceLayers imageSubresource;
-    private final VkOffset3D imageOffset;
-    private final VkExtent3D imageExtent;
+	private final VkImageSubresourceLayers imageSubresource;
+	private final VkOffset3D imageOffset;
+	private final VkExtent3D imageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("srcAddress"),
-            JAVA_INT.withName("bufferRowLength"),
-            JAVA_INT.withName("bufferImageHeight"),
-            VkImageSubresourceLayers.LAYOUT.withName("imageSubresource"),
-            VkOffset3D.LAYOUT.withName("imageOffset"),
-            VkExtent3D.LAYOUT.withName("imageExtent")
-        ).withName("VkCopyMemoryToImageIndirectCommandKHR").withByteAlignment(8);
-        
-        SRC_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAddress"));
-        BUFFER_ROW_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferRowLength"));
-        BUFFER_IMAGE_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferImageHeight"));
-        
-        SRC_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAddress"));
-        BUFFER_ROW_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferRowLength"));
-        BUFFER_IMAGE_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferImageHeight"));
-        IMAGE_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSubresource"));
-        IMAGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOffset"));
-        IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("srcAddress"),
+		    JAVA_INT.withName("bufferRowLength"),
+		    JAVA_INT.withName("bufferImageHeight"),
+		    VkImageSubresourceLayers.LAYOUT.withName("imageSubresource"),
+		    VkOffset3D.LAYOUT.withName("imageOffset"),
+		    VkExtent3D.LAYOUT.withName("imageExtent")
+		).withName("VkCopyMemoryToImageIndirectCommandKHR").withByteAlignment(8);
+		
+		SRC_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAddress"));
+		BUFFER_ROW_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferRowLength"));
+		BUFFER_IMAGE_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferImageHeight"));
+		
+		SRC_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAddress"));
+		BUFFER_ROW_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferRowLength"));
+		BUFFER_IMAGE_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferImageHeight"));
+		IMAGE_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSubresource"));
+		IMAGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOffset"));
+		IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
+		//@formatter:on
+	}
 
-    public VkCopyMemoryToImageIndirectCommandKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyMemoryToImageIndirectCommandKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyMemoryToImageIndirectCommandKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        imageSubresource = new VkImageSubresourceLayers(segment.asSlice(IMAGE_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        imageOffset = new VkOffset3D(segment.asSlice(IMAGE_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
-        imageExtent = new VkExtent3D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkCopyMemoryToImageIndirectCommandKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyMemoryToImageIndirectCommandKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyMemoryToImageIndirectCommandKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    imageSubresource = new VkImageSubresourceLayers(segment.asSlice(IMAGE_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    imageOffset = new VkOffset3D(segment.asSlice(IMAGE_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
+	    imageExtent = new VkExtent3D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #srcAddress()
     public VkCopyMemoryToImageIndirectCommandKHR srcAddress(long srcAddress) {
@@ -208,5 +208,5 @@ public final class VkCopyMemoryToImageIndirectCommandKHR
             segment -> new VkCopyMemoryToImageIndirectCommandKHR(segment)
         );
     }
-    
+
 }

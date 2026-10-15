@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderTileImageFeaturesEXT
 		implements Struct<VkPhysicalDeviceShaderTileImageFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_TILE_IMAGE_COLOR_READ_ACCESS_HANDLE;
-    public static final VarHandle SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_HANDLE;
-    public static final VarHandle SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_TILE_IMAGE_COLOR_READ_ACCESS_HANDLE;
+	public static final VarHandle SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_HANDLE;
+	public static final VarHandle SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_TILE_IMAGE_COLOR_READ_ACCESS_BYTE_OFFSET;
-    public static final long SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_BYTE_OFFSET;
-    public static final long SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_TILE_IMAGE_COLOR_READ_ACCESS_BYTE_OFFSET;
+	public static final long SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_BYTE_OFFSET;
+	public static final long SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderTileImageColorReadAccess"),
-            JAVA_INT.withName("shaderTileImageDepthReadAccess"),
-            JAVA_INT.withName("shaderTileImageStencilReadAccess"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceShaderTileImageFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_TILE_IMAGE_COLOR_READ_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTileImageColorReadAccess"));
-        SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTileImageDepthReadAccess"));
-        SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTileImageStencilReadAccess"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_TILE_IMAGE_COLOR_READ_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTileImageColorReadAccess"));
-        SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTileImageDepthReadAccess"));
-        SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTileImageStencilReadAccess"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderTileImageColorReadAccess"),
+		    JAVA_INT.withName("shaderTileImageDepthReadAccess"),
+		    JAVA_INT.withName("shaderTileImageStencilReadAccess"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceShaderTileImageFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_TILE_IMAGE_COLOR_READ_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTileImageColorReadAccess"));
+		SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTileImageDepthReadAccess"));
+		SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTileImageStencilReadAccess"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_TILE_IMAGE_COLOR_READ_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTileImageColorReadAccess"));
+		SHADER_TILE_IMAGE_DEPTH_READ_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTileImageDepthReadAccess"));
+		SHADER_TILE_IMAGE_STENCIL_READ_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTileImageStencilReadAccess"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderTileImageFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderTileImageFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderTileImageFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderTileImageFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderTileImageFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderTileImageFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderTileImageFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceShaderTileImageFeaturesEXT
             segment -> new VkPhysicalDeviceShaderTileImageFeaturesEXT(segment)
         );
     }
-    
+
 }

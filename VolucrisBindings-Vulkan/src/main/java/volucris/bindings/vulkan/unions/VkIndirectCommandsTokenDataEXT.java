@@ -21,53 +21,53 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectCommandsTokenDataEXT
 		implements Struct<VkIndirectCommandsTokenDataEXT> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle P_PUSH_CONSTANT_HANDLE;
-    public static final VarHandle P_VERTEX_BUFFER_HANDLE;
-    public static final VarHandle P_INDEX_BUFFER_HANDLE;
-    public static final VarHandle P_EXECUTION_SET_HANDLE;
+	public static final VarHandle P_PUSH_CONSTANT_HANDLE;
+	public static final VarHandle P_VERTEX_BUFFER_HANDLE;
+	public static final VarHandle P_INDEX_BUFFER_HANDLE;
+	public static final VarHandle P_EXECUTION_SET_HANDLE;
 
-    public static final long P_PUSH_CONSTANT_BYTE_OFFSET;
-    public static final long P_VERTEX_BUFFER_BYTE_OFFSET;
-    public static final long P_INDEX_BUFFER_BYTE_OFFSET;
-    public static final long P_EXECUTION_SET_BYTE_OFFSET;
+	public static final long P_PUSH_CONSTANT_BYTE_OFFSET;
+	public static final long P_VERTEX_BUFFER_BYTE_OFFSET;
+	public static final long P_INDEX_BUFFER_BYTE_OFFSET;
+	public static final long P_EXECUTION_SET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            UNBOUNDED_ADDRESS.withName("pPushConstant"),
-            UNBOUNDED_ADDRESS.withName("pVertexBuffer"),
-            UNBOUNDED_ADDRESS.withName("pIndexBuffer"),
-            UNBOUNDED_ADDRESS.withName("pExecutionSet")
-        ).withName("VkIndirectCommandsTokenDataEXT").withByteAlignment(8);
-        
-        P_PUSH_CONSTANT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPushConstant"));
-        P_VERTEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexBuffer"));
-        P_INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIndexBuffer"));
-        P_EXECUTION_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExecutionSet"));
-        
-        P_PUSH_CONSTANT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPushConstant"));
-        P_VERTEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexBuffer"));
-        P_INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIndexBuffer"));
-        P_EXECUTION_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExecutionSet"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    UNBOUNDED_ADDRESS.withName("pPushConstant"),
+		    UNBOUNDED_ADDRESS.withName("pVertexBuffer"),
+		    UNBOUNDED_ADDRESS.withName("pIndexBuffer"),
+		    UNBOUNDED_ADDRESS.withName("pExecutionSet")
+		).withName("VkIndirectCommandsTokenDataEXT").withByteAlignment(8);
+		
+		P_PUSH_CONSTANT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPushConstant"));
+		P_VERTEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexBuffer"));
+		P_INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIndexBuffer"));
+		P_EXECUTION_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExecutionSet"));
+		
+		P_PUSH_CONSTANT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPushConstant"));
+		P_VERTEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexBuffer"));
+		P_INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIndexBuffer"));
+		P_EXECUTION_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExecutionSet"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsTokenDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsTokenDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsTokenDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsTokenDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsTokenDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsTokenDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pPushConstant()
     public VkIndirectCommandsTokenDataEXT pPushConstant(VkIndirectCommandsPushConstantTokenEXT pPushConstant) {
@@ -180,5 +180,5 @@ public final class VkIndirectCommandsTokenDataEXT
             segment -> new VkIndirectCommandsTokenDataEXT(segment)
         );
     }
-    
+
 }

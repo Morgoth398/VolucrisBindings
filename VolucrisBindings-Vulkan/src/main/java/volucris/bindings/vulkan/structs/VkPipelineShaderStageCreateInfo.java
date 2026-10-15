@@ -21,69 +21,69 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineShaderStageCreateInfo
 		implements Struct<VkPipelineShaderStageCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle MODULE_HANDLE;
-    public static final VarHandle P_NAME_HANDLE;
-    public static final VarHandle P_SPECIALIZATION_INFO_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle MODULE_HANDLE;
+	public static final VarHandle P_NAME_HANDLE;
+	public static final VarHandle P_SPECIALIZATION_INFO_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long MODULE_BYTE_OFFSET;
-    public static final long P_NAME_BYTE_OFFSET;
-    public static final long P_SPECIALIZATION_INFO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long MODULE_BYTE_OFFSET;
+	public static final long P_NAME_BYTE_OFFSET;
+	public static final long P_SPECIALIZATION_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("stage"),
-            UNBOUNDED_ADDRESS.withName("module"),
-            UNBOUNDED_ADDRESS.withName("pName"),
-            UNBOUNDED_ADDRESS.withName("pSpecializationInfo")
-        ).withName("VkPipelineShaderStageCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("module"));
-        P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
-        P_SPECIALIZATION_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSpecializationInfo"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("module"));
-        P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
-        P_SPECIALIZATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSpecializationInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("stage"),
+		    UNBOUNDED_ADDRESS.withName("module"),
+		    UNBOUNDED_ADDRESS.withName("pName"),
+		    UNBOUNDED_ADDRESS.withName("pSpecializationInfo")
+		).withName("VkPipelineShaderStageCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		MODULE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("module"));
+		P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
+		P_SPECIALIZATION_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSpecializationInfo"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		MODULE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("module"));
+		P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
+		P_SPECIALIZATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSpecializationInfo"));
+		//@formatter:on
+	}
 
-    public VkPipelineShaderStageCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineShaderStageCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineShaderStageCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineShaderStageCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineShaderStageCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineShaderStageCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineShaderStageCreateInfo sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkPipelineShaderStageCreateInfo
             segment -> new VkPipelineShaderStageCreateInfo(segment)
         );
     }
-    
+
 }

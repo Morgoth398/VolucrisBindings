@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance4Features
 		implements Struct<VkPhysicalDeviceMaintenance4Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAINTENANCE4_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAINTENANCE4_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAINTENANCE4_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAINTENANCE4_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maintenance4"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMaintenance4Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAINTENANCE4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance4"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAINTENANCE4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance4"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maintenance4"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMaintenance4Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAINTENANCE4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maintenance4"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAINTENANCE4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maintenance4"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance4Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance4Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance4Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance4Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance4Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance4Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance4Features sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceMaintenance4Features
             segment -> new VkPhysicalDeviceMaintenance4Features(segment)
         );
     }
-    
+
 }

@@ -19,566 +19,566 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPhysicalDeviceLimits
 		implements Struct<VkPhysicalDeviceLimits> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MAX_IMAGE_DIMENSION1_D_HANDLE;
-    public static final VarHandle MAX_IMAGE_DIMENSION2_D_HANDLE;
-    public static final VarHandle MAX_IMAGE_DIMENSION3_D_HANDLE;
-    public static final VarHandle MAX_IMAGE_DIMENSION_CUBE_HANDLE;
-    public static final VarHandle MAX_IMAGE_ARRAY_LAYERS_HANDLE;
-    public static final VarHandle MAX_TEXEL_BUFFER_ELEMENTS_HANDLE;
-    public static final VarHandle MAX_UNIFORM_BUFFER_RANGE_HANDLE;
-    public static final VarHandle MAX_STORAGE_BUFFER_RANGE_HANDLE;
-    public static final VarHandle MAX_PUSH_CONSTANTS_SIZE_HANDLE;
-    public static final VarHandle MAX_MEMORY_ALLOCATION_COUNT_HANDLE;
-    public static final VarHandle MAX_SAMPLER_ALLOCATION_COUNT_HANDLE;
-    public static final VarHandle BUFFER_IMAGE_GRANULARITY_HANDLE;
-    public static final VarHandle SPARSE_ADDRESS_SPACE_SIZE_HANDLE;
-    public static final VarHandle MAX_BOUND_DESCRIPTOR_SETS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_RESOURCES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_SAMPLERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_IMAGES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle MAX_VERTEX_INPUT_ATTRIBUTES_HANDLE;
-    public static final VarHandle MAX_VERTEX_INPUT_BINDINGS_HANDLE;
-    public static final VarHandle MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_HANDLE;
-    public static final VarHandle MAX_VERTEX_INPUT_BINDING_STRIDE_HANDLE;
-    public static final VarHandle MAX_VERTEX_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_GENERATION_LEVEL_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_PATCH_SIZE_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_SHADER_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_INPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_OUTPUT_VERTICES_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_INPUT_COMPONENTS_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_OUTPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_HANDLE;
-    public static final VarHandle MAX_COMPUTE_SHARED_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_COMPUTE_WORK_GROUP_COUNT_HANDLE;
-    public static final VarHandle MAX_COMPUTE_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_COMPUTE_WORK_GROUP_SIZE_HANDLE;
-    public static final VarHandle SUB_PIXEL_PRECISION_BITS_HANDLE;
-    public static final VarHandle SUB_TEXEL_PRECISION_BITS_HANDLE;
-    public static final VarHandle MIPMAP_PRECISION_BITS_HANDLE;
-    public static final VarHandle MAX_DRAW_INDEXED_INDEX_VALUE_HANDLE;
-    public static final VarHandle MAX_DRAW_INDIRECT_COUNT_HANDLE;
-    public static final VarHandle MAX_SAMPLER_LOD_BIAS_HANDLE;
-    public static final VarHandle MAX_SAMPLER_ANISOTROPY_HANDLE;
-    public static final VarHandle MAX_VIEWPORTS_HANDLE;
-    public static final VarHandle MAX_VIEWPORT_DIMENSIONS_HANDLE;
-    public static final VarHandle VIEWPORT_BOUNDS_RANGE_HANDLE;
-    public static final VarHandle VIEWPORT_SUB_PIXEL_BITS_HANDLE;
-    public static final VarHandle MIN_MEMORY_MAP_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_TEXEL_OFFSET_HANDLE;
-    public static final VarHandle MAX_TEXEL_OFFSET_HANDLE;
-    public static final VarHandle MIN_TEXEL_GATHER_OFFSET_HANDLE;
-    public static final VarHandle MAX_TEXEL_GATHER_OFFSET_HANDLE;
-    public static final VarHandle MIN_INTERPOLATION_OFFSET_HANDLE;
-    public static final VarHandle MAX_INTERPOLATION_OFFSET_HANDLE;
-    public static final VarHandle SUB_PIXEL_INTERPOLATION_OFFSET_BITS_HANDLE;
-    public static final VarHandle MAX_FRAMEBUFFER_WIDTH_HANDLE;
-    public static final VarHandle MAX_FRAMEBUFFER_HEIGHT_HANDLE;
-    public static final VarHandle MAX_FRAMEBUFFER_LAYERS_HANDLE;
-    public static final VarHandle FRAMEBUFFER_COLOR_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle MAX_COLOR_ATTACHMENTS_HANDLE;
-    public static final VarHandle SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle STORAGE_IMAGE_SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle MAX_SAMPLE_MASK_WORDS_HANDLE;
-    public static final VarHandle TIMESTAMP_COMPUTE_AND_GRAPHICS_HANDLE;
-    public static final VarHandle TIMESTAMP_PERIOD_HANDLE;
-    public static final VarHandle MAX_CLIP_DISTANCES_HANDLE;
-    public static final VarHandle MAX_CULL_DISTANCES_HANDLE;
-    public static final VarHandle MAX_COMBINED_CLIP_AND_CULL_DISTANCES_HANDLE;
-    public static final VarHandle DISCRETE_QUEUE_PRIORITIES_HANDLE;
-    public static final VarHandle POINT_SIZE_RANGE_HANDLE;
-    public static final VarHandle LINE_WIDTH_RANGE_HANDLE;
-    public static final VarHandle POINT_SIZE_GRANULARITY_HANDLE;
-    public static final VarHandle LINE_WIDTH_GRANULARITY_HANDLE;
-    public static final VarHandle STRICT_LINES_HANDLE;
-    public static final VarHandle STANDARD_SAMPLE_LOCATIONS_HANDLE;
-    public static final VarHandle OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_HANDLE;
-    public static final VarHandle NON_COHERENT_ATOM_SIZE_HANDLE;
+	public static final VarHandle MAX_IMAGE_DIMENSION1_D_HANDLE;
+	public static final VarHandle MAX_IMAGE_DIMENSION2_D_HANDLE;
+	public static final VarHandle MAX_IMAGE_DIMENSION3_D_HANDLE;
+	public static final VarHandle MAX_IMAGE_DIMENSION_CUBE_HANDLE;
+	public static final VarHandle MAX_IMAGE_ARRAY_LAYERS_HANDLE;
+	public static final VarHandle MAX_TEXEL_BUFFER_ELEMENTS_HANDLE;
+	public static final VarHandle MAX_UNIFORM_BUFFER_RANGE_HANDLE;
+	public static final VarHandle MAX_STORAGE_BUFFER_RANGE_HANDLE;
+	public static final VarHandle MAX_PUSH_CONSTANTS_SIZE_HANDLE;
+	public static final VarHandle MAX_MEMORY_ALLOCATION_COUNT_HANDLE;
+	public static final VarHandle MAX_SAMPLER_ALLOCATION_COUNT_HANDLE;
+	public static final VarHandle BUFFER_IMAGE_GRANULARITY_HANDLE;
+	public static final VarHandle SPARSE_ADDRESS_SPACE_SIZE_HANDLE;
+	public static final VarHandle MAX_BOUND_DESCRIPTOR_SETS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_RESOURCES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_SAMPLERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_IMAGES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle MAX_VERTEX_INPUT_ATTRIBUTES_HANDLE;
+	public static final VarHandle MAX_VERTEX_INPUT_BINDINGS_HANDLE;
+	public static final VarHandle MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_HANDLE;
+	public static final VarHandle MAX_VERTEX_INPUT_BINDING_STRIDE_HANDLE;
+	public static final VarHandle MAX_VERTEX_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_GENERATION_LEVEL_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_PATCH_SIZE_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_SHADER_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_INPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_OUTPUT_VERTICES_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_INPUT_COMPONENTS_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_OUTPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_HANDLE;
+	public static final VarHandle MAX_COMPUTE_SHARED_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_COMPUTE_WORK_GROUP_COUNT_HANDLE;
+	public static final VarHandle MAX_COMPUTE_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_COMPUTE_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle SUB_PIXEL_PRECISION_BITS_HANDLE;
+	public static final VarHandle SUB_TEXEL_PRECISION_BITS_HANDLE;
+	public static final VarHandle MIPMAP_PRECISION_BITS_HANDLE;
+	public static final VarHandle MAX_DRAW_INDEXED_INDEX_VALUE_HANDLE;
+	public static final VarHandle MAX_DRAW_INDIRECT_COUNT_HANDLE;
+	public static final VarHandle MAX_SAMPLER_LOD_BIAS_HANDLE;
+	public static final VarHandle MAX_SAMPLER_ANISOTROPY_HANDLE;
+	public static final VarHandle MAX_VIEWPORTS_HANDLE;
+	public static final VarHandle MAX_VIEWPORT_DIMENSIONS_HANDLE;
+	public static final VarHandle VIEWPORT_BOUNDS_RANGE_HANDLE;
+	public static final VarHandle VIEWPORT_SUB_PIXEL_BITS_HANDLE;
+	public static final VarHandle MIN_MEMORY_MAP_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_TEXEL_OFFSET_HANDLE;
+	public static final VarHandle MAX_TEXEL_OFFSET_HANDLE;
+	public static final VarHandle MIN_TEXEL_GATHER_OFFSET_HANDLE;
+	public static final VarHandle MAX_TEXEL_GATHER_OFFSET_HANDLE;
+	public static final VarHandle MIN_INTERPOLATION_OFFSET_HANDLE;
+	public static final VarHandle MAX_INTERPOLATION_OFFSET_HANDLE;
+	public static final VarHandle SUB_PIXEL_INTERPOLATION_OFFSET_BITS_HANDLE;
+	public static final VarHandle MAX_FRAMEBUFFER_WIDTH_HANDLE;
+	public static final VarHandle MAX_FRAMEBUFFER_HEIGHT_HANDLE;
+	public static final VarHandle MAX_FRAMEBUFFER_LAYERS_HANDLE;
+	public static final VarHandle FRAMEBUFFER_COLOR_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle MAX_COLOR_ATTACHMENTS_HANDLE;
+	public static final VarHandle SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle STORAGE_IMAGE_SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle MAX_SAMPLE_MASK_WORDS_HANDLE;
+	public static final VarHandle TIMESTAMP_COMPUTE_AND_GRAPHICS_HANDLE;
+	public static final VarHandle TIMESTAMP_PERIOD_HANDLE;
+	public static final VarHandle MAX_CLIP_DISTANCES_HANDLE;
+	public static final VarHandle MAX_CULL_DISTANCES_HANDLE;
+	public static final VarHandle MAX_COMBINED_CLIP_AND_CULL_DISTANCES_HANDLE;
+	public static final VarHandle DISCRETE_QUEUE_PRIORITIES_HANDLE;
+	public static final VarHandle POINT_SIZE_RANGE_HANDLE;
+	public static final VarHandle LINE_WIDTH_RANGE_HANDLE;
+	public static final VarHandle POINT_SIZE_GRANULARITY_HANDLE;
+	public static final VarHandle LINE_WIDTH_GRANULARITY_HANDLE;
+	public static final VarHandle STRICT_LINES_HANDLE;
+	public static final VarHandle STANDARD_SAMPLE_LOCATIONS_HANDLE;
+	public static final VarHandle OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_HANDLE;
+	public static final VarHandle NON_COHERENT_ATOM_SIZE_HANDLE;
 
-    public static final long MAX_IMAGE_DIMENSION1_D_BYTE_OFFSET;
-    public static final long MAX_IMAGE_DIMENSION2_D_BYTE_OFFSET;
-    public static final long MAX_IMAGE_DIMENSION3_D_BYTE_OFFSET;
-    public static final long MAX_IMAGE_DIMENSION_CUBE_BYTE_OFFSET;
-    public static final long MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET;
-    public static final long MAX_TEXEL_BUFFER_ELEMENTS_BYTE_OFFSET;
-    public static final long MAX_UNIFORM_BUFFER_RANGE_BYTE_OFFSET;
-    public static final long MAX_STORAGE_BUFFER_RANGE_BYTE_OFFSET;
-    public static final long MAX_PUSH_CONSTANTS_SIZE_BYTE_OFFSET;
-    public static final long MAX_MEMORY_ALLOCATION_COUNT_BYTE_OFFSET;
-    public static final long MAX_SAMPLER_ALLOCATION_COUNT_BYTE_OFFSET;
-    public static final long BUFFER_IMAGE_GRANULARITY_BYTE_OFFSET;
-    public static final long SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET;
-    public static final long MAX_BOUND_DESCRIPTOR_SETS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_RESOURCES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_SAMPLERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_STORAGE_IMAGES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long MAX_VERTEX_INPUT_ATTRIBUTES_BYTE_OFFSET;
-    public static final long MAX_VERTEX_INPUT_BINDINGS_BYTE_OFFSET;
-    public static final long MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_BYTE_OFFSET;
-    public static final long MAX_VERTEX_INPUT_BINDING_STRIDE_BYTE_OFFSET;
-    public static final long MAX_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_GENERATION_LEVEL_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_PATCH_SIZE_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_SHADER_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_INPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_OUTPUT_VERTICES_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_INPUT_COMPONENTS_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_OUTPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_SHARED_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_WORK_GROUP_COUNT_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET;
-    public static final long SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET;
-    public static final long SUB_TEXEL_PRECISION_BITS_BYTE_OFFSET;
-    public static final long MIPMAP_PRECISION_BITS_BYTE_OFFSET;
-    public static final long MAX_DRAW_INDEXED_INDEX_VALUE_BYTE_OFFSET;
-    public static final long MAX_DRAW_INDIRECT_COUNT_BYTE_OFFSET;
-    public static final long MAX_SAMPLER_LOD_BIAS_BYTE_OFFSET;
-    public static final long MAX_SAMPLER_ANISOTROPY_BYTE_OFFSET;
-    public static final long MAX_VIEWPORTS_BYTE_OFFSET;
-    public static final long MAX_VIEWPORT_DIMENSIONS_BYTE_OFFSET;
-    public static final long VIEWPORT_BOUNDS_RANGE_BYTE_OFFSET;
-    public static final long VIEWPORT_SUB_PIXEL_BITS_BYTE_OFFSET;
-    public static final long MIN_MEMORY_MAP_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_TEXEL_OFFSET_BYTE_OFFSET;
-    public static final long MAX_TEXEL_OFFSET_BYTE_OFFSET;
-    public static final long MIN_TEXEL_GATHER_OFFSET_BYTE_OFFSET;
-    public static final long MAX_TEXEL_GATHER_OFFSET_BYTE_OFFSET;
-    public static final long MIN_INTERPOLATION_OFFSET_BYTE_OFFSET;
-    public static final long MAX_INTERPOLATION_OFFSET_BYTE_OFFSET;
-    public static final long SUB_PIXEL_INTERPOLATION_OFFSET_BITS_BYTE_OFFSET;
-    public static final long MAX_FRAMEBUFFER_WIDTH_BYTE_OFFSET;
-    public static final long MAX_FRAMEBUFFER_HEIGHT_BYTE_OFFSET;
-    public static final long MAX_FRAMEBUFFER_LAYERS_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long MAX_COLOR_ATTACHMENTS_BYTE_OFFSET;
-    public static final long SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long STORAGE_IMAGE_SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long MAX_SAMPLE_MASK_WORDS_BYTE_OFFSET;
-    public static final long TIMESTAMP_COMPUTE_AND_GRAPHICS_BYTE_OFFSET;
-    public static final long TIMESTAMP_PERIOD_BYTE_OFFSET;
-    public static final long MAX_CLIP_DISTANCES_BYTE_OFFSET;
-    public static final long MAX_CULL_DISTANCES_BYTE_OFFSET;
-    public static final long MAX_COMBINED_CLIP_AND_CULL_DISTANCES_BYTE_OFFSET;
-    public static final long DISCRETE_QUEUE_PRIORITIES_BYTE_OFFSET;
-    public static final long POINT_SIZE_RANGE_BYTE_OFFSET;
-    public static final long LINE_WIDTH_RANGE_BYTE_OFFSET;
-    public static final long POINT_SIZE_GRANULARITY_BYTE_OFFSET;
-    public static final long LINE_WIDTH_GRANULARITY_BYTE_OFFSET;
-    public static final long STRICT_LINES_BYTE_OFFSET;
-    public static final long STANDARD_SAMPLE_LOCATIONS_BYTE_OFFSET;
-    public static final long OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_BYTE_OFFSET;
-    public static final long NON_COHERENT_ATOM_SIZE_BYTE_OFFSET;
+	public static final long MAX_IMAGE_DIMENSION1_D_BYTE_OFFSET;
+	public static final long MAX_IMAGE_DIMENSION2_D_BYTE_OFFSET;
+	public static final long MAX_IMAGE_DIMENSION3_D_BYTE_OFFSET;
+	public static final long MAX_IMAGE_DIMENSION_CUBE_BYTE_OFFSET;
+	public static final long MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET;
+	public static final long MAX_TEXEL_BUFFER_ELEMENTS_BYTE_OFFSET;
+	public static final long MAX_UNIFORM_BUFFER_RANGE_BYTE_OFFSET;
+	public static final long MAX_STORAGE_BUFFER_RANGE_BYTE_OFFSET;
+	public static final long MAX_PUSH_CONSTANTS_SIZE_BYTE_OFFSET;
+	public static final long MAX_MEMORY_ALLOCATION_COUNT_BYTE_OFFSET;
+	public static final long MAX_SAMPLER_ALLOCATION_COUNT_BYTE_OFFSET;
+	public static final long BUFFER_IMAGE_GRANULARITY_BYTE_OFFSET;
+	public static final long SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET;
+	public static final long MAX_BOUND_DESCRIPTOR_SETS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_RESOURCES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_SAMPLERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_STORAGE_IMAGES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long MAX_VERTEX_INPUT_ATTRIBUTES_BYTE_OFFSET;
+	public static final long MAX_VERTEX_INPUT_BINDINGS_BYTE_OFFSET;
+	public static final long MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_BYTE_OFFSET;
+	public static final long MAX_VERTEX_INPUT_BINDING_STRIDE_BYTE_OFFSET;
+	public static final long MAX_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_GENERATION_LEVEL_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_PATCH_SIZE_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_SHADER_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_INPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_OUTPUT_VERTICES_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_INPUT_COMPONENTS_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_OUTPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_SHARED_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_WORK_GROUP_COUNT_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET;
+	public static final long SUB_TEXEL_PRECISION_BITS_BYTE_OFFSET;
+	public static final long MIPMAP_PRECISION_BITS_BYTE_OFFSET;
+	public static final long MAX_DRAW_INDEXED_INDEX_VALUE_BYTE_OFFSET;
+	public static final long MAX_DRAW_INDIRECT_COUNT_BYTE_OFFSET;
+	public static final long MAX_SAMPLER_LOD_BIAS_BYTE_OFFSET;
+	public static final long MAX_SAMPLER_ANISOTROPY_BYTE_OFFSET;
+	public static final long MAX_VIEWPORTS_BYTE_OFFSET;
+	public static final long MAX_VIEWPORT_DIMENSIONS_BYTE_OFFSET;
+	public static final long VIEWPORT_BOUNDS_RANGE_BYTE_OFFSET;
+	public static final long VIEWPORT_SUB_PIXEL_BITS_BYTE_OFFSET;
+	public static final long MIN_MEMORY_MAP_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_TEXEL_OFFSET_BYTE_OFFSET;
+	public static final long MAX_TEXEL_OFFSET_BYTE_OFFSET;
+	public static final long MIN_TEXEL_GATHER_OFFSET_BYTE_OFFSET;
+	public static final long MAX_TEXEL_GATHER_OFFSET_BYTE_OFFSET;
+	public static final long MIN_INTERPOLATION_OFFSET_BYTE_OFFSET;
+	public static final long MAX_INTERPOLATION_OFFSET_BYTE_OFFSET;
+	public static final long SUB_PIXEL_INTERPOLATION_OFFSET_BITS_BYTE_OFFSET;
+	public static final long MAX_FRAMEBUFFER_WIDTH_BYTE_OFFSET;
+	public static final long MAX_FRAMEBUFFER_HEIGHT_BYTE_OFFSET;
+	public static final long MAX_FRAMEBUFFER_LAYERS_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long MAX_COLOR_ATTACHMENTS_BYTE_OFFSET;
+	public static final long SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long STORAGE_IMAGE_SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long MAX_SAMPLE_MASK_WORDS_BYTE_OFFSET;
+	public static final long TIMESTAMP_COMPUTE_AND_GRAPHICS_BYTE_OFFSET;
+	public static final long TIMESTAMP_PERIOD_BYTE_OFFSET;
+	public static final long MAX_CLIP_DISTANCES_BYTE_OFFSET;
+	public static final long MAX_CULL_DISTANCES_BYTE_OFFSET;
+	public static final long MAX_COMBINED_CLIP_AND_CULL_DISTANCES_BYTE_OFFSET;
+	public static final long DISCRETE_QUEUE_PRIORITIES_BYTE_OFFSET;
+	public static final long POINT_SIZE_RANGE_BYTE_OFFSET;
+	public static final long LINE_WIDTH_RANGE_BYTE_OFFSET;
+	public static final long POINT_SIZE_GRANULARITY_BYTE_OFFSET;
+	public static final long LINE_WIDTH_GRANULARITY_BYTE_OFFSET;
+	public static final long STRICT_LINES_BYTE_OFFSET;
+	public static final long STANDARD_SAMPLE_LOCATIONS_BYTE_OFFSET;
+	public static final long OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_BYTE_OFFSET;
+	public static final long NON_COHERENT_ATOM_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("maxImageDimension1D"),
-            JAVA_INT.withName("maxImageDimension2D"),
-            JAVA_INT.withName("maxImageDimension3D"),
-            JAVA_INT.withName("maxImageDimensionCube"),
-            JAVA_INT.withName("maxImageArrayLayers"),
-            JAVA_INT.withName("maxTexelBufferElements"),
-            JAVA_INT.withName("maxUniformBufferRange"),
-            JAVA_INT.withName("maxStorageBufferRange"),
-            JAVA_INT.withName("maxPushConstantsSize"),
-            JAVA_INT.withName("maxMemoryAllocationCount"),
-            JAVA_INT.withName("maxSamplerAllocationCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("bufferImageGranularity"),
-            JAVA_LONG.withName("sparseAddressSpaceSize"),
-            JAVA_INT.withName("maxBoundDescriptorSets"),
-            JAVA_INT.withName("maxPerStageDescriptorSamplers"),
-            JAVA_INT.withName("maxPerStageDescriptorUniformBuffers"),
-            JAVA_INT.withName("maxPerStageDescriptorStorageBuffers"),
-            JAVA_INT.withName("maxPerStageDescriptorSampledImages"),
-            JAVA_INT.withName("maxPerStageDescriptorStorageImages"),
-            JAVA_INT.withName("maxPerStageDescriptorInputAttachments"),
-            JAVA_INT.withName("maxPerStageResources"),
-            JAVA_INT.withName("maxDescriptorSetSamplers"),
-            JAVA_INT.withName("maxDescriptorSetUniformBuffers"),
-            JAVA_INT.withName("maxDescriptorSetUniformBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetStorageBuffers"),
-            JAVA_INT.withName("maxDescriptorSetStorageBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetSampledImages"),
-            JAVA_INT.withName("maxDescriptorSetStorageImages"),
-            JAVA_INT.withName("maxDescriptorSetInputAttachments"),
-            JAVA_INT.withName("maxVertexInputAttributes"),
-            JAVA_INT.withName("maxVertexInputBindings"),
-            JAVA_INT.withName("maxVertexInputAttributeOffset"),
-            JAVA_INT.withName("maxVertexInputBindingStride"),
-            JAVA_INT.withName("maxVertexOutputComponents"),
-            JAVA_INT.withName("maxTessellationGenerationLevel"),
-            JAVA_INT.withName("maxTessellationPatchSize"),
-            JAVA_INT.withName("maxTessellationControlPerVertexInputComponents"),
-            JAVA_INT.withName("maxTessellationControlPerVertexOutputComponents"),
-            JAVA_INT.withName("maxTessellationControlPerPatchOutputComponents"),
-            JAVA_INT.withName("maxTessellationControlTotalOutputComponents"),
-            JAVA_INT.withName("maxTessellationEvaluationInputComponents"),
-            JAVA_INT.withName("maxTessellationEvaluationOutputComponents"),
-            JAVA_INT.withName("maxGeometryShaderInvocations"),
-            JAVA_INT.withName("maxGeometryInputComponents"),
-            JAVA_INT.withName("maxGeometryOutputComponents"),
-            JAVA_INT.withName("maxGeometryOutputVertices"),
-            JAVA_INT.withName("maxGeometryTotalOutputComponents"),
-            JAVA_INT.withName("maxFragmentInputComponents"),
-            JAVA_INT.withName("maxFragmentOutputAttachments"),
-            JAVA_INT.withName("maxFragmentDualSrcAttachments"),
-            JAVA_INT.withName("maxFragmentCombinedOutputResources"),
-            JAVA_INT.withName("maxComputeSharedMemorySize"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxComputeWorkGroupCount"),
-            JAVA_INT.withName("maxComputeWorkGroupInvocations"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxComputeWorkGroupSize"),
-            JAVA_INT.withName("subPixelPrecisionBits"),
-            JAVA_INT.withName("subTexelPrecisionBits"),
-            JAVA_INT.withName("mipmapPrecisionBits"),
-            JAVA_INT.withName("maxDrawIndexedIndexValue"),
-            JAVA_INT.withName("maxDrawIndirectCount"),
-            JAVA_FLOAT.withName("maxSamplerLodBias"),
-            JAVA_FLOAT.withName("maxSamplerAnisotropy"),
-            JAVA_INT.withName("maxViewports"),
-            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("maxViewportDimensions"),
-            MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("viewportBoundsRange"),
-            JAVA_INT.withName("viewportSubPixelBits"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("minMemoryMapAlignment"),
-            JAVA_LONG.withName("minTexelBufferOffsetAlignment"),
-            JAVA_LONG.withName("minUniformBufferOffsetAlignment"),
-            JAVA_LONG.withName("minStorageBufferOffsetAlignment"),
-            JAVA_INT.withName("minTexelOffset"),
-            JAVA_INT.withName("maxTexelOffset"),
-            JAVA_INT.withName("minTexelGatherOffset"),
-            JAVA_INT.withName("maxTexelGatherOffset"),
-            JAVA_FLOAT.withName("minInterpolationOffset"),
-            JAVA_FLOAT.withName("maxInterpolationOffset"),
-            JAVA_INT.withName("subPixelInterpolationOffsetBits"),
-            JAVA_INT.withName("maxFramebufferWidth"),
-            JAVA_INT.withName("maxFramebufferHeight"),
-            JAVA_INT.withName("maxFramebufferLayers"),
-            JAVA_INT.withName("framebufferColorSampleCounts"),
-            JAVA_INT.withName("framebufferDepthSampleCounts"),
-            JAVA_INT.withName("framebufferStencilSampleCounts"),
-            JAVA_INT.withName("framebufferNoAttachmentsSampleCounts"),
-            JAVA_INT.withName("maxColorAttachments"),
-            JAVA_INT.withName("sampledImageColorSampleCounts"),
-            JAVA_INT.withName("sampledImageIntegerSampleCounts"),
-            JAVA_INT.withName("sampledImageDepthSampleCounts"),
-            JAVA_INT.withName("sampledImageStencilSampleCounts"),
-            JAVA_INT.withName("storageImageSampleCounts"),
-            JAVA_INT.withName("maxSampleMaskWords"),
-            JAVA_INT.withName("timestampComputeAndGraphics"),
-            JAVA_FLOAT.withName("timestampPeriod"),
-            JAVA_INT.withName("maxClipDistances"),
-            JAVA_INT.withName("maxCullDistances"),
-            JAVA_INT.withName("maxCombinedClipAndCullDistances"),
-            JAVA_INT.withName("discreteQueuePriorities"),
-            MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("pointSizeRange"),
-            MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("lineWidthRange"),
-            JAVA_FLOAT.withName("pointSizeGranularity"),
-            JAVA_FLOAT.withName("lineWidthGranularity"),
-            JAVA_INT.withName("strictLines"),
-            JAVA_INT.withName("standardSampleLocations"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("optimalBufferCopyOffsetAlignment"),
-            JAVA_LONG.withName("optimalBufferCopyRowPitchAlignment"),
-            JAVA_LONG.withName("nonCoherentAtomSize")
-        ).withName("VkPhysicalDeviceLimits").withByteAlignment(8);
-        
-        MAX_IMAGE_DIMENSION1_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimension1D"));
-        MAX_IMAGE_DIMENSION2_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimension2D"));
-        MAX_IMAGE_DIMENSION3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimension3D"));
-        MAX_IMAGE_DIMENSION_CUBE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimensionCube"));
-        MAX_IMAGE_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageArrayLayers"));
-        MAX_TEXEL_BUFFER_ELEMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTexelBufferElements"));
-        MAX_UNIFORM_BUFFER_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUniformBufferRange"));
-        MAX_STORAGE_BUFFER_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxStorageBufferRange"));
-        MAX_PUSH_CONSTANTS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushConstantsSize"));
-        MAX_MEMORY_ALLOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMemoryAllocationCount"));
-        MAX_SAMPLER_ALLOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerAllocationCount"));
-        BUFFER_IMAGE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferImageGranularity"));
-        SPARSE_ADDRESS_SPACE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseAddressSpaceSize"));
-        MAX_BOUND_DESCRIPTOR_SETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBoundDescriptorSets"));
-        MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorSamplers"));
-        MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUniformBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorStorageBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorSampledImages"));
-        MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorStorageImages"));
-        MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorInputAttachments"));
-        MAX_PER_STAGE_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageResources"));
-        MAX_DESCRIPTOR_SET_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetSamplers"));
-        MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUniformBuffers"));
-        MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageBuffers"));
-        MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetSampledImages"));
-        MAX_DESCRIPTOR_SET_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageImages"));
-        MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetInputAttachments"));
-        MAX_VERTEX_INPUT_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputAttributes"));
-        MAX_VERTEX_INPUT_BINDINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputBindings"));
-        MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputAttributeOffset"));
-        MAX_VERTEX_INPUT_BINDING_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputBindingStride"));
-        MAX_VERTEX_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexOutputComponents"));
-        MAX_TESSELLATION_GENERATION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationGenerationLevel"));
-        MAX_TESSELLATION_PATCH_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationPatchSize"));
-        MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlPerVertexInputComponents"));
-        MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlPerVertexOutputComponents"));
-        MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlPerPatchOutputComponents"));
-        MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlTotalOutputComponents"));
-        MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationEvaluationInputComponents"));
-        MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationEvaluationOutputComponents"));
-        MAX_GEOMETRY_SHADER_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryShaderInvocations"));
-        MAX_GEOMETRY_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryInputComponents"));
-        MAX_GEOMETRY_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryOutputComponents"));
-        MAX_GEOMETRY_OUTPUT_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryOutputVertices"));
-        MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryTotalOutputComponents"));
-        MAX_FRAGMENT_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentInputComponents"));
-        MAX_FRAGMENT_OUTPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentOutputAttachments"));
-        MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentDualSrcAttachments"));
-        MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentCombinedOutputResources"));
-        MAX_COMPUTE_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeSharedMemorySize"));
-        MAX_COMPUTE_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkGroupCount"), PathElement.sequenceElement());
-        MAX_COMPUTE_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkGroupInvocations"));
-        MAX_COMPUTE_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkGroupSize"), PathElement.sequenceElement());
-        SUB_PIXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subPixelPrecisionBits"));
-        SUB_TEXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subTexelPrecisionBits"));
-        MIPMAP_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipmapPrecisionBits"));
-        MAX_DRAW_INDEXED_INDEX_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawIndexedIndexValue"));
-        MAX_DRAW_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawIndirectCount"));
-        MAX_SAMPLER_LOD_BIAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerLodBias"));
-        MAX_SAMPLER_ANISOTROPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerAnisotropy"));
-        MAX_VIEWPORTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxViewports"));
-        MAX_VIEWPORT_DIMENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxViewportDimensions"), PathElement.sequenceElement());
-        VIEWPORT_BOUNDS_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportBoundsRange"), PathElement.sequenceElement());
-        VIEWPORT_SUB_PIXEL_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportSubPixelBits"));
-        MIN_MEMORY_MAP_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minMemoryMapAlignment"));
-        MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minTexelBufferOffsetAlignment"));
-        MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minUniformBufferOffsetAlignment"));
-        MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minStorageBufferOffsetAlignment"));
-        MIN_TEXEL_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minTexelOffset"));
-        MAX_TEXEL_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTexelOffset"));
-        MIN_TEXEL_GATHER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minTexelGatherOffset"));
-        MAX_TEXEL_GATHER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTexelGatherOffset"));
-        MIN_INTERPOLATION_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minInterpolationOffset"));
-        MAX_INTERPOLATION_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInterpolationOffset"));
-        SUB_PIXEL_INTERPOLATION_OFFSET_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subPixelInterpolationOffsetBits"));
-        MAX_FRAMEBUFFER_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFramebufferWidth"));
-        MAX_FRAMEBUFFER_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFramebufferHeight"));
-        MAX_FRAMEBUFFER_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFramebufferLayers"));
-        FRAMEBUFFER_COLOR_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferColorSampleCounts"));
-        FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferDepthSampleCounts"));
-        FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferStencilSampleCounts"));
-        FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferNoAttachmentsSampleCounts"));
-        MAX_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxColorAttachments"));
-        SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageColorSampleCounts"));
-        SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageIntegerSampleCounts"));
-        SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageDepthSampleCounts"));
-        SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageStencilSampleCounts"));
-        STORAGE_IMAGE_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageImageSampleCounts"));
-        MAX_SAMPLE_MASK_WORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSampleMaskWords"));
-        TIMESTAMP_COMPUTE_AND_GRAPHICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timestampComputeAndGraphics"));
-        TIMESTAMP_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timestampPeriod"));
-        MAX_CLIP_DISTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClipDistances"));
-        MAX_CULL_DISTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCullDistances"));
-        MAX_COMBINED_CLIP_AND_CULL_DISTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCombinedClipAndCullDistances"));
-        DISCRETE_QUEUE_PRIORITIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discreteQueuePriorities"));
-        POINT_SIZE_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pointSizeRange"), PathElement.sequenceElement());
-        LINE_WIDTH_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineWidthRange"), PathElement.sequenceElement());
-        POINT_SIZE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pointSizeGranularity"));
-        LINE_WIDTH_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineWidthGranularity"));
-        STRICT_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("strictLines"));
-        STANDARD_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("standardSampleLocations"));
-        OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalBufferCopyOffsetAlignment"));
-        OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalBufferCopyRowPitchAlignment"));
-        NON_COHERENT_ATOM_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonCoherentAtomSize"));
-        
-        MAX_IMAGE_DIMENSION1_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimension1D"));
-        MAX_IMAGE_DIMENSION2_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimension2D"));
-        MAX_IMAGE_DIMENSION3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimension3D"));
-        MAX_IMAGE_DIMENSION_CUBE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimensionCube"));
-        MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageArrayLayers"));
-        MAX_TEXEL_BUFFER_ELEMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTexelBufferElements"));
-        MAX_UNIFORM_BUFFER_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUniformBufferRange"));
-        MAX_STORAGE_BUFFER_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxStorageBufferRange"));
-        MAX_PUSH_CONSTANTS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushConstantsSize"));
-        MAX_MEMORY_ALLOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMemoryAllocationCount"));
-        MAX_SAMPLER_ALLOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerAllocationCount"));
-        BUFFER_IMAGE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferImageGranularity"));
-        SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseAddressSpaceSize"));
-        MAX_BOUND_DESCRIPTOR_SETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBoundDescriptorSets"));
-        MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorSamplers"));
-        MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUniformBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorStorageBuffers"));
-        MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorSampledImages"));
-        MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorStorageImages"));
-        MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorInputAttachments"));
-        MAX_PER_STAGE_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageResources"));
-        MAX_DESCRIPTOR_SET_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetSamplers"));
-        MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUniformBuffers"));
-        MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageBuffers"));
-        MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetSampledImages"));
-        MAX_DESCRIPTOR_SET_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageImages"));
-        MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetInputAttachments"));
-        MAX_VERTEX_INPUT_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputAttributes"));
-        MAX_VERTEX_INPUT_BINDINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputBindings"));
-        MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputAttributeOffset"));
-        MAX_VERTEX_INPUT_BINDING_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputBindingStride"));
-        MAX_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexOutputComponents"));
-        MAX_TESSELLATION_GENERATION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationGenerationLevel"));
-        MAX_TESSELLATION_PATCH_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationPatchSize"));
-        MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlPerVertexInputComponents"));
-        MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlPerVertexOutputComponents"));
-        MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlPerPatchOutputComponents"));
-        MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlTotalOutputComponents"));
-        MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationEvaluationInputComponents"));
-        MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationEvaluationOutputComponents"));
-        MAX_GEOMETRY_SHADER_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryShaderInvocations"));
-        MAX_GEOMETRY_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryInputComponents"));
-        MAX_GEOMETRY_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryOutputComponents"));
-        MAX_GEOMETRY_OUTPUT_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryOutputVertices"));
-        MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryTotalOutputComponents"));
-        MAX_FRAGMENT_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentInputComponents"));
-        MAX_FRAGMENT_OUTPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentOutputAttachments"));
-        MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentDualSrcAttachments"));
-        MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentCombinedOutputResources"));
-        MAX_COMPUTE_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeSharedMemorySize"));
-        MAX_COMPUTE_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkGroupCount"));
-        MAX_COMPUTE_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkGroupInvocations"));
-        MAX_COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkGroupSize"));
-        SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subPixelPrecisionBits"));
-        SUB_TEXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subTexelPrecisionBits"));
-        MIPMAP_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipmapPrecisionBits"));
-        MAX_DRAW_INDEXED_INDEX_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawIndexedIndexValue"));
-        MAX_DRAW_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawIndirectCount"));
-        MAX_SAMPLER_LOD_BIAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerLodBias"));
-        MAX_SAMPLER_ANISOTROPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerAnisotropy"));
-        MAX_VIEWPORTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxViewports"));
-        MAX_VIEWPORT_DIMENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxViewportDimensions"));
-        VIEWPORT_BOUNDS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportBoundsRange"));
-        VIEWPORT_SUB_PIXEL_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportSubPixelBits"));
-        MIN_MEMORY_MAP_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minMemoryMapAlignment"));
-        MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTexelBufferOffsetAlignment"));
-        MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minUniformBufferOffsetAlignment"));
-        MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minStorageBufferOffsetAlignment"));
-        MIN_TEXEL_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTexelOffset"));
-        MAX_TEXEL_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTexelOffset"));
-        MIN_TEXEL_GATHER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTexelGatherOffset"));
-        MAX_TEXEL_GATHER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTexelGatherOffset"));
-        MIN_INTERPOLATION_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minInterpolationOffset"));
-        MAX_INTERPOLATION_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInterpolationOffset"));
-        SUB_PIXEL_INTERPOLATION_OFFSET_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subPixelInterpolationOffsetBits"));
-        MAX_FRAMEBUFFER_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFramebufferWidth"));
-        MAX_FRAMEBUFFER_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFramebufferHeight"));
-        MAX_FRAMEBUFFER_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFramebufferLayers"));
-        FRAMEBUFFER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferColorSampleCounts"));
-        FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferDepthSampleCounts"));
-        FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferStencilSampleCounts"));
-        FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferNoAttachmentsSampleCounts"));
-        MAX_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxColorAttachments"));
-        SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageColorSampleCounts"));
-        SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageIntegerSampleCounts"));
-        SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageDepthSampleCounts"));
-        SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageStencilSampleCounts"));
-        STORAGE_IMAGE_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageImageSampleCounts"));
-        MAX_SAMPLE_MASK_WORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSampleMaskWords"));
-        TIMESTAMP_COMPUTE_AND_GRAPHICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timestampComputeAndGraphics"));
-        TIMESTAMP_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timestampPeriod"));
-        MAX_CLIP_DISTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClipDistances"));
-        MAX_CULL_DISTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCullDistances"));
-        MAX_COMBINED_CLIP_AND_CULL_DISTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCombinedClipAndCullDistances"));
-        DISCRETE_QUEUE_PRIORITIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discreteQueuePriorities"));
-        POINT_SIZE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pointSizeRange"));
-        LINE_WIDTH_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineWidthRange"));
-        POINT_SIZE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pointSizeGranularity"));
-        LINE_WIDTH_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineWidthGranularity"));
-        STRICT_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("strictLines"));
-        STANDARD_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("standardSampleLocations"));
-        OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalBufferCopyOffsetAlignment"));
-        OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalBufferCopyRowPitchAlignment"));
-        NON_COHERENT_ATOM_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonCoherentAtomSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("maxImageDimension1D"),
+		    JAVA_INT.withName("maxImageDimension2D"),
+		    JAVA_INT.withName("maxImageDimension3D"),
+		    JAVA_INT.withName("maxImageDimensionCube"),
+		    JAVA_INT.withName("maxImageArrayLayers"),
+		    JAVA_INT.withName("maxTexelBufferElements"),
+		    JAVA_INT.withName("maxUniformBufferRange"),
+		    JAVA_INT.withName("maxStorageBufferRange"),
+		    JAVA_INT.withName("maxPushConstantsSize"),
+		    JAVA_INT.withName("maxMemoryAllocationCount"),
+		    JAVA_INT.withName("maxSamplerAllocationCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("bufferImageGranularity"),
+		    JAVA_LONG.withName("sparseAddressSpaceSize"),
+		    JAVA_INT.withName("maxBoundDescriptorSets"),
+		    JAVA_INT.withName("maxPerStageDescriptorSamplers"),
+		    JAVA_INT.withName("maxPerStageDescriptorUniformBuffers"),
+		    JAVA_INT.withName("maxPerStageDescriptorStorageBuffers"),
+		    JAVA_INT.withName("maxPerStageDescriptorSampledImages"),
+		    JAVA_INT.withName("maxPerStageDescriptorStorageImages"),
+		    JAVA_INT.withName("maxPerStageDescriptorInputAttachments"),
+		    JAVA_INT.withName("maxPerStageResources"),
+		    JAVA_INT.withName("maxDescriptorSetSamplers"),
+		    JAVA_INT.withName("maxDescriptorSetUniformBuffers"),
+		    JAVA_INT.withName("maxDescriptorSetUniformBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetStorageBuffers"),
+		    JAVA_INT.withName("maxDescriptorSetStorageBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetSampledImages"),
+		    JAVA_INT.withName("maxDescriptorSetStorageImages"),
+		    JAVA_INT.withName("maxDescriptorSetInputAttachments"),
+		    JAVA_INT.withName("maxVertexInputAttributes"),
+		    JAVA_INT.withName("maxVertexInputBindings"),
+		    JAVA_INT.withName("maxVertexInputAttributeOffset"),
+		    JAVA_INT.withName("maxVertexInputBindingStride"),
+		    JAVA_INT.withName("maxVertexOutputComponents"),
+		    JAVA_INT.withName("maxTessellationGenerationLevel"),
+		    JAVA_INT.withName("maxTessellationPatchSize"),
+		    JAVA_INT.withName("maxTessellationControlPerVertexInputComponents"),
+		    JAVA_INT.withName("maxTessellationControlPerVertexOutputComponents"),
+		    JAVA_INT.withName("maxTessellationControlPerPatchOutputComponents"),
+		    JAVA_INT.withName("maxTessellationControlTotalOutputComponents"),
+		    JAVA_INT.withName("maxTessellationEvaluationInputComponents"),
+		    JAVA_INT.withName("maxTessellationEvaluationOutputComponents"),
+		    JAVA_INT.withName("maxGeometryShaderInvocations"),
+		    JAVA_INT.withName("maxGeometryInputComponents"),
+		    JAVA_INT.withName("maxGeometryOutputComponents"),
+		    JAVA_INT.withName("maxGeometryOutputVertices"),
+		    JAVA_INT.withName("maxGeometryTotalOutputComponents"),
+		    JAVA_INT.withName("maxFragmentInputComponents"),
+		    JAVA_INT.withName("maxFragmentOutputAttachments"),
+		    JAVA_INT.withName("maxFragmentDualSrcAttachments"),
+		    JAVA_INT.withName("maxFragmentCombinedOutputResources"),
+		    JAVA_INT.withName("maxComputeSharedMemorySize"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxComputeWorkGroupCount"),
+		    JAVA_INT.withName("maxComputeWorkGroupInvocations"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxComputeWorkGroupSize"),
+		    JAVA_INT.withName("subPixelPrecisionBits"),
+		    JAVA_INT.withName("subTexelPrecisionBits"),
+		    JAVA_INT.withName("mipmapPrecisionBits"),
+		    JAVA_INT.withName("maxDrawIndexedIndexValue"),
+		    JAVA_INT.withName("maxDrawIndirectCount"),
+		    JAVA_FLOAT.withName("maxSamplerLodBias"),
+		    JAVA_FLOAT.withName("maxSamplerAnisotropy"),
+		    JAVA_INT.withName("maxViewports"),
+		    MemoryLayout.sequenceLayout(2, JAVA_INT).withName("maxViewportDimensions"),
+		    MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("viewportBoundsRange"),
+		    JAVA_INT.withName("viewportSubPixelBits"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("minMemoryMapAlignment"),
+		    JAVA_LONG.withName("minTexelBufferOffsetAlignment"),
+		    JAVA_LONG.withName("minUniformBufferOffsetAlignment"),
+		    JAVA_LONG.withName("minStorageBufferOffsetAlignment"),
+		    JAVA_INT.withName("minTexelOffset"),
+		    JAVA_INT.withName("maxTexelOffset"),
+		    JAVA_INT.withName("minTexelGatherOffset"),
+		    JAVA_INT.withName("maxTexelGatherOffset"),
+		    JAVA_FLOAT.withName("minInterpolationOffset"),
+		    JAVA_FLOAT.withName("maxInterpolationOffset"),
+		    JAVA_INT.withName("subPixelInterpolationOffsetBits"),
+		    JAVA_INT.withName("maxFramebufferWidth"),
+		    JAVA_INT.withName("maxFramebufferHeight"),
+		    JAVA_INT.withName("maxFramebufferLayers"),
+		    JAVA_INT.withName("framebufferColorSampleCounts"),
+		    JAVA_INT.withName("framebufferDepthSampleCounts"),
+		    JAVA_INT.withName("framebufferStencilSampleCounts"),
+		    JAVA_INT.withName("framebufferNoAttachmentsSampleCounts"),
+		    JAVA_INT.withName("maxColorAttachments"),
+		    JAVA_INT.withName("sampledImageColorSampleCounts"),
+		    JAVA_INT.withName("sampledImageIntegerSampleCounts"),
+		    JAVA_INT.withName("sampledImageDepthSampleCounts"),
+		    JAVA_INT.withName("sampledImageStencilSampleCounts"),
+		    JAVA_INT.withName("storageImageSampleCounts"),
+		    JAVA_INT.withName("maxSampleMaskWords"),
+		    JAVA_INT.withName("timestampComputeAndGraphics"),
+		    JAVA_FLOAT.withName("timestampPeriod"),
+		    JAVA_INT.withName("maxClipDistances"),
+		    JAVA_INT.withName("maxCullDistances"),
+		    JAVA_INT.withName("maxCombinedClipAndCullDistances"),
+		    JAVA_INT.withName("discreteQueuePriorities"),
+		    MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("pointSizeRange"),
+		    MemoryLayout.sequenceLayout(2, JAVA_FLOAT).withName("lineWidthRange"),
+		    JAVA_FLOAT.withName("pointSizeGranularity"),
+		    JAVA_FLOAT.withName("lineWidthGranularity"),
+		    JAVA_INT.withName("strictLines"),
+		    JAVA_INT.withName("standardSampleLocations"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("optimalBufferCopyOffsetAlignment"),
+		    JAVA_LONG.withName("optimalBufferCopyRowPitchAlignment"),
+		    JAVA_LONG.withName("nonCoherentAtomSize")
+		).withName("VkPhysicalDeviceLimits").withByteAlignment(8);
+		
+		MAX_IMAGE_DIMENSION1_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimension1D"));
+		MAX_IMAGE_DIMENSION2_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimension2D"));
+		MAX_IMAGE_DIMENSION3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimension3D"));
+		MAX_IMAGE_DIMENSION_CUBE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageDimensionCube"));
+		MAX_IMAGE_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageArrayLayers"));
+		MAX_TEXEL_BUFFER_ELEMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTexelBufferElements"));
+		MAX_UNIFORM_BUFFER_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUniformBufferRange"));
+		MAX_STORAGE_BUFFER_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxStorageBufferRange"));
+		MAX_PUSH_CONSTANTS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushConstantsSize"));
+		MAX_MEMORY_ALLOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMemoryAllocationCount"));
+		MAX_SAMPLER_ALLOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerAllocationCount"));
+		BUFFER_IMAGE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferImageGranularity"));
+		SPARSE_ADDRESS_SPACE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseAddressSpaceSize"));
+		MAX_BOUND_DESCRIPTOR_SETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBoundDescriptorSets"));
+		MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorSamplers"));
+		MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUniformBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorStorageBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorSampledImages"));
+		MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorStorageImages"));
+		MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorInputAttachments"));
+		MAX_PER_STAGE_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageResources"));
+		MAX_DESCRIPTOR_SET_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetSamplers"));
+		MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUniformBuffers"));
+		MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageBuffers"));
+		MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetSampledImages"));
+		MAX_DESCRIPTOR_SET_STORAGE_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageImages"));
+		MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetInputAttachments"));
+		MAX_VERTEX_INPUT_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputAttributes"));
+		MAX_VERTEX_INPUT_BINDINGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputBindings"));
+		MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputAttributeOffset"));
+		MAX_VERTEX_INPUT_BINDING_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexInputBindingStride"));
+		MAX_VERTEX_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexOutputComponents"));
+		MAX_TESSELLATION_GENERATION_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationGenerationLevel"));
+		MAX_TESSELLATION_PATCH_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationPatchSize"));
+		MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlPerVertexInputComponents"));
+		MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlPerVertexOutputComponents"));
+		MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlPerPatchOutputComponents"));
+		MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationControlTotalOutputComponents"));
+		MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationEvaluationInputComponents"));
+		MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTessellationEvaluationOutputComponents"));
+		MAX_GEOMETRY_SHADER_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryShaderInvocations"));
+		MAX_GEOMETRY_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryInputComponents"));
+		MAX_GEOMETRY_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryOutputComponents"));
+		MAX_GEOMETRY_OUTPUT_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryOutputVertices"));
+		MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryTotalOutputComponents"));
+		MAX_FRAGMENT_INPUT_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentInputComponents"));
+		MAX_FRAGMENT_OUTPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentOutputAttachments"));
+		MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentDualSrcAttachments"));
+		MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentCombinedOutputResources"));
+		MAX_COMPUTE_SHARED_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeSharedMemorySize"));
+		MAX_COMPUTE_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkGroupCount"), PathElement.sequenceElement());
+		MAX_COMPUTE_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkGroupInvocations"));
+		MAX_COMPUTE_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkGroupSize"), PathElement.sequenceElement());
+		SUB_PIXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subPixelPrecisionBits"));
+		SUB_TEXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subTexelPrecisionBits"));
+		MIPMAP_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipmapPrecisionBits"));
+		MAX_DRAW_INDEXED_INDEX_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawIndexedIndexValue"));
+		MAX_DRAW_INDIRECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawIndirectCount"));
+		MAX_SAMPLER_LOD_BIAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerLodBias"));
+		MAX_SAMPLER_ANISOTROPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerAnisotropy"));
+		MAX_VIEWPORTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxViewports"));
+		MAX_VIEWPORT_DIMENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxViewportDimensions"), PathElement.sequenceElement());
+		VIEWPORT_BOUNDS_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportBoundsRange"), PathElement.sequenceElement());
+		VIEWPORT_SUB_PIXEL_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportSubPixelBits"));
+		MIN_MEMORY_MAP_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minMemoryMapAlignment"));
+		MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minTexelBufferOffsetAlignment"));
+		MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minUniformBufferOffsetAlignment"));
+		MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minStorageBufferOffsetAlignment"));
+		MIN_TEXEL_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minTexelOffset"));
+		MAX_TEXEL_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTexelOffset"));
+		MIN_TEXEL_GATHER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minTexelGatherOffset"));
+		MAX_TEXEL_GATHER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTexelGatherOffset"));
+		MIN_INTERPOLATION_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minInterpolationOffset"));
+		MAX_INTERPOLATION_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInterpolationOffset"));
+		SUB_PIXEL_INTERPOLATION_OFFSET_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subPixelInterpolationOffsetBits"));
+		MAX_FRAMEBUFFER_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFramebufferWidth"));
+		MAX_FRAMEBUFFER_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFramebufferHeight"));
+		MAX_FRAMEBUFFER_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFramebufferLayers"));
+		FRAMEBUFFER_COLOR_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferColorSampleCounts"));
+		FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferDepthSampleCounts"));
+		FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferStencilSampleCounts"));
+		FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebufferNoAttachmentsSampleCounts"));
+		MAX_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxColorAttachments"));
+		SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageColorSampleCounts"));
+		SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageIntegerSampleCounts"));
+		SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageDepthSampleCounts"));
+		SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampledImageStencilSampleCounts"));
+		STORAGE_IMAGE_SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageImageSampleCounts"));
+		MAX_SAMPLE_MASK_WORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSampleMaskWords"));
+		TIMESTAMP_COMPUTE_AND_GRAPHICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timestampComputeAndGraphics"));
+		TIMESTAMP_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timestampPeriod"));
+		MAX_CLIP_DISTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxClipDistances"));
+		MAX_CULL_DISTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCullDistances"));
+		MAX_COMBINED_CLIP_AND_CULL_DISTANCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCombinedClipAndCullDistances"));
+		DISCRETE_QUEUE_PRIORITIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discreteQueuePriorities"));
+		POINT_SIZE_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pointSizeRange"), PathElement.sequenceElement());
+		LINE_WIDTH_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineWidthRange"), PathElement.sequenceElement());
+		POINT_SIZE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pointSizeGranularity"));
+		LINE_WIDTH_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineWidthGranularity"));
+		STRICT_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("strictLines"));
+		STANDARD_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("standardSampleLocations"));
+		OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalBufferCopyOffsetAlignment"));
+		OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalBufferCopyRowPitchAlignment"));
+		NON_COHERENT_ATOM_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonCoherentAtomSize"));
+		
+		MAX_IMAGE_DIMENSION1_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimension1D"));
+		MAX_IMAGE_DIMENSION2_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimension2D"));
+		MAX_IMAGE_DIMENSION3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimension3D"));
+		MAX_IMAGE_DIMENSION_CUBE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageDimensionCube"));
+		MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageArrayLayers"));
+		MAX_TEXEL_BUFFER_ELEMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTexelBufferElements"));
+		MAX_UNIFORM_BUFFER_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUniformBufferRange"));
+		MAX_STORAGE_BUFFER_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxStorageBufferRange"));
+		MAX_PUSH_CONSTANTS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushConstantsSize"));
+		MAX_MEMORY_ALLOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMemoryAllocationCount"));
+		MAX_SAMPLER_ALLOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerAllocationCount"));
+		BUFFER_IMAGE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferImageGranularity"));
+		SPARSE_ADDRESS_SPACE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseAddressSpaceSize"));
+		MAX_BOUND_DESCRIPTOR_SETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBoundDescriptorSets"));
+		MAX_PER_STAGE_DESCRIPTOR_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorSamplers"));
+		MAX_PER_STAGE_DESCRIPTOR_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUniformBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorStorageBuffers"));
+		MAX_PER_STAGE_DESCRIPTOR_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorSampledImages"));
+		MAX_PER_STAGE_DESCRIPTOR_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorStorageImages"));
+		MAX_PER_STAGE_DESCRIPTOR_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorInputAttachments"));
+		MAX_PER_STAGE_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageResources"));
+		MAX_DESCRIPTOR_SET_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetSamplers"));
+		MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUniformBuffers"));
+		MAX_DESCRIPTOR_SET_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageBuffers"));
+		MAX_DESCRIPTOR_SET_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_SAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetSampledImages"));
+		MAX_DESCRIPTOR_SET_STORAGE_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageImages"));
+		MAX_DESCRIPTOR_SET_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetInputAttachments"));
+		MAX_VERTEX_INPUT_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputAttributes"));
+		MAX_VERTEX_INPUT_BINDINGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputBindings"));
+		MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputAttributeOffset"));
+		MAX_VERTEX_INPUT_BINDING_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexInputBindingStride"));
+		MAX_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexOutputComponents"));
+		MAX_TESSELLATION_GENERATION_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationGenerationLevel"));
+		MAX_TESSELLATION_PATCH_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationPatchSize"));
+		MAX_TESSELLATION_CONTROL_PER_VERTEX_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlPerVertexInputComponents"));
+		MAX_TESSELLATION_CONTROL_PER_VERTEX_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlPerVertexOutputComponents"));
+		MAX_TESSELLATION_CONTROL_PER_PATCH_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlPerPatchOutputComponents"));
+		MAX_TESSELLATION_CONTROL_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationControlTotalOutputComponents"));
+		MAX_TESSELLATION_EVALUATION_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationEvaluationInputComponents"));
+		MAX_TESSELLATION_EVALUATION_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTessellationEvaluationOutputComponents"));
+		MAX_GEOMETRY_SHADER_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryShaderInvocations"));
+		MAX_GEOMETRY_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryInputComponents"));
+		MAX_GEOMETRY_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryOutputComponents"));
+		MAX_GEOMETRY_OUTPUT_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryOutputVertices"));
+		MAX_GEOMETRY_TOTAL_OUTPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryTotalOutputComponents"));
+		MAX_FRAGMENT_INPUT_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentInputComponents"));
+		MAX_FRAGMENT_OUTPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentOutputAttachments"));
+		MAX_FRAGMENT_DUAL_SRC_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentDualSrcAttachments"));
+		MAX_FRAGMENT_COMBINED_OUTPUT_RESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentCombinedOutputResources"));
+		MAX_COMPUTE_SHARED_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeSharedMemorySize"));
+		MAX_COMPUTE_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkGroupCount"));
+		MAX_COMPUTE_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkGroupInvocations"));
+		MAX_COMPUTE_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkGroupSize"));
+		SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subPixelPrecisionBits"));
+		SUB_TEXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subTexelPrecisionBits"));
+		MIPMAP_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipmapPrecisionBits"));
+		MAX_DRAW_INDEXED_INDEX_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawIndexedIndexValue"));
+		MAX_DRAW_INDIRECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawIndirectCount"));
+		MAX_SAMPLER_LOD_BIAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerLodBias"));
+		MAX_SAMPLER_ANISOTROPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerAnisotropy"));
+		MAX_VIEWPORTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxViewports"));
+		MAX_VIEWPORT_DIMENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxViewportDimensions"));
+		VIEWPORT_BOUNDS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportBoundsRange"));
+		VIEWPORT_SUB_PIXEL_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportSubPixelBits"));
+		MIN_MEMORY_MAP_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minMemoryMapAlignment"));
+		MIN_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTexelBufferOffsetAlignment"));
+		MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minUniformBufferOffsetAlignment"));
+		MIN_STORAGE_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minStorageBufferOffsetAlignment"));
+		MIN_TEXEL_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTexelOffset"));
+		MAX_TEXEL_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTexelOffset"));
+		MIN_TEXEL_GATHER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTexelGatherOffset"));
+		MAX_TEXEL_GATHER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTexelGatherOffset"));
+		MIN_INTERPOLATION_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minInterpolationOffset"));
+		MAX_INTERPOLATION_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInterpolationOffset"));
+		SUB_PIXEL_INTERPOLATION_OFFSET_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subPixelInterpolationOffsetBits"));
+		MAX_FRAMEBUFFER_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFramebufferWidth"));
+		MAX_FRAMEBUFFER_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFramebufferHeight"));
+		MAX_FRAMEBUFFER_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFramebufferLayers"));
+		FRAMEBUFFER_COLOR_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferColorSampleCounts"));
+		FRAMEBUFFER_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferDepthSampleCounts"));
+		FRAMEBUFFER_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferStencilSampleCounts"));
+		FRAMEBUFFER_NO_ATTACHMENTS_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebufferNoAttachmentsSampleCounts"));
+		MAX_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxColorAttachments"));
+		SAMPLED_IMAGE_COLOR_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageColorSampleCounts"));
+		SAMPLED_IMAGE_INTEGER_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageIntegerSampleCounts"));
+		SAMPLED_IMAGE_DEPTH_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageDepthSampleCounts"));
+		SAMPLED_IMAGE_STENCIL_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampledImageStencilSampleCounts"));
+		STORAGE_IMAGE_SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageImageSampleCounts"));
+		MAX_SAMPLE_MASK_WORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSampleMaskWords"));
+		TIMESTAMP_COMPUTE_AND_GRAPHICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timestampComputeAndGraphics"));
+		TIMESTAMP_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timestampPeriod"));
+		MAX_CLIP_DISTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxClipDistances"));
+		MAX_CULL_DISTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCullDistances"));
+		MAX_COMBINED_CLIP_AND_CULL_DISTANCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCombinedClipAndCullDistances"));
+		DISCRETE_QUEUE_PRIORITIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discreteQueuePriorities"));
+		POINT_SIZE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pointSizeRange"));
+		LINE_WIDTH_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineWidthRange"));
+		POINT_SIZE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pointSizeGranularity"));
+		LINE_WIDTH_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineWidthGranularity"));
+		STRICT_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("strictLines"));
+		STANDARD_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("standardSampleLocations"));
+		OPTIMAL_BUFFER_COPY_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalBufferCopyOffsetAlignment"));
+		OPTIMAL_BUFFER_COPY_ROW_PITCH_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalBufferCopyRowPitchAlignment"));
+		NON_COHERENT_ATOM_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonCoherentAtomSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceLimits() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceLimits(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceLimits(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceLimits() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceLimits(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceLimits(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #maxImageDimension1D()
     public VkPhysicalDeviceLimits maxImageDimension1D(int maxImageDimension1D) {
@@ -1691,5 +1691,5 @@ public final class VkPhysicalDeviceLimits
             segment -> new VkPhysicalDeviceLimits(segment)
         );
     }
-    
+
 }

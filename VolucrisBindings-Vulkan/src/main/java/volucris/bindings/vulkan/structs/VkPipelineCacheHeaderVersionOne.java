@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPipelineCacheHeaderVersionOne
 		implements Struct<VkPipelineCacheHeaderVersionOne> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle HEADER_SIZE_HANDLE;
-    public static final VarHandle HEADER_VERSION_HANDLE;
-    public static final VarHandle VENDOR_ID_HANDLE;
-    public static final VarHandle DEVICE_ID_HANDLE;
-    public static final VarHandle PIPELINE_CACHE_UUID_HANDLE;
+	public static final VarHandle HEADER_SIZE_HANDLE;
+	public static final VarHandle HEADER_VERSION_HANDLE;
+	public static final VarHandle VENDOR_ID_HANDLE;
+	public static final VarHandle DEVICE_ID_HANDLE;
+	public static final VarHandle PIPELINE_CACHE_UUID_HANDLE;
 
-    public static final long HEADER_SIZE_BYTE_OFFSET;
-    public static final long HEADER_VERSION_BYTE_OFFSET;
-    public static final long VENDOR_ID_BYTE_OFFSET;
-    public static final long DEVICE_ID_BYTE_OFFSET;
-    public static final long PIPELINE_CACHE_UUID_BYTE_OFFSET;
+	public static final long HEADER_SIZE_BYTE_OFFSET;
+	public static final long HEADER_VERSION_BYTE_OFFSET;
+	public static final long VENDOR_ID_BYTE_OFFSET;
+	public static final long DEVICE_ID_BYTE_OFFSET;
+	public static final long PIPELINE_CACHE_UUID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("headerSize"),
-            JAVA_INT.withName("headerVersion"),
-            JAVA_INT.withName("vendorID"),
-            JAVA_INT.withName("deviceID"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pipelineCacheUUID")
-        ).withName("VkPipelineCacheHeaderVersionOne").withByteAlignment(4);
-        
-        HEADER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerSize"));
-        HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerVersion"));
-        VENDOR_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorID"));
-        DEVICE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceID"));
-        PIPELINE_CACHE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCacheUUID"), PathElement.sequenceElement());
-        
-        HEADER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerSize"));
-        HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerVersion"));
-        VENDOR_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorID"));
-        DEVICE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceID"));
-        PIPELINE_CACHE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCacheUUID"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("headerSize"),
+		    JAVA_INT.withName("headerVersion"),
+		    JAVA_INT.withName("vendorID"),
+		    JAVA_INT.withName("deviceID"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pipelineCacheUUID")
+		).withName("VkPipelineCacheHeaderVersionOne").withByteAlignment(4);
+		
+		HEADER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerSize"));
+		HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerVersion"));
+		VENDOR_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorID"));
+		DEVICE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceID"));
+		PIPELINE_CACHE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCacheUUID"), PathElement.sequenceElement());
+		
+		HEADER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerSize"));
+		HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerVersion"));
+		VENDOR_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorID"));
+		DEVICE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceID"));
+		PIPELINE_CACHE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCacheUUID"));
+		//@formatter:on
+	}
 
-    public VkPipelineCacheHeaderVersionOne() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineCacheHeaderVersionOne(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineCacheHeaderVersionOne(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineCacheHeaderVersionOne() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineCacheHeaderVersionOne(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineCacheHeaderVersionOne(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #headerSize()
     public VkPipelineCacheHeaderVersionOne headerSize(int headerSize) {
@@ -173,5 +173,5 @@ public final class VkPipelineCacheHeaderVersionOne
             segment -> new VkPipelineCacheHeaderVersionOne(segment)
         );
     }
-    
+
 }

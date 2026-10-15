@@ -21,81 +21,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassCreateInfo
 		implements Struct<VkRenderPassCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_ATTACHMENTS_HANDLE;
-    public static final VarHandle SUBPASS_COUNT_HANDLE;
-    public static final VarHandle P_SUBPASSES_HANDLE;
-    public static final VarHandle DEPENDENCY_COUNT_HANDLE;
-    public static final VarHandle P_DEPENDENCIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_ATTACHMENTS_HANDLE;
+	public static final VarHandle SUBPASS_COUNT_HANDLE;
+	public static final VarHandle P_SUBPASSES_HANDLE;
+	public static final VarHandle DEPENDENCY_COUNT_HANDLE;
+	public static final VarHandle P_DEPENDENCIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_ATTACHMENTS_BYTE_OFFSET;
-    public static final long SUBPASS_COUNT_BYTE_OFFSET;
-    public static final long P_SUBPASSES_BYTE_OFFSET;
-    public static final long DEPENDENCY_COUNT_BYTE_OFFSET;
-    public static final long P_DEPENDENCIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_ATTACHMENTS_BYTE_OFFSET;
+	public static final long SUBPASS_COUNT_BYTE_OFFSET;
+	public static final long P_SUBPASSES_BYTE_OFFSET;
+	public static final long DEPENDENCY_COUNT_BYTE_OFFSET;
+	public static final long P_DEPENDENCIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("attachmentCount"),
-            UNBOUNDED_ADDRESS.withName("pAttachments"),
-            JAVA_INT.withName("subpassCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSubpasses"),
-            JAVA_INT.withName("dependencyCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDependencies")
-        ).withName("VkRenderPassCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentCount"));
-        P_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAttachments"));
-        SUBPASS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassCount"));
-        P_SUBPASSES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSubpasses"));
-        DEPENDENCY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyCount"));
-        P_DEPENDENCIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDependencies"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentCount"));
-        P_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAttachments"));
-        SUBPASS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassCount"));
-        P_SUBPASSES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSubpasses"));
-        DEPENDENCY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyCount"));
-        P_DEPENDENCIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDependencies"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("attachmentCount"),
+		    UNBOUNDED_ADDRESS.withName("pAttachments"),
+		    JAVA_INT.withName("subpassCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSubpasses"),
+		    JAVA_INT.withName("dependencyCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDependencies")
+		).withName("VkRenderPassCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentCount"));
+		P_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAttachments"));
+		SUBPASS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassCount"));
+		P_SUBPASSES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSubpasses"));
+		DEPENDENCY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyCount"));
+		P_DEPENDENCIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDependencies"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentCount"));
+		P_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAttachments"));
+		SUBPASS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassCount"));
+		P_SUBPASSES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSubpasses"));
+		DEPENDENCY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyCount"));
+		P_DEPENDENCIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDependencies"));
+		//@formatter:on
+	}
 
-    public VkRenderPassCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderPassCreateInfo sType(int sType) {
@@ -258,5 +258,5 @@ public final class VkRenderPassCreateInfo
             segment -> new VkRenderPassCreateInfo(segment)
         );
     }
-    
+
 }

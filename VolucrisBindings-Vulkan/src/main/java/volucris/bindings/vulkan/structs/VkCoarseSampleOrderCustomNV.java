@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCoarseSampleOrderCustomNV
 		implements Struct<VkCoarseSampleOrderCustomNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SHADING_RATE_HANDLE;
-    public static final VarHandle SAMPLE_COUNT_HANDLE;
-    public static final VarHandle SAMPLE_LOCATION_COUNT_HANDLE;
-    public static final VarHandle P_SAMPLE_LOCATIONS_HANDLE;
+	public static final VarHandle SHADING_RATE_HANDLE;
+	public static final VarHandle SAMPLE_COUNT_HANDLE;
+	public static final VarHandle SAMPLE_LOCATION_COUNT_HANDLE;
+	public static final VarHandle P_SAMPLE_LOCATIONS_HANDLE;
 
-    public static final long SHADING_RATE_BYTE_OFFSET;
-    public static final long SAMPLE_COUNT_BYTE_OFFSET;
-    public static final long SAMPLE_LOCATION_COUNT_BYTE_OFFSET;
-    public static final long P_SAMPLE_LOCATIONS_BYTE_OFFSET;
+	public static final long SHADING_RATE_BYTE_OFFSET;
+	public static final long SAMPLE_COUNT_BYTE_OFFSET;
+	public static final long SAMPLE_LOCATION_COUNT_BYTE_OFFSET;
+	public static final long P_SAMPLE_LOCATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("shadingRate"),
-            JAVA_INT.withName("sampleCount"),
-            JAVA_INT.withName("sampleLocationCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSampleLocations")
-        ).withName("VkCoarseSampleOrderCustomNV").withByteAlignment(8);
-        
-        SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRate"));
-        SAMPLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleCount"));
-        SAMPLE_LOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationCount"));
-        P_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampleLocations"));
-        
-        SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRate"));
-        SAMPLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleCount"));
-        SAMPLE_LOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationCount"));
-        P_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampleLocations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("shadingRate"),
+		    JAVA_INT.withName("sampleCount"),
+		    JAVA_INT.withName("sampleLocationCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSampleLocations")
+		).withName("VkCoarseSampleOrderCustomNV").withByteAlignment(8);
+		
+		SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRate"));
+		SAMPLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleCount"));
+		SAMPLE_LOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleLocationCount"));
+		P_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampleLocations"));
+		
+		SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRate"));
+		SAMPLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleCount"));
+		SAMPLE_LOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleLocationCount"));
+		P_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampleLocations"));
+		//@formatter:on
+	}
 
-    public VkCoarseSampleOrderCustomNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCoarseSampleOrderCustomNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCoarseSampleOrderCustomNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCoarseSampleOrderCustomNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCoarseSampleOrderCustomNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCoarseSampleOrderCustomNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #shadingRate()
     public VkCoarseSampleOrderCustomNV shadingRate(int shadingRate) {
@@ -166,5 +166,5 @@ public final class VkCoarseSampleOrderCustomNV
             segment -> new VkCoarseSampleOrderCustomNV(segment)
         );
     }
-    
+
 }

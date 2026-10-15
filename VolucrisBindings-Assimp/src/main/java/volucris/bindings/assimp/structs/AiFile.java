@@ -31,68 +31,68 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiFile
 		implements Struct<AiFile> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle READ_PROC_HANDLE;
-    public static final VarHandle WRITE_PROC_HANDLE;
-    public static final VarHandle TELL_PROC_HANDLE;
-    public static final VarHandle FILE_SIZE_PROC_HANDLE;
-    public static final VarHandle SEEK_PROC_HANDLE;
-    public static final VarHandle FLUSH_PROC_HANDLE;
-    public static final VarHandle USER_DATA_HANDLE;
+	public static final VarHandle READ_PROC_HANDLE;
+	public static final VarHandle WRITE_PROC_HANDLE;
+	public static final VarHandle TELL_PROC_HANDLE;
+	public static final VarHandle FILE_SIZE_PROC_HANDLE;
+	public static final VarHandle SEEK_PROC_HANDLE;
+	public static final VarHandle FLUSH_PROC_HANDLE;
+	public static final VarHandle USER_DATA_HANDLE;
 
-    public static final long READ_PROC_BYTE_OFFSET;
-    public static final long WRITE_PROC_BYTE_OFFSET;
-    public static final long TELL_PROC_BYTE_OFFSET;
-    public static final long FILE_SIZE_PROC_BYTE_OFFSET;
-    public static final long SEEK_PROC_BYTE_OFFSET;
-    public static final long FLUSH_PROC_BYTE_OFFSET;
-    public static final long USER_DATA_BYTE_OFFSET;
+	public static final long READ_PROC_BYTE_OFFSET;
+	public static final long WRITE_PROC_BYTE_OFFSET;
+	public static final long TELL_PROC_BYTE_OFFSET;
+	public static final long FILE_SIZE_PROC_BYTE_OFFSET;
+	public static final long SEEK_PROC_BYTE_OFFSET;
+	public static final long FLUSH_PROC_BYTE_OFFSET;
+	public static final long USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("ReadProc"),
-            UNBOUNDED_ADDRESS.withName("WriteProc"),
-            UNBOUNDED_ADDRESS.withName("TellProc"),
-            UNBOUNDED_ADDRESS.withName("FileSizeProc"),
-            UNBOUNDED_ADDRESS.withName("SeekProc"),
-            UNBOUNDED_ADDRESS.withName("FlushProc"),
-            UNBOUNDED_ADDRESS.withName("UserData")
-        ).withName("aiFile").withByteAlignment(8);
-        
-        READ_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ReadProc"));
-        WRITE_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("WriteProc"));
-        TELL_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TellProc"));
-        FILE_SIZE_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FileSizeProc"));
-        SEEK_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("SeekProc"));
-        FLUSH_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FlushProc"));
-        USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("UserData"));
-        
-        READ_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ReadProc"));
-        WRITE_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("WriteProc"));
-        TELL_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TellProc"));
-        FILE_SIZE_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FileSizeProc"));
-        SEEK_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("SeekProc"));
-        FLUSH_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FlushProc"));
-        USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("UserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("ReadProc"),
+		    UNBOUNDED_ADDRESS.withName("WriteProc"),
+		    UNBOUNDED_ADDRESS.withName("TellProc"),
+		    UNBOUNDED_ADDRESS.withName("FileSizeProc"),
+		    UNBOUNDED_ADDRESS.withName("SeekProc"),
+		    UNBOUNDED_ADDRESS.withName("FlushProc"),
+		    UNBOUNDED_ADDRESS.withName("UserData")
+		).withName("aiFile").withByteAlignment(8);
+		
+		READ_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ReadProc"));
+		WRITE_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("WriteProc"));
+		TELL_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TellProc"));
+		FILE_SIZE_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FileSizeProc"));
+		SEEK_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("SeekProc"));
+		FLUSH_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FlushProc"));
+		USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("UserData"));
+		
+		READ_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ReadProc"));
+		WRITE_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("WriteProc"));
+		TELL_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TellProc"));
+		FILE_SIZE_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FileSizeProc"));
+		SEEK_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("SeekProc"));
+		FLUSH_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FlushProc"));
+		USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("UserData"));
+		//@formatter:on
+	}
 
-    public AiFile() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiFile(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiFile(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiFile() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiFile(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiFile(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #readProc()
     public AiFile readProc(AiFileReadProc readProc) {
@@ -274,5 +274,5 @@ public final class AiFile
             segment -> new AiFile(segment)
         );
     }
-    
+
 }

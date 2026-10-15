@@ -20,51 +20,72 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VmaAllocationInfo2
 		implements Struct<VmaAllocationInfo2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BLOCK_SIZE_HANDLE;
-    public static final VarHandle DEDICATED_MEMORY_HANDLE;
+	public static final VarHandle BLOCK_SIZE_HANDLE;
+	public static final VarHandle DEDICATED_MEMORY_HANDLE;
 
-    public static final long ALLOCATION_INFO_BYTE_OFFSET;
-    public static final long BLOCK_SIZE_BYTE_OFFSET;
-    public static final long DEDICATED_MEMORY_BYTE_OFFSET;
+	public static final long ALLOCATION_INFO_BYTE_OFFSET;
+	public static final long BLOCK_SIZE_BYTE_OFFSET;
+	public static final long DEDICATED_MEMORY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VmaAllocationInfo allocationInfo;
+	private final VmaAllocationInfo allocationInfo;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VmaAllocationInfo.LAYOUT.withName("allocationInfo"),
-            JAVA_LONG.withName("blockSize"),
-            JAVA_INT.withName("dedicatedMemory"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VmaAllocationInfo2").withByteAlignment(8);
-        
-        BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockSize"));
-        DEDICATED_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dedicatedMemory"));
-        
-        ALLOCATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationInfo"));
-        BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockSize"));
-        DEDICATED_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dedicatedMemory"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VmaAllocationInfo.LAYOUT.withName("allocationInfo"),
+		    JAVA_LONG.withName("blockSize"),
+		    JAVA_INT.withName("dedicatedMemory"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VmaAllocationInfo2").withByteAlignment(8);
+		
+		BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockSize"));
+		DEDICATED_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dedicatedMemory"));
+		
+		ALLOCATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationInfo"));
+		BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockSize"));
+		DEDICATED_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dedicatedMemory"));
+		//@formatter:on
+	}
 
-    public VmaAllocationInfo2() {
-        this(Arena.ofAuto());
+	public VmaAllocationInfo2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaAllocationInfo2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaAllocationInfo2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    allocationInfo = new VmaAllocationInfo(segment.asSlice(ALLOCATION_INFO_BYTE_OFFSET, VmaAllocationInfo.LAYOUT));
+	}
+
+    /// @see #allocationInfo()
+    public VmaAllocationInfo2 allocationInfo(Consumer<VmaAllocationInfo> consumer) {
+    	consumer.accept(allocationInfo);
+    	return this;
     }
     
-    public VmaAllocationInfo2(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #allocationInfo()
+    public VmaAllocationInfo2 allocationInfo(VmaAllocationInfo other) {
+    	allocationInfo.set(other);
+    	return this;
     }
     
-    public VmaAllocationInfo2(MemorySegment segment) {
-        this.segment = segment;
-    
-        allocationInfo = new VmaAllocationInfo(segment.asSlice(ALLOCATION_INFO_BYTE_OFFSET, VmaAllocationInfo.LAYOUT));
+    /// ```
+    /// \brief Basic parameters of the allocation.
+    ///     
+    ///     If you need only these, you can use function vmaGetAllocationInfo() and structure #VmaAllocationInfo instead.
+    /// ```
+    public VmaAllocationInfo allocationInfo() {
+    	return allocationInfo;
     }
-
+    
     /// @see #blockSize()
     public VmaAllocationInfo2 blockSize(long blockSize) {
     	BLOCK_SIZE_HANDLE.set(segment, 0L, blockSize);
@@ -94,27 +115,6 @@ public final class VmaAllocationInfo2
     /// ```
     public int dedicatedMemory() {
     	return (int) DEDICATED_MEMORY_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #allocationInfo()
-    public VmaAllocationInfo2 allocationInfo(Consumer<VmaAllocationInfo> consumer) {
-    	consumer.accept(allocationInfo);
-    	return this;
-    }
-    
-    /// @see #allocationInfo()
-    public VmaAllocationInfo2 allocationInfo(VmaAllocationInfo other) {
-    	allocationInfo.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// \brief Basic parameters of the allocation.
-    ///     
-    ///     If you need only these, you can use function vmaGetAllocationInfo() and structure #VmaAllocationInfo instead.
-    /// ```
-    public VmaAllocationInfo allocationInfo() {
-    	return allocationInfo;
     }
     
     @Override
@@ -168,5 +168,5 @@ public final class VmaAllocationInfo2
             segment -> new VmaAllocationInfo2(segment)
         );
     }
-    
+
 }

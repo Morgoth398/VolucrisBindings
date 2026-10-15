@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPushDescriptorSetWithTemplateInfo
 		implements Struct<VkPushDescriptorSetWithTemplateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_UPDATE_TEMPLATE_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle SET_HANDLE;
-    public static final VarHandle P_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_UPDATE_TEMPLATE_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle SET_HANDLE;
+	public static final VarHandle P_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_UPDATE_TEMPLATE_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long SET_BYTE_OFFSET;
-    public static final long P_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_UPDATE_TEMPLATE_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long SET_BYTE_OFFSET;
+	public static final long P_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("descriptorUpdateTemplate"),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            JAVA_INT.withName("set"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pData")
-        ).withName("VkPushDescriptorSetWithTemplateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_UPDATE_TEMPLATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorUpdateTemplate"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("set"));
-        P_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_UPDATE_TEMPLATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorUpdateTemplate"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("set"));
-        P_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("descriptorUpdateTemplate"),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    JAVA_INT.withName("set"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pData")
+		).withName("VkPushDescriptorSetWithTemplateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_UPDATE_TEMPLATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorUpdateTemplate"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("set"));
+		P_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_UPDATE_TEMPLATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorUpdateTemplate"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("set"));
+		P_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pData"));
+		//@formatter:on
+	}
 
-    public VkPushDescriptorSetWithTemplateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPushDescriptorSetWithTemplateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPushDescriptorSetWithTemplateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPushDescriptorSetWithTemplateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPushDescriptorSetWithTemplateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPushDescriptorSetWithTemplateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPushDescriptorSetWithTemplateInfo sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPushDescriptorSetWithTemplateInfo
             segment -> new VkPushDescriptorSetWithTemplateInfo(segment)
         );
     }
-    
+
 }

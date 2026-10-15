@@ -21,100 +21,100 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceOpticalFlowPropertiesNV
 		implements Struct<VkPhysicalDeviceOpticalFlowPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SUPPORTED_OUTPUT_GRID_SIZES_HANDLE;
-    public static final VarHandle SUPPORTED_HINT_GRID_SIZES_HANDLE;
-    public static final VarHandle HINT_SUPPORTED_HANDLE;
-    public static final VarHandle COST_SUPPORTED_HANDLE;
-    public static final VarHandle BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE;
-    public static final VarHandle GLOBAL_FLOW_SUPPORTED_HANDLE;
-    public static final VarHandle MIN_WIDTH_HANDLE;
-    public static final VarHandle MIN_HEIGHT_HANDLE;
-    public static final VarHandle MAX_WIDTH_HANDLE;
-    public static final VarHandle MAX_HEIGHT_HANDLE;
-    public static final VarHandle MAX_NUM_REGIONS_OF_INTEREST_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SUPPORTED_OUTPUT_GRID_SIZES_HANDLE;
+	public static final VarHandle SUPPORTED_HINT_GRID_SIZES_HANDLE;
+	public static final VarHandle HINT_SUPPORTED_HANDLE;
+	public static final VarHandle COST_SUPPORTED_HANDLE;
+	public static final VarHandle BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE;
+	public static final VarHandle GLOBAL_FLOW_SUPPORTED_HANDLE;
+	public static final VarHandle MIN_WIDTH_HANDLE;
+	public static final VarHandle MIN_HEIGHT_HANDLE;
+	public static final VarHandle MAX_WIDTH_HANDLE;
+	public static final VarHandle MAX_HEIGHT_HANDLE;
+	public static final VarHandle MAX_NUM_REGIONS_OF_INTEREST_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SUPPORTED_OUTPUT_GRID_SIZES_BYTE_OFFSET;
-    public static final long SUPPORTED_HINT_GRID_SIZES_BYTE_OFFSET;
-    public static final long HINT_SUPPORTED_BYTE_OFFSET;
-    public static final long COST_SUPPORTED_BYTE_OFFSET;
-    public static final long BIDIRECTIONAL_FLOW_SUPPORTED_BYTE_OFFSET;
-    public static final long GLOBAL_FLOW_SUPPORTED_BYTE_OFFSET;
-    public static final long MIN_WIDTH_BYTE_OFFSET;
-    public static final long MIN_HEIGHT_BYTE_OFFSET;
-    public static final long MAX_WIDTH_BYTE_OFFSET;
-    public static final long MAX_HEIGHT_BYTE_OFFSET;
-    public static final long MAX_NUM_REGIONS_OF_INTEREST_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SUPPORTED_OUTPUT_GRID_SIZES_BYTE_OFFSET;
+	public static final long SUPPORTED_HINT_GRID_SIZES_BYTE_OFFSET;
+	public static final long HINT_SUPPORTED_BYTE_OFFSET;
+	public static final long COST_SUPPORTED_BYTE_OFFSET;
+	public static final long BIDIRECTIONAL_FLOW_SUPPORTED_BYTE_OFFSET;
+	public static final long GLOBAL_FLOW_SUPPORTED_BYTE_OFFSET;
+	public static final long MIN_WIDTH_BYTE_OFFSET;
+	public static final long MIN_HEIGHT_BYTE_OFFSET;
+	public static final long MAX_WIDTH_BYTE_OFFSET;
+	public static final long MAX_HEIGHT_BYTE_OFFSET;
+	public static final long MAX_NUM_REGIONS_OF_INTEREST_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("supportedOutputGridSizes"),
-            JAVA_INT.withName("supportedHintGridSizes"),
-            JAVA_INT.withName("hintSupported"),
-            JAVA_INT.withName("costSupported"),
-            JAVA_INT.withName("bidirectionalFlowSupported"),
-            JAVA_INT.withName("globalFlowSupported"),
-            JAVA_INT.withName("minWidth"),
-            JAVA_INT.withName("minHeight"),
-            JAVA_INT.withName("maxWidth"),
-            JAVA_INT.withName("maxHeight"),
-            JAVA_INT.withName("maxNumRegionsOfInterest"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceOpticalFlowPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SUPPORTED_OUTPUT_GRID_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedOutputGridSizes"));
-        SUPPORTED_HINT_GRID_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedHintGridSizes"));
-        HINT_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hintSupported"));
-        COST_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("costSupported"));
-        BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bidirectionalFlowSupported"));
-        GLOBAL_FLOW_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalFlowSupported"));
-        MIN_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minWidth"));
-        MIN_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minHeight"));
-        MAX_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWidth"));
-        MAX_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxHeight"));
-        MAX_NUM_REGIONS_OF_INTEREST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxNumRegionsOfInterest"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SUPPORTED_OUTPUT_GRID_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedOutputGridSizes"));
-        SUPPORTED_HINT_GRID_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedHintGridSizes"));
-        HINT_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hintSupported"));
-        COST_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("costSupported"));
-        BIDIRECTIONAL_FLOW_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bidirectionalFlowSupported"));
-        GLOBAL_FLOW_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalFlowSupported"));
-        MIN_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minWidth"));
-        MIN_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minHeight"));
-        MAX_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWidth"));
-        MAX_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxHeight"));
-        MAX_NUM_REGIONS_OF_INTEREST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxNumRegionsOfInterest"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("supportedOutputGridSizes"),
+		    JAVA_INT.withName("supportedHintGridSizes"),
+		    JAVA_INT.withName("hintSupported"),
+		    JAVA_INT.withName("costSupported"),
+		    JAVA_INT.withName("bidirectionalFlowSupported"),
+		    JAVA_INT.withName("globalFlowSupported"),
+		    JAVA_INT.withName("minWidth"),
+		    JAVA_INT.withName("minHeight"),
+		    JAVA_INT.withName("maxWidth"),
+		    JAVA_INT.withName("maxHeight"),
+		    JAVA_INT.withName("maxNumRegionsOfInterest"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceOpticalFlowPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SUPPORTED_OUTPUT_GRID_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedOutputGridSizes"));
+		SUPPORTED_HINT_GRID_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedHintGridSizes"));
+		HINT_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hintSupported"));
+		COST_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("costSupported"));
+		BIDIRECTIONAL_FLOW_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bidirectionalFlowSupported"));
+		GLOBAL_FLOW_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("globalFlowSupported"));
+		MIN_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minWidth"));
+		MIN_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minHeight"));
+		MAX_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWidth"));
+		MAX_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxHeight"));
+		MAX_NUM_REGIONS_OF_INTEREST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxNumRegionsOfInterest"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SUPPORTED_OUTPUT_GRID_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedOutputGridSizes"));
+		SUPPORTED_HINT_GRID_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedHintGridSizes"));
+		HINT_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hintSupported"));
+		COST_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("costSupported"));
+		BIDIRECTIONAL_FLOW_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bidirectionalFlowSupported"));
+		GLOBAL_FLOW_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("globalFlowSupported"));
+		MIN_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minWidth"));
+		MIN_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minHeight"));
+		MAX_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWidth"));
+		MAX_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxHeight"));
+		MAX_NUM_REGIONS_OF_INTEREST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxNumRegionsOfInterest"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceOpticalFlowPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceOpticalFlowPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceOpticalFlowPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceOpticalFlowPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceOpticalFlowPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceOpticalFlowPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceOpticalFlowPropertiesNV sType(int sType) {
@@ -302,5 +302,5 @@ public final class VkPhysicalDeviceOpticalFlowPropertiesNV
             segment -> new VkPhysicalDeviceOpticalFlowPropertiesNV(segment)
         );
     }
-    
+
 }

@@ -28,67 +28,50 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiUVTransform
 		implements Struct<AiUVTransform> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_ROTATION_HANDLE;
+	public static final VarHandle M_ROTATION_HANDLE;
 
-    public static final long M_TRANSLATION_BYTE_OFFSET;
-    public static final long M_SCALING_BYTE_OFFSET;
-    public static final long M_ROTATION_BYTE_OFFSET;
+	public static final long M_TRANSLATION_BYTE_OFFSET;
+	public static final long M_SCALING_BYTE_OFFSET;
+	public static final long M_ROTATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiVector2D mTranslation;
-    private final AiVector2D mScaling;
+	private final AiVector2D mTranslation;
+	private final AiVector2D mScaling;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiVector2D.LAYOUT.withName("mTranslation"),
-            AiVector2D.LAYOUT.withName("mScaling"),
-            JAVA_FLOAT.withName("mRotation")
-        ).withName("aiUVTransform").withByteAlignment(4);
-        
-        M_ROTATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mRotation"));
-        
-        M_TRANSLATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTranslation"));
-        M_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mScaling"));
-        M_ROTATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mRotation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiVector2D.LAYOUT.withName("mTranslation"),
+		    AiVector2D.LAYOUT.withName("mScaling"),
+		    JAVA_FLOAT.withName("mRotation")
+		).withName("aiUVTransform").withByteAlignment(4);
+		
+		M_ROTATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mRotation"));
+		
+		M_TRANSLATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTranslation"));
+		M_SCALING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mScaling"));
+		M_ROTATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mRotation"));
+		//@formatter:on
+	}
 
-    public AiUVTransform() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiUVTransform(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiUVTransform(MemorySegment segment) {
-        this.segment = segment;
-    
-        mTranslation = new AiVector2D(segment.asSlice(M_TRANSLATION_BYTE_OFFSET, AiVector2D.LAYOUT));
-        mScaling = new AiVector2D(segment.asSlice(M_SCALING_BYTE_OFFSET, AiVector2D.LAYOUT));
-    }
+	public AiUVTransform() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiUVTransform(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiUVTransform(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mTranslation = new AiVector2D(segment.asSlice(M_TRANSLATION_BYTE_OFFSET, AiVector2D.LAYOUT));
+	    mScaling = new AiVector2D(segment.asSlice(M_SCALING_BYTE_OFFSET, AiVector2D.LAYOUT));
+	}
 
-    /// @see #mRotation()
-    public AiUVTransform mRotation(float mRotation) {
-    	M_ROTATION_HANDLE.set(segment, 0L, mRotation);
-    	return this;
-    }
-    
-    /// ```
-    /// Rotation - in counter-clockwise direction.
-    /// 
-    /// The rotation angle is specified in radians. The
-    /// rotation center is 0.5f|0.5f. The default value
-    /// 0.f.
-    /// ```
-    public float mRotation() {
-    	return (float) M_ROTATION_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #mTranslation()
     public AiUVTransform mTranslation(Consumer<AiVector2D> consumer) {
     	consumer.accept(mTranslation);
@@ -129,6 +112,23 @@ public final class AiUVTransform
     /// ```
     public AiVector2D mScaling() {
     	return mScaling;
+    }
+    
+    /// @see #mRotation()
+    public AiUVTransform mRotation(float mRotation) {
+    	M_ROTATION_HANDLE.set(segment, 0L, mRotation);
+    	return this;
+    }
+    
+    /// ```
+    /// Rotation - in counter-clockwise direction.
+    /// 
+    /// The rotation angle is specified in radians. The
+    /// rotation center is 0.5f|0.5f. The default value
+    /// 0.f.
+    /// ```
+    public float mRotation() {
+    	return (float) M_ROTATION_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -182,5 +182,5 @@ public final class AiUVTransform
             segment -> new AiUVTransform(segment)
         );
     }
-    
+
 }

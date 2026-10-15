@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
 		implements Struct<VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EXTENDED_SPARSE_ADDRESS_SPACE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EXTENDED_SPARSE_ADDRESS_SPACE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXTENDED_SPARSE_ADDRESS_SPACE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXTENDED_SPARSE_ADDRESS_SPACE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("extendedSparseAddressSpace"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EXTENDED_SPARSE_ADDRESS_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseAddressSpace"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXTENDED_SPARSE_ADDRESS_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseAddressSpace"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("extendedSparseAddressSpace"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EXTENDED_SPARSE_ADDRESS_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedSparseAddressSpace"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXTENDED_SPARSE_ADDRESS_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedSparseAddressSpace"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV
             segment -> new VkPhysicalDeviceExtendedSparseAddressSpaceFeaturesNV(segment)
         );
     }
-    
+
 }

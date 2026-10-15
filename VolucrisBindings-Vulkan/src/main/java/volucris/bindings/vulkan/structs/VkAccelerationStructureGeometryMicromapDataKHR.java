@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureGeometryMicromapDataKHR
 		implements Struct<VkAccelerationStructureGeometryMicromapDataKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USAGE_COUNTS_COUNT_HANDLE;
-    public static final VarHandle P_USAGE_COUNTS_HANDLE;
-    public static final VarHandle PP_USAGE_COUNTS_HANDLE;
-    public static final VarHandle DATA_HANDLE;
-    public static final VarHandle TRIANGLE_ARRAY_HANDLE;
-    public static final VarHandle TRIANGLE_ARRAY_STRIDE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USAGE_COUNTS_COUNT_HANDLE;
+	public static final VarHandle P_USAGE_COUNTS_HANDLE;
+	public static final VarHandle PP_USAGE_COUNTS_HANDLE;
+	public static final VarHandle DATA_HANDLE;
+	public static final VarHandle TRIANGLE_ARRAY_HANDLE;
+	public static final VarHandle TRIANGLE_ARRAY_STRIDE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USAGE_COUNTS_COUNT_BYTE_OFFSET;
-    public static final long P_USAGE_COUNTS_BYTE_OFFSET;
-    public static final long PP_USAGE_COUNTS_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
-    public static final long TRIANGLE_ARRAY_BYTE_OFFSET;
-    public static final long TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USAGE_COUNTS_COUNT_BYTE_OFFSET;
+	public static final long P_USAGE_COUNTS_BYTE_OFFSET;
+	public static final long PP_USAGE_COUNTS_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
+	public static final long TRIANGLE_ARRAY_BYTE_OFFSET;
+	public static final long TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("usageCountsCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pUsageCounts"),
-            UNBOUNDED_ADDRESS.withName("ppUsageCounts"),
-            JAVA_LONG.withName("data"),
-            JAVA_LONG.withName("triangleArray"),
-            JAVA_LONG.withName("triangleArrayStride")
-        ).withName("VkAccelerationStructureGeometryMicromapDataKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USAGE_COUNTS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usageCountsCount"));
-        P_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUsageCounts"));
-        PP_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppUsageCounts"));
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
-        TRIANGLE_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangleArray"));
-        TRIANGLE_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangleArrayStride"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USAGE_COUNTS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usageCountsCount"));
-        P_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUsageCounts"));
-        PP_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppUsageCounts"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        TRIANGLE_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArray"));
-        TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArrayStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("usageCountsCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pUsageCounts"),
+		    UNBOUNDED_ADDRESS.withName("ppUsageCounts"),
+		    JAVA_LONG.withName("data"),
+		    JAVA_LONG.withName("triangleArray"),
+		    JAVA_LONG.withName("triangleArrayStride")
+		).withName("VkAccelerationStructureGeometryMicromapDataKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USAGE_COUNTS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usageCountsCount"));
+		P_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUsageCounts"));
+		PP_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppUsageCounts"));
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
+		TRIANGLE_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangleArray"));
+		TRIANGLE_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangleArrayStride"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USAGE_COUNTS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usageCountsCount"));
+		P_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUsageCounts"));
+		PP_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppUsageCounts"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		TRIANGLE_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArray"));
+		TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArrayStride"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureGeometryMicromapDataKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureGeometryMicromapDataKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureGeometryMicromapDataKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAccelerationStructureGeometryMicromapDataKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureGeometryMicromapDataKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureGeometryMicromapDataKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAccelerationStructureGeometryMicromapDataKHR sType(int sType) {
@@ -238,5 +238,5 @@ public final class VkAccelerationStructureGeometryMicromapDataKHR
             segment -> new VkAccelerationStructureGeometryMicromapDataKHR(segment)
         );
     }
-    
+
 }

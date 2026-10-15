@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeUsageInfoKHR
 		implements Struct<VkVideoEncodeUsageInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIDEO_USAGE_HINTS_HANDLE;
-    public static final VarHandle VIDEO_CONTENT_HINTS_HANDLE;
-    public static final VarHandle TUNING_MODE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIDEO_USAGE_HINTS_HANDLE;
+	public static final VarHandle VIDEO_CONTENT_HINTS_HANDLE;
+	public static final VarHandle TUNING_MODE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIDEO_USAGE_HINTS_BYTE_OFFSET;
-    public static final long VIDEO_CONTENT_HINTS_BYTE_OFFSET;
-    public static final long TUNING_MODE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIDEO_USAGE_HINTS_BYTE_OFFSET;
+	public static final long VIDEO_CONTENT_HINTS_BYTE_OFFSET;
+	public static final long TUNING_MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("videoUsageHints"),
-            JAVA_INT.withName("videoContentHints"),
-            JAVA_INT.withName("tuningMode"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeUsageInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIDEO_USAGE_HINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoUsageHints"));
-        VIDEO_CONTENT_HINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoContentHints"));
-        TUNING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tuningMode"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIDEO_USAGE_HINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoUsageHints"));
-        VIDEO_CONTENT_HINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoContentHints"));
-        TUNING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tuningMode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("videoUsageHints"),
+		    JAVA_INT.withName("videoContentHints"),
+		    JAVA_INT.withName("tuningMode"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeUsageInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIDEO_USAGE_HINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoUsageHints"));
+		VIDEO_CONTENT_HINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoContentHints"));
+		TUNING_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tuningMode"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIDEO_USAGE_HINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoUsageHints"));
+		VIDEO_CONTENT_HINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoContentHints"));
+		TUNING_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tuningMode"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeUsageInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeUsageInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeUsageInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeUsageInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeUsageInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeUsageInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeUsageInfoKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkVideoEncodeUsageInfoKHR
             segment -> new VkVideoEncodeUsageInfoKHR(segment)
         );
     }
-    
+
 }

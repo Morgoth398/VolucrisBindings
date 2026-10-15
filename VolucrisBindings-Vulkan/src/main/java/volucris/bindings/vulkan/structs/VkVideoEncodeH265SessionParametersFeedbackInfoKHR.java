@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH265SessionParametersFeedbackInfoKHR
 		implements Struct<VkVideoEncodeH265SessionParametersFeedbackInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle HAS_STD_VPSOVERRIDES_HANDLE;
-    public static final VarHandle HAS_STD_SPSOVERRIDES_HANDLE;
-    public static final VarHandle HAS_STD_PPSOVERRIDES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle HAS_STD_VPSOVERRIDES_HANDLE;
+	public static final VarHandle HAS_STD_SPSOVERRIDES_HANDLE;
+	public static final VarHandle HAS_STD_PPSOVERRIDES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long HAS_STD_VPSOVERRIDES_BYTE_OFFSET;
-    public static final long HAS_STD_SPSOVERRIDES_BYTE_OFFSET;
-    public static final long HAS_STD_PPSOVERRIDES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long HAS_STD_VPSOVERRIDES_BYTE_OFFSET;
+	public static final long HAS_STD_SPSOVERRIDES_BYTE_OFFSET;
+	public static final long HAS_STD_PPSOVERRIDES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("hasStdVPSOverrides"),
-            JAVA_INT.withName("hasStdSPSOverrides"),
-            JAVA_INT.withName("hasStdPPSOverrides"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeH265SessionParametersFeedbackInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        HAS_STD_VPSOVERRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasStdVPSOverrides"));
-        HAS_STD_SPSOVERRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasStdSPSOverrides"));
-        HAS_STD_PPSOVERRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasStdPPSOverrides"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        HAS_STD_VPSOVERRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasStdVPSOverrides"));
-        HAS_STD_SPSOVERRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasStdSPSOverrides"));
-        HAS_STD_PPSOVERRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasStdPPSOverrides"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("hasStdVPSOverrides"),
+		    JAVA_INT.withName("hasStdSPSOverrides"),
+		    JAVA_INT.withName("hasStdPPSOverrides"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeH265SessionParametersFeedbackInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		HAS_STD_VPSOVERRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasStdVPSOverrides"));
+		HAS_STD_SPSOVERRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasStdSPSOverrides"));
+		HAS_STD_PPSOVERRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasStdPPSOverrides"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		HAS_STD_VPSOVERRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasStdVPSOverrides"));
+		HAS_STD_SPSOVERRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasStdSPSOverrides"));
+		HAS_STD_PPSOVERRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasStdPPSOverrides"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH265SessionParametersFeedbackInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH265SessionParametersFeedbackInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH265SessionParametersFeedbackInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH265SessionParametersFeedbackInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH265SessionParametersFeedbackInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH265SessionParametersFeedbackInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH265SessionParametersFeedbackInfoKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkVideoEncodeH265SessionParametersFeedbackInfoKHR
             segment -> new VkVideoEncodeH265SessionParametersFeedbackInfoKHR(segment)
         );
     }
-    
+
 }

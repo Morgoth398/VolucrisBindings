@@ -41,65 +41,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIndexOptions
 		implements Struct<CXIndexOptions> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_HANDLE;
-    public static final VarHandle THREAD_BACKGROUND_PRIORITY_FOR_EDITING_HANDLE;
-    public static final VarHandle BIT_FIELDS0_HANDLE;
-    public static final VarHandle PREAMBLE_STORAGE_PATH_HANDLE;
-    public static final VarHandle INVOCATION_EMISSION_PATH_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_HANDLE;
+	public static final VarHandle THREAD_BACKGROUND_PRIORITY_FOR_EDITING_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle PREAMBLE_STORAGE_PATH_HANDLE;
+	public static final VarHandle INVOCATION_EMISSION_PATH_HANDLE;
 
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_BYTE_OFFSET;
-    public static final long THREAD_BACKGROUND_PRIORITY_FOR_EDITING_BYTE_OFFSET;
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
-    public static final long PREAMBLE_STORAGE_PATH_BYTE_OFFSET;
-    public static final long INVOCATION_EMISSION_PATH_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_BYTE_OFFSET;
+	public static final long THREAD_BACKGROUND_PRIORITY_FOR_EDITING_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long PREAMBLE_STORAGE_PATH_BYTE_OFFSET;
+	public static final long INVOCATION_EMISSION_PATH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("Size"),
-            JAVA_BYTE.withName("ThreadBackgroundPriorityForIndexing"),
-            JAVA_BYTE.withName("ThreadBackgroundPriorityForEditing"),
-            MemoryLayout.paddingLayout(2),
-            JAVA_INT.withName("bitFields0"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("PreambleStoragePath"),
-            UNBOUNDED_ADDRESS.withName("InvocationEmissionPath")
-        ).withName("CXIndexOptions").withByteAlignment(8);
-        
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Size"));
-        THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ThreadBackgroundPriorityForIndexing"));
-        THREAD_BACKGROUND_PRIORITY_FOR_EDITING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ThreadBackgroundPriorityForEditing"));
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        PREAMBLE_STORAGE_PATH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PreambleStoragePath"));
-        INVOCATION_EMISSION_PATH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("InvocationEmissionPath"));
-        
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Size"));
-        THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ThreadBackgroundPriorityForIndexing"));
-        THREAD_BACKGROUND_PRIORITY_FOR_EDITING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ThreadBackgroundPriorityForEditing"));
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        PREAMBLE_STORAGE_PATH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PreambleStoragePath"));
-        INVOCATION_EMISSION_PATH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("InvocationEmissionPath"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("Size"),
+		    JAVA_BYTE.withName("ThreadBackgroundPriorityForIndexing"),
+		    JAVA_BYTE.withName("ThreadBackgroundPriorityForEditing"),
+		    MemoryLayout.paddingLayout(2),
+		    JAVA_INT.withName("bitFields0"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("PreambleStoragePath"),
+		    UNBOUNDED_ADDRESS.withName("InvocationEmissionPath")
+		).withName("CXIndexOptions").withByteAlignment(8);
+		
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Size"));
+		THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ThreadBackgroundPriorityForIndexing"));
+		THREAD_BACKGROUND_PRIORITY_FOR_EDITING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ThreadBackgroundPriorityForEditing"));
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		PREAMBLE_STORAGE_PATH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PreambleStoragePath"));
+		INVOCATION_EMISSION_PATH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("InvocationEmissionPath"));
+		
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Size"));
+		THREAD_BACKGROUND_PRIORITY_FOR_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ThreadBackgroundPriorityForIndexing"));
+		THREAD_BACKGROUND_PRIORITY_FOR_EDITING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ThreadBackgroundPriorityForEditing"));
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		PREAMBLE_STORAGE_PATH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PreambleStoragePath"));
+		INVOCATION_EMISSION_PATH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("InvocationEmissionPath"));
+		//@formatter:on
+	}
 
-    public CXIndexOptions() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIndexOptions(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIndexOptions(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIndexOptions() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIndexOptions(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIndexOptions(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #size()
     public CXIndexOptions size(int size) {
@@ -262,5 +262,5 @@ public final class CXIndexOptions
             segment -> new CXIndexOptions(segment)
         );
     }
-    
+
 }

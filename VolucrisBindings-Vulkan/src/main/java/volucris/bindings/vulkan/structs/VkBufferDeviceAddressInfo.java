@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBufferDeviceAddressInfo
 		implements Struct<VkBufferDeviceAddressInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BUFFER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("buffer")
-        ).withName("VkBufferDeviceAddressInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("buffer")
+		).withName("VkBufferDeviceAddressInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		//@formatter:on
+	}
 
-    public VkBufferDeviceAddressInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBufferDeviceAddressInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBufferDeviceAddressInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBufferDeviceAddressInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBufferDeviceAddressInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBufferDeviceAddressInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBufferDeviceAddressInfo sType(int sType) {
@@ -156,5 +156,5 @@ public final class VkBufferDeviceAddressInfo
             segment -> new VkBufferDeviceAddressInfo(segment)
         );
     }
-    
+
 }

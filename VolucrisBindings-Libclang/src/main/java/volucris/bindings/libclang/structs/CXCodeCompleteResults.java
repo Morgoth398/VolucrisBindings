@@ -26,44 +26,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXCodeCompleteResults
 		implements Struct<CXCodeCompleteResults> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RESULTS_HANDLE;
-    public static final VarHandle NUM_RESULTS_HANDLE;
+	public static final VarHandle RESULTS_HANDLE;
+	public static final VarHandle NUM_RESULTS_HANDLE;
 
-    public static final long RESULTS_BYTE_OFFSET;
-    public static final long NUM_RESULTS_BYTE_OFFSET;
+	public static final long RESULTS_BYTE_OFFSET;
+	public static final long NUM_RESULTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("Results"),
-            JAVA_INT.withName("NumResults"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXCodeCompleteResults").withByteAlignment(8);
-        
-        RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Results"));
-        NUM_RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("NumResults"));
-        
-        RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Results"));
-        NUM_RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("NumResults"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("Results"),
+		    JAVA_INT.withName("NumResults"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXCodeCompleteResults").withByteAlignment(8);
+		
+		RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Results"));
+		NUM_RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("NumResults"));
+		
+		RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Results"));
+		NUM_RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("NumResults"));
+		//@formatter:on
+	}
 
-    public CXCodeCompleteResults() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXCodeCompleteResults(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXCodeCompleteResults(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXCodeCompleteResults() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXCodeCompleteResults(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXCodeCompleteResults(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #results()
     public CXCodeCompleteResults results(CXCompletionResult results) {
@@ -150,5 +150,5 @@ public final class CXCodeCompleteResults
             segment -> new CXCodeCompleteResults(segment)
         );
     }
-    
+
 }

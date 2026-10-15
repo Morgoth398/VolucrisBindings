@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineShaderStageModuleIdentifierCreateInfoEXT
 		implements Struct<VkPipelineShaderStageModuleIdentifierCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IDENTIFIER_SIZE_HANDLE;
-    public static final VarHandle P_IDENTIFIER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IDENTIFIER_SIZE_HANDLE;
+	public static final VarHandle P_IDENTIFIER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IDENTIFIER_SIZE_BYTE_OFFSET;
-    public static final long P_IDENTIFIER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IDENTIFIER_SIZE_BYTE_OFFSET;
+	public static final long P_IDENTIFIER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("identifierSize"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pIdentifier")
-        ).withName("VkPipelineShaderStageModuleIdentifierCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IDENTIFIER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identifierSize"));
-        P_IDENTIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIdentifier"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IDENTIFIER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identifierSize"));
-        P_IDENTIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIdentifier"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("identifierSize"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pIdentifier")
+		).withName("VkPipelineShaderStageModuleIdentifierCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IDENTIFIER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identifierSize"));
+		P_IDENTIFIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIdentifier"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IDENTIFIER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identifierSize"));
+		P_IDENTIFIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIdentifier"));
+		//@formatter:on
+	}
 
-    public VkPipelineShaderStageModuleIdentifierCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineShaderStageModuleIdentifierCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineShaderStageModuleIdentifierCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineShaderStageModuleIdentifierCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineShaderStageModuleIdentifierCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineShaderStageModuleIdentifierCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineShaderStageModuleIdentifierCreateInfoEXT sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkPipelineShaderStageModuleIdentifierCreateInfoEXT
             segment -> new VkPipelineShaderStageModuleIdentifierCreateInfoEXT(segment)
         );
     }
-    
+
 }

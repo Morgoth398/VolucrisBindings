@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineFragmentShadingRateEnumStateCreateInfoNV
 		implements Struct<VkPipelineFragmentShadingRateEnumStateCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADING_RATE_TYPE_HANDLE;
-    public static final VarHandle SHADING_RATE_HANDLE;
-    public static final VarHandle COMBINER_OPS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADING_RATE_TYPE_HANDLE;
+	public static final VarHandle SHADING_RATE_HANDLE;
+	public static final VarHandle COMBINER_OPS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADING_RATE_TYPE_BYTE_OFFSET;
-    public static final long SHADING_RATE_BYTE_OFFSET;
-    public static final long COMBINER_OPS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADING_RATE_TYPE_BYTE_OFFSET;
+	public static final long SHADING_RATE_BYTE_OFFSET;
+	public static final long COMBINER_OPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shadingRateType"),
-            JAVA_INT.withName("shadingRate"),
-            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("combinerOps")
-        ).withName("VkPipelineFragmentShadingRateEnumStateCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADING_RATE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateType"));
-        SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRate"));
-        COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("combinerOps"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADING_RATE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateType"));
-        SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRate"));
-        COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("combinerOps"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shadingRateType"),
+		    JAVA_INT.withName("shadingRate"),
+		    MemoryLayout.sequenceLayout(2, JAVA_INT).withName("combinerOps")
+		).withName("VkPipelineFragmentShadingRateEnumStateCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADING_RATE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateType"));
+		SHADING_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRate"));
+		COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("combinerOps"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADING_RATE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateType"));
+		SHADING_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRate"));
+		COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("combinerOps"));
+		//@formatter:on
+	}
 
-    public VkPipelineFragmentShadingRateEnumStateCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineFragmentShadingRateEnumStateCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineFragmentShadingRateEnumStateCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineFragmentShadingRateEnumStateCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineFragmentShadingRateEnumStateCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineFragmentShadingRateEnumStateCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineFragmentShadingRateEnumStateCreateInfoNV sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkPipelineFragmentShadingRateEnumStateCreateInfoNV
             segment -> new VkPipelineFragmentShadingRateEnumStateCreateInfoNV(segment)
         );
     }
-    
+
 }

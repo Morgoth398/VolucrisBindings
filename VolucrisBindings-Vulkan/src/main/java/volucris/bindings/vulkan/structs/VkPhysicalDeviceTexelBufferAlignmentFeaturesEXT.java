@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT
 		implements Struct<VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TEXEL_BUFFER_ALIGNMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TEXEL_BUFFER_ALIGNMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TEXEL_BUFFER_ALIGNMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TEXEL_BUFFER_ALIGNMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("texelBufferAlignment"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TEXEL_BUFFER_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("texelBufferAlignment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TEXEL_BUFFER_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("texelBufferAlignment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("texelBufferAlignment"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TEXEL_BUFFER_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("texelBufferAlignment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TEXEL_BUFFER_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("texelBufferAlignment"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT
             segment -> new VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT(segment)
         );
     }
-    
+
 }

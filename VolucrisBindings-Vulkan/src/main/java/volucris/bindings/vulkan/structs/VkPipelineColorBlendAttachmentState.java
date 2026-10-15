@@ -19,73 +19,73 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPipelineColorBlendAttachmentState
 		implements Struct<VkPipelineColorBlendAttachmentState> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BLEND_ENABLE_HANDLE;
-    public static final VarHandle SRC_COLOR_BLEND_FACTOR_HANDLE;
-    public static final VarHandle DST_COLOR_BLEND_FACTOR_HANDLE;
-    public static final VarHandle COLOR_BLEND_OP_HANDLE;
-    public static final VarHandle SRC_ALPHA_BLEND_FACTOR_HANDLE;
-    public static final VarHandle DST_ALPHA_BLEND_FACTOR_HANDLE;
-    public static final VarHandle ALPHA_BLEND_OP_HANDLE;
-    public static final VarHandle COLOR_WRITE_MASK_HANDLE;
+	public static final VarHandle BLEND_ENABLE_HANDLE;
+	public static final VarHandle SRC_COLOR_BLEND_FACTOR_HANDLE;
+	public static final VarHandle DST_COLOR_BLEND_FACTOR_HANDLE;
+	public static final VarHandle COLOR_BLEND_OP_HANDLE;
+	public static final VarHandle SRC_ALPHA_BLEND_FACTOR_HANDLE;
+	public static final VarHandle DST_ALPHA_BLEND_FACTOR_HANDLE;
+	public static final VarHandle ALPHA_BLEND_OP_HANDLE;
+	public static final VarHandle COLOR_WRITE_MASK_HANDLE;
 
-    public static final long BLEND_ENABLE_BYTE_OFFSET;
-    public static final long SRC_COLOR_BLEND_FACTOR_BYTE_OFFSET;
-    public static final long DST_COLOR_BLEND_FACTOR_BYTE_OFFSET;
-    public static final long COLOR_BLEND_OP_BYTE_OFFSET;
-    public static final long SRC_ALPHA_BLEND_FACTOR_BYTE_OFFSET;
-    public static final long DST_ALPHA_BLEND_FACTOR_BYTE_OFFSET;
-    public static final long ALPHA_BLEND_OP_BYTE_OFFSET;
-    public static final long COLOR_WRITE_MASK_BYTE_OFFSET;
+	public static final long BLEND_ENABLE_BYTE_OFFSET;
+	public static final long SRC_COLOR_BLEND_FACTOR_BYTE_OFFSET;
+	public static final long DST_COLOR_BLEND_FACTOR_BYTE_OFFSET;
+	public static final long COLOR_BLEND_OP_BYTE_OFFSET;
+	public static final long SRC_ALPHA_BLEND_FACTOR_BYTE_OFFSET;
+	public static final long DST_ALPHA_BLEND_FACTOR_BYTE_OFFSET;
+	public static final long ALPHA_BLEND_OP_BYTE_OFFSET;
+	public static final long COLOR_WRITE_MASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("blendEnable"),
-            JAVA_INT.withName("srcColorBlendFactor"),
-            JAVA_INT.withName("dstColorBlendFactor"),
-            JAVA_INT.withName("colorBlendOp"),
-            JAVA_INT.withName("srcAlphaBlendFactor"),
-            JAVA_INT.withName("dstAlphaBlendFactor"),
-            JAVA_INT.withName("alphaBlendOp"),
-            JAVA_INT.withName("colorWriteMask")
-        ).withName("VkPipelineColorBlendAttachmentState").withByteAlignment(4);
-        
-        BLEND_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blendEnable"));
-        SRC_COLOR_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcColorBlendFactor"));
-        DST_COLOR_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstColorBlendFactor"));
-        COLOR_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorBlendOp"));
-        SRC_ALPHA_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAlphaBlendFactor"));
-        DST_ALPHA_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAlphaBlendFactor"));
-        ALPHA_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaBlendOp"));
-        COLOR_WRITE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorWriteMask"));
-        
-        BLEND_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blendEnable"));
-        SRC_COLOR_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcColorBlendFactor"));
-        DST_COLOR_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstColorBlendFactor"));
-        COLOR_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorBlendOp"));
-        SRC_ALPHA_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAlphaBlendFactor"));
-        DST_ALPHA_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAlphaBlendFactor"));
-        ALPHA_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaBlendOp"));
-        COLOR_WRITE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorWriteMask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("blendEnable"),
+		    JAVA_INT.withName("srcColorBlendFactor"),
+		    JAVA_INT.withName("dstColorBlendFactor"),
+		    JAVA_INT.withName("colorBlendOp"),
+		    JAVA_INT.withName("srcAlphaBlendFactor"),
+		    JAVA_INT.withName("dstAlphaBlendFactor"),
+		    JAVA_INT.withName("alphaBlendOp"),
+		    JAVA_INT.withName("colorWriteMask")
+		).withName("VkPipelineColorBlendAttachmentState").withByteAlignment(4);
+		
+		BLEND_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blendEnable"));
+		SRC_COLOR_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcColorBlendFactor"));
+		DST_COLOR_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstColorBlendFactor"));
+		COLOR_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorBlendOp"));
+		SRC_ALPHA_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAlphaBlendFactor"));
+		DST_ALPHA_BLEND_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAlphaBlendFactor"));
+		ALPHA_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaBlendOp"));
+		COLOR_WRITE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorWriteMask"));
+		
+		BLEND_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blendEnable"));
+		SRC_COLOR_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcColorBlendFactor"));
+		DST_COLOR_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstColorBlendFactor"));
+		COLOR_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorBlendOp"));
+		SRC_ALPHA_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAlphaBlendFactor"));
+		DST_ALPHA_BLEND_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAlphaBlendFactor"));
+		ALPHA_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaBlendOp"));
+		COLOR_WRITE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorWriteMask"));
+		//@formatter:on
+	}
 
-    public VkPipelineColorBlendAttachmentState() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineColorBlendAttachmentState(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineColorBlendAttachmentState(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineColorBlendAttachmentState() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineColorBlendAttachmentState(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineColorBlendAttachmentState(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #blendEnable()
     public VkPipelineColorBlendAttachmentState blendEnable(int blendEnable) {
@@ -218,5 +218,5 @@ public final class VkPipelineColorBlendAttachmentState
             segment -> new VkPipelineColorBlendAttachmentState(segment)
         );
     }
-    
+
 }

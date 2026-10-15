@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderFloat16Int8Features
 		implements Struct<VkPhysicalDeviceShaderFloat16Int8Features> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_INT8_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_INT8_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_INT8_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_INT8_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderFloat16"),
-            JAVA_INT.withName("shaderInt8")
-        ).withName("VkPhysicalDeviceShaderFloat16Int8Features").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat16"));
-        SHADER_INT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt8"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat16"));
-        SHADER_INT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt8"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderFloat16"),
+		    JAVA_INT.withName("shaderInt8")
+		).withName("VkPhysicalDeviceShaderFloat16Int8Features").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat16"));
+		SHADER_INT8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt8"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat16"));
+		SHADER_INT8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt8"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderFloat16Int8Features() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderFloat16Int8Features(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderFloat16Int8Features(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderFloat16Int8Features() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderFloat16Int8Features(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderFloat16Int8Features(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderFloat16Int8Features sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShaderFloat16Int8Features
             segment -> new VkPhysicalDeviceShaderFloat16Int8Features(segment)
         );
     }
-    
+
 }

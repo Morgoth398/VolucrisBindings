@@ -21,110 +21,110 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMeshShaderPropertiesNV
 		implements Struct<VkPhysicalDeviceMeshShaderPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_DRAW_MESH_TASKS_COUNT_HANDLE;
-    public static final VarHandle MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_TASK_WORK_GROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_TASK_TOTAL_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_TASK_OUTPUT_COUNT_HANDLE;
-    public static final VarHandle MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE;
-    public static final VarHandle MAX_MESH_WORK_GROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_TOTAL_MEMORY_SIZE_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_VERTICES_HANDLE;
-    public static final VarHandle MAX_MESH_OUTPUT_PRIMITIVES_HANDLE;
-    public static final VarHandle MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE;
-    public static final VarHandle MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE;
-    public static final VarHandle MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_DRAW_MESH_TASKS_COUNT_HANDLE;
+	public static final VarHandle MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_TASK_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_TASK_TOTAL_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_TASK_OUTPUT_COUNT_HANDLE;
+	public static final VarHandle MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE;
+	public static final VarHandle MAX_MESH_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_TOTAL_MEMORY_SIZE_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_VERTICES_HANDLE;
+	public static final VarHandle MAX_MESH_OUTPUT_PRIMITIVES_HANDLE;
+	public static final VarHandle MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE;
+	public static final VarHandle MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE;
+	public static final VarHandle MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_DRAW_MESH_TASKS_COUNT_BYTE_OFFSET;
-    public static final long MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_TASK_TOTAL_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_TASK_OUTPUT_COUNT_BYTE_OFFSET;
-    public static final long MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
-    public static final long MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_TOTAL_MEMORY_SIZE_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET;
-    public static final long MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET;
-    public static final long MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
-    public static final long MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET;
-    public static final long MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_DRAW_MESH_TASKS_COUNT_BYTE_OFFSET;
+	public static final long MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_TASK_TOTAL_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_TASK_OUTPUT_COUNT_BYTE_OFFSET;
+	public static final long MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET;
+	public static final long MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_TOTAL_MEMORY_SIZE_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET;
+	public static final long MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET;
+	public static final long MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
+	public static final long MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET;
+	public static final long MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxDrawMeshTasksCount"),
-            JAVA_INT.withName("maxTaskWorkGroupInvocations"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxTaskWorkGroupSize"),
-            JAVA_INT.withName("maxTaskTotalMemorySize"),
-            JAVA_INT.withName("maxTaskOutputCount"),
-            JAVA_INT.withName("maxMeshWorkGroupInvocations"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxMeshWorkGroupSize"),
-            JAVA_INT.withName("maxMeshTotalMemorySize"),
-            JAVA_INT.withName("maxMeshOutputVertices"),
-            JAVA_INT.withName("maxMeshOutputPrimitives"),
-            JAVA_INT.withName("maxMeshMultiviewViewCount"),
-            JAVA_INT.withName("meshOutputPerVertexGranularity"),
-            JAVA_INT.withName("meshOutputPerPrimitiveGranularity"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMeshShaderPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_DRAW_MESH_TASKS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawMeshTasksCount"));
-        MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupInvocations"));
-        MAX_TASK_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupSize"), PathElement.sequenceElement());
-        MAX_TASK_TOTAL_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskTotalMemorySize"));
-        MAX_TASK_OUTPUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskOutputCount"));
-        MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupInvocations"));
-        MAX_MESH_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupSize"), PathElement.sequenceElement());
-        MAX_MESH_TOTAL_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshTotalMemorySize"));
-        MAX_MESH_OUTPUT_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputVertices"));
-        MAX_MESH_OUTPUT_PRIMITIVES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputPrimitives"));
-        MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshMultiviewViewCount"));
-        MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerVertexGranularity"));
-        MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_DRAW_MESH_TASKS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawMeshTasksCount"));
-        MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupInvocations"));
-        MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupSize"));
-        MAX_TASK_TOTAL_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskTotalMemorySize"));
-        MAX_TASK_OUTPUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskOutputCount"));
-        MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupInvocations"));
-        MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupSize"));
-        MAX_MESH_TOTAL_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshTotalMemorySize"));
-        MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputVertices"));
-        MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputPrimitives"));
-        MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshMultiviewViewCount"));
-        MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerVertexGranularity"));
-        MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxDrawMeshTasksCount"),
+		    JAVA_INT.withName("maxTaskWorkGroupInvocations"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxTaskWorkGroupSize"),
+		    JAVA_INT.withName("maxTaskTotalMemorySize"),
+		    JAVA_INT.withName("maxTaskOutputCount"),
+		    JAVA_INT.withName("maxMeshWorkGroupInvocations"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxMeshWorkGroupSize"),
+		    JAVA_INT.withName("maxMeshTotalMemorySize"),
+		    JAVA_INT.withName("maxMeshOutputVertices"),
+		    JAVA_INT.withName("maxMeshOutputPrimitives"),
+		    JAVA_INT.withName("maxMeshMultiviewViewCount"),
+		    JAVA_INT.withName("meshOutputPerVertexGranularity"),
+		    JAVA_INT.withName("meshOutputPerPrimitiveGranularity"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMeshShaderPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_DRAW_MESH_TASKS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawMeshTasksCount"));
+		MAX_TASK_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupInvocations"));
+		MAX_TASK_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskWorkGroupSize"), PathElement.sequenceElement());
+		MAX_TASK_TOTAL_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskTotalMemorySize"));
+		MAX_TASK_OUTPUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTaskOutputCount"));
+		MAX_MESH_WORK_GROUP_INVOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupInvocations"));
+		MAX_MESH_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshWorkGroupSize"), PathElement.sequenceElement());
+		MAX_MESH_TOTAL_MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshTotalMemorySize"));
+		MAX_MESH_OUTPUT_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputVertices"));
+		MAX_MESH_OUTPUT_PRIMITIVES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshOutputPrimitives"));
+		MAX_MESH_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMeshMultiviewViewCount"));
+		MESH_OUTPUT_PER_VERTEX_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerVertexGranularity"));
+		MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_DRAW_MESH_TASKS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawMeshTasksCount"));
+		MAX_TASK_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupInvocations"));
+		MAX_TASK_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskWorkGroupSize"));
+		MAX_TASK_TOTAL_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskTotalMemorySize"));
+		MAX_TASK_OUTPUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTaskOutputCount"));
+		MAX_MESH_WORK_GROUP_INVOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupInvocations"));
+		MAX_MESH_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshWorkGroupSize"));
+		MAX_MESH_TOTAL_MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshTotalMemorySize"));
+		MAX_MESH_OUTPUT_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputVertices"));
+		MAX_MESH_OUTPUT_PRIMITIVES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshOutputPrimitives"));
+		MAX_MESH_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMeshMultiviewViewCount"));
+		MESH_OUTPUT_PER_VERTEX_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerVertexGranularity"));
+		MESH_OUTPUT_PER_PRIMITIVE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshOutputPerPrimitiveGranularity"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMeshShaderPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMeshShaderPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMeshShaderPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMeshShaderPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMeshShaderPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMeshShaderPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMeshShaderPropertiesNV sType(int sType) {
@@ -332,5 +332,5 @@ public final class VkPhysicalDeviceMeshShaderPropertiesNV
             segment -> new VkPhysicalDeviceMeshShaderPropertiesNV(segment)
         );
     }
-    
+
 }

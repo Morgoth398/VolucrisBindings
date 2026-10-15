@@ -21,74 +21,74 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance5Properties
 		implements Struct<VkPhysicalDeviceMaintenance5Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE;
-    public static final VarHandle EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE;
-    public static final VarHandle DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE;
-    public static final VarHandle POLYGON_MODE_POINT_SIZE_HANDLE;
-    public static final VarHandle NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
-    public static final VarHandle NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE;
+	public static final VarHandle EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE;
+	public static final VarHandle DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE;
+	public static final VarHandle POLYGON_MODE_POINT_SIZE_HANDLE;
+	public static final VarHandle NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
+	public static final VarHandle NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET;
-    public static final long EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET;
-    public static final long DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET;
-    public static final long POLYGON_MODE_POINT_SIZE_BYTE_OFFSET;
-    public static final long NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
-    public static final long NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET;
+	public static final long EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET;
+	public static final long DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET;
+	public static final long POLYGON_MODE_POINT_SIZE_BYTE_OFFSET;
+	public static final long NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
+	public static final long NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("earlyFragmentMultisampleCoverageAfterSampleCounting"),
-            JAVA_INT.withName("earlyFragmentSampleMaskTestBeforeSampleCounting"),
-            JAVA_INT.withName("depthStencilSwizzleOneSupport"),
-            JAVA_INT.withName("polygonModePointSize"),
-            JAVA_INT.withName("nonStrictSinglePixelWideLinesUseParallelogram"),
-            JAVA_INT.withName("nonStrictWideLinesUseParallelogram")
-        ).withName("VkPhysicalDeviceMaintenance5Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
-        EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
-        DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilSwizzleOneSupport"));
-        POLYGON_MODE_POINT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("polygonModePointSize"));
-        NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
-        NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
-        EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
-        DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilSwizzleOneSupport"));
-        POLYGON_MODE_POINT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("polygonModePointSize"));
-        NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
-        NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("earlyFragmentMultisampleCoverageAfterSampleCounting"),
+		    JAVA_INT.withName("earlyFragmentSampleMaskTestBeforeSampleCounting"),
+		    JAVA_INT.withName("depthStencilSwizzleOneSupport"),
+		    JAVA_INT.withName("polygonModePointSize"),
+		    JAVA_INT.withName("nonStrictSinglePixelWideLinesUseParallelogram"),
+		    JAVA_INT.withName("nonStrictWideLinesUseParallelogram")
+		).withName("VkPhysicalDeviceMaintenance5Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
+		EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
+		DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilSwizzleOneSupport"));
+		POLYGON_MODE_POINT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("polygonModePointSize"));
+		NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
+		NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
+		EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
+		DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilSwizzleOneSupport"));
+		POLYGON_MODE_POINT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("polygonModePointSize"));
+		NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
+		NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance5Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance5Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance5Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance5Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance5Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance5Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance5Properties sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkPhysicalDeviceMaintenance5Properties
             segment -> new VkPhysicalDeviceMaintenance5Properties(segment)
         );
     }
-    
+
 }

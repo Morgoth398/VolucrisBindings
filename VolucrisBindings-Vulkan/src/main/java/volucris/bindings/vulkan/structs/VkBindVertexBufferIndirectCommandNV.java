@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkBindVertexBufferIndirectCommandNV
 		implements Struct<VkBindVertexBufferIndirectCommandNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUFFER_ADDRESS_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle STRIDE_HANDLE;
+	public static final VarHandle BUFFER_ADDRESS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle STRIDE_HANDLE;
 
-    public static final long BUFFER_ADDRESS_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long STRIDE_BYTE_OFFSET;
+	public static final long BUFFER_ADDRESS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("bufferAddress"),
-            JAVA_INT.withName("size"),
-            JAVA_INT.withName("stride")
-        ).withName("VkBindVertexBufferIndirectCommandNV").withByteAlignment(8);
-        
-        BUFFER_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferAddress"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
-        
-        BUFFER_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferAddress"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("bufferAddress"),
+		    JAVA_INT.withName("size"),
+		    JAVA_INT.withName("stride")
+		).withName("VkBindVertexBufferIndirectCommandNV").withByteAlignment(8);
+		
+		BUFFER_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferAddress"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
+		
+		BUFFER_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferAddress"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
+		//@formatter:on
+	}
 
-    public VkBindVertexBufferIndirectCommandNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindVertexBufferIndirectCommandNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindVertexBufferIndirectCommandNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindVertexBufferIndirectCommandNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindVertexBufferIndirectCommandNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindVertexBufferIndirectCommandNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #bufferAddress()
     public VkBindVertexBufferIndirectCommandNV bufferAddress(long bufferAddress) {
@@ -143,5 +143,5 @@ public final class VkBindVertexBufferIndirectCommandNV
             segment -> new VkBindVertexBufferIndirectCommandNV(segment)
         );
     }
-    
+
 }

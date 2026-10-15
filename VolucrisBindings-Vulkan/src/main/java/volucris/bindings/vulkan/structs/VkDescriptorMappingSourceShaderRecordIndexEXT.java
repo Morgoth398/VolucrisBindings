@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorMappingSourceShaderRecordIndexEXT
 		implements Struct<VkDescriptorMappingSourceShaderRecordIndexEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle HEAP_OFFSET_HANDLE;
-    public static final VarHandle SHADER_RECORD_OFFSET_HANDLE;
-    public static final VarHandle HEAP_INDEX_STRIDE_HANDLE;
-    public static final VarHandle HEAP_ARRAY_STRIDE_HANDLE;
-    public static final VarHandle P_EMBEDDED_SAMPLER_HANDLE;
-    public static final VarHandle USE_COMBINED_IMAGE_SAMPLER_INDEX_HANDLE;
-    public static final VarHandle SAMPLER_HEAP_OFFSET_HANDLE;
-    public static final VarHandle SAMPLER_SHADER_RECORD_OFFSET_HANDLE;
-    public static final VarHandle SAMPLER_HEAP_INDEX_STRIDE_HANDLE;
-    public static final VarHandle SAMPLER_HEAP_ARRAY_STRIDE_HANDLE;
+	public static final VarHandle HEAP_OFFSET_HANDLE;
+	public static final VarHandle SHADER_RECORD_OFFSET_HANDLE;
+	public static final VarHandle HEAP_INDEX_STRIDE_HANDLE;
+	public static final VarHandle HEAP_ARRAY_STRIDE_HANDLE;
+	public static final VarHandle P_EMBEDDED_SAMPLER_HANDLE;
+	public static final VarHandle USE_COMBINED_IMAGE_SAMPLER_INDEX_HANDLE;
+	public static final VarHandle SAMPLER_HEAP_OFFSET_HANDLE;
+	public static final VarHandle SAMPLER_SHADER_RECORD_OFFSET_HANDLE;
+	public static final VarHandle SAMPLER_HEAP_INDEX_STRIDE_HANDLE;
+	public static final VarHandle SAMPLER_HEAP_ARRAY_STRIDE_HANDLE;
 
-    public static final long HEAP_OFFSET_BYTE_OFFSET;
-    public static final long SHADER_RECORD_OFFSET_BYTE_OFFSET;
-    public static final long HEAP_INDEX_STRIDE_BYTE_OFFSET;
-    public static final long HEAP_ARRAY_STRIDE_BYTE_OFFSET;
-    public static final long P_EMBEDDED_SAMPLER_BYTE_OFFSET;
-    public static final long USE_COMBINED_IMAGE_SAMPLER_INDEX_BYTE_OFFSET;
-    public static final long SAMPLER_HEAP_OFFSET_BYTE_OFFSET;
-    public static final long SAMPLER_SHADER_RECORD_OFFSET_BYTE_OFFSET;
-    public static final long SAMPLER_HEAP_INDEX_STRIDE_BYTE_OFFSET;
-    public static final long SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET;
+	public static final long HEAP_OFFSET_BYTE_OFFSET;
+	public static final long SHADER_RECORD_OFFSET_BYTE_OFFSET;
+	public static final long HEAP_INDEX_STRIDE_BYTE_OFFSET;
+	public static final long HEAP_ARRAY_STRIDE_BYTE_OFFSET;
+	public static final long P_EMBEDDED_SAMPLER_BYTE_OFFSET;
+	public static final long USE_COMBINED_IMAGE_SAMPLER_INDEX_BYTE_OFFSET;
+	public static final long SAMPLER_HEAP_OFFSET_BYTE_OFFSET;
+	public static final long SAMPLER_SHADER_RECORD_OFFSET_BYTE_OFFSET;
+	public static final long SAMPLER_HEAP_INDEX_STRIDE_BYTE_OFFSET;
+	public static final long SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("heapOffset"),
-            JAVA_INT.withName("shaderRecordOffset"),
-            JAVA_INT.withName("heapIndexStride"),
-            JAVA_INT.withName("heapArrayStride"),
-            UNBOUNDED_ADDRESS.withName("pEmbeddedSampler"),
-            JAVA_INT.withName("useCombinedImageSamplerIndex"),
-            JAVA_INT.withName("samplerHeapOffset"),
-            JAVA_INT.withName("samplerShaderRecordOffset"),
-            JAVA_INT.withName("samplerHeapIndexStride"),
-            JAVA_INT.withName("samplerHeapArrayStride"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDescriptorMappingSourceShaderRecordIndexEXT").withByteAlignment(8);
-        
-        HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapOffset"));
-        SHADER_RECORD_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRecordOffset"));
-        HEAP_INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapIndexStride"));
-        HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapArrayStride"));
-        P_EMBEDDED_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pEmbeddedSampler"));
-        USE_COMBINED_IMAGE_SAMPLER_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useCombinedImageSamplerIndex"));
-        SAMPLER_HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapOffset"));
-        SAMPLER_SHADER_RECORD_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerShaderRecordOffset"));
-        SAMPLER_HEAP_INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapIndexStride"));
-        SAMPLER_HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapArrayStride"));
-        
-        HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapOffset"));
-        SHADER_RECORD_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordOffset"));
-        HEAP_INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapIndexStride"));
-        HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapArrayStride"));
-        P_EMBEDDED_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pEmbeddedSampler"));
-        USE_COMBINED_IMAGE_SAMPLER_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useCombinedImageSamplerIndex"));
-        SAMPLER_HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapOffset"));
-        SAMPLER_SHADER_RECORD_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerShaderRecordOffset"));
-        SAMPLER_HEAP_INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapIndexStride"));
-        SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapArrayStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("heapOffset"),
+		    JAVA_INT.withName("shaderRecordOffset"),
+		    JAVA_INT.withName("heapIndexStride"),
+		    JAVA_INT.withName("heapArrayStride"),
+		    UNBOUNDED_ADDRESS.withName("pEmbeddedSampler"),
+		    JAVA_INT.withName("useCombinedImageSamplerIndex"),
+		    JAVA_INT.withName("samplerHeapOffset"),
+		    JAVA_INT.withName("samplerShaderRecordOffset"),
+		    JAVA_INT.withName("samplerHeapIndexStride"),
+		    JAVA_INT.withName("samplerHeapArrayStride"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDescriptorMappingSourceShaderRecordIndexEXT").withByteAlignment(8);
+		
+		HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapOffset"));
+		SHADER_RECORD_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRecordOffset"));
+		HEAP_INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapIndexStride"));
+		HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapArrayStride"));
+		P_EMBEDDED_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pEmbeddedSampler"));
+		USE_COMBINED_IMAGE_SAMPLER_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useCombinedImageSamplerIndex"));
+		SAMPLER_HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapOffset"));
+		SAMPLER_SHADER_RECORD_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerShaderRecordOffset"));
+		SAMPLER_HEAP_INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapIndexStride"));
+		SAMPLER_HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapArrayStride"));
+		
+		HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapOffset"));
+		SHADER_RECORD_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRecordOffset"));
+		HEAP_INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapIndexStride"));
+		HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapArrayStride"));
+		P_EMBEDDED_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pEmbeddedSampler"));
+		USE_COMBINED_IMAGE_SAMPLER_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useCombinedImageSamplerIndex"));
+		SAMPLER_HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapOffset"));
+		SAMPLER_SHADER_RECORD_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerShaderRecordOffset"));
+		SAMPLER_HEAP_INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapIndexStride"));
+		SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapArrayStride"));
+		//@formatter:on
+	}
 
-    public VkDescriptorMappingSourceShaderRecordIndexEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorMappingSourceShaderRecordIndexEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorMappingSourceShaderRecordIndexEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorMappingSourceShaderRecordIndexEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorMappingSourceShaderRecordIndexEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorMappingSourceShaderRecordIndexEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #heapOffset()
     public VkDescriptorMappingSourceShaderRecordIndexEXT heapOffset(int heapOffset) {
@@ -256,5 +256,5 @@ public final class VkDescriptorMappingSourceShaderRecordIndexEXT
             segment -> new VkDescriptorMappingSourceShaderRecordIndexEXT(segment)
         );
     }
-    
+
 }

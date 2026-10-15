@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeAV1ProfileInfoKHR
 		implements Struct<VkVideoDecodeAV1ProfileInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STD_PROFILE_HANDLE;
-    public static final VarHandle FILM_GRAIN_SUPPORT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STD_PROFILE_HANDLE;
+	public static final VarHandle FILM_GRAIN_SUPPORT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STD_PROFILE_BYTE_OFFSET;
-    public static final long FILM_GRAIN_SUPPORT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STD_PROFILE_BYTE_OFFSET;
+	public static final long FILM_GRAIN_SUPPORT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stdProfile"),
-            JAVA_INT.withName("filmGrainSupport")
-        ).withName("VkVideoDecodeAV1ProfileInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STD_PROFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdProfile"));
-        FILM_GRAIN_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filmGrainSupport"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STD_PROFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdProfile"));
-        FILM_GRAIN_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filmGrainSupport"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stdProfile"),
+		    JAVA_INT.withName("filmGrainSupport")
+		).withName("VkVideoDecodeAV1ProfileInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STD_PROFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdProfile"));
+		FILM_GRAIN_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("filmGrainSupport"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STD_PROFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdProfile"));
+		FILM_GRAIN_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("filmGrainSupport"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeAV1ProfileInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeAV1ProfileInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeAV1ProfileInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoDecodeAV1ProfileInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeAV1ProfileInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeAV1ProfileInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoDecodeAV1ProfileInfoKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkVideoDecodeAV1ProfileInfoKHR
             segment -> new VkVideoDecodeAV1ProfileInfoKHR(segment)
         );
     }
-    
+
 }

@@ -19,44 +19,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1LoopRestoration
 		implements Struct<StdVideoAV1LoopRestoration> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FRAME_RESTORATION_TYPE_HANDLE;
-    public static final VarHandle LOOP_RESTORATION_SIZE_HANDLE;
+	public static final VarHandle FRAME_RESTORATION_TYPE_HANDLE;
+	public static final VarHandle LOOP_RESTORATION_SIZE_HANDLE;
 
-    public static final long FRAME_RESTORATION_TYPE_BYTE_OFFSET;
-    public static final long LOOP_RESTORATION_SIZE_BYTE_OFFSET;
+	public static final long FRAME_RESTORATION_TYPE_BYTE_OFFSET;
+	public static final long LOOP_RESTORATION_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("FrameRestorationType"),
-            MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("LoopRestorationSize"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("StdVideoAV1LoopRestoration").withByteAlignment(4);
-        
-        FRAME_RESTORATION_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FrameRestorationType"), PathElement.sequenceElement());
-        LOOP_RESTORATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("LoopRestorationSize"), PathElement.sequenceElement());
-        
-        FRAME_RESTORATION_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FrameRestorationType"));
-        LOOP_RESTORATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("LoopRestorationSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("FrameRestorationType"),
+		    MemoryLayout.sequenceLayout(3, JAVA_SHORT).withName("LoopRestorationSize"),
+		    MemoryLayout.paddingLayout(2)
+		).withName("StdVideoAV1LoopRestoration").withByteAlignment(4);
+		
+		FRAME_RESTORATION_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FrameRestorationType"), PathElement.sequenceElement());
+		LOOP_RESTORATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("LoopRestorationSize"), PathElement.sequenceElement());
+		
+		FRAME_RESTORATION_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FrameRestorationType"));
+		LOOP_RESTORATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("LoopRestorationSize"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1LoopRestoration() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoAV1LoopRestoration(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoAV1LoopRestoration(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoAV1LoopRestoration() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1LoopRestoration(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1LoopRestoration(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #frameRestorationType(int)
     public StdVideoAV1LoopRestoration frameRestorationType(int frameRestorationType, int index0) {
@@ -129,5 +129,5 @@ public final class StdVideoAV1LoopRestoration
             segment -> new StdVideoAV1LoopRestoration(segment)
         );
     }
-    
+
 }

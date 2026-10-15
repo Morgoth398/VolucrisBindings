@@ -21,85 +21,85 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceAccelerationStructurePropertiesKHR
 		implements Struct<VkPhysicalDeviceAccelerationStructurePropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_COUNT_HANDLE;
-    public static final VarHandle MAX_INSTANCE_COUNT_HANDLE;
-    public static final VarHandle MAX_PRIMITIVE_COUNT_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE;
-    public static final VarHandle MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_COUNT_HANDLE;
+	public static final VarHandle MAX_INSTANCE_COUNT_HANDLE;
+	public static final VarHandle MAX_PRIMITIVE_COUNT_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE;
+	public static final VarHandle MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_COUNT_BYTE_OFFSET;
-    public static final long MAX_INSTANCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_PRIMITIVE_COUNT_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET;
-    public static final long MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_COUNT_BYTE_OFFSET;
+	public static final long MAX_INSTANCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_PRIMITIVE_COUNT_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET;
+	public static final long MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("maxGeometryCount"),
-            JAVA_LONG.withName("maxInstanceCount"),
-            JAVA_LONG.withName("maxPrimitiveCount"),
-            JAVA_INT.withName("maxPerStageDescriptorAccelerationStructures"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindAccelerationStructures"),
-            JAVA_INT.withName("maxDescriptorSetAccelerationStructures"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindAccelerationStructures"),
-            JAVA_INT.withName("minAccelerationStructureScratchOffsetAlignment"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceAccelerationStructurePropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryCount"));
-        MAX_INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInstanceCount"));
-        MAX_PRIMITIVE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPrimitiveCount"));
-        MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorAccelerationStructures"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindAccelerationStructures"));
-        MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindAccelerationStructures"));
-        MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minAccelerationStructureScratchOffsetAlignment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryCount"));
-        MAX_INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInstanceCount"));
-        MAX_PRIMITIVE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPrimitiveCount"));
-        MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorAccelerationStructures"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindAccelerationStructures"));
-        MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindAccelerationStructures"));
-        MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minAccelerationStructureScratchOffsetAlignment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("maxGeometryCount"),
+		    JAVA_LONG.withName("maxInstanceCount"),
+		    JAVA_LONG.withName("maxPrimitiveCount"),
+		    JAVA_INT.withName("maxPerStageDescriptorAccelerationStructures"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindAccelerationStructures"),
+		    JAVA_INT.withName("maxDescriptorSetAccelerationStructures"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindAccelerationStructures"),
+		    JAVA_INT.withName("minAccelerationStructureScratchOffsetAlignment"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceAccelerationStructurePropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryCount"));
+		MAX_INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInstanceCount"));
+		MAX_PRIMITIVE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPrimitiveCount"));
+		MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorAccelerationStructures"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindAccelerationStructures"));
+		MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindAccelerationStructures"));
+		MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minAccelerationStructureScratchOffsetAlignment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryCount"));
+		MAX_INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInstanceCount"));
+		MAX_PRIMITIVE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPrimitiveCount"));
+		MAX_PER_STAGE_DESCRIPTOR_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorAccelerationStructures"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindAccelerationStructures"));
+		MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindAccelerationStructures"));
+		MIN_ACCELERATION_STRUCTURE_SCRATCH_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minAccelerationStructureScratchOffsetAlignment"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceAccelerationStructurePropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceAccelerationStructurePropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceAccelerationStructurePropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceAccelerationStructurePropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceAccelerationStructurePropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceAccelerationStructurePropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceAccelerationStructurePropertiesKHR sType(int sType) {
@@ -257,5 +257,5 @@ public final class VkPhysicalDeviceAccelerationStructurePropertiesKHR
             segment -> new VkPhysicalDeviceAccelerationStructurePropertiesKHR(segment)
         );
     }
-    
+
 }

@@ -24,49 +24,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiMetadata
 		implements Struct<AiMetadata> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_NUM_PROPERTIES_HANDLE;
-    public static final VarHandle M_KEYS_HANDLE;
-    public static final VarHandle M_VALUES_HANDLE;
+	public static final VarHandle M_NUM_PROPERTIES_HANDLE;
+	public static final VarHandle M_KEYS_HANDLE;
+	public static final VarHandle M_VALUES_HANDLE;
 
-    public static final long M_NUM_PROPERTIES_BYTE_OFFSET;
-    public static final long M_KEYS_BYTE_OFFSET;
-    public static final long M_VALUES_BYTE_OFFSET;
+	public static final long M_NUM_PROPERTIES_BYTE_OFFSET;
+	public static final long M_KEYS_BYTE_OFFSET;
+	public static final long M_VALUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mNumProperties"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mKeys"),
-            UNBOUNDED_ADDRESS.withName("mValues")
-        ).withName("aiMetadata").withByteAlignment(8);
-        
-        M_NUM_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumProperties"));
-        M_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mKeys"));
-        M_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mValues"));
-        
-        M_NUM_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumProperties"));
-        M_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mKeys"));
-        M_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mNumProperties"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mKeys"),
+		    UNBOUNDED_ADDRESS.withName("mValues")
+		).withName("aiMetadata").withByteAlignment(8);
+		
+		M_NUM_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumProperties"));
+		M_KEYS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mKeys"));
+		M_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mValues"));
+		
+		M_NUM_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumProperties"));
+		M_KEYS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mKeys"));
+		M_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValues"));
+		//@formatter:on
+	}
 
-    public AiMetadata() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMetadata(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMetadata(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMetadata() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMetadata(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMetadata(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mNumProperties()
     public AiMetadata mNumProperties(int mNumProperties) {
@@ -169,5 +169,5 @@ public final class AiMetadata
             segment -> new AiMetadata(segment)
         );
     }
-    
+
 }

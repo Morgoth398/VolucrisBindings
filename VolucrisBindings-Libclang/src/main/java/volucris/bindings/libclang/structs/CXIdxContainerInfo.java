@@ -16,37 +16,37 @@ import static java.lang.foreign.ValueLayout.*;
 public final class CXIdxContainerInfo
 		implements Struct<CXIdxContainerInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long CURSOR_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
+	private final CXCursor cursor;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            CXCursor.LAYOUT.withName("cursor")
-        ).withName("CXIdxContainerInfo").withByteAlignment(8);
-        
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    CXCursor.LAYOUT.withName("cursor")
+		).withName("CXIdxContainerInfo").withByteAlignment(8);
+		
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		//@formatter:on
+	}
 
-    public CXIdxContainerInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxContainerInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxContainerInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-    }
+	public CXIdxContainerInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxContainerInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxContainerInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	}
 
     /// @see #cursor()
     public CXIdxContainerInfo cursor(Consumer<CXCursor> consumer) {
@@ -115,5 +115,5 @@ public final class CXIdxContainerInfo
             segment -> new CXIdxContainerInfo(segment)
         );
     }
-    
+
 }

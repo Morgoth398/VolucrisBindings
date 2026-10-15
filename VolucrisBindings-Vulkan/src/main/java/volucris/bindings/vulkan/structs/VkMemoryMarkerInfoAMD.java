@@ -22,65 +22,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryMarkerInfoAMD
 		implements Struct<VkMemoryMarkerInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle DST_FLAGS_HANDLE;
-    public static final VarHandle MARKER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle DST_FLAGS_HANDLE;
+	public static final VarHandle MARKER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long DST_RANGE_BYTE_OFFSET;
-    public static final long DST_FLAGS_BYTE_OFFSET;
-    public static final long MARKER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long DST_RANGE_BYTE_OFFSET;
+	public static final long DST_FLAGS_BYTE_OFFSET;
+	public static final long MARKER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR dstRange;
+	private final VkDeviceAddressRangeKHR dstRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("stage"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("dstRange"),
-            JAVA_INT.withName("dstFlags"),
-            JAVA_INT.withName("marker")
-        ).withName("VkMemoryMarkerInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        DST_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstFlags"));
-        MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("marker"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        DST_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstRange"));
-        DST_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstFlags"));
-        MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("marker"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("stage"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("dstRange"),
+		    JAVA_INT.withName("dstFlags"),
+		    JAVA_INT.withName("marker")
+		).withName("VkMemoryMarkerInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		DST_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstFlags"));
+		MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("marker"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		DST_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstRange"));
+		DST_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstFlags"));
+		MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("marker"));
+		//@formatter:on
+	}
 
-    public VkMemoryMarkerInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryMarkerInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryMarkerInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-        dstRange = new VkDeviceAddressRangeKHR(segment.asSlice(DST_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkMemoryMarkerInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryMarkerInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryMarkerInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    dstRange = new VkDeviceAddressRangeKHR(segment.asSlice(DST_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkMemoryMarkerInfoAMD sType(int sType) {
@@ -117,6 +117,22 @@ public final class VkMemoryMarkerInfoAMD
     	return (long) STAGE_HANDLE.get(segment, 0L);
     }
     
+    /// @see #dstRange()
+    public VkMemoryMarkerInfoAMD dstRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(dstRange);
+    	return this;
+    }
+    
+    /// @see #dstRange()
+    public VkMemoryMarkerInfoAMD dstRange(VkDeviceAddressRangeKHR other) {
+    	dstRange.set(other);
+    	return this;
+    }
+    
+    public VkDeviceAddressRangeKHR dstRange() {
+    	return dstRange;
+    }
+    
     /// @see #dstFlags()
     public VkMemoryMarkerInfoAMD dstFlags(int dstFlags) {
     	DST_FLAGS_HANDLE.set(segment, 0L, dstFlags);
@@ -135,22 +151,6 @@ public final class VkMemoryMarkerInfoAMD
     
     public int marker() {
     	return (int) MARKER_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #dstRange()
-    public VkMemoryMarkerInfoAMD dstRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(dstRange);
-    	return this;
-    }
-    
-    /// @see #dstRange()
-    public VkMemoryMarkerInfoAMD dstRange(VkDeviceAddressRangeKHR other) {
-    	dstRange.set(other);
-    	return this;
-    }
-    
-    public VkDeviceAddressRangeKHR dstRange() {
-    	return dstRange;
     }
     
     @Override
@@ -204,5 +204,5 @@ public final class VkMemoryMarkerInfoAMD
             segment -> new VkMemoryMarkerInfoAMD(segment)
         );
     }
-    
+
 }

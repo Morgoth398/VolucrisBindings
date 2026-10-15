@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyTensorInfoARM
 		implements Struct<VkCopyTensorInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_TENSOR_HANDLE;
-    public static final VarHandle DST_TENSOR_HANDLE;
-    public static final VarHandle REGION_COUNT_HANDLE;
-    public static final VarHandle P_REGIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_TENSOR_HANDLE;
+	public static final VarHandle DST_TENSOR_HANDLE;
+	public static final VarHandle REGION_COUNT_HANDLE;
+	public static final VarHandle P_REGIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_TENSOR_BYTE_OFFSET;
-    public static final long DST_TENSOR_BYTE_OFFSET;
-    public static final long REGION_COUNT_BYTE_OFFSET;
-    public static final long P_REGIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_TENSOR_BYTE_OFFSET;
+	public static final long DST_TENSOR_BYTE_OFFSET;
+	public static final long REGION_COUNT_BYTE_OFFSET;
+	public static final long P_REGIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("srcTensor"),
-            UNBOUNDED_ADDRESS.withName("dstTensor"),
-            JAVA_INT.withName("regionCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pRegions")
-        ).withName("VkCopyTensorInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_TENSOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcTensor"));
-        DST_TENSOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstTensor"));
-        REGION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionCount"));
-        P_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRegions"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_TENSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcTensor"));
-        DST_TENSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstTensor"));
-        REGION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionCount"));
-        P_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRegions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("srcTensor"),
+		    UNBOUNDED_ADDRESS.withName("dstTensor"),
+		    JAVA_INT.withName("regionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pRegions")
+		).withName("VkCopyTensorInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_TENSOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcTensor"));
+		DST_TENSOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstTensor"));
+		REGION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionCount"));
+		P_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRegions"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_TENSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcTensor"));
+		DST_TENSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstTensor"));
+		REGION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionCount"));
+		P_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRegions"));
+		//@formatter:on
+	}
 
-    public VkCopyTensorInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyTensorInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyTensorInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCopyTensorInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyTensorInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyTensorInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCopyTensorInfoARM sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkCopyTensorInfoARM
             segment -> new VkCopyTensorInfoARM(segment)
         );
     }
-    
+
 }

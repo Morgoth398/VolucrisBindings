@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorPoolCreateInfo
 		implements Struct<VkDescriptorPoolCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MAX_SETS_HANDLE;
-    public static final VarHandle POOL_SIZE_COUNT_HANDLE;
-    public static final VarHandle P_POOL_SIZES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MAX_SETS_HANDLE;
+	public static final VarHandle POOL_SIZE_COUNT_HANDLE;
+	public static final VarHandle P_POOL_SIZES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MAX_SETS_BYTE_OFFSET;
-    public static final long POOL_SIZE_COUNT_BYTE_OFFSET;
-    public static final long P_POOL_SIZES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MAX_SETS_BYTE_OFFSET;
+	public static final long POOL_SIZE_COUNT_BYTE_OFFSET;
+	public static final long P_POOL_SIZES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("maxSets"),
-            JAVA_INT.withName("poolSizeCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPoolSizes")
-        ).withName("VkDescriptorPoolCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MAX_SETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSets"));
-        POOL_SIZE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("poolSizeCount"));
-        P_POOL_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPoolSizes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MAX_SETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSets"));
-        POOL_SIZE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("poolSizeCount"));
-        P_POOL_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPoolSizes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("maxSets"),
+		    JAVA_INT.withName("poolSizeCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPoolSizes")
+		).withName("VkDescriptorPoolCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MAX_SETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSets"));
+		POOL_SIZE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("poolSizeCount"));
+		P_POOL_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPoolSizes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MAX_SETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSets"));
+		POOL_SIZE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("poolSizeCount"));
+		P_POOL_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPoolSizes"));
+		//@formatter:on
+	}
 
-    public VkDescriptorPoolCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorPoolCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorPoolCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorPoolCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorPoolCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorPoolCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorPoolCreateInfo sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkDescriptorPoolCreateInfo
             segment -> new VkDescriptorPoolCreateInfo(segment)
         );
     }
-    
+
 }

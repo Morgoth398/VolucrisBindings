@@ -21,44 +21,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayPlanePropertiesKHR
 		implements Struct<VkDisplayPlanePropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CURRENT_DISPLAY_HANDLE;
-    public static final VarHandle CURRENT_STACK_INDEX_HANDLE;
+	public static final VarHandle CURRENT_DISPLAY_HANDLE;
+	public static final VarHandle CURRENT_STACK_INDEX_HANDLE;
 
-    public static final long CURRENT_DISPLAY_BYTE_OFFSET;
-    public static final long CURRENT_STACK_INDEX_BYTE_OFFSET;
+	public static final long CURRENT_DISPLAY_BYTE_OFFSET;
+	public static final long CURRENT_STACK_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("currentDisplay"),
-            JAVA_INT.withName("currentStackIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDisplayPlanePropertiesKHR").withByteAlignment(8);
-        
-        CURRENT_DISPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("currentDisplay"));
-        CURRENT_STACK_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("currentStackIndex"));
-        
-        CURRENT_DISPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentDisplay"));
-        CURRENT_STACK_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentStackIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("currentDisplay"),
+		    JAVA_INT.withName("currentStackIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDisplayPlanePropertiesKHR").withByteAlignment(8);
+		
+		CURRENT_DISPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("currentDisplay"));
+		CURRENT_STACK_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("currentStackIndex"));
+		
+		CURRENT_DISPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentDisplay"));
+		CURRENT_STACK_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentStackIndex"));
+		//@formatter:on
+	}
 
-    public VkDisplayPlanePropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayPlanePropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayPlanePropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDisplayPlanePropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayPlanePropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayPlanePropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #currentDisplay()
     public VkDisplayPlanePropertiesKHR currentDisplay(VkDisplayKHR currentDisplay) {
@@ -136,5 +136,5 @@ public final class VkDisplayPlanePropertiesKHR
             segment -> new VkDisplayPlanePropertiesKHR(segment)
         );
     }
-    
+
 }

@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264GopRemainingFrameInfoKHR
 		implements Struct<VkVideoEncodeH264GopRemainingFrameInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USE_GOP_REMAINING_FRAMES_HANDLE;
-    public static final VarHandle GOP_REMAINING_I_HANDLE;
-    public static final VarHandle GOP_REMAINING_P_HANDLE;
-    public static final VarHandle GOP_REMAINING_B_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USE_GOP_REMAINING_FRAMES_HANDLE;
+	public static final VarHandle GOP_REMAINING_I_HANDLE;
+	public static final VarHandle GOP_REMAINING_P_HANDLE;
+	public static final VarHandle GOP_REMAINING_B_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USE_GOP_REMAINING_FRAMES_BYTE_OFFSET;
-    public static final long GOP_REMAINING_I_BYTE_OFFSET;
-    public static final long GOP_REMAINING_P_BYTE_OFFSET;
-    public static final long GOP_REMAINING_B_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USE_GOP_REMAINING_FRAMES_BYTE_OFFSET;
+	public static final long GOP_REMAINING_I_BYTE_OFFSET;
+	public static final long GOP_REMAINING_P_BYTE_OFFSET;
+	public static final long GOP_REMAINING_B_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("useGopRemainingFrames"),
-            JAVA_INT.withName("gopRemainingI"),
-            JAVA_INT.withName("gopRemainingP"),
-            JAVA_INT.withName("gopRemainingB")
-        ).withName("VkVideoEncodeH264GopRemainingFrameInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USE_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useGopRemainingFrames"));
-        GOP_REMAINING_I_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingI"));
-        GOP_REMAINING_P_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingP"));
-        GOP_REMAINING_B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingB"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USE_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useGopRemainingFrames"));
-        GOP_REMAINING_I_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingI"));
-        GOP_REMAINING_P_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingP"));
-        GOP_REMAINING_B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingB"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("useGopRemainingFrames"),
+		    JAVA_INT.withName("gopRemainingI"),
+		    JAVA_INT.withName("gopRemainingP"),
+		    JAVA_INT.withName("gopRemainingB")
+		).withName("VkVideoEncodeH264GopRemainingFrameInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USE_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useGopRemainingFrames"));
+		GOP_REMAINING_I_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingI"));
+		GOP_REMAINING_P_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingP"));
+		GOP_REMAINING_B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingB"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USE_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useGopRemainingFrames"));
+		GOP_REMAINING_I_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingI"));
+		GOP_REMAINING_P_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingP"));
+		GOP_REMAINING_B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingB"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264GopRemainingFrameInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264GopRemainingFrameInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264GopRemainingFrameInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH264GopRemainingFrameInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264GopRemainingFrameInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264GopRemainingFrameInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264GopRemainingFrameInfoKHR sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVideoEncodeH264GopRemainingFrameInfoKHR
             segment -> new VkVideoEncodeH264GopRemainingFrameInfoKHR(segment)
         );
     }
-    
+
 }

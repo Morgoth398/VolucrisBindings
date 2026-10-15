@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkBindPipelineIndirectCommandNV
 		implements Struct<VkBindPipelineIndirectCommandNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PIPELINE_ADDRESS_HANDLE;
+	public static final VarHandle PIPELINE_ADDRESS_HANDLE;
 
-    public static final long PIPELINE_ADDRESS_BYTE_OFFSET;
+	public static final long PIPELINE_ADDRESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("pipelineAddress")
-        ).withName("VkBindPipelineIndirectCommandNV").withByteAlignment(8);
-        
-        PIPELINE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineAddress"));
-        
-        PIPELINE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineAddress"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("pipelineAddress")
+		).withName("VkBindPipelineIndirectCommandNV").withByteAlignment(8);
+		
+		PIPELINE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineAddress"));
+		
+		PIPELINE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineAddress"));
+		//@formatter:on
+	}
 
-    public VkBindPipelineIndirectCommandNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindPipelineIndirectCommandNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindPipelineIndirectCommandNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindPipelineIndirectCommandNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindPipelineIndirectCommandNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindPipelineIndirectCommandNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pipelineAddress()
     public VkBindPipelineIndirectCommandNV pipelineAddress(long pipelineAddress) {
@@ -113,5 +113,5 @@ public final class VkBindPipelineIndirectCommandNV
             segment -> new VkBindPipelineIndirectCommandNV(segment)
         );
     }
-    
+
 }

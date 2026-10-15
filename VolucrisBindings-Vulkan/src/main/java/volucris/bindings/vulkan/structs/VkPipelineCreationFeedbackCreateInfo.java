@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineCreationFeedbackCreateInfo
 		implements Struct<VkPipelineCreationFeedbackCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_PIPELINE_CREATION_FEEDBACK_HANDLE;
-    public static final VarHandle PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_HANDLE;
-    public static final VarHandle P_PIPELINE_STAGE_CREATION_FEEDBACKS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_PIPELINE_CREATION_FEEDBACK_HANDLE;
+	public static final VarHandle PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_HANDLE;
+	public static final VarHandle P_PIPELINE_STAGE_CREATION_FEEDBACKS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_PIPELINE_CREATION_FEEDBACK_BYTE_OFFSET;
-    public static final long PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_BYTE_OFFSET;
-    public static final long P_PIPELINE_STAGE_CREATION_FEEDBACKS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_PIPELINE_CREATION_FEEDBACK_BYTE_OFFSET;
+	public static final long PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_BYTE_OFFSET;
+	public static final long P_PIPELINE_STAGE_CREATION_FEEDBACKS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pPipelineCreationFeedback"),
-            JAVA_INT.withName("pipelineStageCreationFeedbackCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPipelineStageCreationFeedbacks")
-        ).withName("VkPipelineCreationFeedbackCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_PIPELINE_CREATION_FEEDBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineCreationFeedback"));
-        PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStageCreationFeedbackCount"));
-        P_PIPELINE_STAGE_CREATION_FEEDBACKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineStageCreationFeedbacks"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_PIPELINE_CREATION_FEEDBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineCreationFeedback"));
-        PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStageCreationFeedbackCount"));
-        P_PIPELINE_STAGE_CREATION_FEEDBACKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineStageCreationFeedbacks"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pPipelineCreationFeedback"),
+		    JAVA_INT.withName("pipelineStageCreationFeedbackCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPipelineStageCreationFeedbacks")
+		).withName("VkPipelineCreationFeedbackCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_PIPELINE_CREATION_FEEDBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineCreationFeedback"));
+		PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStageCreationFeedbackCount"));
+		P_PIPELINE_STAGE_CREATION_FEEDBACKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineStageCreationFeedbacks"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_PIPELINE_CREATION_FEEDBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineCreationFeedback"));
+		PIPELINE_STAGE_CREATION_FEEDBACK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStageCreationFeedbackCount"));
+		P_PIPELINE_STAGE_CREATION_FEEDBACKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineStageCreationFeedbacks"));
+		//@formatter:on
+	}
 
-    public VkPipelineCreationFeedbackCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineCreationFeedbackCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineCreationFeedbackCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineCreationFeedbackCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineCreationFeedbackCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineCreationFeedbackCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineCreationFeedbackCreateInfo sType(int sType) {
@@ -192,5 +192,5 @@ public final class VkPipelineCreationFeedbackCreateInfo
             segment -> new VkPipelineCreationFeedbackCreateInfo(segment)
         );
     }
-    
+
 }

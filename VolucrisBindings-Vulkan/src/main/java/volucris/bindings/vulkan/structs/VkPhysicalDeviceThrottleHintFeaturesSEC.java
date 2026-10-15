@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceThrottleHintFeaturesSEC
 		implements Struct<VkPhysicalDeviceThrottleHintFeaturesSEC> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle THROTTLE_HINT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle THROTTLE_HINT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long THROTTLE_HINT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long THROTTLE_HINT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("throttleHint"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceThrottleHintFeaturesSEC").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        THROTTLE_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("throttleHint"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        THROTTLE_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("throttleHint"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("throttleHint"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceThrottleHintFeaturesSEC").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		THROTTLE_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("throttleHint"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		THROTTLE_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("throttleHint"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceThrottleHintFeaturesSEC() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceThrottleHintFeaturesSEC(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceThrottleHintFeaturesSEC(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceThrottleHintFeaturesSEC() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceThrottleHintFeaturesSEC(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceThrottleHintFeaturesSEC(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceThrottleHintFeaturesSEC sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceThrottleHintFeaturesSEC
             segment -> new VkPhysicalDeviceThrottleHintFeaturesSEC(segment)
         );
     }
-    
+
 }

@@ -19,49 +19,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxCXXClassDeclInfo
 		implements Struct<CXIdxCXXClassDeclInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DECL_INFO_HANDLE;
-    public static final VarHandle BASES_HANDLE;
-    public static final VarHandle NUM_BASES_HANDLE;
+	public static final VarHandle DECL_INFO_HANDLE;
+	public static final VarHandle BASES_HANDLE;
+	public static final VarHandle NUM_BASES_HANDLE;
 
-    public static final long DECL_INFO_BYTE_OFFSET;
-    public static final long BASES_BYTE_OFFSET;
-    public static final long NUM_BASES_BYTE_OFFSET;
+	public static final long DECL_INFO_BYTE_OFFSET;
+	public static final long BASES_BYTE_OFFSET;
+	public static final long NUM_BASES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("declInfo"),
-            UNBOUNDED_ADDRESS.withName("bases"),
-            JAVA_INT.withName("numBases"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxCXXClassDeclInfo").withByteAlignment(8);
-        
-        DECL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declInfo"));
-        BASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bases"));
-        NUM_BASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numBases"));
-        
-        DECL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declInfo"));
-        BASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bases"));
-        NUM_BASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numBases"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("declInfo"),
+		    UNBOUNDED_ADDRESS.withName("bases"),
+		    JAVA_INT.withName("numBases"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxCXXClassDeclInfo").withByteAlignment(8);
+		
+		DECL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("declInfo"));
+		BASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bases"));
+		NUM_BASES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numBases"));
+		
+		DECL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("declInfo"));
+		BASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bases"));
+		NUM_BASES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numBases"));
+		//@formatter:on
+	}
 
-    public CXIdxCXXClassDeclInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxCXXClassDeclInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxCXXClassDeclInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIdxCXXClassDeclInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxCXXClassDeclInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxCXXClassDeclInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #declInfo()
     public CXIdxCXXClassDeclInfo declInfo(CXIdxDeclInfo declInfo) {
@@ -154,5 +154,5 @@ public final class CXIdxCXXClassDeclInfo
             segment -> new CXIdxCXXClassDeclInfo(segment)
         );
     }
-    
+
 }

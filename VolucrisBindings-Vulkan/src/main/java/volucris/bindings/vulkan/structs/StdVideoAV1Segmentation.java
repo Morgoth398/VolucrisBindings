@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1Segmentation
 		implements Struct<StdVideoAV1Segmentation> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FEATURE_ENABLED_HANDLE;
-    public static final VarHandle FEATURE_DATA_HANDLE;
+	public static final VarHandle FEATURE_ENABLED_HANDLE;
+	public static final VarHandle FEATURE_DATA_HANDLE;
 
-    public static final long FEATURE_ENABLED_BYTE_OFFSET;
-    public static final long FEATURE_DATA_BYTE_OFFSET;
+	public static final long FEATURE_ENABLED_BYTE_OFFSET;
+	public static final long FEATURE_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("FeatureEnabled"),
-            MemoryLayout.sequenceLayout(8, MemoryLayout.sequenceLayout(8, JAVA_SHORT)).withName("FeatureData")
-        ).withName("StdVideoAV1Segmentation").withByteAlignment(2);
-        
-        FEATURE_ENABLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureEnabled"), PathElement.sequenceElement());
-        FEATURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureData"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        FEATURE_ENABLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureEnabled"));
-        FEATURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("FeatureEnabled"),
+		    MemoryLayout.sequenceLayout(8, MemoryLayout.sequenceLayout(8, JAVA_SHORT)).withName("FeatureData")
+		).withName("StdVideoAV1Segmentation").withByteAlignment(2);
+		
+		FEATURE_ENABLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureEnabled"), PathElement.sequenceElement());
+		FEATURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureData"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		FEATURE_ENABLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureEnabled"));
+		FEATURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureData"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1Segmentation() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoAV1Segmentation(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoAV1Segmentation(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoAV1Segmentation() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1Segmentation(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1Segmentation(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #featureEnabled(int)
     public StdVideoAV1Segmentation featureEnabled(byte featureEnabled, int index0) {
@@ -128,5 +128,5 @@ public final class StdVideoAV1Segmentation
             segment -> new StdVideoAV1Segmentation(segment)
         );
     }
-    
+
 }

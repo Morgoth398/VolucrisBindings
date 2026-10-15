@@ -22,62 +22,62 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureGeometryKHR
 		implements Struct<VkAccelerationStructureGeometryKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle GEOMETRY_TYPE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle GEOMETRY_TYPE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long GEOMETRY_TYPE_BYTE_OFFSET;
-    public static final long GEOMETRY_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long GEOMETRY_TYPE_BYTE_OFFSET;
+	public static final long GEOMETRY_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkAccelerationStructureGeometryDataKHR geometry;
+	private final VkAccelerationStructureGeometryDataKHR geometry;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("geometryType"),
-            MemoryLayout.paddingLayout(4),
-            VkAccelerationStructureGeometryDataKHR.LAYOUT.withName("geometry"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkAccelerationStructureGeometryKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        GEOMETRY_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryType"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        GEOMETRY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryType"));
-        GEOMETRY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometry"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("geometryType"),
+		    MemoryLayout.paddingLayout(4),
+		    VkAccelerationStructureGeometryDataKHR.LAYOUT.withName("geometry"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkAccelerationStructureGeometryKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		GEOMETRY_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryType"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		GEOMETRY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryType"));
+		GEOMETRY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometry"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureGeometryKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureGeometryKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureGeometryKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        geometry = new VkAccelerationStructureGeometryDataKHR(segment.asSlice(GEOMETRY_BYTE_OFFSET, VkAccelerationStructureGeometryDataKHR.LAYOUT));
-    }
+	public VkAccelerationStructureGeometryKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureGeometryKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureGeometryKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    geometry = new VkAccelerationStructureGeometryDataKHR(segment.asSlice(GEOMETRY_BYTE_OFFSET, VkAccelerationStructureGeometryDataKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkAccelerationStructureGeometryKHR sType(int sType) {
@@ -114,16 +114,6 @@ public final class VkAccelerationStructureGeometryKHR
     	return (int) GEOMETRY_TYPE_HANDLE.get(segment, 0L);
     }
     
-    /// @see #flags()
-    public VkAccelerationStructureGeometryKHR flags(int flags) {
-    	FLAGS_HANDLE.set(segment, 0L, flags);
-    	return this;
-    }
-    
-    public int flags() {
-    	return (int) FLAGS_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #geometry()
     public VkAccelerationStructureGeometryKHR geometry(Consumer<VkAccelerationStructureGeometryDataKHR> consumer) {
     	consumer.accept(geometry);
@@ -138,6 +128,16 @@ public final class VkAccelerationStructureGeometryKHR
     
     public VkAccelerationStructureGeometryDataKHR geometry() {
     	return geometry;
+    }
+    
+    /// @see #flags()
+    public VkAccelerationStructureGeometryKHR flags(int flags) {
+    	FLAGS_HANDLE.set(segment, 0L, flags);
+    	return this;
+    }
+    
+    public int flags() {
+    	return (int) FLAGS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -191,5 +191,5 @@ public final class VkAccelerationStructureGeometryKHR
             segment -> new VkAccelerationStructureGeometryKHR(segment)
         );
     }
-    
+
 }

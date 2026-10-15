@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSwapchainCalibratedTimestampInfoEXT
 		implements Struct<VkSwapchainCalibratedTimestampInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SWAPCHAIN_HANDLE;
-    public static final VarHandle PRESENT_STAGE_HANDLE;
-    public static final VarHandle TIME_DOMAIN_ID_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SWAPCHAIN_HANDLE;
+	public static final VarHandle PRESENT_STAGE_HANDLE;
+	public static final VarHandle TIME_DOMAIN_ID_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SWAPCHAIN_BYTE_OFFSET;
-    public static final long PRESENT_STAGE_BYTE_OFFSET;
-    public static final long TIME_DOMAIN_ID_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SWAPCHAIN_BYTE_OFFSET;
+	public static final long PRESENT_STAGE_BYTE_OFFSET;
+	public static final long TIME_DOMAIN_ID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("swapchain"),
-            JAVA_INT.withName("presentStage"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("timeDomainId")
-        ).withName("VkSwapchainCalibratedTimestampInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchain"));
-        PRESENT_STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStage"));
-        TIME_DOMAIN_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainId"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchain"));
-        PRESENT_STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStage"));
-        TIME_DOMAIN_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainId"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("swapchain"),
+		    JAVA_INT.withName("presentStage"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("timeDomainId")
+		).withName("VkSwapchainCalibratedTimestampInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchain"));
+		PRESENT_STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStage"));
+		TIME_DOMAIN_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainId"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchain"));
+		PRESENT_STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStage"));
+		TIME_DOMAIN_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainId"));
+		//@formatter:on
+	}
 
-    public VkSwapchainCalibratedTimestampInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSwapchainCalibratedTimestampInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSwapchainCalibratedTimestampInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSwapchainCalibratedTimestampInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSwapchainCalibratedTimestampInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSwapchainCalibratedTimestampInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSwapchainCalibratedTimestampInfoEXT sType(int sType) {
@@ -187,5 +187,5 @@ public final class VkSwapchainCalibratedTimestampInfoEXT
             segment -> new VkSwapchainCalibratedTimestampInfoEXT(segment)
         );
     }
-    
+
 }

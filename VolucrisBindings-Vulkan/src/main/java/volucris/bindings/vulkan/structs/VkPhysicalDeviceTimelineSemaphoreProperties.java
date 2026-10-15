@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTimelineSemaphoreProperties
 		implements Struct<VkPhysicalDeviceTimelineSemaphoreProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("maxTimelineSemaphoreValueDifference")
-        ).withName("VkPhysicalDeviceTimelineSemaphoreProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("maxTimelineSemaphoreValueDifference")
+		).withName("VkPhysicalDeviceTimelineSemaphoreProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTimelineSemaphoreValueDifference"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTimelineSemaphoreProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTimelineSemaphoreProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTimelineSemaphoreProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTimelineSemaphoreProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTimelineSemaphoreProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTimelineSemaphoreProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTimelineSemaphoreProperties sType(int sType) {
@@ -151,5 +151,5 @@ public final class VkPhysicalDeviceTimelineSemaphoreProperties
             segment -> new VkPhysicalDeviceTimelineSemaphoreProperties(segment)
         );
     }
-    
+
 }

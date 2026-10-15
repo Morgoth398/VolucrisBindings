@@ -60,170 +60,80 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiCamera
 		implements Struct<AiCamera> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_HORIZONTAL_FOV_HANDLE;
-    public static final VarHandle M_CLIP_PLANE_NEAR_HANDLE;
-    public static final VarHandle M_CLIP_PLANE_FAR_HANDLE;
-    public static final VarHandle M_ASPECT_HANDLE;
-    public static final VarHandle M_ORTHOGRAPHIC_WIDTH_HANDLE;
+	public static final VarHandle M_HORIZONTAL_FOV_HANDLE;
+	public static final VarHandle M_CLIP_PLANE_NEAR_HANDLE;
+	public static final VarHandle M_CLIP_PLANE_FAR_HANDLE;
+	public static final VarHandle M_ASPECT_HANDLE;
+	public static final VarHandle M_ORTHOGRAPHIC_WIDTH_HANDLE;
 
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_POSITION_BYTE_OFFSET;
-    public static final long M_UP_BYTE_OFFSET;
-    public static final long M_LOOK_AT_BYTE_OFFSET;
-    public static final long M_HORIZONTAL_FOV_BYTE_OFFSET;
-    public static final long M_CLIP_PLANE_NEAR_BYTE_OFFSET;
-    public static final long M_CLIP_PLANE_FAR_BYTE_OFFSET;
-    public static final long M_ASPECT_BYTE_OFFSET;
-    public static final long M_ORTHOGRAPHIC_WIDTH_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_POSITION_BYTE_OFFSET;
+	public static final long M_UP_BYTE_OFFSET;
+	public static final long M_LOOK_AT_BYTE_OFFSET;
+	public static final long M_HORIZONTAL_FOV_BYTE_OFFSET;
+	public static final long M_CLIP_PLANE_NEAR_BYTE_OFFSET;
+	public static final long M_CLIP_PLANE_FAR_BYTE_OFFSET;
+	public static final long M_ASPECT_BYTE_OFFSET;
+	public static final long M_ORTHOGRAPHIC_WIDTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mName;
-    private final AiVector3D mPosition;
-    private final AiVector3D mUp;
-    private final AiVector3D mLookAt;
+	private final AiString mName;
+	private final AiVector3D mPosition;
+	private final AiVector3D mUp;
+	private final AiVector3D mLookAt;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mName"),
-            AiVector3D.LAYOUT.withName("mPosition"),
-            AiVector3D.LAYOUT.withName("mUp"),
-            AiVector3D.LAYOUT.withName("mLookAt"),
-            JAVA_FLOAT.withName("mHorizontalFOV"),
-            JAVA_FLOAT.withName("mClipPlaneNear"),
-            JAVA_FLOAT.withName("mClipPlaneFar"),
-            JAVA_FLOAT.withName("mAspect"),
-            JAVA_FLOAT.withName("mOrthographicWidth")
-        ).withName("aiCamera").withByteAlignment(4);
-        
-        M_HORIZONTAL_FOV_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mHorizontalFOV"));
-        M_CLIP_PLANE_NEAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mClipPlaneNear"));
-        M_CLIP_PLANE_FAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mClipPlaneFar"));
-        M_ASPECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mAspect"));
-        M_ORTHOGRAPHIC_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mOrthographicWidth"));
-        
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPosition"));
-        M_UP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mUp"));
-        M_LOOK_AT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mLookAt"));
-        M_HORIZONTAL_FOV_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mHorizontalFOV"));
-        M_CLIP_PLANE_NEAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mClipPlaneNear"));
-        M_CLIP_PLANE_FAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mClipPlaneFar"));
-        M_ASPECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mAspect"));
-        M_ORTHOGRAPHIC_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mOrthographicWidth"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mName"),
+		    AiVector3D.LAYOUT.withName("mPosition"),
+		    AiVector3D.LAYOUT.withName("mUp"),
+		    AiVector3D.LAYOUT.withName("mLookAt"),
+		    JAVA_FLOAT.withName("mHorizontalFOV"),
+		    JAVA_FLOAT.withName("mClipPlaneNear"),
+		    JAVA_FLOAT.withName("mClipPlaneFar"),
+		    JAVA_FLOAT.withName("mAspect"),
+		    JAVA_FLOAT.withName("mOrthographicWidth")
+		).withName("aiCamera").withByteAlignment(4);
+		
+		M_HORIZONTAL_FOV_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mHorizontalFOV"));
+		M_CLIP_PLANE_NEAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mClipPlaneNear"));
+		M_CLIP_PLANE_FAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mClipPlaneFar"));
+		M_ASPECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mAspect"));
+		M_ORTHOGRAPHIC_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mOrthographicWidth"));
+		
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mPosition"));
+		M_UP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mUp"));
+		M_LOOK_AT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mLookAt"));
+		M_HORIZONTAL_FOV_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mHorizontalFOV"));
+		M_CLIP_PLANE_NEAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mClipPlaneNear"));
+		M_CLIP_PLANE_FAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mClipPlaneFar"));
+		M_ASPECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mAspect"));
+		M_ORTHOGRAPHIC_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mOrthographicWidth"));
+		//@formatter:on
+	}
 
-    public AiCamera() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiCamera(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiCamera(MemorySegment segment) {
-        this.segment = segment;
-    
-        mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
-        mPosition = new AiVector3D(segment.asSlice(M_POSITION_BYTE_OFFSET, AiVector3D.LAYOUT));
-        mUp = new AiVector3D(segment.asSlice(M_UP_BYTE_OFFSET, AiVector3D.LAYOUT));
-        mLookAt = new AiVector3D(segment.asSlice(M_LOOK_AT_BYTE_OFFSET, AiVector3D.LAYOUT));
-    }
+	public AiCamera() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiCamera(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiCamera(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	    mPosition = new AiVector3D(segment.asSlice(M_POSITION_BYTE_OFFSET, AiVector3D.LAYOUT));
+	    mUp = new AiVector3D(segment.asSlice(M_UP_BYTE_OFFSET, AiVector3D.LAYOUT));
+	    mLookAt = new AiVector3D(segment.asSlice(M_LOOK_AT_BYTE_OFFSET, AiVector3D.LAYOUT));
+	}
 
-    /// @see #mHorizontalFOV()
-    public AiCamera mHorizontalFOV(float mHorizontalFOV) {
-    	M_HORIZONTAL_FOV_HANDLE.set(segment, 0L, mHorizontalFOV);
-    	return this;
-    }
-    
-    /// ```
-    /// Horizontal field of view angle, in radians.
-    /// 
-    /// The field of view angle is the angle between the center
-    /// line of the screen and the left or right border.
-    /// The default value is 1/4PI.
-    /// ```
-    public float mHorizontalFOV() {
-    	return (float) M_HORIZONTAL_FOV_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #mClipPlaneNear()
-    public AiCamera mClipPlaneNear(float mClipPlaneNear) {
-    	M_CLIP_PLANE_NEAR_HANDLE.set(segment, 0L, mClipPlaneNear);
-    	return this;
-    }
-    
-    /// ```
-    /// Distance of the near clipping plane from the camera.
-    /// 
-    /// The value may not be 0.f (for arithmetic reasons to prevent
-    /// a division through zero). The default value is 0.1f.
-    /// ```
-    public float mClipPlaneNear() {
-    	return (float) M_CLIP_PLANE_NEAR_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #mClipPlaneFar()
-    public AiCamera mClipPlaneFar(float mClipPlaneFar) {
-    	M_CLIP_PLANE_FAR_HANDLE.set(segment, 0L, mClipPlaneFar);
-    	return this;
-    }
-    
-    /// ```
-    /// Distance of the far clipping plane from the camera.
-    /// 
-    /// The far clipping plane must, of course, be further away than the
-    /// near clipping plane. The default value is 1000.f. The ratio
-    /// between the near and the far plane should not be too
-    /// large (between 1000-10000 should be ok) to avoid floating-point
-    /// inaccuracies which could lead to z-fighting.
-    /// ```
-    public float mClipPlaneFar() {
-    	return (float) M_CLIP_PLANE_FAR_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #mAspect()
-    public AiCamera mAspect(float mAspect) {
-    	M_ASPECT_HANDLE.set(segment, 0L, mAspect);
-    	return this;
-    }
-    
-    /// ```
-    /// Screen aspect ratio.
-    /// 
-    /// This is the ration between the width and the height of the
-    /// screen. Typical values are 4/3, 1/2 or 1/1. This value is
-    /// 0 if the aspect ratio is not defined in the source file.
-    /// 0 is also the default value.
-    /// ```
-    public float mAspect() {
-    	return (float) M_ASPECT_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #mOrthographicWidth()
-    public AiCamera mOrthographicWidth(float mOrthographicWidth) {
-    	M_ORTHOGRAPHIC_WIDTH_HANDLE.set(segment, 0L, mOrthographicWidth);
-    	return this;
-    }
-    
-    /// ```
-    /// Half horizontal orthographic width, in scene units.
-    /// 
-    /// The orthographic width specifies the half width of the
-    /// orthographic view box. If non-zero the camera is
-    /// orthographic and the mAspect should define to the
-    /// ratio between the orthographic width and height
-    /// and mHorizontalFOV should be set to 0.
-    /// The default value is 0 (not orthographic).
-    /// ```
-    public float mOrthographicWidth() {
-    	return (float) M_ORTHOGRAPHIC_WIDTH_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #mName()
     public AiCamera mName(Consumer<AiString> consumer) {
     	consumer.accept(mName);
@@ -318,6 +228,96 @@ public final class AiCamera
     	return mLookAt;
     }
     
+    /// @see #mHorizontalFOV()
+    public AiCamera mHorizontalFOV(float mHorizontalFOV) {
+    	M_HORIZONTAL_FOV_HANDLE.set(segment, 0L, mHorizontalFOV);
+    	return this;
+    }
+    
+    /// ```
+    /// Horizontal field of view angle, in radians.
+    /// 
+    /// The field of view angle is the angle between the center
+    /// line of the screen and the left or right border.
+    /// The default value is 1/4PI.
+    /// ```
+    public float mHorizontalFOV() {
+    	return (float) M_HORIZONTAL_FOV_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #mClipPlaneNear()
+    public AiCamera mClipPlaneNear(float mClipPlaneNear) {
+    	M_CLIP_PLANE_NEAR_HANDLE.set(segment, 0L, mClipPlaneNear);
+    	return this;
+    }
+    
+    /// ```
+    /// Distance of the near clipping plane from the camera.
+    /// 
+    /// The value may not be 0.f (for arithmetic reasons to prevent
+    /// a division through zero). The default value is 0.1f.
+    /// ```
+    public float mClipPlaneNear() {
+    	return (float) M_CLIP_PLANE_NEAR_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #mClipPlaneFar()
+    public AiCamera mClipPlaneFar(float mClipPlaneFar) {
+    	M_CLIP_PLANE_FAR_HANDLE.set(segment, 0L, mClipPlaneFar);
+    	return this;
+    }
+    
+    /// ```
+    /// Distance of the far clipping plane from the camera.
+    /// 
+    /// The far clipping plane must, of course, be further away than the
+    /// near clipping plane. The default value is 1000.f. The ratio
+    /// between the near and the far plane should not be too
+    /// large (between 1000-10000 should be ok) to avoid floating-point
+    /// inaccuracies which could lead to z-fighting.
+    /// ```
+    public float mClipPlaneFar() {
+    	return (float) M_CLIP_PLANE_FAR_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #mAspect()
+    public AiCamera mAspect(float mAspect) {
+    	M_ASPECT_HANDLE.set(segment, 0L, mAspect);
+    	return this;
+    }
+    
+    /// ```
+    /// Screen aspect ratio.
+    /// 
+    /// This is the ration between the width and the height of the
+    /// screen. Typical values are 4/3, 1/2 or 1/1. This value is
+    /// 0 if the aspect ratio is not defined in the source file.
+    /// 0 is also the default value.
+    /// ```
+    public float mAspect() {
+    	return (float) M_ASPECT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #mOrthographicWidth()
+    public AiCamera mOrthographicWidth(float mOrthographicWidth) {
+    	M_ORTHOGRAPHIC_WIDTH_HANDLE.set(segment, 0L, mOrthographicWidth);
+    	return this;
+    }
+    
+    /// ```
+    /// Half horizontal orthographic width, in scene units.
+    /// 
+    /// The orthographic width specifies the half width of the
+    /// orthographic view box. If non-zero the camera is
+    /// orthographic and the mAspect should define to the
+    /// ratio between the orthographic width and height
+    /// and mHorizontalFOV should be set to 0.
+    /// The default value is 0 (not orthographic).
+    /// ```
+    public float mOrthographicWidth() {
+    	return (float) M_ORTHOGRAPHIC_WIDTH_HANDLE.get(segment, 0L);
+    }
+    
     @Override
     public AiCamera set(AiCamera other) {
         return set(other.segment);
@@ -369,5 +369,5 @@ public final class AiCamera
             segment -> new AiCamera(segment)
         );
     }
-    
+
 }

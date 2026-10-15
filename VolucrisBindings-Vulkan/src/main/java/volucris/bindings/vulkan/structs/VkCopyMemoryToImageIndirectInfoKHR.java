@@ -22,76 +22,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyMemoryToImageIndirectInfoKHR
 		implements Struct<VkCopyMemoryToImageIndirectInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_COPY_FLAGS_HANDLE;
-    public static final VarHandle COPY_COUNT_HANDLE;
-    public static final VarHandle DST_IMAGE_HANDLE;
-    public static final VarHandle DST_IMAGE_LAYOUT_HANDLE;
-    public static final VarHandle P_IMAGE_SUBRESOURCES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_COPY_FLAGS_HANDLE;
+	public static final VarHandle COPY_COUNT_HANDLE;
+	public static final VarHandle DST_IMAGE_HANDLE;
+	public static final VarHandle DST_IMAGE_LAYOUT_HANDLE;
+	public static final VarHandle P_IMAGE_SUBRESOURCES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_COPY_FLAGS_BYTE_OFFSET;
-    public static final long COPY_COUNT_BYTE_OFFSET;
-    public static final long COPY_ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long DST_IMAGE_BYTE_OFFSET;
-    public static final long DST_IMAGE_LAYOUT_BYTE_OFFSET;
-    public static final long P_IMAGE_SUBRESOURCES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_COPY_FLAGS_BYTE_OFFSET;
+	public static final long COPY_COUNT_BYTE_OFFSET;
+	public static final long COPY_ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long DST_IMAGE_BYTE_OFFSET;
+	public static final long DST_IMAGE_LAYOUT_BYTE_OFFSET;
+	public static final long P_IMAGE_SUBRESOURCES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkStridedDeviceAddressRangeKHR copyAddressRange;
+	private final VkStridedDeviceAddressRangeKHR copyAddressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("srcCopyFlags"),
-            JAVA_INT.withName("copyCount"),
-            VkStridedDeviceAddressRangeKHR.LAYOUT.withName("copyAddressRange"),
-            UNBOUNDED_ADDRESS.withName("dstImage"),
-            JAVA_INT.withName("dstImageLayout"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pImageSubresources")
-        ).withName("VkCopyMemoryToImageIndirectInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_COPY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcCopyFlags"));
-        COPY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copyCount"));
-        DST_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImage"));
-        DST_IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImageLayout"));
-        P_IMAGE_SUBRESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageSubresources"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_COPY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcCopyFlags"));
-        COPY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyCount"));
-        COPY_ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyAddressRange"));
-        DST_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImage"));
-        DST_IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImageLayout"));
-        P_IMAGE_SUBRESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageSubresources"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("srcCopyFlags"),
+		    JAVA_INT.withName("copyCount"),
+		    VkStridedDeviceAddressRangeKHR.LAYOUT.withName("copyAddressRange"),
+		    UNBOUNDED_ADDRESS.withName("dstImage"),
+		    JAVA_INT.withName("dstImageLayout"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pImageSubresources")
+		).withName("VkCopyMemoryToImageIndirectInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_COPY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcCopyFlags"));
+		COPY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copyCount"));
+		DST_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImage"));
+		DST_IMAGE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstImageLayout"));
+		P_IMAGE_SUBRESOURCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageSubresources"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_COPY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcCopyFlags"));
+		COPY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyCount"));
+		COPY_ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyAddressRange"));
+		DST_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImage"));
+		DST_IMAGE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstImageLayout"));
+		P_IMAGE_SUBRESOURCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageSubresources"));
+		//@formatter:on
+	}
 
-    public VkCopyMemoryToImageIndirectInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyMemoryToImageIndirectInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyMemoryToImageIndirectInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        copyAddressRange = new VkStridedDeviceAddressRangeKHR(segment.asSlice(COPY_ADDRESS_RANGE_BYTE_OFFSET, VkStridedDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkCopyMemoryToImageIndirectInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyMemoryToImageIndirectInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyMemoryToImageIndirectInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    copyAddressRange = new VkStridedDeviceAddressRangeKHR(segment.asSlice(COPY_ADDRESS_RANGE_BYTE_OFFSET, VkStridedDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkCopyMemoryToImageIndirectInfoKHR sType(int sType) {
@@ -138,6 +138,22 @@ public final class VkCopyMemoryToImageIndirectInfoKHR
     	return (int) COPY_COUNT_HANDLE.get(segment, 0L);
     }
     
+    /// @see #copyAddressRange()
+    public VkCopyMemoryToImageIndirectInfoKHR copyAddressRange(Consumer<VkStridedDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(copyAddressRange);
+    	return this;
+    }
+    
+    /// @see #copyAddressRange()
+    public VkCopyMemoryToImageIndirectInfoKHR copyAddressRange(VkStridedDeviceAddressRangeKHR other) {
+    	copyAddressRange.set(other);
+    	return this;
+    }
+    
+    public VkStridedDeviceAddressRangeKHR copyAddressRange() {
+    	return copyAddressRange;
+    }
+    
     /// @see #dstImage()
     public VkCopyMemoryToImageIndirectInfoKHR dstImage(VkImage dstImage) {
     	DST_IMAGE_HANDLE.set(segment, 0L, dstImage.memorySegment());
@@ -176,22 +192,6 @@ public final class VkCopyMemoryToImageIndirectInfoKHR
     		return null;
     
     	return VkImageSubresourceLayers.array(segment);
-    }
-    
-    /// @see #copyAddressRange()
-    public VkCopyMemoryToImageIndirectInfoKHR copyAddressRange(Consumer<VkStridedDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(copyAddressRange);
-    	return this;
-    }
-    
-    /// @see #copyAddressRange()
-    public VkCopyMemoryToImageIndirectInfoKHR copyAddressRange(VkStridedDeviceAddressRangeKHR other) {
-    	copyAddressRange.set(other);
-    	return this;
-    }
-    
-    public VkStridedDeviceAddressRangeKHR copyAddressRange() {
-    	return copyAddressRange;
     }
     
     @Override
@@ -245,5 +245,5 @@ public final class VkCopyMemoryToImageIndirectInfoKHR
             segment -> new VkCopyMemoryToImageIndirectInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceProvokingVertexFeaturesEXT
 		implements Struct<VkPhysicalDeviceProvokingVertexFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PROVOKING_VERTEX_LAST_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PROVOKING_VERTEX_LAST_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PROVOKING_VERTEX_LAST_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PROVOKING_VERTEX_LAST_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("provokingVertexLast"),
-            JAVA_INT.withName("transformFeedbackPreservesProvokingVertex")
-        ).withName("VkPhysicalDeviceProvokingVertexFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PROVOKING_VERTEX_LAST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("provokingVertexLast"));
-        TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackPreservesProvokingVertex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PROVOKING_VERTEX_LAST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("provokingVertexLast"));
-        TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackPreservesProvokingVertex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("provokingVertexLast"),
+		    JAVA_INT.withName("transformFeedbackPreservesProvokingVertex")
+		).withName("VkPhysicalDeviceProvokingVertexFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PROVOKING_VERTEX_LAST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("provokingVertexLast"));
+		TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackPreservesProvokingVertex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PROVOKING_VERTEX_LAST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("provokingVertexLast"));
+		TRANSFORM_FEEDBACK_PRESERVES_PROVOKING_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackPreservesProvokingVertex"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceProvokingVertexFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceProvokingVertexFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceProvokingVertexFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceProvokingVertexFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceProvokingVertexFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceProvokingVertexFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceProvokingVertexFeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceProvokingVertexFeaturesEXT
             segment -> new VkPhysicalDeviceProvokingVertexFeaturesEXT(segment)
         );
     }
-    
+
 }

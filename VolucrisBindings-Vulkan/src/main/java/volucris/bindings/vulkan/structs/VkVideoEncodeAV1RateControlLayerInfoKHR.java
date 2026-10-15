@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1RateControlLayerInfoKHR
 		implements Struct<VkVideoEncodeAV1RateControlLayerInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USE_MIN_QINDEX_HANDLE;
-    public static final VarHandle USE_MAX_QINDEX_HANDLE;
-    public static final VarHandle USE_MAX_FRAME_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USE_MIN_QINDEX_HANDLE;
+	public static final VarHandle USE_MAX_QINDEX_HANDLE;
+	public static final VarHandle USE_MAX_FRAME_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USE_MIN_QINDEX_BYTE_OFFSET;
-    public static final long MIN_QINDEX_BYTE_OFFSET;
-    public static final long USE_MAX_QINDEX_BYTE_OFFSET;
-    public static final long MAX_QINDEX_BYTE_OFFSET;
-    public static final long USE_MAX_FRAME_SIZE_BYTE_OFFSET;
-    public static final long MAX_FRAME_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USE_MIN_QINDEX_BYTE_OFFSET;
+	public static final long MIN_QINDEX_BYTE_OFFSET;
+	public static final long USE_MAX_QINDEX_BYTE_OFFSET;
+	public static final long MAX_QINDEX_BYTE_OFFSET;
+	public static final long USE_MAX_FRAME_SIZE_BYTE_OFFSET;
+	public static final long MAX_FRAME_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkVideoEncodeAV1QIndexKHR minQIndex;
-    private final VkVideoEncodeAV1QIndexKHR maxQIndex;
-    private final VkVideoEncodeAV1FrameSizeKHR maxFrameSize;
+	private final VkVideoEncodeAV1QIndexKHR minQIndex;
+	private final VkVideoEncodeAV1QIndexKHR maxQIndex;
+	private final VkVideoEncodeAV1FrameSizeKHR maxFrameSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("useMinQIndex"),
-            VkVideoEncodeAV1QIndexKHR.LAYOUT.withName("minQIndex"),
-            JAVA_INT.withName("useMaxQIndex"),
-            VkVideoEncodeAV1QIndexKHR.LAYOUT.withName("maxQIndex"),
-            JAVA_INT.withName("useMaxFrameSize"),
-            VkVideoEncodeAV1FrameSizeKHR.LAYOUT.withName("maxFrameSize")
-        ).withName("VkVideoEncodeAV1RateControlLayerInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USE_MIN_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMinQIndex"));
-        USE_MAX_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxQIndex"));
-        USE_MAX_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxFrameSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USE_MIN_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMinQIndex"));
-        MIN_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQIndex"));
-        USE_MAX_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxQIndex"));
-        MAX_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQIndex"));
-        USE_MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxFrameSize"));
-        MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFrameSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("useMinQIndex"),
+		    VkVideoEncodeAV1QIndexKHR.LAYOUT.withName("minQIndex"),
+		    JAVA_INT.withName("useMaxQIndex"),
+		    VkVideoEncodeAV1QIndexKHR.LAYOUT.withName("maxQIndex"),
+		    JAVA_INT.withName("useMaxFrameSize"),
+		    VkVideoEncodeAV1FrameSizeKHR.LAYOUT.withName("maxFrameSize")
+		).withName("VkVideoEncodeAV1RateControlLayerInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USE_MIN_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMinQIndex"));
+		USE_MAX_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxQIndex"));
+		USE_MAX_FRAME_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useMaxFrameSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USE_MIN_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMinQIndex"));
+		MIN_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQIndex"));
+		USE_MAX_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxQIndex"));
+		MAX_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQIndex"));
+		USE_MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useMaxFrameSize"));
+		MAX_FRAME_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFrameSize"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1RateControlLayerInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1RateControlLayerInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1RateControlLayerInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        minQIndex = new VkVideoEncodeAV1QIndexKHR(segment.asSlice(MIN_QINDEX_BYTE_OFFSET, VkVideoEncodeAV1QIndexKHR.LAYOUT));
-        maxQIndex = new VkVideoEncodeAV1QIndexKHR(segment.asSlice(MAX_QINDEX_BYTE_OFFSET, VkVideoEncodeAV1QIndexKHR.LAYOUT));
-        maxFrameSize = new VkVideoEncodeAV1FrameSizeKHR(segment.asSlice(MAX_FRAME_SIZE_BYTE_OFFSET, VkVideoEncodeAV1FrameSizeKHR.LAYOUT));
-    }
+	public VkVideoEncodeAV1RateControlLayerInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1RateControlLayerInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1RateControlLayerInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minQIndex = new VkVideoEncodeAV1QIndexKHR(segment.asSlice(MIN_QINDEX_BYTE_OFFSET, VkVideoEncodeAV1QIndexKHR.LAYOUT));
+	    maxQIndex = new VkVideoEncodeAV1QIndexKHR(segment.asSlice(MAX_QINDEX_BYTE_OFFSET, VkVideoEncodeAV1QIndexKHR.LAYOUT));
+	    maxFrameSize = new VkVideoEncodeAV1FrameSizeKHR(segment.asSlice(MAX_FRAME_SIZE_BYTE_OFFSET, VkVideoEncodeAV1FrameSizeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1RateControlLayerInfoKHR sType(int sType) {
@@ -127,26 +127,6 @@ public final class VkVideoEncodeAV1RateControlLayerInfoKHR
     	return (int) USE_MIN_QINDEX_HANDLE.get(segment, 0L);
     }
     
-    /// @see #useMaxQIndex()
-    public VkVideoEncodeAV1RateControlLayerInfoKHR useMaxQIndex(int useMaxQIndex) {
-    	USE_MAX_QINDEX_HANDLE.set(segment, 0L, useMaxQIndex);
-    	return this;
-    }
-    
-    public int useMaxQIndex() {
-    	return (int) USE_MAX_QINDEX_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #useMaxFrameSize()
-    public VkVideoEncodeAV1RateControlLayerInfoKHR useMaxFrameSize(int useMaxFrameSize) {
-    	USE_MAX_FRAME_SIZE_HANDLE.set(segment, 0L, useMaxFrameSize);
-    	return this;
-    }
-    
-    public int useMaxFrameSize() {
-    	return (int) USE_MAX_FRAME_SIZE_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #minQIndex()
     public VkVideoEncodeAV1RateControlLayerInfoKHR minQIndex(Consumer<VkVideoEncodeAV1QIndexKHR> consumer) {
     	consumer.accept(minQIndex);
@@ -163,6 +143,16 @@ public final class VkVideoEncodeAV1RateControlLayerInfoKHR
     	return minQIndex;
     }
     
+    /// @see #useMaxQIndex()
+    public VkVideoEncodeAV1RateControlLayerInfoKHR useMaxQIndex(int useMaxQIndex) {
+    	USE_MAX_QINDEX_HANDLE.set(segment, 0L, useMaxQIndex);
+    	return this;
+    }
+    
+    public int useMaxQIndex() {
+    	return (int) USE_MAX_QINDEX_HANDLE.get(segment, 0L);
+    }
+    
     /// @see #maxQIndex()
     public VkVideoEncodeAV1RateControlLayerInfoKHR maxQIndex(Consumer<VkVideoEncodeAV1QIndexKHR> consumer) {
     	consumer.accept(maxQIndex);
@@ -177,6 +167,16 @@ public final class VkVideoEncodeAV1RateControlLayerInfoKHR
     
     public VkVideoEncodeAV1QIndexKHR maxQIndex() {
     	return maxQIndex;
+    }
+    
+    /// @see #useMaxFrameSize()
+    public VkVideoEncodeAV1RateControlLayerInfoKHR useMaxFrameSize(int useMaxFrameSize) {
+    	USE_MAX_FRAME_SIZE_HANDLE.set(segment, 0L, useMaxFrameSize);
+    	return this;
+    }
+    
+    public int useMaxFrameSize() {
+    	return (int) USE_MAX_FRAME_SIZE_HANDLE.get(segment, 0L);
     }
     
     /// @see #maxFrameSize()
@@ -246,5 +246,5 @@ public final class VkVideoEncodeAV1RateControlLayerInfoKHR
             segment -> new VkVideoEncodeAV1RateControlLayerInfoKHR(segment)
         );
     }
-    
+
 }

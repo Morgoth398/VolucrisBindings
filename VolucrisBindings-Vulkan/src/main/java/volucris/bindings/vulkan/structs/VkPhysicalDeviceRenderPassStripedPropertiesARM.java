@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRenderPassStripedPropertiesARM
 		implements Struct<VkPhysicalDeviceRenderPassStripedPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_RENDER_PASS_STRIPES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_RENDER_PASS_STRIPES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RENDER_PASS_STRIPE_GRANULARITY_BYTE_OFFSET;
-    public static final long MAX_RENDER_PASS_STRIPES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RENDER_PASS_STRIPE_GRANULARITY_BYTE_OFFSET;
+	public static final long MAX_RENDER_PASS_STRIPES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D renderPassStripeGranularity;
+	private final VkExtent2D renderPassStripeGranularity;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("renderPassStripeGranularity"),
-            JAVA_INT.withName("maxRenderPassStripes"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRenderPassStripedPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_RENDER_PASS_STRIPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRenderPassStripes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RENDER_PASS_STRIPE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPassStripeGranularity"));
-        MAX_RENDER_PASS_STRIPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRenderPassStripes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("renderPassStripeGranularity"),
+		    JAVA_INT.withName("maxRenderPassStripes"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRenderPassStripedPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_RENDER_PASS_STRIPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRenderPassStripes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RENDER_PASS_STRIPE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPassStripeGranularity"));
+		MAX_RENDER_PASS_STRIPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRenderPassStripes"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRenderPassStripedPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRenderPassStripedPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRenderPassStripedPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-        renderPassStripeGranularity = new VkExtent2D(segment.asSlice(RENDER_PASS_STRIPE_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceRenderPassStripedPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRenderPassStripedPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRenderPassStripedPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    renderPassStripeGranularity = new VkExtent2D(segment.asSlice(RENDER_PASS_STRIPE_GRANULARITY_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRenderPassStripedPropertiesARM sType(int sType) {
@@ -98,16 +98,6 @@ public final class VkPhysicalDeviceRenderPassStripedPropertiesARM
     	return segment;
     }
     
-    /// @see #maxRenderPassStripes()
-    public VkPhysicalDeviceRenderPassStripedPropertiesARM maxRenderPassStripes(int maxRenderPassStripes) {
-    	MAX_RENDER_PASS_STRIPES_HANDLE.set(segment, 0L, maxRenderPassStripes);
-    	return this;
-    }
-    
-    public int maxRenderPassStripes() {
-    	return (int) MAX_RENDER_PASS_STRIPES_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #renderPassStripeGranularity()
     public VkPhysicalDeviceRenderPassStripedPropertiesARM renderPassStripeGranularity(Consumer<VkExtent2D> consumer) {
     	consumer.accept(renderPassStripeGranularity);
@@ -122,6 +112,16 @@ public final class VkPhysicalDeviceRenderPassStripedPropertiesARM
     
     public VkExtent2D renderPassStripeGranularity() {
     	return renderPassStripeGranularity;
+    }
+    
+    /// @see #maxRenderPassStripes()
+    public VkPhysicalDeviceRenderPassStripedPropertiesARM maxRenderPassStripes(int maxRenderPassStripes) {
+    	MAX_RENDER_PASS_STRIPES_HANDLE.set(segment, 0L, maxRenderPassStripes);
+    	return this;
+    }
+    
+    public int maxRenderPassStripes() {
+    	return (int) MAX_RENDER_PASS_STRIPES_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -175,5 +175,5 @@ public final class VkPhysicalDeviceRenderPassStripedPropertiesARM
             segment -> new VkPhysicalDeviceRenderPassStripedPropertiesARM(segment)
         );
     }
-    
+
 }

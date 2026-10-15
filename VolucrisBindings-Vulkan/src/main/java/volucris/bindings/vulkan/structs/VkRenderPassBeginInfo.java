@@ -22,71 +22,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassBeginInfo
 		implements Struct<VkRenderPassBeginInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RENDER_PASS_HANDLE;
-    public static final VarHandle FRAMEBUFFER_HANDLE;
-    public static final VarHandle CLEAR_VALUE_COUNT_HANDLE;
-    public static final VarHandle P_CLEAR_VALUES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RENDER_PASS_HANDLE;
+	public static final VarHandle FRAMEBUFFER_HANDLE;
+	public static final VarHandle CLEAR_VALUE_COUNT_HANDLE;
+	public static final VarHandle P_CLEAR_VALUES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RENDER_PASS_BYTE_OFFSET;
-    public static final long FRAMEBUFFER_BYTE_OFFSET;
-    public static final long RENDER_AREA_BYTE_OFFSET;
-    public static final long CLEAR_VALUE_COUNT_BYTE_OFFSET;
-    public static final long P_CLEAR_VALUES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RENDER_PASS_BYTE_OFFSET;
+	public static final long FRAMEBUFFER_BYTE_OFFSET;
+	public static final long RENDER_AREA_BYTE_OFFSET;
+	public static final long CLEAR_VALUE_COUNT_BYTE_OFFSET;
+	public static final long P_CLEAR_VALUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkRect2D renderArea;
+	private final VkRect2D renderArea;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("renderPass"),
-            UNBOUNDED_ADDRESS.withName("framebuffer"),
-            VkRect2D.LAYOUT.withName("renderArea"),
-            JAVA_INT.withName("clearValueCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pClearValues")
-        ).withName("VkRenderPassBeginInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RENDER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPass"));
-        FRAMEBUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebuffer"));
-        CLEAR_VALUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clearValueCount"));
-        P_CLEAR_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pClearValues"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RENDER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPass"));
-        FRAMEBUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebuffer"));
-        RENDER_AREA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderArea"));
-        CLEAR_VALUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clearValueCount"));
-        P_CLEAR_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pClearValues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("renderPass"),
+		    UNBOUNDED_ADDRESS.withName("framebuffer"),
+		    VkRect2D.LAYOUT.withName("renderArea"),
+		    JAVA_INT.withName("clearValueCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pClearValues")
+		).withName("VkRenderPassBeginInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RENDER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderPass"));
+		FRAMEBUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framebuffer"));
+		CLEAR_VALUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clearValueCount"));
+		P_CLEAR_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pClearValues"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RENDER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderPass"));
+		FRAMEBUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framebuffer"));
+		RENDER_AREA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderArea"));
+		CLEAR_VALUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clearValueCount"));
+		P_CLEAR_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pClearValues"));
+		//@formatter:on
+	}
 
-    public VkRenderPassBeginInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassBeginInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassBeginInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        renderArea = new VkRect2D(segment.asSlice(RENDER_AREA_BYTE_OFFSET, VkRect2D.LAYOUT));
-    }
+	public VkRenderPassBeginInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassBeginInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassBeginInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    renderArea = new VkRect2D(segment.asSlice(RENDER_AREA_BYTE_OFFSET, VkRect2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkRenderPassBeginInfo sType(int sType) {
@@ -143,6 +143,22 @@ public final class VkRenderPassBeginInfo
     	return new VkFramebuffer(segment);
     }
     
+    /// @see #renderArea()
+    public VkRenderPassBeginInfo renderArea(Consumer<VkRect2D> consumer) {
+    	consumer.accept(renderArea);
+    	return this;
+    }
+    
+    /// @see #renderArea()
+    public VkRenderPassBeginInfo renderArea(VkRect2D other) {
+    	renderArea.set(other);
+    	return this;
+    }
+    
+    public VkRect2D renderArea() {
+    	return renderArea;
+    }
+    
     /// @see #clearValueCount()
     public VkRenderPassBeginInfo clearValueCount(int clearValueCount) {
     	CLEAR_VALUE_COUNT_HANDLE.set(segment, 0L, clearValueCount);
@@ -166,22 +182,6 @@ public final class VkRenderPassBeginInfo
     		return null;
     
     	return VkClearValue.array(segment);
-    }
-    
-    /// @see #renderArea()
-    public VkRenderPassBeginInfo renderArea(Consumer<VkRect2D> consumer) {
-    	consumer.accept(renderArea);
-    	return this;
-    }
-    
-    /// @see #renderArea()
-    public VkRenderPassBeginInfo renderArea(VkRect2D other) {
-    	renderArea.set(other);
-    	return this;
-    }
-    
-    public VkRect2D renderArea() {
-    	return renderArea;
     }
     
     @Override
@@ -235,5 +235,5 @@ public final class VkRenderPassBeginInfo
             segment -> new VkRenderPassBeginInfo(segment)
         );
     }
-    
+
 }

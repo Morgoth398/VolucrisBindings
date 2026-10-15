@@ -22,106 +22,106 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkShaderCreateInfoEXT
 		implements Struct<VkShaderCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle NEXT_STAGE_HANDLE;
-    public static final VarHandle CODE_TYPE_HANDLE;
-    public static final VarHandle CODE_SIZE_HANDLE;
-    public static final VarHandle P_CODE_HANDLE;
-    public static final VarHandle P_NAME_HANDLE;
-    public static final VarHandle SET_LAYOUT_COUNT_HANDLE;
-    public static final VarHandle P_SET_LAYOUTS_HANDLE;
-    public static final VarHandle PUSH_CONSTANT_RANGE_COUNT_HANDLE;
-    public static final VarHandle P_PUSH_CONSTANT_RANGES_HANDLE;
-    public static final VarHandle P_SPECIALIZATION_INFO_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle NEXT_STAGE_HANDLE;
+	public static final VarHandle CODE_TYPE_HANDLE;
+	public static final VarHandle CODE_SIZE_HANDLE;
+	public static final VarHandle P_CODE_HANDLE;
+	public static final VarHandle P_NAME_HANDLE;
+	public static final VarHandle SET_LAYOUT_COUNT_HANDLE;
+	public static final VarHandle P_SET_LAYOUTS_HANDLE;
+	public static final VarHandle PUSH_CONSTANT_RANGE_COUNT_HANDLE;
+	public static final VarHandle P_PUSH_CONSTANT_RANGES_HANDLE;
+	public static final VarHandle P_SPECIALIZATION_INFO_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long NEXT_STAGE_BYTE_OFFSET;
-    public static final long CODE_TYPE_BYTE_OFFSET;
-    public static final long CODE_SIZE_BYTE_OFFSET;
-    public static final long P_CODE_BYTE_OFFSET;
-    public static final long P_NAME_BYTE_OFFSET;
-    public static final long SET_LAYOUT_COUNT_BYTE_OFFSET;
-    public static final long P_SET_LAYOUTS_BYTE_OFFSET;
-    public static final long PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET;
-    public static final long P_PUSH_CONSTANT_RANGES_BYTE_OFFSET;
-    public static final long P_SPECIALIZATION_INFO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long NEXT_STAGE_BYTE_OFFSET;
+	public static final long CODE_TYPE_BYTE_OFFSET;
+	public static final long CODE_SIZE_BYTE_OFFSET;
+	public static final long P_CODE_BYTE_OFFSET;
+	public static final long P_NAME_BYTE_OFFSET;
+	public static final long SET_LAYOUT_COUNT_BYTE_OFFSET;
+	public static final long P_SET_LAYOUTS_BYTE_OFFSET;
+	public static final long PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET;
+	public static final long P_PUSH_CONSTANT_RANGES_BYTE_OFFSET;
+	public static final long P_SPECIALIZATION_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("stage"),
-            JAVA_INT.withName("nextStage"),
-            JAVA_INT.withName("codeType"),
-            JAVA_LONG.withName("codeSize"),
-            UNBOUNDED_ADDRESS.withName("pCode"),
-            UNBOUNDED_ADDRESS.withName("pName"),
-            JAVA_INT.withName("setLayoutCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSetLayouts"),
-            JAVA_INT.withName("pushConstantRangeCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPushConstantRanges"),
-            UNBOUNDED_ADDRESS.withName("pSpecializationInfo")
-        ).withName("VkShaderCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        NEXT_STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nextStage"));
-        CODE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("codeType"));
-        CODE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("codeSize"));
-        P_CODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCode"));
-        P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
-        SET_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setLayoutCount"));
-        P_SET_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayouts"));
-        PUSH_CONSTANT_RANGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushConstantRangeCount"));
-        P_PUSH_CONSTANT_RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPushConstantRanges"));
-        P_SPECIALIZATION_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSpecializationInfo"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        NEXT_STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nextStage"));
-        CODE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codeType"));
-        CODE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codeSize"));
-        P_CODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCode"));
-        P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
-        SET_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setLayoutCount"));
-        P_SET_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayouts"));
-        PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushConstantRangeCount"));
-        P_PUSH_CONSTANT_RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPushConstantRanges"));
-        P_SPECIALIZATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSpecializationInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("stage"),
+		    JAVA_INT.withName("nextStage"),
+		    JAVA_INT.withName("codeType"),
+		    JAVA_LONG.withName("codeSize"),
+		    UNBOUNDED_ADDRESS.withName("pCode"),
+		    UNBOUNDED_ADDRESS.withName("pName"),
+		    JAVA_INT.withName("setLayoutCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSetLayouts"),
+		    JAVA_INT.withName("pushConstantRangeCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPushConstantRanges"),
+		    UNBOUNDED_ADDRESS.withName("pSpecializationInfo")
+		).withName("VkShaderCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		NEXT_STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nextStage"));
+		CODE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("codeType"));
+		CODE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("codeSize"));
+		P_CODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCode"));
+		P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
+		SET_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setLayoutCount"));
+		P_SET_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayouts"));
+		PUSH_CONSTANT_RANGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushConstantRangeCount"));
+		P_PUSH_CONSTANT_RANGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPushConstantRanges"));
+		P_SPECIALIZATION_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSpecializationInfo"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		NEXT_STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nextStage"));
+		CODE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codeType"));
+		CODE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codeSize"));
+		P_CODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCode"));
+		P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
+		SET_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setLayoutCount"));
+		P_SET_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayouts"));
+		PUSH_CONSTANT_RANGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushConstantRangeCount"));
+		P_PUSH_CONSTANT_RANGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPushConstantRanges"));
+		P_SPECIALIZATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSpecializationInfo"));
+		//@formatter:on
+	}
 
-    public VkShaderCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkShaderCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkShaderCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkShaderCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkShaderCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkShaderCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkShaderCreateInfoEXT sType(int sType) {
@@ -344,5 +344,5 @@ public final class VkShaderCreateInfoEXT
             segment -> new VkShaderCreateInfoEXT(segment)
         );
     }
-    
+
 }

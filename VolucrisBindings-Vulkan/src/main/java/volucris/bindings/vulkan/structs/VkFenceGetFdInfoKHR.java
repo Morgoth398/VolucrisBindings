@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkFenceGetFdInfoKHR
 		implements Struct<VkFenceGetFdInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FENCE_HANDLE;
-    public static final VarHandle HANDLE_TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FENCE_HANDLE;
+	public static final VarHandle HANDLE_TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FENCE_BYTE_OFFSET;
-    public static final long HANDLE_TYPE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FENCE_BYTE_OFFSET;
+	public static final long HANDLE_TYPE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("fence"),
-            JAVA_INT.withName("handleType"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkFenceGetFdInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fence"));
-        HANDLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handleType"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fence"));
-        HANDLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handleType"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("fence"),
+		    JAVA_INT.withName("handleType"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkFenceGetFdInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fence"));
+		HANDLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("handleType"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fence"));
+		HANDLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("handleType"));
+		//@formatter:on
+	}
 
-    public VkFenceGetFdInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkFenceGetFdInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkFenceGetFdInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkFenceGetFdInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkFenceGetFdInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkFenceGetFdInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkFenceGetFdInfoKHR sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkFenceGetFdInfoKHR
             segment -> new VkFenceGetFdInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineVertexInputDivisorStateCreateInfo
 		implements Struct<VkPipelineVertexInputDivisorStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VERTEX_BINDING_DIVISOR_COUNT_HANDLE;
-    public static final VarHandle P_VERTEX_BINDING_DIVISORS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VERTEX_BINDING_DIVISOR_COUNT_HANDLE;
+	public static final VarHandle P_VERTEX_BINDING_DIVISORS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VERTEX_BINDING_DIVISOR_COUNT_BYTE_OFFSET;
-    public static final long P_VERTEX_BINDING_DIVISORS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VERTEX_BINDING_DIVISOR_COUNT_BYTE_OFFSET;
+	public static final long P_VERTEX_BINDING_DIVISORS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vertexBindingDivisorCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pVertexBindingDivisors")
-        ).withName("VkPipelineVertexInputDivisorStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VERTEX_BINDING_DIVISOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingDivisorCount"));
-        P_VERTEX_BINDING_DIVISORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexBindingDivisors"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VERTEX_BINDING_DIVISOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingDivisorCount"));
-        P_VERTEX_BINDING_DIVISORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexBindingDivisors"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vertexBindingDivisorCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pVertexBindingDivisors")
+		).withName("VkPipelineVertexInputDivisorStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VERTEX_BINDING_DIVISOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingDivisorCount"));
+		P_VERTEX_BINDING_DIVISORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexBindingDivisors"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VERTEX_BINDING_DIVISOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingDivisorCount"));
+		P_VERTEX_BINDING_DIVISORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexBindingDivisors"));
+		//@formatter:on
+	}
 
-    public VkPipelineVertexInputDivisorStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineVertexInputDivisorStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineVertexInputDivisorStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineVertexInputDivisorStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineVertexInputDivisorStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineVertexInputDivisorStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineVertexInputDivisorStateCreateInfo sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkPipelineVertexInputDivisorStateCreateInfo
             segment -> new VkPipelineVertexInputDivisorStateCreateInfo(segment)
         );
     }
-    
+
 }

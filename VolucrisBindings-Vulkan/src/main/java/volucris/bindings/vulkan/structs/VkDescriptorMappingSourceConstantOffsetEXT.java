@@ -21,58 +21,58 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorMappingSourceConstantOffsetEXT
 		implements Struct<VkDescriptorMappingSourceConstantOffsetEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle HEAP_OFFSET_HANDLE;
-    public static final VarHandle HEAP_ARRAY_STRIDE_HANDLE;
-    public static final VarHandle P_EMBEDDED_SAMPLER_HANDLE;
-    public static final VarHandle SAMPLER_HEAP_OFFSET_HANDLE;
-    public static final VarHandle SAMPLER_HEAP_ARRAY_STRIDE_HANDLE;
+	public static final VarHandle HEAP_OFFSET_HANDLE;
+	public static final VarHandle HEAP_ARRAY_STRIDE_HANDLE;
+	public static final VarHandle P_EMBEDDED_SAMPLER_HANDLE;
+	public static final VarHandle SAMPLER_HEAP_OFFSET_HANDLE;
+	public static final VarHandle SAMPLER_HEAP_ARRAY_STRIDE_HANDLE;
 
-    public static final long HEAP_OFFSET_BYTE_OFFSET;
-    public static final long HEAP_ARRAY_STRIDE_BYTE_OFFSET;
-    public static final long P_EMBEDDED_SAMPLER_BYTE_OFFSET;
-    public static final long SAMPLER_HEAP_OFFSET_BYTE_OFFSET;
-    public static final long SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET;
+	public static final long HEAP_OFFSET_BYTE_OFFSET;
+	public static final long HEAP_ARRAY_STRIDE_BYTE_OFFSET;
+	public static final long P_EMBEDDED_SAMPLER_BYTE_OFFSET;
+	public static final long SAMPLER_HEAP_OFFSET_BYTE_OFFSET;
+	public static final long SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("heapOffset"),
-            JAVA_INT.withName("heapArrayStride"),
-            UNBOUNDED_ADDRESS.withName("pEmbeddedSampler"),
-            JAVA_INT.withName("samplerHeapOffset"),
-            JAVA_INT.withName("samplerHeapArrayStride")
-        ).withName("VkDescriptorMappingSourceConstantOffsetEXT").withByteAlignment(8);
-        
-        HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapOffset"));
-        HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapArrayStride"));
-        P_EMBEDDED_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pEmbeddedSampler"));
-        SAMPLER_HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapOffset"));
-        SAMPLER_HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapArrayStride"));
-        
-        HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapOffset"));
-        HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapArrayStride"));
-        P_EMBEDDED_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pEmbeddedSampler"));
-        SAMPLER_HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapOffset"));
-        SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapArrayStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("heapOffset"),
+		    JAVA_INT.withName("heapArrayStride"),
+		    UNBOUNDED_ADDRESS.withName("pEmbeddedSampler"),
+		    JAVA_INT.withName("samplerHeapOffset"),
+		    JAVA_INT.withName("samplerHeapArrayStride")
+		).withName("VkDescriptorMappingSourceConstantOffsetEXT").withByteAlignment(8);
+		
+		HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapOffset"));
+		HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapArrayStride"));
+		P_EMBEDDED_SAMPLER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pEmbeddedSampler"));
+		SAMPLER_HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapOffset"));
+		SAMPLER_HEAP_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapArrayStride"));
+		
+		HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapOffset"));
+		HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapArrayStride"));
+		P_EMBEDDED_SAMPLER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pEmbeddedSampler"));
+		SAMPLER_HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapOffset"));
+		SAMPLER_HEAP_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapArrayStride"));
+		//@formatter:on
+	}
 
-    public VkDescriptorMappingSourceConstantOffsetEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorMappingSourceConstantOffsetEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorMappingSourceConstantOffsetEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorMappingSourceConstantOffsetEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorMappingSourceConstantOffsetEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorMappingSourceConstantOffsetEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #heapOffset()
     public VkDescriptorMappingSourceConstantOffsetEXT heapOffset(int heapOffset) {
@@ -180,5 +180,5 @@ public final class VkDescriptorMappingSourceConstantOffsetEXT
             segment -> new VkDescriptorMappingSourceConstantOffsetEXT(segment)
         );
     }
-    
+
 }

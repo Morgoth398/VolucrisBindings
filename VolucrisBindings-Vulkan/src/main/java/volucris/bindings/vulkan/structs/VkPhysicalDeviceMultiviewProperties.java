@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMultiviewProperties
 		implements Struct<VkPhysicalDeviceMultiviewProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_MULTIVIEW_VIEW_COUNT_HANDLE;
-    public static final VarHandle MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_MULTIVIEW_VIEW_COUNT_HANDLE;
+	public static final VarHandle MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
-    public static final long MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
+	public static final long MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxMultiviewViewCount"),
-            JAVA_INT.withName("maxMultiviewInstanceIndex")
-        ).withName("VkPhysicalDeviceMultiviewProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewViewCount"));
-        MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewInstanceIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewViewCount"));
-        MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewInstanceIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxMultiviewViewCount"),
+		    JAVA_INT.withName("maxMultiviewInstanceIndex")
+		).withName("VkPhysicalDeviceMultiviewProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewViewCount"));
+		MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewInstanceIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewViewCount"));
+		MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewInstanceIndex"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMultiviewProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMultiviewProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMultiviewProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMultiviewProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMultiviewProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMultiviewProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMultiviewProperties sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceMultiviewProperties
             segment -> new VkPhysicalDeviceMultiviewProperties(segment)
         );
     }
-    
+
 }

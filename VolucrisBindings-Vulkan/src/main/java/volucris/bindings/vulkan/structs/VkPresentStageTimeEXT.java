@@ -19,44 +19,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPresentStageTimeEXT
 		implements Struct<VkPresentStageTimeEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle TIME_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle TIME_HANDLE;
 
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long TIME_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long TIME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("stage"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("time")
-        ).withName("VkPresentStageTimeEXT").withByteAlignment(8);
-        
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("time"));
-        
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("time"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("stage"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("time")
+		).withName("VkPresentStageTimeEXT").withByteAlignment(8);
+		
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("time"));
+		
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("time"));
+		//@formatter:on
+	}
 
-    public VkPresentStageTimeEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentStageTimeEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentStageTimeEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentStageTimeEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentStageTimeEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentStageTimeEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #stage()
     public VkPresentStageTimeEXT stage(int stage) {
@@ -129,5 +129,5 @@ public final class VkPresentStageTimeEXT
             segment -> new VkPresentStageTimeEXT(segment)
         );
     }
-    
+
 }

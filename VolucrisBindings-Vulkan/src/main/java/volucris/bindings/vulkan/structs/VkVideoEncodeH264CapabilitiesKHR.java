@@ -21,110 +21,110 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264CapabilitiesKHR
 		implements Struct<VkVideoEncodeH264CapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MAX_LEVEL_IDC_HANDLE;
-    public static final VarHandle MAX_SLICE_COUNT_HANDLE;
-    public static final VarHandle MAX_PPICTURE_L0_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_BPICTURE_L0_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_L1_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_TEMPORAL_LAYER_COUNT_HANDLE;
-    public static final VarHandle EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_HANDLE;
-    public static final VarHandle MIN_QP_HANDLE;
-    public static final VarHandle MAX_QP_HANDLE;
-    public static final VarHandle PREFERS_GOP_REMAINING_FRAMES_HANDLE;
-    public static final VarHandle REQUIRES_GOP_REMAINING_FRAMES_HANDLE;
-    public static final VarHandle STD_SYNTAX_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MAX_LEVEL_IDC_HANDLE;
+	public static final VarHandle MAX_SLICE_COUNT_HANDLE;
+	public static final VarHandle MAX_PPICTURE_L0_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_BPICTURE_L0_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_L1_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_TEMPORAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_HANDLE;
+	public static final VarHandle MIN_QP_HANDLE;
+	public static final VarHandle MAX_QP_HANDLE;
+	public static final VarHandle PREFERS_GOP_REMAINING_FRAMES_HANDLE;
+	public static final VarHandle REQUIRES_GOP_REMAINING_FRAMES_HANDLE;
+	public static final VarHandle STD_SYNTAX_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MAX_LEVEL_IDC_BYTE_OFFSET;
-    public static final long MAX_SLICE_COUNT_BYTE_OFFSET;
-    public static final long MAX_PPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_BPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_L1_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
-    public static final long EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_BYTE_OFFSET;
-    public static final long MIN_QP_BYTE_OFFSET;
-    public static final long MAX_QP_BYTE_OFFSET;
-    public static final long PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET;
-    public static final long REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET;
-    public static final long STD_SYNTAX_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MAX_LEVEL_IDC_BYTE_OFFSET;
+	public static final long MAX_SLICE_COUNT_BYTE_OFFSET;
+	public static final long MAX_PPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_BPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_L1_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_BYTE_OFFSET;
+	public static final long MIN_QP_BYTE_OFFSET;
+	public static final long MAX_QP_BYTE_OFFSET;
+	public static final long PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET;
+	public static final long REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET;
+	public static final long STD_SYNTAX_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("maxLevelIdc"),
-            JAVA_INT.withName("maxSliceCount"),
-            JAVA_INT.withName("maxPPictureL0ReferenceCount"),
-            JAVA_INT.withName("maxBPictureL0ReferenceCount"),
-            JAVA_INT.withName("maxL1ReferenceCount"),
-            JAVA_INT.withName("maxTemporalLayerCount"),
-            JAVA_INT.withName("expectDyadicTemporalLayerPattern"),
-            JAVA_INT.withName("minQp"),
-            JAVA_INT.withName("maxQp"),
-            JAVA_INT.withName("prefersGopRemainingFrames"),
-            JAVA_INT.withName("requiresGopRemainingFrames"),
-            JAVA_INT.withName("stdSyntaxFlags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeH264CapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MAX_LEVEL_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevelIdc"));
-        MAX_SLICE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSliceCount"));
-        MAX_PPICTURE_L0_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPPictureL0ReferenceCount"));
-        MAX_BPICTURE_L0_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBPictureL0ReferenceCount"));
-        MAX_L1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxL1ReferenceCount"));
-        MAX_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTemporalLayerCount"));
-        EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("expectDyadicTemporalLayerPattern"));
-        MIN_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQp"));
-        MAX_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQp"));
-        PREFERS_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersGopRemainingFrames"));
-        REQUIRES_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiresGopRemainingFrames"));
-        STD_SYNTAX_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdSyntaxFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MAX_LEVEL_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevelIdc"));
-        MAX_SLICE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSliceCount"));
-        MAX_PPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPPictureL0ReferenceCount"));
-        MAX_BPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBPictureL0ReferenceCount"));
-        MAX_L1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxL1ReferenceCount"));
-        MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTemporalLayerCount"));
-        EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("expectDyadicTemporalLayerPattern"));
-        MIN_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQp"));
-        MAX_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQp"));
-        PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersGopRemainingFrames"));
-        REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiresGopRemainingFrames"));
-        STD_SYNTAX_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdSyntaxFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("maxLevelIdc"),
+		    JAVA_INT.withName("maxSliceCount"),
+		    JAVA_INT.withName("maxPPictureL0ReferenceCount"),
+		    JAVA_INT.withName("maxBPictureL0ReferenceCount"),
+		    JAVA_INT.withName("maxL1ReferenceCount"),
+		    JAVA_INT.withName("maxTemporalLayerCount"),
+		    JAVA_INT.withName("expectDyadicTemporalLayerPattern"),
+		    JAVA_INT.withName("minQp"),
+		    JAVA_INT.withName("maxQp"),
+		    JAVA_INT.withName("prefersGopRemainingFrames"),
+		    JAVA_INT.withName("requiresGopRemainingFrames"),
+		    JAVA_INT.withName("stdSyntaxFlags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeH264CapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MAX_LEVEL_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevelIdc"));
+		MAX_SLICE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSliceCount"));
+		MAX_PPICTURE_L0_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPPictureL0ReferenceCount"));
+		MAX_BPICTURE_L0_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBPictureL0ReferenceCount"));
+		MAX_L1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxL1ReferenceCount"));
+		MAX_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTemporalLayerCount"));
+		EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("expectDyadicTemporalLayerPattern"));
+		MIN_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQp"));
+		MAX_QP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQp"));
+		PREFERS_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersGopRemainingFrames"));
+		REQUIRES_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiresGopRemainingFrames"));
+		STD_SYNTAX_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdSyntaxFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MAX_LEVEL_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevelIdc"));
+		MAX_SLICE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSliceCount"));
+		MAX_PPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPPictureL0ReferenceCount"));
+		MAX_BPICTURE_L0_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBPictureL0ReferenceCount"));
+		MAX_L1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxL1ReferenceCount"));
+		MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTemporalLayerCount"));
+		EXPECT_DYADIC_TEMPORAL_LAYER_PATTERN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("expectDyadicTemporalLayerPattern"));
+		MIN_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQp"));
+		MAX_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQp"));
+		PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersGopRemainingFrames"));
+		REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiresGopRemainingFrames"));
+		STD_SYNTAX_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdSyntaxFlags"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264CapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264CapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264CapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH264CapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264CapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264CapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264CapabilitiesKHR sType(int sType) {
@@ -332,5 +332,5 @@ public final class VkVideoEncodeH264CapabilitiesKHR
             segment -> new VkVideoEncodeH264CapabilitiesKHR(segment)
         );
     }
-    
+
 }

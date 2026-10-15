@@ -20,79 +20,79 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDisplayPlaneCapabilitiesKHR
 		implements Struct<VkDisplayPlaneCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SUPPORTED_ALPHA_HANDLE;
+	public static final VarHandle SUPPORTED_ALPHA_HANDLE;
 
-    public static final long SUPPORTED_ALPHA_BYTE_OFFSET;
-    public static final long MIN_SRC_POSITION_BYTE_OFFSET;
-    public static final long MAX_SRC_POSITION_BYTE_OFFSET;
-    public static final long MIN_SRC_EXTENT_BYTE_OFFSET;
-    public static final long MAX_SRC_EXTENT_BYTE_OFFSET;
-    public static final long MIN_DST_POSITION_BYTE_OFFSET;
-    public static final long MAX_DST_POSITION_BYTE_OFFSET;
-    public static final long MIN_DST_EXTENT_BYTE_OFFSET;
-    public static final long MAX_DST_EXTENT_BYTE_OFFSET;
+	public static final long SUPPORTED_ALPHA_BYTE_OFFSET;
+	public static final long MIN_SRC_POSITION_BYTE_OFFSET;
+	public static final long MAX_SRC_POSITION_BYTE_OFFSET;
+	public static final long MIN_SRC_EXTENT_BYTE_OFFSET;
+	public static final long MAX_SRC_EXTENT_BYTE_OFFSET;
+	public static final long MIN_DST_POSITION_BYTE_OFFSET;
+	public static final long MAX_DST_POSITION_BYTE_OFFSET;
+	public static final long MIN_DST_EXTENT_BYTE_OFFSET;
+	public static final long MAX_DST_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkOffset2D minSrcPosition;
-    private final VkOffset2D maxSrcPosition;
-    private final VkExtent2D minSrcExtent;
-    private final VkExtent2D maxSrcExtent;
-    private final VkOffset2D minDstPosition;
-    private final VkOffset2D maxDstPosition;
-    private final VkExtent2D minDstExtent;
-    private final VkExtent2D maxDstExtent;
+	private final VkOffset2D minSrcPosition;
+	private final VkOffset2D maxSrcPosition;
+	private final VkExtent2D minSrcExtent;
+	private final VkExtent2D maxSrcExtent;
+	private final VkOffset2D minDstPosition;
+	private final VkOffset2D maxDstPosition;
+	private final VkExtent2D minDstExtent;
+	private final VkExtent2D maxDstExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("supportedAlpha"),
-            VkOffset2D.LAYOUT.withName("minSrcPosition"),
-            VkOffset2D.LAYOUT.withName("maxSrcPosition"),
-            VkExtent2D.LAYOUT.withName("minSrcExtent"),
-            VkExtent2D.LAYOUT.withName("maxSrcExtent"),
-            VkOffset2D.LAYOUT.withName("minDstPosition"),
-            VkOffset2D.LAYOUT.withName("maxDstPosition"),
-            VkExtent2D.LAYOUT.withName("minDstExtent"),
-            VkExtent2D.LAYOUT.withName("maxDstExtent")
-        ).withName("VkDisplayPlaneCapabilitiesKHR").withByteAlignment(4);
-        
-        SUPPORTED_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedAlpha"));
-        
-        SUPPORTED_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedAlpha"));
-        MIN_SRC_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSrcPosition"));
-        MAX_SRC_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSrcPosition"));
-        MIN_SRC_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSrcExtent"));
-        MAX_SRC_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSrcExtent"));
-        MIN_DST_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDstPosition"));
-        MAX_DST_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDstPosition"));
-        MIN_DST_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDstExtent"));
-        MAX_DST_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDstExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("supportedAlpha"),
+		    VkOffset2D.LAYOUT.withName("minSrcPosition"),
+		    VkOffset2D.LAYOUT.withName("maxSrcPosition"),
+		    VkExtent2D.LAYOUT.withName("minSrcExtent"),
+		    VkExtent2D.LAYOUT.withName("maxSrcExtent"),
+		    VkOffset2D.LAYOUT.withName("minDstPosition"),
+		    VkOffset2D.LAYOUT.withName("maxDstPosition"),
+		    VkExtent2D.LAYOUT.withName("minDstExtent"),
+		    VkExtent2D.LAYOUT.withName("maxDstExtent")
+		).withName("VkDisplayPlaneCapabilitiesKHR").withByteAlignment(4);
+		
+		SUPPORTED_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedAlpha"));
+		
+		SUPPORTED_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedAlpha"));
+		MIN_SRC_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSrcPosition"));
+		MAX_SRC_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSrcPosition"));
+		MIN_SRC_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSrcExtent"));
+		MAX_SRC_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSrcExtent"));
+		MIN_DST_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDstPosition"));
+		MAX_DST_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDstPosition"));
+		MIN_DST_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minDstExtent"));
+		MAX_DST_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDstExtent"));
+		//@formatter:on
+	}
 
-    public VkDisplayPlaneCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayPlaneCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayPlaneCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        minSrcPosition = new VkOffset2D(segment.asSlice(MIN_SRC_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        maxSrcPosition = new VkOffset2D(segment.asSlice(MAX_SRC_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        minSrcExtent = new VkExtent2D(segment.asSlice(MIN_SRC_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxSrcExtent = new VkExtent2D(segment.asSlice(MAX_SRC_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        minDstPosition = new VkOffset2D(segment.asSlice(MIN_DST_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        maxDstPosition = new VkOffset2D(segment.asSlice(MAX_DST_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
-        minDstExtent = new VkExtent2D(segment.asSlice(MIN_DST_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxDstExtent = new VkExtent2D(segment.asSlice(MAX_DST_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkDisplayPlaneCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayPlaneCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayPlaneCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minSrcPosition = new VkOffset2D(segment.asSlice(MIN_SRC_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    maxSrcPosition = new VkOffset2D(segment.asSlice(MAX_SRC_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    minSrcExtent = new VkExtent2D(segment.asSlice(MIN_SRC_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxSrcExtent = new VkExtent2D(segment.asSlice(MAX_SRC_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    minDstPosition = new VkOffset2D(segment.asSlice(MIN_DST_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    maxDstPosition = new VkOffset2D(segment.asSlice(MAX_DST_POSITION_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	    minDstExtent = new VkExtent2D(segment.asSlice(MIN_DST_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxDstExtent = new VkExtent2D(segment.asSlice(MAX_DST_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #supportedAlpha()
     public VkDisplayPlaneCapabilitiesKHR supportedAlpha(int supportedAlpha) {
@@ -283,5 +283,5 @@ public final class VkDisplayPlaneCapabilitiesKHR
             segment -> new VkDisplayPlaneCapabilitiesKHR(segment)
         );
     }
-    
+
 }

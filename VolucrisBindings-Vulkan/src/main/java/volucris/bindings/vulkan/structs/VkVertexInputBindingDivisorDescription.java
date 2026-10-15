@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVertexInputBindingDivisorDescription
 		implements Struct<VkVertexInputBindingDivisorDescription> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle DIVISOR_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle DIVISOR_HANDLE;
 
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long DIVISOR_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long DIVISOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("divisor")
-        ).withName("VkVertexInputBindingDivisorDescription").withByteAlignment(4);
-        
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("divisor"));
-        
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("divisor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("divisor")
+		).withName("VkVertexInputBindingDivisorDescription").withByteAlignment(4);
+		
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("divisor"));
+		
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("divisor"));
+		//@formatter:on
+	}
 
-    public VkVertexInputBindingDivisorDescription() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVertexInputBindingDivisorDescription(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVertexInputBindingDivisorDescription(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVertexInputBindingDivisorDescription() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVertexInputBindingDivisorDescription(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVertexInputBindingDivisorDescription(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #binding()
     public VkVertexInputBindingDivisorDescription binding(int binding) {
@@ -128,5 +128,5 @@ public final class VkVertexInputBindingDivisorDescription
             segment -> new VkVertexInputBindingDivisorDescription(segment)
         );
     }
-    
+
 }

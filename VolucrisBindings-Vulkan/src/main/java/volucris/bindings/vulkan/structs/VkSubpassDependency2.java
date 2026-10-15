@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSubpassDependency2
 		implements Struct<VkSubpassDependency2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_SUBPASS_HANDLE;
-    public static final VarHandle DST_SUBPASS_HANDLE;
-    public static final VarHandle SRC_STAGE_MASK_HANDLE;
-    public static final VarHandle DST_STAGE_MASK_HANDLE;
-    public static final VarHandle SRC_ACCESS_MASK_HANDLE;
-    public static final VarHandle DST_ACCESS_MASK_HANDLE;
-    public static final VarHandle DEPENDENCY_FLAGS_HANDLE;
-    public static final VarHandle VIEW_OFFSET_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_SUBPASS_HANDLE;
+	public static final VarHandle DST_SUBPASS_HANDLE;
+	public static final VarHandle SRC_STAGE_MASK_HANDLE;
+	public static final VarHandle DST_STAGE_MASK_HANDLE;
+	public static final VarHandle SRC_ACCESS_MASK_HANDLE;
+	public static final VarHandle DST_ACCESS_MASK_HANDLE;
+	public static final VarHandle DEPENDENCY_FLAGS_HANDLE;
+	public static final VarHandle VIEW_OFFSET_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_SUBPASS_BYTE_OFFSET;
-    public static final long DST_SUBPASS_BYTE_OFFSET;
-    public static final long SRC_STAGE_MASK_BYTE_OFFSET;
-    public static final long DST_STAGE_MASK_BYTE_OFFSET;
-    public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
-    public static final long DST_ACCESS_MASK_BYTE_OFFSET;
-    public static final long DEPENDENCY_FLAGS_BYTE_OFFSET;
-    public static final long VIEW_OFFSET_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_SUBPASS_BYTE_OFFSET;
+	public static final long DST_SUBPASS_BYTE_OFFSET;
+	public static final long SRC_STAGE_MASK_BYTE_OFFSET;
+	public static final long DST_STAGE_MASK_BYTE_OFFSET;
+	public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
+	public static final long DST_ACCESS_MASK_BYTE_OFFSET;
+	public static final long DEPENDENCY_FLAGS_BYTE_OFFSET;
+	public static final long VIEW_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("srcSubpass"),
-            JAVA_INT.withName("dstSubpass"),
-            JAVA_INT.withName("srcStageMask"),
-            JAVA_INT.withName("dstStageMask"),
-            JAVA_INT.withName("srcAccessMask"),
-            JAVA_INT.withName("dstAccessMask"),
-            JAVA_INT.withName("dependencyFlags"),
-            JAVA_INT.withName("viewOffset")
-        ).withName("VkSubpassDependency2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcSubpass"));
-        DST_SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstSubpass"));
-        SRC_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStageMask"));
-        DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStageMask"));
-        SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
-        DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
-        DEPENDENCY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyFlags"));
-        VIEW_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewOffset"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubpass"));
-        DST_SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubpass"));
-        SRC_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStageMask"));
-        DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStageMask"));
-        SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
-        DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
-        DEPENDENCY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyFlags"));
-        VIEW_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("srcSubpass"),
+		    JAVA_INT.withName("dstSubpass"),
+		    JAVA_INT.withName("srcStageMask"),
+		    JAVA_INT.withName("dstStageMask"),
+		    JAVA_INT.withName("srcAccessMask"),
+		    JAVA_INT.withName("dstAccessMask"),
+		    JAVA_INT.withName("dependencyFlags"),
+		    JAVA_INT.withName("viewOffset")
+		).withName("VkSubpassDependency2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcSubpass"));
+		DST_SUBPASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstSubpass"));
+		SRC_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStageMask"));
+		DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStageMask"));
+		SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
+		DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
+		DEPENDENCY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyFlags"));
+		VIEW_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewOffset"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubpass"));
+		DST_SUBPASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubpass"));
+		SRC_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStageMask"));
+		DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStageMask"));
+		SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
+		DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
+		DEPENDENCY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyFlags"));
+		VIEW_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewOffset"));
+		//@formatter:on
+	}
 
-    public VkSubpassDependency2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubpassDependency2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubpassDependency2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubpassDependency2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubpassDependency2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubpassDependency2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSubpassDependency2 sType(int sType) {
@@ -256,5 +256,5 @@ public final class VkSubpassDependency2
             segment -> new VkSubpassDependency2(segment)
         );
     }
-    
+
 }

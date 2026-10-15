@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAttachmentSampleCountInfoAMD
 		implements Struct<VkAttachmentSampleCountInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_COLOR_ATTACHMENT_SAMPLES_HANDLE;
-    public static final VarHandle DEPTH_STENCIL_ATTACHMENT_SAMPLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_COLOR_ATTACHMENT_SAMPLES_HANDLE;
+	public static final VarHandle DEPTH_STENCIL_ATTACHMENT_SAMPLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_COLOR_ATTACHMENT_SAMPLES_BYTE_OFFSET;
-    public static final long DEPTH_STENCIL_ATTACHMENT_SAMPLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_COLOR_ATTACHMENT_SAMPLES_BYTE_OFFSET;
+	public static final long DEPTH_STENCIL_ATTACHMENT_SAMPLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("colorAttachmentCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pColorAttachmentSamples"),
-            JAVA_INT.withName("depthStencilAttachmentSamples"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkAttachmentSampleCountInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENT_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachmentSamples"));
-        DEPTH_STENCIL_ATTACHMENT_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilAttachmentSamples"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENT_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachmentSamples"));
-        DEPTH_STENCIL_ATTACHMENT_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilAttachmentSamples"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("colorAttachmentCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pColorAttachmentSamples"),
+		    JAVA_INT.withName("depthStencilAttachmentSamples"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkAttachmentSampleCountInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENT_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachmentSamples"));
+		DEPTH_STENCIL_ATTACHMENT_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilAttachmentSamples"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENT_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachmentSamples"));
+		DEPTH_STENCIL_ATTACHMENT_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilAttachmentSamples"));
+		//@formatter:on
+	}
 
-    public VkAttachmentSampleCountInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAttachmentSampleCountInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAttachmentSampleCountInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAttachmentSampleCountInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAttachmentSampleCountInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAttachmentSampleCountInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAttachmentSampleCountInfoAMD sType(int sType) {
@@ -189,5 +189,5 @@ public final class VkAttachmentSampleCountInfoAMD
             segment -> new VkAttachmentSampleCountInfoAMD(segment)
         );
     }
-    
+
 }

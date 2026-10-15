@@ -27,49 +27,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXUnsavedFile
 		implements Struct<CXUnsavedFile> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FILENAME_HANDLE;
-    public static final VarHandle CONTENTS_HANDLE;
-    public static final VarHandle LENGTH_HANDLE;
+	public static final VarHandle FILENAME_HANDLE;
+	public static final VarHandle CONTENTS_HANDLE;
+	public static final VarHandle LENGTH_HANDLE;
 
-    public static final long FILENAME_BYTE_OFFSET;
-    public static final long CONTENTS_BYTE_OFFSET;
-    public static final long LENGTH_BYTE_OFFSET;
+	public static final long FILENAME_BYTE_OFFSET;
+	public static final long CONTENTS_BYTE_OFFSET;
+	public static final long LENGTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("Filename"),
-            UNBOUNDED_ADDRESS.withName("Contents"),
-            JAVA_INT.withName("Length"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXUnsavedFile").withByteAlignment(8);
-        
-        FILENAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Filename"));
-        CONTENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Contents"));
-        LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Length"));
-        
-        FILENAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Filename"));
-        CONTENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Contents"));
-        LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Length"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("Filename"),
+		    UNBOUNDED_ADDRESS.withName("Contents"),
+		    JAVA_INT.withName("Length"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXUnsavedFile").withByteAlignment(8);
+		
+		FILENAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Filename"));
+		CONTENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Contents"));
+		LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Length"));
+		
+		FILENAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Filename"));
+		CONTENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Contents"));
+		LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Length"));
+		//@formatter:on
+	}
 
-    public CXUnsavedFile() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXUnsavedFile(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXUnsavedFile(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXUnsavedFile() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXUnsavedFile(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXUnsavedFile(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #filename()
     public CXUnsavedFile filename(NativeByteArray filename) {
@@ -176,5 +176,5 @@ public final class CXUnsavedFile
             segment -> new CXUnsavedFile(segment)
         );
     }
-    
+
 }

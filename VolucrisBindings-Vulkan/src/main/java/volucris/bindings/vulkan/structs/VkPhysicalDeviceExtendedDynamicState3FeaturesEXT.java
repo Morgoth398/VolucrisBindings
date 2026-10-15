@@ -21,200 +21,200 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceExtendedDynamicState3FeaturesEXT
 		implements Struct<VkPhysicalDeviceExtendedDynamicState3FeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_HANDLE;
-    public static final VarHandle EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_HANDLE;
+	public static final VarHandle EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_BYTE_OFFSET;
-    public static final long EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_BYTE_OFFSET;
+	public static final long EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("extendedDynamicState3TessellationDomainOrigin"),
-            JAVA_INT.withName("extendedDynamicState3DepthClampEnable"),
-            JAVA_INT.withName("extendedDynamicState3PolygonMode"),
-            JAVA_INT.withName("extendedDynamicState3RasterizationSamples"),
-            JAVA_INT.withName("extendedDynamicState3SampleMask"),
-            JAVA_INT.withName("extendedDynamicState3AlphaToCoverageEnable"),
-            JAVA_INT.withName("extendedDynamicState3AlphaToOneEnable"),
-            JAVA_INT.withName("extendedDynamicState3LogicOpEnable"),
-            JAVA_INT.withName("extendedDynamicState3ColorBlendEnable"),
-            JAVA_INT.withName("extendedDynamicState3ColorBlendEquation"),
-            JAVA_INT.withName("extendedDynamicState3ColorWriteMask"),
-            JAVA_INT.withName("extendedDynamicState3RasterizationStream"),
-            JAVA_INT.withName("extendedDynamicState3ConservativeRasterizationMode"),
-            JAVA_INT.withName("extendedDynamicState3ExtraPrimitiveOverestimationSize"),
-            JAVA_INT.withName("extendedDynamicState3DepthClipEnable"),
-            JAVA_INT.withName("extendedDynamicState3SampleLocationsEnable"),
-            JAVA_INT.withName("extendedDynamicState3ColorBlendAdvanced"),
-            JAVA_INT.withName("extendedDynamicState3ProvokingVertexMode"),
-            JAVA_INT.withName("extendedDynamicState3LineRasterizationMode"),
-            JAVA_INT.withName("extendedDynamicState3LineStippleEnable"),
-            JAVA_INT.withName("extendedDynamicState3DepthClipNegativeOneToOne"),
-            JAVA_INT.withName("extendedDynamicState3ViewportWScalingEnable"),
-            JAVA_INT.withName("extendedDynamicState3ViewportSwizzle"),
-            JAVA_INT.withName("extendedDynamicState3CoverageToColorEnable"),
-            JAVA_INT.withName("extendedDynamicState3CoverageToColorLocation"),
-            JAVA_INT.withName("extendedDynamicState3CoverageModulationMode"),
-            JAVA_INT.withName("extendedDynamicState3CoverageModulationTableEnable"),
-            JAVA_INT.withName("extendedDynamicState3CoverageModulationTable"),
-            JAVA_INT.withName("extendedDynamicState3CoverageReductionMode"),
-            JAVA_INT.withName("extendedDynamicState3RepresentativeFragmentTestEnable"),
-            JAVA_INT.withName("extendedDynamicState3ShadingRateImageEnable"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceExtendedDynamicState3FeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3TessellationDomainOrigin"));
-        EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3DepthClampEnable"));
-        EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3PolygonMode"));
-        EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3RasterizationSamples"));
-        EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3SampleMask"));
-        EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3AlphaToCoverageEnable"));
-        EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3AlphaToOneEnable"));
-        EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3LogicOpEnable"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorBlendEnable"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorBlendEquation"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorWriteMask"));
-        EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3RasterizationStream"));
-        EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ConservativeRasterizationMode"));
-        EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ExtraPrimitiveOverestimationSize"));
-        EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3DepthClipEnable"));
-        EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3SampleLocationsEnable"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorBlendAdvanced"));
-        EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ProvokingVertexMode"));
-        EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3LineRasterizationMode"));
-        EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3LineStippleEnable"));
-        EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3DepthClipNegativeOneToOne"));
-        EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ViewportWScalingEnable"));
-        EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ViewportSwizzle"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageToColorEnable"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageToColorLocation"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageModulationMode"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageModulationTableEnable"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageModulationTable"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageReductionMode"));
-        EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3RepresentativeFragmentTestEnable"));
-        EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ShadingRateImageEnable"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3TessellationDomainOrigin"));
-        EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3DepthClampEnable"));
-        EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3PolygonMode"));
-        EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3RasterizationSamples"));
-        EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3SampleMask"));
-        EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3AlphaToCoverageEnable"));
-        EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3AlphaToOneEnable"));
-        EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3LogicOpEnable"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorBlendEnable"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorBlendEquation"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorWriteMask"));
-        EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3RasterizationStream"));
-        EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ConservativeRasterizationMode"));
-        EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ExtraPrimitiveOverestimationSize"));
-        EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3DepthClipEnable"));
-        EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3SampleLocationsEnable"));
-        EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorBlendAdvanced"));
-        EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ProvokingVertexMode"));
-        EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3LineRasterizationMode"));
-        EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3LineStippleEnable"));
-        EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3DepthClipNegativeOneToOne"));
-        EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ViewportWScalingEnable"));
-        EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ViewportSwizzle"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageToColorEnable"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageToColorLocation"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageModulationMode"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageModulationTableEnable"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageModulationTable"));
-        EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageReductionMode"));
-        EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3RepresentativeFragmentTestEnable"));
-        EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ShadingRateImageEnable"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("extendedDynamicState3TessellationDomainOrigin"),
+		    JAVA_INT.withName("extendedDynamicState3DepthClampEnable"),
+		    JAVA_INT.withName("extendedDynamicState3PolygonMode"),
+		    JAVA_INT.withName("extendedDynamicState3RasterizationSamples"),
+		    JAVA_INT.withName("extendedDynamicState3SampleMask"),
+		    JAVA_INT.withName("extendedDynamicState3AlphaToCoverageEnable"),
+		    JAVA_INT.withName("extendedDynamicState3AlphaToOneEnable"),
+		    JAVA_INT.withName("extendedDynamicState3LogicOpEnable"),
+		    JAVA_INT.withName("extendedDynamicState3ColorBlendEnable"),
+		    JAVA_INT.withName("extendedDynamicState3ColorBlendEquation"),
+		    JAVA_INT.withName("extendedDynamicState3ColorWriteMask"),
+		    JAVA_INT.withName("extendedDynamicState3RasterizationStream"),
+		    JAVA_INT.withName("extendedDynamicState3ConservativeRasterizationMode"),
+		    JAVA_INT.withName("extendedDynamicState3ExtraPrimitiveOverestimationSize"),
+		    JAVA_INT.withName("extendedDynamicState3DepthClipEnable"),
+		    JAVA_INT.withName("extendedDynamicState3SampleLocationsEnable"),
+		    JAVA_INT.withName("extendedDynamicState3ColorBlendAdvanced"),
+		    JAVA_INT.withName("extendedDynamicState3ProvokingVertexMode"),
+		    JAVA_INT.withName("extendedDynamicState3LineRasterizationMode"),
+		    JAVA_INT.withName("extendedDynamicState3LineStippleEnable"),
+		    JAVA_INT.withName("extendedDynamicState3DepthClipNegativeOneToOne"),
+		    JAVA_INT.withName("extendedDynamicState3ViewportWScalingEnable"),
+		    JAVA_INT.withName("extendedDynamicState3ViewportSwizzle"),
+		    JAVA_INT.withName("extendedDynamicState3CoverageToColorEnable"),
+		    JAVA_INT.withName("extendedDynamicState3CoverageToColorLocation"),
+		    JAVA_INT.withName("extendedDynamicState3CoverageModulationMode"),
+		    JAVA_INT.withName("extendedDynamicState3CoverageModulationTableEnable"),
+		    JAVA_INT.withName("extendedDynamicState3CoverageModulationTable"),
+		    JAVA_INT.withName("extendedDynamicState3CoverageReductionMode"),
+		    JAVA_INT.withName("extendedDynamicState3RepresentativeFragmentTestEnable"),
+		    JAVA_INT.withName("extendedDynamicState3ShadingRateImageEnable"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceExtendedDynamicState3FeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3TessellationDomainOrigin"));
+		EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3DepthClampEnable"));
+		EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3PolygonMode"));
+		EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3RasterizationSamples"));
+		EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3SampleMask"));
+		EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3AlphaToCoverageEnable"));
+		EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3AlphaToOneEnable"));
+		EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3LogicOpEnable"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorBlendEnable"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorBlendEquation"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorWriteMask"));
+		EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3RasterizationStream"));
+		EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ConservativeRasterizationMode"));
+		EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ExtraPrimitiveOverestimationSize"));
+		EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3DepthClipEnable"));
+		EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3SampleLocationsEnable"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ColorBlendAdvanced"));
+		EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ProvokingVertexMode"));
+		EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3LineRasterizationMode"));
+		EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3LineStippleEnable"));
+		EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3DepthClipNegativeOneToOne"));
+		EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ViewportWScalingEnable"));
+		EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ViewportSwizzle"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageToColorEnable"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageToColorLocation"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageModulationMode"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageModulationTableEnable"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageModulationTable"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3CoverageReductionMode"));
+		EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3RepresentativeFragmentTestEnable"));
+		EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extendedDynamicState3ShadingRateImageEnable"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXTENDED_DYNAMIC_STATE3_TESSELLATION_DOMAIN_ORIGIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3TessellationDomainOrigin"));
+		EXTENDED_DYNAMIC_STATE3_DEPTH_CLAMP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3DepthClampEnable"));
+		EXTENDED_DYNAMIC_STATE3_POLYGON_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3PolygonMode"));
+		EXTENDED_DYNAMIC_STATE3_RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3RasterizationSamples"));
+		EXTENDED_DYNAMIC_STATE3_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3SampleMask"));
+		EXTENDED_DYNAMIC_STATE3_ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3AlphaToCoverageEnable"));
+		EXTENDED_DYNAMIC_STATE3_ALPHA_TO_ONE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3AlphaToOneEnable"));
+		EXTENDED_DYNAMIC_STATE3_LOGIC_OP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3LogicOpEnable"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorBlendEnable"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_EQUATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorBlendEquation"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_WRITE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorWriteMask"));
+		EXTENDED_DYNAMIC_STATE3_RASTERIZATION_STREAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3RasterizationStream"));
+		EXTENDED_DYNAMIC_STATE3_CONSERVATIVE_RASTERIZATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ConservativeRasterizationMode"));
+		EXTENDED_DYNAMIC_STATE3_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ExtraPrimitiveOverestimationSize"));
+		EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3DepthClipEnable"));
+		EXTENDED_DYNAMIC_STATE3_SAMPLE_LOCATIONS_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3SampleLocationsEnable"));
+		EXTENDED_DYNAMIC_STATE3_COLOR_BLEND_ADVANCED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ColorBlendAdvanced"));
+		EXTENDED_DYNAMIC_STATE3_PROVOKING_VERTEX_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ProvokingVertexMode"));
+		EXTENDED_DYNAMIC_STATE3_LINE_RASTERIZATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3LineRasterizationMode"));
+		EXTENDED_DYNAMIC_STATE3_LINE_STIPPLE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3LineStippleEnable"));
+		EXTENDED_DYNAMIC_STATE3_DEPTH_CLIP_NEGATIVE_ONE_TO_ONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3DepthClipNegativeOneToOne"));
+		EXTENDED_DYNAMIC_STATE3_VIEWPORT_WSCALING_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ViewportWScalingEnable"));
+		EXTENDED_DYNAMIC_STATE3_VIEWPORT_SWIZZLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ViewportSwizzle"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageToColorEnable"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_TO_COLOR_LOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageToColorLocation"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageModulationMode"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageModulationTableEnable"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_MODULATION_TABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageModulationTable"));
+		EXTENDED_DYNAMIC_STATE3_COVERAGE_REDUCTION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3CoverageReductionMode"));
+		EXTENDED_DYNAMIC_STATE3_REPRESENTATIVE_FRAGMENT_TEST_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3RepresentativeFragmentTestEnable"));
+		EXTENDED_DYNAMIC_STATE3_SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extendedDynamicState3ShadingRateImageEnable"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceExtendedDynamicState3FeaturesEXT sType(int sType) {
@@ -602,5 +602,5 @@ public final class VkPhysicalDeviceExtendedDynamicState3FeaturesEXT
             segment -> new VkPhysicalDeviceExtendedDynamicState3FeaturesEXT(segment)
         );
     }
-    
+
 }

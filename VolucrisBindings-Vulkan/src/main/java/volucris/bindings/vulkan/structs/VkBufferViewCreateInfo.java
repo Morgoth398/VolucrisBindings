@@ -21,71 +21,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBufferViewCreateInfo
 		implements Struct<VkBufferViewCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle BUFFER_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle RANGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle RANGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long BUFFER_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long RANGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("buffer"),
-            JAVA_INT.withName("format"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("range")
-        ).withName("VkBufferViewCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("range"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("range"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("buffer"),
+		    JAVA_INT.withName("format"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("range")
+		).withName("VkBufferViewCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("range"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("range"));
+		//@formatter:on
+	}
 
-    public VkBufferViewCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBufferViewCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBufferViewCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBufferViewCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBufferViewCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBufferViewCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBufferViewCreateInfo sType(int sType) {
@@ -218,5 +218,5 @@ public final class VkBufferViewCreateInfo
             segment -> new VkBufferViewCreateInfo(segment)
         );
     }
-    
+
 }

@@ -18,24 +18,14 @@ ${javadoc}
 <#assign modifiers = clazz.modifiers?join(" ")>
 ${modifiers} class ${desc.name}${clazz.classHeader} {
 
-    <#list clazz.fields as field>
-    <#if field.blankLineBefore>
+	<#list clazz.fields as fieldGroup>
+	<#list fieldGroup as field>
+	${field.modifiers?join(" ")} ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
+	</#list>
+	<#sep>
 
-    </#if>
-    ${field.modifiers?join(" ")} ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
-    <#if field.blankLineAfter>
-
-    </#if>
-    </#list> 
-    <#list clazz.nestedStructureFields as field>
-    <#if field.blankLineBefore>
-
-    </#if>
-    ${field.modifiers?join(" ")} ${field.type}<#if field.count != 0>[]</#if> ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
-    <#if field.blankLineAfter>
-
-    </#if>
-    </#list>
+	</#sep>
+	</#list>
 
     static {
         //@formatter:off

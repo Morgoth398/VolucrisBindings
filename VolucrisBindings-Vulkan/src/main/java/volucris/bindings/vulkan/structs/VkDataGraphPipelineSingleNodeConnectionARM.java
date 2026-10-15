@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphPipelineSingleNodeConnectionARM
 		implements Struct<VkDataGraphPipelineSingleNodeConnectionARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SET_HANDLE;
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle CONNECTION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SET_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle CONNECTION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SET_BYTE_OFFSET;
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long CONNECTION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SET_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long CONNECTION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("set"),
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("connection"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDataGraphPipelineSingleNodeConnectionARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("set"));
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        CONNECTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("connection"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("set"));
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        CONNECTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("connection"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("set"),
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("connection"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDataGraphPipelineSingleNodeConnectionARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("set"));
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		CONNECTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("connection"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("set"));
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		CONNECTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("connection"));
+		//@formatter:on
+	}
 
-    public VkDataGraphPipelineSingleNodeConnectionARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphPipelineSingleNodeConnectionARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphPipelineSingleNodeConnectionARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphPipelineSingleNodeConnectionARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphPipelineSingleNodeConnectionARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphPipelineSingleNodeConnectionARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphPipelineSingleNodeConnectionARM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDataGraphPipelineSingleNodeConnectionARM
             segment -> new VkDataGraphPipelineSingleNodeConnectionARM(segment)
         );
     }
-    
+
 }

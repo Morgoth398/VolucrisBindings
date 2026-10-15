@@ -23,73 +23,73 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class IndexerCallbacks
 		implements Struct<IndexerCallbacks> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ABORT_QUERY_HANDLE;
-    public static final VarHandle DIAGNOSTIC_HANDLE;
-    public static final VarHandle ENTERED_MAIN_FILE_HANDLE;
-    public static final VarHandle PP_INCLUDED_FILE_HANDLE;
-    public static final VarHandle IMPORTED_ASTFILE_HANDLE;
-    public static final VarHandle STARTED_TRANSLATION_UNIT_HANDLE;
-    public static final VarHandle INDEX_DECLARATION_HANDLE;
-    public static final VarHandle INDEX_ENTITY_REFERENCE_HANDLE;
+	public static final VarHandle ABORT_QUERY_HANDLE;
+	public static final VarHandle DIAGNOSTIC_HANDLE;
+	public static final VarHandle ENTERED_MAIN_FILE_HANDLE;
+	public static final VarHandle PP_INCLUDED_FILE_HANDLE;
+	public static final VarHandle IMPORTED_ASTFILE_HANDLE;
+	public static final VarHandle STARTED_TRANSLATION_UNIT_HANDLE;
+	public static final VarHandle INDEX_DECLARATION_HANDLE;
+	public static final VarHandle INDEX_ENTITY_REFERENCE_HANDLE;
 
-    public static final long ABORT_QUERY_BYTE_OFFSET;
-    public static final long DIAGNOSTIC_BYTE_OFFSET;
-    public static final long ENTERED_MAIN_FILE_BYTE_OFFSET;
-    public static final long PP_INCLUDED_FILE_BYTE_OFFSET;
-    public static final long IMPORTED_ASTFILE_BYTE_OFFSET;
-    public static final long STARTED_TRANSLATION_UNIT_BYTE_OFFSET;
-    public static final long INDEX_DECLARATION_BYTE_OFFSET;
-    public static final long INDEX_ENTITY_REFERENCE_BYTE_OFFSET;
+	public static final long ABORT_QUERY_BYTE_OFFSET;
+	public static final long DIAGNOSTIC_BYTE_OFFSET;
+	public static final long ENTERED_MAIN_FILE_BYTE_OFFSET;
+	public static final long PP_INCLUDED_FILE_BYTE_OFFSET;
+	public static final long IMPORTED_ASTFILE_BYTE_OFFSET;
+	public static final long STARTED_TRANSLATION_UNIT_BYTE_OFFSET;
+	public static final long INDEX_DECLARATION_BYTE_OFFSET;
+	public static final long INDEX_ENTITY_REFERENCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("abortQuery"),
-            UNBOUNDED_ADDRESS.withName("diagnostic"),
-            UNBOUNDED_ADDRESS.withName("enteredMainFile"),
-            UNBOUNDED_ADDRESS.withName("ppIncludedFile"),
-            UNBOUNDED_ADDRESS.withName("importedASTFile"),
-            UNBOUNDED_ADDRESS.withName("startedTranslationUnit"),
-            UNBOUNDED_ADDRESS.withName("indexDeclaration"),
-            UNBOUNDED_ADDRESS.withName("indexEntityReference")
-        ).withName("IndexerCallbacks").withByteAlignment(8);
-        
-        ABORT_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("abortQuery"));
-        DIAGNOSTIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("diagnostic"));
-        ENTERED_MAIN_FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enteredMainFile"));
-        PP_INCLUDED_FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppIncludedFile"));
-        IMPORTED_ASTFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("importedASTFile"));
-        STARTED_TRANSLATION_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("startedTranslationUnit"));
-        INDEX_DECLARATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexDeclaration"));
-        INDEX_ENTITY_REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexEntityReference"));
-        
-        ABORT_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("abortQuery"));
-        DIAGNOSTIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("diagnostic"));
-        ENTERED_MAIN_FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enteredMainFile"));
-        PP_INCLUDED_FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppIncludedFile"));
-        IMPORTED_ASTFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("importedASTFile"));
-        STARTED_TRANSLATION_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("startedTranslationUnit"));
-        INDEX_DECLARATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexDeclaration"));
-        INDEX_ENTITY_REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexEntityReference"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("abortQuery"),
+		    UNBOUNDED_ADDRESS.withName("diagnostic"),
+		    UNBOUNDED_ADDRESS.withName("enteredMainFile"),
+		    UNBOUNDED_ADDRESS.withName("ppIncludedFile"),
+		    UNBOUNDED_ADDRESS.withName("importedASTFile"),
+		    UNBOUNDED_ADDRESS.withName("startedTranslationUnit"),
+		    UNBOUNDED_ADDRESS.withName("indexDeclaration"),
+		    UNBOUNDED_ADDRESS.withName("indexEntityReference")
+		).withName("IndexerCallbacks").withByteAlignment(8);
+		
+		ABORT_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("abortQuery"));
+		DIAGNOSTIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("diagnostic"));
+		ENTERED_MAIN_FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enteredMainFile"));
+		PP_INCLUDED_FILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppIncludedFile"));
+		IMPORTED_ASTFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("importedASTFile"));
+		STARTED_TRANSLATION_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("startedTranslationUnit"));
+		INDEX_DECLARATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexDeclaration"));
+		INDEX_ENTITY_REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexEntityReference"));
+		
+		ABORT_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("abortQuery"));
+		DIAGNOSTIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("diagnostic"));
+		ENTERED_MAIN_FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enteredMainFile"));
+		PP_INCLUDED_FILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppIncludedFile"));
+		IMPORTED_ASTFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("importedASTFile"));
+		STARTED_TRANSLATION_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("startedTranslationUnit"));
+		INDEX_DECLARATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexDeclaration"));
+		INDEX_ENTITY_REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexEntityReference"));
+		//@formatter:on
+	}
 
-    public IndexerCallbacks() {
-        this(Arena.ofAuto());
-    }
-    
-    public IndexerCallbacks(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public IndexerCallbacks(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public IndexerCallbacks() {
+	    this(Arena.ofAuto());
+	}
+	
+	public IndexerCallbacks(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public IndexerCallbacks(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #abortQuery()
     public IndexerCallbacks abortQuery(AbortQueryFunction abortQuery) {
@@ -292,5 +292,5 @@ public final class IndexerCallbacks
             segment -> new IndexerCallbacks(segment)
         );
     }
-    
+
 }

@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSubgroupSizeControlProperties
 		implements Struct<VkPhysicalDeviceSubgroupSizeControlProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MIN_SUBGROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_SUBGROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE;
-    public static final VarHandle REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MIN_SUBGROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_SUBGROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE;
+	public static final VarHandle REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MIN_SUBGROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_SUBGROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET;
-    public static final long REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MIN_SUBGROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_SUBGROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET;
+	public static final long REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("minSubgroupSize"),
-            JAVA_INT.withName("maxSubgroupSize"),
-            JAVA_INT.withName("maxComputeWorkgroupSubgroups"),
-            JAVA_INT.withName("requiredSubgroupSizeStages")
-        ).withName("VkPhysicalDeviceSubgroupSizeControlProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MIN_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSubgroupSize"));
-        MAX_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubgroupSize"));
-        MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
-        REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiredSubgroupSizeStages"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MIN_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSubgroupSize"));
-        MAX_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubgroupSize"));
-        MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
-        REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiredSubgroupSizeStages"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("minSubgroupSize"),
+		    JAVA_INT.withName("maxSubgroupSize"),
+		    JAVA_INT.withName("maxComputeWorkgroupSubgroups"),
+		    JAVA_INT.withName("requiredSubgroupSizeStages")
+		).withName("VkPhysicalDeviceSubgroupSizeControlProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MIN_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSubgroupSize"));
+		MAX_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubgroupSize"));
+		MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
+		REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiredSubgroupSizeStages"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MIN_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSubgroupSize"));
+		MAX_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubgroupSize"));
+		MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
+		REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiredSubgroupSizeStages"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSubgroupSizeControlProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSubgroupSizeControlProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSubgroupSizeControlProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSubgroupSizeControlProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSubgroupSizeControlProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSubgroupSizeControlProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSubgroupSizeControlProperties sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceSubgroupSizeControlProperties
             segment -> new VkPhysicalDeviceSubgroupSizeControlProperties(segment)
         );
     }
-    
+
 }

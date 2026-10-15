@@ -21,66 +21,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassSampleLocationsBeginInfoEXT
 		implements Struct<VkRenderPassSampleLocationsBeginInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_HANDLE;
-    public static final VarHandle P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_HANDLE;
-    public static final VarHandle POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_HANDLE;
-    public static final VarHandle P_POST_SUBPASS_SAMPLE_LOCATIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_HANDLE;
+	public static final VarHandle P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_HANDLE;
+	public static final VarHandle POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_HANDLE;
+	public static final VarHandle P_POST_SUBPASS_SAMPLE_LOCATIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET;
-    public static final long P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_BYTE_OFFSET;
-    public static final long POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET;
-    public static final long P_POST_SUBPASS_SAMPLE_LOCATIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET;
+	public static final long P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_BYTE_OFFSET;
+	public static final long POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET;
+	public static final long P_POST_SUBPASS_SAMPLE_LOCATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("attachmentInitialSampleLocationsCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pAttachmentInitialSampleLocations"),
-            JAVA_INT.withName("postSubpassSampleLocationsCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPostSubpassSampleLocations")
-        ).withName("VkRenderPassSampleLocationsBeginInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentInitialSampleLocationsCount"));
-        P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAttachmentInitialSampleLocations"));
-        POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("postSubpassSampleLocationsCount"));
-        P_POST_SUBPASS_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPostSubpassSampleLocations"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentInitialSampleLocationsCount"));
-        P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAttachmentInitialSampleLocations"));
-        POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("postSubpassSampleLocationsCount"));
-        P_POST_SUBPASS_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPostSubpassSampleLocations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("attachmentInitialSampleLocationsCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pAttachmentInitialSampleLocations"),
+		    JAVA_INT.withName("postSubpassSampleLocationsCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPostSubpassSampleLocations")
+		).withName("VkRenderPassSampleLocationsBeginInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachmentInitialSampleLocationsCount"));
+		P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAttachmentInitialSampleLocations"));
+		POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("postSubpassSampleLocationsCount"));
+		P_POST_SUBPASS_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPostSubpassSampleLocations"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachmentInitialSampleLocationsCount"));
+		P_ATTACHMENT_INITIAL_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAttachmentInitialSampleLocations"));
+		POST_SUBPASS_SAMPLE_LOCATIONS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("postSubpassSampleLocationsCount"));
+		P_POST_SUBPASS_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPostSubpassSampleLocations"));
+		//@formatter:on
+	}
 
-    public VkRenderPassSampleLocationsBeginInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassSampleLocationsBeginInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassSampleLocationsBeginInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassSampleLocationsBeginInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassSampleLocationsBeginInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassSampleLocationsBeginInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderPassSampleLocationsBeginInfoEXT sType(int sType) {
@@ -208,5 +208,5 @@ public final class VkRenderPassSampleLocationsBeginInfoEXT
             segment -> new VkRenderPassSampleLocationsBeginInfoEXT(segment)
         );
     }
-    
+
 }

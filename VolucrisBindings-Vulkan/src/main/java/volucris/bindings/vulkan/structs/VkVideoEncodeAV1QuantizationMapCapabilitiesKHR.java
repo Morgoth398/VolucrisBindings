@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1QuantizationMapCapabilitiesKHR
 		implements Struct<VkVideoEncodeAV1QuantizationMapCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MIN_QINDEX_DELTA_HANDLE;
-    public static final VarHandle MAX_QINDEX_DELTA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MIN_QINDEX_DELTA_HANDLE;
+	public static final VarHandle MAX_QINDEX_DELTA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MIN_QINDEX_DELTA_BYTE_OFFSET;
-    public static final long MAX_QINDEX_DELTA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MIN_QINDEX_DELTA_BYTE_OFFSET;
+	public static final long MAX_QINDEX_DELTA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("minQIndexDelta"),
-            JAVA_INT.withName("maxQIndexDelta")
-        ).withName("VkVideoEncodeAV1QuantizationMapCapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MIN_QINDEX_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQIndexDelta"));
-        MAX_QINDEX_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQIndexDelta"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MIN_QINDEX_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQIndexDelta"));
-        MAX_QINDEX_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQIndexDelta"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("minQIndexDelta"),
+		    JAVA_INT.withName("maxQIndexDelta")
+		).withName("VkVideoEncodeAV1QuantizationMapCapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MIN_QINDEX_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQIndexDelta"));
+		MAX_QINDEX_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQIndexDelta"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MIN_QINDEX_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQIndexDelta"));
+		MAX_QINDEX_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQIndexDelta"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1QuantizationMapCapabilitiesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkVideoEncodeAV1QuantizationMapCapabilitiesKHR
             segment -> new VkVideoEncodeAV1QuantizationMapCapabilitiesKHR(segment)
         );
     }
-    
+
 }

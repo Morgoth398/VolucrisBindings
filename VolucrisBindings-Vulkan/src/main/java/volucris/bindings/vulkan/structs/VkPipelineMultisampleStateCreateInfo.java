@@ -22,79 +22,79 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineMultisampleStateCreateInfo
 		implements Struct<VkPipelineMultisampleStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle RASTERIZATION_SAMPLES_HANDLE;
-    public static final VarHandle SAMPLE_SHADING_ENABLE_HANDLE;
-    public static final VarHandle MIN_SAMPLE_SHADING_HANDLE;
-    public static final VarHandle P_SAMPLE_MASK_HANDLE;
-    public static final VarHandle ALPHA_TO_COVERAGE_ENABLE_HANDLE;
-    public static final VarHandle ALPHA_TO_ONE_ENABLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle RASTERIZATION_SAMPLES_HANDLE;
+	public static final VarHandle SAMPLE_SHADING_ENABLE_HANDLE;
+	public static final VarHandle MIN_SAMPLE_SHADING_HANDLE;
+	public static final VarHandle P_SAMPLE_MASK_HANDLE;
+	public static final VarHandle ALPHA_TO_COVERAGE_ENABLE_HANDLE;
+	public static final VarHandle ALPHA_TO_ONE_ENABLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long RASTERIZATION_SAMPLES_BYTE_OFFSET;
-    public static final long SAMPLE_SHADING_ENABLE_BYTE_OFFSET;
-    public static final long MIN_SAMPLE_SHADING_BYTE_OFFSET;
-    public static final long P_SAMPLE_MASK_BYTE_OFFSET;
-    public static final long ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET;
-    public static final long ALPHA_TO_ONE_ENABLE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long RASTERIZATION_SAMPLES_BYTE_OFFSET;
+	public static final long SAMPLE_SHADING_ENABLE_BYTE_OFFSET;
+	public static final long MIN_SAMPLE_SHADING_BYTE_OFFSET;
+	public static final long P_SAMPLE_MASK_BYTE_OFFSET;
+	public static final long ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET;
+	public static final long ALPHA_TO_ONE_ENABLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("rasterizationSamples"),
-            JAVA_INT.withName("sampleShadingEnable"),
-            JAVA_FLOAT.withName("minSampleShading"),
-            UNBOUNDED_ADDRESS.withName("pSampleMask"),
-            JAVA_INT.withName("alphaToCoverageEnable"),
-            JAVA_INT.withName("alphaToOneEnable")
-        ).withName("VkPipelineMultisampleStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationSamples"));
-        SAMPLE_SHADING_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleShadingEnable"));
-        MIN_SAMPLE_SHADING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSampleShading"));
-        P_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampleMask"));
-        ALPHA_TO_COVERAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaToCoverageEnable"));
-        ALPHA_TO_ONE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaToOneEnable"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationSamples"));
-        SAMPLE_SHADING_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleShadingEnable"));
-        MIN_SAMPLE_SHADING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSampleShading"));
-        P_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampleMask"));
-        ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaToCoverageEnable"));
-        ALPHA_TO_ONE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaToOneEnable"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("rasterizationSamples"),
+		    JAVA_INT.withName("sampleShadingEnable"),
+		    JAVA_FLOAT.withName("minSampleShading"),
+		    UNBOUNDED_ADDRESS.withName("pSampleMask"),
+		    JAVA_INT.withName("alphaToCoverageEnable"),
+		    JAVA_INT.withName("alphaToOneEnable")
+		).withName("VkPipelineMultisampleStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationSamples"));
+		SAMPLE_SHADING_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleShadingEnable"));
+		MIN_SAMPLE_SHADING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSampleShading"));
+		P_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSampleMask"));
+		ALPHA_TO_COVERAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaToCoverageEnable"));
+		ALPHA_TO_ONE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaToOneEnable"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationSamples"));
+		SAMPLE_SHADING_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleShadingEnable"));
+		MIN_SAMPLE_SHADING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSampleShading"));
+		P_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSampleMask"));
+		ALPHA_TO_COVERAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaToCoverageEnable"));
+		ALPHA_TO_ONE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaToOneEnable"));
+		//@formatter:on
+	}
 
-    public VkPipelineMultisampleStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineMultisampleStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineMultisampleStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineMultisampleStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineMultisampleStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineMultisampleStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineMultisampleStateCreateInfo sType(int sType) {
@@ -247,5 +247,5 @@ public final class VkPipelineMultisampleStateCreateInfo
             segment -> new VkPipelineMultisampleStateCreateInfo(segment)
         );
     }
-    
+
 }

@@ -22,76 +22,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoFormatPropertiesKHR
 		implements Struct<VkVideoFormatPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle IMAGE_CREATE_FLAGS_HANDLE;
-    public static final VarHandle IMAGE_TYPE_HANDLE;
-    public static final VarHandle IMAGE_TILING_HANDLE;
-    public static final VarHandle IMAGE_USAGE_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle IMAGE_CREATE_FLAGS_HANDLE;
+	public static final VarHandle IMAGE_TYPE_HANDLE;
+	public static final VarHandle IMAGE_TILING_HANDLE;
+	public static final VarHandle IMAGE_USAGE_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long COMPONENT_MAPPING_BYTE_OFFSET;
-    public static final long IMAGE_CREATE_FLAGS_BYTE_OFFSET;
-    public static final long IMAGE_TYPE_BYTE_OFFSET;
-    public static final long IMAGE_TILING_BYTE_OFFSET;
-    public static final long IMAGE_USAGE_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long COMPONENT_MAPPING_BYTE_OFFSET;
+	public static final long IMAGE_CREATE_FLAGS_BYTE_OFFSET;
+	public static final long IMAGE_TYPE_BYTE_OFFSET;
+	public static final long IMAGE_TILING_BYTE_OFFSET;
+	public static final long IMAGE_USAGE_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkComponentMapping componentMapping;
+	private final VkComponentMapping componentMapping;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("format"),
-            VkComponentMapping.LAYOUT.withName("componentMapping"),
-            JAVA_INT.withName("imageCreateFlags"),
-            JAVA_INT.withName("imageType"),
-            JAVA_INT.withName("imageTiling"),
-            JAVA_INT.withName("imageUsageFlags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoFormatPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        IMAGE_CREATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCreateFlags"));
-        IMAGE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageType"));
-        IMAGE_TILING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageTiling"));
-        IMAGE_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageUsageFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        COMPONENT_MAPPING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("componentMapping"));
-        IMAGE_CREATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCreateFlags"));
-        IMAGE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageType"));
-        IMAGE_TILING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageTiling"));
-        IMAGE_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageUsageFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("format"),
+		    VkComponentMapping.LAYOUT.withName("componentMapping"),
+		    JAVA_INT.withName("imageCreateFlags"),
+		    JAVA_INT.withName("imageType"),
+		    JAVA_INT.withName("imageTiling"),
+		    JAVA_INT.withName("imageUsageFlags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoFormatPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		IMAGE_CREATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCreateFlags"));
+		IMAGE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageType"));
+		IMAGE_TILING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageTiling"));
+		IMAGE_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageUsageFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		COMPONENT_MAPPING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("componentMapping"));
+		IMAGE_CREATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCreateFlags"));
+		IMAGE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageType"));
+		IMAGE_TILING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageTiling"));
+		IMAGE_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageUsageFlags"));
+		//@formatter:on
+	}
 
-    public VkVideoFormatPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoFormatPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoFormatPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        componentMapping = new VkComponentMapping(segment.asSlice(COMPONENT_MAPPING_BYTE_OFFSET, VkComponentMapping.LAYOUT));
-    }
+	public VkVideoFormatPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoFormatPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoFormatPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    componentMapping = new VkComponentMapping(segment.asSlice(COMPONENT_MAPPING_BYTE_OFFSET, VkComponentMapping.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoFormatPropertiesKHR sType(int sType) {
@@ -126,6 +126,22 @@ public final class VkVideoFormatPropertiesKHR
     
     public int format() {
     	return (int) FORMAT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #componentMapping()
+    public VkVideoFormatPropertiesKHR componentMapping(Consumer<VkComponentMapping> consumer) {
+    	consumer.accept(componentMapping);
+    	return this;
+    }
+    
+    /// @see #componentMapping()
+    public VkVideoFormatPropertiesKHR componentMapping(VkComponentMapping other) {
+    	componentMapping.set(other);
+    	return this;
+    }
+    
+    public VkComponentMapping componentMapping() {
+    	return componentMapping;
     }
     
     /// @see #imageCreateFlags()
@@ -166,22 +182,6 @@ public final class VkVideoFormatPropertiesKHR
     
     public int imageUsageFlags() {
     	return (int) IMAGE_USAGE_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #componentMapping()
-    public VkVideoFormatPropertiesKHR componentMapping(Consumer<VkComponentMapping> consumer) {
-    	consumer.accept(componentMapping);
-    	return this;
-    }
-    
-    /// @see #componentMapping()
-    public VkVideoFormatPropertiesKHR componentMapping(VkComponentMapping other) {
-    	componentMapping.set(other);
-    	return this;
-    }
-    
-    public VkComponentMapping componentMapping() {
-    	return componentMapping;
     }
     
     @Override
@@ -235,5 +235,5 @@ public final class VkVideoFormatPropertiesKHR
             segment -> new VkVideoFormatPropertiesKHR(segment)
         );
     }
-    
+
 }

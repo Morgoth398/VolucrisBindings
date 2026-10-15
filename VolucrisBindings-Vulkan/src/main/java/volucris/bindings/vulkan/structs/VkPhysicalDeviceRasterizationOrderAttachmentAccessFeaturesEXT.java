@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
 		implements Struct<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_HANDLE;
-    public static final VarHandle RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_HANDLE;
-    public static final VarHandle RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_HANDLE;
+	public static final VarHandle RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_HANDLE;
+	public static final VarHandle RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_BYTE_OFFSET;
-    public static final long RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_BYTE_OFFSET;
-    public static final long RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_BYTE_OFFSET;
+	public static final long RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_BYTE_OFFSET;
+	public static final long RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rasterizationOrderColorAttachmentAccess"),
-            JAVA_INT.withName("rasterizationOrderDepthAttachmentAccess"),
-            JAVA_INT.withName("rasterizationOrderStencilAttachmentAccess"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationOrderColorAttachmentAccess"));
-        RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationOrderDepthAttachmentAccess"));
-        RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationOrderStencilAttachmentAccess"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationOrderColorAttachmentAccess"));
-        RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationOrderDepthAttachmentAccess"));
-        RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationOrderStencilAttachmentAccess"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rasterizationOrderColorAttachmentAccess"),
+		    JAVA_INT.withName("rasterizationOrderDepthAttachmentAccess"),
+		    JAVA_INT.withName("rasterizationOrderStencilAttachmentAccess"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationOrderColorAttachmentAccess"));
+		RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationOrderDepthAttachmentAccess"));
+		RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationOrderStencilAttachmentAccess"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RASTERIZATION_ORDER_COLOR_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationOrderColorAttachmentAccess"));
+		RASTERIZATION_ORDER_DEPTH_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationOrderDepthAttachmentAccess"));
+		RASTERIZATION_ORDER_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationOrderStencilAttachmentAccess"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
             segment -> new VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(segment)
         );
     }
-    
+
 }

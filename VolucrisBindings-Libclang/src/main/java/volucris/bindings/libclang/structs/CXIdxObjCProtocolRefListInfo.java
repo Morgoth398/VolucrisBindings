@@ -19,44 +19,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxObjCProtocolRefListInfo
 		implements Struct<CXIdxObjCProtocolRefListInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PROTOCOLS_HANDLE;
-    public static final VarHandle NUM_PROTOCOLS_HANDLE;
+	public static final VarHandle PROTOCOLS_HANDLE;
+	public static final VarHandle NUM_PROTOCOLS_HANDLE;
 
-    public static final long PROTOCOLS_BYTE_OFFSET;
-    public static final long NUM_PROTOCOLS_BYTE_OFFSET;
+	public static final long PROTOCOLS_BYTE_OFFSET;
+	public static final long NUM_PROTOCOLS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("protocols"),
-            JAVA_INT.withName("numProtocols"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxObjCProtocolRefListInfo").withByteAlignment(8);
-        
-        PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocols"));
-        NUM_PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numProtocols"));
-        
-        PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocols"));
-        NUM_PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numProtocols"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("protocols"),
+		    JAVA_INT.withName("numProtocols"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxObjCProtocolRefListInfo").withByteAlignment(8);
+		
+		PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protocols"));
+		NUM_PROTOCOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numProtocols"));
+		
+		PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protocols"));
+		NUM_PROTOCOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numProtocols"));
+		//@formatter:on
+	}
 
-    public CXIdxObjCProtocolRefListInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxObjCProtocolRefListInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxObjCProtocolRefListInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIdxObjCProtocolRefListInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxObjCProtocolRefListInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxObjCProtocolRefListInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #protocols()
     public CXIdxObjCProtocolRefListInfo protocols(NativePointerArray protocols) {
@@ -134,5 +134,5 @@ public final class CXIdxObjCProtocolRefListInfo
             segment -> new CXIdxObjCProtocolRefListInfo(segment)
         );
     }
-    
+
 }

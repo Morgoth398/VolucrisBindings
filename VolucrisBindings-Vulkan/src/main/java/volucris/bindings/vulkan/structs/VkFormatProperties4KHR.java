@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkFormatProperties4KHR
 		implements Struct<VkFormatProperties4KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LINEAR_TILING_FEATURES_HANDLE;
-    public static final VarHandle OPTIMAL_TILING_FEATURES_HANDLE;
-    public static final VarHandle BUFFER_FEATURES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LINEAR_TILING_FEATURES_HANDLE;
+	public static final VarHandle OPTIMAL_TILING_FEATURES_HANDLE;
+	public static final VarHandle BUFFER_FEATURES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LINEAR_TILING_FEATURES_BYTE_OFFSET;
-    public static final long OPTIMAL_TILING_FEATURES_BYTE_OFFSET;
-    public static final long BUFFER_FEATURES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LINEAR_TILING_FEATURES_BYTE_OFFSET;
+	public static final long OPTIMAL_TILING_FEATURES_BYTE_OFFSET;
+	public static final long BUFFER_FEATURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("linearTilingFeatures"),
-            JAVA_LONG.withName("optimalTilingFeatures"),
-            JAVA_LONG.withName("bufferFeatures")
-        ).withName("VkFormatProperties4KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LINEAR_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("linearTilingFeatures"));
-        OPTIMAL_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingFeatures"));
-        BUFFER_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferFeatures"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LINEAR_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("linearTilingFeatures"));
-        OPTIMAL_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingFeatures"));
-        BUFFER_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferFeatures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("linearTilingFeatures"),
+		    JAVA_LONG.withName("optimalTilingFeatures"),
+		    JAVA_LONG.withName("bufferFeatures")
+		).withName("VkFormatProperties4KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LINEAR_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("linearTilingFeatures"));
+		OPTIMAL_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingFeatures"));
+		BUFFER_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferFeatures"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LINEAR_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("linearTilingFeatures"));
+		OPTIMAL_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingFeatures"));
+		BUFFER_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferFeatures"));
+		//@formatter:on
+	}
 
-    public VkFormatProperties4KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkFormatProperties4KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkFormatProperties4KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkFormatProperties4KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkFormatProperties4KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkFormatProperties4KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkFormatProperties4KHR sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkFormatProperties4KHR
             segment -> new VkFormatProperties4KHR(segment)
         );
     }
-    
+
 }

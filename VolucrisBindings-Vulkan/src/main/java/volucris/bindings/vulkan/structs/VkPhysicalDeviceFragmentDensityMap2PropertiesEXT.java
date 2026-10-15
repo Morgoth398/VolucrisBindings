@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT
 		implements Struct<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SUBSAMPLED_LOADS_HANDLE;
-    public static final VarHandle SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_HANDLE;
-    public static final VarHandle MAX_SUBSAMPLED_ARRAY_LAYERS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SUBSAMPLED_LOADS_HANDLE;
+	public static final VarHandle SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_HANDLE;
+	public static final VarHandle MAX_SUBSAMPLED_ARRAY_LAYERS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SUBSAMPLED_LOADS_BYTE_OFFSET;
-    public static final long SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_BYTE_OFFSET;
-    public static final long MAX_SUBSAMPLED_ARRAY_LAYERS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SUBSAMPLED_LOADS_BYTE_OFFSET;
+	public static final long SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_BYTE_OFFSET;
+	public static final long MAX_SUBSAMPLED_ARRAY_LAYERS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("subsampledLoads"),
-            JAVA_INT.withName("subsampledCoarseReconstructionEarlyAccess"),
-            JAVA_INT.withName("maxSubsampledArrayLayers"),
-            JAVA_INT.withName("maxDescriptorSetSubsampledSamplers")
-        ).withName("VkPhysicalDeviceFragmentDensityMap2PropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SUBSAMPLED_LOADS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampledLoads"));
-        SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampledCoarseReconstructionEarlyAccess"));
-        MAX_SUBSAMPLED_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubsampledArrayLayers"));
-        MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetSubsampledSamplers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SUBSAMPLED_LOADS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampledLoads"));
-        SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampledCoarseReconstructionEarlyAccess"));
-        MAX_SUBSAMPLED_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubsampledArrayLayers"));
-        MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetSubsampledSamplers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("subsampledLoads"),
+		    JAVA_INT.withName("subsampledCoarseReconstructionEarlyAccess"),
+		    JAVA_INT.withName("maxSubsampledArrayLayers"),
+		    JAVA_INT.withName("maxDescriptorSetSubsampledSamplers")
+		).withName("VkPhysicalDeviceFragmentDensityMap2PropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SUBSAMPLED_LOADS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampledLoads"));
+		SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampledCoarseReconstructionEarlyAccess"));
+		MAX_SUBSAMPLED_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubsampledArrayLayers"));
+		MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetSubsampledSamplers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SUBSAMPLED_LOADS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampledLoads"));
+		SUBSAMPLED_COARSE_RECONSTRUCTION_EARLY_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampledCoarseReconstructionEarlyAccess"));
+		MAX_SUBSAMPLED_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubsampledArrayLayers"));
+		MAX_DESCRIPTOR_SET_SUBSAMPLED_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetSubsampledSamplers"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT
             segment -> new VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(segment)
         );
     }
-    
+
 }

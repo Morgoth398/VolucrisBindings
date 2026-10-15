@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265SubLayerHrdParameters
 		implements Struct<StdVideoH265SubLayerHrdParameters> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_RATE_VALUE_MINUS1_HANDLE;
-    public static final VarHandle CPB_SIZE_VALUE_MINUS1_HANDLE;
-    public static final VarHandle CPB_SIZE_DU_VALUE_MINUS1_HANDLE;
-    public static final VarHandle BIT_RATE_DU_VALUE_MINUS1_HANDLE;
-    public static final VarHandle CBR_FLAG_HANDLE;
+	public static final VarHandle BIT_RATE_VALUE_MINUS1_HANDLE;
+	public static final VarHandle CPB_SIZE_VALUE_MINUS1_HANDLE;
+	public static final VarHandle CPB_SIZE_DU_VALUE_MINUS1_HANDLE;
+	public static final VarHandle BIT_RATE_DU_VALUE_MINUS1_HANDLE;
+	public static final VarHandle CBR_FLAG_HANDLE;
 
-    public static final long BIT_RATE_VALUE_MINUS1_BYTE_OFFSET;
-    public static final long CPB_SIZE_VALUE_MINUS1_BYTE_OFFSET;
-    public static final long CPB_SIZE_DU_VALUE_MINUS1_BYTE_OFFSET;
-    public static final long BIT_RATE_DU_VALUE_MINUS1_BYTE_OFFSET;
-    public static final long CBR_FLAG_BYTE_OFFSET;
+	public static final long BIT_RATE_VALUE_MINUS1_BYTE_OFFSET;
+	public static final long CPB_SIZE_VALUE_MINUS1_BYTE_OFFSET;
+	public static final long CPB_SIZE_DU_VALUE_MINUS1_BYTE_OFFSET;
+	public static final long BIT_RATE_DU_VALUE_MINUS1_BYTE_OFFSET;
+	public static final long CBR_FLAG_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(32, JAVA_INT).withName("bit_rate_value_minus1"),
-            MemoryLayout.sequenceLayout(32, JAVA_INT).withName("cpb_size_value_minus1"),
-            MemoryLayout.sequenceLayout(32, JAVA_INT).withName("cpb_size_du_value_minus1"),
-            MemoryLayout.sequenceLayout(32, JAVA_INT).withName("bit_rate_du_value_minus1"),
-            JAVA_INT.withName("cbr_flag")
-        ).withName("StdVideoH265SubLayerHrdParameters").withByteAlignment(4);
-        
-        BIT_RATE_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bit_rate_value_minus1"), PathElement.sequenceElement());
-        CPB_SIZE_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_value_minus1"), PathElement.sequenceElement());
-        CPB_SIZE_DU_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_du_value_minus1"), PathElement.sequenceElement());
-        BIT_RATE_DU_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bit_rate_du_value_minus1"), PathElement.sequenceElement());
-        CBR_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cbr_flag"));
-        
-        BIT_RATE_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bit_rate_value_minus1"));
-        CPB_SIZE_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_value_minus1"));
-        CPB_SIZE_DU_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_du_value_minus1"));
-        BIT_RATE_DU_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bit_rate_du_value_minus1"));
-        CBR_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cbr_flag"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(32, JAVA_INT).withName("bit_rate_value_minus1"),
+		    MemoryLayout.sequenceLayout(32, JAVA_INT).withName("cpb_size_value_minus1"),
+		    MemoryLayout.sequenceLayout(32, JAVA_INT).withName("cpb_size_du_value_minus1"),
+		    MemoryLayout.sequenceLayout(32, JAVA_INT).withName("bit_rate_du_value_minus1"),
+		    JAVA_INT.withName("cbr_flag")
+		).withName("StdVideoH265SubLayerHrdParameters").withByteAlignment(4);
+		
+		BIT_RATE_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bit_rate_value_minus1"), PathElement.sequenceElement());
+		CPB_SIZE_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_value_minus1"), PathElement.sequenceElement());
+		CPB_SIZE_DU_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cpb_size_du_value_minus1"), PathElement.sequenceElement());
+		BIT_RATE_DU_VALUE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bit_rate_du_value_minus1"), PathElement.sequenceElement());
+		CBR_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cbr_flag"));
+		
+		BIT_RATE_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bit_rate_value_minus1"));
+		CPB_SIZE_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_value_minus1"));
+		CPB_SIZE_DU_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cpb_size_du_value_minus1"));
+		BIT_RATE_DU_VALUE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bit_rate_du_value_minus1"));
+		CBR_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cbr_flag"));
+		//@formatter:on
+	}
 
-    public StdVideoH265SubLayerHrdParameters() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoH265SubLayerHrdParameters(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoH265SubLayerHrdParameters(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoH265SubLayerHrdParameters() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265SubLayerHrdParameters(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265SubLayerHrdParameters(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #bit_rate_value_minus1(int)
     public StdVideoH265SubLayerHrdParameters bit_rate_value_minus1(int bit_rate_value_minus1, int index0) {
@@ -173,5 +173,5 @@ public final class StdVideoH265SubLayerHrdParameters
             segment -> new StdVideoH265SubLayerHrdParameters(segment)
         );
     }
-    
+
 }

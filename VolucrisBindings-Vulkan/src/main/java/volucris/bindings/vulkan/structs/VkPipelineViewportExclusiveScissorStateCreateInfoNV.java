@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineViewportExclusiveScissorStateCreateInfoNV
 		implements Struct<VkPipelineViewportExclusiveScissorStateCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EXCLUSIVE_SCISSOR_COUNT_HANDLE;
-    public static final VarHandle P_EXCLUSIVE_SCISSORS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EXCLUSIVE_SCISSOR_COUNT_HANDLE;
+	public static final VarHandle P_EXCLUSIVE_SCISSORS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXCLUSIVE_SCISSOR_COUNT_BYTE_OFFSET;
-    public static final long P_EXCLUSIVE_SCISSORS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXCLUSIVE_SCISSOR_COUNT_BYTE_OFFSET;
+	public static final long P_EXCLUSIVE_SCISSORS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("exclusiveScissorCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pExclusiveScissors")
-        ).withName("VkPipelineViewportExclusiveScissorStateCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EXCLUSIVE_SCISSOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exclusiveScissorCount"));
-        P_EXCLUSIVE_SCISSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExclusiveScissors"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXCLUSIVE_SCISSOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exclusiveScissorCount"));
-        P_EXCLUSIVE_SCISSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExclusiveScissors"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("exclusiveScissorCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pExclusiveScissors")
+		).withName("VkPipelineViewportExclusiveScissorStateCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EXCLUSIVE_SCISSOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exclusiveScissorCount"));
+		P_EXCLUSIVE_SCISSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExclusiveScissors"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXCLUSIVE_SCISSOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exclusiveScissorCount"));
+		P_EXCLUSIVE_SCISSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExclusiveScissors"));
+		//@formatter:on
+	}
 
-    public VkPipelineViewportExclusiveScissorStateCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineViewportExclusiveScissorStateCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineViewportExclusiveScissorStateCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineViewportExclusiveScissorStateCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineViewportExclusiveScissorStateCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineViewportExclusiveScissorStateCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineViewportExclusiveScissorStateCreateInfoNV sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkPipelineViewportExclusiveScissorStateCreateInfoNV
             segment -> new VkPipelineViewportExclusiveScissorStateCreateInfoNV(segment)
         );
     }
-    
+
 }

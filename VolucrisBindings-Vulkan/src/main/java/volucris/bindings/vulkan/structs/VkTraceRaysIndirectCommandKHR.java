@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkTraceRaysIndirectCommandKHR
 		implements Struct<VkTraceRaysIndirectCommandKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle DEPTH_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle DEPTH_HANDLE;
 
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long DEPTH_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long DEPTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height"),
-            JAVA_INT.withName("depth")
-        ).withName("VkTraceRaysIndirectCommandKHR").withByteAlignment(4);
-        
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
-        
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height"),
+		    JAVA_INT.withName("depth")
+		).withName("VkTraceRaysIndirectCommandKHR").withByteAlignment(4);
+		
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
+		
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
+		//@formatter:on
+	}
 
-    public VkTraceRaysIndirectCommandKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTraceRaysIndirectCommandKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTraceRaysIndirectCommandKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTraceRaysIndirectCommandKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTraceRaysIndirectCommandKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTraceRaysIndirectCommandKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #width()
     public VkTraceRaysIndirectCommandKHR width(int width) {
@@ -143,5 +143,5 @@ public final class VkTraceRaysIndirectCommandKHR
             segment -> new VkTraceRaysIndirectCommandKHR(segment)
         );
     }
-    
+
 }

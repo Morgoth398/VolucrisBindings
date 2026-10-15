@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH264RefListModEntry
 		implements Struct<StdVideoEncodeH264RefListModEntry> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MODIFICATION_OF_PIC_NUMS_IDC_HANDLE;
-    public static final VarHandle ABS_DIFF_PIC_NUM_MINUS1_HANDLE;
-    public static final VarHandle LONG_TERM_PIC_NUM_HANDLE;
+	public static final VarHandle MODIFICATION_OF_PIC_NUMS_IDC_HANDLE;
+	public static final VarHandle ABS_DIFF_PIC_NUM_MINUS1_HANDLE;
+	public static final VarHandle LONG_TERM_PIC_NUM_HANDLE;
 
-    public static final long MODIFICATION_OF_PIC_NUMS_IDC_BYTE_OFFSET;
-    public static final long ABS_DIFF_PIC_NUM_MINUS1_BYTE_OFFSET;
-    public static final long LONG_TERM_PIC_NUM_BYTE_OFFSET;
+	public static final long MODIFICATION_OF_PIC_NUMS_IDC_BYTE_OFFSET;
+	public static final long ABS_DIFF_PIC_NUM_MINUS1_BYTE_OFFSET;
+	public static final long LONG_TERM_PIC_NUM_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("modification_of_pic_nums_idc"),
-            JAVA_SHORT.withName("abs_diff_pic_num_minus1"),
-            JAVA_SHORT.withName("long_term_pic_num")
-        ).withName("StdVideoEncodeH264RefListModEntry").withByteAlignment(4);
-        
-        MODIFICATION_OF_PIC_NUMS_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("modification_of_pic_nums_idc"));
-        ABS_DIFF_PIC_NUM_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("abs_diff_pic_num_minus1"));
-        LONG_TERM_PIC_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_pic_num"));
-        
-        MODIFICATION_OF_PIC_NUMS_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("modification_of_pic_nums_idc"));
-        ABS_DIFF_PIC_NUM_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("abs_diff_pic_num_minus1"));
-        LONG_TERM_PIC_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_pic_num"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("modification_of_pic_nums_idc"),
+		    JAVA_SHORT.withName("abs_diff_pic_num_minus1"),
+		    JAVA_SHORT.withName("long_term_pic_num")
+		).withName("StdVideoEncodeH264RefListModEntry").withByteAlignment(4);
+		
+		MODIFICATION_OF_PIC_NUMS_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("modification_of_pic_nums_idc"));
+		ABS_DIFF_PIC_NUM_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("abs_diff_pic_num_minus1"));
+		LONG_TERM_PIC_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_pic_num"));
+		
+		MODIFICATION_OF_PIC_NUMS_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("modification_of_pic_nums_idc"));
+		ABS_DIFF_PIC_NUM_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("abs_diff_pic_num_minus1"));
+		LONG_TERM_PIC_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_pic_num"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH264RefListModEntry() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoEncodeH264RefListModEntry(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoEncodeH264RefListModEntry(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoEncodeH264RefListModEntry() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH264RefListModEntry(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH264RefListModEntry(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #modification_of_pic_nums_idc()
     public StdVideoEncodeH264RefListModEntry modification_of_pic_nums_idc(int modification_of_pic_nums_idc) {
@@ -143,5 +143,5 @@ public final class StdVideoEncodeH264RefListModEntry
             segment -> new StdVideoEncodeH264RefListModEntry(segment)
         );
     }
-    
+
 }

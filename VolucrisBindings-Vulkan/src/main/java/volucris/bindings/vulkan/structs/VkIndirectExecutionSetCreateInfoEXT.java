@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectExecutionSetCreateInfoEXT
 		implements Struct<VkIndirectExecutionSetCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long INFO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkIndirectExecutionSetInfoEXT info;
+	private final VkIndirectExecutionSetInfoEXT info;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            MemoryLayout.paddingLayout(4),
-            VkIndirectExecutionSetInfoEXT.LAYOUT.withName("info")
-        ).withName("VkIndirectExecutionSetCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("info"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    MemoryLayout.paddingLayout(4),
+		    VkIndirectExecutionSetInfoEXT.LAYOUT.withName("info")
+		).withName("VkIndirectExecutionSetCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("info"));
+		//@formatter:on
+	}
 
-    public VkIndirectExecutionSetCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectExecutionSetCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectExecutionSetCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        info = new VkIndirectExecutionSetInfoEXT(segment.asSlice(INFO_BYTE_OFFSET, VkIndirectExecutionSetInfoEXT.LAYOUT));
-    }
+	public VkIndirectExecutionSetCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectExecutionSetCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectExecutionSetCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    info = new VkIndirectExecutionSetInfoEXT(segment.asSlice(INFO_BYTE_OFFSET, VkIndirectExecutionSetInfoEXT.LAYOUT));
+	}
 
     /// @see #sType()
     public VkIndirectExecutionSetCreateInfoEXT sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkIndirectExecutionSetCreateInfoEXT
             segment -> new VkIndirectExecutionSetCreateInfoEXT(segment)
         );
     }
-    
+
 }

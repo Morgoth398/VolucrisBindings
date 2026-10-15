@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCommandBufferInheritanceViewportScissorInfoNV
 		implements Struct<VkCommandBufferInheritanceViewportScissorInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIEWPORT_SCISSOR2_D_HANDLE;
-    public static final VarHandle VIEWPORT_DEPTH_COUNT_HANDLE;
-    public static final VarHandle P_VIEWPORT_DEPTHS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIEWPORT_SCISSOR2_D_HANDLE;
+	public static final VarHandle VIEWPORT_DEPTH_COUNT_HANDLE;
+	public static final VarHandle P_VIEWPORT_DEPTHS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIEWPORT_SCISSOR2_D_BYTE_OFFSET;
-    public static final long VIEWPORT_DEPTH_COUNT_BYTE_OFFSET;
-    public static final long P_VIEWPORT_DEPTHS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIEWPORT_SCISSOR2_D_BYTE_OFFSET;
+	public static final long VIEWPORT_DEPTH_COUNT_BYTE_OFFSET;
+	public static final long P_VIEWPORT_DEPTHS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("viewportScissor2D"),
-            JAVA_INT.withName("viewportDepthCount"),
-            UNBOUNDED_ADDRESS.withName("pViewportDepths")
-        ).withName("VkCommandBufferInheritanceViewportScissorInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIEWPORT_SCISSOR2_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportScissor2D"));
-        VIEWPORT_DEPTH_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportDepthCount"));
-        P_VIEWPORT_DEPTHS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewportDepths"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIEWPORT_SCISSOR2_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportScissor2D"));
-        VIEWPORT_DEPTH_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportDepthCount"));
-        P_VIEWPORT_DEPTHS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewportDepths"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("viewportScissor2D"),
+		    JAVA_INT.withName("viewportDepthCount"),
+		    UNBOUNDED_ADDRESS.withName("pViewportDepths")
+		).withName("VkCommandBufferInheritanceViewportScissorInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIEWPORT_SCISSOR2_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportScissor2D"));
+		VIEWPORT_DEPTH_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportDepthCount"));
+		P_VIEWPORT_DEPTHS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewportDepths"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIEWPORT_SCISSOR2_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportScissor2D"));
+		VIEWPORT_DEPTH_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportDepthCount"));
+		P_VIEWPORT_DEPTHS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewportDepths"));
+		//@formatter:on
+	}
 
-    public VkCommandBufferInheritanceViewportScissorInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCommandBufferInheritanceViewportScissorInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCommandBufferInheritanceViewportScissorInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCommandBufferInheritanceViewportScissorInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCommandBufferInheritanceViewportScissorInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCommandBufferInheritanceViewportScissorInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCommandBufferInheritanceViewportScissorInfoNV sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkCommandBufferInheritanceViewportScissorInfoNV
             segment -> new VkCommandBufferInheritanceViewportScissorInfoNV(segment)
         );
     }
-    
+
 }

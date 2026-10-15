@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePerformanceQueryFeaturesKHR
 		implements Struct<VkPhysicalDevicePerformanceQueryFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PERFORMANCE_COUNTER_QUERY_POOLS_HANDLE;
-    public static final VarHandle PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PERFORMANCE_COUNTER_QUERY_POOLS_HANDLE;
+	public static final VarHandle PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PERFORMANCE_COUNTER_QUERY_POOLS_BYTE_OFFSET;
-    public static final long PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PERFORMANCE_COUNTER_QUERY_POOLS_BYTE_OFFSET;
+	public static final long PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("performanceCounterQueryPools"),
-            JAVA_INT.withName("performanceCounterMultipleQueryPools")
-        ).withName("VkPhysicalDevicePerformanceQueryFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PERFORMANCE_COUNTER_QUERY_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performanceCounterQueryPools"));
-        PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performanceCounterMultipleQueryPools"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PERFORMANCE_COUNTER_QUERY_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceCounterQueryPools"));
-        PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceCounterMultipleQueryPools"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("performanceCounterQueryPools"),
+		    JAVA_INT.withName("performanceCounterMultipleQueryPools")
+		).withName("VkPhysicalDevicePerformanceQueryFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PERFORMANCE_COUNTER_QUERY_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performanceCounterQueryPools"));
+		PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("performanceCounterMultipleQueryPools"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PERFORMANCE_COUNTER_QUERY_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceCounterQueryPools"));
+		PERFORMANCE_COUNTER_MULTIPLE_QUERY_POOLS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("performanceCounterMultipleQueryPools"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePerformanceQueryFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePerformanceQueryFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePerformanceQueryFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePerformanceQueryFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePerformanceQueryFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePerformanceQueryFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePerformanceQueryFeaturesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDevicePerformanceQueryFeaturesKHR
             segment -> new VkPhysicalDevicePerformanceQueryFeaturesKHR(segment)
         );
     }
-    
+
 }

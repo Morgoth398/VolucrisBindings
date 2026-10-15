@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMultisampledRenderToSingleSampledInfoEXT
 		implements Struct<VkMultisampledRenderToSingleSampledInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_HANDLE;
-    public static final VarHandle RASTERIZATION_SAMPLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_HANDLE;
+	public static final VarHandle RASTERIZATION_SAMPLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_BYTE_OFFSET;
-    public static final long RASTERIZATION_SAMPLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_BYTE_OFFSET;
+	public static final long RASTERIZATION_SAMPLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("multisampledRenderToSingleSampledEnable"),
-            JAVA_INT.withName("rasterizationSamples")
-        ).withName("VkMultisampledRenderToSingleSampledInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multisampledRenderToSingleSampledEnable"));
-        RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationSamples"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multisampledRenderToSingleSampledEnable"));
-        RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationSamples"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("multisampledRenderToSingleSampledEnable"),
+		    JAVA_INT.withName("rasterizationSamples")
+		).withName("VkMultisampledRenderToSingleSampledInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multisampledRenderToSingleSampledEnable"));
+		RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizationSamples"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MULTISAMPLED_RENDER_TO_SINGLE_SAMPLED_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multisampledRenderToSingleSampledEnable"));
+		RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizationSamples"));
+		//@formatter:on
+	}
 
-    public VkMultisampledRenderToSingleSampledInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMultisampledRenderToSingleSampledInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMultisampledRenderToSingleSampledInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMultisampledRenderToSingleSampledInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMultisampledRenderToSingleSampledInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMultisampledRenderToSingleSampledInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMultisampledRenderToSingleSampledInfoEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkMultisampledRenderToSingleSampledInfoEXT
             segment -> new VkMultisampledRenderToSingleSampledInfoEXT(segment)
         );
     }
-    
+
 }

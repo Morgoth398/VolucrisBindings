@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkExtensionProperties
 		implements Struct<VkExtensionProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle EXTENSION_NAME_HANDLE;
-    public static final VarHandle SPEC_VERSION_HANDLE;
+	public static final VarHandle EXTENSION_NAME_HANDLE;
+	public static final VarHandle SPEC_VERSION_HANDLE;
 
-    public static final long EXTENSION_NAME_BYTE_OFFSET;
-    public static final long SPEC_VERSION_BYTE_OFFSET;
+	public static final long EXTENSION_NAME_BYTE_OFFSET;
+	public static final long SPEC_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("extensionName"),
-            JAVA_INT.withName("specVersion")
-        ).withName("VkExtensionProperties").withByteAlignment(4);
-        
-        EXTENSION_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extensionName"), PathElement.sequenceElement());
-        SPEC_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("specVersion"));
-        
-        EXTENSION_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extensionName"));
-        SPEC_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("specVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("extensionName"),
+		    JAVA_INT.withName("specVersion")
+		).withName("VkExtensionProperties").withByteAlignment(4);
+		
+		EXTENSION_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extensionName"), PathElement.sequenceElement());
+		SPEC_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("specVersion"));
+		
+		EXTENSION_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extensionName"));
+		SPEC_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("specVersion"));
+		//@formatter:on
+	}
 
-    public VkExtensionProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkExtensionProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkExtensionProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkExtensionProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkExtensionProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkExtensionProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #extensionName(int)
     public VkExtensionProperties extensionName(byte extensionName, int index0) {
@@ -67,6 +67,10 @@ public final class VkExtensionProperties
     	return (byte) EXTENSION_NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String extensionName() {
+        return segment.getString(EXTENSION_NAME_BYTE_OFFSET);
+    }
+    
     /// @see #specVersion()
     public VkExtensionProperties specVersion(int specVersion) {
     	SPEC_VERSION_HANDLE.set(segment, 0L, specVersion);
@@ -75,10 +79,6 @@ public final class VkExtensionProperties
     
     public int specVersion() {
     	return (int) SPEC_VERSION_HANDLE.get(segment, 0L);
-    }
-    
-    public String extensionName() {
-        return segment.getString(EXTENSION_NAME_BYTE_OFFSET);
     }
     
     @Override
@@ -132,5 +132,5 @@ public final class VkExtensionProperties
             segment -> new VkExtensionProperties(segment)
         );
     }
-    
+
 }

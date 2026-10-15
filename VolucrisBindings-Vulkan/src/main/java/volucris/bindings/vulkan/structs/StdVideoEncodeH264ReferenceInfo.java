@@ -20,71 +20,87 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH264ReferenceInfo
 		implements Struct<StdVideoEncodeH264ReferenceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PRIMARY_PIC_TYPE_HANDLE;
-    public static final VarHandle FRAME_NUM_HANDLE;
-    public static final VarHandle PIC_ORDER_CNT_HANDLE;
-    public static final VarHandle LONG_TERM_PIC_NUM_HANDLE;
-    public static final VarHandle LONG_TERM_FRAME_IDX_HANDLE;
-    public static final VarHandle TEMPORAL_ID_HANDLE;
+	public static final VarHandle PRIMARY_PIC_TYPE_HANDLE;
+	public static final VarHandle FRAME_NUM_HANDLE;
+	public static final VarHandle PIC_ORDER_CNT_HANDLE;
+	public static final VarHandle LONG_TERM_PIC_NUM_HANDLE;
+	public static final VarHandle LONG_TERM_FRAME_IDX_HANDLE;
+	public static final VarHandle TEMPORAL_ID_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PRIMARY_PIC_TYPE_BYTE_OFFSET;
-    public static final long FRAME_NUM_BYTE_OFFSET;
-    public static final long PIC_ORDER_CNT_BYTE_OFFSET;
-    public static final long LONG_TERM_PIC_NUM_BYTE_OFFSET;
-    public static final long LONG_TERM_FRAME_IDX_BYTE_OFFSET;
-    public static final long TEMPORAL_ID_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PRIMARY_PIC_TYPE_BYTE_OFFSET;
+	public static final long FRAME_NUM_BYTE_OFFSET;
+	public static final long PIC_ORDER_CNT_BYTE_OFFSET;
+	public static final long LONG_TERM_PIC_NUM_BYTE_OFFSET;
+	public static final long LONG_TERM_FRAME_IDX_BYTE_OFFSET;
+	public static final long TEMPORAL_ID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH264ReferenceInfoFlags flags;
+	private final StdVideoEncodeH264ReferenceInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH264ReferenceInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("primary_pic_type"),
-            JAVA_INT.withName("FrameNum"),
-            JAVA_INT.withName("PicOrderCnt"),
-            JAVA_SHORT.withName("long_term_pic_num"),
-            JAVA_SHORT.withName("long_term_frame_idx"),
-            JAVA_BYTE.withName("temporal_id"),
-            MemoryLayout.paddingLayout(3)
-        ).withName("StdVideoEncodeH264ReferenceInfo").withByteAlignment(4);
-        
-        PRIMARY_PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primary_pic_type"));
-        FRAME_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FrameNum"));
-        PIC_ORDER_CNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCnt"));
-        LONG_TERM_PIC_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_pic_num"));
-        LONG_TERM_FRAME_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_frame_idx"));
-        TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporal_id"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PRIMARY_PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primary_pic_type"));
-        FRAME_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FrameNum"));
-        PIC_ORDER_CNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCnt"));
-        LONG_TERM_PIC_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_pic_num"));
-        LONG_TERM_FRAME_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_frame_idx"));
-        TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporal_id"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH264ReferenceInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("primary_pic_type"),
+		    JAVA_INT.withName("FrameNum"),
+		    JAVA_INT.withName("PicOrderCnt"),
+		    JAVA_SHORT.withName("long_term_pic_num"),
+		    JAVA_SHORT.withName("long_term_frame_idx"),
+		    JAVA_BYTE.withName("temporal_id"),
+		    MemoryLayout.paddingLayout(3)
+		).withName("StdVideoEncodeH264ReferenceInfo").withByteAlignment(4);
+		
+		PRIMARY_PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primary_pic_type"));
+		FRAME_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FrameNum"));
+		PIC_ORDER_CNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCnt"));
+		LONG_TERM_PIC_NUM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_pic_num"));
+		LONG_TERM_FRAME_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("long_term_frame_idx"));
+		TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporal_id"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PRIMARY_PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primary_pic_type"));
+		FRAME_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FrameNum"));
+		PIC_ORDER_CNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCnt"));
+		LONG_TERM_PIC_NUM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_pic_num"));
+		LONG_TERM_FRAME_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("long_term_frame_idx"));
+		TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporal_id"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH264ReferenceInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH264ReferenceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH264ReferenceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH264ReferenceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH264ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264ReferenceInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH264ReferenceInfo flags(Consumer<StdVideoEncodeH264ReferenceInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH264ReferenceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH264ReferenceInfo flags(StdVideoEncodeH264ReferenceInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH264ReferenceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH264ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264ReferenceInfoFlags.LAYOUT));
+    public StdVideoEncodeH264ReferenceInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #primary_pic_type()
     public StdVideoEncodeH264ReferenceInfo primary_pic_type(int primary_pic_type) {
     	PRIMARY_PIC_TYPE_HANDLE.set(segment, 0L, primary_pic_type);
@@ -145,22 +161,6 @@ public final class StdVideoEncodeH264ReferenceInfo
     	return (byte) TEMPORAL_ID_HANDLE.get(segment, 0L);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH264ReferenceInfo flags(Consumer<StdVideoEncodeH264ReferenceInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH264ReferenceInfo flags(StdVideoEncodeH264ReferenceInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH264ReferenceInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH264ReferenceInfo set(StdVideoEncodeH264ReferenceInfo other) {
         return set(other.segment);
@@ -212,5 +212,5 @@ public final class StdVideoEncodeH264ReferenceInfo
             segment -> new StdVideoEncodeH264ReferenceInfo(segment)
         );
     }
-    
+
 }

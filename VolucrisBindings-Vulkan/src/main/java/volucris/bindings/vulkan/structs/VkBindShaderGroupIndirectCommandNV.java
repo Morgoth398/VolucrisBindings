@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkBindShaderGroupIndirectCommandNV
 		implements Struct<VkBindShaderGroupIndirectCommandNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle GROUP_INDEX_HANDLE;
+	public static final VarHandle GROUP_INDEX_HANDLE;
 
-    public static final long GROUP_INDEX_BYTE_OFFSET;
+	public static final long GROUP_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("groupIndex")
-        ).withName("VkBindShaderGroupIndirectCommandNV").withByteAlignment(4);
-        
-        GROUP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupIndex"));
-        
-        GROUP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("groupIndex")
+		).withName("VkBindShaderGroupIndirectCommandNV").withByteAlignment(4);
+		
+		GROUP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupIndex"));
+		
+		GROUP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupIndex"));
+		//@formatter:on
+	}
 
-    public VkBindShaderGroupIndirectCommandNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindShaderGroupIndirectCommandNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindShaderGroupIndirectCommandNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindShaderGroupIndirectCommandNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindShaderGroupIndirectCommandNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindShaderGroupIndirectCommandNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #groupIndex()
     public VkBindShaderGroupIndirectCommandNV groupIndex(int groupIndex) {
@@ -113,5 +113,5 @@ public final class VkBindShaderGroupIndirectCommandNV
             segment -> new VkBindShaderGroupIndirectCommandNV(segment)
         );
     }
-    
+
 }

@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetAllocateInfo
 		implements Struct<VkDescriptorSetAllocateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_POOL_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_COUNT_HANDLE;
-    public static final VarHandle P_SET_LAYOUTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_POOL_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_COUNT_HANDLE;
+	public static final VarHandle P_SET_LAYOUTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_POOL_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_COUNT_BYTE_OFFSET;
-    public static final long P_SET_LAYOUTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_POOL_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_COUNT_BYTE_OFFSET;
+	public static final long P_SET_LAYOUTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("descriptorPool"),
-            JAVA_INT.withName("descriptorSetCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSetLayouts")
-        ).withName("VkDescriptorSetAllocateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorPool"));
-        DESCRIPTOR_SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetCount"));
-        P_SET_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayouts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorPool"));
-        DESCRIPTOR_SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetCount"));
-        P_SET_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayouts"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("descriptorPool"),
+		    JAVA_INT.withName("descriptorSetCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSetLayouts")
+		).withName("VkDescriptorSetAllocateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorPool"));
+		DESCRIPTOR_SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetCount"));
+		P_SET_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSetLayouts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorPool"));
+		DESCRIPTOR_SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetCount"));
+		P_SET_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSetLayouts"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetAllocateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetAllocateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetAllocateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorSetAllocateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetAllocateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetAllocateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorSetAllocateInfo sType(int sType) {
@@ -193,5 +193,5 @@ public final class VkDescriptorSetAllocateInfo
             segment -> new VkDescriptorSetAllocateInfo(segment)
         );
     }
-    
+
 }

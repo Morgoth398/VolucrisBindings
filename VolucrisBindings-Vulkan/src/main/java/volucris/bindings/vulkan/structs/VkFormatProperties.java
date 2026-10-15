@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkFormatProperties
 		implements Struct<VkFormatProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LINEAR_TILING_FEATURES_HANDLE;
-    public static final VarHandle OPTIMAL_TILING_FEATURES_HANDLE;
-    public static final VarHandle BUFFER_FEATURES_HANDLE;
+	public static final VarHandle LINEAR_TILING_FEATURES_HANDLE;
+	public static final VarHandle OPTIMAL_TILING_FEATURES_HANDLE;
+	public static final VarHandle BUFFER_FEATURES_HANDLE;
 
-    public static final long LINEAR_TILING_FEATURES_BYTE_OFFSET;
-    public static final long OPTIMAL_TILING_FEATURES_BYTE_OFFSET;
-    public static final long BUFFER_FEATURES_BYTE_OFFSET;
+	public static final long LINEAR_TILING_FEATURES_BYTE_OFFSET;
+	public static final long OPTIMAL_TILING_FEATURES_BYTE_OFFSET;
+	public static final long BUFFER_FEATURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("linearTilingFeatures"),
-            JAVA_INT.withName("optimalTilingFeatures"),
-            JAVA_INT.withName("bufferFeatures")
-        ).withName("VkFormatProperties").withByteAlignment(4);
-        
-        LINEAR_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("linearTilingFeatures"));
-        OPTIMAL_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingFeatures"));
-        BUFFER_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferFeatures"));
-        
-        LINEAR_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("linearTilingFeatures"));
-        OPTIMAL_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingFeatures"));
-        BUFFER_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferFeatures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("linearTilingFeatures"),
+		    JAVA_INT.withName("optimalTilingFeatures"),
+		    JAVA_INT.withName("bufferFeatures")
+		).withName("VkFormatProperties").withByteAlignment(4);
+		
+		LINEAR_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("linearTilingFeatures"));
+		OPTIMAL_TILING_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingFeatures"));
+		BUFFER_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferFeatures"));
+		
+		LINEAR_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("linearTilingFeatures"));
+		OPTIMAL_TILING_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingFeatures"));
+		BUFFER_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferFeatures"));
+		//@formatter:on
+	}
 
-    public VkFormatProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkFormatProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkFormatProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkFormatProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkFormatProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkFormatProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #linearTilingFeatures()
     public VkFormatProperties linearTilingFeatures(int linearTilingFeatures) {
@@ -143,5 +143,5 @@ public final class VkFormatProperties
             segment -> new VkFormatProperties(segment)
         );
     }
-    
+
 }

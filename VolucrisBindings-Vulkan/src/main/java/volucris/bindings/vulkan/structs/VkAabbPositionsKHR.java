@@ -19,63 +19,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAabbPositionsKHR
 		implements Struct<VkAabbPositionsKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MIN_X_HANDLE;
-    public static final VarHandle MIN_Y_HANDLE;
-    public static final VarHandle MIN_Z_HANDLE;
-    public static final VarHandle MAX_X_HANDLE;
-    public static final VarHandle MAX_Y_HANDLE;
-    public static final VarHandle MAX_Z_HANDLE;
+	public static final VarHandle MIN_X_HANDLE;
+	public static final VarHandle MIN_Y_HANDLE;
+	public static final VarHandle MIN_Z_HANDLE;
+	public static final VarHandle MAX_X_HANDLE;
+	public static final VarHandle MAX_Y_HANDLE;
+	public static final VarHandle MAX_Z_HANDLE;
 
-    public static final long MIN_X_BYTE_OFFSET;
-    public static final long MIN_Y_BYTE_OFFSET;
-    public static final long MIN_Z_BYTE_OFFSET;
-    public static final long MAX_X_BYTE_OFFSET;
-    public static final long MAX_Y_BYTE_OFFSET;
-    public static final long MAX_Z_BYTE_OFFSET;
+	public static final long MIN_X_BYTE_OFFSET;
+	public static final long MIN_Y_BYTE_OFFSET;
+	public static final long MIN_Z_BYTE_OFFSET;
+	public static final long MAX_X_BYTE_OFFSET;
+	public static final long MAX_Y_BYTE_OFFSET;
+	public static final long MAX_Z_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("minX"),
-            JAVA_FLOAT.withName("minY"),
-            JAVA_FLOAT.withName("minZ"),
-            JAVA_FLOAT.withName("maxX"),
-            JAVA_FLOAT.withName("maxY"),
-            JAVA_FLOAT.withName("maxZ")
-        ).withName("VkAabbPositionsKHR").withByteAlignment(4);
-        
-        MIN_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minX"));
-        MIN_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minY"));
-        MIN_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minZ"));
-        MAX_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxX"));
-        MAX_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxY"));
-        MAX_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxZ"));
-        
-        MIN_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minX"));
-        MIN_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minY"));
-        MIN_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minZ"));
-        MAX_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxX"));
-        MAX_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxY"));
-        MAX_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxZ"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("minX"),
+		    JAVA_FLOAT.withName("minY"),
+		    JAVA_FLOAT.withName("minZ"),
+		    JAVA_FLOAT.withName("maxX"),
+		    JAVA_FLOAT.withName("maxY"),
+		    JAVA_FLOAT.withName("maxZ")
+		).withName("VkAabbPositionsKHR").withByteAlignment(4);
+		
+		MIN_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minX"));
+		MIN_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minY"));
+		MIN_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minZ"));
+		MAX_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxX"));
+		MAX_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxY"));
+		MAX_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxZ"));
+		
+		MIN_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minX"));
+		MIN_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minY"));
+		MIN_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minZ"));
+		MAX_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxX"));
+		MAX_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxY"));
+		MAX_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxZ"));
+		//@formatter:on
+	}
 
-    public VkAabbPositionsKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAabbPositionsKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAabbPositionsKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAabbPositionsKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAabbPositionsKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAabbPositionsKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #minX()
     public VkAabbPositionsKHR minX(float minX) {
@@ -188,5 +188,5 @@ public final class VkAabbPositionsKHR
             segment -> new VkAabbPositionsKHR(segment)
         );
     }
-    
+
 }

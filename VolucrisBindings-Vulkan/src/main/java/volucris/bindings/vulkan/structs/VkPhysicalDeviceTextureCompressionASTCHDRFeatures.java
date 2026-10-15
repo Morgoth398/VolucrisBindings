@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTextureCompressionASTCHDRFeatures
 		implements Struct<VkPhysicalDeviceTextureCompressionASTCHDRFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TEXTURE_COMPRESSION_ASTC_HDR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TEXTURE_COMPRESSION_ASTC_HDR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("textureCompressionASTC_HDR"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceTextureCompressionASTCHDRFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TEXTURE_COMPRESSION_ASTC_HDR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionASTC_HDR"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionASTC_HDR"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("textureCompressionASTC_HDR"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceTextureCompressionASTCHDRFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TEXTURE_COMPRESSION_ASTC_HDR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionASTC_HDR"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TEXTURE_COMPRESSION_ASTC_HDR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionASTC_HDR"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTextureCompressionASTCHDRFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTextureCompressionASTCHDRFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTextureCompressionASTCHDRFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTextureCompressionASTCHDRFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTextureCompressionASTCHDRFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTextureCompressionASTCHDRFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTextureCompressionASTCHDRFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceTextureCompressionASTCHDRFeatures
             segment -> new VkPhysicalDeviceTextureCompressionASTCHDRFeatures(segment)
         );
     }
-    
+
 }

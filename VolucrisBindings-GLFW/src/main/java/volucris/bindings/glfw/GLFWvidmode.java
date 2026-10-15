@@ -30,63 +30,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class GLFWvidmode
 		implements Struct<GLFWvidmode> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle RED_BITS_HANDLE;
-    public static final VarHandle GREEN_BITS_HANDLE;
-    public static final VarHandle BLUE_BITS_HANDLE;
-    public static final VarHandle REFRESH_RATE_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle RED_BITS_HANDLE;
+	public static final VarHandle GREEN_BITS_HANDLE;
+	public static final VarHandle BLUE_BITS_HANDLE;
+	public static final VarHandle REFRESH_RATE_HANDLE;
 
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long RED_BITS_BYTE_OFFSET;
-    public static final long GREEN_BITS_BYTE_OFFSET;
-    public static final long BLUE_BITS_BYTE_OFFSET;
-    public static final long REFRESH_RATE_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long RED_BITS_BYTE_OFFSET;
+	public static final long GREEN_BITS_BYTE_OFFSET;
+	public static final long BLUE_BITS_BYTE_OFFSET;
+	public static final long REFRESH_RATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height"),
-            JAVA_INT.withName("redBits"),
-            JAVA_INT.withName("greenBits"),
-            JAVA_INT.withName("blueBits"),
-            JAVA_INT.withName("refreshRate")
-        ).withName("GLFWvidmode").withByteAlignment(4);
-        
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        RED_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("redBits"));
-        GREEN_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("greenBits"));
-        BLUE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blueBits"));
-        REFRESH_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refreshRate"));
-        
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        RED_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("redBits"));
-        GREEN_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("greenBits"));
-        BLUE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blueBits"));
-        REFRESH_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refreshRate"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height"),
+		    JAVA_INT.withName("redBits"),
+		    JAVA_INT.withName("greenBits"),
+		    JAVA_INT.withName("blueBits"),
+		    JAVA_INT.withName("refreshRate")
+		).withName("GLFWvidmode").withByteAlignment(4);
+		
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		RED_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("redBits"));
+		GREEN_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("greenBits"));
+		BLUE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blueBits"));
+		REFRESH_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refreshRate"));
+		
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		RED_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("redBits"));
+		GREEN_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("greenBits"));
+		BLUE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blueBits"));
+		REFRESH_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refreshRate"));
+		//@formatter:on
+	}
 
-    public GLFWvidmode() {
-        this(Arena.ofAuto());
-    }
-    
-    public GLFWvidmode(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public GLFWvidmode(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public GLFWvidmode() {
+	    this(Arena.ofAuto());
+	}
+	
+	public GLFWvidmode(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public GLFWvidmode(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #width()
     public GLFWvidmode width(int width) {
@@ -217,5 +217,5 @@ public final class GLFWvidmode
             segment -> new GLFWvidmode(segment)
         );
     }
-    
+
 }

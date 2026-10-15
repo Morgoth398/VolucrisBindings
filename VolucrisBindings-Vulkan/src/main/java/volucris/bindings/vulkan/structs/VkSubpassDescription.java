@@ -22,86 +22,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSubpassDescription
 		implements Struct<VkSubpassDescription> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
-    public static final VarHandle INPUT_ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_INPUT_ATTACHMENTS_HANDLE;
-    public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_COLOR_ATTACHMENTS_HANDLE;
-    public static final VarHandle P_RESOLVE_ATTACHMENTS_HANDLE;
-    public static final VarHandle P_DEPTH_STENCIL_ATTACHMENT_HANDLE;
-    public static final VarHandle PRESERVE_ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_PRESERVE_ATTACHMENTS_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
+	public static final VarHandle INPUT_ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_INPUT_ATTACHMENTS_HANDLE;
+	public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_COLOR_ATTACHMENTS_HANDLE;
+	public static final VarHandle P_RESOLVE_ATTACHMENTS_HANDLE;
+	public static final VarHandle P_DEPTH_STENCIL_ATTACHMENT_HANDLE;
+	public static final VarHandle PRESERVE_ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_PRESERVE_ATTACHMENTS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
-    public static final long INPUT_ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_INPUT_ATTACHMENTS_BYTE_OFFSET;
-    public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_COLOR_ATTACHMENTS_BYTE_OFFSET;
-    public static final long P_RESOLVE_ATTACHMENTS_BYTE_OFFSET;
-    public static final long P_DEPTH_STENCIL_ATTACHMENT_BYTE_OFFSET;
-    public static final long PRESERVE_ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_PRESERVE_ATTACHMENTS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
+	public static final long INPUT_ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_INPUT_ATTACHMENTS_BYTE_OFFSET;
+	public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_COLOR_ATTACHMENTS_BYTE_OFFSET;
+	public static final long P_RESOLVE_ATTACHMENTS_BYTE_OFFSET;
+	public static final long P_DEPTH_STENCIL_ATTACHMENT_BYTE_OFFSET;
+	public static final long PRESERVE_ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_PRESERVE_ATTACHMENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("pipelineBindPoint"),
-            JAVA_INT.withName("inputAttachmentCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pInputAttachments"),
-            JAVA_INT.withName("colorAttachmentCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pColorAttachments"),
-            UNBOUNDED_ADDRESS.withName("pResolveAttachments"),
-            UNBOUNDED_ADDRESS.withName("pDepthStencilAttachment"),
-            JAVA_INT.withName("preserveAttachmentCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPreserveAttachments")
-        ).withName("VkSubpassDescription").withByteAlignment(8);
-        
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
-        INPUT_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputAttachmentCount"));
-        P_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInputAttachments"));
-        COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachments"));
-        P_RESOLVE_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pResolveAttachments"));
-        P_DEPTH_STENCIL_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthStencilAttachment"));
-        PRESERVE_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preserveAttachmentCount"));
-        P_PRESERVE_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPreserveAttachments"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
-        INPUT_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputAttachmentCount"));
-        P_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInputAttachments"));
-        COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachments"));
-        P_RESOLVE_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pResolveAttachments"));
-        P_DEPTH_STENCIL_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthStencilAttachment"));
-        PRESERVE_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preserveAttachmentCount"));
-        P_PRESERVE_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPreserveAttachments"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("pipelineBindPoint"),
+		    JAVA_INT.withName("inputAttachmentCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pInputAttachments"),
+		    JAVA_INT.withName("colorAttachmentCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pColorAttachments"),
+		    UNBOUNDED_ADDRESS.withName("pResolveAttachments"),
+		    UNBOUNDED_ADDRESS.withName("pDepthStencilAttachment"),
+		    JAVA_INT.withName("preserveAttachmentCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPreserveAttachments")
+		).withName("VkSubpassDescription").withByteAlignment(8);
+		
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
+		INPUT_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputAttachmentCount"));
+		P_INPUT_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pInputAttachments"));
+		COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachments"));
+		P_RESOLVE_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pResolveAttachments"));
+		P_DEPTH_STENCIL_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthStencilAttachment"));
+		PRESERVE_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preserveAttachmentCount"));
+		P_PRESERVE_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPreserveAttachments"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
+		INPUT_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputAttachmentCount"));
+		P_INPUT_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pInputAttachments"));
+		COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachments"));
+		P_RESOLVE_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pResolveAttachments"));
+		P_DEPTH_STENCIL_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthStencilAttachment"));
+		PRESERVE_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preserveAttachmentCount"));
+		P_PRESERVE_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPreserveAttachments"));
+		//@formatter:on
+	}
 
-    public VkSubpassDescription() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubpassDescription(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubpassDescription(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubpassDescription() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubpassDescription(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubpassDescription(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #flags()
     public VkSubpassDescription flags(int flags) {
@@ -279,5 +279,5 @@ public final class VkSubpassDescription
             segment -> new VkSubpassDescription(segment)
         );
     }
-    
+
 }

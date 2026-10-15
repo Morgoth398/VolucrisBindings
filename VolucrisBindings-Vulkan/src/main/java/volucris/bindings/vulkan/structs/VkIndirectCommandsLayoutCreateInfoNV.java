@@ -22,76 +22,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectCommandsLayoutCreateInfoNV
 		implements Struct<VkIndirectCommandsLayoutCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
-    public static final VarHandle TOKEN_COUNT_HANDLE;
-    public static final VarHandle P_TOKENS_HANDLE;
-    public static final VarHandle STREAM_COUNT_HANDLE;
-    public static final VarHandle P_STREAM_STRIDES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
+	public static final VarHandle TOKEN_COUNT_HANDLE;
+	public static final VarHandle P_TOKENS_HANDLE;
+	public static final VarHandle STREAM_COUNT_HANDLE;
+	public static final VarHandle P_STREAM_STRIDES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
-    public static final long TOKEN_COUNT_BYTE_OFFSET;
-    public static final long P_TOKENS_BYTE_OFFSET;
-    public static final long STREAM_COUNT_BYTE_OFFSET;
-    public static final long P_STREAM_STRIDES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
+	public static final long TOKEN_COUNT_BYTE_OFFSET;
+	public static final long P_TOKENS_BYTE_OFFSET;
+	public static final long STREAM_COUNT_BYTE_OFFSET;
+	public static final long P_STREAM_STRIDES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("pipelineBindPoint"),
-            JAVA_INT.withName("tokenCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTokens"),
-            JAVA_INT.withName("streamCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStreamStrides")
-        ).withName("VkIndirectCommandsLayoutCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
-        TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tokenCount"));
-        P_TOKENS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTokens"));
-        STREAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamCount"));
-        P_STREAM_STRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStreamStrides"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
-        TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tokenCount"));
-        P_TOKENS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTokens"));
-        STREAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamCount"));
-        P_STREAM_STRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStreamStrides"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("pipelineBindPoint"),
+		    JAVA_INT.withName("tokenCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTokens"),
+		    JAVA_INT.withName("streamCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStreamStrides")
+		).withName("VkIndirectCommandsLayoutCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
+		TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tokenCount"));
+		P_TOKENS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTokens"));
+		STREAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamCount"));
+		P_STREAM_STRIDES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStreamStrides"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
+		TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tokenCount"));
+		P_TOKENS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTokens"));
+		STREAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamCount"));
+		P_STREAM_STRIDES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStreamStrides"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsLayoutCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsLayoutCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsLayoutCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsLayoutCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsLayoutCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsLayoutCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectCommandsLayoutCreateInfoNV sType(int sType) {
@@ -239,5 +239,5 @@ public final class VkIndirectCommandsLayoutCreateInfoNV
             segment -> new VkIndirectCommandsLayoutCreateInfoNV(segment)
         );
     }
-    
+
 }

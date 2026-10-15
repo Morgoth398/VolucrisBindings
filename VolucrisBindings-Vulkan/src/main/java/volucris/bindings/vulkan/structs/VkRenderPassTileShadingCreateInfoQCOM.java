@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassTileShadingCreateInfoQCOM
 		implements Struct<VkRenderPassTileShadingCreateInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long TILE_APRON_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long TILE_APRON_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D tileApronSize;
+	private final VkExtent2D tileApronSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            VkExtent2D.LAYOUT.withName("tileApronSize"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkRenderPassTileShadingCreateInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        TILE_APRON_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileApronSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    VkExtent2D.LAYOUT.withName("tileApronSize"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkRenderPassTileShadingCreateInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		TILE_APRON_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileApronSize"));
+		//@formatter:on
+	}
 
-    public VkRenderPassTileShadingCreateInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassTileShadingCreateInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassTileShadingCreateInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        tileApronSize = new VkExtent2D(segment.asSlice(TILE_APRON_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkRenderPassTileShadingCreateInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassTileShadingCreateInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassTileShadingCreateInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    tileApronSize = new VkExtent2D(segment.asSlice(TILE_APRON_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkRenderPassTileShadingCreateInfoQCOM sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkRenderPassTileShadingCreateInfoQCOM
             segment -> new VkRenderPassTileShadingCreateInfoQCOM(segment)
         );
     }
-    
+
 }

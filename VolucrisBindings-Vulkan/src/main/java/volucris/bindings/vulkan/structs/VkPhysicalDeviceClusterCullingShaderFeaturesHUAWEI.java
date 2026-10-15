@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI
 		implements Struct<VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle CLUSTERCULLING_SHADER_HANDLE;
-    public static final VarHandle MULTIVIEW_CLUSTER_CULLING_SHADER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle CLUSTERCULLING_SHADER_HANDLE;
+	public static final VarHandle MULTIVIEW_CLUSTER_CULLING_SHADER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CLUSTERCULLING_SHADER_BYTE_OFFSET;
-    public static final long MULTIVIEW_CLUSTER_CULLING_SHADER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CLUSTERCULLING_SHADER_BYTE_OFFSET;
+	public static final long MULTIVIEW_CLUSTER_CULLING_SHADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("clustercullingShader"),
-            JAVA_INT.withName("multiviewClusterCullingShader")
-        ).withName("VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        CLUSTERCULLING_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clustercullingShader"));
-        MULTIVIEW_CLUSTER_CULLING_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewClusterCullingShader"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CLUSTERCULLING_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clustercullingShader"));
-        MULTIVIEW_CLUSTER_CULLING_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewClusterCullingShader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("clustercullingShader"),
+		    JAVA_INT.withName("multiviewClusterCullingShader")
+		).withName("VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		CLUSTERCULLING_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clustercullingShader"));
+		MULTIVIEW_CLUSTER_CULLING_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewClusterCullingShader"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CLUSTERCULLING_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clustercullingShader"));
+		MULTIVIEW_CLUSTER_CULLING_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewClusterCullingShader"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI
             segment -> new VkPhysicalDeviceClusterCullingShaderFeaturesHUAWEI(segment)
         );
     }
-    
+
 }

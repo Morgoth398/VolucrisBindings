@@ -22,91 +22,91 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH264QualityLevelPropertiesKHR
 		implements Struct<VkVideoEncodeH264QualityLevelPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PREFERRED_RATE_CONTROL_FLAGS_HANDLE;
-    public static final VarHandle PREFERRED_GOP_FRAME_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_IDR_PERIOD_HANDLE;
-    public static final VarHandle PREFERRED_CONSECUTIVE_BFRAME_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_MAX_L0_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_MAX_L1_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PREFERRED_RATE_CONTROL_FLAGS_HANDLE;
+	public static final VarHandle PREFERRED_GOP_FRAME_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_IDR_PERIOD_HANDLE;
+	public static final VarHandle PREFERRED_CONSECUTIVE_BFRAME_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_MAX_L0_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_MAX_L1_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET;
-    public static final long PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_IDR_PERIOD_BYTE_OFFSET;
-    public static final long PREFERRED_CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_CONSTANT_QP_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_L0_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_MAX_L1_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET;
+	public static final long PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_IDR_PERIOD_BYTE_OFFSET;
+	public static final long PREFERRED_CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_CONSTANT_QP_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_L0_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_MAX_L1_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkVideoEncodeH264QpKHR preferredConstantQp;
+	private final VkVideoEncodeH264QpKHR preferredConstantQp;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("preferredRateControlFlags"),
-            JAVA_INT.withName("preferredGopFrameCount"),
-            JAVA_INT.withName("preferredIdrPeriod"),
-            JAVA_INT.withName("preferredConsecutiveBFrameCount"),
-            JAVA_INT.withName("preferredTemporalLayerCount"),
-            VkVideoEncodeH264QpKHR.LAYOUT.withName("preferredConstantQp"),
-            JAVA_INT.withName("preferredMaxL0ReferenceCount"),
-            JAVA_INT.withName("preferredMaxL1ReferenceCount"),
-            JAVA_INT.withName("preferredStdEntropyCodingModeFlag"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeH264QualityLevelPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PREFERRED_RATE_CONTROL_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredRateControlFlags"));
-        PREFERRED_GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredGopFrameCount"));
-        PREFERRED_IDR_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredIdrPeriod"));
-        PREFERRED_CONSECUTIVE_BFRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredConsecutiveBFrameCount"));
-        PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredTemporalLayerCount"));
-        PREFERRED_MAX_L0_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxL0ReferenceCount"));
-        PREFERRED_MAX_L1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxL1ReferenceCount"));
-        PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredStdEntropyCodingModeFlag"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredRateControlFlags"));
-        PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredGopFrameCount"));
-        PREFERRED_IDR_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredIdrPeriod"));
-        PREFERRED_CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConsecutiveBFrameCount"));
-        PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredTemporalLayerCount"));
-        PREFERRED_CONSTANT_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConstantQp"));
-        PREFERRED_MAX_L0_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxL0ReferenceCount"));
-        PREFERRED_MAX_L1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxL1ReferenceCount"));
-        PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredStdEntropyCodingModeFlag"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("preferredRateControlFlags"),
+		    JAVA_INT.withName("preferredGopFrameCount"),
+		    JAVA_INT.withName("preferredIdrPeriod"),
+		    JAVA_INT.withName("preferredConsecutiveBFrameCount"),
+		    JAVA_INT.withName("preferredTemporalLayerCount"),
+		    VkVideoEncodeH264QpKHR.LAYOUT.withName("preferredConstantQp"),
+		    JAVA_INT.withName("preferredMaxL0ReferenceCount"),
+		    JAVA_INT.withName("preferredMaxL1ReferenceCount"),
+		    JAVA_INT.withName("preferredStdEntropyCodingModeFlag"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeH264QualityLevelPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PREFERRED_RATE_CONTROL_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredRateControlFlags"));
+		PREFERRED_GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredGopFrameCount"));
+		PREFERRED_IDR_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredIdrPeriod"));
+		PREFERRED_CONSECUTIVE_BFRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredConsecutiveBFrameCount"));
+		PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredTemporalLayerCount"));
+		PREFERRED_MAX_L0_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxL0ReferenceCount"));
+		PREFERRED_MAX_L1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredMaxL1ReferenceCount"));
+		PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredStdEntropyCodingModeFlag"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PREFERRED_RATE_CONTROL_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredRateControlFlags"));
+		PREFERRED_GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredGopFrameCount"));
+		PREFERRED_IDR_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredIdrPeriod"));
+		PREFERRED_CONSECUTIVE_BFRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConsecutiveBFrameCount"));
+		PREFERRED_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredTemporalLayerCount"));
+		PREFERRED_CONSTANT_QP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredConstantQp"));
+		PREFERRED_MAX_L0_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxL0ReferenceCount"));
+		PREFERRED_MAX_L1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredMaxL1ReferenceCount"));
+		PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredStdEntropyCodingModeFlag"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264QualityLevelPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264QualityLevelPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264QualityLevelPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        preferredConstantQp = new VkVideoEncodeH264QpKHR(segment.asSlice(PREFERRED_CONSTANT_QP_BYTE_OFFSET, VkVideoEncodeH264QpKHR.LAYOUT));
-    }
+	public VkVideoEncodeH264QualityLevelPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264QualityLevelPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264QualityLevelPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    preferredConstantQp = new VkVideoEncodeH264QpKHR(segment.asSlice(PREFERRED_CONSTANT_QP_BYTE_OFFSET, VkVideoEncodeH264QpKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoEncodeH264QualityLevelPropertiesKHR sType(int sType) {
@@ -183,6 +183,22 @@ public final class VkVideoEncodeH264QualityLevelPropertiesKHR
     	return (int) PREFERRED_TEMPORAL_LAYER_COUNT_HANDLE.get(segment, 0L);
     }
     
+    /// @see #preferredConstantQp()
+    public VkVideoEncodeH264QualityLevelPropertiesKHR preferredConstantQp(Consumer<VkVideoEncodeH264QpKHR> consumer) {
+    	consumer.accept(preferredConstantQp);
+    	return this;
+    }
+    
+    /// @see #preferredConstantQp()
+    public VkVideoEncodeH264QualityLevelPropertiesKHR preferredConstantQp(VkVideoEncodeH264QpKHR other) {
+    	preferredConstantQp.set(other);
+    	return this;
+    }
+    
+    public VkVideoEncodeH264QpKHR preferredConstantQp() {
+    	return preferredConstantQp;
+    }
+    
     /// @see #preferredMaxL0ReferenceCount()
     public VkVideoEncodeH264QualityLevelPropertiesKHR preferredMaxL0ReferenceCount(int preferredMaxL0ReferenceCount) {
     	PREFERRED_MAX_L0_REFERENCE_COUNT_HANDLE.set(segment, 0L, preferredMaxL0ReferenceCount);
@@ -211,22 +227,6 @@ public final class VkVideoEncodeH264QualityLevelPropertiesKHR
     
     public int preferredStdEntropyCodingModeFlag() {
     	return (int) PREFERRED_STD_ENTROPY_CODING_MODE_FLAG_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #preferredConstantQp()
-    public VkVideoEncodeH264QualityLevelPropertiesKHR preferredConstantQp(Consumer<VkVideoEncodeH264QpKHR> consumer) {
-    	consumer.accept(preferredConstantQp);
-    	return this;
-    }
-    
-    /// @see #preferredConstantQp()
-    public VkVideoEncodeH264QualityLevelPropertiesKHR preferredConstantQp(VkVideoEncodeH264QpKHR other) {
-    	preferredConstantQp.set(other);
-    	return this;
-    }
-    
-    public VkVideoEncodeH264QpKHR preferredConstantQp() {
-    	return preferredConstantQp;
     }
     
     @Override
@@ -280,5 +280,5 @@ public final class VkVideoEncodeH264QualityLevelPropertiesKHR
             segment -> new VkVideoEncodeH264QualityLevelPropertiesKHR(segment)
         );
     }
-    
+
 }

@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDrawMeshTasksIndirectCommandEXT
 		implements Struct<VkDrawMeshTasksIndirectCommandEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle GROUP_COUNT_X_HANDLE;
-    public static final VarHandle GROUP_COUNT_Y_HANDLE;
-    public static final VarHandle GROUP_COUNT_Z_HANDLE;
+	public static final VarHandle GROUP_COUNT_X_HANDLE;
+	public static final VarHandle GROUP_COUNT_Y_HANDLE;
+	public static final VarHandle GROUP_COUNT_Z_HANDLE;
 
-    public static final long GROUP_COUNT_X_BYTE_OFFSET;
-    public static final long GROUP_COUNT_Y_BYTE_OFFSET;
-    public static final long GROUP_COUNT_Z_BYTE_OFFSET;
+	public static final long GROUP_COUNT_X_BYTE_OFFSET;
+	public static final long GROUP_COUNT_Y_BYTE_OFFSET;
+	public static final long GROUP_COUNT_Z_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("groupCountX"),
-            JAVA_INT.withName("groupCountY"),
-            JAVA_INT.withName("groupCountZ")
-        ).withName("VkDrawMeshTasksIndirectCommandEXT").withByteAlignment(4);
-        
-        GROUP_COUNT_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCountX"));
-        GROUP_COUNT_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCountY"));
-        GROUP_COUNT_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCountZ"));
-        
-        GROUP_COUNT_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCountX"));
-        GROUP_COUNT_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCountY"));
-        GROUP_COUNT_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCountZ"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("groupCountX"),
+		    JAVA_INT.withName("groupCountY"),
+		    JAVA_INT.withName("groupCountZ")
+		).withName("VkDrawMeshTasksIndirectCommandEXT").withByteAlignment(4);
+		
+		GROUP_COUNT_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCountX"));
+		GROUP_COUNT_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCountY"));
+		GROUP_COUNT_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCountZ"));
+		
+		GROUP_COUNT_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCountX"));
+		GROUP_COUNT_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCountY"));
+		GROUP_COUNT_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCountZ"));
+		//@formatter:on
+	}
 
-    public VkDrawMeshTasksIndirectCommandEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrawMeshTasksIndirectCommandEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrawMeshTasksIndirectCommandEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrawMeshTasksIndirectCommandEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrawMeshTasksIndirectCommandEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrawMeshTasksIndirectCommandEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #groupCountX()
     public VkDrawMeshTasksIndirectCommandEXT groupCountX(int groupCountX) {
@@ -143,5 +143,5 @@ public final class VkDrawMeshTasksIndirectCommandEXT
             segment -> new VkDrawMeshTasksIndirectCommandEXT(segment)
         );
     }
-    
+
 }

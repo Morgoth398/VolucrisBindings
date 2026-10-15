@@ -25,75 +25,75 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaAllocationCreateInfo
 		implements Struct<VmaAllocationCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle USAGE_HANDLE;
-    public static final VarHandle REQUIRED_FLAGS_HANDLE;
-    public static final VarHandle PREFERRED_FLAGS_HANDLE;
-    public static final VarHandle MEMORY_TYPE_BITS_HANDLE;
-    public static final VarHandle POOL_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
-    public static final VarHandle PRIORITY_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle REQUIRED_FLAGS_HANDLE;
+	public static final VarHandle PREFERRED_FLAGS_HANDLE;
+	public static final VarHandle MEMORY_TYPE_BITS_HANDLE;
+	public static final VarHandle POOL_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle PRIORITY_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
-    public static final long REQUIRED_FLAGS_BYTE_OFFSET;
-    public static final long PREFERRED_FLAGS_BYTE_OFFSET;
-    public static final long MEMORY_TYPE_BITS_BYTE_OFFSET;
-    public static final long POOL_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
-    public static final long PRIORITY_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
+	public static final long REQUIRED_FLAGS_BYTE_OFFSET;
+	public static final long PREFERRED_FLAGS_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_BITS_BYTE_OFFSET;
+	public static final long POOL_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long PRIORITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("usage"),
-            JAVA_INT.withName("requiredFlags"),
-            JAVA_INT.withName("preferredFlags"),
-            JAVA_INT.withName("memoryTypeBits"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pool"),
-            UNBOUNDED_ADDRESS.withName("pUserData"),
-            JAVA_FLOAT.withName("priority"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VmaAllocationCreateInfo").withByteAlignment(8);
-        
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        REQUIRED_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiredFlags"));
-        PREFERRED_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredFlags"));
-        MEMORY_TYPE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeBits"));
-        POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pool"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        REQUIRED_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiredFlags"));
-        PREFERRED_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredFlags"));
-        MEMORY_TYPE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeBits"));
-        POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pool"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("usage"),
+		    JAVA_INT.withName("requiredFlags"),
+		    JAVA_INT.withName("preferredFlags"),
+		    JAVA_INT.withName("memoryTypeBits"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pool"),
+		    UNBOUNDED_ADDRESS.withName("pUserData"),
+		    JAVA_FLOAT.withName("priority"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VmaAllocationCreateInfo").withByteAlignment(8);
+		
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		REQUIRED_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiredFlags"));
+		PREFERRED_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredFlags"));
+		MEMORY_TYPE_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeBits"));
+		POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pool"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		REQUIRED_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiredFlags"));
+		PREFERRED_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredFlags"));
+		MEMORY_TYPE_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeBits"));
+		POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pool"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
+		//@formatter:on
+	}
 
-    public VmaAllocationCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaAllocationCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaAllocationCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaAllocationCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaAllocationCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaAllocationCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #flags()
     public VmaAllocationCreateInfo flags(int flags) {
@@ -285,5 +285,5 @@ public final class VmaAllocationCreateInfo
             segment -> new VmaAllocationCreateInfo(segment)
         );
     }
-    
+
 }

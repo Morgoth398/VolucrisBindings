@@ -22,93 +22,93 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureGeometrySpheresDataNV
 		implements Struct<VkAccelerationStructureGeometrySpheresDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VERTEX_FORMAT_HANDLE;
-    public static final VarHandle VERTEX_STRIDE_HANDLE;
-    public static final VarHandle RADIUS_FORMAT_HANDLE;
-    public static final VarHandle RADIUS_STRIDE_HANDLE;
-    public static final VarHandle INDEX_TYPE_HANDLE;
-    public static final VarHandle INDEX_STRIDE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VERTEX_FORMAT_HANDLE;
+	public static final VarHandle VERTEX_STRIDE_HANDLE;
+	public static final VarHandle RADIUS_FORMAT_HANDLE;
+	public static final VarHandle RADIUS_STRIDE_HANDLE;
+	public static final VarHandle INDEX_TYPE_HANDLE;
+	public static final VarHandle INDEX_STRIDE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VERTEX_FORMAT_BYTE_OFFSET;
-    public static final long VERTEX_DATA_BYTE_OFFSET;
-    public static final long VERTEX_STRIDE_BYTE_OFFSET;
-    public static final long RADIUS_FORMAT_BYTE_OFFSET;
-    public static final long RADIUS_DATA_BYTE_OFFSET;
-    public static final long RADIUS_STRIDE_BYTE_OFFSET;
-    public static final long INDEX_TYPE_BYTE_OFFSET;
-    public static final long INDEX_DATA_BYTE_OFFSET;
-    public static final long INDEX_STRIDE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VERTEX_FORMAT_BYTE_OFFSET;
+	public static final long VERTEX_DATA_BYTE_OFFSET;
+	public static final long VERTEX_STRIDE_BYTE_OFFSET;
+	public static final long RADIUS_FORMAT_BYTE_OFFSET;
+	public static final long RADIUS_DATA_BYTE_OFFSET;
+	public static final long RADIUS_STRIDE_BYTE_OFFSET;
+	public static final long INDEX_TYPE_BYTE_OFFSET;
+	public static final long INDEX_DATA_BYTE_OFFSET;
+	public static final long INDEX_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressConstKHR vertexData;
-    private final VkDeviceOrHostAddressConstKHR radiusData;
-    private final VkDeviceOrHostAddressConstKHR indexData;
+	private final VkDeviceOrHostAddressConstKHR vertexData;
+	private final VkDeviceOrHostAddressConstKHR radiusData;
+	private final VkDeviceOrHostAddressConstKHR indexData;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vertexFormat"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("vertexData"),
-            JAVA_LONG.withName("vertexStride"),
-            JAVA_INT.withName("radiusFormat"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("radiusData"),
-            JAVA_LONG.withName("radiusStride"),
-            JAVA_INT.withName("indexType"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("indexData"),
-            JAVA_LONG.withName("indexStride")
-        ).withName("VkAccelerationStructureGeometrySpheresDataNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
-        VERTEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexStride"));
-        RADIUS_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("radiusFormat"));
-        RADIUS_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("radiusStride"));
-        INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
-        INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexStride"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
-        VERTEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexData"));
-        VERTEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexStride"));
-        RADIUS_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("radiusFormat"));
-        RADIUS_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("radiusData"));
-        RADIUS_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("radiusStride"));
-        INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
-        INDEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexData"));
-        INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vertexFormat"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("vertexData"),
+		    JAVA_LONG.withName("vertexStride"),
+		    JAVA_INT.withName("radiusFormat"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("radiusData"),
+		    JAVA_LONG.withName("radiusStride"),
+		    JAVA_INT.withName("indexType"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("indexData"),
+		    JAVA_LONG.withName("indexStride")
+		).withName("VkAccelerationStructureGeometrySpheresDataNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
+		VERTEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexStride"));
+		RADIUS_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("radiusFormat"));
+		RADIUS_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("radiusStride"));
+		INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
+		INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexStride"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
+		VERTEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexData"));
+		VERTEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexStride"));
+		RADIUS_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("radiusFormat"));
+		RADIUS_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("radiusData"));
+		RADIUS_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("radiusStride"));
+		INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
+		INDEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexData"));
+		INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexStride"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureGeometrySpheresDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureGeometrySpheresDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureGeometrySpheresDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        vertexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(VERTEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-        radiusData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(RADIUS_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-        indexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(INDEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-    }
+	public VkAccelerationStructureGeometrySpheresDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureGeometrySpheresDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureGeometrySpheresDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    vertexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(VERTEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	    radiusData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(RADIUS_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	    indexData = new VkDeviceOrHostAddressConstKHR(segment.asSlice(INDEX_DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkAccelerationStructureGeometrySpheresDataNV sType(int sType) {
@@ -145,6 +145,22 @@ public final class VkAccelerationStructureGeometrySpheresDataNV
     	return (int) VERTEX_FORMAT_HANDLE.get(segment, 0L);
     }
     
+    /// @see #vertexData()
+    public VkAccelerationStructureGeometrySpheresDataNV vertexData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
+    	consumer.accept(vertexData);
+    	return this;
+    }
+    
+    /// @see #vertexData()
+    public VkAccelerationStructureGeometrySpheresDataNV vertexData(VkDeviceOrHostAddressConstKHR other) {
+    	vertexData.set(other);
+    	return this;
+    }
+    
+    public VkDeviceOrHostAddressConstKHR vertexData() {
+    	return vertexData;
+    }
+    
     /// @see #vertexStride()
     public VkAccelerationStructureGeometrySpheresDataNV vertexStride(long vertexStride) {
     	VERTEX_STRIDE_HANDLE.set(segment, 0L, vertexStride);
@@ -163,6 +179,22 @@ public final class VkAccelerationStructureGeometrySpheresDataNV
     
     public int radiusFormat() {
     	return (int) RADIUS_FORMAT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #radiusData()
+    public VkAccelerationStructureGeometrySpheresDataNV radiusData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
+    	consumer.accept(radiusData);
+    	return this;
+    }
+    
+    /// @see #radiusData()
+    public VkAccelerationStructureGeometrySpheresDataNV radiusData(VkDeviceOrHostAddressConstKHR other) {
+    	radiusData.set(other);
+    	return this;
+    }
+    
+    public VkDeviceOrHostAddressConstKHR radiusData() {
+    	return radiusData;
     }
     
     /// @see #radiusStride()
@@ -185,48 +217,6 @@ public final class VkAccelerationStructureGeometrySpheresDataNV
     	return (int) INDEX_TYPE_HANDLE.get(segment, 0L);
     }
     
-    /// @see #indexStride()
-    public VkAccelerationStructureGeometrySpheresDataNV indexStride(long indexStride) {
-    	INDEX_STRIDE_HANDLE.set(segment, 0L, indexStride);
-    	return this;
-    }
-    
-    public long indexStride() {
-    	return (long) INDEX_STRIDE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #vertexData()
-    public VkAccelerationStructureGeometrySpheresDataNV vertexData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
-    	consumer.accept(vertexData);
-    	return this;
-    }
-    
-    /// @see #vertexData()
-    public VkAccelerationStructureGeometrySpheresDataNV vertexData(VkDeviceOrHostAddressConstKHR other) {
-    	vertexData.set(other);
-    	return this;
-    }
-    
-    public VkDeviceOrHostAddressConstKHR vertexData() {
-    	return vertexData;
-    }
-    
-    /// @see #radiusData()
-    public VkAccelerationStructureGeometrySpheresDataNV radiusData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
-    	consumer.accept(radiusData);
-    	return this;
-    }
-    
-    /// @see #radiusData()
-    public VkAccelerationStructureGeometrySpheresDataNV radiusData(VkDeviceOrHostAddressConstKHR other) {
-    	radiusData.set(other);
-    	return this;
-    }
-    
-    public VkDeviceOrHostAddressConstKHR radiusData() {
-    	return radiusData;
-    }
-    
     /// @see #indexData()
     public VkAccelerationStructureGeometrySpheresDataNV indexData(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
     	consumer.accept(indexData);
@@ -241,6 +231,16 @@ public final class VkAccelerationStructureGeometrySpheresDataNV
     
     public VkDeviceOrHostAddressConstKHR indexData() {
     	return indexData;
+    }
+    
+    /// @see #indexStride()
+    public VkAccelerationStructureGeometrySpheresDataNV indexStride(long indexStride) {
+    	INDEX_STRIDE_HANDLE.set(segment, 0L, indexStride);
+    	return this;
+    }
+    
+    public long indexStride() {
+    	return (long) INDEX_STRIDE_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -294,5 +294,5 @@ public final class VkAccelerationStructureGeometrySpheresDataNV
             segment -> new VkAccelerationStructureGeometrySpheresDataNV(segment)
         );
     }
-    
+
 }

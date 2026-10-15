@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkValidationFlagsEXT
 		implements Struct<VkValidationFlagsEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DISABLED_VALIDATION_CHECK_COUNT_HANDLE;
-    public static final VarHandle P_DISABLED_VALIDATION_CHECKS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DISABLED_VALIDATION_CHECK_COUNT_HANDLE;
+	public static final VarHandle P_DISABLED_VALIDATION_CHECKS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DISABLED_VALIDATION_CHECK_COUNT_BYTE_OFFSET;
-    public static final long P_DISABLED_VALIDATION_CHECKS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DISABLED_VALIDATION_CHECK_COUNT_BYTE_OFFSET;
+	public static final long P_DISABLED_VALIDATION_CHECKS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("disabledValidationCheckCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDisabledValidationChecks")
-        ).withName("VkValidationFlagsEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DISABLED_VALIDATION_CHECK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("disabledValidationCheckCount"));
-        P_DISABLED_VALIDATION_CHECKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDisabledValidationChecks"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DISABLED_VALIDATION_CHECK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("disabledValidationCheckCount"));
-        P_DISABLED_VALIDATION_CHECKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDisabledValidationChecks"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("disabledValidationCheckCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDisabledValidationChecks")
+		).withName("VkValidationFlagsEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DISABLED_VALIDATION_CHECK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("disabledValidationCheckCount"));
+		P_DISABLED_VALIDATION_CHECKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDisabledValidationChecks"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DISABLED_VALIDATION_CHECK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("disabledValidationCheckCount"));
+		P_DISABLED_VALIDATION_CHECKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDisabledValidationChecks"));
+		//@formatter:on
+	}
 
-    public VkValidationFlagsEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkValidationFlagsEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkValidationFlagsEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkValidationFlagsEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkValidationFlagsEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkValidationFlagsEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkValidationFlagsEXT sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkValidationFlagsEXT
             segment -> new VkValidationFlagsEXT(segment)
         );
     }
-    
+
 }

@@ -22,85 +22,85 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderingInfo
 		implements Struct<VkRenderingInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle LAYER_COUNT_HANDLE;
-    public static final VarHandle VIEW_MASK_HANDLE;
-    public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
-    public static final VarHandle P_COLOR_ATTACHMENTS_HANDLE;
-    public static final VarHandle P_DEPTH_ATTACHMENT_HANDLE;
-    public static final VarHandle P_STENCIL_ATTACHMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle LAYER_COUNT_HANDLE;
+	public static final VarHandle VIEW_MASK_HANDLE;
+	public static final VarHandle COLOR_ATTACHMENT_COUNT_HANDLE;
+	public static final VarHandle P_COLOR_ATTACHMENTS_HANDLE;
+	public static final VarHandle P_DEPTH_ATTACHMENT_HANDLE;
+	public static final VarHandle P_STENCIL_ATTACHMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long RENDER_AREA_BYTE_OFFSET;
-    public static final long LAYER_COUNT_BYTE_OFFSET;
-    public static final long VIEW_MASK_BYTE_OFFSET;
-    public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
-    public static final long P_COLOR_ATTACHMENTS_BYTE_OFFSET;
-    public static final long P_DEPTH_ATTACHMENT_BYTE_OFFSET;
-    public static final long P_STENCIL_ATTACHMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long RENDER_AREA_BYTE_OFFSET;
+	public static final long LAYER_COUNT_BYTE_OFFSET;
+	public static final long VIEW_MASK_BYTE_OFFSET;
+	public static final long COLOR_ATTACHMENT_COUNT_BYTE_OFFSET;
+	public static final long P_COLOR_ATTACHMENTS_BYTE_OFFSET;
+	public static final long P_DEPTH_ATTACHMENT_BYTE_OFFSET;
+	public static final long P_STENCIL_ATTACHMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkRect2D renderArea;
+	private final VkRect2D renderArea;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            VkRect2D.LAYOUT.withName("renderArea"),
-            JAVA_INT.withName("layerCount"),
-            JAVA_INT.withName("viewMask"),
-            JAVA_INT.withName("colorAttachmentCount"),
-            UNBOUNDED_ADDRESS.withName("pColorAttachments"),
-            UNBOUNDED_ADDRESS.withName("pDepthAttachment"),
-            UNBOUNDED_ADDRESS.withName("pStencilAttachment")
-        ).withName("VkRenderingInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
-        VIEW_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewMask"));
-        COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachments"));
-        P_DEPTH_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthAttachment"));
-        P_STENCIL_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStencilAttachment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        RENDER_AREA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderArea"));
-        LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
-        VIEW_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewMask"));
-        COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
-        P_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachments"));
-        P_DEPTH_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthAttachment"));
-        P_STENCIL_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStencilAttachment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    VkRect2D.LAYOUT.withName("renderArea"),
+		    JAVA_INT.withName("layerCount"),
+		    JAVA_INT.withName("viewMask"),
+		    JAVA_INT.withName("colorAttachmentCount"),
+		    UNBOUNDED_ADDRESS.withName("pColorAttachments"),
+		    UNBOUNDED_ADDRESS.withName("pDepthAttachment"),
+		    UNBOUNDED_ADDRESS.withName("pStencilAttachment")
+		).withName("VkRenderingInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
+		VIEW_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewMask"));
+		COLOR_ATTACHMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pColorAttachments"));
+		P_DEPTH_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthAttachment"));
+		P_STENCIL_ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStencilAttachment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		RENDER_AREA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderArea"));
+		LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
+		VIEW_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewMask"));
+		COLOR_ATTACHMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorAttachmentCount"));
+		P_COLOR_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pColorAttachments"));
+		P_DEPTH_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthAttachment"));
+		P_STENCIL_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStencilAttachment"));
+		//@formatter:on
+	}
 
-    public VkRenderingInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderingInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderingInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        renderArea = new VkRect2D(segment.asSlice(RENDER_AREA_BYTE_OFFSET, VkRect2D.LAYOUT));
-    }
+	public VkRenderingInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderingInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderingInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    renderArea = new VkRect2D(segment.asSlice(RENDER_AREA_BYTE_OFFSET, VkRect2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkRenderingInfo sType(int sType) {
@@ -135,6 +135,22 @@ public final class VkRenderingInfo
     
     public int flags() {
     	return (int) FLAGS_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #renderArea()
+    public VkRenderingInfo renderArea(Consumer<VkRect2D> consumer) {
+    	consumer.accept(renderArea);
+    	return this;
+    }
+    
+    /// @see #renderArea()
+    public VkRenderingInfo renderArea(VkRect2D other) {
+    	renderArea.set(other);
+    	return this;
+    }
+    
+    public VkRect2D renderArea() {
+    	return renderArea;
     }
     
     /// @see #layerCount()
@@ -212,22 +228,6 @@ public final class VkRenderingInfo
     	return new VkRenderingAttachmentInfo(segment);
     }
     
-    /// @see #renderArea()
-    public VkRenderingInfo renderArea(Consumer<VkRect2D> consumer) {
-    	consumer.accept(renderArea);
-    	return this;
-    }
-    
-    /// @see #renderArea()
-    public VkRenderingInfo renderArea(VkRect2D other) {
-    	renderArea.set(other);
-    	return this;
-    }
-    
-    public VkRect2D renderArea() {
-    	return renderArea;
-    }
-    
     @Override
     public VkRenderingInfo set(VkRenderingInfo other) {
         return set(other.segment);
@@ -279,5 +279,5 @@ public final class VkRenderingInfo
             segment -> new VkRenderingInfo(segment)
         );
     }
-    
+
 }

@@ -20,45 +20,45 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPerformanceValueINTEL
 		implements Struct<VkPerformanceValueINTEL> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
 
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPerformanceValueDataINTEL data;
+	private final VkPerformanceValueDataINTEL data;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("type"),
-            MemoryLayout.paddingLayout(4),
-            VkPerformanceValueDataINTEL.LAYOUT.withName("data")
-        ).withName("VkPerformanceValueINTEL").withByteAlignment(8);
-        
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("type"),
+		    MemoryLayout.paddingLayout(4),
+		    VkPerformanceValueDataINTEL.LAYOUT.withName("data")
+		).withName("VkPerformanceValueINTEL").withByteAlignment(8);
+		
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public VkPerformanceValueINTEL() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerformanceValueINTEL(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerformanceValueINTEL(MemorySegment segment) {
-        this.segment = segment;
-    
-        data = new VkPerformanceValueDataINTEL(segment.asSlice(DATA_BYTE_OFFSET, VkPerformanceValueDataINTEL.LAYOUT));
-    }
+	public VkPerformanceValueINTEL() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerformanceValueINTEL(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerformanceValueINTEL(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    data = new VkPerformanceValueDataINTEL(segment.asSlice(DATA_BYTE_OFFSET, VkPerformanceValueDataINTEL.LAYOUT));
+	}
 
     /// @see #type()
     public VkPerformanceValueINTEL type(int type) {
@@ -137,5 +137,5 @@ public final class VkPerformanceValueINTEL
             segment -> new VkPerformanceValueINTEL(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayModeStereoPropertiesNV
 		implements Struct<VkDisplayModeStereoPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle HDMI3_DSUPPORTED_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle HDMI3_DSUPPORTED_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long HDMI3_DSUPPORTED_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long HDMI3_DSUPPORTED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("hdmi3DSupported"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDisplayModeStereoPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        HDMI3_DSUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hdmi3DSupported"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        HDMI3_DSUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hdmi3DSupported"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("hdmi3DSupported"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDisplayModeStereoPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		HDMI3_DSUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hdmi3DSupported"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		HDMI3_DSUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hdmi3DSupported"));
+		//@formatter:on
+	}
 
-    public VkDisplayModeStereoPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayModeStereoPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayModeStereoPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDisplayModeStereoPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayModeStereoPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayModeStereoPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDisplayModeStereoPropertiesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDisplayModeStereoPropertiesNV
             segment -> new VkDisplayModeStereoPropertiesNV(segment)
         );
     }
-    
+
 }

@@ -33,61 +33,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiTexture
 		implements Struct<AiTexture> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_WIDTH_HANDLE;
-    public static final VarHandle M_HEIGHT_HANDLE;
-    public static final VarHandle ACH_FORMAT_HINT_HANDLE;
-    public static final VarHandle PC_DATA_HANDLE;
+	public static final VarHandle M_WIDTH_HANDLE;
+	public static final VarHandle M_HEIGHT_HANDLE;
+	public static final VarHandle ACH_FORMAT_HINT_HANDLE;
+	public static final VarHandle PC_DATA_HANDLE;
 
-    public static final long M_WIDTH_BYTE_OFFSET;
-    public static final long M_HEIGHT_BYTE_OFFSET;
-    public static final long ACH_FORMAT_HINT_BYTE_OFFSET;
-    public static final long PC_DATA_BYTE_OFFSET;
-    public static final long M_FILENAME_BYTE_OFFSET;
+	public static final long M_WIDTH_BYTE_OFFSET;
+	public static final long M_HEIGHT_BYTE_OFFSET;
+	public static final long ACH_FORMAT_HINT_BYTE_OFFSET;
+	public static final long PC_DATA_BYTE_OFFSET;
+	public static final long M_FILENAME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mFilename;
+	private final AiString mFilename;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mWidth"),
-            JAVA_INT.withName("mHeight"),
-            MemoryLayout.sequenceLayout(9, JAVA_BYTE).withName("achFormatHint"),
-            MemoryLayout.paddingLayout(7),
-            UNBOUNDED_ADDRESS.withName("pcData"),
-            AiString.LAYOUT.withName("mFilename"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("aiTexture").withByteAlignment(8);
-        
-        M_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWidth"));
-        M_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mHeight"));
-        ACH_FORMAT_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("achFormatHint"), PathElement.sequenceElement());
-        PC_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pcData"));
-        
-        M_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWidth"));
-        M_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mHeight"));
-        ACH_FORMAT_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("achFormatHint"));
-        PC_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pcData"));
-        M_FILENAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFilename"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mWidth"),
+		    JAVA_INT.withName("mHeight"),
+		    MemoryLayout.sequenceLayout(9, JAVA_BYTE).withName("achFormatHint"),
+		    MemoryLayout.paddingLayout(7),
+		    UNBOUNDED_ADDRESS.withName("pcData"),
+		    AiString.LAYOUT.withName("mFilename"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("aiTexture").withByteAlignment(8);
+		
+		M_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWidth"));
+		M_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mHeight"));
+		ACH_FORMAT_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("achFormatHint"), PathElement.sequenceElement());
+		PC_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pcData"));
+		
+		M_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWidth"));
+		M_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mHeight"));
+		ACH_FORMAT_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("achFormatHint"));
+		PC_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pcData"));
+		M_FILENAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mFilename"));
+		//@formatter:on
+	}
 
-    public AiTexture() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiTexture(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiTexture(MemorySegment segment) {
-        this.segment = segment;
-    
-        mFilename = new AiString(segment.asSlice(M_FILENAME_BYTE_OFFSET, AiString.LAYOUT));
-    }
+	public AiTexture() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiTexture(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiTexture(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mFilename = new AiString(segment.asSlice(M_FILENAME_BYTE_OFFSET, AiString.LAYOUT));
+	}
 
     /// @see #mWidth()
     public AiTexture mWidth(int mWidth) {
@@ -250,5 +250,5 @@ public final class AiTexture
             segment -> new AiTexture(segment)
         );
     }
-    
+
 }

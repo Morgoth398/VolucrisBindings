@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAntiLagPresentationInfoAMD
 		implements Struct<VkAntiLagPresentationInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle FRAME_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle FRAME_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long FRAME_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long FRAME_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stage"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("frameIndex")
-        ).withName("VkAntiLagPresentationInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        FRAME_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        FRAME_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stage"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("frameIndex")
+		).withName("VkAntiLagPresentationInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		FRAME_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		FRAME_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameIndex"));
+		//@formatter:on
+	}
 
-    public VkAntiLagPresentationInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAntiLagPresentationInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAntiLagPresentationInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAntiLagPresentationInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAntiLagPresentationInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAntiLagPresentationInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAntiLagPresentationInfoAMD sType(int sType) {
@@ -167,5 +167,5 @@ public final class VkAntiLagPresentationInfoAMD
             segment -> new VkAntiLagPresentationInfoAMD(segment)
         );
     }
-    
+
 }

@@ -22,115 +22,131 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoH264SequenceParameterSetVui
 		implements Struct<StdVideoH264SequenceParameterSetVui> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_RATIO_IDC_HANDLE;
-    public static final VarHandle SAR_WIDTH_HANDLE;
-    public static final VarHandle SAR_HEIGHT_HANDLE;
-    public static final VarHandle VIDEO_FORMAT_HANDLE;
-    public static final VarHandle COLOUR_PRIMARIES_HANDLE;
-    public static final VarHandle TRANSFER_CHARACTERISTICS_HANDLE;
-    public static final VarHandle MATRIX_COEFFICIENTS_HANDLE;
-    public static final VarHandle NUM_UNITS_IN_TICK_HANDLE;
-    public static final VarHandle TIME_SCALE_HANDLE;
-    public static final VarHandle MAX_NUM_REORDER_FRAMES_HANDLE;
-    public static final VarHandle MAX_DEC_FRAME_BUFFERING_HANDLE;
-    public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE;
-    public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_HRD_PARAMETERS_HANDLE;
+	public static final VarHandle ASPECT_RATIO_IDC_HANDLE;
+	public static final VarHandle SAR_WIDTH_HANDLE;
+	public static final VarHandle SAR_HEIGHT_HANDLE;
+	public static final VarHandle VIDEO_FORMAT_HANDLE;
+	public static final VarHandle COLOUR_PRIMARIES_HANDLE;
+	public static final VarHandle TRANSFER_CHARACTERISTICS_HANDLE;
+	public static final VarHandle MATRIX_COEFFICIENTS_HANDLE;
+	public static final VarHandle NUM_UNITS_IN_TICK_HANDLE;
+	public static final VarHandle TIME_SCALE_HANDLE;
+	public static final VarHandle MAX_NUM_REORDER_FRAMES_HANDLE;
+	public static final VarHandle MAX_DEC_FRAME_BUFFERING_HANDLE;
+	public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE;
+	public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_HRD_PARAMETERS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long ASPECT_RATIO_IDC_BYTE_OFFSET;
-    public static final long SAR_WIDTH_BYTE_OFFSET;
-    public static final long SAR_HEIGHT_BYTE_OFFSET;
-    public static final long VIDEO_FORMAT_BYTE_OFFSET;
-    public static final long COLOUR_PRIMARIES_BYTE_OFFSET;
-    public static final long TRANSFER_CHARACTERISTICS_BYTE_OFFSET;
-    public static final long MATRIX_COEFFICIENTS_BYTE_OFFSET;
-    public static final long NUM_UNITS_IN_TICK_BYTE_OFFSET;
-    public static final long TIME_SCALE_BYTE_OFFSET;
-    public static final long MAX_NUM_REORDER_FRAMES_BYTE_OFFSET;
-    public static final long MAX_DEC_FRAME_BUFFERING_BYTE_OFFSET;
-    public static final long CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET;
-    public static final long CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_HRD_PARAMETERS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long ASPECT_RATIO_IDC_BYTE_OFFSET;
+	public static final long SAR_WIDTH_BYTE_OFFSET;
+	public static final long SAR_HEIGHT_BYTE_OFFSET;
+	public static final long VIDEO_FORMAT_BYTE_OFFSET;
+	public static final long COLOUR_PRIMARIES_BYTE_OFFSET;
+	public static final long TRANSFER_CHARACTERISTICS_BYTE_OFFSET;
+	public static final long MATRIX_COEFFICIENTS_BYTE_OFFSET;
+	public static final long NUM_UNITS_IN_TICK_BYTE_OFFSET;
+	public static final long TIME_SCALE_BYTE_OFFSET;
+	public static final long MAX_NUM_REORDER_FRAMES_BYTE_OFFSET;
+	public static final long MAX_DEC_FRAME_BUFFERING_BYTE_OFFSET;
+	public static final long CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET;
+	public static final long CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_HRD_PARAMETERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH264SpsVuiFlags flags;
+	private final StdVideoH264SpsVuiFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH264SpsVuiFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("aspect_ratio_idc"),
-            JAVA_SHORT.withName("sar_width"),
-            JAVA_SHORT.withName("sar_height"),
-            JAVA_BYTE.withName("video_format"),
-            JAVA_BYTE.withName("colour_primaries"),
-            JAVA_BYTE.withName("transfer_characteristics"),
-            JAVA_BYTE.withName("matrix_coefficients"),
-            JAVA_INT.withName("num_units_in_tick"),
-            JAVA_INT.withName("time_scale"),
-            JAVA_BYTE.withName("max_num_reorder_frames"),
-            JAVA_BYTE.withName("max_dec_frame_buffering"),
-            JAVA_BYTE.withName("chroma_sample_loc_type_top_field"),
-            JAVA_BYTE.withName("chroma_sample_loc_type_bottom_field"),
-            JAVA_INT.withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pHrdParameters")
-        ).withName("StdVideoH264SequenceParameterSetVui").withByteAlignment(8);
-        
-        ASPECT_RATIO_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspect_ratio_idc"));
-        SAR_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_width"));
-        SAR_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_height"));
-        VIDEO_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("video_format"));
-        COLOUR_PRIMARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colour_primaries"));
-        TRANSFER_CHARACTERISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transfer_characteristics"));
-        MATRIX_COEFFICIENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix_coefficients"));
-        NUM_UNITS_IN_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_units_in_tick"));
-        TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("time_scale"));
-        MAX_NUM_REORDER_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_num_reorder_frames"));
-        MAX_DEC_FRAME_BUFFERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_dec_frame_buffering"));
-        CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_top_field"));
-        CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        P_HRD_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHrdParameters"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        ASPECT_RATIO_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspect_ratio_idc"));
-        SAR_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_width"));
-        SAR_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_height"));
-        VIDEO_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("video_format"));
-        COLOUR_PRIMARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colour_primaries"));
-        TRANSFER_CHARACTERISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transfer_characteristics"));
-        MATRIX_COEFFICIENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix_coefficients"));
-        NUM_UNITS_IN_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_units_in_tick"));
-        TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("time_scale"));
-        MAX_NUM_REORDER_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_num_reorder_frames"));
-        MAX_DEC_FRAME_BUFFERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_dec_frame_buffering"));
-        CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_top_field"));
-        CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_HRD_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHrdParameters"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH264SpsVuiFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("aspect_ratio_idc"),
+		    JAVA_SHORT.withName("sar_width"),
+		    JAVA_SHORT.withName("sar_height"),
+		    JAVA_BYTE.withName("video_format"),
+		    JAVA_BYTE.withName("colour_primaries"),
+		    JAVA_BYTE.withName("transfer_characteristics"),
+		    JAVA_BYTE.withName("matrix_coefficients"),
+		    JAVA_INT.withName("num_units_in_tick"),
+		    JAVA_INT.withName("time_scale"),
+		    JAVA_BYTE.withName("max_num_reorder_frames"),
+		    JAVA_BYTE.withName("max_dec_frame_buffering"),
+		    JAVA_BYTE.withName("chroma_sample_loc_type_top_field"),
+		    JAVA_BYTE.withName("chroma_sample_loc_type_bottom_field"),
+		    JAVA_INT.withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pHrdParameters")
+		).withName("StdVideoH264SequenceParameterSetVui").withByteAlignment(8);
+		
+		ASPECT_RATIO_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspect_ratio_idc"));
+		SAR_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_width"));
+		SAR_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_height"));
+		VIDEO_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("video_format"));
+		COLOUR_PRIMARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colour_primaries"));
+		TRANSFER_CHARACTERISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transfer_characteristics"));
+		MATRIX_COEFFICIENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix_coefficients"));
+		NUM_UNITS_IN_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_units_in_tick"));
+		TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("time_scale"));
+		MAX_NUM_REORDER_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_num_reorder_frames"));
+		MAX_DEC_FRAME_BUFFERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_dec_frame_buffering"));
+		CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_top_field"));
+		CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		P_HRD_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHrdParameters"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		ASPECT_RATIO_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspect_ratio_idc"));
+		SAR_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_width"));
+		SAR_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_height"));
+		VIDEO_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("video_format"));
+		COLOUR_PRIMARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colour_primaries"));
+		TRANSFER_CHARACTERISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transfer_characteristics"));
+		MATRIX_COEFFICIENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix_coefficients"));
+		NUM_UNITS_IN_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_units_in_tick"));
+		TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("time_scale"));
+		MAX_NUM_REORDER_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_num_reorder_frames"));
+		MAX_DEC_FRAME_BUFFERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_dec_frame_buffering"));
+		CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_top_field"));
+		CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_HRD_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHrdParameters"));
+		//@formatter:on
+	}
 
-    public StdVideoH264SequenceParameterSetVui() {
-        this(Arena.ofAuto());
+	public StdVideoH264SequenceParameterSetVui() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH264SequenceParameterSetVui(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH264SequenceParameterSetVui(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH264SpsVuiFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH264SpsVuiFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH264SequenceParameterSetVui flags(Consumer<StdVideoH264SpsVuiFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH264SequenceParameterSetVui(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH264SequenceParameterSetVui flags(StdVideoH264SpsVuiFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH264SequenceParameterSetVui(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH264SpsVuiFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH264SpsVuiFlags.LAYOUT));
+    public StdVideoH264SpsVuiFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #aspect_ratio_idc()
     public StdVideoH264SequenceParameterSetVui aspect_ratio_idc(int aspect_ratio_idc) {
     	ASPECT_RATIO_IDC_HANDLE.set(segment, 0L, aspect_ratio_idc);
@@ -286,22 +302,6 @@ public final class StdVideoH264SequenceParameterSetVui
     	return new StdVideoH264HrdParameters(segment);
     }
     
-    /// @see #flags()
-    public StdVideoH264SequenceParameterSetVui flags(Consumer<StdVideoH264SpsVuiFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH264SequenceParameterSetVui flags(StdVideoH264SpsVuiFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH264SpsVuiFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH264SequenceParameterSetVui set(StdVideoH264SequenceParameterSetVui other) {
         return set(other.segment);
@@ -353,5 +353,5 @@ public final class StdVideoH264SequenceParameterSetVui
             segment -> new StdVideoH264SequenceParameterSetVui(segment)
         );
     }
-    
+
 }

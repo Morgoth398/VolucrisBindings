@@ -21,48 +21,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StbImageIoCallbacks
 		implements Struct<StbImageIoCallbacks> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle READ_HANDLE;
-    public static final VarHandle SKIP_HANDLE;
-    public static final VarHandle EOF_HANDLE;
+	public static final VarHandle READ_HANDLE;
+	public static final VarHandle SKIP_HANDLE;
+	public static final VarHandle EOF_HANDLE;
 
-    public static final long READ_BYTE_OFFSET;
-    public static final long SKIP_BYTE_OFFSET;
-    public static final long EOF_BYTE_OFFSET;
+	public static final long READ_BYTE_OFFSET;
+	public static final long SKIP_BYTE_OFFSET;
+	public static final long EOF_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("read"),
-            UNBOUNDED_ADDRESS.withName("skip"),
-            UNBOUNDED_ADDRESS.withName("eof")
-        ).withName("stbi_io_callbacks").withByteAlignment(8);
-        
-        READ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("read"));
-        SKIP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("skip"));
-        EOF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("eof"));
-        
-        READ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("read"));
-        SKIP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("skip"));
-        EOF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("eof"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("read"),
+		    UNBOUNDED_ADDRESS.withName("skip"),
+		    UNBOUNDED_ADDRESS.withName("eof")
+		).withName("stbi_io_callbacks").withByteAlignment(8);
+		
+		READ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("read"));
+		SKIP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("skip"));
+		EOF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("eof"));
+		
+		READ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("read"));
+		SKIP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("skip"));
+		EOF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("eof"));
+		//@formatter:on
+	}
 
-    public StbImageIoCallbacks() {
-        this(Arena.ofAuto());
-    }
-    
-    public StbImageIoCallbacks(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StbImageIoCallbacks(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StbImageIoCallbacks() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StbImageIoCallbacks(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StbImageIoCallbacks(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #read()
     public StbImageIoCallbacks read(StbImageReadCallback read) {
@@ -160,5 +160,5 @@ public final class StbImageIoCallbacks
             segment -> new StbImageIoCallbacks(segment)
         );
     }
-    
+
 }

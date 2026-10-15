@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoDecodeH265ReferenceInfoFlags
 		implements Struct<StdVideoDecodeH265ReferenceInfoFlags> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
 
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("bitFields0")
-        ).withName("StdVideoDecodeH265ReferenceInfoFlags").withByteAlignment(4);
-        
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("bitFields0")
+		).withName("StdVideoDecodeH265ReferenceInfoFlags").withByteAlignment(4);
+		
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		//@formatter:on
+	}
 
-    public StdVideoDecodeH265ReferenceInfoFlags() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoDecodeH265ReferenceInfoFlags(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoDecodeH265ReferenceInfoFlags(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoDecodeH265ReferenceInfoFlags() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoDecodeH265ReferenceInfoFlags(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoDecodeH265ReferenceInfoFlags(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #bitFields0()
     public StdVideoDecodeH265ReferenceInfoFlags bitFields0(int bitFields0) {
@@ -118,5 +118,5 @@ public final class StdVideoDecodeH265ReferenceInfoFlags
             segment -> new StdVideoDecodeH265ReferenceInfoFlags(segment)
         );
     }
-    
+
 }

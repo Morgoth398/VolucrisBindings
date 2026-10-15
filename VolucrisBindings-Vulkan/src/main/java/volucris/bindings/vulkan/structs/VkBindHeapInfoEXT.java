@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindHeapInfoEXT
 		implements Struct<VkBindHeapInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RESERVED_RANGE_OFFSET_HANDLE;
-    public static final VarHandle RESERVED_RANGE_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RESERVED_RANGE_OFFSET_HANDLE;
+	public static final VarHandle RESERVED_RANGE_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long HEAP_RANGE_BYTE_OFFSET;
-    public static final long RESERVED_RANGE_OFFSET_BYTE_OFFSET;
-    public static final long RESERVED_RANGE_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long HEAP_RANGE_BYTE_OFFSET;
+	public static final long RESERVED_RANGE_OFFSET_BYTE_OFFSET;
+	public static final long RESERVED_RANGE_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR heapRange;
+	private final VkDeviceAddressRangeKHR heapRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("heapRange"),
-            JAVA_LONG.withName("reservedRangeOffset"),
-            JAVA_LONG.withName("reservedRangeSize")
-        ).withName("VkBindHeapInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RESERVED_RANGE_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reservedRangeOffset"));
-        RESERVED_RANGE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reservedRangeSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        HEAP_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapRange"));
-        RESERVED_RANGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reservedRangeOffset"));
-        RESERVED_RANGE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reservedRangeSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("heapRange"),
+		    JAVA_LONG.withName("reservedRangeOffset"),
+		    JAVA_LONG.withName("reservedRangeSize")
+		).withName("VkBindHeapInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RESERVED_RANGE_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reservedRangeOffset"));
+		RESERVED_RANGE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reservedRangeSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		HEAP_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapRange"));
+		RESERVED_RANGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reservedRangeOffset"));
+		RESERVED_RANGE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reservedRangeSize"));
+		//@formatter:on
+	}
 
-    public VkBindHeapInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindHeapInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindHeapInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        heapRange = new VkDeviceAddressRangeKHR(segment.asSlice(HEAP_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkBindHeapInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindHeapInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindHeapInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    heapRange = new VkDeviceAddressRangeKHR(segment.asSlice(HEAP_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkBindHeapInfoEXT sType(int sType) {
@@ -102,6 +102,22 @@ public final class VkBindHeapInfoEXT
     	return segment;
     }
     
+    /// @see #heapRange()
+    public VkBindHeapInfoEXT heapRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(heapRange);
+    	return this;
+    }
+    
+    /// @see #heapRange()
+    public VkBindHeapInfoEXT heapRange(VkDeviceAddressRangeKHR other) {
+    	heapRange.set(other);
+    	return this;
+    }
+    
+    public VkDeviceAddressRangeKHR heapRange() {
+    	return heapRange;
+    }
+    
     /// @see #reservedRangeOffset()
     public VkBindHeapInfoEXT reservedRangeOffset(long reservedRangeOffset) {
     	RESERVED_RANGE_OFFSET_HANDLE.set(segment, 0L, reservedRangeOffset);
@@ -120,22 +136,6 @@ public final class VkBindHeapInfoEXT
     
     public long reservedRangeSize() {
     	return (long) RESERVED_RANGE_SIZE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #heapRange()
-    public VkBindHeapInfoEXT heapRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(heapRange);
-    	return this;
-    }
-    
-    /// @see #heapRange()
-    public VkBindHeapInfoEXT heapRange(VkDeviceAddressRangeKHR other) {
-    	heapRange.set(other);
-    	return this;
-    }
-    
-    public VkDeviceAddressRangeKHR heapRange() {
-    	return heapRange;
     }
     
     @Override
@@ -189,5 +189,5 @@ public final class VkBindHeapInfoEXT
             segment -> new VkBindHeapInfoEXT(segment)
         );
     }
-    
+
 }

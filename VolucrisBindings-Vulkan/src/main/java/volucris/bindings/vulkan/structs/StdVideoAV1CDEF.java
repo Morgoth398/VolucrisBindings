@@ -19,63 +19,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1CDEF
 		implements Struct<StdVideoAV1CDEF> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CDEF_DAMPING_MINUS_3_HANDLE;
-    public static final VarHandle CDEF_BITS_HANDLE;
-    public static final VarHandle CDEF_Y_PRI_STRENGTH_HANDLE;
-    public static final VarHandle CDEF_Y_SEC_STRENGTH_HANDLE;
-    public static final VarHandle CDEF_UV_PRI_STRENGTH_HANDLE;
-    public static final VarHandle CDEF_UV_SEC_STRENGTH_HANDLE;
+	public static final VarHandle CDEF_DAMPING_MINUS_3_HANDLE;
+	public static final VarHandle CDEF_BITS_HANDLE;
+	public static final VarHandle CDEF_Y_PRI_STRENGTH_HANDLE;
+	public static final VarHandle CDEF_Y_SEC_STRENGTH_HANDLE;
+	public static final VarHandle CDEF_UV_PRI_STRENGTH_HANDLE;
+	public static final VarHandle CDEF_UV_SEC_STRENGTH_HANDLE;
 
-    public static final long CDEF_DAMPING_MINUS_3_BYTE_OFFSET;
-    public static final long CDEF_BITS_BYTE_OFFSET;
-    public static final long CDEF_Y_PRI_STRENGTH_BYTE_OFFSET;
-    public static final long CDEF_Y_SEC_STRENGTH_BYTE_OFFSET;
-    public static final long CDEF_UV_PRI_STRENGTH_BYTE_OFFSET;
-    public static final long CDEF_UV_SEC_STRENGTH_BYTE_OFFSET;
+	public static final long CDEF_DAMPING_MINUS_3_BYTE_OFFSET;
+	public static final long CDEF_BITS_BYTE_OFFSET;
+	public static final long CDEF_Y_PRI_STRENGTH_BYTE_OFFSET;
+	public static final long CDEF_Y_SEC_STRENGTH_BYTE_OFFSET;
+	public static final long CDEF_UV_PRI_STRENGTH_BYTE_OFFSET;
+	public static final long CDEF_UV_SEC_STRENGTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_BYTE.withName("cdef_damping_minus_3"),
-            JAVA_BYTE.withName("cdef_bits"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_y_pri_strength"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_y_sec_strength"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_uv_pri_strength"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_uv_sec_strength")
-        ).withName("StdVideoAV1CDEF").withByteAlignment(1);
-        
-        CDEF_DAMPING_MINUS_3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_damping_minus_3"));
-        CDEF_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_bits"));
-        CDEF_Y_PRI_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_y_pri_strength"), PathElement.sequenceElement());
-        CDEF_Y_SEC_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_y_sec_strength"), PathElement.sequenceElement());
-        CDEF_UV_PRI_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_uv_pri_strength"), PathElement.sequenceElement());
-        CDEF_UV_SEC_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_uv_sec_strength"), PathElement.sequenceElement());
-        
-        CDEF_DAMPING_MINUS_3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_damping_minus_3"));
-        CDEF_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_bits"));
-        CDEF_Y_PRI_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_y_pri_strength"));
-        CDEF_Y_SEC_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_y_sec_strength"));
-        CDEF_UV_PRI_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_uv_pri_strength"));
-        CDEF_UV_SEC_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_uv_sec_strength"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_BYTE.withName("cdef_damping_minus_3"),
+		    JAVA_BYTE.withName("cdef_bits"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_y_pri_strength"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_y_sec_strength"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_uv_pri_strength"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("cdef_uv_sec_strength")
+		).withName("StdVideoAV1CDEF").withByteAlignment(1);
+		
+		CDEF_DAMPING_MINUS_3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_damping_minus_3"));
+		CDEF_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_bits"));
+		CDEF_Y_PRI_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_y_pri_strength"), PathElement.sequenceElement());
+		CDEF_Y_SEC_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_y_sec_strength"), PathElement.sequenceElement());
+		CDEF_UV_PRI_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_uv_pri_strength"), PathElement.sequenceElement());
+		CDEF_UV_SEC_STRENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cdef_uv_sec_strength"), PathElement.sequenceElement());
+		
+		CDEF_DAMPING_MINUS_3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_damping_minus_3"));
+		CDEF_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_bits"));
+		CDEF_Y_PRI_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_y_pri_strength"));
+		CDEF_Y_SEC_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_y_sec_strength"));
+		CDEF_UV_PRI_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_uv_pri_strength"));
+		CDEF_UV_SEC_STRENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cdef_uv_sec_strength"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1CDEF() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoAV1CDEF(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoAV1CDEF(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoAV1CDEF() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1CDEF(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1CDEF(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #cdef_damping_minus_3()
     public StdVideoAV1CDEF cdef_damping_minus_3(byte cdef_damping_minus_3) {
@@ -188,5 +188,5 @@ public final class StdVideoAV1CDEF
             segment -> new StdVideoAV1CDEF(segment)
         );
     }
-    
+
 }

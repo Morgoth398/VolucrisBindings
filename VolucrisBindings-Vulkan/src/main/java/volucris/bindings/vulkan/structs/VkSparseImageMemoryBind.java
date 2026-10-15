@@ -22,102 +22,67 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSparseImageMemoryBind
 		implements Struct<VkSparseImageMemoryBind> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MEMORY_HANDLE;
-    public static final VarHandle MEMORY_OFFSET_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MEMORY_HANDLE;
+	public static final VarHandle MEMORY_OFFSET_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long SUBRESOURCE_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long EXTENT_BYTE_OFFSET;
-    public static final long MEMORY_BYTE_OFFSET;
-    public static final long MEMORY_OFFSET_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long SUBRESOURCE_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long EXTENT_BYTE_OFFSET;
+	public static final long MEMORY_BYTE_OFFSET;
+	public static final long MEMORY_OFFSET_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresource subresource;
-    private final VkOffset3D offset;
-    private final VkExtent3D extent;
+	private final VkImageSubresource subresource;
+	private final VkOffset3D offset;
+	private final VkExtent3D extent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkImageSubresource.LAYOUT.withName("subresource"),
-            VkOffset3D.LAYOUT.withName("offset"),
-            VkExtent3D.LAYOUT.withName("extent"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("memory"),
-            JAVA_LONG.withName("memoryOffset"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSparseImageMemoryBind").withByteAlignment(8);
-        
-        MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresource"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
-        MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkImageSubresource.LAYOUT.withName("subresource"),
+		    VkOffset3D.LAYOUT.withName("offset"),
+		    VkExtent3D.LAYOUT.withName("extent"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("memory"),
+		    JAVA_LONG.withName("memoryOffset"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSparseImageMemoryBind").withByteAlignment(8);
+		
+		MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresource"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extent"));
+		MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkSparseImageMemoryBind() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSparseImageMemoryBind(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSparseImageMemoryBind(MemorySegment segment) {
-        this.segment = segment;
-    
-        subresource = new VkImageSubresource(segment.asSlice(SUBRESOURCE_BYTE_OFFSET, VkImageSubresource.LAYOUT));
-        offset = new VkOffset3D(segment.asSlice(OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
-        extent = new VkExtent3D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkSparseImageMemoryBind() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseImageMemoryBind(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseImageMemoryBind(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    subresource = new VkImageSubresource(segment.asSlice(SUBRESOURCE_BYTE_OFFSET, VkImageSubresource.LAYOUT));
+	    offset = new VkOffset3D(segment.asSlice(OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
+	    extent = new VkExtent3D(segment.asSlice(EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
-    /// @see #memory()
-    public VkSparseImageMemoryBind memory(VkDeviceMemory memory) {
-    	MEMORY_HANDLE.set(segment, 0L, memory.memorySegment());
-    	return this;
-    }
-    
-    public @Nullable VkDeviceMemory memory() {
-    	MemorySegment segment = (MemorySegment) MEMORY_HANDLE.get(this.segment, 0L);
-    
-    	if (segment.equals(MemorySegment.NULL))
-    		return null;
-    	
-    	return new VkDeviceMemory(segment);
-    }
-    
-    /// @see #memoryOffset()
-    public VkSparseImageMemoryBind memoryOffset(long memoryOffset) {
-    	MEMORY_OFFSET_HANDLE.set(segment, 0L, memoryOffset);
-    	return this;
-    }
-    
-    public long memoryOffset() {
-    	return (long) MEMORY_OFFSET_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #flags()
-    public VkSparseImageMemoryBind flags(int flags) {
-    	FLAGS_HANDLE.set(segment, 0L, flags);
-    	return this;
-    }
-    
-    public int flags() {
-    	return (int) FLAGS_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #subresource()
     public VkSparseImageMemoryBind subresource(Consumer<VkImageSubresource> consumer) {
     	consumer.accept(subresource);
@@ -164,6 +129,41 @@ public final class VkSparseImageMemoryBind
     
     public VkExtent3D extent() {
     	return extent;
+    }
+    
+    /// @see #memory()
+    public VkSparseImageMemoryBind memory(VkDeviceMemory memory) {
+    	MEMORY_HANDLE.set(segment, 0L, memory.memorySegment());
+    	return this;
+    }
+    
+    public @Nullable VkDeviceMemory memory() {
+    	MemorySegment segment = (MemorySegment) MEMORY_HANDLE.get(this.segment, 0L);
+    
+    	if (segment.equals(MemorySegment.NULL))
+    		return null;
+    	
+    	return new VkDeviceMemory(segment);
+    }
+    
+    /// @see #memoryOffset()
+    public VkSparseImageMemoryBind memoryOffset(long memoryOffset) {
+    	MEMORY_OFFSET_HANDLE.set(segment, 0L, memoryOffset);
+    	return this;
+    }
+    
+    public long memoryOffset() {
+    	return (long) MEMORY_OFFSET_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #flags()
+    public VkSparseImageMemoryBind flags(int flags) {
+    	FLAGS_HANDLE.set(segment, 0L, flags);
+    	return this;
+    }
+    
+    public int flags() {
+    	return (int) FLAGS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -217,5 +217,5 @@ public final class VkSparseImageMemoryBind
             segment -> new VkSparseImageMemoryBind(segment)
         );
     }
-    
+
 }

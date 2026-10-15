@@ -38,43 +38,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiString
 		implements Struct<AiString> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LENGTH_HANDLE;
-    public static final VarHandle DATA_HANDLE;
+	public static final VarHandle LENGTH_HANDLE;
+	public static final VarHandle DATA_HANDLE;
 
-    public static final long LENGTH_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long LENGTH_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("length"),
-            MemoryLayout.sequenceLayout(1024, JAVA_BYTE).withName("data")
-        ).withName("aiString").withByteAlignment(4);
-        
-        LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("length"));
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
-        
-        LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("length"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("length"),
+		    MemoryLayout.sequenceLayout(1024, JAVA_BYTE).withName("data")
+		).withName("aiString").withByteAlignment(4);
+		
+		LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("length"));
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
+		
+		LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("length"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public AiString() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiString(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiString(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiString() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiString(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiString(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #length()
     public AiString length(int length) {
@@ -159,5 +159,5 @@ public final class AiString
             segment -> new AiString(segment)
         );
     }
-    
+
 }

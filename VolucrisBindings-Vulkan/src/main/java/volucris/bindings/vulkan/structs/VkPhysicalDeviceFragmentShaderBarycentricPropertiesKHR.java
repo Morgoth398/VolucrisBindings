@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR
 		implements Struct<VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("triStripVertexOrderIndependentOfProvokingVertex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triStripVertexOrderIndependentOfProvokingVertex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triStripVertexOrderIndependentOfProvokingVertex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("triStripVertexOrderIndependentOfProvokingVertex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triStripVertexOrderIndependentOfProvokingVertex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TRI_STRIP_VERTEX_ORDER_INDEPENDENT_OF_PROVOKING_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triStripVertexOrderIndependentOfProvokingVertex"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR
             segment -> new VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(segment)
         );
     }
-    
+
 }

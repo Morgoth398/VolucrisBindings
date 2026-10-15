@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBufferImageCopy2
 		implements Struct<VkBufferImageCopy2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BUFFER_OFFSET_HANDLE;
-    public static final VarHandle BUFFER_ROW_LENGTH_HANDLE;
-    public static final VarHandle BUFFER_IMAGE_HEIGHT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BUFFER_OFFSET_HANDLE;
+	public static final VarHandle BUFFER_ROW_LENGTH_HANDLE;
+	public static final VarHandle BUFFER_IMAGE_HEIGHT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BUFFER_OFFSET_BYTE_OFFSET;
-    public static final long BUFFER_ROW_LENGTH_BYTE_OFFSET;
-    public static final long BUFFER_IMAGE_HEIGHT_BYTE_OFFSET;
-    public static final long IMAGE_SUBRESOURCE_BYTE_OFFSET;
-    public static final long IMAGE_OFFSET_BYTE_OFFSET;
-    public static final long IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BUFFER_OFFSET_BYTE_OFFSET;
+	public static final long BUFFER_ROW_LENGTH_BYTE_OFFSET;
+	public static final long BUFFER_IMAGE_HEIGHT_BYTE_OFFSET;
+	public static final long IMAGE_SUBRESOURCE_BYTE_OFFSET;
+	public static final long IMAGE_OFFSET_BYTE_OFFSET;
+	public static final long IMAGE_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceLayers imageSubresource;
-    private final VkOffset3D imageOffset;
-    private final VkExtent3D imageExtent;
+	private final VkImageSubresourceLayers imageSubresource;
+	private final VkOffset3D imageOffset;
+	private final VkExtent3D imageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("bufferOffset"),
-            JAVA_INT.withName("bufferRowLength"),
-            JAVA_INT.withName("bufferImageHeight"),
-            VkImageSubresourceLayers.LAYOUT.withName("imageSubresource"),
-            VkOffset3D.LAYOUT.withName("imageOffset"),
-            VkExtent3D.LAYOUT.withName("imageExtent")
-        ).withName("VkBufferImageCopy2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BUFFER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferOffset"));
-        BUFFER_ROW_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferRowLength"));
-        BUFFER_IMAGE_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferImageHeight"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BUFFER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferOffset"));
-        BUFFER_ROW_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferRowLength"));
-        BUFFER_IMAGE_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferImageHeight"));
-        IMAGE_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSubresource"));
-        IMAGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOffset"));
-        IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("bufferOffset"),
+		    JAVA_INT.withName("bufferRowLength"),
+		    JAVA_INT.withName("bufferImageHeight"),
+		    VkImageSubresourceLayers.LAYOUT.withName("imageSubresource"),
+		    VkOffset3D.LAYOUT.withName("imageOffset"),
+		    VkExtent3D.LAYOUT.withName("imageExtent")
+		).withName("VkBufferImageCopy2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BUFFER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferOffset"));
+		BUFFER_ROW_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferRowLength"));
+		BUFFER_IMAGE_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferImageHeight"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BUFFER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferOffset"));
+		BUFFER_ROW_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferRowLength"));
+		BUFFER_IMAGE_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferImageHeight"));
+		IMAGE_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageSubresource"));
+		IMAGE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOffset"));
+		IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageExtent"));
+		//@formatter:on
+	}
 
-    public VkBufferImageCopy2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBufferImageCopy2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBufferImageCopy2(MemorySegment segment) {
-        this.segment = segment;
-    
-        imageSubresource = new VkImageSubresourceLayers(segment.asSlice(IMAGE_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        imageOffset = new VkOffset3D(segment.asSlice(IMAGE_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
-        imageExtent = new VkExtent3D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkBufferImageCopy2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBufferImageCopy2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBufferImageCopy2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    imageSubresource = new VkImageSubresourceLayers(segment.asSlice(IMAGE_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    imageOffset = new VkOffset3D(segment.asSlice(IMAGE_OFFSET_BYTE_OFFSET, VkOffset3D.LAYOUT));
+	    imageExtent = new VkExtent3D(segment.asSlice(IMAGE_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkBufferImageCopy2 sType(int sType) {
@@ -246,5 +246,5 @@ public final class VkBufferImageCopy2
             segment -> new VkBufferImageCopy2(segment)
         );
     }
-    
+
 }

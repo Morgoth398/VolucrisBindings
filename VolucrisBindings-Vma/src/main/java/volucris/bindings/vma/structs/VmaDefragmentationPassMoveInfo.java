@@ -24,44 +24,44 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaDefragmentationPassMoveInfo
 		implements Struct<VmaDefragmentationPassMoveInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MOVE_COUNT_HANDLE;
-    public static final VarHandle P_MOVES_HANDLE;
+	public static final VarHandle MOVE_COUNT_HANDLE;
+	public static final VarHandle P_MOVES_HANDLE;
 
-    public static final long MOVE_COUNT_BYTE_OFFSET;
-    public static final long P_MOVES_BYTE_OFFSET;
+	public static final long MOVE_COUNT_BYTE_OFFSET;
+	public static final long P_MOVES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("moveCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pMoves")
-        ).withName("VmaDefragmentationPassMoveInfo").withByteAlignment(8);
-        
-        MOVE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("moveCount"));
-        P_MOVES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMoves"));
-        
-        MOVE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("moveCount"));
-        P_MOVES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMoves"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("moveCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pMoves")
+		).withName("VmaDefragmentationPassMoveInfo").withByteAlignment(8);
+		
+		MOVE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("moveCount"));
+		P_MOVES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMoves"));
+		
+		MOVE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("moveCount"));
+		P_MOVES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMoves"));
+		//@formatter:on
+	}
 
-    public VmaDefragmentationPassMoveInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaDefragmentationPassMoveInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaDefragmentationPassMoveInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaDefragmentationPassMoveInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaDefragmentationPassMoveInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaDefragmentationPassMoveInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #moveCount()
     public VmaDefragmentationPassMoveInfo moveCount(int moveCount) {
@@ -166,5 +166,5 @@ public final class VmaDefragmentationPassMoveInfo
             segment -> new VmaDefragmentationPassMoveInfo(segment)
         );
     }
-    
+
 }

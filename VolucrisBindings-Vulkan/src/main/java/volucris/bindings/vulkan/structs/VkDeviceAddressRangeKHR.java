@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDeviceAddressRangeKHR
 		implements Struct<VkDeviceAddressRangeKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ADDRESS_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle ADDRESS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long ADDRESS_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long ADDRESS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("address"),
-            JAVA_LONG.withName("size")
-        ).withName("VkDeviceAddressRangeKHR").withByteAlignment(8);
-        
-        ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("address"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("address"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("address"),
+		    JAVA_LONG.withName("size")
+		).withName("VkDeviceAddressRangeKHR").withByteAlignment(8);
+		
+		ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("address"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("address"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkDeviceAddressRangeKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceAddressRangeKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceAddressRangeKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceAddressRangeKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceAddressRangeKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceAddressRangeKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #address()
     public VkDeviceAddressRangeKHR address(long address) {
@@ -128,5 +128,5 @@ public final class VkDeviceAddressRangeKHR
             segment -> new VkDeviceAddressRangeKHR(segment)
         );
     }
-    
+
 }

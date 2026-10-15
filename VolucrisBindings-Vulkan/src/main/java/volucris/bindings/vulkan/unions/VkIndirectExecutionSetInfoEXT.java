@@ -21,43 +21,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectExecutionSetInfoEXT
 		implements Struct<VkIndirectExecutionSetInfoEXT> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle P_PIPELINE_INFO_HANDLE;
-    public static final VarHandle P_SHADER_INFO_HANDLE;
+	public static final VarHandle P_PIPELINE_INFO_HANDLE;
+	public static final VarHandle P_SHADER_INFO_HANDLE;
 
-    public static final long P_PIPELINE_INFO_BYTE_OFFSET;
-    public static final long P_SHADER_INFO_BYTE_OFFSET;
+	public static final long P_PIPELINE_INFO_BYTE_OFFSET;
+	public static final long P_SHADER_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            UNBOUNDED_ADDRESS.withName("pPipelineInfo"),
-            UNBOUNDED_ADDRESS.withName("pShaderInfo")
-        ).withName("VkIndirectExecutionSetInfoEXT").withByteAlignment(8);
-        
-        P_PIPELINE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineInfo"));
-        P_SHADER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShaderInfo"));
-        
-        P_PIPELINE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineInfo"));
-        P_SHADER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShaderInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    UNBOUNDED_ADDRESS.withName("pPipelineInfo"),
+		    UNBOUNDED_ADDRESS.withName("pShaderInfo")
+		).withName("VkIndirectExecutionSetInfoEXT").withByteAlignment(8);
+		
+		P_PIPELINE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineInfo"));
+		P_SHADER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShaderInfo"));
+		
+		P_PIPELINE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineInfo"));
+		P_SHADER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShaderInfo"));
+		//@formatter:on
+	}
 
-    public VkIndirectExecutionSetInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectExecutionSetInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectExecutionSetInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectExecutionSetInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectExecutionSetInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectExecutionSetInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pPipelineInfo()
     public VkIndirectExecutionSetInfoEXT pPipelineInfo(VkIndirectExecutionSetPipelineInfoEXT pPipelineInfo) {
@@ -140,5 +140,5 @@ public final class VkIndirectExecutionSetInfoEXT
             segment -> new VkIndirectExecutionSetInfoEXT(segment)
         );
     }
-    
+
 }

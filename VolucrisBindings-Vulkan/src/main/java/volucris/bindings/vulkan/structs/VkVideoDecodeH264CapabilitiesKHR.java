@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeH264CapabilitiesKHR
 		implements Struct<VkVideoDecodeH264CapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_LEVEL_IDC_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_LEVEL_IDC_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_LEVEL_IDC_BYTE_OFFSET;
-    public static final long FIELD_OFFSET_GRANULARITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_LEVEL_IDC_BYTE_OFFSET;
+	public static final long FIELD_OFFSET_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkOffset2D fieldOffsetGranularity;
+	private final VkOffset2D fieldOffsetGranularity;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxLevelIdc"),
-            VkOffset2D.LAYOUT.withName("fieldOffsetGranularity"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoDecodeH264CapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_LEVEL_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevelIdc"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_LEVEL_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevelIdc"));
-        FIELD_OFFSET_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fieldOffsetGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxLevelIdc"),
+		    VkOffset2D.LAYOUT.withName("fieldOffsetGranularity"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoDecodeH264CapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_LEVEL_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevelIdc"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_LEVEL_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevelIdc"));
+		FIELD_OFFSET_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fieldOffsetGranularity"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeH264CapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeH264CapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeH264CapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        fieldOffsetGranularity = new VkOffset2D(segment.asSlice(FIELD_OFFSET_GRANULARITY_BYTE_OFFSET, VkOffset2D.LAYOUT));
-    }
+	public VkVideoDecodeH264CapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeH264CapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeH264CapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    fieldOffsetGranularity = new VkOffset2D(segment.asSlice(FIELD_OFFSET_GRANULARITY_BYTE_OFFSET, VkOffset2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoDecodeH264CapabilitiesKHR sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkVideoDecodeH264CapabilitiesKHR
             segment -> new VkVideoDecodeH264CapabilitiesKHR(segment)
         );
     }
-    
+
 }

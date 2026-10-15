@@ -19,104 +19,104 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkTraceRaysIndirectCommand2KHR
 		implements Struct<VkTraceRaysIndirectCommand2KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RAYGEN_SHADER_RECORD_ADDRESS_HANDLE;
-    public static final VarHandle RAYGEN_SHADER_RECORD_SIZE_HANDLE;
-    public static final VarHandle MISS_SHADER_BINDING_TABLE_ADDRESS_HANDLE;
-    public static final VarHandle MISS_SHADER_BINDING_TABLE_SIZE_HANDLE;
-    public static final VarHandle MISS_SHADER_BINDING_TABLE_STRIDE_HANDLE;
-    public static final VarHandle HIT_SHADER_BINDING_TABLE_ADDRESS_HANDLE;
-    public static final VarHandle HIT_SHADER_BINDING_TABLE_SIZE_HANDLE;
-    public static final VarHandle HIT_SHADER_BINDING_TABLE_STRIDE_HANDLE;
-    public static final VarHandle CALLABLE_SHADER_BINDING_TABLE_ADDRESS_HANDLE;
-    public static final VarHandle CALLABLE_SHADER_BINDING_TABLE_SIZE_HANDLE;
-    public static final VarHandle CALLABLE_SHADER_BINDING_TABLE_STRIDE_HANDLE;
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle DEPTH_HANDLE;
+	public static final VarHandle RAYGEN_SHADER_RECORD_ADDRESS_HANDLE;
+	public static final VarHandle RAYGEN_SHADER_RECORD_SIZE_HANDLE;
+	public static final VarHandle MISS_SHADER_BINDING_TABLE_ADDRESS_HANDLE;
+	public static final VarHandle MISS_SHADER_BINDING_TABLE_SIZE_HANDLE;
+	public static final VarHandle MISS_SHADER_BINDING_TABLE_STRIDE_HANDLE;
+	public static final VarHandle HIT_SHADER_BINDING_TABLE_ADDRESS_HANDLE;
+	public static final VarHandle HIT_SHADER_BINDING_TABLE_SIZE_HANDLE;
+	public static final VarHandle HIT_SHADER_BINDING_TABLE_STRIDE_HANDLE;
+	public static final VarHandle CALLABLE_SHADER_BINDING_TABLE_ADDRESS_HANDLE;
+	public static final VarHandle CALLABLE_SHADER_BINDING_TABLE_SIZE_HANDLE;
+	public static final VarHandle CALLABLE_SHADER_BINDING_TABLE_STRIDE_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle DEPTH_HANDLE;
 
-    public static final long RAYGEN_SHADER_RECORD_ADDRESS_BYTE_OFFSET;
-    public static final long RAYGEN_SHADER_RECORD_SIZE_BYTE_OFFSET;
-    public static final long MISS_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET;
-    public static final long MISS_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET;
-    public static final long MISS_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET;
-    public static final long HIT_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET;
-    public static final long HIT_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET;
-    public static final long HIT_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET;
-    public static final long CALLABLE_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET;
-    public static final long CALLABLE_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET;
-    public static final long CALLABLE_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET;
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long DEPTH_BYTE_OFFSET;
+	public static final long RAYGEN_SHADER_RECORD_ADDRESS_BYTE_OFFSET;
+	public static final long RAYGEN_SHADER_RECORD_SIZE_BYTE_OFFSET;
+	public static final long MISS_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET;
+	public static final long MISS_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET;
+	public static final long MISS_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET;
+	public static final long HIT_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET;
+	public static final long HIT_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET;
+	public static final long HIT_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET;
+	public static final long CALLABLE_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET;
+	public static final long CALLABLE_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET;
+	public static final long CALLABLE_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long DEPTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("raygenShaderRecordAddress"),
-            JAVA_LONG.withName("raygenShaderRecordSize"),
-            JAVA_LONG.withName("missShaderBindingTableAddress"),
-            JAVA_LONG.withName("missShaderBindingTableSize"),
-            JAVA_LONG.withName("missShaderBindingTableStride"),
-            JAVA_LONG.withName("hitShaderBindingTableAddress"),
-            JAVA_LONG.withName("hitShaderBindingTableSize"),
-            JAVA_LONG.withName("hitShaderBindingTableStride"),
-            JAVA_LONG.withName("callableShaderBindingTableAddress"),
-            JAVA_LONG.withName("callableShaderBindingTableSize"),
-            JAVA_LONG.withName("callableShaderBindingTableStride"),
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height"),
-            JAVA_INT.withName("depth"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkTraceRaysIndirectCommand2KHR").withByteAlignment(8);
-        
-        RAYGEN_SHADER_RECORD_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("raygenShaderRecordAddress"));
-        RAYGEN_SHADER_RECORD_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("raygenShaderRecordSize"));
-        MISS_SHADER_BINDING_TABLE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("missShaderBindingTableAddress"));
-        MISS_SHADER_BINDING_TABLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("missShaderBindingTableSize"));
-        MISS_SHADER_BINDING_TABLE_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("missShaderBindingTableStride"));
-        HIT_SHADER_BINDING_TABLE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hitShaderBindingTableAddress"));
-        HIT_SHADER_BINDING_TABLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hitShaderBindingTableSize"));
-        HIT_SHADER_BINDING_TABLE_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hitShaderBindingTableStride"));
-        CALLABLE_SHADER_BINDING_TABLE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callableShaderBindingTableAddress"));
-        CALLABLE_SHADER_BINDING_TABLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callableShaderBindingTableSize"));
-        CALLABLE_SHADER_BINDING_TABLE_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callableShaderBindingTableStride"));
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
-        
-        RAYGEN_SHADER_RECORD_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("raygenShaderRecordAddress"));
-        RAYGEN_SHADER_RECORD_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("raygenShaderRecordSize"));
-        MISS_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("missShaderBindingTableAddress"));
-        MISS_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("missShaderBindingTableSize"));
-        MISS_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("missShaderBindingTableStride"));
-        HIT_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hitShaderBindingTableAddress"));
-        HIT_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hitShaderBindingTableSize"));
-        HIT_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hitShaderBindingTableStride"));
-        CALLABLE_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callableShaderBindingTableAddress"));
-        CALLABLE_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callableShaderBindingTableSize"));
-        CALLABLE_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callableShaderBindingTableStride"));
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("raygenShaderRecordAddress"),
+		    JAVA_LONG.withName("raygenShaderRecordSize"),
+		    JAVA_LONG.withName("missShaderBindingTableAddress"),
+		    JAVA_LONG.withName("missShaderBindingTableSize"),
+		    JAVA_LONG.withName("missShaderBindingTableStride"),
+		    JAVA_LONG.withName("hitShaderBindingTableAddress"),
+		    JAVA_LONG.withName("hitShaderBindingTableSize"),
+		    JAVA_LONG.withName("hitShaderBindingTableStride"),
+		    JAVA_LONG.withName("callableShaderBindingTableAddress"),
+		    JAVA_LONG.withName("callableShaderBindingTableSize"),
+		    JAVA_LONG.withName("callableShaderBindingTableStride"),
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height"),
+		    JAVA_INT.withName("depth"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkTraceRaysIndirectCommand2KHR").withByteAlignment(8);
+		
+		RAYGEN_SHADER_RECORD_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("raygenShaderRecordAddress"));
+		RAYGEN_SHADER_RECORD_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("raygenShaderRecordSize"));
+		MISS_SHADER_BINDING_TABLE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("missShaderBindingTableAddress"));
+		MISS_SHADER_BINDING_TABLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("missShaderBindingTableSize"));
+		MISS_SHADER_BINDING_TABLE_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("missShaderBindingTableStride"));
+		HIT_SHADER_BINDING_TABLE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hitShaderBindingTableAddress"));
+		HIT_SHADER_BINDING_TABLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hitShaderBindingTableSize"));
+		HIT_SHADER_BINDING_TABLE_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hitShaderBindingTableStride"));
+		CALLABLE_SHADER_BINDING_TABLE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callableShaderBindingTableAddress"));
+		CALLABLE_SHADER_BINDING_TABLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callableShaderBindingTableSize"));
+		CALLABLE_SHADER_BINDING_TABLE_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("callableShaderBindingTableStride"));
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
+		
+		RAYGEN_SHADER_RECORD_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("raygenShaderRecordAddress"));
+		RAYGEN_SHADER_RECORD_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("raygenShaderRecordSize"));
+		MISS_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("missShaderBindingTableAddress"));
+		MISS_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("missShaderBindingTableSize"));
+		MISS_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("missShaderBindingTableStride"));
+		HIT_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hitShaderBindingTableAddress"));
+		HIT_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hitShaderBindingTableSize"));
+		HIT_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hitShaderBindingTableStride"));
+		CALLABLE_SHADER_BINDING_TABLE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callableShaderBindingTableAddress"));
+		CALLABLE_SHADER_BINDING_TABLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callableShaderBindingTableSize"));
+		CALLABLE_SHADER_BINDING_TABLE_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("callableShaderBindingTableStride"));
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
+		//@formatter:on
+	}
 
-    public VkTraceRaysIndirectCommand2KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTraceRaysIndirectCommand2KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTraceRaysIndirectCommand2KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTraceRaysIndirectCommand2KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTraceRaysIndirectCommand2KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTraceRaysIndirectCommand2KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #raygenShaderRecordAddress()
     public VkTraceRaysIndirectCommand2KHR raygenShaderRecordAddress(long raygenShaderRecordAddress) {
@@ -309,5 +309,5 @@ public final class VkTraceRaysIndirectCommand2KHR
             segment -> new VkTraceRaysIndirectCommand2KHR(segment)
         );
     }
-    
+
 }

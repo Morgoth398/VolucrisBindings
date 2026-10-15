@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageProcessing3FeaturesQCOM
 		implements Struct<VkPhysicalDeviceImageProcessing3FeaturesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_GATHER_LINEAR_HANDLE;
-    public static final VarHandle IMAGE_GATHER_EXTENDED_MODES_HANDLE;
-    public static final VarHandle BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_GATHER_LINEAR_HANDLE;
+	public static final VarHandle IMAGE_GATHER_EXTENDED_MODES_HANDLE;
+	public static final VarHandle BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_GATHER_LINEAR_BYTE_OFFSET;
-    public static final long IMAGE_GATHER_EXTENDED_MODES_BYTE_OFFSET;
-    public static final long BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_GATHER_LINEAR_BYTE_OFFSET;
+	public static final long IMAGE_GATHER_EXTENDED_MODES_BYTE_OFFSET;
+	public static final long BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("imageGatherLinear"),
-            JAVA_INT.withName("imageGatherExtendedModes"),
-            JAVA_INT.withName("blockMatchExtendedClampToEdge"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceImageProcessing3FeaturesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_GATHER_LINEAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageGatherLinear"));
-        IMAGE_GATHER_EXTENDED_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageGatherExtendedModes"));
-        BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockMatchExtendedClampToEdge"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_GATHER_LINEAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageGatherLinear"));
-        IMAGE_GATHER_EXTENDED_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageGatherExtendedModes"));
-        BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockMatchExtendedClampToEdge"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("imageGatherLinear"),
+		    JAVA_INT.withName("imageGatherExtendedModes"),
+		    JAVA_INT.withName("blockMatchExtendedClampToEdge"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceImageProcessing3FeaturesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_GATHER_LINEAR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageGatherLinear"));
+		IMAGE_GATHER_EXTENDED_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageGatherExtendedModes"));
+		BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockMatchExtendedClampToEdge"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_GATHER_LINEAR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageGatherLinear"));
+		IMAGE_GATHER_EXTENDED_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageGatherExtendedModes"));
+		BLOCK_MATCH_EXTENDED_CLAMP_TO_EDGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockMatchExtendedClampToEdge"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageProcessing3FeaturesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageProcessing3FeaturesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageProcessing3FeaturesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceImageProcessing3FeaturesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageProcessing3FeaturesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageProcessing3FeaturesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageProcessing3FeaturesQCOM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceImageProcessing3FeaturesQCOM
             segment -> new VkPhysicalDeviceImageProcessing3FeaturesQCOM(segment)
         );
     }
-    
+
 }

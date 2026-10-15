@@ -20,61 +20,77 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoVP9Segmentation
 		implements Struct<StdVideoVP9Segmentation> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SEGMENTATION_TREE_PROBS_HANDLE;
-    public static final VarHandle SEGMENTATION_PRED_PROB_HANDLE;
-    public static final VarHandle FEATURE_ENABLED_HANDLE;
-    public static final VarHandle FEATURE_DATA_HANDLE;
+	public static final VarHandle SEGMENTATION_TREE_PROBS_HANDLE;
+	public static final VarHandle SEGMENTATION_PRED_PROB_HANDLE;
+	public static final VarHandle FEATURE_ENABLED_HANDLE;
+	public static final VarHandle FEATURE_DATA_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SEGMENTATION_TREE_PROBS_BYTE_OFFSET;
-    public static final long SEGMENTATION_PRED_PROB_BYTE_OFFSET;
-    public static final long FEATURE_ENABLED_BYTE_OFFSET;
-    public static final long FEATURE_DATA_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SEGMENTATION_TREE_PROBS_BYTE_OFFSET;
+	public static final long SEGMENTATION_PRED_PROB_BYTE_OFFSET;
+	public static final long FEATURE_ENABLED_BYTE_OFFSET;
+	public static final long FEATURE_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoVP9SegmentationFlags flags;
+	private final StdVideoVP9SegmentationFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoVP9SegmentationFlags.LAYOUT.withName("flags"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("segmentation_tree_probs"),
-            MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("segmentation_pred_prob"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("FeatureEnabled"),
-            MemoryLayout.sequenceLayout(8, MemoryLayout.sequenceLayout(4, JAVA_SHORT)).withName("FeatureData"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("StdVideoVP9Segmentation").withByteAlignment(4);
-        
-        SEGMENTATION_TREE_PROBS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("segmentation_tree_probs"), PathElement.sequenceElement());
-        SEGMENTATION_PRED_PROB_HANDLE = LAYOUT.varHandle(PathElement.groupElement("segmentation_pred_prob"), PathElement.sequenceElement());
-        FEATURE_ENABLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureEnabled"), PathElement.sequenceElement());
-        FEATURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureData"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SEGMENTATION_TREE_PROBS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("segmentation_tree_probs"));
-        SEGMENTATION_PRED_PROB_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("segmentation_pred_prob"));
-        FEATURE_ENABLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureEnabled"));
-        FEATURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoVP9SegmentationFlags.LAYOUT.withName("flags"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("segmentation_tree_probs"),
+		    MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("segmentation_pred_prob"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("FeatureEnabled"),
+		    MemoryLayout.sequenceLayout(8, MemoryLayout.sequenceLayout(4, JAVA_SHORT)).withName("FeatureData"),
+		    MemoryLayout.paddingLayout(2)
+		).withName("StdVideoVP9Segmentation").withByteAlignment(4);
+		
+		SEGMENTATION_TREE_PROBS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("segmentation_tree_probs"), PathElement.sequenceElement());
+		SEGMENTATION_PRED_PROB_HANDLE = LAYOUT.varHandle(PathElement.groupElement("segmentation_pred_prob"), PathElement.sequenceElement());
+		FEATURE_ENABLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureEnabled"), PathElement.sequenceElement());
+		FEATURE_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("FeatureData"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SEGMENTATION_TREE_PROBS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("segmentation_tree_probs"));
+		SEGMENTATION_PRED_PROB_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("segmentation_pred_prob"));
+		FEATURE_ENABLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureEnabled"));
+		FEATURE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("FeatureData"));
+		//@formatter:on
+	}
 
-    public StdVideoVP9Segmentation() {
-        this(Arena.ofAuto());
+	public StdVideoVP9Segmentation() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoVP9Segmentation(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoVP9Segmentation(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoVP9SegmentationFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoVP9SegmentationFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoVP9Segmentation flags(Consumer<StdVideoVP9SegmentationFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoVP9Segmentation(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoVP9Segmentation flags(StdVideoVP9SegmentationFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoVP9Segmentation(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoVP9SegmentationFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoVP9SegmentationFlags.LAYOUT));
+    public StdVideoVP9SegmentationFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #segmentation_tree_probs(int)
     public StdVideoVP9Segmentation segmentation_tree_probs(byte segmentation_tree_probs, int index0) {
     	SEGMENTATION_TREE_PROBS_HANDLE.set(segment, 0L, index0, segmentation_tree_probs);
@@ -113,22 +129,6 @@ public final class StdVideoVP9Segmentation
     
     public short featureData(int index0, int index1) {
     	return (short) FEATURE_DATA_HANDLE.get(segment, 0L, index0, index1);
-    }
-    
-    /// @see #flags()
-    public StdVideoVP9Segmentation flags(Consumer<StdVideoVP9SegmentationFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoVP9Segmentation flags(StdVideoVP9SegmentationFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoVP9SegmentationFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -182,5 +182,5 @@ public final class StdVideoVP9Segmentation
             segment -> new StdVideoVP9Segmentation(segment)
         );
     }
-    
+
 }

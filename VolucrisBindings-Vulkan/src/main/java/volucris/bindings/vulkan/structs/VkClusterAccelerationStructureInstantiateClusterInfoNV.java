@@ -20,54 +20,54 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClusterAccelerationStructureInstantiateClusterInfoNV
 		implements Struct<VkClusterAccelerationStructureInstantiateClusterInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CLUSTER_ID_OFFSET_HANDLE;
-    public static final VarHandle BIT_FIELDS0_HANDLE;
-    public static final VarHandle CLUSTER_TEMPLATE_ADDRESS_HANDLE;
+	public static final VarHandle CLUSTER_ID_OFFSET_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle CLUSTER_TEMPLATE_ADDRESS_HANDLE;
 
-    public static final long CLUSTER_ID_OFFSET_BYTE_OFFSET;
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
-    public static final long CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET;
-    public static final long VERTEX_BUFFER_BYTE_OFFSET;
+	public static final long CLUSTER_ID_OFFSET_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET;
+	public static final long VERTEX_BUFFER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkStridedDeviceAddressNV vertexBuffer;
+	private final VkStridedDeviceAddressNV vertexBuffer;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("clusterIdOffset"),
-            JAVA_INT.withName("bitFields0"),
-            JAVA_LONG.withName("clusterTemplateAddress"),
-            VkStridedDeviceAddressNV.LAYOUT.withName("vertexBuffer")
-        ).withName("VkClusterAccelerationStructureInstantiateClusterInfoNV").withByteAlignment(8);
-        
-        CLUSTER_ID_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterIdOffset"));
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        CLUSTER_TEMPLATE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateAddress"));
-        
-        CLUSTER_ID_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterIdOffset"));
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateAddress"));
-        VERTEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBuffer"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("clusterIdOffset"),
+		    JAVA_INT.withName("bitFields0"),
+		    JAVA_LONG.withName("clusterTemplateAddress"),
+		    VkStridedDeviceAddressNV.LAYOUT.withName("vertexBuffer")
+		).withName("VkClusterAccelerationStructureInstantiateClusterInfoNV").withByteAlignment(8);
+		
+		CLUSTER_ID_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterIdOffset"));
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		CLUSTER_TEMPLATE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterTemplateAddress"));
+		
+		CLUSTER_ID_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterIdOffset"));
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		CLUSTER_TEMPLATE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterTemplateAddress"));
+		VERTEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBuffer"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureInstantiateClusterInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureInstantiateClusterInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureInstantiateClusterInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        vertexBuffer = new VkStridedDeviceAddressNV(segment.asSlice(VERTEX_BUFFER_BYTE_OFFSET, VkStridedDeviceAddressNV.LAYOUT));
-    }
+	public VkClusterAccelerationStructureInstantiateClusterInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureInstantiateClusterInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureInstantiateClusterInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    vertexBuffer = new VkStridedDeviceAddressNV(segment.asSlice(VERTEX_BUFFER_BYTE_OFFSET, VkStridedDeviceAddressNV.LAYOUT));
+	}
 
     /// @see #clusterIdOffset()
     public VkClusterAccelerationStructureInstantiateClusterInfoNV clusterIdOffset(int clusterIdOffset) {
@@ -171,5 +171,5 @@ public final class VkClusterAccelerationStructureInstantiateClusterInfoNV
             segment -> new VkClusterAccelerationStructureInstantiateClusterInfoNV(segment)
         );
     }
-    
+
 }

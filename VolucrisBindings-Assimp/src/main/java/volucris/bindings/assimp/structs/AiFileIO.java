@@ -28,48 +28,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiFileIO
 		implements Struct<AiFileIO> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OPEN_PROC_HANDLE;
-    public static final VarHandle CLOSE_PROC_HANDLE;
-    public static final VarHandle USER_DATA_HANDLE;
+	public static final VarHandle OPEN_PROC_HANDLE;
+	public static final VarHandle CLOSE_PROC_HANDLE;
+	public static final VarHandle USER_DATA_HANDLE;
 
-    public static final long OPEN_PROC_BYTE_OFFSET;
-    public static final long CLOSE_PROC_BYTE_OFFSET;
-    public static final long USER_DATA_BYTE_OFFSET;
+	public static final long OPEN_PROC_BYTE_OFFSET;
+	public static final long CLOSE_PROC_BYTE_OFFSET;
+	public static final long USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("OpenProc"),
-            UNBOUNDED_ADDRESS.withName("CloseProc"),
-            UNBOUNDED_ADDRESS.withName("UserData")
-        ).withName("aiFileIO").withByteAlignment(8);
-        
-        OPEN_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("OpenProc"));
-        CLOSE_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CloseProc"));
-        USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("UserData"));
-        
-        OPEN_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("OpenProc"));
-        CLOSE_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CloseProc"));
-        USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("UserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("OpenProc"),
+		    UNBOUNDED_ADDRESS.withName("CloseProc"),
+		    UNBOUNDED_ADDRESS.withName("UserData")
+		).withName("aiFileIO").withByteAlignment(8);
+		
+		OPEN_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("OpenProc"));
+		CLOSE_PROC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("CloseProc"));
+		USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("UserData"));
+		
+		OPEN_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("OpenProc"));
+		CLOSE_PROC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("CloseProc"));
+		USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("UserData"));
+		//@formatter:on
+	}
 
-    public AiFileIO() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiFileIO(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiFileIO(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiFileIO() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiFileIO(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiFileIO(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #openProc()
     public AiFileIO openProc(AiFileOpenProc openProc) {
@@ -176,5 +176,5 @@ public final class AiFileIO
             segment -> new AiFileIO(segment)
         );
     }
-    
+
 }

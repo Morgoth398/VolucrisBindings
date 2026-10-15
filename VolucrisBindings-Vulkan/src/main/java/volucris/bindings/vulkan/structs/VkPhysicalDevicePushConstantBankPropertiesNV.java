@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePushConstantBankPropertiesNV
 		implements Struct<VkPhysicalDevicePushConstantBankPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_GRAPHICS_PUSH_CONSTANT_BANKS_HANDLE;
-    public static final VarHandle MAX_COMPUTE_PUSH_CONSTANT_BANKS_HANDLE;
-    public static final VarHandle MAX_GRAPHICS_PUSH_DATA_BANKS_HANDLE;
-    public static final VarHandle MAX_COMPUTE_PUSH_DATA_BANKS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_GRAPHICS_PUSH_CONSTANT_BANKS_HANDLE;
+	public static final VarHandle MAX_COMPUTE_PUSH_CONSTANT_BANKS_HANDLE;
+	public static final VarHandle MAX_GRAPHICS_PUSH_DATA_BANKS_HANDLE;
+	public static final VarHandle MAX_COMPUTE_PUSH_DATA_BANKS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_GRAPHICS_PUSH_CONSTANT_BANKS_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_PUSH_CONSTANT_BANKS_BYTE_OFFSET;
-    public static final long MAX_GRAPHICS_PUSH_DATA_BANKS_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_PUSH_DATA_BANKS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_GRAPHICS_PUSH_CONSTANT_BANKS_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_PUSH_CONSTANT_BANKS_BYTE_OFFSET;
+	public static final long MAX_GRAPHICS_PUSH_DATA_BANKS_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_PUSH_DATA_BANKS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxGraphicsPushConstantBanks"),
-            JAVA_INT.withName("maxComputePushConstantBanks"),
-            JAVA_INT.withName("maxGraphicsPushDataBanks"),
-            JAVA_INT.withName("maxComputePushDataBanks")
-        ).withName("VkPhysicalDevicePushConstantBankPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_GRAPHICS_PUSH_CONSTANT_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGraphicsPushConstantBanks"));
-        MAX_COMPUTE_PUSH_CONSTANT_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputePushConstantBanks"));
-        MAX_GRAPHICS_PUSH_DATA_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGraphicsPushDataBanks"));
-        MAX_COMPUTE_PUSH_DATA_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputePushDataBanks"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_GRAPHICS_PUSH_CONSTANT_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGraphicsPushConstantBanks"));
-        MAX_COMPUTE_PUSH_CONSTANT_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputePushConstantBanks"));
-        MAX_GRAPHICS_PUSH_DATA_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGraphicsPushDataBanks"));
-        MAX_COMPUTE_PUSH_DATA_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputePushDataBanks"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxGraphicsPushConstantBanks"),
+		    JAVA_INT.withName("maxComputePushConstantBanks"),
+		    JAVA_INT.withName("maxGraphicsPushDataBanks"),
+		    JAVA_INT.withName("maxComputePushDataBanks")
+		).withName("VkPhysicalDevicePushConstantBankPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_GRAPHICS_PUSH_CONSTANT_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGraphicsPushConstantBanks"));
+		MAX_COMPUTE_PUSH_CONSTANT_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputePushConstantBanks"));
+		MAX_GRAPHICS_PUSH_DATA_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGraphicsPushDataBanks"));
+		MAX_COMPUTE_PUSH_DATA_BANKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputePushDataBanks"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_GRAPHICS_PUSH_CONSTANT_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGraphicsPushConstantBanks"));
+		MAX_COMPUTE_PUSH_CONSTANT_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputePushConstantBanks"));
+		MAX_GRAPHICS_PUSH_DATA_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGraphicsPushDataBanks"));
+		MAX_COMPUTE_PUSH_DATA_BANKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputePushDataBanks"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePushConstantBankPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePushConstantBankPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePushConstantBankPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePushConstantBankPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePushConstantBankPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePushConstantBankPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePushConstantBankPropertiesNV sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDevicePushConstantBankPropertiesNV
             segment -> new VkPhysicalDevicePushConstantBankPropertiesNV(segment)
         );
     }
-    
+
 }

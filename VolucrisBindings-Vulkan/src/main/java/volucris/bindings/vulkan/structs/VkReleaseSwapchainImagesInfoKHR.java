@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkReleaseSwapchainImagesInfoKHR
 		implements Struct<VkReleaseSwapchainImagesInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SWAPCHAIN_HANDLE;
-    public static final VarHandle IMAGE_INDEX_COUNT_HANDLE;
-    public static final VarHandle P_IMAGE_INDICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SWAPCHAIN_HANDLE;
+	public static final VarHandle IMAGE_INDEX_COUNT_HANDLE;
+	public static final VarHandle P_IMAGE_INDICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SWAPCHAIN_BYTE_OFFSET;
-    public static final long IMAGE_INDEX_COUNT_BYTE_OFFSET;
-    public static final long P_IMAGE_INDICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SWAPCHAIN_BYTE_OFFSET;
+	public static final long IMAGE_INDEX_COUNT_BYTE_OFFSET;
+	public static final long P_IMAGE_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("swapchain"),
-            JAVA_INT.withName("imageIndexCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pImageIndices")
-        ).withName("VkReleaseSwapchainImagesInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchain"));
-        IMAGE_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageIndexCount"));
-        P_IMAGE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageIndices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchain"));
-        IMAGE_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageIndexCount"));
-        P_IMAGE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("swapchain"),
+		    JAVA_INT.withName("imageIndexCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pImageIndices")
+		).withName("VkReleaseSwapchainImagesInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("swapchain"));
+		IMAGE_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageIndexCount"));
+		P_IMAGE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageIndices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("swapchain"));
+		IMAGE_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageIndexCount"));
+		P_IMAGE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageIndices"));
+		//@formatter:on
+	}
 
-    public VkReleaseSwapchainImagesInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkReleaseSwapchainImagesInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkReleaseSwapchainImagesInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkReleaseSwapchainImagesInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkReleaseSwapchainImagesInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkReleaseSwapchainImagesInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkReleaseSwapchainImagesInfoKHR sType(int sType) {
@@ -193,5 +193,5 @@ public final class VkReleaseSwapchainImagesInfoKHR
             segment -> new VkReleaseSwapchainImagesInfoKHR(segment)
         );
     }
-    
+
 }

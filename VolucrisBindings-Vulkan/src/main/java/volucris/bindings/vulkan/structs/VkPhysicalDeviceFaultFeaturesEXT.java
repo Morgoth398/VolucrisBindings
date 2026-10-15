@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFaultFeaturesEXT
 		implements Struct<VkPhysicalDeviceFaultFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEVICE_FAULT_HANDLE;
-    public static final VarHandle DEVICE_FAULT_VENDOR_BINARY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEVICE_FAULT_HANDLE;
+	public static final VarHandle DEVICE_FAULT_VENDOR_BINARY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEVICE_FAULT_BYTE_OFFSET;
-    public static final long DEVICE_FAULT_VENDOR_BINARY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEVICE_FAULT_BYTE_OFFSET;
+	public static final long DEVICE_FAULT_VENDOR_BINARY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("deviceFault"),
-            JAVA_INT.withName("deviceFaultVendorBinary")
-        ).withName("VkPhysicalDeviceFaultFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEVICE_FAULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceFault"));
-        DEVICE_FAULT_VENDOR_BINARY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceFaultVendorBinary"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEVICE_FAULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceFault"));
-        DEVICE_FAULT_VENDOR_BINARY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceFaultVendorBinary"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("deviceFault"),
+		    JAVA_INT.withName("deviceFaultVendorBinary")
+		).withName("VkPhysicalDeviceFaultFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEVICE_FAULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceFault"));
+		DEVICE_FAULT_VENDOR_BINARY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceFaultVendorBinary"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEVICE_FAULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceFault"));
+		DEVICE_FAULT_VENDOR_BINARY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceFaultVendorBinary"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFaultFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFaultFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFaultFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFaultFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFaultFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFaultFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFaultFeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceFaultFeaturesEXT
             segment -> new VkPhysicalDeviceFaultFeaturesEXT(segment)
         );
     }
-    
+
 }

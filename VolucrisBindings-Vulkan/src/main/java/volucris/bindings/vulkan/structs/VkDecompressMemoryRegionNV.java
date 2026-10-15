@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDecompressMemoryRegionNV
 		implements Struct<VkDecompressMemoryRegionNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SRC_ADDRESS_HANDLE;
-    public static final VarHandle DST_ADDRESS_HANDLE;
-    public static final VarHandle COMPRESSED_SIZE_HANDLE;
-    public static final VarHandle DECOMPRESSED_SIZE_HANDLE;
-    public static final VarHandle DECOMPRESSION_METHOD_HANDLE;
+	public static final VarHandle SRC_ADDRESS_HANDLE;
+	public static final VarHandle DST_ADDRESS_HANDLE;
+	public static final VarHandle COMPRESSED_SIZE_HANDLE;
+	public static final VarHandle DECOMPRESSED_SIZE_HANDLE;
+	public static final VarHandle DECOMPRESSION_METHOD_HANDLE;
 
-    public static final long SRC_ADDRESS_BYTE_OFFSET;
-    public static final long DST_ADDRESS_BYTE_OFFSET;
-    public static final long COMPRESSED_SIZE_BYTE_OFFSET;
-    public static final long DECOMPRESSED_SIZE_BYTE_OFFSET;
-    public static final long DECOMPRESSION_METHOD_BYTE_OFFSET;
+	public static final long SRC_ADDRESS_BYTE_OFFSET;
+	public static final long DST_ADDRESS_BYTE_OFFSET;
+	public static final long COMPRESSED_SIZE_BYTE_OFFSET;
+	public static final long DECOMPRESSED_SIZE_BYTE_OFFSET;
+	public static final long DECOMPRESSION_METHOD_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("srcAddress"),
-            JAVA_LONG.withName("dstAddress"),
-            JAVA_LONG.withName("compressedSize"),
-            JAVA_LONG.withName("decompressedSize"),
-            JAVA_LONG.withName("decompressionMethod")
-        ).withName("VkDecompressMemoryRegionNV").withByteAlignment(8);
-        
-        SRC_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAddress"));
-        DST_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAddress"));
-        COMPRESSED_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compressedSize"));
-        DECOMPRESSED_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decompressedSize"));
-        DECOMPRESSION_METHOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decompressionMethod"));
-        
-        SRC_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAddress"));
-        DST_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAddress"));
-        COMPRESSED_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compressedSize"));
-        DECOMPRESSED_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decompressedSize"));
-        DECOMPRESSION_METHOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decompressionMethod"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("srcAddress"),
+		    JAVA_LONG.withName("dstAddress"),
+		    JAVA_LONG.withName("compressedSize"),
+		    JAVA_LONG.withName("decompressedSize"),
+		    JAVA_LONG.withName("decompressionMethod")
+		).withName("VkDecompressMemoryRegionNV").withByteAlignment(8);
+		
+		SRC_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAddress"));
+		DST_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAddress"));
+		COMPRESSED_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compressedSize"));
+		DECOMPRESSED_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decompressedSize"));
+		DECOMPRESSION_METHOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("decompressionMethod"));
+		
+		SRC_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAddress"));
+		DST_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAddress"));
+		COMPRESSED_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compressedSize"));
+		DECOMPRESSED_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decompressedSize"));
+		DECOMPRESSION_METHOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("decompressionMethod"));
+		//@formatter:on
+	}
 
-    public VkDecompressMemoryRegionNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDecompressMemoryRegionNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDecompressMemoryRegionNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDecompressMemoryRegionNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDecompressMemoryRegionNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDecompressMemoryRegionNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #srcAddress()
     public VkDecompressMemoryRegionNV srcAddress(long srcAddress) {
@@ -173,5 +173,5 @@ public final class VkDecompressMemoryRegionNV
             segment -> new VkDecompressMemoryRegionNV(segment)
         );
     }
-    
+
 }

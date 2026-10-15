@@ -21,81 +21,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceMemoryReportCallbackDataEXT
 		implements Struct<VkDeviceMemoryReportCallbackDataEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle MEMORY_OBJECT_ID_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle OBJECT_TYPE_HANDLE;
-    public static final VarHandle OBJECT_HANDLE_HANDLE;
-    public static final VarHandle HEAP_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle MEMORY_OBJECT_ID_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle OBJECT_TYPE_HANDLE;
+	public static final VarHandle OBJECT_HANDLE_HANDLE;
+	public static final VarHandle HEAP_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long MEMORY_OBJECT_ID_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long OBJECT_TYPE_BYTE_OFFSET;
-    public static final long OBJECT_HANDLE_BYTE_OFFSET;
-    public static final long HEAP_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long MEMORY_OBJECT_ID_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long OBJECT_TYPE_BYTE_OFFSET;
+	public static final long OBJECT_HANDLE_BYTE_OFFSET;
+	public static final long HEAP_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("type"),
-            JAVA_LONG.withName("memoryObjectId"),
-            JAVA_LONG.withName("size"),
-            JAVA_INT.withName("objectType"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("objectHandle"),
-            JAVA_INT.withName("heapIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDeviceMemoryReportCallbackDataEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        MEMORY_OBJECT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryObjectId"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        OBJECT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectType"));
-        OBJECT_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectHandle"));
-        HEAP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        MEMORY_OBJECT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryObjectId"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        OBJECT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectType"));
-        OBJECT_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectHandle"));
-        HEAP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("type"),
+		    JAVA_LONG.withName("memoryObjectId"),
+		    JAVA_LONG.withName("size"),
+		    JAVA_INT.withName("objectType"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("objectHandle"),
+		    JAVA_INT.withName("heapIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDeviceMemoryReportCallbackDataEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		MEMORY_OBJECT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryObjectId"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		OBJECT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectType"));
+		OBJECT_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectHandle"));
+		HEAP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		MEMORY_OBJECT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryObjectId"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		OBJECT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectType"));
+		OBJECT_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectHandle"));
+		HEAP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapIndex"));
+		//@formatter:on
+	}
 
-    public VkDeviceMemoryReportCallbackDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceMemoryReportCallbackDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceMemoryReportCallbackDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceMemoryReportCallbackDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceMemoryReportCallbackDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceMemoryReportCallbackDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceMemoryReportCallbackDataEXT sType(int sType) {
@@ -243,5 +243,5 @@ public final class VkDeviceMemoryReportCallbackDataEXT
             segment -> new VkDeviceMemoryReportCallbackDataEXT(segment)
         );
     }
-    
+
 }

@@ -21,90 +21,90 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAttachmentDescription2
 		implements Struct<VkAttachmentDescription2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle SAMPLES_HANDLE;
-    public static final VarHandle LOAD_OP_HANDLE;
-    public static final VarHandle STORE_OP_HANDLE;
-    public static final VarHandle STENCIL_LOAD_OP_HANDLE;
-    public static final VarHandle STENCIL_STORE_OP_HANDLE;
-    public static final VarHandle INITIAL_LAYOUT_HANDLE;
-    public static final VarHandle FINAL_LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle SAMPLES_HANDLE;
+	public static final VarHandle LOAD_OP_HANDLE;
+	public static final VarHandle STORE_OP_HANDLE;
+	public static final VarHandle STENCIL_LOAD_OP_HANDLE;
+	public static final VarHandle STENCIL_STORE_OP_HANDLE;
+	public static final VarHandle INITIAL_LAYOUT_HANDLE;
+	public static final VarHandle FINAL_LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long SAMPLES_BYTE_OFFSET;
-    public static final long LOAD_OP_BYTE_OFFSET;
-    public static final long STORE_OP_BYTE_OFFSET;
-    public static final long STENCIL_LOAD_OP_BYTE_OFFSET;
-    public static final long STENCIL_STORE_OP_BYTE_OFFSET;
-    public static final long INITIAL_LAYOUT_BYTE_OFFSET;
-    public static final long FINAL_LAYOUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long SAMPLES_BYTE_OFFSET;
+	public static final long LOAD_OP_BYTE_OFFSET;
+	public static final long STORE_OP_BYTE_OFFSET;
+	public static final long STENCIL_LOAD_OP_BYTE_OFFSET;
+	public static final long STENCIL_STORE_OP_BYTE_OFFSET;
+	public static final long INITIAL_LAYOUT_BYTE_OFFSET;
+	public static final long FINAL_LAYOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("samples"),
-            JAVA_INT.withName("loadOp"),
-            JAVA_INT.withName("storeOp"),
-            JAVA_INT.withName("stencilLoadOp"),
-            JAVA_INT.withName("stencilStoreOp"),
-            JAVA_INT.withName("initialLayout"),
-            JAVA_INT.withName("finalLayout"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkAttachmentDescription2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samples"));
-        LOAD_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loadOp"));
-        STORE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storeOp"));
-        STENCIL_LOAD_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilLoadOp"));
-        STENCIL_STORE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilStoreOp"));
-        INITIAL_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initialLayout"));
-        FINAL_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("finalLayout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samples"));
-        LOAD_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loadOp"));
-        STORE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storeOp"));
-        STENCIL_LOAD_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilLoadOp"));
-        STENCIL_STORE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilStoreOp"));
-        INITIAL_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initialLayout"));
-        FINAL_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("finalLayout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("samples"),
+		    JAVA_INT.withName("loadOp"),
+		    JAVA_INT.withName("storeOp"),
+		    JAVA_INT.withName("stencilLoadOp"),
+		    JAVA_INT.withName("stencilStoreOp"),
+		    JAVA_INT.withName("initialLayout"),
+		    JAVA_INT.withName("finalLayout"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkAttachmentDescription2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samples"));
+		LOAD_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("loadOp"));
+		STORE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storeOp"));
+		STENCIL_LOAD_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilLoadOp"));
+		STENCIL_STORE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stencilStoreOp"));
+		INITIAL_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initialLayout"));
+		FINAL_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("finalLayout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samples"));
+		LOAD_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loadOp"));
+		STORE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storeOp"));
+		STENCIL_LOAD_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilLoadOp"));
+		STENCIL_STORE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stencilStoreOp"));
+		INITIAL_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initialLayout"));
+		FINAL_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("finalLayout"));
+		//@formatter:on
+	}
 
-    public VkAttachmentDescription2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAttachmentDescription2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAttachmentDescription2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAttachmentDescription2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAttachmentDescription2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAttachmentDescription2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAttachmentDescription2 sType(int sType) {
@@ -272,5 +272,5 @@ public final class VkAttachmentDescription2
             segment -> new VkAttachmentDescription2(segment)
         );
     }
-    
+
 }

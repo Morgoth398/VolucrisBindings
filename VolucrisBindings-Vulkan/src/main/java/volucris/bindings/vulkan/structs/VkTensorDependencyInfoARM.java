@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTensorDependencyInfoARM
 		implements Struct<VkTensorDependencyInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TENSOR_MEMORY_BARRIER_COUNT_HANDLE;
-    public static final VarHandle P_TENSOR_MEMORY_BARRIERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TENSOR_MEMORY_BARRIER_COUNT_HANDLE;
+	public static final VarHandle P_TENSOR_MEMORY_BARRIERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TENSOR_MEMORY_BARRIER_COUNT_BYTE_OFFSET;
-    public static final long P_TENSOR_MEMORY_BARRIERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TENSOR_MEMORY_BARRIER_COUNT_BYTE_OFFSET;
+	public static final long P_TENSOR_MEMORY_BARRIERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("tensorMemoryBarrierCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTensorMemoryBarriers")
-        ).withName("VkTensorDependencyInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TENSOR_MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorMemoryBarrierCount"));
-        P_TENSOR_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTensorMemoryBarriers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TENSOR_MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorMemoryBarrierCount"));
-        P_TENSOR_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTensorMemoryBarriers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("tensorMemoryBarrierCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTensorMemoryBarriers")
+		).withName("VkTensorDependencyInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TENSOR_MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorMemoryBarrierCount"));
+		P_TENSOR_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTensorMemoryBarriers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TENSOR_MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorMemoryBarrierCount"));
+		P_TENSOR_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTensorMemoryBarriers"));
+		//@formatter:on
+	}
 
-    public VkTensorDependencyInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTensorDependencyInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTensorDependencyInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTensorDependencyInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTensorDependencyInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTensorDependencyInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkTensorDependencyInfoARM sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkTensorDependencyInfoARM
             segment -> new VkTensorDependencyInfoARM(segment)
         );
     }
-    
+
 }

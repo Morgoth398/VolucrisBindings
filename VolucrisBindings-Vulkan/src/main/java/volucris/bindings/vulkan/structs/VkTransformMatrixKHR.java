@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkTransformMatrixKHR
 		implements Struct<VkTransformMatrixKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MATRIX_HANDLE;
+	public static final VarHandle MATRIX_HANDLE;
 
-    public static final long MATRIX_BYTE_OFFSET;
+	public static final long MATRIX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(3, MemoryLayout.sequenceLayout(4, JAVA_FLOAT)).withName("matrix")
-        ).withName("VkTransformMatrixKHR").withByteAlignment(4);
-        
-        MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(3, MemoryLayout.sequenceLayout(4, JAVA_FLOAT)).withName("matrix")
+		).withName("VkTransformMatrixKHR").withByteAlignment(4);
+		
+		MATRIX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		MATRIX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix"));
+		//@formatter:on
+	}
 
-    public VkTransformMatrixKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTransformMatrixKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTransformMatrixKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTransformMatrixKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTransformMatrixKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTransformMatrixKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #matrix(int, int)
     public VkTransformMatrixKHR matrix(float matrix, int index0, int index1) {
@@ -113,5 +113,5 @@ public final class VkTransformMatrixKHR
             segment -> new VkTransformMatrixKHR(segment)
         );
     }
-    
+
 }

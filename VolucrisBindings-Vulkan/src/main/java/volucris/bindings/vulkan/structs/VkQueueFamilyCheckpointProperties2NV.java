@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueueFamilyCheckpointProperties2NV
 		implements Struct<VkQueueFamilyCheckpointProperties2NV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle CHECKPOINT_EXECUTION_STAGE_MASK_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle CHECKPOINT_EXECUTION_STAGE_MASK_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CHECKPOINT_EXECUTION_STAGE_MASK_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CHECKPOINT_EXECUTION_STAGE_MASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("checkpointExecutionStageMask")
-        ).withName("VkQueueFamilyCheckpointProperties2NV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        CHECKPOINT_EXECUTION_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("checkpointExecutionStageMask"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CHECKPOINT_EXECUTION_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("checkpointExecutionStageMask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("checkpointExecutionStageMask")
+		).withName("VkQueueFamilyCheckpointProperties2NV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		CHECKPOINT_EXECUTION_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("checkpointExecutionStageMask"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CHECKPOINT_EXECUTION_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("checkpointExecutionStageMask"));
+		//@formatter:on
+	}
 
-    public VkQueueFamilyCheckpointProperties2NV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueueFamilyCheckpointProperties2NV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueueFamilyCheckpointProperties2NV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkQueueFamilyCheckpointProperties2NV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueueFamilyCheckpointProperties2NV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueueFamilyCheckpointProperties2NV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkQueueFamilyCheckpointProperties2NV sType(int sType) {
@@ -151,5 +151,5 @@ public final class VkQueueFamilyCheckpointProperties2NV
             segment -> new VkQueueFamilyCheckpointProperties2NV(segment)
         );
     }
-    
+
 }

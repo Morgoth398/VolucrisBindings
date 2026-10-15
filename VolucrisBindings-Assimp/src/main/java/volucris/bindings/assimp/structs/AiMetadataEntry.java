@@ -24,44 +24,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiMetadataEntry
 		implements Struct<AiMetadataEntry> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_TYPE_HANDLE;
-    public static final VarHandle M_DATA_HANDLE;
+	public static final VarHandle M_TYPE_HANDLE;
+	public static final VarHandle M_DATA_HANDLE;
 
-    public static final long M_TYPE_BYTE_OFFSET;
-    public static final long M_DATA_BYTE_OFFSET;
+	public static final long M_TYPE_BYTE_OFFSET;
+	public static final long M_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mData")
-        ).withName("aiMetadataEntry").withByteAlignment(8);
-        
-        M_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mType"));
-        M_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mData"));
-        
-        M_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mType"));
-        M_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mData")
+		).withName("aiMetadataEntry").withByteAlignment(8);
+		
+		M_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mType"));
+		M_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mData"));
+		
+		M_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mType"));
+		M_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mData"));
+		//@formatter:on
+	}
 
-    public AiMetadataEntry() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMetadataEntry(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMetadataEntry(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMetadataEntry() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMetadataEntry(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMetadataEntry(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mType()
     public AiMetadataEntry mType(int mType) {
@@ -139,5 +139,5 @@ public final class AiMetadataEntry
             segment -> new AiMetadataEntry(segment)
         );
     }
-    
+
 }

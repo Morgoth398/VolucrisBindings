@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDrawIndirect2InfoKHR
 		implements Struct<VkDrawIndirect2InfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADDRESS_FLAGS_HANDLE;
-    public static final VarHandle DRAW_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADDRESS_FLAGS_HANDLE;
+	public static final VarHandle DRAW_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long ADDRESS_FLAGS_BYTE_OFFSET;
-    public static final long DRAW_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long ADDRESS_FLAGS_BYTE_OFFSET;
+	public static final long DRAW_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkStridedDeviceAddressRangeKHR addressRange;
+	private final VkStridedDeviceAddressRangeKHR addressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkStridedDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
-            JAVA_INT.withName("addressFlags"),
-            JAVA_INT.withName("drawCount")
-        ).withName("VkDrawIndirect2InfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
-        DRAW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drawCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
-        DRAW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drawCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkStridedDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
+		    JAVA_INT.withName("addressFlags"),
+		    JAVA_INT.withName("drawCount")
+		).withName("VkDrawIndirect2InfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
+		DRAW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drawCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
+		DRAW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drawCount"));
+		//@formatter:on
+	}
 
-    public VkDrawIndirect2InfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrawIndirect2InfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrawIndirect2InfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkStridedDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkStridedDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkDrawIndirect2InfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrawIndirect2InfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrawIndirect2InfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkStridedDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkStridedDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDrawIndirect2InfoKHR sType(int sType) {
@@ -102,6 +102,22 @@ public final class VkDrawIndirect2InfoKHR
     	return segment;
     }
     
+    /// @see #addressRange()
+    public VkDrawIndirect2InfoKHR addressRange(Consumer<VkStridedDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(addressRange);
+    	return this;
+    }
+    
+    /// @see #addressRange()
+    public VkDrawIndirect2InfoKHR addressRange(VkStridedDeviceAddressRangeKHR other) {
+    	addressRange.set(other);
+    	return this;
+    }
+    
+    public VkStridedDeviceAddressRangeKHR addressRange() {
+    	return addressRange;
+    }
+    
     /// @see #addressFlags()
     public VkDrawIndirect2InfoKHR addressFlags(int addressFlags) {
     	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
@@ -120,22 +136,6 @@ public final class VkDrawIndirect2InfoKHR
     
     public int drawCount() {
     	return (int) DRAW_COUNT_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #addressRange()
-    public VkDrawIndirect2InfoKHR addressRange(Consumer<VkStridedDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(addressRange);
-    	return this;
-    }
-    
-    /// @see #addressRange()
-    public VkDrawIndirect2InfoKHR addressRange(VkStridedDeviceAddressRangeKHR other) {
-    	addressRange.set(other);
-    	return this;
-    }
-    
-    public VkStridedDeviceAddressRangeKHR addressRange() {
-    	return addressRange;
     }
     
     @Override
@@ -189,5 +189,5 @@ public final class VkDrawIndirect2InfoKHR
             segment -> new VkDrawIndirect2InfoKHR(segment)
         );
     }
-    
+
 }

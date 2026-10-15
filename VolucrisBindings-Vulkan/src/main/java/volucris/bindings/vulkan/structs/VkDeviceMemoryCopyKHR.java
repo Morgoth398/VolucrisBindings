@@ -22,67 +22,67 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceMemoryCopyKHR
 		implements Struct<VkDeviceMemoryCopyKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_FLAGS_HANDLE;
-    public static final VarHandle DST_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_FLAGS_HANDLE;
+	public static final VarHandle DST_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_RANGE_BYTE_OFFSET;
-    public static final long SRC_FLAGS_BYTE_OFFSET;
-    public static final long DST_RANGE_BYTE_OFFSET;
-    public static final long DST_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_RANGE_BYTE_OFFSET;
+	public static final long SRC_FLAGS_BYTE_OFFSET;
+	public static final long DST_RANGE_BYTE_OFFSET;
+	public static final long DST_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR srcRange;
-    private final VkDeviceAddressRangeKHR dstRange;
+	private final VkDeviceAddressRangeKHR srcRange;
+	private final VkDeviceAddressRangeKHR dstRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("srcRange"),
-            JAVA_INT.withName("srcFlags"),
-            MemoryLayout.paddingLayout(4),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("dstRange"),
-            JAVA_INT.withName("dstFlags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDeviceMemoryCopyKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcFlags"));
-        DST_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcRange"));
-        SRC_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcFlags"));
-        DST_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstRange"));
-        DST_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("srcRange"),
+		    JAVA_INT.withName("srcFlags"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("dstRange"),
+		    JAVA_INT.withName("dstFlags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDeviceMemoryCopyKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcFlags"));
+		DST_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcRange"));
+		SRC_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcFlags"));
+		DST_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstRange"));
+		DST_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstFlags"));
+		//@formatter:on
+	}
 
-    public VkDeviceMemoryCopyKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceMemoryCopyKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceMemoryCopyKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        srcRange = new VkDeviceAddressRangeKHR(segment.asSlice(SRC_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-        dstRange = new VkDeviceAddressRangeKHR(segment.asSlice(DST_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkDeviceMemoryCopyKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceMemoryCopyKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceMemoryCopyKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    srcRange = new VkDeviceAddressRangeKHR(segment.asSlice(SRC_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	    dstRange = new VkDeviceAddressRangeKHR(segment.asSlice(DST_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDeviceMemoryCopyKHR sType(int sType) {
@@ -109,26 +109,6 @@ public final class VkDeviceMemoryCopyKHR
     	return segment;
     }
     
-    /// @see #srcFlags()
-    public VkDeviceMemoryCopyKHR srcFlags(int srcFlags) {
-    	SRC_FLAGS_HANDLE.set(segment, 0L, srcFlags);
-    	return this;
-    }
-    
-    public int srcFlags() {
-    	return (int) SRC_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #dstFlags()
-    public VkDeviceMemoryCopyKHR dstFlags(int dstFlags) {
-    	DST_FLAGS_HANDLE.set(segment, 0L, dstFlags);
-    	return this;
-    }
-    
-    public int dstFlags() {
-    	return (int) DST_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #srcRange()
     public VkDeviceMemoryCopyKHR srcRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
     	consumer.accept(srcRange);
@@ -145,6 +125,16 @@ public final class VkDeviceMemoryCopyKHR
     	return srcRange;
     }
     
+    /// @see #srcFlags()
+    public VkDeviceMemoryCopyKHR srcFlags(int srcFlags) {
+    	SRC_FLAGS_HANDLE.set(segment, 0L, srcFlags);
+    	return this;
+    }
+    
+    public int srcFlags() {
+    	return (int) SRC_FLAGS_HANDLE.get(segment, 0L);
+    }
+    
     /// @see #dstRange()
     public VkDeviceMemoryCopyKHR dstRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
     	consumer.accept(dstRange);
@@ -159,6 +149,16 @@ public final class VkDeviceMemoryCopyKHR
     
     public VkDeviceAddressRangeKHR dstRange() {
     	return dstRange;
+    }
+    
+    /// @see #dstFlags()
+    public VkDeviceMemoryCopyKHR dstFlags(int dstFlags) {
+    	DST_FLAGS_HANDLE.set(segment, 0L, dstFlags);
+    	return this;
+    }
+    
+    public int dstFlags() {
+    	return (int) DST_FLAGS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -212,5 +212,5 @@ public final class VkDeviceMemoryCopyKHR
             segment -> new VkDeviceMemoryCopyKHR(segment)
         );
     }
-    
+
 }

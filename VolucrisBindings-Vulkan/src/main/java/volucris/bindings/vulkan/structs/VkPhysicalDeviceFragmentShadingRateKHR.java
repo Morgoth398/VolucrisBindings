@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentShadingRateKHR
 		implements Struct<VkPhysicalDeviceFragmentShadingRateKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLE_COUNTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long FRAGMENT_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long FRAGMENT_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D fragmentSize;
+	private final VkExtent2D fragmentSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("sampleCounts"),
-            VkExtent2D.LAYOUT.withName("fragmentSize"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFragmentShadingRateKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleCounts"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleCounts"));
-        FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("sampleCounts"),
+		    VkExtent2D.LAYOUT.withName("fragmentSize"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFragmentShadingRateKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleCounts"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleCounts"));
+		FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentShadingRateKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRateKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRateKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        fragmentSize = new VkExtent2D(segment.asSlice(FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceFragmentShadingRateKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRateKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRateKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    fragmentSize = new VkExtent2D(segment.asSlice(FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentShadingRateKHR sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkPhysicalDeviceFragmentShadingRateKHR
             segment -> new VkPhysicalDeviceFragmentShadingRateKHR(segment)
         );
     }
-    
+
 }

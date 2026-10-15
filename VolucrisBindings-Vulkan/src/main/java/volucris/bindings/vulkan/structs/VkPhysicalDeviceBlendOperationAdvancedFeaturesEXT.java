@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT
 		implements Struct<VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADVANCED_BLEND_COHERENT_OPERATIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_COHERENT_OPERATIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADVANCED_BLEND_COHERENT_OPERATIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_COHERENT_OPERATIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("advancedBlendCoherentOperations"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADVANCED_BLEND_COHERENT_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendCoherentOperations"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADVANCED_BLEND_COHERENT_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendCoherentOperations"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("advancedBlendCoherentOperations"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADVANCED_BLEND_COHERENT_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendCoherentOperations"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADVANCED_BLEND_COHERENT_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendCoherentOperations"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT
             segment -> new VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT(segment)
         );
     }
-    
+
 }

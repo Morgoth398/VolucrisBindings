@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
 		implements Struct<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MULTIVIEW_PER_VIEW_RENDER_AREAS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MULTIVIEW_PER_VIEW_RENDER_AREAS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MULTIVIEW_PER_VIEW_RENDER_AREAS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MULTIVIEW_PER_VIEW_RENDER_AREAS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("multiviewPerViewRenderAreas"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MULTIVIEW_PER_VIEW_RENDER_AREAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewPerViewRenderAreas"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MULTIVIEW_PER_VIEW_RENDER_AREAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewPerViewRenderAreas"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("multiviewPerViewRenderAreas"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MULTIVIEW_PER_VIEW_RENDER_AREAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewPerViewRenderAreas"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MULTIVIEW_PER_VIEW_RENDER_AREAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewPerViewRenderAreas"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
             segment -> new VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(segment)
         );
     }
-    
+
 }

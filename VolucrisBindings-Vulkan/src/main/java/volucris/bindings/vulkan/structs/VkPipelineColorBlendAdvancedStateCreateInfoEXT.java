@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineColorBlendAdvancedStateCreateInfoEXT
 		implements Struct<VkPipelineColorBlendAdvancedStateCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_PREMULTIPLIED_HANDLE;
-    public static final VarHandle DST_PREMULTIPLIED_HANDLE;
-    public static final VarHandle BLEND_OVERLAP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_PREMULTIPLIED_HANDLE;
+	public static final VarHandle DST_PREMULTIPLIED_HANDLE;
+	public static final VarHandle BLEND_OVERLAP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_PREMULTIPLIED_BYTE_OFFSET;
-    public static final long DST_PREMULTIPLIED_BYTE_OFFSET;
-    public static final long BLEND_OVERLAP_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_PREMULTIPLIED_BYTE_OFFSET;
+	public static final long DST_PREMULTIPLIED_BYTE_OFFSET;
+	public static final long BLEND_OVERLAP_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("srcPremultiplied"),
-            JAVA_INT.withName("dstPremultiplied"),
-            JAVA_INT.withName("blendOverlap"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPipelineColorBlendAdvancedStateCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcPremultiplied"));
-        DST_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstPremultiplied"));
-        BLEND_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blendOverlap"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcPremultiplied"));
-        DST_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstPremultiplied"));
-        BLEND_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blendOverlap"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("srcPremultiplied"),
+		    JAVA_INT.withName("dstPremultiplied"),
+		    JAVA_INT.withName("blendOverlap"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPipelineColorBlendAdvancedStateCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcPremultiplied"));
+		DST_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstPremultiplied"));
+		BLEND_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blendOverlap"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcPremultiplied"));
+		DST_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstPremultiplied"));
+		BLEND_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blendOverlap"));
+		//@formatter:on
+	}
 
-    public VkPipelineColorBlendAdvancedStateCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineColorBlendAdvancedStateCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineColorBlendAdvancedStateCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineColorBlendAdvancedStateCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineColorBlendAdvancedStateCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineColorBlendAdvancedStateCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineColorBlendAdvancedStateCreateInfoEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPipelineColorBlendAdvancedStateCreateInfoEXT
             segment -> new VkPipelineColorBlendAdvancedStateCreateInfoEXT(segment)
         );
     }
-    
+
 }

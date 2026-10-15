@@ -22,48 +22,48 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaVirtualAllocationInfo
 		implements Struct<VmaVirtualAllocationInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
 
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("size"),
-            UNBOUNDED_ADDRESS.withName("pUserData")
-        ).withName("VmaVirtualAllocationInfo").withByteAlignment(8);
-        
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("size"),
+		    UNBOUNDED_ADDRESS.withName("pUserData")
+		).withName("VmaVirtualAllocationInfo").withByteAlignment(8);
+		
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		//@formatter:on
+	}
 
-    public VmaVirtualAllocationInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaVirtualAllocationInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaVirtualAllocationInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaVirtualAllocationInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaVirtualAllocationInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaVirtualAllocationInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #offset()
     public VmaVirtualAllocationInfo offset(long offset) {
@@ -166,5 +166,5 @@ public final class VmaVirtualAllocationInfo
             segment -> new VmaVirtualAllocationInfo(segment)
         );
     }
-    
+
 }

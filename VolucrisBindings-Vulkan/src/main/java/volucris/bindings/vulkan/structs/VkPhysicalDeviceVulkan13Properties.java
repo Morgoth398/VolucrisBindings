@@ -21,271 +21,271 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan13Properties
 		implements Struct<VkPhysicalDeviceVulkan13Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MIN_SUBGROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_SUBGROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE;
-    public static final VarHandle REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE;
-    public static final VarHandle MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
-    public static final VarHandle MAX_INLINE_UNIFORM_TOTAL_SIZE_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_HANDLE;
-    public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
-    public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
-    public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
-    public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
-    public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_BUFFER_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MIN_SUBGROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_SUBGROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE;
+	public static final VarHandle REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE;
+	public static final VarHandle MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE;
+	public static final VarHandle MAX_INLINE_UNIFORM_TOTAL_SIZE_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_HANDLE;
+	public static final VarHandle INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE;
+	public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
+	public static final VarHandle STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
+	public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE;
+	public static final VarHandle UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_BUFFER_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MIN_SUBGROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_SUBGROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET;
-    public static final long REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET;
-    public static final long MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
-    public static final long MAX_INLINE_UNIFORM_TOTAL_SIZE_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
-    public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
-    public static final long STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
-    public static final long STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
-    public static final long UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
-    public static final long UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_BUFFER_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MIN_SUBGROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_SUBGROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET;
+	public static final long REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET;
+	public static final long MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET;
+	public static final long MAX_INLINE_UNIFORM_TOTAL_SIZE_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET;
+	public static final long INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET;
+	public static final long STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
+	public static final long STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
+	public static final long UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET;
+	public static final long UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_BUFFER_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("minSubgroupSize"),
-            JAVA_INT.withName("maxSubgroupSize"),
-            JAVA_INT.withName("maxComputeWorkgroupSubgroups"),
-            JAVA_INT.withName("requiredSubgroupSizeStages"),
-            JAVA_INT.withName("maxInlineUniformBlockSize"),
-            JAVA_INT.withName("maxPerStageDescriptorInlineUniformBlocks"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"),
-            JAVA_INT.withName("maxDescriptorSetInlineUniformBlocks"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"),
-            JAVA_INT.withName("maxInlineUniformTotalSize"),
-            JAVA_INT.withName("integerDotProduct8BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct8BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct8BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProduct4x8BitPackedUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct4x8BitPackedSignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct4x8BitPackedMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProduct16BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct16BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct16BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProduct32BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct32BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct32BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProduct64BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct64BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProduct64BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating8BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating16BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating32BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating64BitSignedAccelerated"),
-            JAVA_INT.withName("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated"),
-            JAVA_LONG.withName("storageTexelBufferOffsetAlignmentBytes"),
-            JAVA_INT.withName("storageTexelBufferOffsetSingleTexelAlignment"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("uniformTexelBufferOffsetAlignmentBytes"),
-            JAVA_INT.withName("uniformTexelBufferOffsetSingleTexelAlignment"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("maxBufferSize")
-        ).withName("VkPhysicalDeviceVulkan13Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MIN_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSubgroupSize"));
-        MAX_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubgroupSize"));
-        MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
-        REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiredSubgroupSizeStages"));
-        MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformBlockSize"));
-        MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
-        MAX_INLINE_UNIFORM_TOTAL_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformTotalSize"));
-        INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct8BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct8BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct8BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct4x8BitPackedUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct4x8BitPackedSignedAccelerated"));
-        INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct4x8BitPackedMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct16BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct16BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct16BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct32BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct32BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct32BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct64BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct64BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct64BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated"));
-        STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
-        STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
-        MAX_BUFFER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBufferSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MIN_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSubgroupSize"));
-        MAX_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubgroupSize"));
-        MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
-        REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiredSubgroupSizeStages"));
-        MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformBlockSize"));
-        MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
-        MAX_INLINE_UNIFORM_TOTAL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformTotalSize"));
-        INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct8BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct8BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct8BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct4x8BitPackedUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct4x8BitPackedSignedAccelerated"));
-        INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct4x8BitPackedMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct16BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct16BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct16BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct32BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct32BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct32BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct64BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct64BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct64BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitSignedAccelerated"));
-        INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated"));
-        STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
-        STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
-        UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
-        MAX_BUFFER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBufferSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("minSubgroupSize"),
+		    JAVA_INT.withName("maxSubgroupSize"),
+		    JAVA_INT.withName("maxComputeWorkgroupSubgroups"),
+		    JAVA_INT.withName("requiredSubgroupSizeStages"),
+		    JAVA_INT.withName("maxInlineUniformBlockSize"),
+		    JAVA_INT.withName("maxPerStageDescriptorInlineUniformBlocks"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"),
+		    JAVA_INT.withName("maxDescriptorSetInlineUniformBlocks"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"),
+		    JAVA_INT.withName("maxInlineUniformTotalSize"),
+		    JAVA_INT.withName("integerDotProduct8BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct8BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct8BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProduct4x8BitPackedUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct4x8BitPackedSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct4x8BitPackedMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProduct16BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct16BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct16BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProduct32BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct32BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct32BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProduct64BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct64BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProduct64BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating8BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating16BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating32BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating64BitSignedAccelerated"),
+		    JAVA_INT.withName("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated"),
+		    JAVA_LONG.withName("storageTexelBufferOffsetAlignmentBytes"),
+		    JAVA_INT.withName("storageTexelBufferOffsetSingleTexelAlignment"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("uniformTexelBufferOffsetAlignmentBytes"),
+		    JAVA_INT.withName("uniformTexelBufferOffsetSingleTexelAlignment"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("maxBufferSize")
+		).withName("VkPhysicalDeviceVulkan13Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MIN_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSubgroupSize"));
+		MAX_SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubgroupSize"));
+		MAX_COMPUTE_WORKGROUP_SUBGROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
+		REQUIRED_SUBGROUP_SIZE_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiredSubgroupSizeStages"));
+		MAX_INLINE_UNIFORM_BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformBlockSize"));
+		MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
+		MAX_INLINE_UNIFORM_TOTAL_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInlineUniformTotalSize"));
+		INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct8BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct8BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct8BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct4x8BitPackedUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct4x8BitPackedSignedAccelerated"));
+		INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct4x8BitPackedMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct16BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct16BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct16BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct32BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct32BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct32BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct64BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct64BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProduct64BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated"));
+		STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
+		STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
+		MAX_BUFFER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBufferSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MIN_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSubgroupSize"));
+		MAX_SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubgroupSize"));
+		MAX_COMPUTE_WORKGROUP_SUBGROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxComputeWorkgroupSubgroups"));
+		REQUIRED_SUBGROUP_SIZE_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiredSubgroupSizeStages"));
+		MAX_INLINE_UNIFORM_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformBlockSize"));
+		MAX_PER_STAGE_DESCRIPTOR_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorInlineUniformBlocks"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetInlineUniformBlocks"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_INLINE_UNIFORM_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindInlineUniformBlocks"));
+		MAX_INLINE_UNIFORM_TOTAL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInlineUniformTotalSize"));
+		INTEGER_DOT_PRODUCT8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct8BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct8BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct8BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct4x8BitPackedUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct4x8BitPackedSignedAccelerated"));
+		INTEGER_DOT_PRODUCT4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct4x8BitPackedMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct16BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct16BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct16BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct32BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct32BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct32BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct64BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct64BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProduct64BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING8_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating8BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING4X8_BIT_PACKED_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating4x8BitPackedMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING16_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating16BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING32_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating32BitMixedSignednessAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_UNSIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitUnsignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_SIGNED_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitSignedAccelerated"));
+		INTEGER_DOT_PRODUCT_ACCUMULATING_SATURATING64_BIT_MIXED_SIGNEDNESS_ACCELERATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("integerDotProductAccumulatingSaturating64BitMixedSignednessAccelerated"));
+		STORAGE_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetAlignmentBytes"));
+		STORAGE_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageTexelBufferOffsetSingleTexelAlignment"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_ALIGNMENT_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetAlignmentBytes"));
+		UNIFORM_TEXEL_BUFFER_OFFSET_SINGLE_TEXEL_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformTexelBufferOffsetSingleTexelAlignment"));
+		MAX_BUFFER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBufferSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan13Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan13Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan13Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkan13Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan13Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan13Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan13Properties sType(int sType) {
@@ -813,5 +813,5 @@ public final class VkPhysicalDeviceVulkan13Properties
             segment -> new VkPhysicalDeviceVulkan13Properties(segment)
         );
     }
-    
+
 }

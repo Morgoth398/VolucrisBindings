@@ -27,69 +27,69 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaAllocationInfo
 		implements Struct<VmaAllocationInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MEMORY_TYPE_HANDLE;
-    public static final VarHandle DEVICE_MEMORY_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle P_MAPPED_DATA_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
-    public static final VarHandle P_NAME_HANDLE;
+	public static final VarHandle MEMORY_TYPE_HANDLE;
+	public static final VarHandle DEVICE_MEMORY_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle P_MAPPED_DATA_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle P_NAME_HANDLE;
 
-    public static final long MEMORY_TYPE_BYTE_OFFSET;
-    public static final long DEVICE_MEMORY_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long P_MAPPED_DATA_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
-    public static final long P_NAME_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_BYTE_OFFSET;
+	public static final long DEVICE_MEMORY_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long P_MAPPED_DATA_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long P_NAME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("memoryType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("deviceMemory"),
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("size"),
-            UNBOUNDED_ADDRESS.withName("pMappedData"),
-            UNBOUNDED_ADDRESS.withName("pUserData"),
-            UNBOUNDED_ADDRESS.withName("pName")
-        ).withName("VmaAllocationInfo").withByteAlignment(8);
-        
-        MEMORY_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryType"));
-        DEVICE_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMemory"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        P_MAPPED_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMappedData"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
-        
-        MEMORY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryType"));
-        DEVICE_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMemory"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        P_MAPPED_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMappedData"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("memoryType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("deviceMemory"),
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("size"),
+		    UNBOUNDED_ADDRESS.withName("pMappedData"),
+		    UNBOUNDED_ADDRESS.withName("pUserData"),
+		    UNBOUNDED_ADDRESS.withName("pName")
+		).withName("VmaAllocationInfo").withByteAlignment(8);
+		
+		MEMORY_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryType"));
+		DEVICE_MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMemory"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		P_MAPPED_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMappedData"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		P_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pName"));
+		
+		MEMORY_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryType"));
+		DEVICE_MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMemory"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		P_MAPPED_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMappedData"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		P_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pName"));
+		//@formatter:on
+	}
 
-    public VmaAllocationInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaAllocationInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaAllocationInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaAllocationInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaAllocationInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaAllocationInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #memoryType()
     public VmaAllocationInfo memoryType(int memoryType) {
@@ -287,5 +287,5 @@ public final class VmaAllocationInfo
             segment -> new VmaAllocationInfo(segment)
         );
     }
-    
+
 }

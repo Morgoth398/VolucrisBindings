@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1GopRemainingFrameInfoKHR
 		implements Struct<VkVideoEncodeAV1GopRemainingFrameInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USE_GOP_REMAINING_FRAMES_HANDLE;
-    public static final VarHandle GOP_REMAINING_INTRA_HANDLE;
-    public static final VarHandle GOP_REMAINING_PREDICTIVE_HANDLE;
-    public static final VarHandle GOP_REMAINING_BIPREDICTIVE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USE_GOP_REMAINING_FRAMES_HANDLE;
+	public static final VarHandle GOP_REMAINING_INTRA_HANDLE;
+	public static final VarHandle GOP_REMAINING_PREDICTIVE_HANDLE;
+	public static final VarHandle GOP_REMAINING_BIPREDICTIVE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USE_GOP_REMAINING_FRAMES_BYTE_OFFSET;
-    public static final long GOP_REMAINING_INTRA_BYTE_OFFSET;
-    public static final long GOP_REMAINING_PREDICTIVE_BYTE_OFFSET;
-    public static final long GOP_REMAINING_BIPREDICTIVE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USE_GOP_REMAINING_FRAMES_BYTE_OFFSET;
+	public static final long GOP_REMAINING_INTRA_BYTE_OFFSET;
+	public static final long GOP_REMAINING_PREDICTIVE_BYTE_OFFSET;
+	public static final long GOP_REMAINING_BIPREDICTIVE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("useGopRemainingFrames"),
-            JAVA_INT.withName("gopRemainingIntra"),
-            JAVA_INT.withName("gopRemainingPredictive"),
-            JAVA_INT.withName("gopRemainingBipredictive")
-        ).withName("VkVideoEncodeAV1GopRemainingFrameInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USE_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useGopRemainingFrames"));
-        GOP_REMAINING_INTRA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingIntra"));
-        GOP_REMAINING_PREDICTIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingPredictive"));
-        GOP_REMAINING_BIPREDICTIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingBipredictive"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USE_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useGopRemainingFrames"));
-        GOP_REMAINING_INTRA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingIntra"));
-        GOP_REMAINING_PREDICTIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingPredictive"));
-        GOP_REMAINING_BIPREDICTIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingBipredictive"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("useGopRemainingFrames"),
+		    JAVA_INT.withName("gopRemainingIntra"),
+		    JAVA_INT.withName("gopRemainingPredictive"),
+		    JAVA_INT.withName("gopRemainingBipredictive")
+		).withName("VkVideoEncodeAV1GopRemainingFrameInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USE_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("useGopRemainingFrames"));
+		GOP_REMAINING_INTRA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingIntra"));
+		GOP_REMAINING_PREDICTIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingPredictive"));
+		GOP_REMAINING_BIPREDICTIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopRemainingBipredictive"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USE_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("useGopRemainingFrames"));
+		GOP_REMAINING_INTRA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingIntra"));
+		GOP_REMAINING_PREDICTIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingPredictive"));
+		GOP_REMAINING_BIPREDICTIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopRemainingBipredictive"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1GopRemainingFrameInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1GopRemainingFrameInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1GopRemainingFrameInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1GopRemainingFrameInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1GopRemainingFrameInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1GopRemainingFrameInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1GopRemainingFrameInfoKHR sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVideoEncodeAV1GopRemainingFrameInfoKHR
             segment -> new VkVideoEncodeAV1GopRemainingFrameInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,80 +21,80 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyDescriptorSet
 		implements Struct<VkCopyDescriptorSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_SET_HANDLE;
-    public static final VarHandle SRC_BINDING_HANDLE;
-    public static final VarHandle SRC_ARRAY_ELEMENT_HANDLE;
-    public static final VarHandle DST_SET_HANDLE;
-    public static final VarHandle DST_BINDING_HANDLE;
-    public static final VarHandle DST_ARRAY_ELEMENT_HANDLE;
-    public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_SET_HANDLE;
+	public static final VarHandle SRC_BINDING_HANDLE;
+	public static final VarHandle SRC_ARRAY_ELEMENT_HANDLE;
+	public static final VarHandle DST_SET_HANDLE;
+	public static final VarHandle DST_BINDING_HANDLE;
+	public static final VarHandle DST_ARRAY_ELEMENT_HANDLE;
+	public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_SET_BYTE_OFFSET;
-    public static final long SRC_BINDING_BYTE_OFFSET;
-    public static final long SRC_ARRAY_ELEMENT_BYTE_OFFSET;
-    public static final long DST_SET_BYTE_OFFSET;
-    public static final long DST_BINDING_BYTE_OFFSET;
-    public static final long DST_ARRAY_ELEMENT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_SET_BYTE_OFFSET;
+	public static final long SRC_BINDING_BYTE_OFFSET;
+	public static final long SRC_ARRAY_ELEMENT_BYTE_OFFSET;
+	public static final long DST_SET_BYTE_OFFSET;
+	public static final long DST_BINDING_BYTE_OFFSET;
+	public static final long DST_ARRAY_ELEMENT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("srcSet"),
-            JAVA_INT.withName("srcBinding"),
-            JAVA_INT.withName("srcArrayElement"),
-            UNBOUNDED_ADDRESS.withName("dstSet"),
-            JAVA_INT.withName("dstBinding"),
-            JAVA_INT.withName("dstArrayElement"),
-            JAVA_INT.withName("descriptorCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCopyDescriptorSet").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcSet"));
-        SRC_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBinding"));
-        SRC_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcArrayElement"));
-        DST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstSet"));
-        DST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBinding"));
-        DST_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstArrayElement"));
-        DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSet"));
-        SRC_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBinding"));
-        SRC_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcArrayElement"));
-        DST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSet"));
-        DST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBinding"));
-        DST_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstArrayElement"));
-        DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("srcSet"),
+		    JAVA_INT.withName("srcBinding"),
+		    JAVA_INT.withName("srcArrayElement"),
+		    UNBOUNDED_ADDRESS.withName("dstSet"),
+		    JAVA_INT.withName("dstBinding"),
+		    JAVA_INT.withName("dstArrayElement"),
+		    JAVA_INT.withName("descriptorCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCopyDescriptorSet").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcSet"));
+		SRC_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBinding"));
+		SRC_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcArrayElement"));
+		DST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstSet"));
+		DST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBinding"));
+		DST_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstArrayElement"));
+		DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSet"));
+		SRC_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBinding"));
+		SRC_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcArrayElement"));
+		DST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSet"));
+		DST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBinding"));
+		DST_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstArrayElement"));
+		DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
+		//@formatter:on
+	}
 
-    public VkCopyDescriptorSet() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyDescriptorSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyDescriptorSet(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCopyDescriptorSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyDescriptorSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyDescriptorSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCopyDescriptorSet sType(int sType) {
@@ -252,5 +252,5 @@ public final class VkCopyDescriptorSet
             segment -> new VkCopyDescriptorSet(segment)
         );
     }
-    
+
 }

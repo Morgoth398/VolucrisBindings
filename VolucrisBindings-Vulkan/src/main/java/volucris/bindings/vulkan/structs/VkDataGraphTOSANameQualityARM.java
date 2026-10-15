@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDataGraphTOSANameQualityARM
 		implements Struct<VkDataGraphTOSANameQualityARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle NAME_HANDLE;
-    public static final VarHandle QUALITY_FLAGS_HANDLE;
+	public static final VarHandle NAME_HANDLE;
+	public static final VarHandle QUALITY_FLAGS_HANDLE;
 
-    public static final long NAME_BYTE_OFFSET;
-    public static final long QUALITY_FLAGS_BYTE_OFFSET;
+	public static final long NAME_BYTE_OFFSET;
+	public static final long QUALITY_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(128, JAVA_BYTE).withName("name"),
-            JAVA_INT.withName("qualityFlags")
-        ).withName("VkDataGraphTOSANameQualityARM").withByteAlignment(4);
-        
-        NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
-        QUALITY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qualityFlags"));
-        
-        NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
-        QUALITY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qualityFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(128, JAVA_BYTE).withName("name"),
+		    JAVA_INT.withName("qualityFlags")
+		).withName("VkDataGraphTOSANameQualityARM").withByteAlignment(4);
+		
+		NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
+		QUALITY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qualityFlags"));
+		
+		NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
+		QUALITY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qualityFlags"));
+		//@formatter:on
+	}
 
-    public VkDataGraphTOSANameQualityARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphTOSANameQualityARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphTOSANameQualityARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphTOSANameQualityARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphTOSANameQualityARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphTOSANameQualityARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #name(int)
     public VkDataGraphTOSANameQualityARM name(byte name, int index0) {
@@ -67,6 +67,10 @@ public final class VkDataGraphTOSANameQualityARM
     	return (byte) NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String name() {
+        return segment.getString(NAME_BYTE_OFFSET);
+    }
+    
     /// @see #qualityFlags()
     public VkDataGraphTOSANameQualityARM qualityFlags(int qualityFlags) {
     	QUALITY_FLAGS_HANDLE.set(segment, 0L, qualityFlags);
@@ -75,10 +79,6 @@ public final class VkDataGraphTOSANameQualityARM
     
     public int qualityFlags() {
     	return (int) QUALITY_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
-    public String name() {
-        return segment.getString(NAME_BYTE_OFFSET);
     }
     
     @Override
@@ -132,5 +132,5 @@ public final class VkDataGraphTOSANameQualityARM
             segment -> new VkDataGraphTOSANameQualityARM(segment)
         );
     }
-    
+
 }

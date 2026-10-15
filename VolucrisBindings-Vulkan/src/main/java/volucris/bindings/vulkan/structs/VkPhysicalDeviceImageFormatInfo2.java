@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageFormatInfo2
 		implements Struct<VkPhysicalDeviceImageFormatInfo2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle TILING_HANDLE;
-    public static final VarHandle USAGE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle TILING_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long TILING_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long TILING_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("tiling"),
-            JAVA_INT.withName("usage"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceImageFormatInfo2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        TILING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tiling"));
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        TILING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tiling"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("tiling"),
+		    JAVA_INT.withName("usage"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceImageFormatInfo2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		TILING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tiling"));
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		TILING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tiling"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageFormatInfo2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageFormatInfo2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageFormatInfo2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceImageFormatInfo2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageFormatInfo2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageFormatInfo2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageFormatInfo2 sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceImageFormatInfo2
             segment -> new VkPhysicalDeviceImageFormatInfo2(segment)
         );
     }
-    
+
 }

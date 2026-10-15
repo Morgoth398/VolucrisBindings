@@ -22,66 +22,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGraphicsPipelineShaderGroupsCreateInfoNV
 		implements Struct<VkGraphicsPipelineShaderGroupsCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle GROUP_COUNT_HANDLE;
-    public static final VarHandle P_GROUPS_HANDLE;
-    public static final VarHandle PIPELINE_COUNT_HANDLE;
-    public static final VarHandle P_PIPELINES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle GROUP_COUNT_HANDLE;
+	public static final VarHandle P_GROUPS_HANDLE;
+	public static final VarHandle PIPELINE_COUNT_HANDLE;
+	public static final VarHandle P_PIPELINES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long GROUP_COUNT_BYTE_OFFSET;
-    public static final long P_GROUPS_BYTE_OFFSET;
-    public static final long PIPELINE_COUNT_BYTE_OFFSET;
-    public static final long P_PIPELINES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long GROUP_COUNT_BYTE_OFFSET;
+	public static final long P_GROUPS_BYTE_OFFSET;
+	public static final long PIPELINE_COUNT_BYTE_OFFSET;
+	public static final long P_PIPELINES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("groupCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pGroups"),
-            JAVA_INT.withName("pipelineCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPipelines")
-        ).withName("VkGraphicsPipelineShaderGroupsCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCount"));
-        P_GROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGroups"));
-        PIPELINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCount"));
-        P_PIPELINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelines"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCount"));
-        P_GROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGroups"));
-        PIPELINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCount"));
-        P_PIPELINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelines"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("groupCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pGroups"),
+		    JAVA_INT.withName("pipelineCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPipelines")
+		).withName("VkGraphicsPipelineShaderGroupsCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCount"));
+		P_GROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGroups"));
+		PIPELINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCount"));
+		P_PIPELINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelines"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCount"));
+		P_GROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGroups"));
+		PIPELINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCount"));
+		P_PIPELINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelines"));
+		//@formatter:on
+	}
 
-    public VkGraphicsPipelineShaderGroupsCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGraphicsPipelineShaderGroupsCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGraphicsPipelineShaderGroupsCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGraphicsPipelineShaderGroupsCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGraphicsPipelineShaderGroupsCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGraphicsPipelineShaderGroupsCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGraphicsPipelineShaderGroupsCreateInfoNV sType(int sType) {
@@ -209,5 +209,5 @@ public final class VkGraphicsPipelineShaderGroupsCreateInfoNV
             segment -> new VkGraphicsPipelineShaderGroupsCreateInfoNV(segment)
         );
     }
-    
+
 }

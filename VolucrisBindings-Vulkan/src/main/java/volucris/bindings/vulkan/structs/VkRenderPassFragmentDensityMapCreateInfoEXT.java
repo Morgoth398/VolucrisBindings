@@ -22,50 +22,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassFragmentDensityMapCreateInfoEXT
 		implements Struct<VkRenderPassFragmentDensityMapCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_MAP_ATTACHMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_MAP_ATTACHMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkAttachmentReference fragmentDensityMapAttachment;
+	private final VkAttachmentReference fragmentDensityMapAttachment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkAttachmentReference.LAYOUT.withName("fragmentDensityMapAttachment")
-        ).withName("VkRenderPassFragmentDensityMapCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_MAP_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMapAttachment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkAttachmentReference.LAYOUT.withName("fragmentDensityMapAttachment")
+		).withName("VkRenderPassFragmentDensityMapCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_MAP_ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMapAttachment"));
+		//@formatter:on
+	}
 
-    public VkRenderPassFragmentDensityMapCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassFragmentDensityMapCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassFragmentDensityMapCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        fragmentDensityMapAttachment = new VkAttachmentReference(segment.asSlice(FRAGMENT_DENSITY_MAP_ATTACHMENT_BYTE_OFFSET, VkAttachmentReference.LAYOUT));
-    }
+	public VkRenderPassFragmentDensityMapCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassFragmentDensityMapCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassFragmentDensityMapCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    fragmentDensityMapAttachment = new VkAttachmentReference(segment.asSlice(FRAGMENT_DENSITY_MAP_ATTACHMENT_BYTE_OFFSET, VkAttachmentReference.LAYOUT));
+	}
 
     /// @see #sType()
     public VkRenderPassFragmentDensityMapCreateInfoEXT sType(int sType) {
@@ -159,5 +159,5 @@ public final class VkRenderPassFragmentDensityMapCreateInfoEXT
             segment -> new VkRenderPassFragmentDensityMapCreateInfoEXT(segment)
         );
     }
-    
+
 }

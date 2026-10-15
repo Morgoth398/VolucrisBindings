@@ -22,45 +22,45 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayModePropertiesKHR
 		implements Struct<VkDisplayModePropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DISPLAY_MODE_HANDLE;
+	public static final VarHandle DISPLAY_MODE_HANDLE;
 
-    public static final long DISPLAY_MODE_BYTE_OFFSET;
-    public static final long PARAMETERS_BYTE_OFFSET;
+	public static final long DISPLAY_MODE_BYTE_OFFSET;
+	public static final long PARAMETERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDisplayModeParametersKHR parameters;
+	private final VkDisplayModeParametersKHR parameters;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("displayMode"),
-            VkDisplayModeParametersKHR.LAYOUT.withName("parameters"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDisplayModePropertiesKHR").withByteAlignment(8);
-        
-        DISPLAY_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("displayMode"));
-        
-        DISPLAY_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayMode"));
-        PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("parameters"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("displayMode"),
+		    VkDisplayModeParametersKHR.LAYOUT.withName("parameters"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDisplayModePropertiesKHR").withByteAlignment(8);
+		
+		DISPLAY_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("displayMode"));
+		
+		DISPLAY_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("displayMode"));
+		PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("parameters"));
+		//@formatter:on
+	}
 
-    public VkDisplayModePropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayModePropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayModePropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        parameters = new VkDisplayModeParametersKHR(segment.asSlice(PARAMETERS_BYTE_OFFSET, VkDisplayModeParametersKHR.LAYOUT));
-    }
+	public VkDisplayModePropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayModePropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayModePropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    parameters = new VkDisplayModeParametersKHR(segment.asSlice(PARAMETERS_BYTE_OFFSET, VkDisplayModeParametersKHR.LAYOUT));
+	}
 
     /// @see #displayMode()
     public VkDisplayModePropertiesKHR displayMode(VkDisplayModeKHR displayMode) {
@@ -144,5 +144,5 @@ public final class VkDisplayModePropertiesKHR
             segment -> new VkDisplayModePropertiesKHR(segment)
         );
     }
-    
+
 }

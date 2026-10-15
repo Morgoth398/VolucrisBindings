@@ -22,90 +22,106 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoH264PictureParameterSet
 		implements Struct<StdVideoH264PictureParameterSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SEQ_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle PIC_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE;
-    public static final VarHandle NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE;
-    public static final VarHandle WEIGHTED_BIPRED_IDC_HANDLE;
-    public static final VarHandle PIC_INIT_QP_MINUS26_HANDLE;
-    public static final VarHandle PIC_INIT_QS_MINUS26_HANDLE;
-    public static final VarHandle CHROMA_QP_INDEX_OFFSET_HANDLE;
-    public static final VarHandle SECOND_CHROMA_QP_INDEX_OFFSET_HANDLE;
-    public static final VarHandle P_SCALING_LISTS_HANDLE;
+	public static final VarHandle SEQ_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle PIC_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE;
+	public static final VarHandle NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE;
+	public static final VarHandle WEIGHTED_BIPRED_IDC_HANDLE;
+	public static final VarHandle PIC_INIT_QP_MINUS26_HANDLE;
+	public static final VarHandle PIC_INIT_QS_MINUS26_HANDLE;
+	public static final VarHandle CHROMA_QP_INDEX_OFFSET_HANDLE;
+	public static final VarHandle SECOND_CHROMA_QP_INDEX_OFFSET_HANDLE;
+	public static final VarHandle P_SCALING_LISTS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long PIC_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
-    public static final long NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
-    public static final long WEIGHTED_BIPRED_IDC_BYTE_OFFSET;
-    public static final long PIC_INIT_QP_MINUS26_BYTE_OFFSET;
-    public static final long PIC_INIT_QS_MINUS26_BYTE_OFFSET;
-    public static final long CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET;
-    public static final long SECOND_CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET;
-    public static final long P_SCALING_LISTS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long PIC_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
+	public static final long NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET;
+	public static final long WEIGHTED_BIPRED_IDC_BYTE_OFFSET;
+	public static final long PIC_INIT_QP_MINUS26_BYTE_OFFSET;
+	public static final long PIC_INIT_QS_MINUS26_BYTE_OFFSET;
+	public static final long CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET;
+	public static final long SECOND_CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET;
+	public static final long P_SCALING_LISTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH264PpsFlags flags;
+	private final StdVideoH264PpsFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH264PpsFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("seq_parameter_set_id"),
-            JAVA_BYTE.withName("pic_parameter_set_id"),
-            JAVA_BYTE.withName("num_ref_idx_l0_default_active_minus1"),
-            JAVA_BYTE.withName("num_ref_idx_l1_default_active_minus1"),
-            JAVA_INT.withName("weighted_bipred_idc"),
-            JAVA_BYTE.withName("pic_init_qp_minus26"),
-            JAVA_BYTE.withName("pic_init_qs_minus26"),
-            JAVA_BYTE.withName("chroma_qp_index_offset"),
-            JAVA_BYTE.withName("second_chroma_qp_index_offset"),
-            UNBOUNDED_ADDRESS.withName("pScalingLists")
-        ).withName("StdVideoH264PictureParameterSet").withByteAlignment(8);
-        
-        SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_parameter_set_id"));
-        PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_parameter_set_id"));
-        NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
-        NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
-        WEIGHTED_BIPRED_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("weighted_bipred_idc"));
-        PIC_INIT_QP_MINUS26_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_init_qp_minus26"));
-        PIC_INIT_QS_MINUS26_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_init_qs_minus26"));
-        CHROMA_QP_INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_qp_index_offset"));
-        SECOND_CHROMA_QP_INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("second_chroma_qp_index_offset"));
-        P_SCALING_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pScalingLists"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_parameter_set_id"));
-        PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_parameter_set_id"));
-        NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
-        NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
-        WEIGHTED_BIPRED_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("weighted_bipred_idc"));
-        PIC_INIT_QP_MINUS26_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_init_qp_minus26"));
-        PIC_INIT_QS_MINUS26_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_init_qs_minus26"));
-        CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_qp_index_offset"));
-        SECOND_CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("second_chroma_qp_index_offset"));
-        P_SCALING_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pScalingLists"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH264PpsFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("seq_parameter_set_id"),
+		    JAVA_BYTE.withName("pic_parameter_set_id"),
+		    JAVA_BYTE.withName("num_ref_idx_l0_default_active_minus1"),
+		    JAVA_BYTE.withName("num_ref_idx_l1_default_active_minus1"),
+		    JAVA_INT.withName("weighted_bipred_idc"),
+		    JAVA_BYTE.withName("pic_init_qp_minus26"),
+		    JAVA_BYTE.withName("pic_init_qs_minus26"),
+		    JAVA_BYTE.withName("chroma_qp_index_offset"),
+		    JAVA_BYTE.withName("second_chroma_qp_index_offset"),
+		    UNBOUNDED_ADDRESS.withName("pScalingLists")
+		).withName("StdVideoH264PictureParameterSet").withByteAlignment(8);
+		
+		SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("seq_parameter_set_id"));
+		PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_parameter_set_id"));
+		NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
+		NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
+		WEIGHTED_BIPRED_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("weighted_bipred_idc"));
+		PIC_INIT_QP_MINUS26_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_init_qp_minus26"));
+		PIC_INIT_QS_MINUS26_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_init_qs_minus26"));
+		CHROMA_QP_INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_qp_index_offset"));
+		SECOND_CHROMA_QP_INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("second_chroma_qp_index_offset"));
+		P_SCALING_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pScalingLists"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("seq_parameter_set_id"));
+		PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_parameter_set_id"));
+		NUM_REF_IDX_L0_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l0_default_active_minus1"));
+		NUM_REF_IDX_L1_DEFAULT_ACTIVE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_ref_idx_l1_default_active_minus1"));
+		WEIGHTED_BIPRED_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("weighted_bipred_idc"));
+		PIC_INIT_QP_MINUS26_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_init_qp_minus26"));
+		PIC_INIT_QS_MINUS26_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_init_qs_minus26"));
+		CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_qp_index_offset"));
+		SECOND_CHROMA_QP_INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("second_chroma_qp_index_offset"));
+		P_SCALING_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pScalingLists"));
+		//@formatter:on
+	}
 
-    public StdVideoH264PictureParameterSet() {
-        this(Arena.ofAuto());
+	public StdVideoH264PictureParameterSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH264PictureParameterSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH264PictureParameterSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH264PpsFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH264PpsFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH264PictureParameterSet flags(Consumer<StdVideoH264PpsFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH264PictureParameterSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH264PictureParameterSet flags(StdVideoH264PpsFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH264PictureParameterSet(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH264PpsFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH264PpsFlags.LAYOUT));
+    public StdVideoH264PpsFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #seq_parameter_set_id()
     public StdVideoH264PictureParameterSet seq_parameter_set_id(byte seq_parameter_set_id) {
     	SEQ_PARAMETER_SET_ID_HANDLE.set(segment, 0L, seq_parameter_set_id);
@@ -211,22 +227,6 @@ public final class StdVideoH264PictureParameterSet
     	return new StdVideoH264ScalingLists(segment);
     }
     
-    /// @see #flags()
-    public StdVideoH264PictureParameterSet flags(Consumer<StdVideoH264PpsFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH264PictureParameterSet flags(StdVideoH264PpsFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH264PpsFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH264PictureParameterSet set(StdVideoH264PictureParameterSet other) {
         return set(other.segment);
@@ -278,5 +278,5 @@ public final class StdVideoH264PictureParameterSet
             segment -> new StdVideoH264PictureParameterSet(segment)
         );
     }
-    
+
 }

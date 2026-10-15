@@ -65,6 +65,8 @@ native-functions:
     string-parameters:
       - file_name
   - name: clang_createTranslationUnitFromSourceFile
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - source_filename
   - name: clang_createTranslationUnit
@@ -74,18 +76,24 @@ native-functions:
     string-parameters:
       - ast_filename
   - name: clang_parseTranslationUnit
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - source_filename
     nullable-parameters:
       - unsaved_files
       - command_line_args
   - name: clang_parseTranslationUnit2
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - source_filename
     nullable-parameters:
       - unsaved_files
       - command_line_args
   - name: clang_parseTranslationUnit2FullArgv
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - source_filename
     nullable-parameters:
@@ -116,21 +124,45 @@ native-functions:
     string-parameters:
       - name
   - name: clang_codeCompleteAt
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - complete_filename
   - name: clang_EvalResult_getAsStr
     string-return-type: true
   - name: clang_indexSourceFile
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - source_filename
     nullable-parameters:
       - command_line_args
       - unsaved_files
   - name: clang_indexSourceFileFullArgv
+    struct-arrays:
+      - unsaved_files
     string-parameters:
       - source_filename
     nullable-parameters:
       - command_line_args
       - unsaved_files
-
+  - name: clang_reparseTranslationUnit
+    struct-arrays:
+      - unsaved_files
+  - name: clang_annotateTokens
+    struct-arrays:
+      - Tokens
+      - Cursors
+  - name: clang_disposeTokens
+    struct-arrays:
+      - Tokens
+  - name: clang_sortCodeCompletionResults
+    struct-arrays:
+      - Results
+  - name: clang_disposeOverriddenCursors
+    struct-arrays:
+      - overridden
+  - name: clang_getCursorPlatformAvailability
+    struct-arrays:
+      - availability
 native-function-pointers:

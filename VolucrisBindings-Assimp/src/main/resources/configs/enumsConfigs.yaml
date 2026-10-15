@@ -3,3 +3,7 @@ directory: src/main/java/volucris/bindings/assimp/enums
 generate-all: true
 transform-constants-names: true
 configs:
+  - name: aiPostProcessSteps
+    name-mappings:
+      aiProcess_SortByPType : AI_PROCESS_SORT_BY_PTYPE
+      aiProcess_FlipUVs : AI_PROCESS_FLIP_UVS

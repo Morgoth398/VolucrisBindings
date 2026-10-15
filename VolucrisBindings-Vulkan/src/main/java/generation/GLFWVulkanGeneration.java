@@ -17,7 +17,6 @@ public class GLFWVulkanGeneration {
 				.resolve("src/main/resources/nativeSources/glfw-3.4/include/GLFW/glfw.h");
 		
 		HeaderFile headerFile = new HeaderFile(glfwHeaders.toString(), 0, vulkanIncludeDirectory);
-		headerFile.printFunctions(f -> f.getName().equals("glfwGetInstanceProcAddress"));
 		
 		Generator generator = new Generator("src/main/resources/configs/globalConfig.yaml", headerFile);
 

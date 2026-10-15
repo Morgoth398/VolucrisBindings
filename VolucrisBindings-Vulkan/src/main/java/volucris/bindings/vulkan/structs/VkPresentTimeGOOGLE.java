@@ -19,44 +19,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPresentTimeGOOGLE
 		implements Struct<VkPresentTimeGOOGLE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PRESENT_ID_HANDLE;
-    public static final VarHandle DESIRED_PRESENT_TIME_HANDLE;
+	public static final VarHandle PRESENT_ID_HANDLE;
+	public static final VarHandle DESIRED_PRESENT_TIME_HANDLE;
 
-    public static final long PRESENT_ID_BYTE_OFFSET;
-    public static final long DESIRED_PRESENT_TIME_BYTE_OFFSET;
+	public static final long PRESENT_ID_BYTE_OFFSET;
+	public static final long DESIRED_PRESENT_TIME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("presentID"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("desiredPresentTime")
-        ).withName("VkPresentTimeGOOGLE").withByteAlignment(8);
-        
-        PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentID"));
-        DESIRED_PRESENT_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("desiredPresentTime"));
-        
-        PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentID"));
-        DESIRED_PRESENT_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("desiredPresentTime"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("presentID"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("desiredPresentTime")
+		).withName("VkPresentTimeGOOGLE").withByteAlignment(8);
+		
+		PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentID"));
+		DESIRED_PRESENT_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("desiredPresentTime"));
+		
+		PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentID"));
+		DESIRED_PRESENT_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("desiredPresentTime"));
+		//@formatter:on
+	}
 
-    public VkPresentTimeGOOGLE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentTimeGOOGLE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentTimeGOOGLE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentTimeGOOGLE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentTimeGOOGLE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentTimeGOOGLE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #presentID()
     public VkPresentTimeGOOGLE presentID(int presentID) {
@@ -129,5 +129,5 @@ public final class VkPresentTimeGOOGLE
             segment -> new VkPresentTimeGOOGLE(segment)
         );
     }
-    
+
 }

@@ -21,53 +21,53 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkResourceDescriptorDataEXT
 		implements Struct<VkResourceDescriptorDataEXT> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle P_IMAGE_HANDLE;
-    public static final VarHandle P_TEXEL_BUFFER_HANDLE;
-    public static final VarHandle P_ADDRESS_RANGE_HANDLE;
-    public static final VarHandle P_TENSOR_ARM_HANDLE;
+	public static final VarHandle P_IMAGE_HANDLE;
+	public static final VarHandle P_TEXEL_BUFFER_HANDLE;
+	public static final VarHandle P_ADDRESS_RANGE_HANDLE;
+	public static final VarHandle P_TENSOR_ARM_HANDLE;
 
-    public static final long P_IMAGE_BYTE_OFFSET;
-    public static final long P_TEXEL_BUFFER_BYTE_OFFSET;
-    public static final long P_ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long P_TENSOR_ARM_BYTE_OFFSET;
+	public static final long P_IMAGE_BYTE_OFFSET;
+	public static final long P_TEXEL_BUFFER_BYTE_OFFSET;
+	public static final long P_ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long P_TENSOR_ARM_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            UNBOUNDED_ADDRESS.withName("pImage"),
-            UNBOUNDED_ADDRESS.withName("pTexelBuffer"),
-            UNBOUNDED_ADDRESS.withName("pAddressRange"),
-            UNBOUNDED_ADDRESS.withName("pTensorARM")
-        ).withName("VkResourceDescriptorDataEXT").withByteAlignment(8);
-        
-        P_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImage"));
-        P_TEXEL_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTexelBuffer"));
-        P_ADDRESS_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAddressRange"));
-        P_TENSOR_ARM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTensorARM"));
-        
-        P_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImage"));
-        P_TEXEL_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTexelBuffer"));
-        P_ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAddressRange"));
-        P_TENSOR_ARM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTensorARM"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    UNBOUNDED_ADDRESS.withName("pImage"),
+		    UNBOUNDED_ADDRESS.withName("pTexelBuffer"),
+		    UNBOUNDED_ADDRESS.withName("pAddressRange"),
+		    UNBOUNDED_ADDRESS.withName("pTensorARM")
+		).withName("VkResourceDescriptorDataEXT").withByteAlignment(8);
+		
+		P_IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImage"));
+		P_TEXEL_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTexelBuffer"));
+		P_ADDRESS_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAddressRange"));
+		P_TENSOR_ARM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTensorARM"));
+		
+		P_IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImage"));
+		P_TEXEL_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTexelBuffer"));
+		P_ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAddressRange"));
+		P_TENSOR_ARM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTensorARM"));
+		//@formatter:on
+	}
 
-    public VkResourceDescriptorDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkResourceDescriptorDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkResourceDescriptorDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkResourceDescriptorDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkResourceDescriptorDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkResourceDescriptorDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pImage()
     public VkResourceDescriptorDataEXT pImage(VkImageDescriptorInfoEXT pImage) {
@@ -180,5 +180,5 @@ public final class VkResourceDescriptorDataEXT
             segment -> new VkResourceDescriptorDataEXT(segment)
         );
     }
-    
+
 }

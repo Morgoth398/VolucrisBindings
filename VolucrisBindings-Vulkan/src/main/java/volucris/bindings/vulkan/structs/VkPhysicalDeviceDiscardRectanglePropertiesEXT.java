@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDiscardRectanglePropertiesEXT
 		implements Struct<VkPhysicalDeviceDiscardRectanglePropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_DISCARD_RECTANGLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_DISCARD_RECTANGLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_DISCARD_RECTANGLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_DISCARD_RECTANGLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxDiscardRectangles"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDiscardRectanglePropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_DISCARD_RECTANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDiscardRectangles"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_DISCARD_RECTANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDiscardRectangles"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxDiscardRectangles"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDiscardRectanglePropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_DISCARD_RECTANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDiscardRectangles"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_DISCARD_RECTANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDiscardRectangles"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDiscardRectanglePropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDiscardRectanglePropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDiscardRectanglePropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDiscardRectanglePropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDiscardRectanglePropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDiscardRectanglePropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDiscardRectanglePropertiesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDiscardRectanglePropertiesEXT
             segment -> new VkPhysicalDeviceDiscardRectanglePropertiesEXT(segment)
         );
     }
-    
+
 }

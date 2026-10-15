@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkConditionalRenderingBeginInfo2EXT
 		implements Struct<VkConditionalRenderingBeginInfo2EXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADDRESS_FLAGS_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADDRESS_FLAGS_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long ADDRESS_FLAGS_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long ADDRESS_FLAGS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR addressRange;
+	private final VkDeviceAddressRangeKHR addressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
-            JAVA_INT.withName("addressFlags"),
-            JAVA_INT.withName("flags")
-        ).withName("VkConditionalRenderingBeginInfo2EXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
+		    JAVA_INT.withName("addressFlags"),
+		    JAVA_INT.withName("flags")
+		).withName("VkConditionalRenderingBeginInfo2EXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkConditionalRenderingBeginInfo2EXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkConditionalRenderingBeginInfo2EXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkConditionalRenderingBeginInfo2EXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkConditionalRenderingBeginInfo2EXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkConditionalRenderingBeginInfo2EXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkConditionalRenderingBeginInfo2EXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkConditionalRenderingBeginInfo2EXT sType(int sType) {
@@ -102,6 +102,22 @@ public final class VkConditionalRenderingBeginInfo2EXT
     	return segment;
     }
     
+    /// @see #addressRange()
+    public VkConditionalRenderingBeginInfo2EXT addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
+    	consumer.accept(addressRange);
+    	return this;
+    }
+    
+    /// @see #addressRange()
+    public VkConditionalRenderingBeginInfo2EXT addressRange(VkDeviceAddressRangeKHR other) {
+    	addressRange.set(other);
+    	return this;
+    }
+    
+    public VkDeviceAddressRangeKHR addressRange() {
+    	return addressRange;
+    }
+    
     /// @see #addressFlags()
     public VkConditionalRenderingBeginInfo2EXT addressFlags(int addressFlags) {
     	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
@@ -120,22 +136,6 @@ public final class VkConditionalRenderingBeginInfo2EXT
     
     public int flags() {
     	return (int) FLAGS_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #addressRange()
-    public VkConditionalRenderingBeginInfo2EXT addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
-    	consumer.accept(addressRange);
-    	return this;
-    }
-    
-    /// @see #addressRange()
-    public VkConditionalRenderingBeginInfo2EXT addressRange(VkDeviceAddressRangeKHR other) {
-    	addressRange.set(other);
-    	return this;
-    }
-    
-    public VkDeviceAddressRangeKHR addressRange() {
-    	return addressRange;
     }
     
     @Override
@@ -189,5 +189,5 @@ public final class VkConditionalRenderingBeginInfo2EXT
             segment -> new VkConditionalRenderingBeginInfo2EXT(segment)
         );
     }
-    
+
 }

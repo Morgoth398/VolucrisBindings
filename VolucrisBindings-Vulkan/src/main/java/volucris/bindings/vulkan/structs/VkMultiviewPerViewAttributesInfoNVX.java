@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMultiviewPerViewAttributesInfoNVX
 		implements Struct<VkMultiviewPerViewAttributesInfoNVX> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PER_VIEW_ATTRIBUTES_HANDLE;
-    public static final VarHandle PER_VIEW_ATTRIBUTES_POSITION_XONLY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PER_VIEW_ATTRIBUTES_HANDLE;
+	public static final VarHandle PER_VIEW_ATTRIBUTES_POSITION_XONLY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PER_VIEW_ATTRIBUTES_BYTE_OFFSET;
-    public static final long PER_VIEW_ATTRIBUTES_POSITION_XONLY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PER_VIEW_ATTRIBUTES_BYTE_OFFSET;
+	public static final long PER_VIEW_ATTRIBUTES_POSITION_XONLY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("perViewAttributes"),
-            JAVA_INT.withName("perViewAttributesPositionXOnly")
-        ).withName("VkMultiviewPerViewAttributesInfoNVX").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PER_VIEW_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perViewAttributes"));
-        PER_VIEW_ATTRIBUTES_POSITION_XONLY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perViewAttributesPositionXOnly"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PER_VIEW_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perViewAttributes"));
-        PER_VIEW_ATTRIBUTES_POSITION_XONLY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perViewAttributesPositionXOnly"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("perViewAttributes"),
+		    JAVA_INT.withName("perViewAttributesPositionXOnly")
+		).withName("VkMultiviewPerViewAttributesInfoNVX").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PER_VIEW_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perViewAttributes"));
+		PER_VIEW_ATTRIBUTES_POSITION_XONLY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perViewAttributesPositionXOnly"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PER_VIEW_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perViewAttributes"));
+		PER_VIEW_ATTRIBUTES_POSITION_XONLY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perViewAttributesPositionXOnly"));
+		//@formatter:on
+	}
 
-    public VkMultiviewPerViewAttributesInfoNVX() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMultiviewPerViewAttributesInfoNVX(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMultiviewPerViewAttributesInfoNVX(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMultiviewPerViewAttributesInfoNVX() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMultiviewPerViewAttributesInfoNVX(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMultiviewPerViewAttributesInfoNVX(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMultiviewPerViewAttributesInfoNVX sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkMultiviewPerViewAttributesInfoNVX
             segment -> new VkMultiviewPerViewAttributesInfoNVX(segment)
         );
     }
-    
+
 }

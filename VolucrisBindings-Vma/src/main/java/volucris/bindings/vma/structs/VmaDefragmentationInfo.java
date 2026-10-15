@@ -26,65 +26,65 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaDefragmentationInfo
 		implements Struct<VmaDefragmentationInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle POOL_HANDLE;
-    public static final VarHandle MAX_BYTES_PER_PASS_HANDLE;
-    public static final VarHandle MAX_ALLOCATIONS_PER_PASS_HANDLE;
-    public static final VarHandle PFN_BREAK_CALLBACK_HANDLE;
-    public static final VarHandle P_BREAK_CALLBACK_USER_DATA_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle POOL_HANDLE;
+	public static final VarHandle MAX_BYTES_PER_PASS_HANDLE;
+	public static final VarHandle MAX_ALLOCATIONS_PER_PASS_HANDLE;
+	public static final VarHandle PFN_BREAK_CALLBACK_HANDLE;
+	public static final VarHandle P_BREAK_CALLBACK_USER_DATA_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long POOL_BYTE_OFFSET;
-    public static final long MAX_BYTES_PER_PASS_BYTE_OFFSET;
-    public static final long MAX_ALLOCATIONS_PER_PASS_BYTE_OFFSET;
-    public static final long PFN_BREAK_CALLBACK_BYTE_OFFSET;
-    public static final long P_BREAK_CALLBACK_USER_DATA_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long POOL_BYTE_OFFSET;
+	public static final long MAX_BYTES_PER_PASS_BYTE_OFFSET;
+	public static final long MAX_ALLOCATIONS_PER_PASS_BYTE_OFFSET;
+	public static final long PFN_BREAK_CALLBACK_BYTE_OFFSET;
+	public static final long P_BREAK_CALLBACK_USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pool"),
-            JAVA_LONG.withName("maxBytesPerPass"),
-            JAVA_INT.withName("maxAllocationsPerPass"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pfnBreakCallback"),
-            UNBOUNDED_ADDRESS.withName("pBreakCallbackUserData")
-        ).withName("VmaDefragmentationInfo").withByteAlignment(8);
-        
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pool"));
-        MAX_BYTES_PER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBytesPerPass"));
-        MAX_ALLOCATIONS_PER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxAllocationsPerPass"));
-        PFN_BREAK_CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnBreakCallback"));
-        P_BREAK_CALLBACK_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBreakCallbackUserData"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pool"));
-        MAX_BYTES_PER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBytesPerPass"));
-        MAX_ALLOCATIONS_PER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxAllocationsPerPass"));
-        PFN_BREAK_CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnBreakCallback"));
-        P_BREAK_CALLBACK_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBreakCallbackUserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pool"),
+		    JAVA_LONG.withName("maxBytesPerPass"),
+		    JAVA_INT.withName("maxAllocationsPerPass"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pfnBreakCallback"),
+		    UNBOUNDED_ADDRESS.withName("pBreakCallbackUserData")
+		).withName("VmaDefragmentationInfo").withByteAlignment(8);
+		
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pool"));
+		MAX_BYTES_PER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBytesPerPass"));
+		MAX_ALLOCATIONS_PER_PASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxAllocationsPerPass"));
+		PFN_BREAK_CALLBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnBreakCallback"));
+		P_BREAK_CALLBACK_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBreakCallbackUserData"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pool"));
+		MAX_BYTES_PER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBytesPerPass"));
+		MAX_ALLOCATIONS_PER_PASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxAllocationsPerPass"));
+		PFN_BREAK_CALLBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnBreakCallback"));
+		P_BREAK_CALLBACK_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBreakCallbackUserData"));
+		//@formatter:on
+	}
 
-    public VmaDefragmentationInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaDefragmentationInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaDefragmentationInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaDefragmentationInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaDefragmentationInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaDefragmentationInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #flags()
     public VmaDefragmentationInfo flags(int flags) {
@@ -238,5 +238,5 @@ public final class VmaDefragmentationInfo
             segment -> new VmaDefragmentationInfo(segment)
         );
     }
-    
+
 }

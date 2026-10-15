@@ -35,50 +35,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiSkeleton
 		implements Struct<AiSkeleton> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_NUM_BONES_HANDLE;
-    public static final VarHandle M_BONES_HANDLE;
+	public static final VarHandle M_NUM_BONES_HANDLE;
+	public static final VarHandle M_BONES_HANDLE;
 
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_NUM_BONES_BYTE_OFFSET;
-    public static final long M_BONES_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_NUM_BONES_BYTE_OFFSET;
+	public static final long M_BONES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mName;
+	private final AiString mName;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mName"),
-            JAVA_INT.withName("mNumBones"),
-            UNBOUNDED_ADDRESS.withName("mBones")
-        ).withName("aiSkeleton").withByteAlignment(8);
-        
-        M_NUM_BONES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumBones"));
-        M_BONES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mBones"));
-        
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_NUM_BONES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumBones"));
-        M_BONES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mBones"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mName"),
+		    JAVA_INT.withName("mNumBones"),
+		    UNBOUNDED_ADDRESS.withName("mBones")
+		).withName("aiSkeleton").withByteAlignment(8);
+		
+		M_NUM_BONES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumBones"));
+		M_BONES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mBones"));
+		
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_NUM_BONES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumBones"));
+		M_BONES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mBones"));
+		//@formatter:on
+	}
 
-    public AiSkeleton() {
-        this(Arena.ofAuto());
+	public AiSkeleton() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiSkeleton(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiSkeleton(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	}
+
+    /// @see #mName()
+    public AiSkeleton mName(Consumer<AiString> consumer) {
+    	consumer.accept(mName);
+    	return this;
     }
     
-    public AiSkeleton(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #mName()
+    public AiSkeleton mName(AiString other) {
+    	mName.set(other);
+    	return this;
     }
     
-    public AiSkeleton(MemorySegment segment) {
-        this.segment = segment;
-    
-        mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+    /// ```
+    /// 
+    /// @brief The name of the skeleton instance.
+    /// ```
+    public AiString mName() {
+    	return mName;
     }
-
+    
     /// @see #mNumBones()
     public AiSkeleton mNumBones(int mNumBones) {
     	M_NUM_BONES_HANDLE.set(segment, 0L, mNumBones);
@@ -110,26 +130,6 @@ public final class AiSkeleton
     		return null;
     	
     	return new NativePointerArray(segment);
-    }
-    
-    /// @see #mName()
-    public AiSkeleton mName(Consumer<AiString> consumer) {
-    	consumer.accept(mName);
-    	return this;
-    }
-    
-    /// @see #mName()
-    public AiSkeleton mName(AiString other) {
-    	mName.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// 
-    /// @brief The name of the skeleton instance.
-    /// ```
-    public AiString mName() {
-    	return mName;
     }
     
     @Override
@@ -183,5 +183,5 @@ public final class AiSkeleton
             segment -> new AiSkeleton(segment)
         );
     }
-    
+
 }

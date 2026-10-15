@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceGroupDeviceCreateInfo
 		implements Struct<VkDeviceGroupDeviceCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PHYSICAL_DEVICE_COUNT_HANDLE;
-    public static final VarHandle P_PHYSICAL_DEVICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PHYSICAL_DEVICE_COUNT_HANDLE;
+	public static final VarHandle P_PHYSICAL_DEVICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PHYSICAL_DEVICE_COUNT_BYTE_OFFSET;
-    public static final long P_PHYSICAL_DEVICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PHYSICAL_DEVICE_COUNT_BYTE_OFFSET;
+	public static final long P_PHYSICAL_DEVICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("physicalDeviceCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPhysicalDevices")
-        ).withName("VkDeviceGroupDeviceCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PHYSICAL_DEVICE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDeviceCount"));
-        P_PHYSICAL_DEVICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPhysicalDevices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PHYSICAL_DEVICE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDeviceCount"));
-        P_PHYSICAL_DEVICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPhysicalDevices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("physicalDeviceCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPhysicalDevices")
+		).withName("VkDeviceGroupDeviceCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PHYSICAL_DEVICE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDeviceCount"));
+		P_PHYSICAL_DEVICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPhysicalDevices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PHYSICAL_DEVICE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDeviceCount"));
+		P_PHYSICAL_DEVICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPhysicalDevices"));
+		//@formatter:on
+	}
 
-    public VkDeviceGroupDeviceCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceGroupDeviceCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceGroupDeviceCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceGroupDeviceCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceGroupDeviceCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceGroupDeviceCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceGroupDeviceCreateInfo sType(int sType) {
@@ -173,5 +173,5 @@ public final class VkDeviceGroupDeviceCreateInfo
             segment -> new VkDeviceGroupDeviceCreateInfo(segment)
         );
     }
-    
+
 }

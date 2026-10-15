@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT
 		implements Struct<VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_HANDLE;
-    public static final VarHandle MAX_SHADER_BINDING_TABLE_RECORD_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_HANDLE;
+	public static final VarHandle MAX_SHADER_BINDING_TABLE_RECORD_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_BYTE_OFFSET;
-    public static final long MAX_SHADER_BINDING_TABLE_RECORD_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_BYTE_OFFSET;
+	public static final long MAX_SHADER_BINDING_TABLE_RECORD_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rayTracingInvocationReorderReorderingHint"),
-            JAVA_INT.withName("maxShaderBindingTableRecordIndex")
-        ).withName("VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingInvocationReorderReorderingHint"));
-        MAX_SHADER_BINDING_TABLE_RECORD_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderBindingTableRecordIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingInvocationReorderReorderingHint"));
-        MAX_SHADER_BINDING_TABLE_RECORD_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderBindingTableRecordIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rayTracingInvocationReorderReorderingHint"),
+		    JAVA_INT.withName("maxShaderBindingTableRecordIndex")
+		).withName("VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rayTracingInvocationReorderReorderingHint"));
+		MAX_SHADER_BINDING_TABLE_RECORD_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderBindingTableRecordIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RAY_TRACING_INVOCATION_REORDER_REORDERING_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rayTracingInvocationReorderReorderingHint"));
+		MAX_SHADER_BINDING_TABLE_RECORD_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderBindingTableRecordIndex"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT
             segment -> new VkPhysicalDeviceRayTracingInvocationReorderPropertiesEXT(segment)
         );
     }
-    
+
 }

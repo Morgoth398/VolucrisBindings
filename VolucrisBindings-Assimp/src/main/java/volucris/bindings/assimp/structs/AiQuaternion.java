@@ -16,53 +16,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiQuaternion
 		implements Struct<AiQuaternion> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle W_HANDLE;
-    public static final VarHandle X_HANDLE;
-    public static final VarHandle Y_HANDLE;
-    public static final VarHandle Z_HANDLE;
+	public static final VarHandle W_HANDLE;
+	public static final VarHandle X_HANDLE;
+	public static final VarHandle Y_HANDLE;
+	public static final VarHandle Z_HANDLE;
 
-    public static final long W_BYTE_OFFSET;
-    public static final long X_BYTE_OFFSET;
-    public static final long Y_BYTE_OFFSET;
-    public static final long Z_BYTE_OFFSET;
+	public static final long W_BYTE_OFFSET;
+	public static final long X_BYTE_OFFSET;
+	public static final long Y_BYTE_OFFSET;
+	public static final long Z_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("w"),
-            JAVA_FLOAT.withName("x"),
-            JAVA_FLOAT.withName("y"),
-            JAVA_FLOAT.withName("z")
-        ).withName("aiQuaternion").withByteAlignment(4);
-        
-        W_HANDLE = LAYOUT.varHandle(PathElement.groupElement("w"));
-        X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
-        Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
-        Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("z"));
-        
-        W_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("w"));
-        X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
-        Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
-        Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("z"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("w"),
+		    JAVA_FLOAT.withName("x"),
+		    JAVA_FLOAT.withName("y"),
+		    JAVA_FLOAT.withName("z")
+		).withName("aiQuaternion").withByteAlignment(4);
+		
+		W_HANDLE = LAYOUT.varHandle(PathElement.groupElement("w"));
+		X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
+		Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
+		Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("z"));
+		
+		W_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("w"));
+		X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
+		Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
+		Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("z"));
+		//@formatter:on
+	}
 
-    public AiQuaternion() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiQuaternion(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiQuaternion(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiQuaternion() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiQuaternion(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiQuaternion(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #w()
     public AiQuaternion w(float w) {
@@ -155,5 +155,5 @@ public final class AiQuaternion
             segment -> new AiQuaternion(segment)
         );
     }
-    
+
 }

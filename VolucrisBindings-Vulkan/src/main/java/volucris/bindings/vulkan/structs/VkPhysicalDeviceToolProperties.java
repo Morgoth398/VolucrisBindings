@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceToolProperties
 		implements Struct<VkPhysicalDeviceToolProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NAME_HANDLE;
-    public static final VarHandle VERSION_HANDLE;
-    public static final VarHandle PURPOSES_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
-    public static final VarHandle LAYER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NAME_HANDLE;
+	public static final VarHandle VERSION_HANDLE;
+	public static final VarHandle PURPOSES_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle LAYER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NAME_BYTE_OFFSET;
-    public static final long VERSION_BYTE_OFFSET;
-    public static final long PURPOSES_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
-    public static final long LAYER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NAME_BYTE_OFFSET;
+	public static final long VERSION_BYTE_OFFSET;
+	public static final long PURPOSES_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long LAYER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("version"),
-            JAVA_INT.withName("purposes"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("layer"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceToolProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
-        VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("version"), PathElement.sequenceElement());
-        PURPOSES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("purposes"));
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layer"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
-        VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("version"));
-        PURPOSES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("purposes"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layer"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("version"),
+		    JAVA_INT.withName("purposes"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("layer"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceToolProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
+		VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("version"), PathElement.sequenceElement());
+		PURPOSES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("purposes"));
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layer"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
+		VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("version"));
+		PURPOSES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("purposes"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layer"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceToolProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceToolProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceToolProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceToolProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceToolProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceToolProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceToolProperties sType(int sType) {
@@ -121,6 +121,10 @@ public final class VkPhysicalDeviceToolProperties
     	return (byte) NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String name() {
+        return segment.getString(NAME_BYTE_OFFSET);
+    }
+    
     /// @see #version(int)
     public VkPhysicalDeviceToolProperties version(byte version, int index0) {
     	VERSION_HANDLE.set(segment, 0L, index0, version);
@@ -129,6 +133,10 @@ public final class VkPhysicalDeviceToolProperties
     
     public byte version(int index0) {
     	return (byte) VERSION_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String version() {
+        return segment.getString(VERSION_BYTE_OFFSET);
     }
     
     /// @see #purposes()
@@ -151,6 +159,10 @@ public final class VkPhysicalDeviceToolProperties
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
     }
     
+    public String description() {
+        return segment.getString(DESCRIPTION_BYTE_OFFSET);
+    }
+    
     /// @see #layer(int)
     public VkPhysicalDeviceToolProperties layer(byte layer, int index0) {
     	LAYER_HANDLE.set(segment, 0L, index0, layer);
@@ -159,18 +171,6 @@ public final class VkPhysicalDeviceToolProperties
     
     public byte layer(int index0) {
     	return (byte) LAYER_HANDLE.get(segment, 0L, index0);
-    }
-    
-    public String name() {
-        return segment.getString(NAME_BYTE_OFFSET);
-    }
-    
-    public String version() {
-        return segment.getString(VERSION_BYTE_OFFSET);
-    }
-    
-    public String description() {
-        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     public String layer() {
@@ -228,5 +228,5 @@ public final class VkPhysicalDeviceToolProperties
             segment -> new VkPhysicalDeviceToolProperties(segment)
         );
     }
-    
+
 }

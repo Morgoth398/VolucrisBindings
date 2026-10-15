@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
 		implements Struct<VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ENABLE_YDEGAMMA_HANDLE;
-    public static final VarHandle ENABLE_CB_CR_DEGAMMA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ENABLE_YDEGAMMA_HANDLE;
+	public static final VarHandle ENABLE_CB_CR_DEGAMMA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ENABLE_YDEGAMMA_BYTE_OFFSET;
-    public static final long ENABLE_CB_CR_DEGAMMA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ENABLE_YDEGAMMA_BYTE_OFFSET;
+	public static final long ENABLE_CB_CR_DEGAMMA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("enableYDegamma"),
-            JAVA_INT.withName("enableCbCrDegamma")
-        ).withName("VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ENABLE_YDEGAMMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enableYDegamma"));
-        ENABLE_CB_CR_DEGAMMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enableCbCrDegamma"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ENABLE_YDEGAMMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enableYDegamma"));
-        ENABLE_CB_CR_DEGAMMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enableCbCrDegamma"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("enableYDegamma"),
+		    JAVA_INT.withName("enableCbCrDegamma")
+		).withName("VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ENABLE_YDEGAMMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enableYDegamma"));
+		ENABLE_CB_CR_DEGAMMA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enableCbCrDegamma"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ENABLE_YDEGAMMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enableYDegamma"));
+		ENABLE_CB_CR_DEGAMMA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enableCbCrDegamma"));
+		//@formatter:on
+	}
 
-    public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM
             segment -> new VkSamplerYcbcrConversionYcbcrDegammaCreateInfoQCOM(segment)
         );
     }
-    
+
 }

@@ -21,115 +21,115 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGpaSampleBeginInfoAMD
 		implements Struct<VkGpaSampleBeginInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLE_TYPE_HANDLE;
-    public static final VarHandle SAMPLE_INTERNAL_OPERATIONS_HANDLE;
-    public static final VarHandle CACHE_FLUSH_ON_COUNTER_COLLECTION_HANDLE;
-    public static final VarHandle SQ_SHADER_MASK_ENABLE_HANDLE;
-    public static final VarHandle SQ_SHADER_MASK_HANDLE;
-    public static final VarHandle PERF_COUNTER_COUNT_HANDLE;
-    public static final VarHandle P_PERF_COUNTERS_HANDLE;
-    public static final VarHandle STREAMING_PERF_TRACE_SAMPLE_INTERVAL_HANDLE;
-    public static final VarHandle PERF_COUNTER_DEVICE_MEMORY_LIMIT_HANDLE;
-    public static final VarHandle SQ_THREAD_TRACE_ENABLE_HANDLE;
-    public static final VarHandle SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_HANDLE;
-    public static final VarHandle SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_HANDLE;
-    public static final VarHandle TIMING_PRE_SAMPLE_HANDLE;
-    public static final VarHandle TIMING_POST_SAMPLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLE_TYPE_HANDLE;
+	public static final VarHandle SAMPLE_INTERNAL_OPERATIONS_HANDLE;
+	public static final VarHandle CACHE_FLUSH_ON_COUNTER_COLLECTION_HANDLE;
+	public static final VarHandle SQ_SHADER_MASK_ENABLE_HANDLE;
+	public static final VarHandle SQ_SHADER_MASK_HANDLE;
+	public static final VarHandle PERF_COUNTER_COUNT_HANDLE;
+	public static final VarHandle P_PERF_COUNTERS_HANDLE;
+	public static final VarHandle STREAMING_PERF_TRACE_SAMPLE_INTERVAL_HANDLE;
+	public static final VarHandle PERF_COUNTER_DEVICE_MEMORY_LIMIT_HANDLE;
+	public static final VarHandle SQ_THREAD_TRACE_ENABLE_HANDLE;
+	public static final VarHandle SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_HANDLE;
+	public static final VarHandle SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_HANDLE;
+	public static final VarHandle TIMING_PRE_SAMPLE_HANDLE;
+	public static final VarHandle TIMING_POST_SAMPLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLE_TYPE_BYTE_OFFSET;
-    public static final long SAMPLE_INTERNAL_OPERATIONS_BYTE_OFFSET;
-    public static final long CACHE_FLUSH_ON_COUNTER_COLLECTION_BYTE_OFFSET;
-    public static final long SQ_SHADER_MASK_ENABLE_BYTE_OFFSET;
-    public static final long SQ_SHADER_MASK_BYTE_OFFSET;
-    public static final long PERF_COUNTER_COUNT_BYTE_OFFSET;
-    public static final long P_PERF_COUNTERS_BYTE_OFFSET;
-    public static final long STREAMING_PERF_TRACE_SAMPLE_INTERVAL_BYTE_OFFSET;
-    public static final long PERF_COUNTER_DEVICE_MEMORY_LIMIT_BYTE_OFFSET;
-    public static final long SQ_THREAD_TRACE_ENABLE_BYTE_OFFSET;
-    public static final long SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_BYTE_OFFSET;
-    public static final long SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_BYTE_OFFSET;
-    public static final long TIMING_PRE_SAMPLE_BYTE_OFFSET;
-    public static final long TIMING_POST_SAMPLE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLE_TYPE_BYTE_OFFSET;
+	public static final long SAMPLE_INTERNAL_OPERATIONS_BYTE_OFFSET;
+	public static final long CACHE_FLUSH_ON_COUNTER_COLLECTION_BYTE_OFFSET;
+	public static final long SQ_SHADER_MASK_ENABLE_BYTE_OFFSET;
+	public static final long SQ_SHADER_MASK_BYTE_OFFSET;
+	public static final long PERF_COUNTER_COUNT_BYTE_OFFSET;
+	public static final long P_PERF_COUNTERS_BYTE_OFFSET;
+	public static final long STREAMING_PERF_TRACE_SAMPLE_INTERVAL_BYTE_OFFSET;
+	public static final long PERF_COUNTER_DEVICE_MEMORY_LIMIT_BYTE_OFFSET;
+	public static final long SQ_THREAD_TRACE_ENABLE_BYTE_OFFSET;
+	public static final long SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_BYTE_OFFSET;
+	public static final long SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_BYTE_OFFSET;
+	public static final long TIMING_PRE_SAMPLE_BYTE_OFFSET;
+	public static final long TIMING_POST_SAMPLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("sampleType"),
-            JAVA_INT.withName("sampleInternalOperations"),
-            JAVA_INT.withName("cacheFlushOnCounterCollection"),
-            JAVA_INT.withName("sqShaderMaskEnable"),
-            JAVA_INT.withName("sqShaderMask"),
-            JAVA_INT.withName("perfCounterCount"),
-            UNBOUNDED_ADDRESS.withName("pPerfCounters"),
-            JAVA_INT.withName("streamingPerfTraceSampleInterval"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("perfCounterDeviceMemoryLimit"),
-            JAVA_INT.withName("sqThreadTraceEnable"),
-            JAVA_INT.withName("sqThreadTraceSuppressInstructionTokens"),
-            JAVA_LONG.withName("sqThreadTraceDeviceMemoryLimit"),
-            JAVA_INT.withName("timingPreSample"),
-            JAVA_INT.withName("timingPostSample")
-        ).withName("VkGpaSampleBeginInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleType"));
-        SAMPLE_INTERNAL_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleInternalOperations"));
-        CACHE_FLUSH_ON_COUNTER_COLLECTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cacheFlushOnCounterCollection"));
-        SQ_SHADER_MASK_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqShaderMaskEnable"));
-        SQ_SHADER_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqShaderMask"));
-        PERF_COUNTER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfCounterCount"));
-        P_PERF_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPerfCounters"));
-        STREAMING_PERF_TRACE_SAMPLE_INTERVAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamingPerfTraceSampleInterval"));
-        PERF_COUNTER_DEVICE_MEMORY_LIMIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfCounterDeviceMemoryLimit"));
-        SQ_THREAD_TRACE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTraceEnable"));
-        SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTraceSuppressInstructionTokens"));
-        SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTraceDeviceMemoryLimit"));
-        TIMING_PRE_SAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timingPreSample"));
-        TIMING_POST_SAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timingPostSample"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleType"));
-        SAMPLE_INTERNAL_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleInternalOperations"));
-        CACHE_FLUSH_ON_COUNTER_COLLECTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cacheFlushOnCounterCollection"));
-        SQ_SHADER_MASK_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqShaderMaskEnable"));
-        SQ_SHADER_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqShaderMask"));
-        PERF_COUNTER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfCounterCount"));
-        P_PERF_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPerfCounters"));
-        STREAMING_PERF_TRACE_SAMPLE_INTERVAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamingPerfTraceSampleInterval"));
-        PERF_COUNTER_DEVICE_MEMORY_LIMIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfCounterDeviceMemoryLimit"));
-        SQ_THREAD_TRACE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTraceEnable"));
-        SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTraceSuppressInstructionTokens"));
-        SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTraceDeviceMemoryLimit"));
-        TIMING_PRE_SAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timingPreSample"));
-        TIMING_POST_SAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timingPostSample"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("sampleType"),
+		    JAVA_INT.withName("sampleInternalOperations"),
+		    JAVA_INT.withName("cacheFlushOnCounterCollection"),
+		    JAVA_INT.withName("sqShaderMaskEnable"),
+		    JAVA_INT.withName("sqShaderMask"),
+		    JAVA_INT.withName("perfCounterCount"),
+		    UNBOUNDED_ADDRESS.withName("pPerfCounters"),
+		    JAVA_INT.withName("streamingPerfTraceSampleInterval"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("perfCounterDeviceMemoryLimit"),
+		    JAVA_INT.withName("sqThreadTraceEnable"),
+		    JAVA_INT.withName("sqThreadTraceSuppressInstructionTokens"),
+		    JAVA_LONG.withName("sqThreadTraceDeviceMemoryLimit"),
+		    JAVA_INT.withName("timingPreSample"),
+		    JAVA_INT.withName("timingPostSample")
+		).withName("VkGpaSampleBeginInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleType"));
+		SAMPLE_INTERNAL_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleInternalOperations"));
+		CACHE_FLUSH_ON_COUNTER_COLLECTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cacheFlushOnCounterCollection"));
+		SQ_SHADER_MASK_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqShaderMaskEnable"));
+		SQ_SHADER_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqShaderMask"));
+		PERF_COUNTER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfCounterCount"));
+		P_PERF_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPerfCounters"));
+		STREAMING_PERF_TRACE_SAMPLE_INTERVAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamingPerfTraceSampleInterval"));
+		PERF_COUNTER_DEVICE_MEMORY_LIMIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfCounterDeviceMemoryLimit"));
+		SQ_THREAD_TRACE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTraceEnable"));
+		SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTraceSuppressInstructionTokens"));
+		SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTraceDeviceMemoryLimit"));
+		TIMING_PRE_SAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timingPreSample"));
+		TIMING_POST_SAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timingPostSample"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleType"));
+		SAMPLE_INTERNAL_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleInternalOperations"));
+		CACHE_FLUSH_ON_COUNTER_COLLECTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cacheFlushOnCounterCollection"));
+		SQ_SHADER_MASK_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqShaderMaskEnable"));
+		SQ_SHADER_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqShaderMask"));
+		PERF_COUNTER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfCounterCount"));
+		P_PERF_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPerfCounters"));
+		STREAMING_PERF_TRACE_SAMPLE_INTERVAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamingPerfTraceSampleInterval"));
+		PERF_COUNTER_DEVICE_MEMORY_LIMIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfCounterDeviceMemoryLimit"));
+		SQ_THREAD_TRACE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTraceEnable"));
+		SQ_THREAD_TRACE_SUPPRESS_INSTRUCTION_TOKENS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTraceSuppressInstructionTokens"));
+		SQ_THREAD_TRACE_DEVICE_MEMORY_LIMIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTraceDeviceMemoryLimit"));
+		TIMING_PRE_SAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timingPreSample"));
+		TIMING_POST_SAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timingPostSample"));
+		//@formatter:on
+	}
 
-    public VkGpaSampleBeginInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGpaSampleBeginInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGpaSampleBeginInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGpaSampleBeginInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGpaSampleBeginInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGpaSampleBeginInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGpaSampleBeginInfoAMD sType(int sType) {
@@ -352,5 +352,5 @@ public final class VkGpaSampleBeginInfoAMD
             segment -> new VkGpaSampleBeginInfoAMD(segment)
         );
     }
-    
+
 }

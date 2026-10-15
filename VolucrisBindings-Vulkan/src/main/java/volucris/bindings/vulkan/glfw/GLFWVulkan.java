@@ -18,24 +18,24 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class GLFWVulkan {
 
-    private static final LazyConstant<MethodHandle> GLFW_INIT_VULKAN_LOADER;
-    private static final LazyConstant<MethodHandle> GLFW_GET_REQUIRED_INSTANCE_EXTENSIONS;
-    private static final LazyConstant<MethodHandle> GLFW_GET_INSTANCE_PROC_ADDRESS;
-    private static final LazyConstant<MethodHandle> GLFW_GET_PHYSICAL_DEVICE_PRESENTATION_SUPPORT;
-    private static final LazyConstant<MethodHandle> GLFW_CREATE_WINDOW_SURFACE;
+	private static final LazyConstant<MethodHandle> GLFW_INIT_VULKAN_LOADER;
+	private static final LazyConstant<MethodHandle> GLFW_GET_REQUIRED_INSTANCE_EXTENSIONS;
+	private static final LazyConstant<MethodHandle> GLFW_GET_INSTANCE_PROC_ADDRESS;
+	private static final LazyConstant<MethodHandle> GLFW_GET_PHYSICAL_DEVICE_PRESENTATION_SUPPORT;
+	private static final LazyConstant<MethodHandle> GLFW_CREATE_WINDOW_SURFACE;
 
-    static {
-        //@formatter:off
-        GLFW_INIT_VULKAN_LOADER = downcallHandleVoid("glfwInitVulkanLoader", UNBOUNDED_ADDRESS);
-        GLFW_GET_REQUIRED_INSTANCE_EXTENSIONS = downcallHandle("glfwGetRequiredInstanceExtensions", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        GLFW_GET_INSTANCE_PROC_ADDRESS = downcallHandle("glfwGetInstanceProcAddress", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        GLFW_GET_PHYSICAL_DEVICE_PRESENTATION_SUPPORT = downcallHandle("glfwGetPhysicalDevicePresentationSupport", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
-        GLFW_CREATE_WINDOW_SURFACE = downcallHandle("glfwCreateWindowSurface", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		GLFW_INIT_VULKAN_LOADER = downcallHandleVoid("glfwInitVulkanLoader", UNBOUNDED_ADDRESS);
+		GLFW_GET_REQUIRED_INSTANCE_EXTENSIONS = downcallHandle("glfwGetRequiredInstanceExtensions", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		GLFW_GET_INSTANCE_PROC_ADDRESS = downcallHandle("glfwGetInstanceProcAddress", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		GLFW_GET_PHYSICAL_DEVICE_PRESENTATION_SUPPORT = downcallHandle("glfwGetPhysicalDevicePresentationSupport", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT);
+		GLFW_CREATE_WINDOW_SURFACE = downcallHandle("glfwCreateWindowSurface", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		//@formatter:on
+	}
 
-    private GLFWVulkan() {
-    }
+	private GLFWVulkan() {
+	}
 
     /// ```
     /// @brief Sets the desired Vulkan `vkGetInstanceProcAddr` function.
@@ -386,5 +386,5 @@ public final class GLFWVulkan {
     		surface.memorySegment()
     	);
     }
-    
+
 }

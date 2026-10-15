@@ -19,63 +19,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265ScalingLists
 		implements Struct<StdVideoH265ScalingLists> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SCALING_LIST4X4_HANDLE;
-    public static final VarHandle SCALING_LIST8X8_HANDLE;
-    public static final VarHandle SCALING_LIST16X16_HANDLE;
-    public static final VarHandle SCALING_LIST32X32_HANDLE;
-    public static final VarHandle SCALING_LIST_DCCOEF16X16_HANDLE;
-    public static final VarHandle SCALING_LIST_DCCOEF32X32_HANDLE;
+	public static final VarHandle SCALING_LIST4X4_HANDLE;
+	public static final VarHandle SCALING_LIST8X8_HANDLE;
+	public static final VarHandle SCALING_LIST16X16_HANDLE;
+	public static final VarHandle SCALING_LIST32X32_HANDLE;
+	public static final VarHandle SCALING_LIST_DCCOEF16X16_HANDLE;
+	public static final VarHandle SCALING_LIST_DCCOEF32X32_HANDLE;
 
-    public static final long SCALING_LIST4X4_BYTE_OFFSET;
-    public static final long SCALING_LIST8X8_BYTE_OFFSET;
-    public static final long SCALING_LIST16X16_BYTE_OFFSET;
-    public static final long SCALING_LIST32X32_BYTE_OFFSET;
-    public static final long SCALING_LIST_DCCOEF16X16_BYTE_OFFSET;
-    public static final long SCALING_LIST_DCCOEF32X32_BYTE_OFFSET;
+	public static final long SCALING_LIST4X4_BYTE_OFFSET;
+	public static final long SCALING_LIST8X8_BYTE_OFFSET;
+	public static final long SCALING_LIST16X16_BYTE_OFFSET;
+	public static final long SCALING_LIST32X32_BYTE_OFFSET;
+	public static final long SCALING_LIST_DCCOEF16X16_BYTE_OFFSET;
+	public static final long SCALING_LIST_DCCOEF32X32_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(16, JAVA_BYTE)).withName("ScalingList4x4"),
-            MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList8x8"),
-            MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList16x16"),
-            MemoryLayout.sequenceLayout(2, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList32x32"),
-            MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("ScalingListDCCoef16x16"),
-            MemoryLayout.sequenceLayout(2, JAVA_BYTE).withName("ScalingListDCCoef32x32")
-        ).withName("StdVideoH265ScalingLists").withByteAlignment(1);
-        
-        SCALING_LIST4X4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList4x4"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        SCALING_LIST8X8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList8x8"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        SCALING_LIST16X16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList16x16"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        SCALING_LIST32X32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList32x32"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        SCALING_LIST_DCCOEF16X16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingListDCCoef16x16"), PathElement.sequenceElement());
-        SCALING_LIST_DCCOEF32X32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingListDCCoef32x32"), PathElement.sequenceElement());
-        
-        SCALING_LIST4X4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList4x4"));
-        SCALING_LIST8X8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList8x8"));
-        SCALING_LIST16X16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList16x16"));
-        SCALING_LIST32X32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList32x32"));
-        SCALING_LIST_DCCOEF16X16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingListDCCoef16x16"));
-        SCALING_LIST_DCCOEF32X32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingListDCCoef32x32"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(16, JAVA_BYTE)).withName("ScalingList4x4"),
+		    MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList8x8"),
+		    MemoryLayout.sequenceLayout(6, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList16x16"),
+		    MemoryLayout.sequenceLayout(2, MemoryLayout.sequenceLayout(64, JAVA_BYTE)).withName("ScalingList32x32"),
+		    MemoryLayout.sequenceLayout(6, JAVA_BYTE).withName("ScalingListDCCoef16x16"),
+		    MemoryLayout.sequenceLayout(2, JAVA_BYTE).withName("ScalingListDCCoef32x32")
+		).withName("StdVideoH265ScalingLists").withByteAlignment(1);
+		
+		SCALING_LIST4X4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList4x4"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		SCALING_LIST8X8_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList8x8"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		SCALING_LIST16X16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList16x16"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		SCALING_LIST32X32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingList32x32"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		SCALING_LIST_DCCOEF16X16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingListDCCoef16x16"), PathElement.sequenceElement());
+		SCALING_LIST_DCCOEF32X32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ScalingListDCCoef32x32"), PathElement.sequenceElement());
+		
+		SCALING_LIST4X4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList4x4"));
+		SCALING_LIST8X8_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList8x8"));
+		SCALING_LIST16X16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList16x16"));
+		SCALING_LIST32X32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingList32x32"));
+		SCALING_LIST_DCCOEF16X16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingListDCCoef16x16"));
+		SCALING_LIST_DCCOEF32X32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ScalingListDCCoef32x32"));
+		//@formatter:on
+	}
 
-    public StdVideoH265ScalingLists() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoH265ScalingLists(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoH265ScalingLists(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoH265ScalingLists() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265ScalingLists(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265ScalingLists(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #scalingList4x4(int, int)
     public StdVideoH265ScalingLists scalingList4x4(byte scalingList4x4, int index0, int index1) {
@@ -188,5 +188,5 @@ public final class StdVideoH265ScalingLists
             segment -> new StdVideoH265ScalingLists(segment)
         );
     }
-    
+
 }

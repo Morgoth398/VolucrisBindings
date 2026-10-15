@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSurfaceFormatKHR
 		implements Struct<VkSurfaceFormatKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle COLOR_SPACE_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle COLOR_SPACE_HANDLE;
 
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long COLOR_SPACE_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long COLOR_SPACE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("colorSpace")
-        ).withName("VkSurfaceFormatKHR").withByteAlignment(4);
-        
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        COLOR_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorSpace"));
-        
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        COLOR_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorSpace"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("colorSpace")
+		).withName("VkSurfaceFormatKHR").withByteAlignment(4);
+		
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		COLOR_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colorSpace"));
+		
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		COLOR_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colorSpace"));
+		//@formatter:on
+	}
 
-    public VkSurfaceFormatKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSurfaceFormatKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSurfaceFormatKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSurfaceFormatKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSurfaceFormatKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSurfaceFormatKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #format()
     public VkSurfaceFormatKHR format(int format) {
@@ -128,5 +128,5 @@ public final class VkSurfaceFormatKHR
             segment -> new VkSurfaceFormatKHR(segment)
         );
     }
-    
+
 }

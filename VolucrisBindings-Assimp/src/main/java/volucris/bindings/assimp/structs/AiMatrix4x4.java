@@ -16,113 +16,113 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiMatrix4x4
 		implements Struct<AiMatrix4x4> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle A1_HANDLE;
-    public static final VarHandle A2_HANDLE;
-    public static final VarHandle A3_HANDLE;
-    public static final VarHandle A4_HANDLE;
-    public static final VarHandle B1_HANDLE;
-    public static final VarHandle B2_HANDLE;
-    public static final VarHandle B3_HANDLE;
-    public static final VarHandle B4_HANDLE;
-    public static final VarHandle C1_HANDLE;
-    public static final VarHandle C2_HANDLE;
-    public static final VarHandle C3_HANDLE;
-    public static final VarHandle C4_HANDLE;
-    public static final VarHandle D1_HANDLE;
-    public static final VarHandle D2_HANDLE;
-    public static final VarHandle D3_HANDLE;
-    public static final VarHandle D4_HANDLE;
+	public static final VarHandle A1_HANDLE;
+	public static final VarHandle A2_HANDLE;
+	public static final VarHandle A3_HANDLE;
+	public static final VarHandle A4_HANDLE;
+	public static final VarHandle B1_HANDLE;
+	public static final VarHandle B2_HANDLE;
+	public static final VarHandle B3_HANDLE;
+	public static final VarHandle B4_HANDLE;
+	public static final VarHandle C1_HANDLE;
+	public static final VarHandle C2_HANDLE;
+	public static final VarHandle C3_HANDLE;
+	public static final VarHandle C4_HANDLE;
+	public static final VarHandle D1_HANDLE;
+	public static final VarHandle D2_HANDLE;
+	public static final VarHandle D3_HANDLE;
+	public static final VarHandle D4_HANDLE;
 
-    public static final long A1_BYTE_OFFSET;
-    public static final long A2_BYTE_OFFSET;
-    public static final long A3_BYTE_OFFSET;
-    public static final long A4_BYTE_OFFSET;
-    public static final long B1_BYTE_OFFSET;
-    public static final long B2_BYTE_OFFSET;
-    public static final long B3_BYTE_OFFSET;
-    public static final long B4_BYTE_OFFSET;
-    public static final long C1_BYTE_OFFSET;
-    public static final long C2_BYTE_OFFSET;
-    public static final long C3_BYTE_OFFSET;
-    public static final long C4_BYTE_OFFSET;
-    public static final long D1_BYTE_OFFSET;
-    public static final long D2_BYTE_OFFSET;
-    public static final long D3_BYTE_OFFSET;
-    public static final long D4_BYTE_OFFSET;
+	public static final long A1_BYTE_OFFSET;
+	public static final long A2_BYTE_OFFSET;
+	public static final long A3_BYTE_OFFSET;
+	public static final long A4_BYTE_OFFSET;
+	public static final long B1_BYTE_OFFSET;
+	public static final long B2_BYTE_OFFSET;
+	public static final long B3_BYTE_OFFSET;
+	public static final long B4_BYTE_OFFSET;
+	public static final long C1_BYTE_OFFSET;
+	public static final long C2_BYTE_OFFSET;
+	public static final long C3_BYTE_OFFSET;
+	public static final long C4_BYTE_OFFSET;
+	public static final long D1_BYTE_OFFSET;
+	public static final long D2_BYTE_OFFSET;
+	public static final long D3_BYTE_OFFSET;
+	public static final long D4_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("a1"),
-            JAVA_FLOAT.withName("a2"),
-            JAVA_FLOAT.withName("a3"),
-            JAVA_FLOAT.withName("a4"),
-            JAVA_FLOAT.withName("b1"),
-            JAVA_FLOAT.withName("b2"),
-            JAVA_FLOAT.withName("b3"),
-            JAVA_FLOAT.withName("b4"),
-            JAVA_FLOAT.withName("c1"),
-            JAVA_FLOAT.withName("c2"),
-            JAVA_FLOAT.withName("c3"),
-            JAVA_FLOAT.withName("c4"),
-            JAVA_FLOAT.withName("d1"),
-            JAVA_FLOAT.withName("d2"),
-            JAVA_FLOAT.withName("d3"),
-            JAVA_FLOAT.withName("d4")
-        ).withName("aiMatrix4x4").withByteAlignment(4);
-        
-        A1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a1"));
-        A2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a2"));
-        A3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a3"));
-        A4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a4"));
-        B1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b1"));
-        B2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b2"));
-        B3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b3"));
-        B4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b4"));
-        C1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c1"));
-        C2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c2"));
-        C3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c3"));
-        C4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c4"));
-        D1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d1"));
-        D2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d2"));
-        D3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d3"));
-        D4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d4"));
-        
-        A1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a1"));
-        A2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a2"));
-        A3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a3"));
-        A4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a4"));
-        B1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b1"));
-        B2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b2"));
-        B3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b3"));
-        B4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b4"));
-        C1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c1"));
-        C2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c2"));
-        C3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c3"));
-        C4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c4"));
-        D1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d1"));
-        D2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d2"));
-        D3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d3"));
-        D4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d4"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("a1"),
+		    JAVA_FLOAT.withName("a2"),
+		    JAVA_FLOAT.withName("a3"),
+		    JAVA_FLOAT.withName("a4"),
+		    JAVA_FLOAT.withName("b1"),
+		    JAVA_FLOAT.withName("b2"),
+		    JAVA_FLOAT.withName("b3"),
+		    JAVA_FLOAT.withName("b4"),
+		    JAVA_FLOAT.withName("c1"),
+		    JAVA_FLOAT.withName("c2"),
+		    JAVA_FLOAT.withName("c3"),
+		    JAVA_FLOAT.withName("c4"),
+		    JAVA_FLOAT.withName("d1"),
+		    JAVA_FLOAT.withName("d2"),
+		    JAVA_FLOAT.withName("d3"),
+		    JAVA_FLOAT.withName("d4")
+		).withName("aiMatrix4x4").withByteAlignment(4);
+		
+		A1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a1"));
+		A2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a2"));
+		A3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a3"));
+		A4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a4"));
+		B1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b1"));
+		B2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b2"));
+		B3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b3"));
+		B4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b4"));
+		C1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c1"));
+		C2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c2"));
+		C3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c3"));
+		C4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c4"));
+		D1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d1"));
+		D2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d2"));
+		D3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d3"));
+		D4_HANDLE = LAYOUT.varHandle(PathElement.groupElement("d4"));
+		
+		A1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a1"));
+		A2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a2"));
+		A3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a3"));
+		A4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a4"));
+		B1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b1"));
+		B2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b2"));
+		B3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b3"));
+		B4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b4"));
+		C1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c1"));
+		C2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c2"));
+		C3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c3"));
+		C4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c4"));
+		D1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d1"));
+		D2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d2"));
+		D3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d3"));
+		D4_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("d4"));
+		//@formatter:on
+	}
 
-    public AiMatrix4x4() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMatrix4x4(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMatrix4x4(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMatrix4x4() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMatrix4x4(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMatrix4x4(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #a1()
     public AiMatrix4x4 a1(float a1) {
@@ -335,5 +335,5 @@ public final class AiMatrix4x4
             segment -> new AiMatrix4x4(segment)
         );
     }
-    
+
 }

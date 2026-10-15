@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkClusterAccelerationStructureMoveObjectsInputNV
 		implements Struct<VkClusterAccelerationStructureMoveObjectsInputNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle NO_MOVE_OVERLAP_HANDLE;
-    public static final VarHandle MAX_MOVED_BYTES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle NO_MOVE_OVERLAP_HANDLE;
+	public static final VarHandle MAX_MOVED_BYTES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long NO_MOVE_OVERLAP_BYTE_OFFSET;
-    public static final long MAX_MOVED_BYTES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long NO_MOVE_OVERLAP_BYTE_OFFSET;
+	public static final long MAX_MOVED_BYTES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("noMoveOverlap"),
-            JAVA_LONG.withName("maxMovedBytes")
-        ).withName("VkClusterAccelerationStructureMoveObjectsInputNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        NO_MOVE_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("noMoveOverlap"));
-        MAX_MOVED_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMovedBytes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        NO_MOVE_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("noMoveOverlap"));
-        MAX_MOVED_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMovedBytes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("noMoveOverlap"),
+		    JAVA_LONG.withName("maxMovedBytes")
+		).withName("VkClusterAccelerationStructureMoveObjectsInputNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		NO_MOVE_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("noMoveOverlap"));
+		MAX_MOVED_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMovedBytes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		NO_MOVE_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("noMoveOverlap"));
+		MAX_MOVED_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMovedBytes"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureMoveObjectsInputNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureMoveObjectsInputNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureMoveObjectsInputNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClusterAccelerationStructureMoveObjectsInputNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureMoveObjectsInputNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureMoveObjectsInputNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkClusterAccelerationStructureMoveObjectsInputNV sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkClusterAccelerationStructureMoveObjectsInputNV
             segment -> new VkClusterAccelerationStructureMoveObjectsInputNV(segment)
         );
     }
-    
+
 }

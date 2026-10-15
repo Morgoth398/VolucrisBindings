@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR
 		implements Struct<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle UNIFIED_IMAGE_LAYOUTS_HANDLE;
-    public static final VarHandle UNIFIED_IMAGE_LAYOUTS_VIDEO_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle UNIFIED_IMAGE_LAYOUTS_HANDLE;
+	public static final VarHandle UNIFIED_IMAGE_LAYOUTS_VIDEO_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long UNIFIED_IMAGE_LAYOUTS_BYTE_OFFSET;
-    public static final long UNIFIED_IMAGE_LAYOUTS_VIDEO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long UNIFIED_IMAGE_LAYOUTS_BYTE_OFFSET;
+	public static final long UNIFIED_IMAGE_LAYOUTS_VIDEO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("unifiedImageLayouts"),
-            JAVA_INT.withName("unifiedImageLayoutsVideo")
-        ).withName("VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        UNIFIED_IMAGE_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unifiedImageLayouts"));
-        UNIFIED_IMAGE_LAYOUTS_VIDEO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unifiedImageLayoutsVideo"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        UNIFIED_IMAGE_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unifiedImageLayouts"));
-        UNIFIED_IMAGE_LAYOUTS_VIDEO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unifiedImageLayoutsVideo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("unifiedImageLayouts"),
+		    JAVA_INT.withName("unifiedImageLayoutsVideo")
+		).withName("VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		UNIFIED_IMAGE_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unifiedImageLayouts"));
+		UNIFIED_IMAGE_LAYOUTS_VIDEO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unifiedImageLayoutsVideo"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		UNIFIED_IMAGE_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unifiedImageLayouts"));
+		UNIFIED_IMAGE_LAYOUTS_VIDEO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unifiedImageLayoutsVideo"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR
             segment -> new VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(segment)
         );
     }
-    
+
 }

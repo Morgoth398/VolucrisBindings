@@ -21,43 +21,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineBinaryDataKHR
 		implements Struct<VkPipelineBinaryDataKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_SIZE_HANDLE;
-    public static final VarHandle P_DATA_HANDLE;
+	public static final VarHandle DATA_SIZE_HANDLE;
+	public static final VarHandle P_DATA_HANDLE;
 
-    public static final long DATA_SIZE_BYTE_OFFSET;
-    public static final long P_DATA_BYTE_OFFSET;
+	public static final long DATA_SIZE_BYTE_OFFSET;
+	public static final long P_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("dataSize"),
-            UNBOUNDED_ADDRESS.withName("pData")
-        ).withName("VkPipelineBinaryDataKHR").withByteAlignment(8);
-        
-        DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataSize"));
-        P_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pData"));
-        
-        DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataSize"));
-        P_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("dataSize"),
+		    UNBOUNDED_ADDRESS.withName("pData")
+		).withName("VkPipelineBinaryDataKHR").withByteAlignment(8);
+		
+		DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataSize"));
+		P_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pData"));
+		
+		DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataSize"));
+		P_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pData"));
+		//@formatter:on
+	}
 
-    public VkPipelineBinaryDataKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineBinaryDataKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineBinaryDataKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineBinaryDataKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineBinaryDataKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineBinaryDataKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #dataSize()
     public VkPipelineBinaryDataKHR dataSize(long dataSize) {
@@ -135,5 +135,5 @@ public final class VkPipelineBinaryDataKHR
             segment -> new VkPipelineBinaryDataKHR(segment)
         );
     }
-    
+
 }

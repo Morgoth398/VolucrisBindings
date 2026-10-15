@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevice16BitStorageFeatures
 		implements Struct<VkPhysicalDevice16BitStorageFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STORAGE_BUFFER16_BIT_ACCESS_HANDLE;
-    public static final VarHandle UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_HANDLE;
-    public static final VarHandle STORAGE_PUSH_CONSTANT16_HANDLE;
-    public static final VarHandle STORAGE_INPUT_OUTPUT16_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STORAGE_BUFFER16_BIT_ACCESS_HANDLE;
+	public static final VarHandle UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_HANDLE;
+	public static final VarHandle STORAGE_PUSH_CONSTANT16_HANDLE;
+	public static final VarHandle STORAGE_INPUT_OUTPUT16_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET;
-    public static final long UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET;
-    public static final long STORAGE_PUSH_CONSTANT16_BYTE_OFFSET;
-    public static final long STORAGE_INPUT_OUTPUT16_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET;
+	public static final long UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET;
+	public static final long STORAGE_PUSH_CONSTANT16_BYTE_OFFSET;
+	public static final long STORAGE_INPUT_OUTPUT16_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("storageBuffer16BitAccess"),
-            JAVA_INT.withName("uniformAndStorageBuffer16BitAccess"),
-            JAVA_INT.withName("storagePushConstant16"),
-            JAVA_INT.withName("storageInputOutput16")
-        ).withName("VkPhysicalDevice16BitStorageFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STORAGE_BUFFER16_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageBuffer16BitAccess"));
-        UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformAndStorageBuffer16BitAccess"));
-        STORAGE_PUSH_CONSTANT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storagePushConstant16"));
-        STORAGE_INPUT_OUTPUT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageInputOutput16"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageBuffer16BitAccess"));
-        UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformAndStorageBuffer16BitAccess"));
-        STORAGE_PUSH_CONSTANT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storagePushConstant16"));
-        STORAGE_INPUT_OUTPUT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageInputOutput16"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("storageBuffer16BitAccess"),
+		    JAVA_INT.withName("uniformAndStorageBuffer16BitAccess"),
+		    JAVA_INT.withName("storagePushConstant16"),
+		    JAVA_INT.withName("storageInputOutput16")
+		).withName("VkPhysicalDevice16BitStorageFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STORAGE_BUFFER16_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageBuffer16BitAccess"));
+		UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uniformAndStorageBuffer16BitAccess"));
+		STORAGE_PUSH_CONSTANT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storagePushConstant16"));
+		STORAGE_INPUT_OUTPUT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storageInputOutput16"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageBuffer16BitAccess"));
+		UNIFORM_AND_STORAGE_BUFFER16_BIT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uniformAndStorageBuffer16BitAccess"));
+		STORAGE_PUSH_CONSTANT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storagePushConstant16"));
+		STORAGE_INPUT_OUTPUT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storageInputOutput16"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevice16BitStorageFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevice16BitStorageFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevice16BitStorageFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevice16BitStorageFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevice16BitStorageFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevice16BitStorageFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevice16BitStorageFeatures sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDevice16BitStorageFeatures
             segment -> new VkPhysicalDevice16BitStorageFeatures(segment)
         );
     }
-    
+
 }

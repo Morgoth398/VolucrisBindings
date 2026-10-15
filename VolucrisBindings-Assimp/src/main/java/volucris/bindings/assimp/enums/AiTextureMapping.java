@@ -5,17 +5,33 @@ package volucris.bindings.assimp.enums;
 
 public final class AiTextureMapping {
 
-    /// ```The mapping coordinates are taken from an UV channel.```
+    /// ```
+    /// The mapping coordinates are taken from an UV channel.
+    /// 
+    /// #AI_MATKEY_UVWSRC property specifies from which UV channel
+    /// the texture coordinates are to be taken from (remember,
+    /// meshes can have more than one UV channel).
+    /// ```
     public static final int AI_TEXTURE_MAPPING_UV = 0;
-    /// ```Spherical mapping```
+    /// ```
+    /// Spherical mapping
+    /// ```
     public static final int AI_TEXTURE_MAPPING_SPHERE = 1;
-    /// ```Cylindrical mapping```
+    /// ```
+    /// Cylindrical mapping
+    /// ```
     public static final int AI_TEXTURE_MAPPING_CYLINDER = 2;
-    /// ```Cubic mapping```
+    /// ```
+    /// Cubic mapping
+    /// ```
     public static final int AI_TEXTURE_MAPPING_BOX = 3;
-    /// ```Planar mapping```
+    /// ```
+    /// Planar mapping
+    /// ```
     public static final int AI_TEXTURE_MAPPING_PLANE = 4;
-    /// ```Undefined mapping. Have fun.```
+    /// ```
+    /// Undefined mapping. Have fun.
+    /// ```
     public static final int AI_TEXTURE_MAPPING_OTHER = 5;
 
 }

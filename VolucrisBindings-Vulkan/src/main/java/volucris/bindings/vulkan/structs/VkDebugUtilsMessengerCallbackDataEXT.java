@@ -21,99 +21,99 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDebugUtilsMessengerCallbackDataEXT
 		implements Struct<VkDebugUtilsMessengerCallbackDataEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle P_MESSAGE_ID_NAME_HANDLE;
-    public static final VarHandle MESSAGE_ID_NUMBER_HANDLE;
-    public static final VarHandle P_MESSAGE_HANDLE;
-    public static final VarHandle QUEUE_LABEL_COUNT_HANDLE;
-    public static final VarHandle P_QUEUE_LABELS_HANDLE;
-    public static final VarHandle CMD_BUF_LABEL_COUNT_HANDLE;
-    public static final VarHandle P_CMD_BUF_LABELS_HANDLE;
-    public static final VarHandle OBJECT_COUNT_HANDLE;
-    public static final VarHandle P_OBJECTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle P_MESSAGE_ID_NAME_HANDLE;
+	public static final VarHandle MESSAGE_ID_NUMBER_HANDLE;
+	public static final VarHandle P_MESSAGE_HANDLE;
+	public static final VarHandle QUEUE_LABEL_COUNT_HANDLE;
+	public static final VarHandle P_QUEUE_LABELS_HANDLE;
+	public static final VarHandle CMD_BUF_LABEL_COUNT_HANDLE;
+	public static final VarHandle P_CMD_BUF_LABELS_HANDLE;
+	public static final VarHandle OBJECT_COUNT_HANDLE;
+	public static final VarHandle P_OBJECTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long P_MESSAGE_ID_NAME_BYTE_OFFSET;
-    public static final long MESSAGE_ID_NUMBER_BYTE_OFFSET;
-    public static final long P_MESSAGE_BYTE_OFFSET;
-    public static final long QUEUE_LABEL_COUNT_BYTE_OFFSET;
-    public static final long P_QUEUE_LABELS_BYTE_OFFSET;
-    public static final long CMD_BUF_LABEL_COUNT_BYTE_OFFSET;
-    public static final long P_CMD_BUF_LABELS_BYTE_OFFSET;
-    public static final long OBJECT_COUNT_BYTE_OFFSET;
-    public static final long P_OBJECTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long P_MESSAGE_ID_NAME_BYTE_OFFSET;
+	public static final long MESSAGE_ID_NUMBER_BYTE_OFFSET;
+	public static final long P_MESSAGE_BYTE_OFFSET;
+	public static final long QUEUE_LABEL_COUNT_BYTE_OFFSET;
+	public static final long P_QUEUE_LABELS_BYTE_OFFSET;
+	public static final long CMD_BUF_LABEL_COUNT_BYTE_OFFSET;
+	public static final long P_CMD_BUF_LABELS_BYTE_OFFSET;
+	public static final long OBJECT_COUNT_BYTE_OFFSET;
+	public static final long P_OBJECTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pMessageIdName"),
-            JAVA_INT.withName("messageIdNumber"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pMessage"),
-            JAVA_INT.withName("queueLabelCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pQueueLabels"),
-            JAVA_INT.withName("cmdBufLabelCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCmdBufLabels"),
-            JAVA_INT.withName("objectCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pObjects")
-        ).withName("VkDebugUtilsMessengerCallbackDataEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        P_MESSAGE_ID_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMessageIdName"));
-        MESSAGE_ID_NUMBER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("messageIdNumber"));
-        P_MESSAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMessage"));
-        QUEUE_LABEL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueLabelCount"));
-        P_QUEUE_LABELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueLabels"));
-        CMD_BUF_LABEL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cmdBufLabelCount"));
-        P_CMD_BUF_LABELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCmdBufLabels"));
-        OBJECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectCount"));
-        P_OBJECTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pObjects"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        P_MESSAGE_ID_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMessageIdName"));
-        MESSAGE_ID_NUMBER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("messageIdNumber"));
-        P_MESSAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMessage"));
-        QUEUE_LABEL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueLabelCount"));
-        P_QUEUE_LABELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueLabels"));
-        CMD_BUF_LABEL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cmdBufLabelCount"));
-        P_CMD_BUF_LABELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCmdBufLabels"));
-        OBJECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectCount"));
-        P_OBJECTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pObjects"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pMessageIdName"),
+		    JAVA_INT.withName("messageIdNumber"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pMessage"),
+		    JAVA_INT.withName("queueLabelCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pQueueLabels"),
+		    JAVA_INT.withName("cmdBufLabelCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCmdBufLabels"),
+		    JAVA_INT.withName("objectCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pObjects")
+		).withName("VkDebugUtilsMessengerCallbackDataEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		P_MESSAGE_ID_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMessageIdName"));
+		MESSAGE_ID_NUMBER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("messageIdNumber"));
+		P_MESSAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMessage"));
+		QUEUE_LABEL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueLabelCount"));
+		P_QUEUE_LABELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueueLabels"));
+		CMD_BUF_LABEL_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cmdBufLabelCount"));
+		P_CMD_BUF_LABELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCmdBufLabels"));
+		OBJECT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectCount"));
+		P_OBJECTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pObjects"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		P_MESSAGE_ID_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMessageIdName"));
+		MESSAGE_ID_NUMBER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("messageIdNumber"));
+		P_MESSAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMessage"));
+		QUEUE_LABEL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueLabelCount"));
+		P_QUEUE_LABELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueueLabels"));
+		CMD_BUF_LABEL_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cmdBufLabelCount"));
+		P_CMD_BUF_LABELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCmdBufLabels"));
+		OBJECT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectCount"));
+		P_OBJECTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pObjects"));
+		//@formatter:on
+	}
 
-    public VkDebugUtilsMessengerCallbackDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDebugUtilsMessengerCallbackDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDebugUtilsMessengerCallbackDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDebugUtilsMessengerCallbackDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDebugUtilsMessengerCallbackDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDebugUtilsMessengerCallbackDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDebugUtilsMessengerCallbackDataEXT sType(int sType) {
@@ -316,5 +316,5 @@ public final class VkDebugUtilsMessengerCallbackDataEXT
             segment -> new VkDebugUtilsMessengerCallbackDataEXT(segment)
         );
     }
-    
+
 }

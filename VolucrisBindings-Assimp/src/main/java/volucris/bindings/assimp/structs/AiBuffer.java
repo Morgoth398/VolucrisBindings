@@ -23,43 +23,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiBuffer
 		implements Struct<AiBuffer> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_HANDLE;
-    public static final VarHandle END_HANDLE;
+	public static final VarHandle DATA_HANDLE;
+	public static final VarHandle END_HANDLE;
 
-    public static final long DATA_BYTE_OFFSET;
-    public static final long END_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
+	public static final long END_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("data"),
-            UNBOUNDED_ADDRESS.withName("end")
-        ).withName("aiBuffer").withByteAlignment(8);
-        
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
-        END_HANDLE = LAYOUT.varHandle(PathElement.groupElement("end"));
-        
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        END_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("end"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("data"),
+		    UNBOUNDED_ADDRESS.withName("end")
+		).withName("aiBuffer").withByteAlignment(8);
+		
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
+		END_HANDLE = LAYOUT.varHandle(PathElement.groupElement("end"));
+		
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		END_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("end"));
+		//@formatter:on
+	}
 
-    public AiBuffer() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiBuffer(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiBuffer(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiBuffer() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiBuffer(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiBuffer(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #data()
     public AiBuffer data(NativeByteArray data) {
@@ -148,5 +148,5 @@ public final class AiBuffer
             segment -> new AiBuffer(segment)
         );
     }
-    
+
 }

@@ -22,61 +22,61 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDisplayPresentInfoKHR
 		implements Struct<VkDisplayPresentInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PERSISTENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PERSISTENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_RECT_BYTE_OFFSET;
-    public static final long DST_RECT_BYTE_OFFSET;
-    public static final long PERSISTENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_RECT_BYTE_OFFSET;
+	public static final long DST_RECT_BYTE_OFFSET;
+	public static final long PERSISTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkRect2D srcRect;
-    private final VkRect2D dstRect;
+	private final VkRect2D srcRect;
+	private final VkRect2D dstRect;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkRect2D.LAYOUT.withName("srcRect"),
-            VkRect2D.LAYOUT.withName("dstRect"),
-            JAVA_INT.withName("persistent"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDisplayPresentInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PERSISTENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("persistent"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_RECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcRect"));
-        DST_RECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstRect"));
-        PERSISTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("persistent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkRect2D.LAYOUT.withName("srcRect"),
+		    VkRect2D.LAYOUT.withName("dstRect"),
+		    JAVA_INT.withName("persistent"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDisplayPresentInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PERSISTENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("persistent"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_RECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcRect"));
+		DST_RECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstRect"));
+		PERSISTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("persistent"));
+		//@formatter:on
+	}
 
-    public VkDisplayPresentInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDisplayPresentInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDisplayPresentInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        srcRect = new VkRect2D(segment.asSlice(SRC_RECT_BYTE_OFFSET, VkRect2D.LAYOUT));
-        dstRect = new VkRect2D(segment.asSlice(DST_RECT_BYTE_OFFSET, VkRect2D.LAYOUT));
-    }
+	public VkDisplayPresentInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDisplayPresentInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDisplayPresentInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    srcRect = new VkRect2D(segment.asSlice(SRC_RECT_BYTE_OFFSET, VkRect2D.LAYOUT));
+	    dstRect = new VkRect2D(segment.asSlice(DST_RECT_BYTE_OFFSET, VkRect2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDisplayPresentInfoKHR sType(int sType) {
@@ -101,16 +101,6 @@ public final class VkDisplayPresentInfoKHR
     		return null;
     	
     	return segment;
-    }
-    
-    /// @see #persistent()
-    public VkDisplayPresentInfoKHR persistent(int persistent) {
-    	PERSISTENT_HANDLE.set(segment, 0L, persistent);
-    	return this;
-    }
-    
-    public int persistent() {
-    	return (int) PERSISTENT_HANDLE.get(segment, 0L);
     }
     
     /// @see #srcRect()
@@ -143,6 +133,16 @@ public final class VkDisplayPresentInfoKHR
     
     public VkRect2D dstRect() {
     	return dstRect;
+    }
+    
+    /// @see #persistent()
+    public VkDisplayPresentInfoKHR persistent(int persistent) {
+    	PERSISTENT_HANDLE.set(segment, 0L, persistent);
+    	return this;
+    }
+    
+    public int persistent() {
+    	return (int) PERSISTENT_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -196,5 +196,5 @@ public final class VkDisplayPresentInfoKHR
             segment -> new VkDisplayPresentInfoKHR(segment)
         );
     }
-    
+
 }

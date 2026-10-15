@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV
 		implements Struct<VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle REPRESENTATIVE_FRAGMENT_TEST_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle REPRESENTATIVE_FRAGMENT_TEST_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long REPRESENTATIVE_FRAGMENT_TEST_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long REPRESENTATIVE_FRAGMENT_TEST_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("representativeFragmentTest"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        REPRESENTATIVE_FRAGMENT_TEST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("representativeFragmentTest"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        REPRESENTATIVE_FRAGMENT_TEST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("representativeFragmentTest"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("representativeFragmentTest"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		REPRESENTATIVE_FRAGMENT_TEST_HANDLE = LAYOUT.varHandle(PathElement.groupElement("representativeFragmentTest"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		REPRESENTATIVE_FRAGMENT_TEST_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("representativeFragmentTest"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV
             segment -> new VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV(segment)
         );
     }
-    
+
 }

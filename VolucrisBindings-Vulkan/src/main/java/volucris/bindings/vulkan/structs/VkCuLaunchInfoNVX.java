@@ -22,105 +22,105 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCuLaunchInfoNVX
 		implements Struct<VkCuLaunchInfoNVX> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FUNCTION_HANDLE;
-    public static final VarHandle GRID_DIM_X_HANDLE;
-    public static final VarHandle GRID_DIM_Y_HANDLE;
-    public static final VarHandle GRID_DIM_Z_HANDLE;
-    public static final VarHandle BLOCK_DIM_X_HANDLE;
-    public static final VarHandle BLOCK_DIM_Y_HANDLE;
-    public static final VarHandle BLOCK_DIM_Z_HANDLE;
-    public static final VarHandle SHARED_MEM_BYTES_HANDLE;
-    public static final VarHandle PARAM_COUNT_HANDLE;
-    public static final VarHandle P_PARAMS_HANDLE;
-    public static final VarHandle EXTRA_COUNT_HANDLE;
-    public static final VarHandle P_EXTRAS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FUNCTION_HANDLE;
+	public static final VarHandle GRID_DIM_X_HANDLE;
+	public static final VarHandle GRID_DIM_Y_HANDLE;
+	public static final VarHandle GRID_DIM_Z_HANDLE;
+	public static final VarHandle BLOCK_DIM_X_HANDLE;
+	public static final VarHandle BLOCK_DIM_Y_HANDLE;
+	public static final VarHandle BLOCK_DIM_Z_HANDLE;
+	public static final VarHandle SHARED_MEM_BYTES_HANDLE;
+	public static final VarHandle PARAM_COUNT_HANDLE;
+	public static final VarHandle P_PARAMS_HANDLE;
+	public static final VarHandle EXTRA_COUNT_HANDLE;
+	public static final VarHandle P_EXTRAS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FUNCTION_BYTE_OFFSET;
-    public static final long GRID_DIM_X_BYTE_OFFSET;
-    public static final long GRID_DIM_Y_BYTE_OFFSET;
-    public static final long GRID_DIM_Z_BYTE_OFFSET;
-    public static final long BLOCK_DIM_X_BYTE_OFFSET;
-    public static final long BLOCK_DIM_Y_BYTE_OFFSET;
-    public static final long BLOCK_DIM_Z_BYTE_OFFSET;
-    public static final long SHARED_MEM_BYTES_BYTE_OFFSET;
-    public static final long PARAM_COUNT_BYTE_OFFSET;
-    public static final long P_PARAMS_BYTE_OFFSET;
-    public static final long EXTRA_COUNT_BYTE_OFFSET;
-    public static final long P_EXTRAS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FUNCTION_BYTE_OFFSET;
+	public static final long GRID_DIM_X_BYTE_OFFSET;
+	public static final long GRID_DIM_Y_BYTE_OFFSET;
+	public static final long GRID_DIM_Z_BYTE_OFFSET;
+	public static final long BLOCK_DIM_X_BYTE_OFFSET;
+	public static final long BLOCK_DIM_Y_BYTE_OFFSET;
+	public static final long BLOCK_DIM_Z_BYTE_OFFSET;
+	public static final long SHARED_MEM_BYTES_BYTE_OFFSET;
+	public static final long PARAM_COUNT_BYTE_OFFSET;
+	public static final long P_PARAMS_BYTE_OFFSET;
+	public static final long EXTRA_COUNT_BYTE_OFFSET;
+	public static final long P_EXTRAS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("function"),
-            JAVA_INT.withName("gridDimX"),
-            JAVA_INT.withName("gridDimY"),
-            JAVA_INT.withName("gridDimZ"),
-            JAVA_INT.withName("blockDimX"),
-            JAVA_INT.withName("blockDimY"),
-            JAVA_INT.withName("blockDimZ"),
-            JAVA_INT.withName("sharedMemBytes"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("paramCount"),
-            UNBOUNDED_ADDRESS.withName("pParams"),
-            JAVA_LONG.withName("extraCount"),
-            UNBOUNDED_ADDRESS.withName("pExtras")
-        ).withName("VkCuLaunchInfoNVX").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FUNCTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("function"));
-        GRID_DIM_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gridDimX"));
-        GRID_DIM_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gridDimY"));
-        GRID_DIM_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gridDimZ"));
-        BLOCK_DIM_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockDimX"));
-        BLOCK_DIM_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockDimY"));
-        BLOCK_DIM_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockDimZ"));
-        SHARED_MEM_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharedMemBytes"));
-        PARAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("paramCount"));
-        P_PARAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pParams"));
-        EXTRA_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extraCount"));
-        P_EXTRAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtras"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FUNCTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("function"));
-        GRID_DIM_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gridDimX"));
-        GRID_DIM_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gridDimY"));
-        GRID_DIM_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gridDimZ"));
-        BLOCK_DIM_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockDimX"));
-        BLOCK_DIM_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockDimY"));
-        BLOCK_DIM_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockDimZ"));
-        SHARED_MEM_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharedMemBytes"));
-        PARAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("paramCount"));
-        P_PARAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pParams"));
-        EXTRA_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extraCount"));
-        P_EXTRAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtras"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("function"),
+		    JAVA_INT.withName("gridDimX"),
+		    JAVA_INT.withName("gridDimY"),
+		    JAVA_INT.withName("gridDimZ"),
+		    JAVA_INT.withName("blockDimX"),
+		    JAVA_INT.withName("blockDimY"),
+		    JAVA_INT.withName("blockDimZ"),
+		    JAVA_INT.withName("sharedMemBytes"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("paramCount"),
+		    UNBOUNDED_ADDRESS.withName("pParams"),
+		    JAVA_LONG.withName("extraCount"),
+		    UNBOUNDED_ADDRESS.withName("pExtras")
+		).withName("VkCuLaunchInfoNVX").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FUNCTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("function"));
+		GRID_DIM_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gridDimX"));
+		GRID_DIM_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gridDimY"));
+		GRID_DIM_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gridDimZ"));
+		BLOCK_DIM_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockDimX"));
+		BLOCK_DIM_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockDimY"));
+		BLOCK_DIM_Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockDimZ"));
+		SHARED_MEM_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sharedMemBytes"));
+		PARAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("paramCount"));
+		P_PARAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pParams"));
+		EXTRA_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extraCount"));
+		P_EXTRAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtras"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FUNCTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("function"));
+		GRID_DIM_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gridDimX"));
+		GRID_DIM_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gridDimY"));
+		GRID_DIM_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gridDimZ"));
+		BLOCK_DIM_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockDimX"));
+		BLOCK_DIM_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockDimY"));
+		BLOCK_DIM_Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockDimZ"));
+		SHARED_MEM_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sharedMemBytes"));
+		PARAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("paramCount"));
+		P_PARAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pParams"));
+		EXTRA_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extraCount"));
+		P_EXTRAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtras"));
+		//@formatter:on
+	}
 
-    public VkCuLaunchInfoNVX() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCuLaunchInfoNVX(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCuLaunchInfoNVX(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCuLaunchInfoNVX() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCuLaunchInfoNVX(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCuLaunchInfoNVX(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCuLaunchInfoNVX sType(int sType) {
@@ -333,5 +333,5 @@ public final class VkCuLaunchInfoNVX
             segment -> new VkCuLaunchInfoNVX(segment)
         );
     }
-    
+
 }

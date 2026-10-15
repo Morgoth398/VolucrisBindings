@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkImageSubresourceLayers
 		implements Struct<VkImageSubresourceLayers> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_MASK_HANDLE;
-    public static final VarHandle MIP_LEVEL_HANDLE;
-    public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
-    public static final VarHandle LAYER_COUNT_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle MIP_LEVEL_HANDLE;
+	public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
+	public static final VarHandle LAYER_COUNT_HANDLE;
 
-    public static final long ASPECT_MASK_BYTE_OFFSET;
-    public static final long MIP_LEVEL_BYTE_OFFSET;
-    public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
-    public static final long LAYER_COUNT_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long MIP_LEVEL_BYTE_OFFSET;
+	public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
+	public static final long LAYER_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("aspectMask"),
-            JAVA_INT.withName("mipLevel"),
-            JAVA_INT.withName("baseArrayLayer"),
-            JAVA_INT.withName("layerCount")
-        ).withName("VkImageSubresourceLayers").withByteAlignment(4);
-        
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        MIP_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipLevel"));
-        BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
-        LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
-        
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        MIP_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipLevel"));
-        BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
-        LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("aspectMask"),
+		    JAVA_INT.withName("mipLevel"),
+		    JAVA_INT.withName("baseArrayLayer"),
+		    JAVA_INT.withName("layerCount")
+		).withName("VkImageSubresourceLayers").withByteAlignment(4);
+		
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		MIP_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipLevel"));
+		BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
+		LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
+		
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		MIP_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipLevel"));
+		BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
+		LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
+		//@formatter:on
+	}
 
-    public VkImageSubresourceLayers() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageSubresourceLayers(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageSubresourceLayers(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageSubresourceLayers() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageSubresourceLayers(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageSubresourceLayers(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #aspectMask()
     public VkImageSubresourceLayers aspectMask(int aspectMask) {
@@ -158,5 +158,5 @@ public final class VkImageSubresourceLayers
             segment -> new VkImageSubresourceLayers(segment)
         );
     }
-    
+
 }

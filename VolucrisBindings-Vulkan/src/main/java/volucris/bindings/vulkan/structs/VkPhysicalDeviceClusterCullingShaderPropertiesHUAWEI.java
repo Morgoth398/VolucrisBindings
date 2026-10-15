@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI
 		implements Struct<VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_WORK_GROUP_COUNT_HANDLE;
-    public static final VarHandle MAX_WORK_GROUP_SIZE_HANDLE;
-    public static final VarHandle MAX_OUTPUT_CLUSTER_COUNT_HANDLE;
-    public static final VarHandle INDIRECT_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_WORK_GROUP_COUNT_HANDLE;
+	public static final VarHandle MAX_WORK_GROUP_SIZE_HANDLE;
+	public static final VarHandle MAX_OUTPUT_CLUSTER_COUNT_HANDLE;
+	public static final VarHandle INDIRECT_BUFFER_OFFSET_ALIGNMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_WORK_GROUP_COUNT_BYTE_OFFSET;
-    public static final long MAX_WORK_GROUP_SIZE_BYTE_OFFSET;
-    public static final long MAX_OUTPUT_CLUSTER_COUNT_BYTE_OFFSET;
-    public static final long INDIRECT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_WORK_GROUP_COUNT_BYTE_OFFSET;
+	public static final long MAX_WORK_GROUP_SIZE_BYTE_OFFSET;
+	public static final long MAX_OUTPUT_CLUSTER_COUNT_BYTE_OFFSET;
+	public static final long INDIRECT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxWorkGroupCount"),
-            MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxWorkGroupSize"),
-            JAVA_INT.withName("maxOutputClusterCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("indirectBufferOffsetAlignment")
-        ).withName("VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWorkGroupCount"), PathElement.sequenceElement());
-        MAX_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWorkGroupSize"), PathElement.sequenceElement());
-        MAX_OUTPUT_CLUSTER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOutputClusterCount"));
-        INDIRECT_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectBufferOffsetAlignment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWorkGroupCount"));
-        MAX_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWorkGroupSize"));
-        MAX_OUTPUT_CLUSTER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOutputClusterCount"));
-        INDIRECT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectBufferOffsetAlignment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxWorkGroupCount"),
+		    MemoryLayout.sequenceLayout(3, JAVA_INT).withName("maxWorkGroupSize"),
+		    JAVA_INT.withName("maxOutputClusterCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("indirectBufferOffsetAlignment")
+		).withName("VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_WORK_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWorkGroupCount"), PathElement.sequenceElement());
+		MAX_WORK_GROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxWorkGroupSize"), PathElement.sequenceElement());
+		MAX_OUTPUT_CLUSTER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOutputClusterCount"));
+		INDIRECT_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectBufferOffsetAlignment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_WORK_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWorkGroupCount"));
+		MAX_WORK_GROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxWorkGroupSize"));
+		MAX_OUTPUT_CLUSTER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOutputClusterCount"));
+		INDIRECT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectBufferOffsetAlignment"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI sType(int sType) {
@@ -197,5 +197,5 @@ public final class VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI
             segment -> new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(segment)
         );
     }
-    
+
 }

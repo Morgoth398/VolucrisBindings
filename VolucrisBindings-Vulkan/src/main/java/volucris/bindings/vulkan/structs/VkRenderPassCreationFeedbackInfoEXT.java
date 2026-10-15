@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkRenderPassCreationFeedbackInfoEXT
 		implements Struct<VkRenderPassCreationFeedbackInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle POST_MERGE_SUBPASS_COUNT_HANDLE;
+	public static final VarHandle POST_MERGE_SUBPASS_COUNT_HANDLE;
 
-    public static final long POST_MERGE_SUBPASS_COUNT_BYTE_OFFSET;
+	public static final long POST_MERGE_SUBPASS_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("postMergeSubpassCount")
-        ).withName("VkRenderPassCreationFeedbackInfoEXT").withByteAlignment(4);
-        
-        POST_MERGE_SUBPASS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("postMergeSubpassCount"));
-        
-        POST_MERGE_SUBPASS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("postMergeSubpassCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("postMergeSubpassCount")
+		).withName("VkRenderPassCreationFeedbackInfoEXT").withByteAlignment(4);
+		
+		POST_MERGE_SUBPASS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("postMergeSubpassCount"));
+		
+		POST_MERGE_SUBPASS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("postMergeSubpassCount"));
+		//@formatter:on
+	}
 
-    public VkRenderPassCreationFeedbackInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassCreationFeedbackInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassCreationFeedbackInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassCreationFeedbackInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassCreationFeedbackInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassCreationFeedbackInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #postMergeSubpassCount()
     public VkRenderPassCreationFeedbackInfoEXT postMergeSubpassCount(int postMergeSubpassCount) {
@@ -113,5 +113,5 @@ public final class VkRenderPassCreationFeedbackInfoEXT
             segment -> new VkRenderPassCreationFeedbackInfoEXT(segment)
         );
     }
-    
+
 }

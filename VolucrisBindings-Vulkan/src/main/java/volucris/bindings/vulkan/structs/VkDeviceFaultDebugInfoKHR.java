@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceFaultDebugInfoKHR
 		implements Struct<VkDeviceFaultDebugInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VENDOR_BINARY_SIZE_HANDLE;
-    public static final VarHandle P_VENDOR_BINARY_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VENDOR_BINARY_SIZE_HANDLE;
+	public static final VarHandle P_VENDOR_BINARY_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VENDOR_BINARY_SIZE_BYTE_OFFSET;
-    public static final long P_VENDOR_BINARY_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VENDOR_BINARY_SIZE_BYTE_OFFSET;
+	public static final long P_VENDOR_BINARY_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vendorBinarySize"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pVendorBinaryData")
-        ).withName("VkDeviceFaultDebugInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VENDOR_BINARY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorBinarySize"));
-        P_VENDOR_BINARY_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVendorBinaryData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VENDOR_BINARY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorBinarySize"));
-        P_VENDOR_BINARY_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVendorBinaryData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vendorBinarySize"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pVendorBinaryData")
+		).withName("VkDeviceFaultDebugInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VENDOR_BINARY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorBinarySize"));
+		P_VENDOR_BINARY_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVendorBinaryData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VENDOR_BINARY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorBinarySize"));
+		P_VENDOR_BINARY_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVendorBinaryData"));
+		//@formatter:on
+	}
 
-    public VkDeviceFaultDebugInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceFaultDebugInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceFaultDebugInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceFaultDebugInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceFaultDebugInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceFaultDebugInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceFaultDebugInfoKHR sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkDeviceFaultDebugInfoKHR
             segment -> new VkDeviceFaultDebugInfoKHR(segment)
         );
     }
-    
+
 }

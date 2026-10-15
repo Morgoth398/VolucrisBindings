@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDedicatedAllocationImageCreateInfoNV
 		implements Struct<VkDedicatedAllocationImageCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEDICATED_ALLOCATION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEDICATED_ALLOCATION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEDICATED_ALLOCATION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEDICATED_ALLOCATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dedicatedAllocation"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDedicatedAllocationImageCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEDICATED_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dedicatedAllocation"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEDICATED_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dedicatedAllocation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dedicatedAllocation"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDedicatedAllocationImageCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEDICATED_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dedicatedAllocation"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEDICATED_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dedicatedAllocation"));
+		//@formatter:on
+	}
 
-    public VkDedicatedAllocationImageCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDedicatedAllocationImageCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDedicatedAllocationImageCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDedicatedAllocationImageCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDedicatedAllocationImageCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDedicatedAllocationImageCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDedicatedAllocationImageCreateInfoNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkDedicatedAllocationImageCreateInfoNV
             segment -> new VkDedicatedAllocationImageCreateInfoNV(segment)
         );
     }
-    
+
 }

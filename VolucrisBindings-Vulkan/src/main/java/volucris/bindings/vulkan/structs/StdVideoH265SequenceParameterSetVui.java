@@ -22,165 +22,181 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoH265SequenceParameterSetVui
 		implements Struct<StdVideoH265SequenceParameterSetVui> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_RATIO_IDC_HANDLE;
-    public static final VarHandle SAR_WIDTH_HANDLE;
-    public static final VarHandle SAR_HEIGHT_HANDLE;
-    public static final VarHandle VIDEO_FORMAT_HANDLE;
-    public static final VarHandle COLOUR_PRIMARIES_HANDLE;
-    public static final VarHandle TRANSFER_CHARACTERISTICS_HANDLE;
-    public static final VarHandle MATRIX_COEFFS_HANDLE;
-    public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE;
-    public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle RESERVED2_HANDLE;
-    public static final VarHandle DEF_DISP_WIN_LEFT_OFFSET_HANDLE;
-    public static final VarHandle DEF_DISP_WIN_RIGHT_OFFSET_HANDLE;
-    public static final VarHandle DEF_DISP_WIN_TOP_OFFSET_HANDLE;
-    public static final VarHandle DEF_DISP_WIN_BOTTOM_OFFSET_HANDLE;
-    public static final VarHandle VUI_NUM_UNITS_IN_TICK_HANDLE;
-    public static final VarHandle VUI_TIME_SCALE_HANDLE;
-    public static final VarHandle VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE;
-    public static final VarHandle MIN_SPATIAL_SEGMENTATION_IDC_HANDLE;
-    public static final VarHandle RESERVED3_HANDLE;
-    public static final VarHandle MAX_BYTES_PER_PIC_DENOM_HANDLE;
-    public static final VarHandle MAX_BITS_PER_MIN_CU_DENOM_HANDLE;
-    public static final VarHandle LOG2_MAX_MV_LENGTH_HORIZONTAL_HANDLE;
-    public static final VarHandle LOG2_MAX_MV_LENGTH_VERTICAL_HANDLE;
-    public static final VarHandle P_HRD_PARAMETERS_HANDLE;
+	public static final VarHandle ASPECT_RATIO_IDC_HANDLE;
+	public static final VarHandle SAR_WIDTH_HANDLE;
+	public static final VarHandle SAR_HEIGHT_HANDLE;
+	public static final VarHandle VIDEO_FORMAT_HANDLE;
+	public static final VarHandle COLOUR_PRIMARIES_HANDLE;
+	public static final VarHandle TRANSFER_CHARACTERISTICS_HANDLE;
+	public static final VarHandle MATRIX_COEFFS_HANDLE;
+	public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE;
+	public static final VarHandle CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle RESERVED2_HANDLE;
+	public static final VarHandle DEF_DISP_WIN_LEFT_OFFSET_HANDLE;
+	public static final VarHandle DEF_DISP_WIN_RIGHT_OFFSET_HANDLE;
+	public static final VarHandle DEF_DISP_WIN_TOP_OFFSET_HANDLE;
+	public static final VarHandle DEF_DISP_WIN_BOTTOM_OFFSET_HANDLE;
+	public static final VarHandle VUI_NUM_UNITS_IN_TICK_HANDLE;
+	public static final VarHandle VUI_TIME_SCALE_HANDLE;
+	public static final VarHandle VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE;
+	public static final VarHandle MIN_SPATIAL_SEGMENTATION_IDC_HANDLE;
+	public static final VarHandle RESERVED3_HANDLE;
+	public static final VarHandle MAX_BYTES_PER_PIC_DENOM_HANDLE;
+	public static final VarHandle MAX_BITS_PER_MIN_CU_DENOM_HANDLE;
+	public static final VarHandle LOG2_MAX_MV_LENGTH_HORIZONTAL_HANDLE;
+	public static final VarHandle LOG2_MAX_MV_LENGTH_VERTICAL_HANDLE;
+	public static final VarHandle P_HRD_PARAMETERS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long ASPECT_RATIO_IDC_BYTE_OFFSET;
-    public static final long SAR_WIDTH_BYTE_OFFSET;
-    public static final long SAR_HEIGHT_BYTE_OFFSET;
-    public static final long VIDEO_FORMAT_BYTE_OFFSET;
-    public static final long COLOUR_PRIMARIES_BYTE_OFFSET;
-    public static final long TRANSFER_CHARACTERISTICS_BYTE_OFFSET;
-    public static final long MATRIX_COEFFS_BYTE_OFFSET;
-    public static final long CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET;
-    public static final long CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long RESERVED2_BYTE_OFFSET;
-    public static final long DEF_DISP_WIN_LEFT_OFFSET_BYTE_OFFSET;
-    public static final long DEF_DISP_WIN_RIGHT_OFFSET_BYTE_OFFSET;
-    public static final long DEF_DISP_WIN_TOP_OFFSET_BYTE_OFFSET;
-    public static final long DEF_DISP_WIN_BOTTOM_OFFSET_BYTE_OFFSET;
-    public static final long VUI_NUM_UNITS_IN_TICK_BYTE_OFFSET;
-    public static final long VUI_TIME_SCALE_BYTE_OFFSET;
-    public static final long VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET;
-    public static final long MIN_SPATIAL_SEGMENTATION_IDC_BYTE_OFFSET;
-    public static final long RESERVED3_BYTE_OFFSET;
-    public static final long MAX_BYTES_PER_PIC_DENOM_BYTE_OFFSET;
-    public static final long MAX_BITS_PER_MIN_CU_DENOM_BYTE_OFFSET;
-    public static final long LOG2_MAX_MV_LENGTH_HORIZONTAL_BYTE_OFFSET;
-    public static final long LOG2_MAX_MV_LENGTH_VERTICAL_BYTE_OFFSET;
-    public static final long P_HRD_PARAMETERS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long ASPECT_RATIO_IDC_BYTE_OFFSET;
+	public static final long SAR_WIDTH_BYTE_OFFSET;
+	public static final long SAR_HEIGHT_BYTE_OFFSET;
+	public static final long VIDEO_FORMAT_BYTE_OFFSET;
+	public static final long COLOUR_PRIMARIES_BYTE_OFFSET;
+	public static final long TRANSFER_CHARACTERISTICS_BYTE_OFFSET;
+	public static final long MATRIX_COEFFS_BYTE_OFFSET;
+	public static final long CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET;
+	public static final long CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long RESERVED2_BYTE_OFFSET;
+	public static final long DEF_DISP_WIN_LEFT_OFFSET_BYTE_OFFSET;
+	public static final long DEF_DISP_WIN_RIGHT_OFFSET_BYTE_OFFSET;
+	public static final long DEF_DISP_WIN_TOP_OFFSET_BYTE_OFFSET;
+	public static final long DEF_DISP_WIN_BOTTOM_OFFSET_BYTE_OFFSET;
+	public static final long VUI_NUM_UNITS_IN_TICK_BYTE_OFFSET;
+	public static final long VUI_TIME_SCALE_BYTE_OFFSET;
+	public static final long VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET;
+	public static final long MIN_SPATIAL_SEGMENTATION_IDC_BYTE_OFFSET;
+	public static final long RESERVED3_BYTE_OFFSET;
+	public static final long MAX_BYTES_PER_PIC_DENOM_BYTE_OFFSET;
+	public static final long MAX_BITS_PER_MIN_CU_DENOM_BYTE_OFFSET;
+	public static final long LOG2_MAX_MV_LENGTH_HORIZONTAL_BYTE_OFFSET;
+	public static final long LOG2_MAX_MV_LENGTH_VERTICAL_BYTE_OFFSET;
+	public static final long P_HRD_PARAMETERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH265SpsVuiFlags flags;
+	private final StdVideoH265SpsVuiFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH265SpsVuiFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("aspect_ratio_idc"),
-            JAVA_SHORT.withName("sar_width"),
-            JAVA_SHORT.withName("sar_height"),
-            JAVA_BYTE.withName("video_format"),
-            JAVA_BYTE.withName("colour_primaries"),
-            JAVA_BYTE.withName("transfer_characteristics"),
-            JAVA_BYTE.withName("matrix_coeffs"),
-            JAVA_BYTE.withName("chroma_sample_loc_type_top_field"),
-            JAVA_BYTE.withName("chroma_sample_loc_type_bottom_field"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_BYTE.withName("reserved2"),
-            JAVA_SHORT.withName("def_disp_win_left_offset"),
-            JAVA_SHORT.withName("def_disp_win_right_offset"),
-            JAVA_SHORT.withName("def_disp_win_top_offset"),
-            JAVA_SHORT.withName("def_disp_win_bottom_offset"),
-            JAVA_INT.withName("vui_num_units_in_tick"),
-            JAVA_INT.withName("vui_time_scale"),
-            JAVA_INT.withName("vui_num_ticks_poc_diff_one_minus1"),
-            JAVA_SHORT.withName("min_spatial_segmentation_idc"),
-            JAVA_SHORT.withName("reserved3"),
-            JAVA_BYTE.withName("max_bytes_per_pic_denom"),
-            JAVA_BYTE.withName("max_bits_per_min_cu_denom"),
-            JAVA_BYTE.withName("log2_max_mv_length_horizontal"),
-            JAVA_BYTE.withName("log2_max_mv_length_vertical"),
-            UNBOUNDED_ADDRESS.withName("pHrdParameters")
-        ).withName("StdVideoH265SequenceParameterSetVui").withByteAlignment(8);
-        
-        ASPECT_RATIO_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspect_ratio_idc"));
-        SAR_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_width"));
-        SAR_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_height"));
-        VIDEO_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("video_format"));
-        COLOUR_PRIMARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colour_primaries"));
-        TRANSFER_CHARACTERISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transfer_characteristics"));
-        MATRIX_COEFFS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix_coeffs"));
-        CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_top_field"));
-        CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
-        DEF_DISP_WIN_LEFT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_left_offset"));
-        DEF_DISP_WIN_RIGHT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_right_offset"));
-        DEF_DISP_WIN_TOP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_top_offset"));
-        DEF_DISP_WIN_BOTTOM_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_bottom_offset"));
-        VUI_NUM_UNITS_IN_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vui_num_units_in_tick"));
-        VUI_TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vui_time_scale"));
-        VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vui_num_ticks_poc_diff_one_minus1"));
-        MIN_SPATIAL_SEGMENTATION_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("min_spatial_segmentation_idc"));
-        RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
-        MAX_BYTES_PER_PIC_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_bytes_per_pic_denom"));
-        MAX_BITS_PER_MIN_CU_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_bits_per_min_cu_denom"));
-        LOG2_MAX_MV_LENGTH_HORIZONTAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_max_mv_length_horizontal"));
-        LOG2_MAX_MV_LENGTH_VERTICAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_max_mv_length_vertical"));
-        P_HRD_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHrdParameters"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        ASPECT_RATIO_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspect_ratio_idc"));
-        SAR_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_width"));
-        SAR_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_height"));
-        VIDEO_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("video_format"));
-        COLOUR_PRIMARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colour_primaries"));
-        TRANSFER_CHARACTERISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transfer_characteristics"));
-        MATRIX_COEFFS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix_coeffs"));
-        CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_top_field"));
-        CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
-        DEF_DISP_WIN_LEFT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_left_offset"));
-        DEF_DISP_WIN_RIGHT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_right_offset"));
-        DEF_DISP_WIN_TOP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_top_offset"));
-        DEF_DISP_WIN_BOTTOM_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_bottom_offset"));
-        VUI_NUM_UNITS_IN_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vui_num_units_in_tick"));
-        VUI_TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vui_time_scale"));
-        VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vui_num_ticks_poc_diff_one_minus1"));
-        MIN_SPATIAL_SEGMENTATION_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("min_spatial_segmentation_idc"));
-        RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
-        MAX_BYTES_PER_PIC_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_bytes_per_pic_denom"));
-        MAX_BITS_PER_MIN_CU_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_bits_per_min_cu_denom"));
-        LOG2_MAX_MV_LENGTH_HORIZONTAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_max_mv_length_horizontal"));
-        LOG2_MAX_MV_LENGTH_VERTICAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_max_mv_length_vertical"));
-        P_HRD_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHrdParameters"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH265SpsVuiFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("aspect_ratio_idc"),
+		    JAVA_SHORT.withName("sar_width"),
+		    JAVA_SHORT.withName("sar_height"),
+		    JAVA_BYTE.withName("video_format"),
+		    JAVA_BYTE.withName("colour_primaries"),
+		    JAVA_BYTE.withName("transfer_characteristics"),
+		    JAVA_BYTE.withName("matrix_coeffs"),
+		    JAVA_BYTE.withName("chroma_sample_loc_type_top_field"),
+		    JAVA_BYTE.withName("chroma_sample_loc_type_bottom_field"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_BYTE.withName("reserved2"),
+		    JAVA_SHORT.withName("def_disp_win_left_offset"),
+		    JAVA_SHORT.withName("def_disp_win_right_offset"),
+		    JAVA_SHORT.withName("def_disp_win_top_offset"),
+		    JAVA_SHORT.withName("def_disp_win_bottom_offset"),
+		    JAVA_INT.withName("vui_num_units_in_tick"),
+		    JAVA_INT.withName("vui_time_scale"),
+		    JAVA_INT.withName("vui_num_ticks_poc_diff_one_minus1"),
+		    JAVA_SHORT.withName("min_spatial_segmentation_idc"),
+		    JAVA_SHORT.withName("reserved3"),
+		    JAVA_BYTE.withName("max_bytes_per_pic_denom"),
+		    JAVA_BYTE.withName("max_bits_per_min_cu_denom"),
+		    JAVA_BYTE.withName("log2_max_mv_length_horizontal"),
+		    JAVA_BYTE.withName("log2_max_mv_length_vertical"),
+		    UNBOUNDED_ADDRESS.withName("pHrdParameters")
+		).withName("StdVideoH265SequenceParameterSetVui").withByteAlignment(8);
+		
+		ASPECT_RATIO_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspect_ratio_idc"));
+		SAR_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_width"));
+		SAR_HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sar_height"));
+		VIDEO_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("video_format"));
+		COLOUR_PRIMARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("colour_primaries"));
+		TRANSFER_CHARACTERISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transfer_characteristics"));
+		MATRIX_COEFFS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix_coeffs"));
+		CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_top_field"));
+		CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
+		DEF_DISP_WIN_LEFT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_left_offset"));
+		DEF_DISP_WIN_RIGHT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_right_offset"));
+		DEF_DISP_WIN_TOP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_top_offset"));
+		DEF_DISP_WIN_BOTTOM_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("def_disp_win_bottom_offset"));
+		VUI_NUM_UNITS_IN_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vui_num_units_in_tick"));
+		VUI_TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vui_time_scale"));
+		VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vui_num_ticks_poc_diff_one_minus1"));
+		MIN_SPATIAL_SEGMENTATION_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("min_spatial_segmentation_idc"));
+		RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
+		MAX_BYTES_PER_PIC_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_bytes_per_pic_denom"));
+		MAX_BITS_PER_MIN_CU_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_bits_per_min_cu_denom"));
+		LOG2_MAX_MV_LENGTH_HORIZONTAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_max_mv_length_horizontal"));
+		LOG2_MAX_MV_LENGTH_VERTICAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("log2_max_mv_length_vertical"));
+		P_HRD_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHrdParameters"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		ASPECT_RATIO_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspect_ratio_idc"));
+		SAR_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_width"));
+		SAR_HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sar_height"));
+		VIDEO_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("video_format"));
+		COLOUR_PRIMARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("colour_primaries"));
+		TRANSFER_CHARACTERISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transfer_characteristics"));
+		MATRIX_COEFFS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix_coeffs"));
+		CHROMA_SAMPLE_LOC_TYPE_TOP_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_top_field"));
+		CHROMA_SAMPLE_LOC_TYPE_BOTTOM_FIELD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_loc_type_bottom_field"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
+		DEF_DISP_WIN_LEFT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_left_offset"));
+		DEF_DISP_WIN_RIGHT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_right_offset"));
+		DEF_DISP_WIN_TOP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_top_offset"));
+		DEF_DISP_WIN_BOTTOM_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("def_disp_win_bottom_offset"));
+		VUI_NUM_UNITS_IN_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vui_num_units_in_tick"));
+		VUI_TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vui_time_scale"));
+		VUI_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vui_num_ticks_poc_diff_one_minus1"));
+		MIN_SPATIAL_SEGMENTATION_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("min_spatial_segmentation_idc"));
+		RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
+		MAX_BYTES_PER_PIC_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_bytes_per_pic_denom"));
+		MAX_BITS_PER_MIN_CU_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_bits_per_min_cu_denom"));
+		LOG2_MAX_MV_LENGTH_HORIZONTAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_max_mv_length_horizontal"));
+		LOG2_MAX_MV_LENGTH_VERTICAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("log2_max_mv_length_vertical"));
+		P_HRD_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHrdParameters"));
+		//@formatter:on
+	}
 
-    public StdVideoH265SequenceParameterSetVui() {
-        this(Arena.ofAuto());
+	public StdVideoH265SequenceParameterSetVui() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265SequenceParameterSetVui(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265SequenceParameterSetVui(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH265SpsVuiFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265SpsVuiFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH265SequenceParameterSetVui flags(Consumer<StdVideoH265SpsVuiFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH265SequenceParameterSetVui(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH265SequenceParameterSetVui flags(StdVideoH265SpsVuiFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH265SequenceParameterSetVui(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH265SpsVuiFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265SpsVuiFlags.LAYOUT));
+    public StdVideoH265SpsVuiFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #aspect_ratio_idc()
     public StdVideoH265SequenceParameterSetVui aspect_ratio_idc(int aspect_ratio_idc) {
     	ASPECT_RATIO_IDC_HANDLE.set(segment, 0L, aspect_ratio_idc);
@@ -436,22 +452,6 @@ public final class StdVideoH265SequenceParameterSetVui
     	return new StdVideoH265HrdParameters(segment);
     }
     
-    /// @see #flags()
-    public StdVideoH265SequenceParameterSetVui flags(Consumer<StdVideoH265SpsVuiFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH265SequenceParameterSetVui flags(StdVideoH265SpsVuiFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH265SpsVuiFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH265SequenceParameterSetVui set(StdVideoH265SequenceParameterSetVui other) {
         return set(other.segment);
@@ -503,5 +503,5 @@ public final class StdVideoH265SequenceParameterSetVui
             segment -> new StdVideoH265SequenceParameterSetVui(segment)
         );
     }
-    
+
 }

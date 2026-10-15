@@ -23,102 +23,102 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMicromapBuildInfoEXT
 		implements Struct<VkMicromapBuildInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MODE_HANDLE;
-    public static final VarHandle DST_MICROMAP_HANDLE;
-    public static final VarHandle USAGE_COUNTS_COUNT_HANDLE;
-    public static final VarHandle P_USAGE_COUNTS_HANDLE;
-    public static final VarHandle PP_USAGE_COUNTS_HANDLE;
-    public static final VarHandle TRIANGLE_ARRAY_STRIDE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MODE_HANDLE;
+	public static final VarHandle DST_MICROMAP_HANDLE;
+	public static final VarHandle USAGE_COUNTS_COUNT_HANDLE;
+	public static final VarHandle P_USAGE_COUNTS_HANDLE;
+	public static final VarHandle PP_USAGE_COUNTS_HANDLE;
+	public static final VarHandle TRIANGLE_ARRAY_STRIDE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MODE_BYTE_OFFSET;
-    public static final long DST_MICROMAP_BYTE_OFFSET;
-    public static final long USAGE_COUNTS_COUNT_BYTE_OFFSET;
-    public static final long P_USAGE_COUNTS_BYTE_OFFSET;
-    public static final long PP_USAGE_COUNTS_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
-    public static final long SCRATCH_DATA_BYTE_OFFSET;
-    public static final long TRIANGLE_ARRAY_BYTE_OFFSET;
-    public static final long TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MODE_BYTE_OFFSET;
+	public static final long DST_MICROMAP_BYTE_OFFSET;
+	public static final long USAGE_COUNTS_COUNT_BYTE_OFFSET;
+	public static final long P_USAGE_COUNTS_BYTE_OFFSET;
+	public static final long PP_USAGE_COUNTS_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
+	public static final long SCRATCH_DATA_BYTE_OFFSET;
+	public static final long TRIANGLE_ARRAY_BYTE_OFFSET;
+	public static final long TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressConstKHR data;
-    private final VkDeviceOrHostAddressKHR scratchData;
-    private final VkDeviceOrHostAddressConstKHR triangleArray;
+	private final VkDeviceOrHostAddressConstKHR data;
+	private final VkDeviceOrHostAddressKHR scratchData;
+	private final VkDeviceOrHostAddressConstKHR triangleArray;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("mode"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("dstMicromap"),
-            JAVA_INT.withName("usageCountsCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pUsageCounts"),
-            UNBOUNDED_ADDRESS.withName("ppUsageCounts"),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("data"),
-            VkDeviceOrHostAddressKHR.LAYOUT.withName("scratchData"),
-            VkDeviceOrHostAddressConstKHR.LAYOUT.withName("triangleArray"),
-            JAVA_LONG.withName("triangleArrayStride")
-        ).withName("VkMicromapBuildInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
-        DST_MICROMAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstMicromap"));
-        USAGE_COUNTS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usageCountsCount"));
-        P_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUsageCounts"));
-        PP_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppUsageCounts"));
-        TRIANGLE_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangleArrayStride"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
-        DST_MICROMAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstMicromap"));
-        USAGE_COUNTS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usageCountsCount"));
-        P_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUsageCounts"));
-        PP_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppUsageCounts"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        SCRATCH_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchData"));
-        TRIANGLE_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArray"));
-        TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArrayStride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("mode"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("dstMicromap"),
+		    JAVA_INT.withName("usageCountsCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pUsageCounts"),
+		    UNBOUNDED_ADDRESS.withName("ppUsageCounts"),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("data"),
+		    VkDeviceOrHostAddressKHR.LAYOUT.withName("scratchData"),
+		    VkDeviceOrHostAddressConstKHR.LAYOUT.withName("triangleArray"),
+		    JAVA_LONG.withName("triangleArrayStride")
+		).withName("VkMicromapBuildInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
+		DST_MICROMAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstMicromap"));
+		USAGE_COUNTS_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usageCountsCount"));
+		P_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUsageCounts"));
+		PP_USAGE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppUsageCounts"));
+		TRIANGLE_ARRAY_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("triangleArrayStride"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
+		DST_MICROMAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstMicromap"));
+		USAGE_COUNTS_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usageCountsCount"));
+		P_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUsageCounts"));
+		PP_USAGE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppUsageCounts"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		SCRATCH_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchData"));
+		TRIANGLE_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArray"));
+		TRIANGLE_ARRAY_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangleArrayStride"));
+		//@formatter:on
+	}
 
-    public VkMicromapBuildInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMicromapBuildInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMicromapBuildInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        data = new VkDeviceOrHostAddressConstKHR(segment.asSlice(DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-        scratchData = new VkDeviceOrHostAddressKHR(segment.asSlice(SCRATCH_DATA_BYTE_OFFSET, VkDeviceOrHostAddressKHR.LAYOUT));
-        triangleArray = new VkDeviceOrHostAddressConstKHR(segment.asSlice(TRIANGLE_ARRAY_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
-    }
+	public VkMicromapBuildInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMicromapBuildInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMicromapBuildInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    data = new VkDeviceOrHostAddressConstKHR(segment.asSlice(DATA_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	    scratchData = new VkDeviceOrHostAddressKHR(segment.asSlice(SCRATCH_DATA_BYTE_OFFSET, VkDeviceOrHostAddressKHR.LAYOUT));
+	    triangleArray = new VkDeviceOrHostAddressConstKHR(segment.asSlice(TRIANGLE_ARRAY_BYTE_OFFSET, VkDeviceOrHostAddressConstKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkMicromapBuildInfoEXT sType(int sType) {
@@ -230,16 +230,6 @@ public final class VkMicromapBuildInfoEXT
     	return new NativePointerArray(segment);
     }
     
-    /// @see #triangleArrayStride()
-    public VkMicromapBuildInfoEXT triangleArrayStride(long triangleArrayStride) {
-    	TRIANGLE_ARRAY_STRIDE_HANDLE.set(segment, 0L, triangleArrayStride);
-    	return this;
-    }
-    
-    public long triangleArrayStride() {
-    	return (long) TRIANGLE_ARRAY_STRIDE_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #data()
     public VkMicromapBuildInfoEXT data(Consumer<VkDeviceOrHostAddressConstKHR> consumer) {
     	consumer.accept(data);
@@ -286,6 +276,16 @@ public final class VkMicromapBuildInfoEXT
     
     public VkDeviceOrHostAddressConstKHR triangleArray() {
     	return triangleArray;
+    }
+    
+    /// @see #triangleArrayStride()
+    public VkMicromapBuildInfoEXT triangleArrayStride(long triangleArrayStride) {
+    	TRIANGLE_ARRAY_STRIDE_HANDLE.set(segment, 0L, triangleArrayStride);
+    	return this;
+    }
+    
+    public long triangleArrayStride() {
+    	return (long) TRIANGLE_ARRAY_STRIDE_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -339,5 +339,5 @@ public final class VkMicromapBuildInfoEXT
             segment -> new VkMicromapBuildInfoEXT(segment)
         );
     }
-    
+
 }

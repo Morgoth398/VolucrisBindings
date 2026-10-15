@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDepthBiasInfoEXT
 		implements Struct<VkDepthBiasInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEPTH_BIAS_CONSTANT_FACTOR_HANDLE;
-    public static final VarHandle DEPTH_BIAS_CLAMP_HANDLE;
-    public static final VarHandle DEPTH_BIAS_SLOPE_FACTOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEPTH_BIAS_CONSTANT_FACTOR_HANDLE;
+	public static final VarHandle DEPTH_BIAS_CLAMP_HANDLE;
+	public static final VarHandle DEPTH_BIAS_SLOPE_FACTOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_CLAMP_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_CLAMP_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_FLOAT.withName("depthBiasConstantFactor"),
-            JAVA_FLOAT.withName("depthBiasClamp"),
-            JAVA_FLOAT.withName("depthBiasSlopeFactor"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDepthBiasInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEPTH_BIAS_CONSTANT_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasConstantFactor"));
-        DEPTH_BIAS_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasClamp"));
-        DEPTH_BIAS_SLOPE_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasSlopeFactor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasConstantFactor"));
-        DEPTH_BIAS_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasClamp"));
-        DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasSlopeFactor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_FLOAT.withName("depthBiasConstantFactor"),
+		    JAVA_FLOAT.withName("depthBiasClamp"),
+		    JAVA_FLOAT.withName("depthBiasSlopeFactor"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDepthBiasInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEPTH_BIAS_CONSTANT_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasConstantFactor"));
+		DEPTH_BIAS_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasClamp"));
+		DEPTH_BIAS_SLOPE_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasSlopeFactor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasConstantFactor"));
+		DEPTH_BIAS_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasClamp"));
+		DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasSlopeFactor"));
+		//@formatter:on
+	}
 
-    public VkDepthBiasInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDepthBiasInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDepthBiasInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDepthBiasInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDepthBiasInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDepthBiasInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDepthBiasInfoEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDepthBiasInfoEXT
             segment -> new VkDepthBiasInfoEXT(segment)
         );
     }
-    
+
 }

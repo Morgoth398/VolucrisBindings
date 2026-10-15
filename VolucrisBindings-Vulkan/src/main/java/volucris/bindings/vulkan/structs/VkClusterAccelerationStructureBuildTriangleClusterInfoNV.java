@@ -20,99 +20,99 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClusterAccelerationStructureBuildTriangleClusterInfoNV
 		implements Struct<VkClusterAccelerationStructureBuildTriangleClusterInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CLUSTER_ID_HANDLE;
-    public static final VarHandle CLUSTER_FLAGS_HANDLE;
-    public static final VarHandle BIT_FIELDS0_HANDLE;
-    public static final VarHandle INDEX_BUFFER_STRIDE_HANDLE;
-    public static final VarHandle VERTEX_BUFFER_STRIDE_HANDLE;
-    public static final VarHandle GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_HANDLE;
-    public static final VarHandle OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_HANDLE;
-    public static final VarHandle INDEX_BUFFER_HANDLE;
-    public static final VarHandle VERTEX_BUFFER_HANDLE;
-    public static final VarHandle GEOMETRY_INDEX_AND_FLAGS_BUFFER_HANDLE;
-    public static final VarHandle OPACITY_MICROMAP_ARRAY_HANDLE;
-    public static final VarHandle OPACITY_MICROMAP_INDEX_BUFFER_HANDLE;
+	public static final VarHandle CLUSTER_ID_HANDLE;
+	public static final VarHandle CLUSTER_FLAGS_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle INDEX_BUFFER_STRIDE_HANDLE;
+	public static final VarHandle VERTEX_BUFFER_STRIDE_HANDLE;
+	public static final VarHandle GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_HANDLE;
+	public static final VarHandle OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_HANDLE;
+	public static final VarHandle INDEX_BUFFER_HANDLE;
+	public static final VarHandle VERTEX_BUFFER_HANDLE;
+	public static final VarHandle GEOMETRY_INDEX_AND_FLAGS_BUFFER_HANDLE;
+	public static final VarHandle OPACITY_MICROMAP_ARRAY_HANDLE;
+	public static final VarHandle OPACITY_MICROMAP_INDEX_BUFFER_HANDLE;
 
-    public static final long CLUSTER_ID_BYTE_OFFSET;
-    public static final long CLUSTER_FLAGS_BYTE_OFFSET;
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
-    public static final long BASE_GEOMETRY_INDEX_AND_GEOMETRY_FLAGS_BYTE_OFFSET;
-    public static final long INDEX_BUFFER_STRIDE_BYTE_OFFSET;
-    public static final long VERTEX_BUFFER_STRIDE_BYTE_OFFSET;
-    public static final long GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_BYTE_OFFSET;
-    public static final long OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_BYTE_OFFSET;
-    public static final long INDEX_BUFFER_BYTE_OFFSET;
-    public static final long VERTEX_BUFFER_BYTE_OFFSET;
-    public static final long GEOMETRY_INDEX_AND_FLAGS_BUFFER_BYTE_OFFSET;
-    public static final long OPACITY_MICROMAP_ARRAY_BYTE_OFFSET;
-    public static final long OPACITY_MICROMAP_INDEX_BUFFER_BYTE_OFFSET;
+	public static final long CLUSTER_ID_BYTE_OFFSET;
+	public static final long CLUSTER_FLAGS_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long BASE_GEOMETRY_INDEX_AND_GEOMETRY_FLAGS_BYTE_OFFSET;
+	public static final long INDEX_BUFFER_STRIDE_BYTE_OFFSET;
+	public static final long VERTEX_BUFFER_STRIDE_BYTE_OFFSET;
+	public static final long GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_BYTE_OFFSET;
+	public static final long OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_BYTE_OFFSET;
+	public static final long INDEX_BUFFER_BYTE_OFFSET;
+	public static final long VERTEX_BUFFER_BYTE_OFFSET;
+	public static final long GEOMETRY_INDEX_AND_FLAGS_BUFFER_BYTE_OFFSET;
+	public static final long OPACITY_MICROMAP_ARRAY_BYTE_OFFSET;
+	public static final long OPACITY_MICROMAP_INDEX_BUFFER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV baseGeometryIndexAndGeometryFlags;
+	private final VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV baseGeometryIndexAndGeometryFlags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("clusterID"),
-            JAVA_INT.withName("clusterFlags"),
-            JAVA_INT.withName("bitFields0"),
-            VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.LAYOUT.withName("baseGeometryIndexAndGeometryFlags"),
-            JAVA_SHORT.withName("indexBufferStride"),
-            JAVA_SHORT.withName("vertexBufferStride"),
-            JAVA_SHORT.withName("geometryIndexAndFlagsBufferStride"),
-            JAVA_SHORT.withName("opacityMicromapIndexBufferStride"),
-            JAVA_LONG.withName("indexBuffer"),
-            JAVA_LONG.withName("vertexBuffer"),
-            JAVA_LONG.withName("geometryIndexAndFlagsBuffer"),
-            JAVA_LONG.withName("opacityMicromapArray"),
-            JAVA_LONG.withName("opacityMicromapIndexBuffer")
-        ).withName("VkClusterAccelerationStructureBuildTriangleClusterInfoNV").withByteAlignment(8);
-        
-        CLUSTER_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterID"));
-        CLUSTER_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterFlags"));
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        INDEX_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexBufferStride"));
-        VERTEX_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBufferStride"));
-        GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryIndexAndFlagsBufferStride"));
-        OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opacityMicromapIndexBufferStride"));
-        INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexBuffer"));
-        VERTEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBuffer"));
-        GEOMETRY_INDEX_AND_FLAGS_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryIndexAndFlagsBuffer"));
-        OPACITY_MICROMAP_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opacityMicromapArray"));
-        OPACITY_MICROMAP_INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opacityMicromapIndexBuffer"));
-        
-        CLUSTER_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterID"));
-        CLUSTER_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterFlags"));
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        BASE_GEOMETRY_INDEX_AND_GEOMETRY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseGeometryIndexAndGeometryFlags"));
-        INDEX_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexBufferStride"));
-        VERTEX_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBufferStride"));
-        GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryIndexAndFlagsBufferStride"));
-        OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opacityMicromapIndexBufferStride"));
-        INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexBuffer"));
-        VERTEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBuffer"));
-        GEOMETRY_INDEX_AND_FLAGS_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryIndexAndFlagsBuffer"));
-        OPACITY_MICROMAP_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opacityMicromapArray"));
-        OPACITY_MICROMAP_INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opacityMicromapIndexBuffer"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("clusterID"),
+		    JAVA_INT.withName("clusterFlags"),
+		    JAVA_INT.withName("bitFields0"),
+		    VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.LAYOUT.withName("baseGeometryIndexAndGeometryFlags"),
+		    JAVA_SHORT.withName("indexBufferStride"),
+		    JAVA_SHORT.withName("vertexBufferStride"),
+		    JAVA_SHORT.withName("geometryIndexAndFlagsBufferStride"),
+		    JAVA_SHORT.withName("opacityMicromapIndexBufferStride"),
+		    JAVA_LONG.withName("indexBuffer"),
+		    JAVA_LONG.withName("vertexBuffer"),
+		    JAVA_LONG.withName("geometryIndexAndFlagsBuffer"),
+		    JAVA_LONG.withName("opacityMicromapArray"),
+		    JAVA_LONG.withName("opacityMicromapIndexBuffer")
+		).withName("VkClusterAccelerationStructureBuildTriangleClusterInfoNV").withByteAlignment(8);
+		
+		CLUSTER_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterID"));
+		CLUSTER_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterFlags"));
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		INDEX_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexBufferStride"));
+		VERTEX_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBufferStride"));
+		GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryIndexAndFlagsBufferStride"));
+		OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opacityMicromapIndexBufferStride"));
+		INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexBuffer"));
+		VERTEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBuffer"));
+		GEOMETRY_INDEX_AND_FLAGS_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryIndexAndFlagsBuffer"));
+		OPACITY_MICROMAP_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opacityMicromapArray"));
+		OPACITY_MICROMAP_INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opacityMicromapIndexBuffer"));
+		
+		CLUSTER_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterID"));
+		CLUSTER_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterFlags"));
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		BASE_GEOMETRY_INDEX_AND_GEOMETRY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseGeometryIndexAndGeometryFlags"));
+		INDEX_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexBufferStride"));
+		VERTEX_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBufferStride"));
+		GEOMETRY_INDEX_AND_FLAGS_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryIndexAndFlagsBufferStride"));
+		OPACITY_MICROMAP_INDEX_BUFFER_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opacityMicromapIndexBufferStride"));
+		INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexBuffer"));
+		VERTEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBuffer"));
+		GEOMETRY_INDEX_AND_FLAGS_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryIndexAndFlagsBuffer"));
+		OPACITY_MICROMAP_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opacityMicromapArray"));
+		OPACITY_MICROMAP_INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opacityMicromapIndexBuffer"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        baseGeometryIndexAndGeometryFlags = new VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV(segment.asSlice(BASE_GEOMETRY_INDEX_AND_GEOMETRY_FLAGS_BYTE_OFFSET, VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.LAYOUT));
-    }
+	public VkClusterAccelerationStructureBuildTriangleClusterInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureBuildTriangleClusterInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureBuildTriangleClusterInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    baseGeometryIndexAndGeometryFlags = new VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV(segment.asSlice(BASE_GEOMETRY_INDEX_AND_GEOMETRY_FLAGS_BYTE_OFFSET, VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV.LAYOUT));
+	}
 
     /// @see #clusterID()
     public VkClusterAccelerationStructureBuildTriangleClusterInfoNV clusterID(int clusterID) {
@@ -150,6 +150,22 @@ public final class VkClusterAccelerationStructureBuildTriangleClusterInfoNV
     /// ```
     public int bitFields0() {
     	return (int) BIT_FIELDS0_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #baseGeometryIndexAndGeometryFlags()
+    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV baseGeometryIndexAndGeometryFlags(Consumer<VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV> consumer) {
+    	consumer.accept(baseGeometryIndexAndGeometryFlags);
+    	return this;
+    }
+    
+    /// @see #baseGeometryIndexAndGeometryFlags()
+    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV baseGeometryIndexAndGeometryFlags(VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV other) {
+    	baseGeometryIndexAndGeometryFlags.set(other);
+    	return this;
+    }
+    
+    public VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV baseGeometryIndexAndGeometryFlags() {
+    	return baseGeometryIndexAndGeometryFlags;
     }
     
     /// @see #indexBufferStride()
@@ -242,22 +258,6 @@ public final class VkClusterAccelerationStructureBuildTriangleClusterInfoNV
     	return (long) OPACITY_MICROMAP_INDEX_BUFFER_HANDLE.get(segment, 0L);
     }
     
-    /// @see #baseGeometryIndexAndGeometryFlags()
-    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV baseGeometryIndexAndGeometryFlags(Consumer<VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV> consumer) {
-    	consumer.accept(baseGeometryIndexAndGeometryFlags);
-    	return this;
-    }
-    
-    /// @see #baseGeometryIndexAndGeometryFlags()
-    public VkClusterAccelerationStructureBuildTriangleClusterInfoNV baseGeometryIndexAndGeometryFlags(VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV other) {
-    	baseGeometryIndexAndGeometryFlags.set(other);
-    	return this;
-    }
-    
-    public VkClusterAccelerationStructureGeometryIndexAndGeometryFlagsNV baseGeometryIndexAndGeometryFlags() {
-    	return baseGeometryIndexAndGeometryFlags;
-    }
-    
     @Override
     public VkClusterAccelerationStructureBuildTriangleClusterInfoNV set(VkClusterAccelerationStructureBuildTriangleClusterInfoNV other) {
         return set(other.segment);
@@ -309,5 +309,5 @@ public final class VkClusterAccelerationStructureBuildTriangleClusterInfoNV
             segment -> new VkClusterAccelerationStructureBuildTriangleClusterInfoNV(segment)
         );
     }
-    
+
 }

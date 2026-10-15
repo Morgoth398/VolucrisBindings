@@ -21,90 +21,90 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV
 		implements Struct<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_GRAPHICS_SHADER_GROUP_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_SEQUENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_STREAM_COUNT_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE;
-    public static final VarHandle MAX_INDIRECT_COMMANDS_STREAM_STRIDE_HANDLE;
-    public static final VarHandle MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_HANDLE;
-    public static final VarHandle MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_GRAPHICS_SHADER_GROUP_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_SEQUENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_STREAM_COUNT_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE;
+	public static final VarHandle MAX_INDIRECT_COMMANDS_STREAM_STRIDE_HANDLE;
+	public static final VarHandle MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_HANDLE;
+	public static final VarHandle MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_GRAPHICS_SHADER_GROUP_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_STREAM_COUNT_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET;
-    public static final long MAX_INDIRECT_COMMANDS_STREAM_STRIDE_BYTE_OFFSET;
-    public static final long MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
-    public static final long MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_GRAPHICS_SHADER_GROUP_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_STREAM_COUNT_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET;
+	public static final long MAX_INDIRECT_COMMANDS_STREAM_STRIDE_BYTE_OFFSET;
+	public static final long MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
+	public static final long MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxGraphicsShaderGroupCount"),
-            JAVA_INT.withName("maxIndirectSequenceCount"),
-            JAVA_INT.withName("maxIndirectCommandsTokenCount"),
-            JAVA_INT.withName("maxIndirectCommandsStreamCount"),
-            JAVA_INT.withName("maxIndirectCommandsTokenOffset"),
-            JAVA_INT.withName("maxIndirectCommandsStreamStride"),
-            JAVA_INT.withName("minSequencesCountBufferOffsetAlignment"),
-            JAVA_INT.withName("minSequencesIndexBufferOffsetAlignment"),
-            JAVA_INT.withName("minIndirectCommandsBufferOffsetAlignment"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_GRAPHICS_SHADER_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGraphicsShaderGroupCount"));
-        MAX_INDIRECT_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectSequenceCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenCount"));
-        MAX_INDIRECT_COMMANDS_STREAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsStreamCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
-        MAX_INDIRECT_COMMANDS_STREAM_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsStreamStride"));
-        MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSequencesCountBufferOffsetAlignment"));
-        MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSequencesIndexBufferOffsetAlignment"));
-        MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minIndirectCommandsBufferOffsetAlignment"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_GRAPHICS_SHADER_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGraphicsShaderGroupCount"));
-        MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectSequenceCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenCount"));
-        MAX_INDIRECT_COMMANDS_STREAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsStreamCount"));
-        MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
-        MAX_INDIRECT_COMMANDS_STREAM_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsStreamStride"));
-        MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSequencesCountBufferOffsetAlignment"));
-        MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSequencesIndexBufferOffsetAlignment"));
-        MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minIndirectCommandsBufferOffsetAlignment"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxGraphicsShaderGroupCount"),
+		    JAVA_INT.withName("maxIndirectSequenceCount"),
+		    JAVA_INT.withName("maxIndirectCommandsTokenCount"),
+		    JAVA_INT.withName("maxIndirectCommandsStreamCount"),
+		    JAVA_INT.withName("maxIndirectCommandsTokenOffset"),
+		    JAVA_INT.withName("maxIndirectCommandsStreamStride"),
+		    JAVA_INT.withName("minSequencesCountBufferOffsetAlignment"),
+		    JAVA_INT.withName("minSequencesIndexBufferOffsetAlignment"),
+		    JAVA_INT.withName("minIndirectCommandsBufferOffsetAlignment"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_GRAPHICS_SHADER_GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGraphicsShaderGroupCount"));
+		MAX_INDIRECT_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectSequenceCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenCount"));
+		MAX_INDIRECT_COMMANDS_STREAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsStreamCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
+		MAX_INDIRECT_COMMANDS_STREAM_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxIndirectCommandsStreamStride"));
+		MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSequencesCountBufferOffsetAlignment"));
+		MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSequencesIndexBufferOffsetAlignment"));
+		MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minIndirectCommandsBufferOffsetAlignment"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_GRAPHICS_SHADER_GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGraphicsShaderGroupCount"));
+		MAX_INDIRECT_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectSequenceCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenCount"));
+		MAX_INDIRECT_COMMANDS_STREAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsStreamCount"));
+		MAX_INDIRECT_COMMANDS_TOKEN_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsTokenOffset"));
+		MAX_INDIRECT_COMMANDS_STREAM_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxIndirectCommandsStreamStride"));
+		MIN_SEQUENCES_COUNT_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSequencesCountBufferOffsetAlignment"));
+		MIN_SEQUENCES_INDEX_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSequencesIndexBufferOffsetAlignment"));
+		MIN_INDIRECT_COMMANDS_BUFFER_OFFSET_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minIndirectCommandsBufferOffsetAlignment"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV sType(int sType) {
@@ -272,5 +272,5 @@ public final class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV
             segment -> new VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(segment)
         );
     }
-    
+
 }

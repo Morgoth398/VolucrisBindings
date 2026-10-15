@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeQuantizationMapInfoKHR
 		implements Struct<VkVideoEncodeQuantizationMapInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle QUANTIZATION_MAP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle QUANTIZATION_MAP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long QUANTIZATION_MAP_BYTE_OFFSET;
-    public static final long QUANTIZATION_MAP_EXTENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long QUANTIZATION_MAP_BYTE_OFFSET;
+	public static final long QUANTIZATION_MAP_EXTENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D quantizationMapExtent;
+	private final VkExtent2D quantizationMapExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("quantizationMap"),
-            VkExtent2D.LAYOUT.withName("quantizationMapExtent")
-        ).withName("VkVideoEncodeQuantizationMapInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        QUANTIZATION_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("quantizationMap"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        QUANTIZATION_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quantizationMap"));
-        QUANTIZATION_MAP_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quantizationMapExtent"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("quantizationMap"),
+		    VkExtent2D.LAYOUT.withName("quantizationMapExtent")
+		).withName("VkVideoEncodeQuantizationMapInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		QUANTIZATION_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("quantizationMap"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		QUANTIZATION_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quantizationMap"));
+		QUANTIZATION_MAP_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("quantizationMapExtent"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeQuantizationMapInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeQuantizationMapInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeQuantizationMapInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        quantizationMapExtent = new VkExtent2D(segment.asSlice(QUANTIZATION_MAP_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkVideoEncodeQuantizationMapInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeQuantizationMapInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeQuantizationMapInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    quantizationMapExtent = new VkExtent2D(segment.asSlice(QUANTIZATION_MAP_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoEncodeQuantizationMapInfoKHR sType(int sType) {
@@ -179,5 +179,5 @@ public final class VkVideoEncodeQuantizationMapInfoKHR
             segment -> new VkVideoEncodeQuantizationMapInfoKHR(segment)
         );
     }
-    
+
 }

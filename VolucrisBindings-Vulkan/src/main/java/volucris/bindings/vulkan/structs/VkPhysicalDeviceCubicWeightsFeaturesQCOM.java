@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceCubicWeightsFeaturesQCOM
 		implements Struct<VkPhysicalDeviceCubicWeightsFeaturesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SELECTABLE_CUBIC_WEIGHTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SELECTABLE_CUBIC_WEIGHTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SELECTABLE_CUBIC_WEIGHTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SELECTABLE_CUBIC_WEIGHTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("selectableCubicWeights"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceCubicWeightsFeaturesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SELECTABLE_CUBIC_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("selectableCubicWeights"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SELECTABLE_CUBIC_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("selectableCubicWeights"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("selectableCubicWeights"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceCubicWeightsFeaturesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SELECTABLE_CUBIC_WEIGHTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("selectableCubicWeights"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SELECTABLE_CUBIC_WEIGHTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("selectableCubicWeights"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceCubicWeightsFeaturesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceCubicWeightsFeaturesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceCubicWeightsFeaturesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceCubicWeightsFeaturesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceCubicWeightsFeaturesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceCubicWeightsFeaturesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceCubicWeightsFeaturesQCOM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceCubicWeightsFeaturesQCOM
             segment -> new VkPhysicalDeviceCubicWeightsFeaturesQCOM(segment)
         );
     }
-    
+
 }

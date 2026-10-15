@@ -16,43 +16,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class MsdfRange
 		implements Struct<MsdfRange> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle LOWER_HANDLE;
-    public static final VarHandle UPPER_HANDLE;
+	public static final VarHandle LOWER_HANDLE;
+	public static final VarHandle UPPER_HANDLE;
 
-    public static final long LOWER_BYTE_OFFSET;
-    public static final long UPPER_BYTE_OFFSET;
+	public static final long LOWER_BYTE_OFFSET;
+	public static final long UPPER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_DOUBLE.withName("lower"),
-            JAVA_DOUBLE.withName("upper")
-        ).withName("msdf_range").withByteAlignment(8);
-        
-        LOWER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lower"));
-        UPPER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("upper"));
-        
-        LOWER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lower"));
-        UPPER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("upper"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_DOUBLE.withName("lower"),
+		    JAVA_DOUBLE.withName("upper")
+		).withName("msdf_range").withByteAlignment(8);
+		
+		LOWER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lower"));
+		UPPER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("upper"));
+		
+		LOWER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lower"));
+		UPPER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("upper"));
+		//@formatter:on
+	}
 
-    public MsdfRange() {
-        this(Arena.ofAuto());
-    }
-    
-    public MsdfRange(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public MsdfRange(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public MsdfRange() {
+	    this(Arena.ofAuto());
+	}
+	
+	public MsdfRange(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public MsdfRange(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #lower()
     public MsdfRange lower(double lower) {
@@ -125,5 +125,5 @@ public final class MsdfRange
             segment -> new MsdfRange(segment)
         );
     }
-    
+
 }

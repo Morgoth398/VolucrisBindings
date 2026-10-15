@@ -21,81 +21,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSubmitInfo2
 		implements Struct<VkSubmitInfo2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle WAIT_SEMAPHORE_INFO_COUNT_HANDLE;
-    public static final VarHandle P_WAIT_SEMAPHORE_INFOS_HANDLE;
-    public static final VarHandle COMMAND_BUFFER_INFO_COUNT_HANDLE;
-    public static final VarHandle P_COMMAND_BUFFER_INFOS_HANDLE;
-    public static final VarHandle SIGNAL_SEMAPHORE_INFO_COUNT_HANDLE;
-    public static final VarHandle P_SIGNAL_SEMAPHORE_INFOS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle WAIT_SEMAPHORE_INFO_COUNT_HANDLE;
+	public static final VarHandle P_WAIT_SEMAPHORE_INFOS_HANDLE;
+	public static final VarHandle COMMAND_BUFFER_INFO_COUNT_HANDLE;
+	public static final VarHandle P_COMMAND_BUFFER_INFOS_HANDLE;
+	public static final VarHandle SIGNAL_SEMAPHORE_INFO_COUNT_HANDLE;
+	public static final VarHandle P_SIGNAL_SEMAPHORE_INFOS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long WAIT_SEMAPHORE_INFO_COUNT_BYTE_OFFSET;
-    public static final long P_WAIT_SEMAPHORE_INFOS_BYTE_OFFSET;
-    public static final long COMMAND_BUFFER_INFO_COUNT_BYTE_OFFSET;
-    public static final long P_COMMAND_BUFFER_INFOS_BYTE_OFFSET;
-    public static final long SIGNAL_SEMAPHORE_INFO_COUNT_BYTE_OFFSET;
-    public static final long P_SIGNAL_SEMAPHORE_INFOS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long WAIT_SEMAPHORE_INFO_COUNT_BYTE_OFFSET;
+	public static final long P_WAIT_SEMAPHORE_INFOS_BYTE_OFFSET;
+	public static final long COMMAND_BUFFER_INFO_COUNT_BYTE_OFFSET;
+	public static final long P_COMMAND_BUFFER_INFOS_BYTE_OFFSET;
+	public static final long SIGNAL_SEMAPHORE_INFO_COUNT_BYTE_OFFSET;
+	public static final long P_SIGNAL_SEMAPHORE_INFOS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("waitSemaphoreInfoCount"),
-            UNBOUNDED_ADDRESS.withName("pWaitSemaphoreInfos"),
-            JAVA_INT.withName("commandBufferInfoCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCommandBufferInfos"),
-            JAVA_INT.withName("signalSemaphoreInfoCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSignalSemaphoreInfos")
-        ).withName("VkSubmitInfo2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        WAIT_SEMAPHORE_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreInfoCount"));
-        P_WAIT_SEMAPHORE_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphoreInfos"));
-        COMMAND_BUFFER_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferInfoCount"));
-        P_COMMAND_BUFFER_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCommandBufferInfos"));
-        SIGNAL_SEMAPHORE_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreInfoCount"));
-        P_SIGNAL_SEMAPHORE_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphoreInfos"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        WAIT_SEMAPHORE_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreInfoCount"));
-        P_WAIT_SEMAPHORE_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphoreInfos"));
-        COMMAND_BUFFER_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferInfoCount"));
-        P_COMMAND_BUFFER_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCommandBufferInfos"));
-        SIGNAL_SEMAPHORE_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreInfoCount"));
-        P_SIGNAL_SEMAPHORE_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphoreInfos"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("waitSemaphoreInfoCount"),
+		    UNBOUNDED_ADDRESS.withName("pWaitSemaphoreInfos"),
+		    JAVA_INT.withName("commandBufferInfoCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCommandBufferInfos"),
+		    JAVA_INT.withName("signalSemaphoreInfoCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSignalSemaphoreInfos")
+		).withName("VkSubmitInfo2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		WAIT_SEMAPHORE_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreInfoCount"));
+		P_WAIT_SEMAPHORE_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphoreInfos"));
+		COMMAND_BUFFER_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferInfoCount"));
+		P_COMMAND_BUFFER_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCommandBufferInfos"));
+		SIGNAL_SEMAPHORE_INFO_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreInfoCount"));
+		P_SIGNAL_SEMAPHORE_INFOS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphoreInfos"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		WAIT_SEMAPHORE_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreInfoCount"));
+		P_WAIT_SEMAPHORE_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphoreInfos"));
+		COMMAND_BUFFER_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferInfoCount"));
+		P_COMMAND_BUFFER_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCommandBufferInfos"));
+		SIGNAL_SEMAPHORE_INFO_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreInfoCount"));
+		P_SIGNAL_SEMAPHORE_INFOS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphoreInfos"));
+		//@formatter:on
+	}
 
-    public VkSubmitInfo2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubmitInfo2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubmitInfo2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubmitInfo2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubmitInfo2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubmitInfo2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSubmitInfo2 sType(int sType) {
@@ -258,5 +258,5 @@ public final class VkSubmitInfo2
             segment -> new VkSubmitInfo2(segment)
         );
     }
-    
+
 }

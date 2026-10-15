@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDebugMarkerObjectNameInfoEXT
 		implements Struct<VkDebugMarkerObjectNameInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OBJECT_TYPE_HANDLE;
-    public static final VarHandle OBJECT_HANDLE;
-    public static final VarHandle P_OBJECT_NAME_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OBJECT_TYPE_HANDLE;
+	public static final VarHandle OBJECT_HANDLE;
+	public static final VarHandle P_OBJECT_NAME_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OBJECT_TYPE_BYTE_OFFSET;
-    public static final long OBJECT_BYTE_OFFSET;
-    public static final long P_OBJECT_NAME_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OBJECT_TYPE_BYTE_OFFSET;
+	public static final long OBJECT_BYTE_OFFSET;
+	public static final long P_OBJECT_NAME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("objectType"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("object"),
-            UNBOUNDED_ADDRESS.withName("pObjectName")
-        ).withName("VkDebugMarkerObjectNameInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OBJECT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectType"));
-        OBJECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("object"));
-        P_OBJECT_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pObjectName"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OBJECT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectType"));
-        OBJECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("object"));
-        P_OBJECT_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pObjectName"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("objectType"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("object"),
+		    UNBOUNDED_ADDRESS.withName("pObjectName")
+		).withName("VkDebugMarkerObjectNameInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OBJECT_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objectType"));
+		OBJECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("object"));
+		P_OBJECT_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pObjectName"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OBJECT_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objectType"));
+		OBJECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("object"));
+		P_OBJECT_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pObjectName"));
+		//@formatter:on
+	}
 
-    public VkDebugMarkerObjectNameInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDebugMarkerObjectNameInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDebugMarkerObjectNameInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDebugMarkerObjectNameInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDebugMarkerObjectNameInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDebugMarkerObjectNameInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDebugMarkerObjectNameInfoEXT sType(int sType) {
@@ -187,5 +187,5 @@ public final class VkDebugMarkerObjectNameInfoEXT
             segment -> new VkDebugMarkerObjectNameInfoEXT(segment)
         );
     }
-    
+
 }

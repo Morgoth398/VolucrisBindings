@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPresentTimingSurfaceCapabilitiesEXT
 		implements Struct<VkPresentTimingSurfaceCapabilitiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_TIMING_SUPPORTED_HANDLE;
-    public static final VarHandle PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_HANDLE;
-    public static final VarHandle PRESENT_AT_RELATIVE_TIME_SUPPORTED_HANDLE;
-    public static final VarHandle PRESENT_STAGE_QUERIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_TIMING_SUPPORTED_HANDLE;
+	public static final VarHandle PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_HANDLE;
+	public static final VarHandle PRESENT_AT_RELATIVE_TIME_SUPPORTED_HANDLE;
+	public static final VarHandle PRESENT_STAGE_QUERIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_TIMING_SUPPORTED_BYTE_OFFSET;
-    public static final long PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_BYTE_OFFSET;
-    public static final long PRESENT_AT_RELATIVE_TIME_SUPPORTED_BYTE_OFFSET;
-    public static final long PRESENT_STAGE_QUERIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_TIMING_SUPPORTED_BYTE_OFFSET;
+	public static final long PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_BYTE_OFFSET;
+	public static final long PRESENT_AT_RELATIVE_TIME_SUPPORTED_BYTE_OFFSET;
+	public static final long PRESENT_STAGE_QUERIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("presentTimingSupported"),
-            JAVA_INT.withName("presentAtAbsoluteTimeSupported"),
-            JAVA_INT.withName("presentAtRelativeTimeSupported"),
-            JAVA_INT.withName("presentStageQueries")
-        ).withName("VkPresentTimingSurfaceCapabilitiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_TIMING_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentTimingSupported"));
-        PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtAbsoluteTimeSupported"));
-        PRESENT_AT_RELATIVE_TIME_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtRelativeTimeSupported"));
-        PRESENT_STAGE_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStageQueries"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_TIMING_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentTimingSupported"));
-        PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtAbsoluteTimeSupported"));
-        PRESENT_AT_RELATIVE_TIME_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtRelativeTimeSupported"));
-        PRESENT_STAGE_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStageQueries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("presentTimingSupported"),
+		    JAVA_INT.withName("presentAtAbsoluteTimeSupported"),
+		    JAVA_INT.withName("presentAtRelativeTimeSupported"),
+		    JAVA_INT.withName("presentStageQueries")
+		).withName("VkPresentTimingSurfaceCapabilitiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_TIMING_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentTimingSupported"));
+		PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtAbsoluteTimeSupported"));
+		PRESENT_AT_RELATIVE_TIME_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtRelativeTimeSupported"));
+		PRESENT_STAGE_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentStageQueries"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_TIMING_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentTimingSupported"));
+		PRESENT_AT_ABSOLUTE_TIME_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtAbsoluteTimeSupported"));
+		PRESENT_AT_RELATIVE_TIME_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtRelativeTimeSupported"));
+		PRESENT_STAGE_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentStageQueries"));
+		//@formatter:on
+	}
 
-    public VkPresentTimingSurfaceCapabilitiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentTimingSurfaceCapabilitiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentTimingSurfaceCapabilitiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentTimingSurfaceCapabilitiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentTimingSurfaceCapabilitiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentTimingSurfaceCapabilitiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPresentTimingSurfaceCapabilitiesEXT sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPresentTimingSurfaceCapabilitiesEXT
             segment -> new VkPresentTimingSurfaceCapabilitiesEXT(segment)
         );
     }
-    
+
 }

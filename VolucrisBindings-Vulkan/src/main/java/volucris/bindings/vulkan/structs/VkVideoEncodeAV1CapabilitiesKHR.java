@@ -22,165 +22,165 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1CapabilitiesKHR
 		implements Struct<VkVideoEncodeAV1CapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MAX_LEVEL_HANDLE;
-    public static final VarHandle SUPERBLOCK_SIZES_HANDLE;
-    public static final VarHandle MAX_SINGLE_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle SINGLE_REFERENCE_NAME_MASK_HANDLE;
-    public static final VarHandle MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
-    public static final VarHandle MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE;
-    public static final VarHandle BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
-    public static final VarHandle MAX_TEMPORAL_LAYER_COUNT_HANDLE;
-    public static final VarHandle MAX_SPATIAL_LAYER_COUNT_HANDLE;
-    public static final VarHandle MAX_OPERATING_POINTS_HANDLE;
-    public static final VarHandle MIN_QINDEX_HANDLE;
-    public static final VarHandle MAX_QINDEX_HANDLE;
-    public static final VarHandle PREFERS_GOP_REMAINING_FRAMES_HANDLE;
-    public static final VarHandle REQUIRES_GOP_REMAINING_FRAMES_HANDLE;
-    public static final VarHandle STD_SYNTAX_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MAX_LEVEL_HANDLE;
+	public static final VarHandle SUPERBLOCK_SIZES_HANDLE;
+	public static final VarHandle MAX_SINGLE_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle SINGLE_REFERENCE_NAME_MASK_HANDLE;
+	public static final VarHandle MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
+	public static final VarHandle MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE;
+	public static final VarHandle BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE;
+	public static final VarHandle MAX_TEMPORAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle MAX_SPATIAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle MAX_OPERATING_POINTS_HANDLE;
+	public static final VarHandle MIN_QINDEX_HANDLE;
+	public static final VarHandle MAX_QINDEX_HANDLE;
+	public static final VarHandle PREFERS_GOP_REMAINING_FRAMES_HANDLE;
+	public static final VarHandle REQUIRES_GOP_REMAINING_FRAMES_HANDLE;
+	public static final VarHandle STD_SYNTAX_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MAX_LEVEL_BYTE_OFFSET;
-    public static final long CODED_PICTURE_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_TILES_BYTE_OFFSET;
-    public static final long MIN_TILE_SIZE_BYTE_OFFSET;
-    public static final long MAX_TILE_SIZE_BYTE_OFFSET;
-    public static final long SUPERBLOCK_SIZES_BYTE_OFFSET;
-    public static final long MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET;
-    public static final long MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
-    public static final long MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET;
-    public static final long BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
-    public static final long MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
-    public static final long MAX_SPATIAL_LAYER_COUNT_BYTE_OFFSET;
-    public static final long MAX_OPERATING_POINTS_BYTE_OFFSET;
-    public static final long MIN_QINDEX_BYTE_OFFSET;
-    public static final long MAX_QINDEX_BYTE_OFFSET;
-    public static final long PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET;
-    public static final long REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET;
-    public static final long STD_SYNTAX_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MAX_LEVEL_BYTE_OFFSET;
+	public static final long CODED_PICTURE_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_TILES_BYTE_OFFSET;
+	public static final long MIN_TILE_SIZE_BYTE_OFFSET;
+	public static final long MAX_TILE_SIZE_BYTE_OFFSET;
+	public static final long SUPERBLOCK_SIZES_BYTE_OFFSET;
+	public static final long MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET;
+	public static final long MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
+	public static final long MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET;
+	public static final long BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET;
+	public static final long MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long MAX_SPATIAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long MAX_OPERATING_POINTS_BYTE_OFFSET;
+	public static final long MIN_QINDEX_BYTE_OFFSET;
+	public static final long MAX_QINDEX_BYTE_OFFSET;
+	public static final long PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET;
+	public static final long REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET;
+	public static final long STD_SYNTAX_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D codedPictureAlignment;
-    private final VkExtent2D maxTiles;
-    private final VkExtent2D minTileSize;
-    private final VkExtent2D maxTileSize;
+	private final VkExtent2D codedPictureAlignment;
+	private final VkExtent2D maxTiles;
+	private final VkExtent2D minTileSize;
+	private final VkExtent2D maxTileSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("maxLevel"),
-            VkExtent2D.LAYOUT.withName("codedPictureAlignment"),
-            VkExtent2D.LAYOUT.withName("maxTiles"),
-            VkExtent2D.LAYOUT.withName("minTileSize"),
-            VkExtent2D.LAYOUT.withName("maxTileSize"),
-            JAVA_INT.withName("superblockSizes"),
-            JAVA_INT.withName("maxSingleReferenceCount"),
-            JAVA_INT.withName("singleReferenceNameMask"),
-            JAVA_INT.withName("maxUnidirectionalCompoundReferenceCount"),
-            JAVA_INT.withName("maxUnidirectionalCompoundGroup1ReferenceCount"),
-            JAVA_INT.withName("unidirectionalCompoundReferenceNameMask"),
-            JAVA_INT.withName("maxBidirectionalCompoundReferenceCount"),
-            JAVA_INT.withName("maxBidirectionalCompoundGroup1ReferenceCount"),
-            JAVA_INT.withName("maxBidirectionalCompoundGroup2ReferenceCount"),
-            JAVA_INT.withName("bidirectionalCompoundReferenceNameMask"),
-            JAVA_INT.withName("maxTemporalLayerCount"),
-            JAVA_INT.withName("maxSpatialLayerCount"),
-            JAVA_INT.withName("maxOperatingPoints"),
-            JAVA_INT.withName("minQIndex"),
-            JAVA_INT.withName("maxQIndex"),
-            JAVA_INT.withName("prefersGopRemainingFrames"),
-            JAVA_INT.withName("requiresGopRemainingFrames"),
-            JAVA_INT.withName("stdSyntaxFlags")
-        ).withName("VkVideoEncodeAV1CapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MAX_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevel"));
-        SUPERBLOCK_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("superblockSizes"));
-        MAX_SINGLE_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSingleReferenceCount"));
-        SINGLE_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("singleReferenceNameMask"));
-        MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUnidirectionalCompoundReferenceCount"));
-        MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUnidirectionalCompoundGroup1ReferenceCount"));
-        UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unidirectionalCompoundReferenceNameMask"));
-        MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBidirectionalCompoundReferenceCount"));
-        MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBidirectionalCompoundGroup1ReferenceCount"));
-        MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBidirectionalCompoundGroup2ReferenceCount"));
-        BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bidirectionalCompoundReferenceNameMask"));
-        MAX_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTemporalLayerCount"));
-        MAX_SPATIAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSpatialLayerCount"));
-        MAX_OPERATING_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOperatingPoints"));
-        MIN_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQIndex"));
-        MAX_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQIndex"));
-        PREFERS_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersGopRemainingFrames"));
-        REQUIRES_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiresGopRemainingFrames"));
-        STD_SYNTAX_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdSyntaxFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MAX_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevel"));
-        CODED_PICTURE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codedPictureAlignment"));
-        MAX_TILES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTiles"));
-        MIN_TILE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTileSize"));
-        MAX_TILE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTileSize"));
-        SUPERBLOCK_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("superblockSizes"));
-        MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSingleReferenceCount"));
-        SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("singleReferenceNameMask"));
-        MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUnidirectionalCompoundReferenceCount"));
-        MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUnidirectionalCompoundGroup1ReferenceCount"));
-        UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unidirectionalCompoundReferenceNameMask"));
-        MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBidirectionalCompoundReferenceCount"));
-        MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBidirectionalCompoundGroup1ReferenceCount"));
-        MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBidirectionalCompoundGroup2ReferenceCount"));
-        BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bidirectionalCompoundReferenceNameMask"));
-        MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTemporalLayerCount"));
-        MAX_SPATIAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSpatialLayerCount"));
-        MAX_OPERATING_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOperatingPoints"));
-        MIN_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQIndex"));
-        MAX_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQIndex"));
-        PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersGopRemainingFrames"));
-        REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiresGopRemainingFrames"));
-        STD_SYNTAX_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdSyntaxFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("maxLevel"),
+		    VkExtent2D.LAYOUT.withName("codedPictureAlignment"),
+		    VkExtent2D.LAYOUT.withName("maxTiles"),
+		    VkExtent2D.LAYOUT.withName("minTileSize"),
+		    VkExtent2D.LAYOUT.withName("maxTileSize"),
+		    JAVA_INT.withName("superblockSizes"),
+		    JAVA_INT.withName("maxSingleReferenceCount"),
+		    JAVA_INT.withName("singleReferenceNameMask"),
+		    JAVA_INT.withName("maxUnidirectionalCompoundReferenceCount"),
+		    JAVA_INT.withName("maxUnidirectionalCompoundGroup1ReferenceCount"),
+		    JAVA_INT.withName("unidirectionalCompoundReferenceNameMask"),
+		    JAVA_INT.withName("maxBidirectionalCompoundReferenceCount"),
+		    JAVA_INT.withName("maxBidirectionalCompoundGroup1ReferenceCount"),
+		    JAVA_INT.withName("maxBidirectionalCompoundGroup2ReferenceCount"),
+		    JAVA_INT.withName("bidirectionalCompoundReferenceNameMask"),
+		    JAVA_INT.withName("maxTemporalLayerCount"),
+		    JAVA_INT.withName("maxSpatialLayerCount"),
+		    JAVA_INT.withName("maxOperatingPoints"),
+		    JAVA_INT.withName("minQIndex"),
+		    JAVA_INT.withName("maxQIndex"),
+		    JAVA_INT.withName("prefersGopRemainingFrames"),
+		    JAVA_INT.withName("requiresGopRemainingFrames"),
+		    JAVA_INT.withName("stdSyntaxFlags")
+		).withName("VkVideoEncodeAV1CapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MAX_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxLevel"));
+		SUPERBLOCK_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("superblockSizes"));
+		MAX_SINGLE_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSingleReferenceCount"));
+		SINGLE_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("singleReferenceNameMask"));
+		MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUnidirectionalCompoundReferenceCount"));
+		MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxUnidirectionalCompoundGroup1ReferenceCount"));
+		UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unidirectionalCompoundReferenceNameMask"));
+		MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBidirectionalCompoundReferenceCount"));
+		MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBidirectionalCompoundGroup1ReferenceCount"));
+		MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxBidirectionalCompoundGroup2ReferenceCount"));
+		BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bidirectionalCompoundReferenceNameMask"));
+		MAX_TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTemporalLayerCount"));
+		MAX_SPATIAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSpatialLayerCount"));
+		MAX_OPERATING_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxOperatingPoints"));
+		MIN_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQIndex"));
+		MAX_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQIndex"));
+		PREFERS_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("prefersGopRemainingFrames"));
+		REQUIRES_GOP_REMAINING_FRAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("requiresGopRemainingFrames"));
+		STD_SYNTAX_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdSyntaxFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MAX_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxLevel"));
+		CODED_PICTURE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("codedPictureAlignment"));
+		MAX_TILES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTiles"));
+		MIN_TILE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minTileSize"));
+		MAX_TILE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTileSize"));
+		SUPERBLOCK_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("superblockSizes"));
+		MAX_SINGLE_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSingleReferenceCount"));
+		SINGLE_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("singleReferenceNameMask"));
+		MAX_UNIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUnidirectionalCompoundReferenceCount"));
+		MAX_UNIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxUnidirectionalCompoundGroup1ReferenceCount"));
+		UNIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unidirectionalCompoundReferenceNameMask"));
+		MAX_BIDIRECTIONAL_COMPOUND_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBidirectionalCompoundReferenceCount"));
+		MAX_BIDIRECTIONAL_COMPOUND_GROUP1_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBidirectionalCompoundGroup1ReferenceCount"));
+		MAX_BIDIRECTIONAL_COMPOUND_GROUP2_REFERENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBidirectionalCompoundGroup2ReferenceCount"));
+		BIDIRECTIONAL_COMPOUND_REFERENCE_NAME_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bidirectionalCompoundReferenceNameMask"));
+		MAX_TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTemporalLayerCount"));
+		MAX_SPATIAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSpatialLayerCount"));
+		MAX_OPERATING_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxOperatingPoints"));
+		MIN_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQIndex"));
+		MAX_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQIndex"));
+		PREFERS_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("prefersGopRemainingFrames"));
+		REQUIRES_GOP_REMAINING_FRAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("requiresGopRemainingFrames"));
+		STD_SYNTAX_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdSyntaxFlags"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1CapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1CapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1CapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        codedPictureAlignment = new VkExtent2D(segment.asSlice(CODED_PICTURE_ALIGNMENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxTiles = new VkExtent2D(segment.asSlice(MAX_TILES_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        minTileSize = new VkExtent2D(segment.asSlice(MIN_TILE_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxTileSize = new VkExtent2D(segment.asSlice(MAX_TILE_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkVideoEncodeAV1CapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1CapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1CapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    codedPictureAlignment = new VkExtent2D(segment.asSlice(CODED_PICTURE_ALIGNMENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxTiles = new VkExtent2D(segment.asSlice(MAX_TILES_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    minTileSize = new VkExtent2D(segment.asSlice(MIN_TILE_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxTileSize = new VkExtent2D(segment.asSlice(MAX_TILE_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1CapabilitiesKHR sType(int sType) {
@@ -225,6 +225,70 @@ public final class VkVideoEncodeAV1CapabilitiesKHR
     
     public int maxLevel() {
     	return (int) MAX_LEVEL_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #codedPictureAlignment()
+    public VkVideoEncodeAV1CapabilitiesKHR codedPictureAlignment(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(codedPictureAlignment);
+    	return this;
+    }
+    
+    /// @see #codedPictureAlignment()
+    public VkVideoEncodeAV1CapabilitiesKHR codedPictureAlignment(VkExtent2D other) {
+    	codedPictureAlignment.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D codedPictureAlignment() {
+    	return codedPictureAlignment;
+    }
+    
+    /// @see #maxTiles()
+    public VkVideoEncodeAV1CapabilitiesKHR maxTiles(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxTiles);
+    	return this;
+    }
+    
+    /// @see #maxTiles()
+    public VkVideoEncodeAV1CapabilitiesKHR maxTiles(VkExtent2D other) {
+    	maxTiles.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxTiles() {
+    	return maxTiles;
+    }
+    
+    /// @see #minTileSize()
+    public VkVideoEncodeAV1CapabilitiesKHR minTileSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(minTileSize);
+    	return this;
+    }
+    
+    /// @see #minTileSize()
+    public VkVideoEncodeAV1CapabilitiesKHR minTileSize(VkExtent2D other) {
+    	minTileSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D minTileSize() {
+    	return minTileSize;
+    }
+    
+    /// @see #maxTileSize()
+    public VkVideoEncodeAV1CapabilitiesKHR maxTileSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxTileSize);
+    	return this;
+    }
+    
+    /// @see #maxTileSize()
+    public VkVideoEncodeAV1CapabilitiesKHR maxTileSize(VkExtent2D other) {
+    	maxTileSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxTileSize() {
+    	return maxTileSize;
     }
     
     /// @see #superblockSizes()
@@ -407,70 +471,6 @@ public final class VkVideoEncodeAV1CapabilitiesKHR
     	return (int) STD_SYNTAX_FLAGS_HANDLE.get(segment, 0L);
     }
     
-    /// @see #codedPictureAlignment()
-    public VkVideoEncodeAV1CapabilitiesKHR codedPictureAlignment(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(codedPictureAlignment);
-    	return this;
-    }
-    
-    /// @see #codedPictureAlignment()
-    public VkVideoEncodeAV1CapabilitiesKHR codedPictureAlignment(VkExtent2D other) {
-    	codedPictureAlignment.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D codedPictureAlignment() {
-    	return codedPictureAlignment;
-    }
-    
-    /// @see #maxTiles()
-    public VkVideoEncodeAV1CapabilitiesKHR maxTiles(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxTiles);
-    	return this;
-    }
-    
-    /// @see #maxTiles()
-    public VkVideoEncodeAV1CapabilitiesKHR maxTiles(VkExtent2D other) {
-    	maxTiles.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxTiles() {
-    	return maxTiles;
-    }
-    
-    /// @see #minTileSize()
-    public VkVideoEncodeAV1CapabilitiesKHR minTileSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(minTileSize);
-    	return this;
-    }
-    
-    /// @see #minTileSize()
-    public VkVideoEncodeAV1CapabilitiesKHR minTileSize(VkExtent2D other) {
-    	minTileSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D minTileSize() {
-    	return minTileSize;
-    }
-    
-    /// @see #maxTileSize()
-    public VkVideoEncodeAV1CapabilitiesKHR maxTileSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxTileSize);
-    	return this;
-    }
-    
-    /// @see #maxTileSize()
-    public VkVideoEncodeAV1CapabilitiesKHR maxTileSize(VkExtent2D other) {
-    	maxTileSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxTileSize() {
-    	return maxTileSize;
-    }
-    
     @Override
     public VkVideoEncodeAV1CapabilitiesKHR set(VkVideoEncodeAV1CapabilitiesKHR other) {
         return set(other.segment);
@@ -522,5 +522,5 @@ public final class VkVideoEncodeAV1CapabilitiesKHR
             segment -> new VkVideoEncodeAV1CapabilitiesKHR(segment)
         );
     }
-    
+
 }

@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSparseBufferMemoryBindInfo
 		implements Struct<VkSparseBufferMemoryBindInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUFFER_HANDLE;
-    public static final VarHandle BIND_COUNT_HANDLE;
-    public static final VarHandle P_BINDS_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle BIND_COUNT_HANDLE;
+	public static final VarHandle P_BINDS_HANDLE;
 
-    public static final long BUFFER_BYTE_OFFSET;
-    public static final long BIND_COUNT_BYTE_OFFSET;
-    public static final long P_BINDS_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
+	public static final long BIND_COUNT_BYTE_OFFSET;
+	public static final long P_BINDS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("buffer"),
-            JAVA_INT.withName("bindCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pBinds")
-        ).withName("VkSparseBufferMemoryBindInfo").withByteAlignment(8);
-        
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindCount"));
-        P_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBinds"));
-        
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindCount"));
-        P_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBinds"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("buffer"),
+		    JAVA_INT.withName("bindCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pBinds")
+		).withName("VkSparseBufferMemoryBindInfo").withByteAlignment(8);
+		
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindCount"));
+		P_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBinds"));
+		
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindCount"));
+		P_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBinds"));
+		//@formatter:on
+	}
 
-    public VkSparseBufferMemoryBindInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSparseBufferMemoryBindInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSparseBufferMemoryBindInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSparseBufferMemoryBindInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseBufferMemoryBindInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseBufferMemoryBindInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #buffer()
     public VkSparseBufferMemoryBindInfo buffer(VkBuffer buffer) {
@@ -156,5 +156,5 @@ public final class VkSparseBufferMemoryBindInfo
             segment -> new VkSparseBufferMemoryBindInfo(segment)
         );
     }
-    
+
 }

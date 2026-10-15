@@ -22,171 +22,171 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan14Properties
 		implements Struct<VkPhysicalDeviceVulkan14Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LINE_SUB_PIXEL_PRECISION_BITS_HANDLE;
-    public static final VarHandle MAX_VERTEX_ATTRIB_DIVISOR_HANDLE;
-    public static final VarHandle SUPPORTS_NON_ZERO_FIRST_INSTANCE_HANDLE;
-    public static final VarHandle MAX_PUSH_DESCRIPTORS_HANDLE;
-    public static final VarHandle DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_HANDLE;
-    public static final VarHandle DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_HANDLE;
-    public static final VarHandle EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE;
-    public static final VarHandle EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE;
-    public static final VarHandle DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE;
-    public static final VarHandle POLYGON_MODE_POINT_SIZE_HANDLE;
-    public static final VarHandle NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
-    public static final VarHandle NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
-    public static final VarHandle BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE;
-    public static final VarHandle MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE;
-    public static final VarHandle DEFAULT_ROBUSTNESS_IMAGES_HANDLE;
-    public static final VarHandle COPY_SRC_LAYOUT_COUNT_HANDLE;
-    public static final VarHandle P_COPY_SRC_LAYOUTS_HANDLE;
-    public static final VarHandle COPY_DST_LAYOUT_COUNT_HANDLE;
-    public static final VarHandle P_COPY_DST_LAYOUTS_HANDLE;
-    public static final VarHandle OPTIMAL_TILING_LAYOUT_UUID_HANDLE;
-    public static final VarHandle IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LINE_SUB_PIXEL_PRECISION_BITS_HANDLE;
+	public static final VarHandle MAX_VERTEX_ATTRIB_DIVISOR_HANDLE;
+	public static final VarHandle SUPPORTS_NON_ZERO_FIRST_INSTANCE_HANDLE;
+	public static final VarHandle MAX_PUSH_DESCRIPTORS_HANDLE;
+	public static final VarHandle DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_HANDLE;
+	public static final VarHandle DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_HANDLE;
+	public static final VarHandle EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE;
+	public static final VarHandle EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE;
+	public static final VarHandle DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE;
+	public static final VarHandle POLYGON_MODE_POINT_SIZE_HANDLE;
+	public static final VarHandle NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
+	public static final VarHandle NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE;
+	public static final VarHandle BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE;
+	public static final VarHandle MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE;
+	public static final VarHandle DEFAULT_ROBUSTNESS_IMAGES_HANDLE;
+	public static final VarHandle COPY_SRC_LAYOUT_COUNT_HANDLE;
+	public static final VarHandle P_COPY_SRC_LAYOUTS_HANDLE;
+	public static final VarHandle COPY_DST_LAYOUT_COUNT_HANDLE;
+	public static final VarHandle P_COPY_DST_LAYOUTS_HANDLE;
+	public static final VarHandle OPTIMAL_TILING_LAYOUT_UUID_HANDLE;
+	public static final VarHandle IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET;
-    public static final long MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET;
-    public static final long SUPPORTS_NON_ZERO_FIRST_INSTANCE_BYTE_OFFSET;
-    public static final long MAX_PUSH_DESCRIPTORS_BYTE_OFFSET;
-    public static final long DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_BYTE_OFFSET;
-    public static final long DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_BYTE_OFFSET;
-    public static final long EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET;
-    public static final long EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET;
-    public static final long DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET;
-    public static final long POLYGON_MODE_POINT_SIZE_BYTE_OFFSET;
-    public static final long NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
-    public static final long NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
-    public static final long BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET;
-    public static final long MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET;
-    public static final long DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET;
-    public static final long COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET;
-    public static final long P_COPY_SRC_LAYOUTS_BYTE_OFFSET;
-    public static final long COPY_DST_LAYOUT_COUNT_BYTE_OFFSET;
-    public static final long P_COPY_DST_LAYOUTS_BYTE_OFFSET;
-    public static final long OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET;
-    public static final long IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET;
+	public static final long MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET;
+	public static final long SUPPORTS_NON_ZERO_FIRST_INSTANCE_BYTE_OFFSET;
+	public static final long MAX_PUSH_DESCRIPTORS_BYTE_OFFSET;
+	public static final long DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_BYTE_OFFSET;
+	public static final long DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_BYTE_OFFSET;
+	public static final long EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET;
+	public static final long EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET;
+	public static final long DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET;
+	public static final long POLYGON_MODE_POINT_SIZE_BYTE_OFFSET;
+	public static final long NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
+	public static final long NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET;
+	public static final long BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET;
+	public static final long MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET;
+	public static final long DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET;
+	public static final long COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET;
+	public static final long P_COPY_SRC_LAYOUTS_BYTE_OFFSET;
+	public static final long COPY_DST_LAYOUT_COUNT_BYTE_OFFSET;
+	public static final long P_COPY_DST_LAYOUTS_BYTE_OFFSET;
+	public static final long OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET;
+	public static final long IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("lineSubPixelPrecisionBits"),
-            JAVA_INT.withName("maxVertexAttribDivisor"),
-            JAVA_INT.withName("supportsNonZeroFirstInstance"),
-            JAVA_INT.withName("maxPushDescriptors"),
-            JAVA_INT.withName("dynamicRenderingLocalReadDepthStencilAttachments"),
-            JAVA_INT.withName("dynamicRenderingLocalReadMultisampledAttachments"),
-            JAVA_INT.withName("earlyFragmentMultisampleCoverageAfterSampleCounting"),
-            JAVA_INT.withName("earlyFragmentSampleMaskTestBeforeSampleCounting"),
-            JAVA_INT.withName("depthStencilSwizzleOneSupport"),
-            JAVA_INT.withName("polygonModePointSize"),
-            JAVA_INT.withName("nonStrictSinglePixelWideLinesUseParallelogram"),
-            JAVA_INT.withName("nonStrictWideLinesUseParallelogram"),
-            JAVA_INT.withName("blockTexelViewCompatibleMultipleLayers"),
-            JAVA_INT.withName("maxCombinedImageSamplerDescriptorCount"),
-            JAVA_INT.withName("fragmentShadingRateClampCombinerInputs"),
-            JAVA_INT.withName("defaultRobustnessStorageBuffers"),
-            JAVA_INT.withName("defaultRobustnessUniformBuffers"),
-            JAVA_INT.withName("defaultRobustnessVertexInputs"),
-            JAVA_INT.withName("defaultRobustnessImages"),
-            JAVA_INT.withName("copySrcLayoutCount"),
-            UNBOUNDED_ADDRESS.withName("pCopySrcLayouts"),
-            JAVA_INT.withName("copyDstLayoutCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCopyDstLayouts"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("optimalTilingLayoutUUID"),
-            JAVA_INT.withName("identicalMemoryTypeRequirements"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVulkan14Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LINE_SUB_PIXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineSubPixelPrecisionBits"));
-        MAX_VERTEX_ATTRIB_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexAttribDivisor"));
-        SUPPORTS_NON_ZERO_FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportsNonZeroFirstInstance"));
-        MAX_PUSH_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushDescriptors"));
-        DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingLocalReadDepthStencilAttachments"));
-        DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingLocalReadMultisampledAttachments"));
-        EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
-        EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
-        DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilSwizzleOneSupport"));
-        POLYGON_MODE_POINT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("polygonModePointSize"));
-        NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
-        NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
-        BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
-        MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
-        FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
-        DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessStorageBuffers"));
-        DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessUniformBuffers"));
-        DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessVertexInputs"));
-        DEFAULT_ROBUSTNESS_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessImages"));
-        COPY_SRC_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copySrcLayoutCount"));
-        P_COPY_SRC_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopySrcLayouts"));
-        COPY_DST_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copyDstLayoutCount"));
-        P_COPY_DST_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopyDstLayouts"));
-        OPTIMAL_TILING_LAYOUT_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingLayoutUUID"), PathElement.sequenceElement());
-        IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identicalMemoryTypeRequirements"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineSubPixelPrecisionBits"));
-        MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexAttribDivisor"));
-        SUPPORTS_NON_ZERO_FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportsNonZeroFirstInstance"));
-        MAX_PUSH_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushDescriptors"));
-        DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingLocalReadDepthStencilAttachments"));
-        DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingLocalReadMultisampledAttachments"));
-        EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
-        EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
-        DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilSwizzleOneSupport"));
-        POLYGON_MODE_POINT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("polygonModePointSize"));
-        NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
-        NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
-        BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
-        MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
-        FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
-        DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessStorageBuffers"));
-        DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessUniformBuffers"));
-        DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessVertexInputs"));
-        DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessImages"));
-        COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copySrcLayoutCount"));
-        P_COPY_SRC_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopySrcLayouts"));
-        COPY_DST_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyDstLayoutCount"));
-        P_COPY_DST_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopyDstLayouts"));
-        OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingLayoutUUID"));
-        IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identicalMemoryTypeRequirements"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("lineSubPixelPrecisionBits"),
+		    JAVA_INT.withName("maxVertexAttribDivisor"),
+		    JAVA_INT.withName("supportsNonZeroFirstInstance"),
+		    JAVA_INT.withName("maxPushDescriptors"),
+		    JAVA_INT.withName("dynamicRenderingLocalReadDepthStencilAttachments"),
+		    JAVA_INT.withName("dynamicRenderingLocalReadMultisampledAttachments"),
+		    JAVA_INT.withName("earlyFragmentMultisampleCoverageAfterSampleCounting"),
+		    JAVA_INT.withName("earlyFragmentSampleMaskTestBeforeSampleCounting"),
+		    JAVA_INT.withName("depthStencilSwizzleOneSupport"),
+		    JAVA_INT.withName("polygonModePointSize"),
+		    JAVA_INT.withName("nonStrictSinglePixelWideLinesUseParallelogram"),
+		    JAVA_INT.withName("nonStrictWideLinesUseParallelogram"),
+		    JAVA_INT.withName("blockTexelViewCompatibleMultipleLayers"),
+		    JAVA_INT.withName("maxCombinedImageSamplerDescriptorCount"),
+		    JAVA_INT.withName("fragmentShadingRateClampCombinerInputs"),
+		    JAVA_INT.withName("defaultRobustnessStorageBuffers"),
+		    JAVA_INT.withName("defaultRobustnessUniformBuffers"),
+		    JAVA_INT.withName("defaultRobustnessVertexInputs"),
+		    JAVA_INT.withName("defaultRobustnessImages"),
+		    JAVA_INT.withName("copySrcLayoutCount"),
+		    UNBOUNDED_ADDRESS.withName("pCopySrcLayouts"),
+		    JAVA_INT.withName("copyDstLayoutCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCopyDstLayouts"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("optimalTilingLayoutUUID"),
+		    JAVA_INT.withName("identicalMemoryTypeRequirements"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVulkan14Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LINE_SUB_PIXEL_PRECISION_BITS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineSubPixelPrecisionBits"));
+		MAX_VERTEX_ATTRIB_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVertexAttribDivisor"));
+		SUPPORTS_NON_ZERO_FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportsNonZeroFirstInstance"));
+		MAX_PUSH_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushDescriptors"));
+		DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingLocalReadDepthStencilAttachments"));
+		DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRenderingLocalReadMultisampledAttachments"));
+		EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
+		EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
+		DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthStencilSwizzleOneSupport"));
+		POLYGON_MODE_POINT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("polygonModePointSize"));
+		NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
+		NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
+		BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
+		MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
+		FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
+		DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessStorageBuffers"));
+		DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessUniformBuffers"));
+		DEFAULT_ROBUSTNESS_VERTEX_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessVertexInputs"));
+		DEFAULT_ROBUSTNESS_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("defaultRobustnessImages"));
+		COPY_SRC_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copySrcLayoutCount"));
+		P_COPY_SRC_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopySrcLayouts"));
+		COPY_DST_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copyDstLayoutCount"));
+		P_COPY_DST_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopyDstLayouts"));
+		OPTIMAL_TILING_LAYOUT_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingLayoutUUID"), PathElement.sequenceElement());
+		IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identicalMemoryTypeRequirements"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LINE_SUB_PIXEL_PRECISION_BITS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineSubPixelPrecisionBits"));
+		MAX_VERTEX_ATTRIB_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVertexAttribDivisor"));
+		SUPPORTS_NON_ZERO_FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportsNonZeroFirstInstance"));
+		MAX_PUSH_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushDescriptors"));
+		DYNAMIC_RENDERING_LOCAL_READ_DEPTH_STENCIL_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingLocalReadDepthStencilAttachments"));
+		DYNAMIC_RENDERING_LOCAL_READ_MULTISAMPLED_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRenderingLocalReadMultisampledAttachments"));
+		EARLY_FRAGMENT_MULTISAMPLE_COVERAGE_AFTER_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentMultisampleCoverageAfterSampleCounting"));
+		EARLY_FRAGMENT_SAMPLE_MASK_TEST_BEFORE_SAMPLE_COUNTING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("earlyFragmentSampleMaskTestBeforeSampleCounting"));
+		DEPTH_STENCIL_SWIZZLE_ONE_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencilSwizzleOneSupport"));
+		POLYGON_MODE_POINT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("polygonModePointSize"));
+		NON_STRICT_SINGLE_PIXEL_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictSinglePixelWideLinesUseParallelogram"));
+		NON_STRICT_WIDE_LINES_USE_PARALLELOGRAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonStrictWideLinesUseParallelogram"));
+		BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
+		MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
+		FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
+		DEFAULT_ROBUSTNESS_STORAGE_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessStorageBuffers"));
+		DEFAULT_ROBUSTNESS_UNIFORM_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessUniformBuffers"));
+		DEFAULT_ROBUSTNESS_VERTEX_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessVertexInputs"));
+		DEFAULT_ROBUSTNESS_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("defaultRobustnessImages"));
+		COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copySrcLayoutCount"));
+		P_COPY_SRC_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopySrcLayouts"));
+		COPY_DST_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyDstLayoutCount"));
+		P_COPY_DST_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopyDstLayouts"));
+		OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingLayoutUUID"));
+		IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identicalMemoryTypeRequirements"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan14Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan14Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan14Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkan14Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan14Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan14Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan14Properties sType(int sType) {
@@ -524,5 +524,5 @@ public final class VkPhysicalDeviceVulkan14Properties
             segment -> new VkPhysicalDeviceVulkan14Properties(segment)
         );
     }
-    
+
 }

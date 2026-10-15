@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkColorBlendAdvancedEXT
 		implements Struct<VkColorBlendAdvancedEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ADVANCED_BLEND_OP_HANDLE;
-    public static final VarHandle SRC_PREMULTIPLIED_HANDLE;
-    public static final VarHandle DST_PREMULTIPLIED_HANDLE;
-    public static final VarHandle BLEND_OVERLAP_HANDLE;
-    public static final VarHandle CLAMP_RESULTS_HANDLE;
+	public static final VarHandle ADVANCED_BLEND_OP_HANDLE;
+	public static final VarHandle SRC_PREMULTIPLIED_HANDLE;
+	public static final VarHandle DST_PREMULTIPLIED_HANDLE;
+	public static final VarHandle BLEND_OVERLAP_HANDLE;
+	public static final VarHandle CLAMP_RESULTS_HANDLE;
 
-    public static final long ADVANCED_BLEND_OP_BYTE_OFFSET;
-    public static final long SRC_PREMULTIPLIED_BYTE_OFFSET;
-    public static final long DST_PREMULTIPLIED_BYTE_OFFSET;
-    public static final long BLEND_OVERLAP_BYTE_OFFSET;
-    public static final long CLAMP_RESULTS_BYTE_OFFSET;
+	public static final long ADVANCED_BLEND_OP_BYTE_OFFSET;
+	public static final long SRC_PREMULTIPLIED_BYTE_OFFSET;
+	public static final long DST_PREMULTIPLIED_BYTE_OFFSET;
+	public static final long BLEND_OVERLAP_BYTE_OFFSET;
+	public static final long CLAMP_RESULTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("advancedBlendOp"),
-            JAVA_INT.withName("srcPremultiplied"),
-            JAVA_INT.withName("dstPremultiplied"),
-            JAVA_INT.withName("blendOverlap"),
-            JAVA_INT.withName("clampResults")
-        ).withName("VkColorBlendAdvancedEXT").withByteAlignment(4);
-        
-        ADVANCED_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendOp"));
-        SRC_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcPremultiplied"));
-        DST_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstPremultiplied"));
-        BLEND_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blendOverlap"));
-        CLAMP_RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clampResults"));
-        
-        ADVANCED_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendOp"));
-        SRC_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcPremultiplied"));
-        DST_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstPremultiplied"));
-        BLEND_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blendOverlap"));
-        CLAMP_RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clampResults"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("advancedBlendOp"),
+		    JAVA_INT.withName("srcPremultiplied"),
+		    JAVA_INT.withName("dstPremultiplied"),
+		    JAVA_INT.withName("blendOverlap"),
+		    JAVA_INT.withName("clampResults")
+		).withName("VkColorBlendAdvancedEXT").withByteAlignment(4);
+		
+		ADVANCED_BLEND_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("advancedBlendOp"));
+		SRC_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcPremultiplied"));
+		DST_PREMULTIPLIED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstPremultiplied"));
+		BLEND_OVERLAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blendOverlap"));
+		CLAMP_RESULTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clampResults"));
+		
+		ADVANCED_BLEND_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("advancedBlendOp"));
+		SRC_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcPremultiplied"));
+		DST_PREMULTIPLIED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstPremultiplied"));
+		BLEND_OVERLAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blendOverlap"));
+		CLAMP_RESULTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clampResults"));
+		//@formatter:on
+	}
 
-    public VkColorBlendAdvancedEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkColorBlendAdvancedEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkColorBlendAdvancedEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkColorBlendAdvancedEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkColorBlendAdvancedEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkColorBlendAdvancedEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #advancedBlendOp()
     public VkColorBlendAdvancedEXT advancedBlendOp(int advancedBlendOp) {
@@ -173,5 +173,5 @@ public final class VkColorBlendAdvancedEXT
             segment -> new VkColorBlendAdvancedEXT(segment)
         );
     }
-    
+
 }

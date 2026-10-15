@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSubpassShadingPropertiesHUAWEI
 		implements Struct<VkPhysicalDeviceSubpassShadingPropertiesHUAWEI> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxSubpassShadingWorkgroupSizeAspectRatio"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceSubpassShadingPropertiesHUAWEI").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubpassShadingWorkgroupSizeAspectRatio"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubpassShadingWorkgroupSizeAspectRatio"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxSubpassShadingWorkgroupSizeAspectRatio"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceSubpassShadingPropertiesHUAWEI").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSubpassShadingWorkgroupSizeAspectRatio"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_SUBPASS_SHADING_WORKGROUP_SIZE_ASPECT_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSubpassShadingWorkgroupSizeAspectRatio"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSubpassShadingPropertiesHUAWEI sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceSubpassShadingPropertiesHUAWEI
             segment -> new VkPhysicalDeviceSubpassShadingPropertiesHUAWEI(segment)
         );
     }
-    
+
 }

@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1SessionParametersCreateInfoKHR
 		implements Struct<VkVideoEncodeAV1SessionParametersCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_STD_SEQUENCE_HEADER_HANDLE;
-    public static final VarHandle P_STD_DECODER_MODEL_INFO_HANDLE;
-    public static final VarHandle STD_OPERATING_POINT_COUNT_HANDLE;
-    public static final VarHandle P_STD_OPERATING_POINTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_STD_SEQUENCE_HEADER_HANDLE;
+	public static final VarHandle P_STD_DECODER_MODEL_INFO_HANDLE;
+	public static final VarHandle STD_OPERATING_POINT_COUNT_HANDLE;
+	public static final VarHandle P_STD_OPERATING_POINTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_STD_SEQUENCE_HEADER_BYTE_OFFSET;
-    public static final long P_STD_DECODER_MODEL_INFO_BYTE_OFFSET;
-    public static final long STD_OPERATING_POINT_COUNT_BYTE_OFFSET;
-    public static final long P_STD_OPERATING_POINTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_STD_SEQUENCE_HEADER_BYTE_OFFSET;
+	public static final long P_STD_DECODER_MODEL_INFO_BYTE_OFFSET;
+	public static final long STD_OPERATING_POINT_COUNT_BYTE_OFFSET;
+	public static final long P_STD_OPERATING_POINTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pStdSequenceHeader"),
-            UNBOUNDED_ADDRESS.withName("pStdDecoderModelInfo"),
-            JAVA_INT.withName("stdOperatingPointCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStdOperatingPoints")
-        ).withName("VkVideoEncodeAV1SessionParametersCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_STD_SEQUENCE_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdSequenceHeader"));
-        P_STD_DECODER_MODEL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdDecoderModelInfo"));
-        STD_OPERATING_POINT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdOperatingPointCount"));
-        P_STD_OPERATING_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdOperatingPoints"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_STD_SEQUENCE_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdSequenceHeader"));
-        P_STD_DECODER_MODEL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdDecoderModelInfo"));
-        STD_OPERATING_POINT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdOperatingPointCount"));
-        P_STD_OPERATING_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdOperatingPoints"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pStdSequenceHeader"),
+		    UNBOUNDED_ADDRESS.withName("pStdDecoderModelInfo"),
+		    JAVA_INT.withName("stdOperatingPointCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStdOperatingPoints")
+		).withName("VkVideoEncodeAV1SessionParametersCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_STD_SEQUENCE_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdSequenceHeader"));
+		P_STD_DECODER_MODEL_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdDecoderModelInfo"));
+		STD_OPERATING_POINT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stdOperatingPointCount"));
+		P_STD_OPERATING_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdOperatingPoints"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_STD_SEQUENCE_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdSequenceHeader"));
+		P_STD_DECODER_MODEL_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdDecoderModelInfo"));
+		STD_OPERATING_POINT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stdOperatingPointCount"));
+		P_STD_OPERATING_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdOperatingPoints"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1SessionParametersCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1SessionParametersCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1SessionParametersCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1SessionParametersCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1SessionParametersCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1SessionParametersCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1SessionParametersCreateInfoKHR sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkVideoEncodeAV1SessionParametersCreateInfoKHR
             segment -> new VkVideoEncodeAV1SessionParametersCreateInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVertexAttributeDivisorFeatures
 		implements Struct<VkPhysicalDeviceVertexAttributeDivisorFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE;
-    public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE;
+	public static final VarHandle VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET;
-    public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET;
+	public static final long VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vertexAttributeInstanceRateDivisor"),
-            JAVA_INT.withName("vertexAttributeInstanceRateZeroDivisor")
-        ).withName("VkPhysicalDeviceVertexAttributeDivisorFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
-        VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vertexAttributeInstanceRateDivisor"),
+		    JAVA_INT.withName("vertexAttributeInstanceRateZeroDivisor")
+		).withName("VkPhysicalDeviceVertexAttributeDivisorFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateDivisor"));
+		VERTEX_ATTRIBUTE_INSTANCE_RATE_ZERO_DIVISOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeInstanceRateZeroDivisor"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVertexAttributeDivisorFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVertexAttributeDivisorFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVertexAttributeDivisorFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVertexAttributeDivisorFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVertexAttributeDivisorFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVertexAttributeDivisorFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVertexAttributeDivisorFeatures sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceVertexAttributeDivisorFeatures
             segment -> new VkPhysicalDeviceVertexAttributeDivisorFeatures(segment)
         );
     }
-    
+
 }

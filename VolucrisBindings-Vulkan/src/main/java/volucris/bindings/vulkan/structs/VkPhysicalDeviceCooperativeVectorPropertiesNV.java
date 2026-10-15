@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceCooperativeVectorPropertiesNV
 		implements Struct<VkPhysicalDeviceCooperativeVectorPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COOPERATIVE_VECTOR_SUPPORTED_STAGES_HANDLE;
-    public static final VarHandle COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_HANDLE;
-    public static final VarHandle COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_HANDLE;
-    public static final VarHandle MAX_COOPERATIVE_VECTOR_COMPONENTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COOPERATIVE_VECTOR_SUPPORTED_STAGES_HANDLE;
+	public static final VarHandle COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_HANDLE;
+	public static final VarHandle COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_HANDLE;
+	public static final VarHandle MAX_COOPERATIVE_VECTOR_COMPONENTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COOPERATIVE_VECTOR_SUPPORTED_STAGES_BYTE_OFFSET;
-    public static final long COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_BYTE_OFFSET;
-    public static final long COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_BYTE_OFFSET;
-    public static final long MAX_COOPERATIVE_VECTOR_COMPONENTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COOPERATIVE_VECTOR_SUPPORTED_STAGES_BYTE_OFFSET;
+	public static final long COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_BYTE_OFFSET;
+	public static final long COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_BYTE_OFFSET;
+	public static final long MAX_COOPERATIVE_VECTOR_COMPONENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("cooperativeVectorSupportedStages"),
-            JAVA_INT.withName("cooperativeVectorTrainingFloat16Accumulation"),
-            JAVA_INT.withName("cooperativeVectorTrainingFloat32Accumulation"),
-            JAVA_INT.withName("maxCooperativeVectorComponents")
-        ).withName("VkPhysicalDeviceCooperativeVectorPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COOPERATIVE_VECTOR_SUPPORTED_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeVectorSupportedStages"));
-        COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeVectorTrainingFloat16Accumulation"));
-        COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeVectorTrainingFloat32Accumulation"));
-        MAX_COOPERATIVE_VECTOR_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCooperativeVectorComponents"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COOPERATIVE_VECTOR_SUPPORTED_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeVectorSupportedStages"));
-        COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeVectorTrainingFloat16Accumulation"));
-        COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeVectorTrainingFloat32Accumulation"));
-        MAX_COOPERATIVE_VECTOR_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCooperativeVectorComponents"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("cooperativeVectorSupportedStages"),
+		    JAVA_INT.withName("cooperativeVectorTrainingFloat16Accumulation"),
+		    JAVA_INT.withName("cooperativeVectorTrainingFloat32Accumulation"),
+		    JAVA_INT.withName("maxCooperativeVectorComponents")
+		).withName("VkPhysicalDeviceCooperativeVectorPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COOPERATIVE_VECTOR_SUPPORTED_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeVectorSupportedStages"));
+		COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeVectorTrainingFloat16Accumulation"));
+		COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cooperativeVectorTrainingFloat32Accumulation"));
+		MAX_COOPERATIVE_VECTOR_COMPONENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCooperativeVectorComponents"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COOPERATIVE_VECTOR_SUPPORTED_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeVectorSupportedStages"));
+		COOPERATIVE_VECTOR_TRAINING_FLOAT16_ACCUMULATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeVectorTrainingFloat16Accumulation"));
+		COOPERATIVE_VECTOR_TRAINING_FLOAT32_ACCUMULATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cooperativeVectorTrainingFloat32Accumulation"));
+		MAX_COOPERATIVE_VECTOR_COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCooperativeVectorComponents"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceCooperativeVectorPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceCooperativeVectorPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceCooperativeVectorPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceCooperativeVectorPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceCooperativeVectorPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceCooperativeVectorPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceCooperativeVectorPropertiesNV sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceCooperativeVectorPropertiesNV
             segment -> new VkPhysicalDeviceCooperativeVectorPropertiesNV(segment)
         );
     }
-    
+
 }

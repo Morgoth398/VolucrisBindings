@@ -14,36 +14,36 @@ import static volucris.bindings.core.FFMUtils.*;
 
 public final class StbImageWrite {
 
-    private static final LazyConstant<MethodHandle> STBI_WRITE_PNG;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_BMP;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_TGA;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_HDR;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_JPG;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_PNG_TO_FUNC;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_BMP_TO_FUNC;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_TGA_TO_FUNC;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_HDR_TO_FUNC;
-    private static final LazyConstant<MethodHandle> STBI_WRITE_JPG_TO_FUNC;
-    private static final LazyConstant<MethodHandle> STBI_FLIP_VERTICALLY_ON_WRITE;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_PNG;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_BMP;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_TGA;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_HDR;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_JPG;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_PNG_TO_FUNC;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_BMP_TO_FUNC;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_TGA_TO_FUNC;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_HDR_TO_FUNC;
+	private static final LazyConstant<MethodHandle> STBI_WRITE_JPG_TO_FUNC;
+	private static final LazyConstant<MethodHandle> STBI_FLIP_VERTICALLY_ON_WRITE;
 
-    static {
-        //@formatter:off
-        STBI_WRITE_PNG = downcallHandle("stbi_write_png", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_WRITE_BMP = downcallHandle("stbi_write_bmp", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_WRITE_TGA = downcallHandle("stbi_write_tga", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_WRITE_HDR = downcallHandle("stbi_write_hdr", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_WRITE_JPG = downcallHandle("stbi_write_jpg", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_WRITE_PNG_TO_FUNC = downcallHandle("stbi_write_png_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_WRITE_BMP_TO_FUNC = downcallHandle("stbi_write_bmp_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_WRITE_TGA_TO_FUNC = downcallHandle("stbi_write_tga_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_WRITE_HDR_TO_FUNC = downcallHandle("stbi_write_hdr_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
-        STBI_WRITE_JPG_TO_FUNC = downcallHandle("stbi_write_jpg_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
-        STBI_FLIP_VERTICALLY_ON_WRITE = downcallHandleVoid("stbi_flip_vertically_on_write", JAVA_INT);
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		STBI_WRITE_PNG = downcallHandle("stbi_write_png", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_WRITE_BMP = downcallHandle("stbi_write_bmp", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_WRITE_TGA = downcallHandle("stbi_write_tga", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_WRITE_HDR = downcallHandle("stbi_write_hdr", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_WRITE_JPG = downcallHandle("stbi_write_jpg", JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_WRITE_PNG_TO_FUNC = downcallHandle("stbi_write_png_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_WRITE_BMP_TO_FUNC = downcallHandle("stbi_write_bmp_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_WRITE_TGA_TO_FUNC = downcallHandle("stbi_write_tga_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_WRITE_HDR_TO_FUNC = downcallHandle("stbi_write_hdr_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS);
+		STBI_WRITE_JPG_TO_FUNC = downcallHandle("stbi_write_jpg_to_func", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_INT, JAVA_INT, JAVA_INT, UNBOUNDED_ADDRESS, JAVA_INT);
+		STBI_FLIP_VERTICALLY_ON_WRITE = downcallHandleVoid("stbi_flip_vertically_on_write", JAVA_INT);
+		//@formatter:on
+	}
 
-    private StbImageWrite() {
-    }
+	private StbImageWrite() {
+	}
 
     public static int stbi_write_png(
     	MemorySegment filename,
@@ -483,5 +483,5 @@ public final class StbImageWrite {
     		throw new RuntimeException(e);
     	}
     }
-    
+
 }

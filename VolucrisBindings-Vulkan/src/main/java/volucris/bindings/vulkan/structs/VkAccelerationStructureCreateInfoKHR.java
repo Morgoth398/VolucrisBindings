@@ -21,76 +21,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureCreateInfoKHR
 		implements Struct<VkAccelerationStructureCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle CREATE_FLAGS_HANDLE;
-    public static final VarHandle BUFFER_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle DEVICE_ADDRESS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle CREATE_FLAGS_HANDLE;
+	public static final VarHandle BUFFER_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle DEVICE_ADDRESS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CREATE_FLAGS_BYTE_OFFSET;
-    public static final long BUFFER_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long DEVICE_ADDRESS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CREATE_FLAGS_BYTE_OFFSET;
+	public static final long BUFFER_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long DEVICE_ADDRESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("createFlags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("buffer"),
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("size"),
-            JAVA_INT.withName("type"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("deviceAddress")
-        ).withName("VkAccelerationStructureCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        CREATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("createFlags"));
-        BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceAddress"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CREATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("createFlags"));
-        BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceAddress"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("createFlags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("buffer"),
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("size"),
+		    JAVA_INT.withName("type"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("deviceAddress")
+		).withName("VkAccelerationStructureCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		CREATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("createFlags"));
+		BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buffer"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		DEVICE_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceAddress"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CREATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("createFlags"));
+		BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buffer"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		DEVICE_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceAddress"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAccelerationStructureCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAccelerationStructureCreateInfoKHR sType(int sType) {
@@ -233,5 +233,5 @@ public final class VkAccelerationStructureCreateInfoKHR
             segment -> new VkAccelerationStructureCreateInfoKHR(segment)
         );
     }
-    
+
 }

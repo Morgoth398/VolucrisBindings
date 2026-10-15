@@ -22,66 +22,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineExecutableStatisticKHR
 		implements Struct<VkPipelineExecutableStatisticKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NAME_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NAME_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NAME_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long VALUE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NAME_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long VALUE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPipelineExecutableStatisticValueKHR value;
+	private final VkPipelineExecutableStatisticValueKHR value;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            JAVA_INT.withName("format"),
-            MemoryLayout.paddingLayout(4),
-            VkPipelineExecutableStatisticValueKHR.LAYOUT.withName("value")
-        ).withName("VkPipelineExecutableStatisticKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    JAVA_INT.withName("format"),
+		    MemoryLayout.paddingLayout(4),
+		    VkPipelineExecutableStatisticValueKHR.LAYOUT.withName("value")
+		).withName("VkPipelineExecutableStatisticKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value"));
+		//@formatter:on
+	}
 
-    public VkPipelineExecutableStatisticKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineExecutableStatisticKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineExecutableStatisticKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        value = new VkPipelineExecutableStatisticValueKHR(segment.asSlice(VALUE_BYTE_OFFSET, VkPipelineExecutableStatisticValueKHR.LAYOUT));
-    }
+	public VkPipelineExecutableStatisticKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineExecutableStatisticKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineExecutableStatisticKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    value = new VkPipelineExecutableStatisticValueKHR(segment.asSlice(VALUE_BYTE_OFFSET, VkPipelineExecutableStatisticValueKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPipelineExecutableStatisticKHR sType(int sType) {
@@ -118,6 +118,10 @@ public final class VkPipelineExecutableStatisticKHR
     	return (byte) NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String name() {
+        return segment.getString(NAME_BYTE_OFFSET);
+    }
+    
     /// @see #description(int)
     public VkPipelineExecutableStatisticKHR description(byte description, int index0) {
     	DESCRIPTION_HANDLE.set(segment, 0L, index0, description);
@@ -126,6 +130,10 @@ public final class VkPipelineExecutableStatisticKHR
     
     public byte description(int index0) {
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String description() {
+        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     /// @see #format()
@@ -152,14 +160,6 @@ public final class VkPipelineExecutableStatisticKHR
     
     public VkPipelineExecutableStatisticValueKHR value() {
     	return value;
-    }
-    
-    public String name() {
-        return segment.getString(NAME_BYTE_OFFSET);
-    }
-    
-    public String description() {
-        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     @Override
@@ -213,5 +213,5 @@ public final class VkPipelineExecutableStatisticKHR
             segment -> new VkPipelineExecutableStatisticKHR(segment)
         );
     }
-    
+
 }

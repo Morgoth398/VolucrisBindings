@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoProfileInfoKHR
 		implements Struct<VkVideoProfileInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIDEO_CODEC_OPERATION_HANDLE;
-    public static final VarHandle CHROMA_SUBSAMPLING_HANDLE;
-    public static final VarHandle LUMA_BIT_DEPTH_HANDLE;
-    public static final VarHandle CHROMA_BIT_DEPTH_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIDEO_CODEC_OPERATION_HANDLE;
+	public static final VarHandle CHROMA_SUBSAMPLING_HANDLE;
+	public static final VarHandle LUMA_BIT_DEPTH_HANDLE;
+	public static final VarHandle CHROMA_BIT_DEPTH_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIDEO_CODEC_OPERATION_BYTE_OFFSET;
-    public static final long CHROMA_SUBSAMPLING_BYTE_OFFSET;
-    public static final long LUMA_BIT_DEPTH_BYTE_OFFSET;
-    public static final long CHROMA_BIT_DEPTH_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIDEO_CODEC_OPERATION_BYTE_OFFSET;
+	public static final long CHROMA_SUBSAMPLING_BYTE_OFFSET;
+	public static final long LUMA_BIT_DEPTH_BYTE_OFFSET;
+	public static final long CHROMA_BIT_DEPTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("videoCodecOperation"),
-            JAVA_INT.withName("chromaSubsampling"),
-            JAVA_INT.withName("lumaBitDepth"),
-            JAVA_INT.withName("chromaBitDepth")
-        ).withName("VkVideoProfileInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIDEO_CODEC_OPERATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoCodecOperation"));
-        CHROMA_SUBSAMPLING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chromaSubsampling"));
-        LUMA_BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lumaBitDepth"));
-        CHROMA_BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chromaBitDepth"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIDEO_CODEC_OPERATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoCodecOperation"));
-        CHROMA_SUBSAMPLING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chromaSubsampling"));
-        LUMA_BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lumaBitDepth"));
-        CHROMA_BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chromaBitDepth"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("videoCodecOperation"),
+		    JAVA_INT.withName("chromaSubsampling"),
+		    JAVA_INT.withName("lumaBitDepth"),
+		    JAVA_INT.withName("chromaBitDepth")
+		).withName("VkVideoProfileInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIDEO_CODEC_OPERATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoCodecOperation"));
+		CHROMA_SUBSAMPLING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chromaSubsampling"));
+		LUMA_BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lumaBitDepth"));
+		CHROMA_BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chromaBitDepth"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIDEO_CODEC_OPERATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoCodecOperation"));
+		CHROMA_SUBSAMPLING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chromaSubsampling"));
+		LUMA_BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lumaBitDepth"));
+		CHROMA_BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chromaBitDepth"));
+		//@formatter:on
+	}
 
-    public VkVideoProfileInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoProfileInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoProfileInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoProfileInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoProfileInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoProfileInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoProfileInfoKHR sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkVideoProfileInfoKHR
             segment -> new VkVideoProfileInfoKHR(segment)
         );
     }
-    
+
 }

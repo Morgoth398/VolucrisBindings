@@ -23,75 +23,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSetDescriptorBufferOffsetsInfoEXT
 		implements Struct<VkSetDescriptorBufferOffsetsInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_FLAGS_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle FIRST_SET_HANDLE;
-    public static final VarHandle SET_COUNT_HANDLE;
-    public static final VarHandle P_BUFFER_INDICES_HANDLE;
-    public static final VarHandle P_OFFSETS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_FLAGS_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle FIRST_SET_HANDLE;
+	public static final VarHandle SET_COUNT_HANDLE;
+	public static final VarHandle P_BUFFER_INDICES_HANDLE;
+	public static final VarHandle P_OFFSETS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_FLAGS_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long FIRST_SET_BYTE_OFFSET;
-    public static final long SET_COUNT_BYTE_OFFSET;
-    public static final long P_BUFFER_INDICES_BYTE_OFFSET;
-    public static final long P_OFFSETS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_FLAGS_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long FIRST_SET_BYTE_OFFSET;
+	public static final long SET_COUNT_BYTE_OFFSET;
+	public static final long P_BUFFER_INDICES_BYTE_OFFSET;
+	public static final long P_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stageFlags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            JAVA_INT.withName("firstSet"),
-            JAVA_INT.withName("setCount"),
-            UNBOUNDED_ADDRESS.withName("pBufferIndices"),
-            UNBOUNDED_ADDRESS.withName("pOffsets")
-        ).withName("VkSetDescriptorBufferOffsetsInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        FIRST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstSet"));
-        SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setCount"));
-        P_BUFFER_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferIndices"));
-        P_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pOffsets"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        FIRST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstSet"));
-        SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setCount"));
-        P_BUFFER_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferIndices"));
-        P_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stageFlags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    JAVA_INT.withName("firstSet"),
+		    JAVA_INT.withName("setCount"),
+		    UNBOUNDED_ADDRESS.withName("pBufferIndices"),
+		    UNBOUNDED_ADDRESS.withName("pOffsets")
+		).withName("VkSetDescriptorBufferOffsetsInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		FIRST_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstSet"));
+		SET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("setCount"));
+		P_BUFFER_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferIndices"));
+		P_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pOffsets"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		FIRST_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstSet"));
+		SET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("setCount"));
+		P_BUFFER_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferIndices"));
+		P_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pOffsets"));
+		//@formatter:on
+	}
 
-    public VkSetDescriptorBufferOffsetsInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSetDescriptorBufferOffsetsInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSetDescriptorBufferOffsetsInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSetDescriptorBufferOffsetsInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSetDescriptorBufferOffsetsInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSetDescriptorBufferOffsetsInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSetDescriptorBufferOffsetsInfoEXT sType(int sType) {
@@ -244,5 +244,5 @@ public final class VkSetDescriptorBufferOffsetsInfoEXT
             segment -> new VkSetDescriptorBufferOffsetsInfoEXT(segment)
         );
     }
-    
+
 }

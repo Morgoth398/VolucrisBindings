@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMemoryType
 		implements Struct<VkMemoryType> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PROPERTY_FLAGS_HANDLE;
-    public static final VarHandle HEAP_INDEX_HANDLE;
+	public static final VarHandle PROPERTY_FLAGS_HANDLE;
+	public static final VarHandle HEAP_INDEX_HANDLE;
 
-    public static final long PROPERTY_FLAGS_BYTE_OFFSET;
-    public static final long HEAP_INDEX_BYTE_OFFSET;
+	public static final long PROPERTY_FLAGS_BYTE_OFFSET;
+	public static final long HEAP_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("propertyFlags"),
-            JAVA_INT.withName("heapIndex")
-        ).withName("VkMemoryType").withByteAlignment(4);
-        
-        PROPERTY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("propertyFlags"));
-        HEAP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapIndex"));
-        
-        PROPERTY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("propertyFlags"));
-        HEAP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("propertyFlags"),
+		    JAVA_INT.withName("heapIndex")
+		).withName("VkMemoryType").withByteAlignment(4);
+		
+		PROPERTY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("propertyFlags"));
+		HEAP_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapIndex"));
+		
+		PROPERTY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("propertyFlags"));
+		HEAP_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapIndex"));
+		//@formatter:on
+	}
 
-    public VkMemoryType() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryType(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryType(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryType() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryType(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryType(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #propertyFlags()
     public VkMemoryType propertyFlags(int propertyFlags) {
@@ -128,5 +128,5 @@ public final class VkMemoryType
             segment -> new VkMemoryType(segment)
         );
     }
-    
+
 }

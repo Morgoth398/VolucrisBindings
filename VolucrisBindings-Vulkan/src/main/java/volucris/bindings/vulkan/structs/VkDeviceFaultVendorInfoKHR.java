@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDeviceFaultVendorInfoKHR
 		implements Struct<VkDeviceFaultVendorInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DESCRIPTION_HANDLE;
-    public static final VarHandle VENDOR_FAULT_CODE_HANDLE;
-    public static final VarHandle VENDOR_FAULT_DATA_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle VENDOR_FAULT_CODE_HANDLE;
+	public static final VarHandle VENDOR_FAULT_DATA_HANDLE;
 
-    public static final long DESCRIPTION_BYTE_OFFSET;
-    public static final long VENDOR_FAULT_CODE_BYTE_OFFSET;
-    public static final long VENDOR_FAULT_DATA_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long VENDOR_FAULT_CODE_BYTE_OFFSET;
+	public static final long VENDOR_FAULT_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            JAVA_LONG.withName("vendorFaultCode"),
-            JAVA_LONG.withName("vendorFaultData")
-        ).withName("VkDeviceFaultVendorInfoKHR").withByteAlignment(8);
-        
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        VENDOR_FAULT_CODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorFaultCode"));
-        VENDOR_FAULT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorFaultData"));
-        
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        VENDOR_FAULT_CODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorFaultCode"));
-        VENDOR_FAULT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorFaultData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    JAVA_LONG.withName("vendorFaultCode"),
+		    JAVA_LONG.withName("vendorFaultData")
+		).withName("VkDeviceFaultVendorInfoKHR").withByteAlignment(8);
+		
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		VENDOR_FAULT_CODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorFaultCode"));
+		VENDOR_FAULT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorFaultData"));
+		
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		VENDOR_FAULT_CODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorFaultCode"));
+		VENDOR_FAULT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorFaultData"));
+		//@formatter:on
+	}
 
-    public VkDeviceFaultVendorInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceFaultVendorInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceFaultVendorInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceFaultVendorInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceFaultVendorInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceFaultVendorInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #description(int)
     public VkDeviceFaultVendorInfoKHR description(byte description, int index0) {
@@ -70,6 +70,10 @@ public final class VkDeviceFaultVendorInfoKHR
     
     public byte description(int index0) {
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String description() {
+        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     /// @see #vendorFaultCode()
@@ -90,10 +94,6 @@ public final class VkDeviceFaultVendorInfoKHR
     
     public long vendorFaultData() {
     	return (long) VENDOR_FAULT_DATA_HANDLE.get(segment, 0L);
-    }
-    
-    public String description() {
-        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     @Override
@@ -147,5 +147,5 @@ public final class VkDeviceFaultVendorInfoKHR
             segment -> new VkDeviceFaultVendorInfoKHR(segment)
         );
     }
-    
+
 }

@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAttachmentReference
 		implements Struct<VkAttachmentReference> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ATTACHMENT_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle ATTACHMENT_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
 
-    public static final long ATTACHMENT_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
+	public static final long ATTACHMENT_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("attachment"),
-            JAVA_INT.withName("layout")
-        ).withName("VkAttachmentReference").withByteAlignment(4);
-        
-        ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachment"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        
-        ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachment"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("attachment"),
+		    JAVA_INT.withName("layout")
+		).withName("VkAttachmentReference").withByteAlignment(4);
+		
+		ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachment"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		
+		ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachment"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		//@formatter:on
+	}
 
-    public VkAttachmentReference() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAttachmentReference(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAttachmentReference(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAttachmentReference() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAttachmentReference(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAttachmentReference(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #attachment()
     public VkAttachmentReference attachment(int attachment) {
@@ -128,5 +128,5 @@ public final class VkAttachmentReference
             segment -> new VkAttachmentReference(segment)
         );
     }
-    
+
 }

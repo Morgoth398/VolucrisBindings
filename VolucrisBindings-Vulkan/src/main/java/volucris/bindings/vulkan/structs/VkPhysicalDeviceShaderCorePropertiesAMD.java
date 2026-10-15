@@ -21,114 +21,114 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderCorePropertiesAMD
 		implements Struct<VkPhysicalDeviceShaderCorePropertiesAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_ENGINE_COUNT_HANDLE;
-    public static final VarHandle SHADER_ARRAYS_PER_ENGINE_COUNT_HANDLE;
-    public static final VarHandle COMPUTE_UNITS_PER_SHADER_ARRAY_HANDLE;
-    public static final VarHandle SIMD_PER_COMPUTE_UNIT_HANDLE;
-    public static final VarHandle WAVEFRONTS_PER_SIMD_HANDLE;
-    public static final VarHandle WAVEFRONT_SIZE_HANDLE;
-    public static final VarHandle SGPRS_PER_SIMD_HANDLE;
-    public static final VarHandle MIN_SGPR_ALLOCATION_HANDLE;
-    public static final VarHandle MAX_SGPR_ALLOCATION_HANDLE;
-    public static final VarHandle SGPR_ALLOCATION_GRANULARITY_HANDLE;
-    public static final VarHandle VGPRS_PER_SIMD_HANDLE;
-    public static final VarHandle MIN_VGPR_ALLOCATION_HANDLE;
-    public static final VarHandle MAX_VGPR_ALLOCATION_HANDLE;
-    public static final VarHandle VGPR_ALLOCATION_GRANULARITY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_ENGINE_COUNT_HANDLE;
+	public static final VarHandle SHADER_ARRAYS_PER_ENGINE_COUNT_HANDLE;
+	public static final VarHandle COMPUTE_UNITS_PER_SHADER_ARRAY_HANDLE;
+	public static final VarHandle SIMD_PER_COMPUTE_UNIT_HANDLE;
+	public static final VarHandle WAVEFRONTS_PER_SIMD_HANDLE;
+	public static final VarHandle WAVEFRONT_SIZE_HANDLE;
+	public static final VarHandle SGPRS_PER_SIMD_HANDLE;
+	public static final VarHandle MIN_SGPR_ALLOCATION_HANDLE;
+	public static final VarHandle MAX_SGPR_ALLOCATION_HANDLE;
+	public static final VarHandle SGPR_ALLOCATION_GRANULARITY_HANDLE;
+	public static final VarHandle VGPRS_PER_SIMD_HANDLE;
+	public static final VarHandle MIN_VGPR_ALLOCATION_HANDLE;
+	public static final VarHandle MAX_VGPR_ALLOCATION_HANDLE;
+	public static final VarHandle VGPR_ALLOCATION_GRANULARITY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_ENGINE_COUNT_BYTE_OFFSET;
-    public static final long SHADER_ARRAYS_PER_ENGINE_COUNT_BYTE_OFFSET;
-    public static final long COMPUTE_UNITS_PER_SHADER_ARRAY_BYTE_OFFSET;
-    public static final long SIMD_PER_COMPUTE_UNIT_BYTE_OFFSET;
-    public static final long WAVEFRONTS_PER_SIMD_BYTE_OFFSET;
-    public static final long WAVEFRONT_SIZE_BYTE_OFFSET;
-    public static final long SGPRS_PER_SIMD_BYTE_OFFSET;
-    public static final long MIN_SGPR_ALLOCATION_BYTE_OFFSET;
-    public static final long MAX_SGPR_ALLOCATION_BYTE_OFFSET;
-    public static final long SGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET;
-    public static final long VGPRS_PER_SIMD_BYTE_OFFSET;
-    public static final long MIN_VGPR_ALLOCATION_BYTE_OFFSET;
-    public static final long MAX_VGPR_ALLOCATION_BYTE_OFFSET;
-    public static final long VGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_ENGINE_COUNT_BYTE_OFFSET;
+	public static final long SHADER_ARRAYS_PER_ENGINE_COUNT_BYTE_OFFSET;
+	public static final long COMPUTE_UNITS_PER_SHADER_ARRAY_BYTE_OFFSET;
+	public static final long SIMD_PER_COMPUTE_UNIT_BYTE_OFFSET;
+	public static final long WAVEFRONTS_PER_SIMD_BYTE_OFFSET;
+	public static final long WAVEFRONT_SIZE_BYTE_OFFSET;
+	public static final long SGPRS_PER_SIMD_BYTE_OFFSET;
+	public static final long MIN_SGPR_ALLOCATION_BYTE_OFFSET;
+	public static final long MAX_SGPR_ALLOCATION_BYTE_OFFSET;
+	public static final long SGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET;
+	public static final long VGPRS_PER_SIMD_BYTE_OFFSET;
+	public static final long MIN_VGPR_ALLOCATION_BYTE_OFFSET;
+	public static final long MAX_VGPR_ALLOCATION_BYTE_OFFSET;
+	public static final long VGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderEngineCount"),
-            JAVA_INT.withName("shaderArraysPerEngineCount"),
-            JAVA_INT.withName("computeUnitsPerShaderArray"),
-            JAVA_INT.withName("simdPerComputeUnit"),
-            JAVA_INT.withName("wavefrontsPerSimd"),
-            JAVA_INT.withName("wavefrontSize"),
-            JAVA_INT.withName("sgprsPerSimd"),
-            JAVA_INT.withName("minSgprAllocation"),
-            JAVA_INT.withName("maxSgprAllocation"),
-            JAVA_INT.withName("sgprAllocationGranularity"),
-            JAVA_INT.withName("vgprsPerSimd"),
-            JAVA_INT.withName("minVgprAllocation"),
-            JAVA_INT.withName("maxVgprAllocation"),
-            JAVA_INT.withName("vgprAllocationGranularity")
-        ).withName("VkPhysicalDeviceShaderCorePropertiesAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_ENGINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderEngineCount"));
-        SHADER_ARRAYS_PER_ENGINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderArraysPerEngineCount"));
-        COMPUTE_UNITS_PER_SHADER_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeUnitsPerShaderArray"));
-        SIMD_PER_COMPUTE_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("simdPerComputeUnit"));
-        WAVEFRONTS_PER_SIMD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wavefrontsPerSimd"));
-        WAVEFRONT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wavefrontSize"));
-        SGPRS_PER_SIMD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sgprsPerSimd"));
-        MIN_SGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSgprAllocation"));
-        MAX_SGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSgprAllocation"));
-        SGPR_ALLOCATION_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sgprAllocationGranularity"));
-        VGPRS_PER_SIMD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vgprsPerSimd"));
-        MIN_VGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minVgprAllocation"));
-        MAX_VGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVgprAllocation"));
-        VGPR_ALLOCATION_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vgprAllocationGranularity"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_ENGINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderEngineCount"));
-        SHADER_ARRAYS_PER_ENGINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderArraysPerEngineCount"));
-        COMPUTE_UNITS_PER_SHADER_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeUnitsPerShaderArray"));
-        SIMD_PER_COMPUTE_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("simdPerComputeUnit"));
-        WAVEFRONTS_PER_SIMD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wavefrontsPerSimd"));
-        WAVEFRONT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wavefrontSize"));
-        SGPRS_PER_SIMD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sgprsPerSimd"));
-        MIN_SGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSgprAllocation"));
-        MAX_SGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSgprAllocation"));
-        SGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sgprAllocationGranularity"));
-        VGPRS_PER_SIMD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vgprsPerSimd"));
-        MIN_VGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minVgprAllocation"));
-        MAX_VGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVgprAllocation"));
-        VGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vgprAllocationGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderEngineCount"),
+		    JAVA_INT.withName("shaderArraysPerEngineCount"),
+		    JAVA_INT.withName("computeUnitsPerShaderArray"),
+		    JAVA_INT.withName("simdPerComputeUnit"),
+		    JAVA_INT.withName("wavefrontsPerSimd"),
+		    JAVA_INT.withName("wavefrontSize"),
+		    JAVA_INT.withName("sgprsPerSimd"),
+		    JAVA_INT.withName("minSgprAllocation"),
+		    JAVA_INT.withName("maxSgprAllocation"),
+		    JAVA_INT.withName("sgprAllocationGranularity"),
+		    JAVA_INT.withName("vgprsPerSimd"),
+		    JAVA_INT.withName("minVgprAllocation"),
+		    JAVA_INT.withName("maxVgprAllocation"),
+		    JAVA_INT.withName("vgprAllocationGranularity")
+		).withName("VkPhysicalDeviceShaderCorePropertiesAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_ENGINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderEngineCount"));
+		SHADER_ARRAYS_PER_ENGINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderArraysPerEngineCount"));
+		COMPUTE_UNITS_PER_SHADER_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("computeUnitsPerShaderArray"));
+		SIMD_PER_COMPUTE_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("simdPerComputeUnit"));
+		WAVEFRONTS_PER_SIMD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wavefrontsPerSimd"));
+		WAVEFRONT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wavefrontSize"));
+		SGPRS_PER_SIMD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sgprsPerSimd"));
+		MIN_SGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSgprAllocation"));
+		MAX_SGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSgprAllocation"));
+		SGPR_ALLOCATION_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sgprAllocationGranularity"));
+		VGPRS_PER_SIMD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vgprsPerSimd"));
+		MIN_VGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minVgprAllocation"));
+		MAX_VGPR_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxVgprAllocation"));
+		VGPR_ALLOCATION_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vgprAllocationGranularity"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_ENGINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderEngineCount"));
+		SHADER_ARRAYS_PER_ENGINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderArraysPerEngineCount"));
+		COMPUTE_UNITS_PER_SHADER_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("computeUnitsPerShaderArray"));
+		SIMD_PER_COMPUTE_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("simdPerComputeUnit"));
+		WAVEFRONTS_PER_SIMD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wavefrontsPerSimd"));
+		WAVEFRONT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wavefrontSize"));
+		SGPRS_PER_SIMD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sgprsPerSimd"));
+		MIN_SGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSgprAllocation"));
+		MAX_SGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSgprAllocation"));
+		SGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sgprAllocationGranularity"));
+		VGPRS_PER_SIMD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vgprsPerSimd"));
+		MIN_VGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minVgprAllocation"));
+		MAX_VGPR_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxVgprAllocation"));
+		VGPR_ALLOCATION_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vgprAllocationGranularity"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderCorePropertiesAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderCorePropertiesAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderCorePropertiesAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderCorePropertiesAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderCorePropertiesAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderCorePropertiesAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderCorePropertiesAMD sType(int sType) {
@@ -346,5 +346,5 @@ public final class VkPhysicalDeviceShaderCorePropertiesAMD
             segment -> new VkPhysicalDeviceShaderCorePropertiesAMD(segment)
         );
     }
-    
+
 }

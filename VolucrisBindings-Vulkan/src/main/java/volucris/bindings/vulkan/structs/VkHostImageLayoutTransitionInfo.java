@@ -22,66 +22,66 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkHostImageLayoutTransitionInfo
 		implements Struct<VkHostImageLayoutTransitionInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle IMAGE_HANDLE;
-    public static final VarHandle OLD_LAYOUT_HANDLE;
-    public static final VarHandle NEW_LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle IMAGE_HANDLE;
+	public static final VarHandle OLD_LAYOUT_HANDLE;
+	public static final VarHandle NEW_LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long IMAGE_BYTE_OFFSET;
-    public static final long OLD_LAYOUT_BYTE_OFFSET;
-    public static final long NEW_LAYOUT_BYTE_OFFSET;
-    public static final long SUBRESOURCE_RANGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long IMAGE_BYTE_OFFSET;
+	public static final long OLD_LAYOUT_BYTE_OFFSET;
+	public static final long NEW_LAYOUT_BYTE_OFFSET;
+	public static final long SUBRESOURCE_RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceRange subresourceRange;
+	private final VkImageSubresourceRange subresourceRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("image"),
-            JAVA_INT.withName("oldLayout"),
-            JAVA_INT.withName("newLayout"),
-            VkImageSubresourceRange.LAYOUT.withName("subresourceRange"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkHostImageLayoutTransitionInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
-        OLD_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("oldLayout"));
-        NEW_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("newLayout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
-        OLD_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("oldLayout"));
-        NEW_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("newLayout"));
-        SUBRESOURCE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresourceRange"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("image"),
+		    JAVA_INT.withName("oldLayout"),
+		    JAVA_INT.withName("newLayout"),
+		    VkImageSubresourceRange.LAYOUT.withName("subresourceRange"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkHostImageLayoutTransitionInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		IMAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("image"));
+		OLD_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("oldLayout"));
+		NEW_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("newLayout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		IMAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("image"));
+		OLD_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("oldLayout"));
+		NEW_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("newLayout"));
+		SUBRESOURCE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subresourceRange"));
+		//@formatter:on
+	}
 
-    public VkHostImageLayoutTransitionInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkHostImageLayoutTransitionInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkHostImageLayoutTransitionInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        subresourceRange = new VkImageSubresourceRange(segment.asSlice(SUBRESOURCE_RANGE_BYTE_OFFSET, VkImageSubresourceRange.LAYOUT));
-    }
+	public VkHostImageLayoutTransitionInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkHostImageLayoutTransitionInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkHostImageLayoutTransitionInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    subresourceRange = new VkImageSubresourceRange(segment.asSlice(SUBRESOURCE_RANGE_BYTE_OFFSET, VkImageSubresourceRange.LAYOUT));
+	}
 
     /// @see #sType()
     public VkHostImageLayoutTransitionInfo sType(int sType) {
@@ -210,5 +210,5 @@ public final class VkHostImageLayoutTransitionInfo
             segment -> new VkHostImageLayoutTransitionInfo(segment)
         );
     }
-    
+
 }

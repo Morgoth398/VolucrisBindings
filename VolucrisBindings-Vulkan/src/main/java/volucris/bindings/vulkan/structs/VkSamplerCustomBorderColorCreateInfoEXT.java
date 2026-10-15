@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerCustomBorderColorCreateInfoEXT
 		implements Struct<VkSamplerCustomBorderColorCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long CUSTOM_BORDER_COLOR_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long CUSTOM_BORDER_COLOR_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkClearColorValue customBorderColor;
+	private final VkClearColorValue customBorderColor;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkClearColorValue.LAYOUT.withName("customBorderColor"),
-            JAVA_INT.withName("format"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSamplerCustomBorderColorCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        CUSTOM_BORDER_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("customBorderColor"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkClearColorValue.LAYOUT.withName("customBorderColor"),
+		    JAVA_INT.withName("format"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSamplerCustomBorderColorCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		CUSTOM_BORDER_COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("customBorderColor"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		//@formatter:on
+	}
 
-    public VkSamplerCustomBorderColorCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerCustomBorderColorCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerCustomBorderColorCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        customBorderColor = new VkClearColorValue(segment.asSlice(CUSTOM_BORDER_COLOR_BYTE_OFFSET, VkClearColorValue.LAYOUT));
-    }
+	public VkSamplerCustomBorderColorCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerCustomBorderColorCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerCustomBorderColorCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    customBorderColor = new VkClearColorValue(segment.asSlice(CUSTOM_BORDER_COLOR_BYTE_OFFSET, VkClearColorValue.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSamplerCustomBorderColorCreateInfoEXT sType(int sType) {
@@ -98,16 +98,6 @@ public final class VkSamplerCustomBorderColorCreateInfoEXT
     	return segment;
     }
     
-    /// @see #format()
-    public VkSamplerCustomBorderColorCreateInfoEXT format(int format) {
-    	FORMAT_HANDLE.set(segment, 0L, format);
-    	return this;
-    }
-    
-    public int format() {
-    	return (int) FORMAT_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #customBorderColor()
     public VkSamplerCustomBorderColorCreateInfoEXT customBorderColor(Consumer<VkClearColorValue> consumer) {
     	consumer.accept(customBorderColor);
@@ -122,6 +112,16 @@ public final class VkSamplerCustomBorderColorCreateInfoEXT
     
     public VkClearColorValue customBorderColor() {
     	return customBorderColor;
+    }
+    
+    /// @see #format()
+    public VkSamplerCustomBorderColorCreateInfoEXT format(int format) {
+    	FORMAT_HANDLE.set(segment, 0L, format);
+    	return this;
+    }
+    
+    public int format() {
+    	return (int) FORMAT_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -175,5 +175,5 @@ public final class VkSamplerCustomBorderColorCreateInfoEXT
             segment -> new VkSamplerCustomBorderColorCreateInfoEXT(segment)
         );
     }
-    
+
 }

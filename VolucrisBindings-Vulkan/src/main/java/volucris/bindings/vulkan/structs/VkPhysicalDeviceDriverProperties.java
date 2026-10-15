@@ -22,65 +22,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDriverProperties
 		implements Struct<VkPhysicalDeviceDriverProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DRIVER_ID_HANDLE;
-    public static final VarHandle DRIVER_NAME_HANDLE;
-    public static final VarHandle DRIVER_INFO_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DRIVER_ID_HANDLE;
+	public static final VarHandle DRIVER_NAME_HANDLE;
+	public static final VarHandle DRIVER_INFO_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DRIVER_ID_BYTE_OFFSET;
-    public static final long DRIVER_NAME_BYTE_OFFSET;
-    public static final long DRIVER_INFO_BYTE_OFFSET;
-    public static final long CONFORMANCE_VERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DRIVER_ID_BYTE_OFFSET;
+	public static final long DRIVER_NAME_BYTE_OFFSET;
+	public static final long DRIVER_INFO_BYTE_OFFSET;
+	public static final long CONFORMANCE_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkConformanceVersion conformanceVersion;
+	private final VkConformanceVersion conformanceVersion;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("driverID"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverName"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverInfo"),
-            VkConformanceVersion.LAYOUT.withName("conformanceVersion")
-        ).withName("VkPhysicalDeviceDriverProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DRIVER_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverID"));
-        DRIVER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverName"), PathElement.sequenceElement());
-        DRIVER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverInfo"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DRIVER_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverID"));
-        DRIVER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverName"));
-        DRIVER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverInfo"));
-        CONFORMANCE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conformanceVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("driverID"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverName"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("driverInfo"),
+		    VkConformanceVersion.LAYOUT.withName("conformanceVersion")
+		).withName("VkPhysicalDeviceDriverProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DRIVER_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverID"));
+		DRIVER_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverName"), PathElement.sequenceElement());
+		DRIVER_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverInfo"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DRIVER_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverID"));
+		DRIVER_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverName"));
+		DRIVER_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverInfo"));
+		CONFORMANCE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conformanceVersion"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDriverProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDriverProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDriverProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-        conformanceVersion = new VkConformanceVersion(segment.asSlice(CONFORMANCE_VERSION_BYTE_OFFSET, VkConformanceVersion.LAYOUT));
-    }
+	public VkPhysicalDeviceDriverProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDriverProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDriverProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    conformanceVersion = new VkConformanceVersion(segment.asSlice(CONFORMANCE_VERSION_BYTE_OFFSET, VkConformanceVersion.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDriverProperties sType(int sType) {
@@ -127,6 +127,10 @@ public final class VkPhysicalDeviceDriverProperties
     	return (byte) DRIVER_NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String driverName() {
+        return segment.getString(DRIVER_NAME_BYTE_OFFSET);
+    }
+    
     /// @see #driverInfo(int)
     public VkPhysicalDeviceDriverProperties driverInfo(byte driverInfo, int index0) {
     	DRIVER_INFO_HANDLE.set(segment, 0L, index0, driverInfo);
@@ -135,6 +139,10 @@ public final class VkPhysicalDeviceDriverProperties
     
     public byte driverInfo(int index0) {
     	return (byte) DRIVER_INFO_HANDLE.get(segment, 0L, index0);
+    }
+    
+    public String driverInfo() {
+        return segment.getString(DRIVER_INFO_BYTE_OFFSET);
     }
     
     /// @see #conformanceVersion()
@@ -151,14 +159,6 @@ public final class VkPhysicalDeviceDriverProperties
     
     public VkConformanceVersion conformanceVersion() {
     	return conformanceVersion;
-    }
-    
-    public String driverName() {
-        return segment.getString(DRIVER_NAME_BYTE_OFFSET);
-    }
-    
-    public String driverInfo() {
-        return segment.getString(DRIVER_INFO_BYTE_OFFSET);
     }
     
     @Override
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceDriverProperties
             segment -> new VkPhysicalDeviceDriverProperties(segment)
         );
     }
-    
+
 }

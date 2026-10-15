@@ -22,95 +22,111 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoEncodeH265PictureInfo
 		implements Struct<StdVideoEncodeH265PictureInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PIC_TYPE_HANDLE;
-    public static final VarHandle SPS_VIDEO_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle PPS_SEQ_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle PPS_PIC_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle SHORT_TERM_REF_PIC_SET_IDX_HANDLE;
-    public static final VarHandle PIC_ORDER_CNT_VAL_HANDLE;
-    public static final VarHandle TEMPORAL_ID_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle P_REF_LISTS_HANDLE;
-    public static final VarHandle P_SHORT_TERM_REF_PIC_SET_HANDLE;
-    public static final VarHandle P_LONG_TERM_REF_PICS_HANDLE;
+	public static final VarHandle PIC_TYPE_HANDLE;
+	public static final VarHandle SPS_VIDEO_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle PPS_SEQ_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle PPS_PIC_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle SHORT_TERM_REF_PIC_SET_IDX_HANDLE;
+	public static final VarHandle PIC_ORDER_CNT_VAL_HANDLE;
+	public static final VarHandle TEMPORAL_ID_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle P_REF_LISTS_HANDLE;
+	public static final VarHandle P_SHORT_TERM_REF_PIC_SET_HANDLE;
+	public static final VarHandle P_LONG_TERM_REF_PICS_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PIC_TYPE_BYTE_OFFSET;
-    public static final long SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long SHORT_TERM_REF_PIC_SET_IDX_BYTE_OFFSET;
-    public static final long PIC_ORDER_CNT_VAL_BYTE_OFFSET;
-    public static final long TEMPORAL_ID_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long P_REF_LISTS_BYTE_OFFSET;
-    public static final long P_SHORT_TERM_REF_PIC_SET_BYTE_OFFSET;
-    public static final long P_LONG_TERM_REF_PICS_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PIC_TYPE_BYTE_OFFSET;
+	public static final long SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long SHORT_TERM_REF_PIC_SET_IDX_BYTE_OFFSET;
+	public static final long PIC_ORDER_CNT_VAL_BYTE_OFFSET;
+	public static final long TEMPORAL_ID_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long P_REF_LISTS_BYTE_OFFSET;
+	public static final long P_SHORT_TERM_REF_PIC_SET_BYTE_OFFSET;
+	public static final long P_LONG_TERM_REF_PICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH265PictureInfoFlags flags;
+	private final StdVideoEncodeH265PictureInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH265PictureInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("pic_type"),
-            JAVA_BYTE.withName("sps_video_parameter_set_id"),
-            JAVA_BYTE.withName("pps_seq_parameter_set_id"),
-            JAVA_BYTE.withName("pps_pic_parameter_set_id"),
-            JAVA_BYTE.withName("short_term_ref_pic_set_idx"),
-            JAVA_INT.withName("PicOrderCntVal"),
-            JAVA_BYTE.withName("TemporalId"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("reserved1"),
-            UNBOUNDED_ADDRESS.withName("pRefLists"),
-            UNBOUNDED_ADDRESS.withName("pShortTermRefPicSet"),
-            UNBOUNDED_ADDRESS.withName("pLongTermRefPics")
-        ).withName("StdVideoEncodeH265PictureInfo").withByteAlignment(8);
-        
-        PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_type"));
-        SPS_VIDEO_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sps_video_parameter_set_id"));
-        PPS_SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_seq_parameter_set_id"));
-        PPS_PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_pic_parameter_set_id"));
-        SHORT_TERM_REF_PIC_SET_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("short_term_ref_pic_set_idx"));
-        PIC_ORDER_CNT_VAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCntVal"));
-        TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TemporalId"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
-        P_REF_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRefLists"));
-        P_SHORT_TERM_REF_PIC_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShortTermRefPicSet"));
-        P_LONG_TERM_REF_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLongTermRefPics"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_type"));
-        SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sps_video_parameter_set_id"));
-        PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_seq_parameter_set_id"));
-        PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_pic_parameter_set_id"));
-        SHORT_TERM_REF_PIC_SET_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("short_term_ref_pic_set_idx"));
-        PIC_ORDER_CNT_VAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCntVal"));
-        TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TemporalId"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        P_REF_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRefLists"));
-        P_SHORT_TERM_REF_PIC_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShortTermRefPicSet"));
-        P_LONG_TERM_REF_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLongTermRefPics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH265PictureInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("pic_type"),
+		    JAVA_BYTE.withName("sps_video_parameter_set_id"),
+		    JAVA_BYTE.withName("pps_seq_parameter_set_id"),
+		    JAVA_BYTE.withName("pps_pic_parameter_set_id"),
+		    JAVA_BYTE.withName("short_term_ref_pic_set_idx"),
+		    JAVA_INT.withName("PicOrderCntVal"),
+		    JAVA_BYTE.withName("TemporalId"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("reserved1"),
+		    UNBOUNDED_ADDRESS.withName("pRefLists"),
+		    UNBOUNDED_ADDRESS.withName("pShortTermRefPicSet"),
+		    UNBOUNDED_ADDRESS.withName("pLongTermRefPics")
+		).withName("StdVideoEncodeH265PictureInfo").withByteAlignment(8);
+		
+		PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_type"));
+		SPS_VIDEO_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sps_video_parameter_set_id"));
+		PPS_SEQ_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_seq_parameter_set_id"));
+		PPS_PIC_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pps_pic_parameter_set_id"));
+		SHORT_TERM_REF_PIC_SET_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("short_term_ref_pic_set_idx"));
+		PIC_ORDER_CNT_VAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCntVal"));
+		TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TemporalId"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
+		P_REF_LISTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRefLists"));
+		P_SHORT_TERM_REF_PIC_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShortTermRefPicSet"));
+		P_LONG_TERM_REF_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLongTermRefPics"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_type"));
+		SPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sps_video_parameter_set_id"));
+		PPS_SEQ_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_seq_parameter_set_id"));
+		PPS_PIC_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pps_pic_parameter_set_id"));
+		SHORT_TERM_REF_PIC_SET_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("short_term_ref_pic_set_idx"));
+		PIC_ORDER_CNT_VAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCntVal"));
+		TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TemporalId"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		P_REF_LISTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRefLists"));
+		P_SHORT_TERM_REF_PIC_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShortTermRefPicSet"));
+		P_LONG_TERM_REF_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLongTermRefPics"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH265PictureInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH265PictureInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH265PictureInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH265PictureInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH265PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265PictureInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH265PictureInfo flags(Consumer<StdVideoEncodeH265PictureInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH265PictureInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH265PictureInfo flags(StdVideoEncodeH265PictureInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH265PictureInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH265PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265PictureInfoFlags.LAYOUT));
+    public StdVideoEncodeH265PictureInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #pic_type()
     public StdVideoEncodeH265PictureInfo pic_type(int pic_type) {
     	PIC_TYPE_HANDLE.set(segment, 0L, pic_type);
@@ -236,22 +252,6 @@ public final class StdVideoEncodeH265PictureInfo
     	return new StdVideoEncodeH265LongTermRefPics(segment);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH265PictureInfo flags(Consumer<StdVideoEncodeH265PictureInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH265PictureInfo flags(StdVideoEncodeH265PictureInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH265PictureInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH265PictureInfo set(StdVideoEncodeH265PictureInfo other) {
         return set(other.segment);
@@ -303,5 +303,5 @@ public final class StdVideoEncodeH265PictureInfo
             segment -> new StdVideoEncodeH265PictureInfo(segment)
         );
     }
-    
+
 }

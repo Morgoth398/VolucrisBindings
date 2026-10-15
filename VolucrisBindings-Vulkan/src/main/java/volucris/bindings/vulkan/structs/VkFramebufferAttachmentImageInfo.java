@@ -22,79 +22,79 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkFramebufferAttachmentImageInfo
 		implements Struct<VkFramebufferAttachmentImageInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle USAGE_HANDLE;
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle LAYER_COUNT_HANDLE;
-    public static final VarHandle VIEW_FORMAT_COUNT_HANDLE;
-    public static final VarHandle P_VIEW_FORMATS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle LAYER_COUNT_HANDLE;
+	public static final VarHandle VIEW_FORMAT_COUNT_HANDLE;
+	public static final VarHandle P_VIEW_FORMATS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long LAYER_COUNT_BYTE_OFFSET;
-    public static final long VIEW_FORMAT_COUNT_BYTE_OFFSET;
-    public static final long P_VIEW_FORMATS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long LAYER_COUNT_BYTE_OFFSET;
+	public static final long VIEW_FORMAT_COUNT_BYTE_OFFSET;
+	public static final long P_VIEW_FORMATS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("usage"),
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height"),
-            JAVA_INT.withName("layerCount"),
-            JAVA_INT.withName("viewFormatCount"),
-            UNBOUNDED_ADDRESS.withName("pViewFormats")
-        ).withName("VkFramebufferAttachmentImageInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
-        VIEW_FORMAT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewFormatCount"));
-        P_VIEW_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewFormats"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
-        VIEW_FORMAT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewFormatCount"));
-        P_VIEW_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewFormats"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("usage"),
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height"),
+		    JAVA_INT.withName("layerCount"),
+		    JAVA_INT.withName("viewFormatCount"),
+		    UNBOUNDED_ADDRESS.withName("pViewFormats")
+		).withName("VkFramebufferAttachmentImageInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
+		VIEW_FORMAT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewFormatCount"));
+		P_VIEW_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewFormats"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
+		VIEW_FORMAT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewFormatCount"));
+		P_VIEW_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewFormats"));
+		//@formatter:on
+	}
 
-    public VkFramebufferAttachmentImageInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkFramebufferAttachmentImageInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkFramebufferAttachmentImageInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkFramebufferAttachmentImageInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkFramebufferAttachmentImageInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkFramebufferAttachmentImageInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkFramebufferAttachmentImageInfo sType(int sType) {
@@ -247,5 +247,5 @@ public final class VkFramebufferAttachmentImageInfo
             segment -> new VkFramebufferAttachmentImageInfo(segment)
         );
     }
-    
+
 }

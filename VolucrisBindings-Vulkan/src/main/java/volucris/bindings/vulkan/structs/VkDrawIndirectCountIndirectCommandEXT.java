@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDrawIndirectCountIndirectCommandEXT
 		implements Struct<VkDrawIndirectCountIndirectCommandEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BUFFER_ADDRESS_HANDLE;
-    public static final VarHandle STRIDE_HANDLE;
-    public static final VarHandle COMMAND_COUNT_HANDLE;
+	public static final VarHandle BUFFER_ADDRESS_HANDLE;
+	public static final VarHandle STRIDE_HANDLE;
+	public static final VarHandle COMMAND_COUNT_HANDLE;
 
-    public static final long BUFFER_ADDRESS_BYTE_OFFSET;
-    public static final long STRIDE_BYTE_OFFSET;
-    public static final long COMMAND_COUNT_BYTE_OFFSET;
+	public static final long BUFFER_ADDRESS_BYTE_OFFSET;
+	public static final long STRIDE_BYTE_OFFSET;
+	public static final long COMMAND_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("bufferAddress"),
-            JAVA_INT.withName("stride"),
-            JAVA_INT.withName("commandCount")
-        ).withName("VkDrawIndirectCountIndirectCommandEXT").withByteAlignment(8);
-        
-        BUFFER_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferAddress"));
-        STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
-        COMMAND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandCount"));
-        
-        BUFFER_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferAddress"));
-        STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
-        COMMAND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("bufferAddress"),
+		    JAVA_INT.withName("stride"),
+		    JAVA_INT.withName("commandCount")
+		).withName("VkDrawIndirectCountIndirectCommandEXT").withByteAlignment(8);
+		
+		BUFFER_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferAddress"));
+		STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
+		COMMAND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandCount"));
+		
+		BUFFER_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferAddress"));
+		STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
+		COMMAND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandCount"));
+		//@formatter:on
+	}
 
-    public VkDrawIndirectCountIndirectCommandEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrawIndirectCountIndirectCommandEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrawIndirectCountIndirectCommandEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrawIndirectCountIndirectCommandEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrawIndirectCountIndirectCommandEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrawIndirectCountIndirectCommandEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #bufferAddress()
     public VkDrawIndirectCountIndirectCommandEXT bufferAddress(long bufferAddress) {
@@ -143,5 +143,5 @@ public final class VkDrawIndirectCountIndirectCommandEXT
             segment -> new VkDrawIndirectCountIndirectCommandEXT(segment)
         );
     }
-    
+
 }

@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkGpaPerfCounterAMD
 		implements Struct<VkGpaPerfCounterAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BLOCK_TYPE_HANDLE;
-    public static final VarHandle BLOCK_INSTANCE_HANDLE;
-    public static final VarHandle EVENT_ID_HANDLE;
+	public static final VarHandle BLOCK_TYPE_HANDLE;
+	public static final VarHandle BLOCK_INSTANCE_HANDLE;
+	public static final VarHandle EVENT_ID_HANDLE;
 
-    public static final long BLOCK_TYPE_BYTE_OFFSET;
-    public static final long BLOCK_INSTANCE_BYTE_OFFSET;
-    public static final long EVENT_ID_BYTE_OFFSET;
+	public static final long BLOCK_TYPE_BYTE_OFFSET;
+	public static final long BLOCK_INSTANCE_BYTE_OFFSET;
+	public static final long EVENT_ID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("blockType"),
-            JAVA_INT.withName("blockInstance"),
-            JAVA_INT.withName("eventID")
-        ).withName("VkGpaPerfCounterAMD").withByteAlignment(4);
-        
-        BLOCK_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockType"));
-        BLOCK_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockInstance"));
-        EVENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("eventID"));
-        
-        BLOCK_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockType"));
-        BLOCK_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockInstance"));
-        EVENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("eventID"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("blockType"),
+		    JAVA_INT.withName("blockInstance"),
+		    JAVA_INT.withName("eventID")
+		).withName("VkGpaPerfCounterAMD").withByteAlignment(4);
+		
+		BLOCK_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockType"));
+		BLOCK_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockInstance"));
+		EVENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("eventID"));
+		
+		BLOCK_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockType"));
+		BLOCK_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockInstance"));
+		EVENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("eventID"));
+		//@formatter:on
+	}
 
-    public VkGpaPerfCounterAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGpaPerfCounterAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGpaPerfCounterAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGpaPerfCounterAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGpaPerfCounterAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGpaPerfCounterAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #blockType()
     public VkGpaPerfCounterAMD blockType(int blockType) {
@@ -143,5 +143,5 @@ public final class VkGpaPerfCounterAMD
             segment -> new VkGpaPerfCounterAMD(segment)
         );
     }
-    
+
 }

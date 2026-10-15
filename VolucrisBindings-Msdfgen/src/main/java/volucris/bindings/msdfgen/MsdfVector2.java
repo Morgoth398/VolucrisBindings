@@ -16,43 +16,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class MsdfVector2
 		implements Struct<MsdfVector2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle X_HANDLE;
-    public static final VarHandle Y_HANDLE;
+	public static final VarHandle X_HANDLE;
+	public static final VarHandle Y_HANDLE;
 
-    public static final long X_BYTE_OFFSET;
-    public static final long Y_BYTE_OFFSET;
+	public static final long X_BYTE_OFFSET;
+	public static final long Y_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_DOUBLE.withName("x"),
-            JAVA_DOUBLE.withName("y")
-        ).withName("msdf_vector2").withByteAlignment(8);
-        
-        X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
-        Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
-        
-        X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
-        Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_DOUBLE.withName("x"),
+		    JAVA_DOUBLE.withName("y")
+		).withName("msdf_vector2").withByteAlignment(8);
+		
+		X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
+		Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
+		
+		X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
+		Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
+		//@formatter:on
+	}
 
-    public MsdfVector2() {
-        this(Arena.ofAuto());
-    }
-    
-    public MsdfVector2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public MsdfVector2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public MsdfVector2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public MsdfVector2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public MsdfVector2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #x()
     public MsdfVector2 x(double x) {
@@ -125,5 +125,5 @@ public final class MsdfVector2
             segment -> new MsdfVector2(segment)
         );
     }
-    
+
 }

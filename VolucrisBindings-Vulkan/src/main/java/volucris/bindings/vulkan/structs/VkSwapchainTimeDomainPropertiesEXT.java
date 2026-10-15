@@ -23,60 +23,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSwapchainTimeDomainPropertiesEXT
 		implements Struct<VkSwapchainTimeDomainPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TIME_DOMAIN_COUNT_HANDLE;
-    public static final VarHandle P_TIME_DOMAINS_HANDLE;
-    public static final VarHandle P_TIME_DOMAIN_IDS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TIME_DOMAIN_COUNT_HANDLE;
+	public static final VarHandle P_TIME_DOMAINS_HANDLE;
+	public static final VarHandle P_TIME_DOMAIN_IDS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TIME_DOMAIN_COUNT_BYTE_OFFSET;
-    public static final long P_TIME_DOMAINS_BYTE_OFFSET;
-    public static final long P_TIME_DOMAIN_IDS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TIME_DOMAIN_COUNT_BYTE_OFFSET;
+	public static final long P_TIME_DOMAINS_BYTE_OFFSET;
+	public static final long P_TIME_DOMAIN_IDS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("timeDomainCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTimeDomains"),
-            UNBOUNDED_ADDRESS.withName("pTimeDomainIds")
-        ).withName("VkSwapchainTimeDomainPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TIME_DOMAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainCount"));
-        P_TIME_DOMAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTimeDomains"));
-        P_TIME_DOMAIN_IDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTimeDomainIds"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TIME_DOMAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainCount"));
-        P_TIME_DOMAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTimeDomains"));
-        P_TIME_DOMAIN_IDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTimeDomainIds"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("timeDomainCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTimeDomains"),
+		    UNBOUNDED_ADDRESS.withName("pTimeDomainIds")
+		).withName("VkSwapchainTimeDomainPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TIME_DOMAIN_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("timeDomainCount"));
+		P_TIME_DOMAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTimeDomains"));
+		P_TIME_DOMAIN_IDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTimeDomainIds"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TIME_DOMAIN_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("timeDomainCount"));
+		P_TIME_DOMAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTimeDomains"));
+		P_TIME_DOMAIN_IDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTimeDomainIds"));
+		//@formatter:on
+	}
 
-    public VkSwapchainTimeDomainPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSwapchainTimeDomainPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSwapchainTimeDomainPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSwapchainTimeDomainPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSwapchainTimeDomainPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSwapchainTimeDomainPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSwapchainTimeDomainPropertiesEXT sType(int sType) {
@@ -194,5 +194,5 @@ public final class VkSwapchainTimeDomainPropertiesEXT
             segment -> new VkSwapchainTimeDomainPropertiesEXT(segment)
         );
     }
-    
+
 }

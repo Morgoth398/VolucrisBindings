@@ -23,92 +23,92 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureBuildGeometryInfoKHR
 		implements Struct<VkAccelerationStructureBuildGeometryInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MODE_HANDLE;
-    public static final VarHandle SRC_ACCELERATION_STRUCTURE_HANDLE;
-    public static final VarHandle DST_ACCELERATION_STRUCTURE_HANDLE;
-    public static final VarHandle GEOMETRY_COUNT_HANDLE;
-    public static final VarHandle P_GEOMETRIES_HANDLE;
-    public static final VarHandle PP_GEOMETRIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MODE_HANDLE;
+	public static final VarHandle SRC_ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle DST_ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle GEOMETRY_COUNT_HANDLE;
+	public static final VarHandle P_GEOMETRIES_HANDLE;
+	public static final VarHandle PP_GEOMETRIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MODE_BYTE_OFFSET;
-    public static final long SRC_ACCELERATION_STRUCTURE_BYTE_OFFSET;
-    public static final long DST_ACCELERATION_STRUCTURE_BYTE_OFFSET;
-    public static final long GEOMETRY_COUNT_BYTE_OFFSET;
-    public static final long P_GEOMETRIES_BYTE_OFFSET;
-    public static final long PP_GEOMETRIES_BYTE_OFFSET;
-    public static final long SCRATCH_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MODE_BYTE_OFFSET;
+	public static final long SRC_ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long DST_ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long GEOMETRY_COUNT_BYTE_OFFSET;
+	public static final long P_GEOMETRIES_BYTE_OFFSET;
+	public static final long PP_GEOMETRIES_BYTE_OFFSET;
+	public static final long SCRATCH_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceOrHostAddressKHR scratchData;
+	private final VkDeviceOrHostAddressKHR scratchData;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("mode"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("srcAccelerationStructure"),
-            UNBOUNDED_ADDRESS.withName("dstAccelerationStructure"),
-            JAVA_INT.withName("geometryCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pGeometries"),
-            UNBOUNDED_ADDRESS.withName("ppGeometries"),
-            VkDeviceOrHostAddressKHR.LAYOUT.withName("scratchData")
-        ).withName("VkAccelerationStructureBuildGeometryInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
-        SRC_ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccelerationStructure"));
-        DST_ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccelerationStructure"));
-        GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryCount"));
-        P_GEOMETRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGeometries"));
-        PP_GEOMETRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppGeometries"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
-        SRC_ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccelerationStructure"));
-        DST_ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccelerationStructure"));
-        GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryCount"));
-        P_GEOMETRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGeometries"));
-        PP_GEOMETRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppGeometries"));
-        SCRATCH_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("mode"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("srcAccelerationStructure"),
+		    UNBOUNDED_ADDRESS.withName("dstAccelerationStructure"),
+		    JAVA_INT.withName("geometryCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pGeometries"),
+		    UNBOUNDED_ADDRESS.withName("ppGeometries"),
+		    VkDeviceOrHostAddressKHR.LAYOUT.withName("scratchData")
+		).withName("VkAccelerationStructureBuildGeometryInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
+		SRC_ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccelerationStructure"));
+		DST_ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccelerationStructure"));
+		GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryCount"));
+		P_GEOMETRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGeometries"));
+		PP_GEOMETRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppGeometries"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
+		SRC_ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccelerationStructure"));
+		DST_ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccelerationStructure"));
+		GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryCount"));
+		P_GEOMETRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGeometries"));
+		PP_GEOMETRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppGeometries"));
+		SCRATCH_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchData"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureBuildGeometryInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureBuildGeometryInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureBuildGeometryInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        scratchData = new VkDeviceOrHostAddressKHR(segment.asSlice(SCRATCH_DATA_BYTE_OFFSET, VkDeviceOrHostAddressKHR.LAYOUT));
-    }
+	public VkAccelerationStructureBuildGeometryInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureBuildGeometryInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureBuildGeometryInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    scratchData = new VkDeviceOrHostAddressKHR(segment.asSlice(SCRATCH_DATA_BYTE_OFFSET, VkDeviceOrHostAddressKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkAccelerationStructureBuildGeometryInfoKHR sType(int sType) {
@@ -302,5 +302,5 @@ public final class VkAccelerationStructureBuildGeometryInfoKHR
             segment -> new VkAccelerationStructureBuildGeometryInfoKHR(segment)
         );
     }
-    
+
 }

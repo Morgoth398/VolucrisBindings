@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceOpacityMicromapFeaturesEXT
 		implements Struct<VkPhysicalDeviceOpacityMicromapFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MICROMAP_HANDLE;
-    public static final VarHandle MICROMAP_CAPTURE_REPLAY_HANDLE;
-    public static final VarHandle MICROMAP_HOST_COMMANDS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MICROMAP_HANDLE;
+	public static final VarHandle MICROMAP_CAPTURE_REPLAY_HANDLE;
+	public static final VarHandle MICROMAP_HOST_COMMANDS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MICROMAP_BYTE_OFFSET;
-    public static final long MICROMAP_CAPTURE_REPLAY_BYTE_OFFSET;
-    public static final long MICROMAP_HOST_COMMANDS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MICROMAP_BYTE_OFFSET;
+	public static final long MICROMAP_CAPTURE_REPLAY_BYTE_OFFSET;
+	public static final long MICROMAP_HOST_COMMANDS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("micromap"),
-            JAVA_INT.withName("micromapCaptureReplay"),
-            JAVA_INT.withName("micromapHostCommands"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceOpacityMicromapFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MICROMAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromap"));
-        MICROMAP_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromapCaptureReplay"));
-        MICROMAP_HOST_COMMANDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromapHostCommands"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MICROMAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromap"));
-        MICROMAP_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromapCaptureReplay"));
-        MICROMAP_HOST_COMMANDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromapHostCommands"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("micromap"),
+		    JAVA_INT.withName("micromapCaptureReplay"),
+		    JAVA_INT.withName("micromapHostCommands"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceOpacityMicromapFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MICROMAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromap"));
+		MICROMAP_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromapCaptureReplay"));
+		MICROMAP_HOST_COMMANDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromapHostCommands"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MICROMAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromap"));
+		MICROMAP_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromapCaptureReplay"));
+		MICROMAP_HOST_COMMANDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromapHostCommands"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceOpacityMicromapFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceOpacityMicromapFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceOpacityMicromapFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceOpacityMicromapFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceOpacityMicromapFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceOpacityMicromapFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceOpacityMicromapFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceOpacityMicromapFeaturesEXT
             segment -> new VkPhysicalDeviceOpacityMicromapFeaturesEXT(segment)
         );
     }
-    
+
 }

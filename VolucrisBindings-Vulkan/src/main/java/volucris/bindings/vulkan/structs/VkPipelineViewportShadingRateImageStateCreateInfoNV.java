@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineViewportShadingRateImageStateCreateInfoNV
 		implements Struct<VkPipelineViewportShadingRateImageStateCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADING_RATE_IMAGE_ENABLE_HANDLE;
-    public static final VarHandle VIEWPORT_COUNT_HANDLE;
-    public static final VarHandle P_SHADING_RATE_PALETTES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADING_RATE_IMAGE_ENABLE_HANDLE;
+	public static final VarHandle VIEWPORT_COUNT_HANDLE;
+	public static final VarHandle P_SHADING_RATE_PALETTES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET;
-    public static final long VIEWPORT_COUNT_BYTE_OFFSET;
-    public static final long P_SHADING_RATE_PALETTES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET;
+	public static final long VIEWPORT_COUNT_BYTE_OFFSET;
+	public static final long P_SHADING_RATE_PALETTES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shadingRateImageEnable"),
-            JAVA_INT.withName("viewportCount"),
-            UNBOUNDED_ADDRESS.withName("pShadingRatePalettes")
-        ).withName("VkPipelineViewportShadingRateImageStateCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADING_RATE_IMAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateImageEnable"));
-        VIEWPORT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportCount"));
-        P_SHADING_RATE_PALETTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShadingRatePalettes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateImageEnable"));
-        VIEWPORT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportCount"));
-        P_SHADING_RATE_PALETTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShadingRatePalettes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shadingRateImageEnable"),
+		    JAVA_INT.withName("viewportCount"),
+		    UNBOUNDED_ADDRESS.withName("pShadingRatePalettes")
+		).withName("VkPipelineViewportShadingRateImageStateCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADING_RATE_IMAGE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateImageEnable"));
+		VIEWPORT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportCount"));
+		P_SHADING_RATE_PALETTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pShadingRatePalettes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADING_RATE_IMAGE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateImageEnable"));
+		VIEWPORT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportCount"));
+		P_SHADING_RATE_PALETTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pShadingRatePalettes"));
+		//@formatter:on
+	}
 
-    public VkPipelineViewportShadingRateImageStateCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineViewportShadingRateImageStateCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineViewportShadingRateImageStateCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineViewportShadingRateImageStateCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineViewportShadingRateImageStateCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineViewportShadingRateImageStateCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineViewportShadingRateImageStateCreateInfoNV sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkPipelineViewportShadingRateImageStateCreateInfoNV
             segment -> new VkPipelineViewportShadingRateImageStateCreateInfoNV(segment)
         );
     }
-    
+
 }

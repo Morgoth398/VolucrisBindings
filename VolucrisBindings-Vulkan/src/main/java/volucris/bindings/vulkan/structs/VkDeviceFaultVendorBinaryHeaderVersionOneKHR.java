@@ -19,88 +19,88 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDeviceFaultVendorBinaryHeaderVersionOneKHR
 		implements Struct<VkDeviceFaultVendorBinaryHeaderVersionOneKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle HEADER_SIZE_HANDLE;
-    public static final VarHandle HEADER_VERSION_HANDLE;
-    public static final VarHandle VENDOR_ID_HANDLE;
-    public static final VarHandle DEVICE_ID_HANDLE;
-    public static final VarHandle DRIVER_VERSION_HANDLE;
-    public static final VarHandle PIPELINE_CACHE_UUID_HANDLE;
-    public static final VarHandle APPLICATION_NAME_OFFSET_HANDLE;
-    public static final VarHandle APPLICATION_VERSION_HANDLE;
-    public static final VarHandle ENGINE_NAME_OFFSET_HANDLE;
-    public static final VarHandle ENGINE_VERSION_HANDLE;
-    public static final VarHandle API_VERSION_HANDLE;
+	public static final VarHandle HEADER_SIZE_HANDLE;
+	public static final VarHandle HEADER_VERSION_HANDLE;
+	public static final VarHandle VENDOR_ID_HANDLE;
+	public static final VarHandle DEVICE_ID_HANDLE;
+	public static final VarHandle DRIVER_VERSION_HANDLE;
+	public static final VarHandle PIPELINE_CACHE_UUID_HANDLE;
+	public static final VarHandle APPLICATION_NAME_OFFSET_HANDLE;
+	public static final VarHandle APPLICATION_VERSION_HANDLE;
+	public static final VarHandle ENGINE_NAME_OFFSET_HANDLE;
+	public static final VarHandle ENGINE_VERSION_HANDLE;
+	public static final VarHandle API_VERSION_HANDLE;
 
-    public static final long HEADER_SIZE_BYTE_OFFSET;
-    public static final long HEADER_VERSION_BYTE_OFFSET;
-    public static final long VENDOR_ID_BYTE_OFFSET;
-    public static final long DEVICE_ID_BYTE_OFFSET;
-    public static final long DRIVER_VERSION_BYTE_OFFSET;
-    public static final long PIPELINE_CACHE_UUID_BYTE_OFFSET;
-    public static final long APPLICATION_NAME_OFFSET_BYTE_OFFSET;
-    public static final long APPLICATION_VERSION_BYTE_OFFSET;
-    public static final long ENGINE_NAME_OFFSET_BYTE_OFFSET;
-    public static final long ENGINE_VERSION_BYTE_OFFSET;
-    public static final long API_VERSION_BYTE_OFFSET;
+	public static final long HEADER_SIZE_BYTE_OFFSET;
+	public static final long HEADER_VERSION_BYTE_OFFSET;
+	public static final long VENDOR_ID_BYTE_OFFSET;
+	public static final long DEVICE_ID_BYTE_OFFSET;
+	public static final long DRIVER_VERSION_BYTE_OFFSET;
+	public static final long PIPELINE_CACHE_UUID_BYTE_OFFSET;
+	public static final long APPLICATION_NAME_OFFSET_BYTE_OFFSET;
+	public static final long APPLICATION_VERSION_BYTE_OFFSET;
+	public static final long ENGINE_NAME_OFFSET_BYTE_OFFSET;
+	public static final long ENGINE_VERSION_BYTE_OFFSET;
+	public static final long API_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("headerSize"),
-            JAVA_INT.withName("headerVersion"),
-            JAVA_INT.withName("vendorID"),
-            JAVA_INT.withName("deviceID"),
-            JAVA_INT.withName("driverVersion"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pipelineCacheUUID"),
-            JAVA_INT.withName("applicationNameOffset"),
-            JAVA_INT.withName("applicationVersion"),
-            JAVA_INT.withName("engineNameOffset"),
-            JAVA_INT.withName("engineVersion"),
-            JAVA_INT.withName("apiVersion")
-        ).withName("VkDeviceFaultVendorBinaryHeaderVersionOneKHR").withByteAlignment(4);
-        
-        HEADER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerSize"));
-        HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerVersion"));
-        VENDOR_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorID"));
-        DEVICE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceID"));
-        DRIVER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverVersion"));
-        PIPELINE_CACHE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCacheUUID"), PathElement.sequenceElement());
-        APPLICATION_NAME_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("applicationNameOffset"));
-        APPLICATION_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("applicationVersion"));
-        ENGINE_NAME_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineNameOffset"));
-        ENGINE_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineVersion"));
-        API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("apiVersion"));
-        
-        HEADER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerSize"));
-        HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerVersion"));
-        VENDOR_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorID"));
-        DEVICE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceID"));
-        DRIVER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverVersion"));
-        PIPELINE_CACHE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCacheUUID"));
-        APPLICATION_NAME_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("applicationNameOffset"));
-        APPLICATION_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("applicationVersion"));
-        ENGINE_NAME_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineNameOffset"));
-        ENGINE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineVersion"));
-        API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apiVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("headerSize"),
+		    JAVA_INT.withName("headerVersion"),
+		    JAVA_INT.withName("vendorID"),
+		    JAVA_INT.withName("deviceID"),
+		    JAVA_INT.withName("driverVersion"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("pipelineCacheUUID"),
+		    JAVA_INT.withName("applicationNameOffset"),
+		    JAVA_INT.withName("applicationVersion"),
+		    JAVA_INT.withName("engineNameOffset"),
+		    JAVA_INT.withName("engineVersion"),
+		    JAVA_INT.withName("apiVersion")
+		).withName("VkDeviceFaultVendorBinaryHeaderVersionOneKHR").withByteAlignment(4);
+		
+		HEADER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerSize"));
+		HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("headerVersion"));
+		VENDOR_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vendorID"));
+		DEVICE_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceID"));
+		DRIVER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverVersion"));
+		PIPELINE_CACHE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineCacheUUID"), PathElement.sequenceElement());
+		APPLICATION_NAME_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("applicationNameOffset"));
+		APPLICATION_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("applicationVersion"));
+		ENGINE_NAME_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineNameOffset"));
+		ENGINE_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineVersion"));
+		API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("apiVersion"));
+		
+		HEADER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerSize"));
+		HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("headerVersion"));
+		VENDOR_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vendorID"));
+		DEVICE_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceID"));
+		DRIVER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverVersion"));
+		PIPELINE_CACHE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineCacheUUID"));
+		APPLICATION_NAME_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("applicationNameOffset"));
+		APPLICATION_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("applicationVersion"));
+		ENGINE_NAME_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineNameOffset"));
+		ENGINE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineVersion"));
+		API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apiVersion"));
+		//@formatter:on
+	}
 
-    public VkDeviceFaultVendorBinaryHeaderVersionOneKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceFaultVendorBinaryHeaderVersionOneKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #headerSize()
     public VkDeviceFaultVendorBinaryHeaderVersionOneKHR headerSize(int headerSize) {
@@ -263,5 +263,5 @@ public final class VkDeviceFaultVendorBinaryHeaderVersionOneKHR
             segment -> new VkDeviceFaultVendorBinaryHeaderVersionOneKHR(segment)
         );
     }
-    
+
 }

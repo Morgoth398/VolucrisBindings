@@ -20,60 +20,76 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkImageFormatProperties
 		implements Struct<VkImageFormatProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MAX_MIP_LEVELS_HANDLE;
-    public static final VarHandle MAX_ARRAY_LAYERS_HANDLE;
-    public static final VarHandle SAMPLE_COUNTS_HANDLE;
-    public static final VarHandle MAX_RESOURCE_SIZE_HANDLE;
+	public static final VarHandle MAX_MIP_LEVELS_HANDLE;
+	public static final VarHandle MAX_ARRAY_LAYERS_HANDLE;
+	public static final VarHandle SAMPLE_COUNTS_HANDLE;
+	public static final VarHandle MAX_RESOURCE_SIZE_HANDLE;
 
-    public static final long MAX_EXTENT_BYTE_OFFSET;
-    public static final long MAX_MIP_LEVELS_BYTE_OFFSET;
-    public static final long MAX_ARRAY_LAYERS_BYTE_OFFSET;
-    public static final long SAMPLE_COUNTS_BYTE_OFFSET;
-    public static final long MAX_RESOURCE_SIZE_BYTE_OFFSET;
+	public static final long MAX_EXTENT_BYTE_OFFSET;
+	public static final long MAX_MIP_LEVELS_BYTE_OFFSET;
+	public static final long MAX_ARRAY_LAYERS_BYTE_OFFSET;
+	public static final long SAMPLE_COUNTS_BYTE_OFFSET;
+	public static final long MAX_RESOURCE_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent3D maxExtent;
+	private final VkExtent3D maxExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkExtent3D.LAYOUT.withName("maxExtent"),
-            JAVA_INT.withName("maxMipLevels"),
-            JAVA_INT.withName("maxArrayLayers"),
-            JAVA_INT.withName("sampleCounts"),
-            JAVA_LONG.withName("maxResourceSize")
-        ).withName("VkImageFormatProperties").withByteAlignment(8);
-        
-        MAX_MIP_LEVELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMipLevels"));
-        MAX_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxArrayLayers"));
-        SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleCounts"));
-        MAX_RESOURCE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxResourceSize"));
-        
-        MAX_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxExtent"));
-        MAX_MIP_LEVELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMipLevels"));
-        MAX_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxArrayLayers"));
-        SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleCounts"));
-        MAX_RESOURCE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxResourceSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkExtent3D.LAYOUT.withName("maxExtent"),
+		    JAVA_INT.withName("maxMipLevels"),
+		    JAVA_INT.withName("maxArrayLayers"),
+		    JAVA_INT.withName("sampleCounts"),
+		    JAVA_LONG.withName("maxResourceSize")
+		).withName("VkImageFormatProperties").withByteAlignment(8);
+		
+		MAX_MIP_LEVELS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMipLevels"));
+		MAX_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxArrayLayers"));
+		SAMPLE_COUNTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleCounts"));
+		MAX_RESOURCE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxResourceSize"));
+		
+		MAX_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxExtent"));
+		MAX_MIP_LEVELS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMipLevels"));
+		MAX_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxArrayLayers"));
+		SAMPLE_COUNTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleCounts"));
+		MAX_RESOURCE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxResourceSize"));
+		//@formatter:on
+	}
 
-    public VkImageFormatProperties() {
-        this(Arena.ofAuto());
+	public VkImageFormatProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageFormatProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageFormatProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    maxExtent = new VkExtent3D(segment.asSlice(MAX_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
+
+    /// @see #maxExtent()
+    public VkImageFormatProperties maxExtent(Consumer<VkExtent3D> consumer) {
+    	consumer.accept(maxExtent);
+    	return this;
     }
     
-    public VkImageFormatProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #maxExtent()
+    public VkImageFormatProperties maxExtent(VkExtent3D other) {
+    	maxExtent.set(other);
+    	return this;
     }
     
-    public VkImageFormatProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-        maxExtent = new VkExtent3D(segment.asSlice(MAX_EXTENT_BYTE_OFFSET, VkExtent3D.LAYOUT));
+    public VkExtent3D maxExtent() {
+    	return maxExtent;
     }
-
+    
     /// @see #maxMipLevels()
     public VkImageFormatProperties maxMipLevels(int maxMipLevels) {
     	MAX_MIP_LEVELS_HANDLE.set(segment, 0L, maxMipLevels);
@@ -112,22 +128,6 @@ public final class VkImageFormatProperties
     
     public long maxResourceSize() {
     	return (long) MAX_RESOURCE_SIZE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #maxExtent()
-    public VkImageFormatProperties maxExtent(Consumer<VkExtent3D> consumer) {
-    	consumer.accept(maxExtent);
-    	return this;
-    }
-    
-    /// @see #maxExtent()
-    public VkImageFormatProperties maxExtent(VkExtent3D other) {
-    	maxExtent.set(other);
-    	return this;
-    }
-    
-    public VkExtent3D maxExtent() {
-    	return maxExtent;
     }
     
     @Override
@@ -181,5 +181,5 @@ public final class VkImageFormatProperties
             segment -> new VkImageFormatProperties(segment)
         );
     }
-    
+
 }

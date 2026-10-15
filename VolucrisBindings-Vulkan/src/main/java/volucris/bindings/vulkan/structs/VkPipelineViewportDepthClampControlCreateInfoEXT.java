@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineViewportDepthClampControlCreateInfoEXT
 		implements Struct<VkPipelineViewportDepthClampControlCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEPTH_CLAMP_MODE_HANDLE;
-    public static final VarHandle P_DEPTH_CLAMP_RANGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEPTH_CLAMP_MODE_HANDLE;
+	public static final VarHandle P_DEPTH_CLAMP_RANGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEPTH_CLAMP_MODE_BYTE_OFFSET;
-    public static final long P_DEPTH_CLAMP_RANGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEPTH_CLAMP_MODE_BYTE_OFFSET;
+	public static final long P_DEPTH_CLAMP_RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("depthClampMode"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDepthClampRange")
-        ).withName("VkPipelineViewportDepthClampControlCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEPTH_CLAMP_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthClampMode"));
-        P_DEPTH_CLAMP_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthClampRange"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEPTH_CLAMP_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthClampMode"));
-        P_DEPTH_CLAMP_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthClampRange"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("depthClampMode"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDepthClampRange")
+		).withName("VkPipelineViewportDepthClampControlCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEPTH_CLAMP_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthClampMode"));
+		P_DEPTH_CLAMP_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDepthClampRange"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEPTH_CLAMP_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthClampMode"));
+		P_DEPTH_CLAMP_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDepthClampRange"));
+		//@formatter:on
+	}
 
-    public VkPipelineViewportDepthClampControlCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineViewportDepthClampControlCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineViewportDepthClampControlCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineViewportDepthClampControlCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineViewportDepthClampControlCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineViewportDepthClampControlCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineViewportDepthClampControlCreateInfoEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkPipelineViewportDepthClampControlCreateInfoEXT
             segment -> new VkPipelineViewportDepthClampControlCreateInfoEXT(segment)
         );
     }
-    
+
 }

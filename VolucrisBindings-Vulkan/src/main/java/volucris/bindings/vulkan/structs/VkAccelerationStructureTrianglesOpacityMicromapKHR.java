@@ -21,71 +21,71 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureTrianglesOpacityMicromapKHR
 		implements Struct<VkAccelerationStructureTrianglesOpacityMicromapKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INDEX_TYPE_HANDLE;
-    public static final VarHandle INDEX_BUFFER_HANDLE;
-    public static final VarHandle INDEX_STRIDE_HANDLE;
-    public static final VarHandle BASE_TRIANGLE_HANDLE;
-    public static final VarHandle MICROMAP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INDEX_TYPE_HANDLE;
+	public static final VarHandle INDEX_BUFFER_HANDLE;
+	public static final VarHandle INDEX_STRIDE_HANDLE;
+	public static final VarHandle BASE_TRIANGLE_HANDLE;
+	public static final VarHandle MICROMAP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INDEX_TYPE_BYTE_OFFSET;
-    public static final long INDEX_BUFFER_BYTE_OFFSET;
-    public static final long INDEX_STRIDE_BYTE_OFFSET;
-    public static final long BASE_TRIANGLE_BYTE_OFFSET;
-    public static final long MICROMAP_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INDEX_TYPE_BYTE_OFFSET;
+	public static final long INDEX_BUFFER_BYTE_OFFSET;
+	public static final long INDEX_STRIDE_BYTE_OFFSET;
+	public static final long BASE_TRIANGLE_BYTE_OFFSET;
+	public static final long MICROMAP_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("indexType"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("indexBuffer"),
-            JAVA_LONG.withName("indexStride"),
-            JAVA_INT.withName("baseTriangle"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("micromap")
-        ).withName("VkAccelerationStructureTrianglesOpacityMicromapKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
-        INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexBuffer"));
-        INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexStride"));
-        BASE_TRIANGLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseTriangle"));
-        MICROMAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromap"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
-        INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexBuffer"));
-        INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexStride"));
-        BASE_TRIANGLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseTriangle"));
-        MICROMAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromap"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("indexType"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("indexBuffer"),
+		    JAVA_LONG.withName("indexStride"),
+		    JAVA_INT.withName("baseTriangle"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("micromap")
+		).withName("VkAccelerationStructureTrianglesOpacityMicromapKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
+		INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexBuffer"));
+		INDEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexStride"));
+		BASE_TRIANGLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseTriangle"));
+		MICROMAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromap"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
+		INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexBuffer"));
+		INDEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexStride"));
+		BASE_TRIANGLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseTriangle"));
+		MICROMAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromap"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureTrianglesOpacityMicromapKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureTrianglesOpacityMicromapKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureTrianglesOpacityMicromapKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAccelerationStructureTrianglesOpacityMicromapKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureTrianglesOpacityMicromapKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureTrianglesOpacityMicromapKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAccelerationStructureTrianglesOpacityMicromapKHR sType(int sType) {
@@ -218,5 +218,5 @@ public final class VkAccelerationStructureTrianglesOpacityMicromapKHR
             segment -> new VkAccelerationStructureTrianglesOpacityMicromapKHR(segment)
         );
     }
-    
+
 }

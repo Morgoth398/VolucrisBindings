@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR
 		implements Struct<VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INDIRECT_MEMORY_COPY_HANDLE;
-    public static final VarHandle INDIRECT_MEMORY_TO_IMAGE_COPY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INDIRECT_MEMORY_COPY_HANDLE;
+	public static final VarHandle INDIRECT_MEMORY_TO_IMAGE_COPY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INDIRECT_MEMORY_COPY_BYTE_OFFSET;
-    public static final long INDIRECT_MEMORY_TO_IMAGE_COPY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INDIRECT_MEMORY_COPY_BYTE_OFFSET;
+	public static final long INDIRECT_MEMORY_TO_IMAGE_COPY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("indirectMemoryCopy"),
-            JAVA_INT.withName("indirectMemoryToImageCopy")
-        ).withName("VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INDIRECT_MEMORY_COPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectMemoryCopy"));
-        INDIRECT_MEMORY_TO_IMAGE_COPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectMemoryToImageCopy"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INDIRECT_MEMORY_COPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectMemoryCopy"));
-        INDIRECT_MEMORY_TO_IMAGE_COPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectMemoryToImageCopy"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("indirectMemoryCopy"),
+		    JAVA_INT.withName("indirectMemoryToImageCopy")
+		).withName("VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INDIRECT_MEMORY_COPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectMemoryCopy"));
+		INDIRECT_MEMORY_TO_IMAGE_COPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectMemoryToImageCopy"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INDIRECT_MEMORY_COPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectMemoryCopy"));
+		INDIRECT_MEMORY_TO_IMAGE_COPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectMemoryToImageCopy"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR
             segment -> new VkPhysicalDeviceCopyMemoryIndirectFeaturesKHR(segment)
         );
     }
-    
+
 }

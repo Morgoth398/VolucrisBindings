@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDescriptorPoolSize
 		implements Struct<VkDescriptorPoolSize> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
 
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("descriptorCount")
-        ).withName("VkDescriptorPoolSize").withByteAlignment(4);
-        
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
-        
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("descriptorCount")
+		).withName("VkDescriptorPoolSize").withByteAlignment(4);
+		
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
+		
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
+		//@formatter:on
+	}
 
-    public VkDescriptorPoolSize() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorPoolSize(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorPoolSize(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorPoolSize() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorPoolSize(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorPoolSize(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #type()
     public VkDescriptorPoolSize type(int type) {
@@ -128,5 +128,5 @@ public final class VkDescriptorPoolSize
             segment -> new VkDescriptorPoolSize(segment)
         );
     }
-    
+
 }

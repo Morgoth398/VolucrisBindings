@@ -19,63 +19,63 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDescriptorUpdateTemplateEntry
 		implements Struct<VkDescriptorUpdateTemplateEntry> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DST_BINDING_HANDLE;
-    public static final VarHandle DST_ARRAY_ELEMENT_HANDLE;
-    public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle STRIDE_HANDLE;
+	public static final VarHandle DST_BINDING_HANDLE;
+	public static final VarHandle DST_ARRAY_ELEMENT_HANDLE;
+	public static final VarHandle DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle DESCRIPTOR_TYPE_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle STRIDE_HANDLE;
 
-    public static final long DST_BINDING_BYTE_OFFSET;
-    public static final long DST_ARRAY_ELEMENT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long STRIDE_BYTE_OFFSET;
+	public static final long DST_BINDING_BYTE_OFFSET;
+	public static final long DST_ARRAY_ELEMENT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_TYPE_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long STRIDE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("dstBinding"),
-            JAVA_INT.withName("dstArrayElement"),
-            JAVA_INT.withName("descriptorCount"),
-            JAVA_INT.withName("descriptorType"),
-            JAVA_LONG.withName("offset"),
-            JAVA_LONG.withName("stride")
-        ).withName("VkDescriptorUpdateTemplateEntry").withByteAlignment(8);
-        
-        DST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBinding"));
-        DST_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstArrayElement"));
-        DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
-        DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
-        
-        DST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBinding"));
-        DST_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstArrayElement"));
-        DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
-        DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("dstBinding"),
+		    JAVA_INT.withName("dstArrayElement"),
+		    JAVA_INT.withName("descriptorCount"),
+		    JAVA_INT.withName("descriptorType"),
+		    JAVA_LONG.withName("offset"),
+		    JAVA_LONG.withName("stride")
+		).withName("VkDescriptorUpdateTemplateEntry").withByteAlignment(8);
+		
+		DST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBinding"));
+		DST_ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstArrayElement"));
+		DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorCount"));
+		DESCRIPTOR_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorType"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
+		
+		DST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBinding"));
+		DST_ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstArrayElement"));
+		DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorCount"));
+		DESCRIPTOR_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorType"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
+		//@formatter:on
+	}
 
-    public VkDescriptorUpdateTemplateEntry() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorUpdateTemplateEntry(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorUpdateTemplateEntry(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorUpdateTemplateEntry() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorUpdateTemplateEntry(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorUpdateTemplateEntry(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #dstBinding()
     public VkDescriptorUpdateTemplateEntry dstBinding(int dstBinding) {
@@ -188,5 +188,5 @@ public final class VkDescriptorUpdateTemplateEntry
             segment -> new VkDescriptorUpdateTemplateEntry(segment)
         );
     }
-    
+
 }

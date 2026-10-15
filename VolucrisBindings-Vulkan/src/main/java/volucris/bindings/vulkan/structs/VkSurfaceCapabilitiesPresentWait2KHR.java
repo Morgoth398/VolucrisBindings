@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSurfaceCapabilitiesPresentWait2KHR
 		implements Struct<VkSurfaceCapabilitiesPresentWait2KHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_WAIT2_SUPPORTED_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_WAIT2_SUPPORTED_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_WAIT2_SUPPORTED_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_WAIT2_SUPPORTED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("presentWait2Supported"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSurfaceCapabilitiesPresentWait2KHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_WAIT2_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentWait2Supported"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_WAIT2_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentWait2Supported"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("presentWait2Supported"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSurfaceCapabilitiesPresentWait2KHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_WAIT2_SUPPORTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentWait2Supported"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_WAIT2_SUPPORTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentWait2Supported"));
+		//@formatter:on
+	}
 
-    public VkSurfaceCapabilitiesPresentWait2KHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSurfaceCapabilitiesPresentWait2KHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSurfaceCapabilitiesPresentWait2KHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSurfaceCapabilitiesPresentWait2KHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSurfaceCapabilitiesPresentWait2KHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSurfaceCapabilitiesPresentWait2KHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSurfaceCapabilitiesPresentWait2KHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkSurfaceCapabilitiesPresentWait2KHR
             segment -> new VkSurfaceCapabilitiesPresentWait2KHR(segment)
         );
     }
-    
+
 }

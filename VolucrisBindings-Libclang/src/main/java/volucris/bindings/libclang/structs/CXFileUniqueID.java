@@ -21,38 +21,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class CXFileUniqueID
 		implements Struct<CXFileUniqueID> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_HANDLE;
+	public static final VarHandle DATA_HANDLE;
 
-    public static final long DATA_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(3, JAVA_LONG).withName("data")
-        ).withName("CXFileUniqueID").withByteAlignment(8);
-        
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
-        
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(3, JAVA_LONG).withName("data")
+		).withName("CXFileUniqueID").withByteAlignment(8);
+		
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"), PathElement.sequenceElement());
+		
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public CXFileUniqueID() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXFileUniqueID(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXFileUniqueID(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXFileUniqueID() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXFileUniqueID(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXFileUniqueID(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #data(int)
     public CXFileUniqueID data(long data, int index0) {
@@ -115,5 +115,5 @@ public final class CXFileUniqueID
             segment -> new CXFileUniqueID(segment)
         );
     }
-    
+
 }

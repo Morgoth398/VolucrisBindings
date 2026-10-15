@@ -19,308 +19,308 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPhysicalDeviceFeatures
 		implements Struct<VkPhysicalDeviceFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ROBUST_BUFFER_ACCESS_HANDLE;
-    public static final VarHandle FULL_DRAW_INDEX_UINT32_HANDLE;
-    public static final VarHandle IMAGE_CUBE_ARRAY_HANDLE;
-    public static final VarHandle INDEPENDENT_BLEND_HANDLE;
-    public static final VarHandle GEOMETRY_SHADER_HANDLE;
-    public static final VarHandle TESSELLATION_SHADER_HANDLE;
-    public static final VarHandle SAMPLE_RATE_SHADING_HANDLE;
-    public static final VarHandle DUAL_SRC_BLEND_HANDLE;
-    public static final VarHandle LOGIC_OP_HANDLE;
-    public static final VarHandle MULTI_DRAW_INDIRECT_HANDLE;
-    public static final VarHandle DRAW_INDIRECT_FIRST_INSTANCE_HANDLE;
-    public static final VarHandle DEPTH_CLAMP_HANDLE;
-    public static final VarHandle DEPTH_BIAS_CLAMP_HANDLE;
-    public static final VarHandle FILL_MODE_NON_SOLID_HANDLE;
-    public static final VarHandle DEPTH_BOUNDS_HANDLE;
-    public static final VarHandle WIDE_LINES_HANDLE;
-    public static final VarHandle LARGE_POINTS_HANDLE;
-    public static final VarHandle ALPHA_TO_ONE_HANDLE;
-    public static final VarHandle MULTI_VIEWPORT_HANDLE;
-    public static final VarHandle SAMPLER_ANISOTROPY_HANDLE;
-    public static final VarHandle TEXTURE_COMPRESSION_ETC2_HANDLE;
-    public static final VarHandle TEXTURE_COMPRESSION_ASTC_LDR_HANDLE;
-    public static final VarHandle TEXTURE_COMPRESSION_BC_HANDLE;
-    public static final VarHandle OCCLUSION_QUERY_PRECISE_HANDLE;
-    public static final VarHandle PIPELINE_STATISTICS_QUERY_HANDLE;
-    public static final VarHandle VERTEX_PIPELINE_STORES_AND_ATOMICS_HANDLE;
-    public static final VarHandle FRAGMENT_STORES_AND_ATOMICS_HANDLE;
-    public static final VarHandle SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_HANDLE;
-    public static final VarHandle SHADER_IMAGE_GATHER_EXTENDED_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_MULTISAMPLE_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_CLIP_DISTANCE_HANDLE;
-    public static final VarHandle SHADER_CULL_DISTANCE_HANDLE;
-    public static final VarHandle SHADER_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_INT64_HANDLE;
-    public static final VarHandle SHADER_INT16_HANDLE;
-    public static final VarHandle SHADER_RESOURCE_RESIDENCY_HANDLE;
-    public static final VarHandle SHADER_RESOURCE_MIN_LOD_HANDLE;
-    public static final VarHandle SPARSE_BINDING_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY_BUFFER_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY_IMAGE2_D_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY_IMAGE3_D_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY2_SAMPLES_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY4_SAMPLES_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY8_SAMPLES_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY16_SAMPLES_HANDLE;
-    public static final VarHandle SPARSE_RESIDENCY_ALIASED_HANDLE;
-    public static final VarHandle VARIABLE_MULTISAMPLE_RATE_HANDLE;
-    public static final VarHandle INHERITED_QUERIES_HANDLE;
+	public static final VarHandle ROBUST_BUFFER_ACCESS_HANDLE;
+	public static final VarHandle FULL_DRAW_INDEX_UINT32_HANDLE;
+	public static final VarHandle IMAGE_CUBE_ARRAY_HANDLE;
+	public static final VarHandle INDEPENDENT_BLEND_HANDLE;
+	public static final VarHandle GEOMETRY_SHADER_HANDLE;
+	public static final VarHandle TESSELLATION_SHADER_HANDLE;
+	public static final VarHandle SAMPLE_RATE_SHADING_HANDLE;
+	public static final VarHandle DUAL_SRC_BLEND_HANDLE;
+	public static final VarHandle LOGIC_OP_HANDLE;
+	public static final VarHandle MULTI_DRAW_INDIRECT_HANDLE;
+	public static final VarHandle DRAW_INDIRECT_FIRST_INSTANCE_HANDLE;
+	public static final VarHandle DEPTH_CLAMP_HANDLE;
+	public static final VarHandle DEPTH_BIAS_CLAMP_HANDLE;
+	public static final VarHandle FILL_MODE_NON_SOLID_HANDLE;
+	public static final VarHandle DEPTH_BOUNDS_HANDLE;
+	public static final VarHandle WIDE_LINES_HANDLE;
+	public static final VarHandle LARGE_POINTS_HANDLE;
+	public static final VarHandle ALPHA_TO_ONE_HANDLE;
+	public static final VarHandle MULTI_VIEWPORT_HANDLE;
+	public static final VarHandle SAMPLER_ANISOTROPY_HANDLE;
+	public static final VarHandle TEXTURE_COMPRESSION_ETC2_HANDLE;
+	public static final VarHandle TEXTURE_COMPRESSION_ASTC_LDR_HANDLE;
+	public static final VarHandle TEXTURE_COMPRESSION_BC_HANDLE;
+	public static final VarHandle OCCLUSION_QUERY_PRECISE_HANDLE;
+	public static final VarHandle PIPELINE_STATISTICS_QUERY_HANDLE;
+	public static final VarHandle VERTEX_PIPELINE_STORES_AND_ATOMICS_HANDLE;
+	public static final VarHandle FRAGMENT_STORES_AND_ATOMICS_HANDLE;
+	public static final VarHandle SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_HANDLE;
+	public static final VarHandle SHADER_IMAGE_GATHER_EXTENDED_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_MULTISAMPLE_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_CLIP_DISTANCE_HANDLE;
+	public static final VarHandle SHADER_CULL_DISTANCE_HANDLE;
+	public static final VarHandle SHADER_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_INT64_HANDLE;
+	public static final VarHandle SHADER_INT16_HANDLE;
+	public static final VarHandle SHADER_RESOURCE_RESIDENCY_HANDLE;
+	public static final VarHandle SHADER_RESOURCE_MIN_LOD_HANDLE;
+	public static final VarHandle SPARSE_BINDING_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY_BUFFER_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY_IMAGE2_D_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY_IMAGE3_D_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY2_SAMPLES_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY4_SAMPLES_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY8_SAMPLES_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY16_SAMPLES_HANDLE;
+	public static final VarHandle SPARSE_RESIDENCY_ALIASED_HANDLE;
+	public static final VarHandle VARIABLE_MULTISAMPLE_RATE_HANDLE;
+	public static final VarHandle INHERITED_QUERIES_HANDLE;
 
-    public static final long ROBUST_BUFFER_ACCESS_BYTE_OFFSET;
-    public static final long FULL_DRAW_INDEX_UINT32_BYTE_OFFSET;
-    public static final long IMAGE_CUBE_ARRAY_BYTE_OFFSET;
-    public static final long INDEPENDENT_BLEND_BYTE_OFFSET;
-    public static final long GEOMETRY_SHADER_BYTE_OFFSET;
-    public static final long TESSELLATION_SHADER_BYTE_OFFSET;
-    public static final long SAMPLE_RATE_SHADING_BYTE_OFFSET;
-    public static final long DUAL_SRC_BLEND_BYTE_OFFSET;
-    public static final long LOGIC_OP_BYTE_OFFSET;
-    public static final long MULTI_DRAW_INDIRECT_BYTE_OFFSET;
-    public static final long DRAW_INDIRECT_FIRST_INSTANCE_BYTE_OFFSET;
-    public static final long DEPTH_CLAMP_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_CLAMP_BYTE_OFFSET;
-    public static final long FILL_MODE_NON_SOLID_BYTE_OFFSET;
-    public static final long DEPTH_BOUNDS_BYTE_OFFSET;
-    public static final long WIDE_LINES_BYTE_OFFSET;
-    public static final long LARGE_POINTS_BYTE_OFFSET;
-    public static final long ALPHA_TO_ONE_BYTE_OFFSET;
-    public static final long MULTI_VIEWPORT_BYTE_OFFSET;
-    public static final long SAMPLER_ANISOTROPY_BYTE_OFFSET;
-    public static final long TEXTURE_COMPRESSION_ETC2_BYTE_OFFSET;
-    public static final long TEXTURE_COMPRESSION_ASTC_LDR_BYTE_OFFSET;
-    public static final long TEXTURE_COMPRESSION_BC_BYTE_OFFSET;
-    public static final long OCCLUSION_QUERY_PRECISE_BYTE_OFFSET;
-    public static final long PIPELINE_STATISTICS_QUERY_BYTE_OFFSET;
-    public static final long VERTEX_PIPELINE_STORES_AND_ATOMICS_BYTE_OFFSET;
-    public static final long FRAGMENT_STORES_AND_ATOMICS_BYTE_OFFSET;
-    public static final long SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_BYTE_OFFSET;
-    public static final long SHADER_IMAGE_GATHER_EXTENDED_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_MULTISAMPLE_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_CLIP_DISTANCE_BYTE_OFFSET;
-    public static final long SHADER_CULL_DISTANCE_BYTE_OFFSET;
-    public static final long SHADER_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_INT64_BYTE_OFFSET;
-    public static final long SHADER_INT16_BYTE_OFFSET;
-    public static final long SHADER_RESOURCE_RESIDENCY_BYTE_OFFSET;
-    public static final long SHADER_RESOURCE_MIN_LOD_BYTE_OFFSET;
-    public static final long SPARSE_BINDING_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY_BUFFER_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY_IMAGE2_D_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY_IMAGE3_D_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY2_SAMPLES_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY4_SAMPLES_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY8_SAMPLES_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY16_SAMPLES_BYTE_OFFSET;
-    public static final long SPARSE_RESIDENCY_ALIASED_BYTE_OFFSET;
-    public static final long VARIABLE_MULTISAMPLE_RATE_BYTE_OFFSET;
-    public static final long INHERITED_QUERIES_BYTE_OFFSET;
+	public static final long ROBUST_BUFFER_ACCESS_BYTE_OFFSET;
+	public static final long FULL_DRAW_INDEX_UINT32_BYTE_OFFSET;
+	public static final long IMAGE_CUBE_ARRAY_BYTE_OFFSET;
+	public static final long INDEPENDENT_BLEND_BYTE_OFFSET;
+	public static final long GEOMETRY_SHADER_BYTE_OFFSET;
+	public static final long TESSELLATION_SHADER_BYTE_OFFSET;
+	public static final long SAMPLE_RATE_SHADING_BYTE_OFFSET;
+	public static final long DUAL_SRC_BLEND_BYTE_OFFSET;
+	public static final long LOGIC_OP_BYTE_OFFSET;
+	public static final long MULTI_DRAW_INDIRECT_BYTE_OFFSET;
+	public static final long DRAW_INDIRECT_FIRST_INSTANCE_BYTE_OFFSET;
+	public static final long DEPTH_CLAMP_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_CLAMP_BYTE_OFFSET;
+	public static final long FILL_MODE_NON_SOLID_BYTE_OFFSET;
+	public static final long DEPTH_BOUNDS_BYTE_OFFSET;
+	public static final long WIDE_LINES_BYTE_OFFSET;
+	public static final long LARGE_POINTS_BYTE_OFFSET;
+	public static final long ALPHA_TO_ONE_BYTE_OFFSET;
+	public static final long MULTI_VIEWPORT_BYTE_OFFSET;
+	public static final long SAMPLER_ANISOTROPY_BYTE_OFFSET;
+	public static final long TEXTURE_COMPRESSION_ETC2_BYTE_OFFSET;
+	public static final long TEXTURE_COMPRESSION_ASTC_LDR_BYTE_OFFSET;
+	public static final long TEXTURE_COMPRESSION_BC_BYTE_OFFSET;
+	public static final long OCCLUSION_QUERY_PRECISE_BYTE_OFFSET;
+	public static final long PIPELINE_STATISTICS_QUERY_BYTE_OFFSET;
+	public static final long VERTEX_PIPELINE_STORES_AND_ATOMICS_BYTE_OFFSET;
+	public static final long FRAGMENT_STORES_AND_ATOMICS_BYTE_OFFSET;
+	public static final long SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_BYTE_OFFSET;
+	public static final long SHADER_IMAGE_GATHER_EXTENDED_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_MULTISAMPLE_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_CLIP_DISTANCE_BYTE_OFFSET;
+	public static final long SHADER_CULL_DISTANCE_BYTE_OFFSET;
+	public static final long SHADER_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_INT64_BYTE_OFFSET;
+	public static final long SHADER_INT16_BYTE_OFFSET;
+	public static final long SHADER_RESOURCE_RESIDENCY_BYTE_OFFSET;
+	public static final long SHADER_RESOURCE_MIN_LOD_BYTE_OFFSET;
+	public static final long SPARSE_BINDING_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY_BUFFER_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY_IMAGE2_D_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY_IMAGE3_D_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY2_SAMPLES_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY4_SAMPLES_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY8_SAMPLES_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY16_SAMPLES_BYTE_OFFSET;
+	public static final long SPARSE_RESIDENCY_ALIASED_BYTE_OFFSET;
+	public static final long VARIABLE_MULTISAMPLE_RATE_BYTE_OFFSET;
+	public static final long INHERITED_QUERIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("robustBufferAccess"),
-            JAVA_INT.withName("fullDrawIndexUint32"),
-            JAVA_INT.withName("imageCubeArray"),
-            JAVA_INT.withName("independentBlend"),
-            JAVA_INT.withName("geometryShader"),
-            JAVA_INT.withName("tessellationShader"),
-            JAVA_INT.withName("sampleRateShading"),
-            JAVA_INT.withName("dualSrcBlend"),
-            JAVA_INT.withName("logicOp"),
-            JAVA_INT.withName("multiDrawIndirect"),
-            JAVA_INT.withName("drawIndirectFirstInstance"),
-            JAVA_INT.withName("depthClamp"),
-            JAVA_INT.withName("depthBiasClamp"),
-            JAVA_INT.withName("fillModeNonSolid"),
-            JAVA_INT.withName("depthBounds"),
-            JAVA_INT.withName("wideLines"),
-            JAVA_INT.withName("largePoints"),
-            JAVA_INT.withName("alphaToOne"),
-            JAVA_INT.withName("multiViewport"),
-            JAVA_INT.withName("samplerAnisotropy"),
-            JAVA_INT.withName("textureCompressionETC2"),
-            JAVA_INT.withName("textureCompressionASTC_LDR"),
-            JAVA_INT.withName("textureCompressionBC"),
-            JAVA_INT.withName("occlusionQueryPrecise"),
-            JAVA_INT.withName("pipelineStatisticsQuery"),
-            JAVA_INT.withName("vertexPipelineStoresAndAtomics"),
-            JAVA_INT.withName("fragmentStoresAndAtomics"),
-            JAVA_INT.withName("shaderTessellationAndGeometryPointSize"),
-            JAVA_INT.withName("shaderImageGatherExtended"),
-            JAVA_INT.withName("shaderStorageImageExtendedFormats"),
-            JAVA_INT.withName("shaderStorageImageMultisample"),
-            JAVA_INT.withName("shaderStorageImageReadWithoutFormat"),
-            JAVA_INT.withName("shaderStorageImageWriteWithoutFormat"),
-            JAVA_INT.withName("shaderUniformBufferArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderSampledImageArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderStorageBufferArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderStorageImageArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderClipDistance"),
-            JAVA_INT.withName("shaderCullDistance"),
-            JAVA_INT.withName("shaderFloat64"),
-            JAVA_INT.withName("shaderInt64"),
-            JAVA_INT.withName("shaderInt16"),
-            JAVA_INT.withName("shaderResourceResidency"),
-            JAVA_INT.withName("shaderResourceMinLod"),
-            JAVA_INT.withName("sparseBinding"),
-            JAVA_INT.withName("sparseResidencyBuffer"),
-            JAVA_INT.withName("sparseResidencyImage2D"),
-            JAVA_INT.withName("sparseResidencyImage3D"),
-            JAVA_INT.withName("sparseResidency2Samples"),
-            JAVA_INT.withName("sparseResidency4Samples"),
-            JAVA_INT.withName("sparseResidency8Samples"),
-            JAVA_INT.withName("sparseResidency16Samples"),
-            JAVA_INT.withName("sparseResidencyAliased"),
-            JAVA_INT.withName("variableMultisampleRate"),
-            JAVA_INT.withName("inheritedQueries")
-        ).withName("VkPhysicalDeviceFeatures").withByteAlignment(4);
-        
-        ROBUST_BUFFER_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccess"));
-        FULL_DRAW_INDEX_UINT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fullDrawIndexUint32"));
-        IMAGE_CUBE_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCubeArray"));
-        INDEPENDENT_BLEND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentBlend"));
-        GEOMETRY_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryShader"));
-        TESSELLATION_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tessellationShader"));
-        SAMPLE_RATE_SHADING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleRateShading"));
-        DUAL_SRC_BLEND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dualSrcBlend"));
-        LOGIC_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("logicOp"));
-        MULTI_DRAW_INDIRECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiDrawIndirect"));
-        DRAW_INDIRECT_FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drawIndirectFirstInstance"));
-        DEPTH_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthClamp"));
-        DEPTH_BIAS_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasClamp"));
-        FILL_MODE_NON_SOLID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fillModeNonSolid"));
-        DEPTH_BOUNDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBounds"));
-        WIDE_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wideLines"));
-        LARGE_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("largePoints"));
-        ALPHA_TO_ONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaToOne"));
-        MULTI_VIEWPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiViewport"));
-        SAMPLER_ANISOTROPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerAnisotropy"));
-        TEXTURE_COMPRESSION_ETC2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionETC2"));
-        TEXTURE_COMPRESSION_ASTC_LDR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionASTC_LDR"));
-        TEXTURE_COMPRESSION_BC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionBC"));
-        OCCLUSION_QUERY_PRECISE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occlusionQueryPrecise"));
-        PIPELINE_STATISTICS_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStatisticsQuery"));
-        VERTEX_PIPELINE_STORES_AND_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexPipelineStoresAndAtomics"));
-        FRAGMENT_STORES_AND_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentStoresAndAtomics"));
-        SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTessellationAndGeometryPointSize"));
-        SHADER_IMAGE_GATHER_EXTENDED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderImageGatherExtended"));
-        SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageExtendedFormats"));
-        SHADER_STORAGE_IMAGE_MULTISAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageMultisample"));
-        SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageReadWithoutFormat"));
-        SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageWriteWithoutFormat"));
-        SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayDynamicIndexing"));
-        SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayDynamicIndexing"));
-        SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayDynamicIndexing"));
-        SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayDynamicIndexing"));
-        SHADER_CLIP_DISTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderClipDistance"));
-        SHADER_CULL_DISTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCullDistance"));
-        SHADER_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat64"));
-        SHADER_INT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt64"));
-        SHADER_INT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt16"));
-        SHADER_RESOURCE_RESIDENCY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderResourceResidency"));
-        SHADER_RESOURCE_MIN_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderResourceMinLod"));
-        SPARSE_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseBinding"));
-        SPARSE_RESIDENCY_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyBuffer"));
-        SPARSE_RESIDENCY_IMAGE2_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyImage2D"));
-        SPARSE_RESIDENCY_IMAGE3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyImage3D"));
-        SPARSE_RESIDENCY2_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency2Samples"));
-        SPARSE_RESIDENCY4_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency4Samples"));
-        SPARSE_RESIDENCY8_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency8Samples"));
-        SPARSE_RESIDENCY16_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency16Samples"));
-        SPARSE_RESIDENCY_ALIASED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyAliased"));
-        VARIABLE_MULTISAMPLE_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variableMultisampleRate"));
-        INHERITED_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inheritedQueries"));
-        
-        ROBUST_BUFFER_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccess"));
-        FULL_DRAW_INDEX_UINT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fullDrawIndexUint32"));
-        IMAGE_CUBE_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCubeArray"));
-        INDEPENDENT_BLEND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentBlend"));
-        GEOMETRY_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryShader"));
-        TESSELLATION_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tessellationShader"));
-        SAMPLE_RATE_SHADING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleRateShading"));
-        DUAL_SRC_BLEND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dualSrcBlend"));
-        LOGIC_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("logicOp"));
-        MULTI_DRAW_INDIRECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiDrawIndirect"));
-        DRAW_INDIRECT_FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drawIndirectFirstInstance"));
-        DEPTH_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthClamp"));
-        DEPTH_BIAS_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasClamp"));
-        FILL_MODE_NON_SOLID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fillModeNonSolid"));
-        DEPTH_BOUNDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBounds"));
-        WIDE_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wideLines"));
-        LARGE_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("largePoints"));
-        ALPHA_TO_ONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaToOne"));
-        MULTI_VIEWPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiViewport"));
-        SAMPLER_ANISOTROPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerAnisotropy"));
-        TEXTURE_COMPRESSION_ETC2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionETC2"));
-        TEXTURE_COMPRESSION_ASTC_LDR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionASTC_LDR"));
-        TEXTURE_COMPRESSION_BC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionBC"));
-        OCCLUSION_QUERY_PRECISE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occlusionQueryPrecise"));
-        PIPELINE_STATISTICS_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStatisticsQuery"));
-        VERTEX_PIPELINE_STORES_AND_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexPipelineStoresAndAtomics"));
-        FRAGMENT_STORES_AND_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentStoresAndAtomics"));
-        SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTessellationAndGeometryPointSize"));
-        SHADER_IMAGE_GATHER_EXTENDED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderImageGatherExtended"));
-        SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageExtendedFormats"));
-        SHADER_STORAGE_IMAGE_MULTISAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageMultisample"));
-        SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageReadWithoutFormat"));
-        SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageWriteWithoutFormat"));
-        SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayDynamicIndexing"));
-        SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayDynamicIndexing"));
-        SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayDynamicIndexing"));
-        SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayDynamicIndexing"));
-        SHADER_CLIP_DISTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderClipDistance"));
-        SHADER_CULL_DISTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCullDistance"));
-        SHADER_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat64"));
-        SHADER_INT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt64"));
-        SHADER_INT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt16"));
-        SHADER_RESOURCE_RESIDENCY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderResourceResidency"));
-        SHADER_RESOURCE_MIN_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderResourceMinLod"));
-        SPARSE_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseBinding"));
-        SPARSE_RESIDENCY_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyBuffer"));
-        SPARSE_RESIDENCY_IMAGE2_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyImage2D"));
-        SPARSE_RESIDENCY_IMAGE3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyImage3D"));
-        SPARSE_RESIDENCY2_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency2Samples"));
-        SPARSE_RESIDENCY4_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency4Samples"));
-        SPARSE_RESIDENCY8_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency8Samples"));
-        SPARSE_RESIDENCY16_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency16Samples"));
-        SPARSE_RESIDENCY_ALIASED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyAliased"));
-        VARIABLE_MULTISAMPLE_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variableMultisampleRate"));
-        INHERITED_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inheritedQueries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("robustBufferAccess"),
+		    JAVA_INT.withName("fullDrawIndexUint32"),
+		    JAVA_INT.withName("imageCubeArray"),
+		    JAVA_INT.withName("independentBlend"),
+		    JAVA_INT.withName("geometryShader"),
+		    JAVA_INT.withName("tessellationShader"),
+		    JAVA_INT.withName("sampleRateShading"),
+		    JAVA_INT.withName("dualSrcBlend"),
+		    JAVA_INT.withName("logicOp"),
+		    JAVA_INT.withName("multiDrawIndirect"),
+		    JAVA_INT.withName("drawIndirectFirstInstance"),
+		    JAVA_INT.withName("depthClamp"),
+		    JAVA_INT.withName("depthBiasClamp"),
+		    JAVA_INT.withName("fillModeNonSolid"),
+		    JAVA_INT.withName("depthBounds"),
+		    JAVA_INT.withName("wideLines"),
+		    JAVA_INT.withName("largePoints"),
+		    JAVA_INT.withName("alphaToOne"),
+		    JAVA_INT.withName("multiViewport"),
+		    JAVA_INT.withName("samplerAnisotropy"),
+		    JAVA_INT.withName("textureCompressionETC2"),
+		    JAVA_INT.withName("textureCompressionASTC_LDR"),
+		    JAVA_INT.withName("textureCompressionBC"),
+		    JAVA_INT.withName("occlusionQueryPrecise"),
+		    JAVA_INT.withName("pipelineStatisticsQuery"),
+		    JAVA_INT.withName("vertexPipelineStoresAndAtomics"),
+		    JAVA_INT.withName("fragmentStoresAndAtomics"),
+		    JAVA_INT.withName("shaderTessellationAndGeometryPointSize"),
+		    JAVA_INT.withName("shaderImageGatherExtended"),
+		    JAVA_INT.withName("shaderStorageImageExtendedFormats"),
+		    JAVA_INT.withName("shaderStorageImageMultisample"),
+		    JAVA_INT.withName("shaderStorageImageReadWithoutFormat"),
+		    JAVA_INT.withName("shaderStorageImageWriteWithoutFormat"),
+		    JAVA_INT.withName("shaderUniformBufferArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderSampledImageArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderStorageBufferArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderStorageImageArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderClipDistance"),
+		    JAVA_INT.withName("shaderCullDistance"),
+		    JAVA_INT.withName("shaderFloat64"),
+		    JAVA_INT.withName("shaderInt64"),
+		    JAVA_INT.withName("shaderInt16"),
+		    JAVA_INT.withName("shaderResourceResidency"),
+		    JAVA_INT.withName("shaderResourceMinLod"),
+		    JAVA_INT.withName("sparseBinding"),
+		    JAVA_INT.withName("sparseResidencyBuffer"),
+		    JAVA_INT.withName("sparseResidencyImage2D"),
+		    JAVA_INT.withName("sparseResidencyImage3D"),
+		    JAVA_INT.withName("sparseResidency2Samples"),
+		    JAVA_INT.withName("sparseResidency4Samples"),
+		    JAVA_INT.withName("sparseResidency8Samples"),
+		    JAVA_INT.withName("sparseResidency16Samples"),
+		    JAVA_INT.withName("sparseResidencyAliased"),
+		    JAVA_INT.withName("variableMultisampleRate"),
+		    JAVA_INT.withName("inheritedQueries")
+		).withName("VkPhysicalDeviceFeatures").withByteAlignment(4);
+		
+		ROBUST_BUFFER_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustBufferAccess"));
+		FULL_DRAW_INDEX_UINT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fullDrawIndexUint32"));
+		IMAGE_CUBE_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCubeArray"));
+		INDEPENDENT_BLEND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentBlend"));
+		GEOMETRY_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryShader"));
+		TESSELLATION_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tessellationShader"));
+		SAMPLE_RATE_SHADING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sampleRateShading"));
+		DUAL_SRC_BLEND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dualSrcBlend"));
+		LOGIC_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("logicOp"));
+		MULTI_DRAW_INDIRECT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiDrawIndirect"));
+		DRAW_INDIRECT_FIRST_INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drawIndirectFirstInstance"));
+		DEPTH_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthClamp"));
+		DEPTH_BIAS_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasClamp"));
+		FILL_MODE_NON_SOLID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fillModeNonSolid"));
+		DEPTH_BOUNDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBounds"));
+		WIDE_LINES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("wideLines"));
+		LARGE_POINTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("largePoints"));
+		ALPHA_TO_ONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("alphaToOne"));
+		MULTI_VIEWPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiViewport"));
+		SAMPLER_ANISOTROPY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerAnisotropy"));
+		TEXTURE_COMPRESSION_ETC2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionETC2"));
+		TEXTURE_COMPRESSION_ASTC_LDR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionASTC_LDR"));
+		TEXTURE_COMPRESSION_BC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureCompressionBC"));
+		OCCLUSION_QUERY_PRECISE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("occlusionQueryPrecise"));
+		PIPELINE_STATISTICS_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineStatisticsQuery"));
+		VERTEX_PIPELINE_STORES_AND_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexPipelineStoresAndAtomics"));
+		FRAGMENT_STORES_AND_ATOMICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentStoresAndAtomics"));
+		SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTessellationAndGeometryPointSize"));
+		SHADER_IMAGE_GATHER_EXTENDED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderImageGatherExtended"));
+		SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageExtendedFormats"));
+		SHADER_STORAGE_IMAGE_MULTISAMPLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageMultisample"));
+		SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageReadWithoutFormat"));
+		SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageWriteWithoutFormat"));
+		SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayDynamicIndexing"));
+		SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayDynamicIndexing"));
+		SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayDynamicIndexing"));
+		SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayDynamicIndexing"));
+		SHADER_CLIP_DISTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderClipDistance"));
+		SHADER_CULL_DISTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCullDistance"));
+		SHADER_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderFloat64"));
+		SHADER_INT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt64"));
+		SHADER_INT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInt16"));
+		SHADER_RESOURCE_RESIDENCY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderResourceResidency"));
+		SHADER_RESOURCE_MIN_LOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderResourceMinLod"));
+		SPARSE_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseBinding"));
+		SPARSE_RESIDENCY_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyBuffer"));
+		SPARSE_RESIDENCY_IMAGE2_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyImage2D"));
+		SPARSE_RESIDENCY_IMAGE3_D_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyImage3D"));
+		SPARSE_RESIDENCY2_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency2Samples"));
+		SPARSE_RESIDENCY4_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency4Samples"));
+		SPARSE_RESIDENCY8_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency8Samples"));
+		SPARSE_RESIDENCY16_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidency16Samples"));
+		SPARSE_RESIDENCY_ALIASED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseResidencyAliased"));
+		VARIABLE_MULTISAMPLE_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("variableMultisampleRate"));
+		INHERITED_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inheritedQueries"));
+		
+		ROBUST_BUFFER_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustBufferAccess"));
+		FULL_DRAW_INDEX_UINT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fullDrawIndexUint32"));
+		IMAGE_CUBE_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCubeArray"));
+		INDEPENDENT_BLEND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentBlend"));
+		GEOMETRY_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryShader"));
+		TESSELLATION_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tessellationShader"));
+		SAMPLE_RATE_SHADING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sampleRateShading"));
+		DUAL_SRC_BLEND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dualSrcBlend"));
+		LOGIC_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("logicOp"));
+		MULTI_DRAW_INDIRECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiDrawIndirect"));
+		DRAW_INDIRECT_FIRST_INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drawIndirectFirstInstance"));
+		DEPTH_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthClamp"));
+		DEPTH_BIAS_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasClamp"));
+		FILL_MODE_NON_SOLID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fillModeNonSolid"));
+		DEPTH_BOUNDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBounds"));
+		WIDE_LINES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("wideLines"));
+		LARGE_POINTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("largePoints"));
+		ALPHA_TO_ONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("alphaToOne"));
+		MULTI_VIEWPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiViewport"));
+		SAMPLER_ANISOTROPY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerAnisotropy"));
+		TEXTURE_COMPRESSION_ETC2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionETC2"));
+		TEXTURE_COMPRESSION_ASTC_LDR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionASTC_LDR"));
+		TEXTURE_COMPRESSION_BC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureCompressionBC"));
+		OCCLUSION_QUERY_PRECISE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("occlusionQueryPrecise"));
+		PIPELINE_STATISTICS_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineStatisticsQuery"));
+		VERTEX_PIPELINE_STORES_AND_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexPipelineStoresAndAtomics"));
+		FRAGMENT_STORES_AND_ATOMICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentStoresAndAtomics"));
+		SHADER_TESSELLATION_AND_GEOMETRY_POINT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTessellationAndGeometryPointSize"));
+		SHADER_IMAGE_GATHER_EXTENDED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderImageGatherExtended"));
+		SHADER_STORAGE_IMAGE_EXTENDED_FORMATS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageExtendedFormats"));
+		SHADER_STORAGE_IMAGE_MULTISAMPLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageMultisample"));
+		SHADER_STORAGE_IMAGE_READ_WITHOUT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageReadWithoutFormat"));
+		SHADER_STORAGE_IMAGE_WRITE_WITHOUT_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageWriteWithoutFormat"));
+		SHADER_UNIFORM_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayDynamicIndexing"));
+		SHADER_SAMPLED_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayDynamicIndexing"));
+		SHADER_STORAGE_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayDynamicIndexing"));
+		SHADER_STORAGE_IMAGE_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayDynamicIndexing"));
+		SHADER_CLIP_DISTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderClipDistance"));
+		SHADER_CULL_DISTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCullDistance"));
+		SHADER_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderFloat64"));
+		SHADER_INT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt64"));
+		SHADER_INT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInt16"));
+		SHADER_RESOURCE_RESIDENCY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderResourceResidency"));
+		SHADER_RESOURCE_MIN_LOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderResourceMinLod"));
+		SPARSE_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseBinding"));
+		SPARSE_RESIDENCY_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyBuffer"));
+		SPARSE_RESIDENCY_IMAGE2_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyImage2D"));
+		SPARSE_RESIDENCY_IMAGE3_D_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyImage3D"));
+		SPARSE_RESIDENCY2_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency2Samples"));
+		SPARSE_RESIDENCY4_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency4Samples"));
+		SPARSE_RESIDENCY8_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency8Samples"));
+		SPARSE_RESIDENCY16_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidency16Samples"));
+		SPARSE_RESIDENCY_ALIASED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseResidencyAliased"));
+		VARIABLE_MULTISAMPLE_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("variableMultisampleRate"));
+		INHERITED_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inheritedQueries"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #robustBufferAccess()
     public VkPhysicalDeviceFeatures robustBufferAccess(int robustBufferAccess) {
@@ -923,5 +923,5 @@ public final class VkPhysicalDeviceFeatures
             segment -> new VkPhysicalDeviceFeatures(segment)
         );
     }
-    
+
 }

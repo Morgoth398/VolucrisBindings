@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkApplicationInfo
 		implements Struct<VkApplicationInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_APPLICATION_NAME_HANDLE;
-    public static final VarHandle APPLICATION_VERSION_HANDLE;
-    public static final VarHandle P_ENGINE_NAME_HANDLE;
-    public static final VarHandle ENGINE_VERSION_HANDLE;
-    public static final VarHandle API_VERSION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_APPLICATION_NAME_HANDLE;
+	public static final VarHandle APPLICATION_VERSION_HANDLE;
+	public static final VarHandle P_ENGINE_NAME_HANDLE;
+	public static final VarHandle ENGINE_VERSION_HANDLE;
+	public static final VarHandle API_VERSION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_APPLICATION_NAME_BYTE_OFFSET;
-    public static final long APPLICATION_VERSION_BYTE_OFFSET;
-    public static final long P_ENGINE_NAME_BYTE_OFFSET;
-    public static final long ENGINE_VERSION_BYTE_OFFSET;
-    public static final long API_VERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_APPLICATION_NAME_BYTE_OFFSET;
+	public static final long APPLICATION_VERSION_BYTE_OFFSET;
+	public static final long P_ENGINE_NAME_BYTE_OFFSET;
+	public static final long ENGINE_VERSION_BYTE_OFFSET;
+	public static final long API_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pApplicationName"),
-            JAVA_INT.withName("applicationVersion"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pEngineName"),
-            JAVA_INT.withName("engineVersion"),
-            JAVA_INT.withName("apiVersion")
-        ).withName("VkApplicationInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_APPLICATION_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pApplicationName"));
-        APPLICATION_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("applicationVersion"));
-        P_ENGINE_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pEngineName"));
-        ENGINE_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineVersion"));
-        API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("apiVersion"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_APPLICATION_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pApplicationName"));
-        APPLICATION_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("applicationVersion"));
-        P_ENGINE_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pEngineName"));
-        ENGINE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineVersion"));
-        API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apiVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pApplicationName"),
+		    JAVA_INT.withName("applicationVersion"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pEngineName"),
+		    JAVA_INT.withName("engineVersion"),
+		    JAVA_INT.withName("apiVersion")
+		).withName("VkApplicationInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_APPLICATION_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pApplicationName"));
+		APPLICATION_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("applicationVersion"));
+		P_ENGINE_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pEngineName"));
+		ENGINE_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineVersion"));
+		API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("apiVersion"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_APPLICATION_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pApplicationName"));
+		APPLICATION_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("applicationVersion"));
+		P_ENGINE_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pEngineName"));
+		ENGINE_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineVersion"));
+		API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("apiVersion"));
+		//@formatter:on
+	}
 
-    public VkApplicationInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkApplicationInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkApplicationInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkApplicationInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkApplicationInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkApplicationInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkApplicationInfo sType(int sType) {
@@ -222,5 +222,5 @@ public final class VkApplicationInfo
             segment -> new VkApplicationInfo(segment)
         );
     }
-    
+
 }

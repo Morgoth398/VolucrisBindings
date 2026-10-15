@@ -21,72 +21,72 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueueFamilyDataGraphTOSAPropertiesARM
 		implements Struct<VkQueueFamilyDataGraphTOSAPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PROFILE_COUNT_HANDLE;
-    public static final VarHandle P_PROFILES_HANDLE;
-    public static final VarHandle EXTENSION_COUNT_HANDLE;
-    public static final VarHandle P_EXTENSIONS_HANDLE;
-    public static final VarHandle LEVEL_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PROFILE_COUNT_HANDLE;
+	public static final VarHandle P_PROFILES_HANDLE;
+	public static final VarHandle EXTENSION_COUNT_HANDLE;
+	public static final VarHandle P_EXTENSIONS_HANDLE;
+	public static final VarHandle LEVEL_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PROFILE_COUNT_BYTE_OFFSET;
-    public static final long P_PROFILES_BYTE_OFFSET;
-    public static final long EXTENSION_COUNT_BYTE_OFFSET;
-    public static final long P_EXTENSIONS_BYTE_OFFSET;
-    public static final long LEVEL_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PROFILE_COUNT_BYTE_OFFSET;
+	public static final long P_PROFILES_BYTE_OFFSET;
+	public static final long EXTENSION_COUNT_BYTE_OFFSET;
+	public static final long P_EXTENSIONS_BYTE_OFFSET;
+	public static final long LEVEL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("profileCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pProfiles"),
-            JAVA_INT.withName("extensionCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pExtensions"),
-            JAVA_INT.withName("level"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkQueueFamilyDataGraphTOSAPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PROFILE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("profileCount"));
-        P_PROFILES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pProfiles"));
-        EXTENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extensionCount"));
-        P_EXTENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtensions"));
-        LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("level"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PROFILE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("profileCount"));
-        P_PROFILES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pProfiles"));
-        EXTENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extensionCount"));
-        P_EXTENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtensions"));
-        LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("level"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("profileCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pProfiles"),
+		    JAVA_INT.withName("extensionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pExtensions"),
+		    JAVA_INT.withName("level"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkQueueFamilyDataGraphTOSAPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PROFILE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("profileCount"));
+		P_PROFILES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pProfiles"));
+		EXTENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extensionCount"));
+		P_EXTENSIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtensions"));
+		LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("level"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PROFILE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("profileCount"));
+		P_PROFILES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pProfiles"));
+		EXTENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extensionCount"));
+		P_EXTENSIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtensions"));
+		LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("level"));
+		//@formatter:on
+	}
 
-    public VkQueueFamilyDataGraphTOSAPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueueFamilyDataGraphTOSAPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueueFamilyDataGraphTOSAPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkQueueFamilyDataGraphTOSAPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueueFamilyDataGraphTOSAPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueueFamilyDataGraphTOSAPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkQueueFamilyDataGraphTOSAPropertiesARM sType(int sType) {
@@ -224,5 +224,5 @@ public final class VkQueueFamilyDataGraphTOSAPropertiesARM
             segment -> new VkQueueFamilyDataGraphTOSAPropertiesARM(segment)
         );
     }
-    
+
 }

@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkIndirectCommandsIndexBufferTokenEXT
 		implements Struct<VkIndirectCommandsIndexBufferTokenEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MODE_HANDLE;
+	public static final VarHandle MODE_HANDLE;
 
-    public static final long MODE_BYTE_OFFSET;
+	public static final long MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("mode")
-        ).withName("VkIndirectCommandsIndexBufferTokenEXT").withByteAlignment(4);
-        
-        MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
-        
-        MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("mode")
+		).withName("VkIndirectCommandsIndexBufferTokenEXT").withByteAlignment(4);
+		
+		MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mode"));
+		
+		MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mode"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsIndexBufferTokenEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsIndexBufferTokenEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsIndexBufferTokenEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsIndexBufferTokenEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsIndexBufferTokenEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsIndexBufferTokenEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mode()
     public VkIndirectCommandsIndexBufferTokenEXT mode(int mode) {
@@ -113,5 +113,5 @@ public final class VkIndirectCommandsIndexBufferTokenEXT
             segment -> new VkIndirectCommandsIndexBufferTokenEXT(segment)
         );
     }
-    
+
 }

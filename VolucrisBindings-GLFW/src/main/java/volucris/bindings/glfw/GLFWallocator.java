@@ -31,53 +31,53 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class GLFWallocator
 		implements Struct<GLFWallocator> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ALLOCATE_HANDLE;
-    public static final VarHandle REALLOCATE_HANDLE;
-    public static final VarHandle DEALLOCATE_HANDLE;
-    public static final VarHandle USER_HANDLE;
+	public static final VarHandle ALLOCATE_HANDLE;
+	public static final VarHandle REALLOCATE_HANDLE;
+	public static final VarHandle DEALLOCATE_HANDLE;
+	public static final VarHandle USER_HANDLE;
 
-    public static final long ALLOCATE_BYTE_OFFSET;
-    public static final long REALLOCATE_BYTE_OFFSET;
-    public static final long DEALLOCATE_BYTE_OFFSET;
-    public static final long USER_BYTE_OFFSET;
+	public static final long ALLOCATE_BYTE_OFFSET;
+	public static final long REALLOCATE_BYTE_OFFSET;
+	public static final long DEALLOCATE_BYTE_OFFSET;
+	public static final long USER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("allocate"),
-            UNBOUNDED_ADDRESS.withName("reallocate"),
-            UNBOUNDED_ADDRESS.withName("deallocate"),
-            UNBOUNDED_ADDRESS.withName("user")
-        ).withName("GLFWallocator").withByteAlignment(8);
-        
-        ALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocate"));
-        REALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reallocate"));
-        DEALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deallocate"));
-        USER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("user"));
-        
-        ALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocate"));
-        REALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reallocate"));
-        DEALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deallocate"));
-        USER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("user"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("allocate"),
+		    UNBOUNDED_ADDRESS.withName("reallocate"),
+		    UNBOUNDED_ADDRESS.withName("deallocate"),
+		    UNBOUNDED_ADDRESS.withName("user")
+		).withName("GLFWallocator").withByteAlignment(8);
+		
+		ALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocate"));
+		REALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reallocate"));
+		DEALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deallocate"));
+		USER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("user"));
+		
+		ALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocate"));
+		REALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reallocate"));
+		DEALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deallocate"));
+		USER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("user"));
+		//@formatter:on
+	}
 
-    public GLFWallocator() {
-        this(Arena.ofAuto());
-    }
-    
-    public GLFWallocator(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public GLFWallocator(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public GLFWallocator() {
+	    this(Arena.ofAuto());
+	}
+	
+	public GLFWallocator(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public GLFWallocator(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #allocate()
     public GLFWallocator allocate(GLFWallocatefun allocate) {
@@ -206,5 +206,5 @@ public final class GLFWallocator
             segment -> new GLFWallocator(segment)
         );
     }
-    
+
 }

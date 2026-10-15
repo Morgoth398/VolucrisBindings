@@ -13,22 +13,17 @@ ${javadoc}
 <#assign modifiers = clazz.modifiers?join(" ")>
 ${modifiers} class ${desc.name}${clazz.classHeader} {
 
-    <#list clazz.fields as field>
-    <#if field.blankLineBefore>
+	<#list clazz.fields as fieldGroup>
+	<#list fieldGroup as field>
+	private final ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
+	</#list>
+	<#sep>
 
-    </#if>
-    private final ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
-    <#if field.blankLineAfter>
-
-    </#if>
-    </#list> 
+	</#sep>
+	</#list>
 
     static {
-        //@formatter:off
-        <#--  <#list clazz.staticBlock.elements as element>
-        ${element}
-        </#list>  -->
-        //@formatter:on
+
     }
 
     /**
@@ -46,18 +41,26 @@ ${modifiers} class ${desc.name}${clazz.classHeader} {
     public ${desc.name}(MemorySegment segment, VkInstance vkInstance) {
         this.segment = segment;
 
-        <#list clazz.fields?filter(f -> !f.name?contains("segment")) as field>
-        ${field.name} = vkInstance.${field.name}();
-        </#list>
+		<#list clazz.fields as fieldGroup>
+		<#list fieldGroup?filter(f -> !f.name?contains("segment")) as field>
+		${field.name} = vkInstance.${field.name}();
+		</#list>
+		</#list>
     }
     
-    <#list clazz.fields?filter(f -> !f.name?contains("segment")) as field>
-    public final ${field.type} ${field.name}() {
-        return ${field.name};
-    }
+	<#list clazz.fields as fieldGroup>
+	<#list fieldGroup?filter(f -> !f.name?contains("segment")) as field>
+	public final ${field.type} ${field.name}() {
+		return ${field.name};
+	}
+	<#sep>
 
-    </#list>
+	</#sep>
+	</#list>
+	</#list>
+    
     public MemorySegment memorySegment() {
         return segment;
     }
+    
 }

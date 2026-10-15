@@ -20,60 +20,92 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkAccelerationStructureSRTMotionInstanceNV
 		implements Struct<VkAccelerationStructureSRTMotionInstanceNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_FIELDS0_HANDLE;
-    public static final VarHandle BIT_FIELDS1_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_REFERENCE_HANDLE;
+	public static final VarHandle BIT_FIELDS0_HANDLE;
+	public static final VarHandle BIT_FIELDS1_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_REFERENCE_HANDLE;
 
-    public static final long TRANSFORM_T0_BYTE_OFFSET;
-    public static final long TRANSFORM_T1_BYTE_OFFSET;
-    public static final long BIT_FIELDS0_BYTE_OFFSET;
-    public static final long BIT_FIELDS1_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET;
+	public static final long TRANSFORM_T0_BYTE_OFFSET;
+	public static final long TRANSFORM_T1_BYTE_OFFSET;
+	public static final long BIT_FIELDS0_BYTE_OFFSET;
+	public static final long BIT_FIELDS1_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkSRTDataNV transformT0;
-    private final VkSRTDataNV transformT1;
+	private final VkSRTDataNV transformT0;
+	private final VkSRTDataNV transformT1;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkSRTDataNV.LAYOUT.withName("transformT0"),
-            VkSRTDataNV.LAYOUT.withName("transformT1"),
-            JAVA_INT.withName("bitFields0"),
-            JAVA_INT.withName("bitFields1"),
-            JAVA_LONG.withName("accelerationStructureReference")
-        ).withName("VkAccelerationStructureSRTMotionInstanceNV").withByteAlignment(8);
-        
-        BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
-        BIT_FIELDS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields1"));
-        ACCELERATION_STRUCTURE_REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureReference"));
-        
-        TRANSFORM_T0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformT0"));
-        TRANSFORM_T1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformT1"));
-        BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
-        BIT_FIELDS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields1"));
-        ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureReference"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkSRTDataNV.LAYOUT.withName("transformT0"),
+		    VkSRTDataNV.LAYOUT.withName("transformT1"),
+		    JAVA_INT.withName("bitFields0"),
+		    JAVA_INT.withName("bitFields1"),
+		    JAVA_LONG.withName("accelerationStructureReference")
+		).withName("VkAccelerationStructureSRTMotionInstanceNV").withByteAlignment(8);
+		
+		BIT_FIELDS0_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields0"));
+		BIT_FIELDS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bitFields1"));
+		ACCELERATION_STRUCTURE_REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureReference"));
+		
+		TRANSFORM_T0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformT0"));
+		TRANSFORM_T1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformT1"));
+		BIT_FIELDS0_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields0"));
+		BIT_FIELDS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bitFields1"));
+		ACCELERATION_STRUCTURE_REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureReference"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureSRTMotionInstanceNV() {
-        this(Arena.ofAuto());
+	public VkAccelerationStructureSRTMotionInstanceNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureSRTMotionInstanceNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureSRTMotionInstanceNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    transformT0 = new VkSRTDataNV(segment.asSlice(TRANSFORM_T0_BYTE_OFFSET, VkSRTDataNV.LAYOUT));
+	    transformT1 = new VkSRTDataNV(segment.asSlice(TRANSFORM_T1_BYTE_OFFSET, VkSRTDataNV.LAYOUT));
+	}
+
+    /// @see #transformT0()
+    public VkAccelerationStructureSRTMotionInstanceNV transformT0(Consumer<VkSRTDataNV> consumer) {
+    	consumer.accept(transformT0);
+    	return this;
     }
     
-    public VkAccelerationStructureSRTMotionInstanceNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #transformT0()
+    public VkAccelerationStructureSRTMotionInstanceNV transformT0(VkSRTDataNV other) {
+    	transformT0.set(other);
+    	return this;
     }
     
-    public VkAccelerationStructureSRTMotionInstanceNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        transformT0 = new VkSRTDataNV(segment.asSlice(TRANSFORM_T0_BYTE_OFFSET, VkSRTDataNV.LAYOUT));
-        transformT1 = new VkSRTDataNV(segment.asSlice(TRANSFORM_T1_BYTE_OFFSET, VkSRTDataNV.LAYOUT));
+    public VkSRTDataNV transformT0() {
+    	return transformT0;
     }
-
+    
+    /// @see #transformT1()
+    public VkAccelerationStructureSRTMotionInstanceNV transformT1(Consumer<VkSRTDataNV> consumer) {
+    	consumer.accept(transformT1);
+    	return this;
+    }
+    
+    /// @see #transformT1()
+    public VkAccelerationStructureSRTMotionInstanceNV transformT1(VkSRTDataNV other) {
+    	transformT1.set(other);
+    	return this;
+    }
+    
+    public VkSRTDataNV transformT1() {
+    	return transformT1;
+    }
+    
     /// @see #bitFields0()
     public VkAccelerationStructureSRTMotionInstanceNV bitFields0(int bitFields0) {
     	BIT_FIELDS0_HANDLE.set(segment, 0L, bitFields0);
@@ -112,38 +144,6 @@ public final class VkAccelerationStructureSRTMotionInstanceNV
     
     public long accelerationStructureReference() {
     	return (long) ACCELERATION_STRUCTURE_REFERENCE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #transformT0()
-    public VkAccelerationStructureSRTMotionInstanceNV transformT0(Consumer<VkSRTDataNV> consumer) {
-    	consumer.accept(transformT0);
-    	return this;
-    }
-    
-    /// @see #transformT0()
-    public VkAccelerationStructureSRTMotionInstanceNV transformT0(VkSRTDataNV other) {
-    	transformT0.set(other);
-    	return this;
-    }
-    
-    public VkSRTDataNV transformT0() {
-    	return transformT0;
-    }
-    
-    /// @see #transformT1()
-    public VkAccelerationStructureSRTMotionInstanceNV transformT1(Consumer<VkSRTDataNV> consumer) {
-    	consumer.accept(transformT1);
-    	return this;
-    }
-    
-    /// @see #transformT1()
-    public VkAccelerationStructureSRTMotionInstanceNV transformT1(VkSRTDataNV other) {
-    	transformT1.set(other);
-    	return this;
-    }
-    
-    public VkSRTDataNV transformT1() {
-    	return transformT1;
     }
     
     @Override
@@ -197,5 +197,5 @@ public final class VkAccelerationStructureSRTMotionInstanceNV
             segment -> new VkAccelerationStructureSRTMotionInstanceNV(segment)
         );
     }
-    
+
 }

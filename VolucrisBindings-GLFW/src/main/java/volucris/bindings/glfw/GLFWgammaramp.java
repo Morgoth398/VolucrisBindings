@@ -32,54 +32,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class GLFWgammaramp
 		implements Struct<GLFWgammaramp> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RED_HANDLE;
-    public static final VarHandle GREEN_HANDLE;
-    public static final VarHandle BLUE_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle RED_HANDLE;
+	public static final VarHandle GREEN_HANDLE;
+	public static final VarHandle BLUE_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long RED_BYTE_OFFSET;
-    public static final long GREEN_BYTE_OFFSET;
-    public static final long BLUE_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long RED_BYTE_OFFSET;
+	public static final long GREEN_BYTE_OFFSET;
+	public static final long BLUE_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("red"),
-            UNBOUNDED_ADDRESS.withName("green"),
-            UNBOUNDED_ADDRESS.withName("blue"),
-            JAVA_INT.withName("size"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("GLFWgammaramp").withByteAlignment(8);
-        
-        RED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("red"));
-        GREEN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("green"));
-        BLUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blue"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        RED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("red"));
-        GREEN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("green"));
-        BLUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blue"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("red"),
+		    UNBOUNDED_ADDRESS.withName("green"),
+		    UNBOUNDED_ADDRESS.withName("blue"),
+		    JAVA_INT.withName("size"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("GLFWgammaramp").withByteAlignment(8);
+		
+		RED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("red"));
+		GREEN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("green"));
+		BLUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blue"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		RED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("red"));
+		GREEN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("green"));
+		BLUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blue"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public GLFWgammaramp() {
-        this(Arena.ofAuto());
-    }
-    
-    public GLFWgammaramp(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public GLFWgammaramp(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public GLFWgammaramp() {
+	    this(Arena.ofAuto());
+	}
+	
+	public GLFWgammaramp(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public GLFWgammaramp(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #red()
     public GLFWgammaramp red(NativeShortArray red) {
@@ -199,5 +199,5 @@ public final class GLFWgammaramp
             segment -> new GLFWgammaramp(segment)
         );
     }
-    
+
 }

@@ -19,68 +19,68 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkGpaPerfBlockPropertiesAMD
 		implements Struct<VkGpaPerfBlockPropertiesAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BLOCK_TYPE_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle INSTANCE_COUNT_HANDLE;
-    public static final VarHandle MAX_EVENT_ID_HANDLE;
-    public static final VarHandle MAX_GLOBAL_ONLY_COUNTERS_HANDLE;
-    public static final VarHandle MAX_GLOBAL_SHARED_COUNTERS_HANDLE;
-    public static final VarHandle MAX_STREAMING_COUNTERS_HANDLE;
+	public static final VarHandle BLOCK_TYPE_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle INSTANCE_COUNT_HANDLE;
+	public static final VarHandle MAX_EVENT_ID_HANDLE;
+	public static final VarHandle MAX_GLOBAL_ONLY_COUNTERS_HANDLE;
+	public static final VarHandle MAX_GLOBAL_SHARED_COUNTERS_HANDLE;
+	public static final VarHandle MAX_STREAMING_COUNTERS_HANDLE;
 
-    public static final long BLOCK_TYPE_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long INSTANCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_EVENT_ID_BYTE_OFFSET;
-    public static final long MAX_GLOBAL_ONLY_COUNTERS_BYTE_OFFSET;
-    public static final long MAX_GLOBAL_SHARED_COUNTERS_BYTE_OFFSET;
-    public static final long MAX_STREAMING_COUNTERS_BYTE_OFFSET;
+	public static final long BLOCK_TYPE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long INSTANCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_EVENT_ID_BYTE_OFFSET;
+	public static final long MAX_GLOBAL_ONLY_COUNTERS_BYTE_OFFSET;
+	public static final long MAX_GLOBAL_SHARED_COUNTERS_BYTE_OFFSET;
+	public static final long MAX_STREAMING_COUNTERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("blockType"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("instanceCount"),
-            JAVA_INT.withName("maxEventID"),
-            JAVA_INT.withName("maxGlobalOnlyCounters"),
-            JAVA_INT.withName("maxGlobalSharedCounters"),
-            JAVA_INT.withName("maxStreamingCounters")
-        ).withName("VkGpaPerfBlockPropertiesAMD").withByteAlignment(4);
-        
-        BLOCK_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockType"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceCount"));
-        MAX_EVENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxEventID"));
-        MAX_GLOBAL_ONLY_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGlobalOnlyCounters"));
-        MAX_GLOBAL_SHARED_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGlobalSharedCounters"));
-        MAX_STREAMING_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxStreamingCounters"));
-        
-        BLOCK_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockType"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceCount"));
-        MAX_EVENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxEventID"));
-        MAX_GLOBAL_ONLY_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGlobalOnlyCounters"));
-        MAX_GLOBAL_SHARED_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGlobalSharedCounters"));
-        MAX_STREAMING_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxStreamingCounters"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("blockType"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("instanceCount"),
+		    JAVA_INT.withName("maxEventID"),
+		    JAVA_INT.withName("maxGlobalOnlyCounters"),
+		    JAVA_INT.withName("maxGlobalSharedCounters"),
+		    JAVA_INT.withName("maxStreamingCounters")
+		).withName("VkGpaPerfBlockPropertiesAMD").withByteAlignment(4);
+		
+		BLOCK_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockType"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instanceCount"));
+		MAX_EVENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxEventID"));
+		MAX_GLOBAL_ONLY_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGlobalOnlyCounters"));
+		MAX_GLOBAL_SHARED_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGlobalSharedCounters"));
+		MAX_STREAMING_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxStreamingCounters"));
+		
+		BLOCK_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockType"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instanceCount"));
+		MAX_EVENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxEventID"));
+		MAX_GLOBAL_ONLY_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGlobalOnlyCounters"));
+		MAX_GLOBAL_SHARED_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGlobalSharedCounters"));
+		MAX_STREAMING_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxStreamingCounters"));
+		//@formatter:on
+	}
 
-    public VkGpaPerfBlockPropertiesAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGpaPerfBlockPropertiesAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGpaPerfBlockPropertiesAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGpaPerfBlockPropertiesAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGpaPerfBlockPropertiesAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGpaPerfBlockPropertiesAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #blockType()
     public VkGpaPerfBlockPropertiesAMD blockType(int blockType) {
@@ -203,5 +203,5 @@ public final class VkGpaPerfBlockPropertiesAMD
             segment -> new VkGpaPerfBlockPropertiesAMD(segment)
         );
     }
-    
+
 }

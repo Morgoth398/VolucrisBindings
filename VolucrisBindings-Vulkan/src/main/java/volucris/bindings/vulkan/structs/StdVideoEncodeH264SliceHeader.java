@@ -22,85 +22,101 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoEncodeH264SliceHeader
 		implements Struct<StdVideoEncodeH264SliceHeader> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FIRST_MB_IN_SLICE_HANDLE;
-    public static final VarHandle SLICE_TYPE_HANDLE;
-    public static final VarHandle SLICE_ALPHA_C0_OFFSET_DIV2_HANDLE;
-    public static final VarHandle SLICE_BETA_OFFSET_DIV2_HANDLE;
-    public static final VarHandle SLICE_QP_DELTA_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle CABAC_INIT_IDC_HANDLE;
-    public static final VarHandle DISABLE_DEBLOCKING_FILTER_IDC_HANDLE;
-    public static final VarHandle P_WEIGHT_TABLE_HANDLE;
+	public static final VarHandle FIRST_MB_IN_SLICE_HANDLE;
+	public static final VarHandle SLICE_TYPE_HANDLE;
+	public static final VarHandle SLICE_ALPHA_C0_OFFSET_DIV2_HANDLE;
+	public static final VarHandle SLICE_BETA_OFFSET_DIV2_HANDLE;
+	public static final VarHandle SLICE_QP_DELTA_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle CABAC_INIT_IDC_HANDLE;
+	public static final VarHandle DISABLE_DEBLOCKING_FILTER_IDC_HANDLE;
+	public static final VarHandle P_WEIGHT_TABLE_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long FIRST_MB_IN_SLICE_BYTE_OFFSET;
-    public static final long SLICE_TYPE_BYTE_OFFSET;
-    public static final long SLICE_ALPHA_C0_OFFSET_DIV2_BYTE_OFFSET;
-    public static final long SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET;
-    public static final long SLICE_QP_DELTA_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long CABAC_INIT_IDC_BYTE_OFFSET;
-    public static final long DISABLE_DEBLOCKING_FILTER_IDC_BYTE_OFFSET;
-    public static final long P_WEIGHT_TABLE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long FIRST_MB_IN_SLICE_BYTE_OFFSET;
+	public static final long SLICE_TYPE_BYTE_OFFSET;
+	public static final long SLICE_ALPHA_C0_OFFSET_DIV2_BYTE_OFFSET;
+	public static final long SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET;
+	public static final long SLICE_QP_DELTA_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long CABAC_INIT_IDC_BYTE_OFFSET;
+	public static final long DISABLE_DEBLOCKING_FILTER_IDC_BYTE_OFFSET;
+	public static final long P_WEIGHT_TABLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH264SliceHeaderFlags flags;
+	private final StdVideoEncodeH264SliceHeaderFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH264SliceHeaderFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("first_mb_in_slice"),
-            JAVA_INT.withName("slice_type"),
-            JAVA_BYTE.withName("slice_alpha_c0_offset_div2"),
-            JAVA_BYTE.withName("slice_beta_offset_div2"),
-            JAVA_BYTE.withName("slice_qp_delta"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_INT.withName("cabac_init_idc"),
-            JAVA_INT.withName("disable_deblocking_filter_idc"),
-            UNBOUNDED_ADDRESS.withName("pWeightTable")
-        ).withName("StdVideoEncodeH264SliceHeader").withByteAlignment(8);
-        
-        FIRST_MB_IN_SLICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("first_mb_in_slice"));
-        SLICE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_type"));
-        SLICE_ALPHA_C0_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_alpha_c0_offset_div2"));
-        SLICE_BETA_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_beta_offset_div2"));
-        SLICE_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_qp_delta"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        CABAC_INIT_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cabac_init_idc"));
-        DISABLE_DEBLOCKING_FILTER_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("disable_deblocking_filter_idc"));
-        P_WEIGHT_TABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWeightTable"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        FIRST_MB_IN_SLICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("first_mb_in_slice"));
-        SLICE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_type"));
-        SLICE_ALPHA_C0_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_alpha_c0_offset_div2"));
-        SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_beta_offset_div2"));
-        SLICE_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_qp_delta"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        CABAC_INIT_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cabac_init_idc"));
-        DISABLE_DEBLOCKING_FILTER_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("disable_deblocking_filter_idc"));
-        P_WEIGHT_TABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWeightTable"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH264SliceHeaderFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("first_mb_in_slice"),
+		    JAVA_INT.withName("slice_type"),
+		    JAVA_BYTE.withName("slice_alpha_c0_offset_div2"),
+		    JAVA_BYTE.withName("slice_beta_offset_div2"),
+		    JAVA_BYTE.withName("slice_qp_delta"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_INT.withName("cabac_init_idc"),
+		    JAVA_INT.withName("disable_deblocking_filter_idc"),
+		    UNBOUNDED_ADDRESS.withName("pWeightTable")
+		).withName("StdVideoEncodeH264SliceHeader").withByteAlignment(8);
+		
+		FIRST_MB_IN_SLICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("first_mb_in_slice"));
+		SLICE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_type"));
+		SLICE_ALPHA_C0_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_alpha_c0_offset_div2"));
+		SLICE_BETA_OFFSET_DIV2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_beta_offset_div2"));
+		SLICE_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("slice_qp_delta"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		CABAC_INIT_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cabac_init_idc"));
+		DISABLE_DEBLOCKING_FILTER_IDC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("disable_deblocking_filter_idc"));
+		P_WEIGHT_TABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWeightTable"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		FIRST_MB_IN_SLICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("first_mb_in_slice"));
+		SLICE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_type"));
+		SLICE_ALPHA_C0_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_alpha_c0_offset_div2"));
+		SLICE_BETA_OFFSET_DIV2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_beta_offset_div2"));
+		SLICE_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("slice_qp_delta"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		CABAC_INIT_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cabac_init_idc"));
+		DISABLE_DEBLOCKING_FILTER_IDC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("disable_deblocking_filter_idc"));
+		P_WEIGHT_TABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWeightTable"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH264SliceHeader() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH264SliceHeader() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH264SliceHeader(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH264SliceHeader(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH264SliceHeaderFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264SliceHeaderFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH264SliceHeader flags(Consumer<StdVideoEncodeH264SliceHeaderFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH264SliceHeader(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH264SliceHeader flags(StdVideoEncodeH264SliceHeaderFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH264SliceHeader(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH264SliceHeaderFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH264SliceHeaderFlags.LAYOUT));
+    public StdVideoEncodeH264SliceHeaderFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #first_mb_in_slice()
     public StdVideoEncodeH264SliceHeader first_mb_in_slice(int first_mb_in_slice) {
     	FIRST_MB_IN_SLICE_HANDLE.set(segment, 0L, first_mb_in_slice);
@@ -196,22 +212,6 @@ public final class StdVideoEncodeH264SliceHeader
     	return new StdVideoEncodeH264WeightTable(segment);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeH264SliceHeader flags(Consumer<StdVideoEncodeH264SliceHeaderFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH264SliceHeader flags(StdVideoEncodeH264SliceHeaderFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH264SliceHeaderFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeH264SliceHeader set(StdVideoEncodeH264SliceHeader other) {
         return set(other.segment);
@@ -263,5 +263,5 @@ public final class StdVideoEncodeH264SliceHeader
             segment -> new StdVideoEncodeH264SliceHeader(segment)
         );
     }
-    
+
 }

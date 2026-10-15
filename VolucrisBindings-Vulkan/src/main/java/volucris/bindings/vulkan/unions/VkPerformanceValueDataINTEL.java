@@ -21,58 +21,58 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPerformanceValueDataINTEL
 		implements Struct<VkPerformanceValueDataINTEL> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle VALUE32_HANDLE;
-    public static final VarHandle VALUE64_HANDLE;
-    public static final VarHandle VALUE_FLOAT_HANDLE;
-    public static final VarHandle VALUE_BOOL_HANDLE;
-    public static final VarHandle VALUE_STRING_HANDLE;
+	public static final VarHandle VALUE32_HANDLE;
+	public static final VarHandle VALUE64_HANDLE;
+	public static final VarHandle VALUE_FLOAT_HANDLE;
+	public static final VarHandle VALUE_BOOL_HANDLE;
+	public static final VarHandle VALUE_STRING_HANDLE;
 
-    public static final long VALUE32_BYTE_OFFSET;
-    public static final long VALUE64_BYTE_OFFSET;
-    public static final long VALUE_FLOAT_BYTE_OFFSET;
-    public static final long VALUE_BOOL_BYTE_OFFSET;
-    public static final long VALUE_STRING_BYTE_OFFSET;
+	public static final long VALUE32_BYTE_OFFSET;
+	public static final long VALUE64_BYTE_OFFSET;
+	public static final long VALUE_FLOAT_BYTE_OFFSET;
+	public static final long VALUE_BOOL_BYTE_OFFSET;
+	public static final long VALUE_STRING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            JAVA_INT.withName("value32"),
-            JAVA_LONG.withName("value64"),
-            JAVA_FLOAT.withName("valueFloat"),
-            JAVA_INT.withName("valueBool"),
-            UNBOUNDED_ADDRESS.withName("valueString")
-        ).withName("VkPerformanceValueDataINTEL").withByteAlignment(8);
-        
-        VALUE32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("value32"));
-        VALUE64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("value64"));
-        VALUE_FLOAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueFloat"));
-        VALUE_BOOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueBool"));
-        VALUE_STRING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueString"));
-        
-        VALUE32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value32"));
-        VALUE64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value64"));
-        VALUE_FLOAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueFloat"));
-        VALUE_BOOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueBool"));
-        VALUE_STRING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueString"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    JAVA_INT.withName("value32"),
+		    JAVA_LONG.withName("value64"),
+		    JAVA_FLOAT.withName("valueFloat"),
+		    JAVA_INT.withName("valueBool"),
+		    UNBOUNDED_ADDRESS.withName("valueString")
+		).withName("VkPerformanceValueDataINTEL").withByteAlignment(8);
+		
+		VALUE32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("value32"));
+		VALUE64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("value64"));
+		VALUE_FLOAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueFloat"));
+		VALUE_BOOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueBool"));
+		VALUE_STRING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("valueString"));
+		
+		VALUE32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value32"));
+		VALUE64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value64"));
+		VALUE_FLOAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueFloat"));
+		VALUE_BOOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueBool"));
+		VALUE_STRING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("valueString"));
+		//@formatter:on
+	}
 
-    public VkPerformanceValueDataINTEL() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerformanceValueDataINTEL(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerformanceValueDataINTEL(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPerformanceValueDataINTEL() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerformanceValueDataINTEL(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerformanceValueDataINTEL(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #value32()
     public VkPerformanceValueDataINTEL value32(int value32) {
@@ -180,5 +180,5 @@ public final class VkPerformanceValueDataINTEL
             segment -> new VkPerformanceValueDataINTEL(segment)
         );
     }
-    
+
 }

@@ -21,79 +21,79 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkTensorMemoryBarrierARM
 		implements Struct<VkTensorMemoryBarrierARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_STAGE_MASK_HANDLE;
-    public static final VarHandle SRC_ACCESS_MASK_HANDLE;
-    public static final VarHandle DST_STAGE_MASK_HANDLE;
-    public static final VarHandle DST_ACCESS_MASK_HANDLE;
-    public static final VarHandle SRC_QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle DST_QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle TENSOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_STAGE_MASK_HANDLE;
+	public static final VarHandle SRC_ACCESS_MASK_HANDLE;
+	public static final VarHandle DST_STAGE_MASK_HANDLE;
+	public static final VarHandle DST_ACCESS_MASK_HANDLE;
+	public static final VarHandle SRC_QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle DST_QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle TENSOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_STAGE_MASK_BYTE_OFFSET;
-    public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
-    public static final long DST_STAGE_MASK_BYTE_OFFSET;
-    public static final long DST_ACCESS_MASK_BYTE_OFFSET;
-    public static final long SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long TENSOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_STAGE_MASK_BYTE_OFFSET;
+	public static final long SRC_ACCESS_MASK_BYTE_OFFSET;
+	public static final long DST_STAGE_MASK_BYTE_OFFSET;
+	public static final long DST_ACCESS_MASK_BYTE_OFFSET;
+	public static final long SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long TENSOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("srcStageMask"),
-            JAVA_LONG.withName("srcAccessMask"),
-            JAVA_LONG.withName("dstStageMask"),
-            JAVA_LONG.withName("dstAccessMask"),
-            JAVA_INT.withName("srcQueueFamilyIndex"),
-            JAVA_INT.withName("dstQueueFamilyIndex"),
-            UNBOUNDED_ADDRESS.withName("tensor")
-        ).withName("VkTensorMemoryBarrierARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStageMask"));
-        SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
-        DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStageMask"));
-        DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
-        SRC_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcQueueFamilyIndex"));
-        DST_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstQueueFamilyIndex"));
-        TENSOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStageMask"));
-        SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
-        DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStageMask"));
-        DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
-        SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcQueueFamilyIndex"));
-        DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstQueueFamilyIndex"));
-        TENSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("srcStageMask"),
+		    JAVA_LONG.withName("srcAccessMask"),
+		    JAVA_LONG.withName("dstStageMask"),
+		    JAVA_LONG.withName("dstAccessMask"),
+		    JAVA_INT.withName("srcQueueFamilyIndex"),
+		    JAVA_INT.withName("dstQueueFamilyIndex"),
+		    UNBOUNDED_ADDRESS.withName("tensor")
+		).withName("VkTensorMemoryBarrierARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcStageMask"));
+		SRC_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcAccessMask"));
+		DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstStageMask"));
+		DST_ACCESS_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstAccessMask"));
+		SRC_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcQueueFamilyIndex"));
+		DST_QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstQueueFamilyIndex"));
+		TENSOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcStageMask"));
+		SRC_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcAccessMask"));
+		DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstStageMask"));
+		DST_ACCESS_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstAccessMask"));
+		SRC_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcQueueFamilyIndex"));
+		DST_QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstQueueFamilyIndex"));
+		TENSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensor"));
+		//@formatter:on
+	}
 
-    public VkTensorMemoryBarrierARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkTensorMemoryBarrierARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkTensorMemoryBarrierARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkTensorMemoryBarrierARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkTensorMemoryBarrierARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkTensorMemoryBarrierARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkTensorMemoryBarrierARM sType(int sType) {
@@ -246,5 +246,5 @@ public final class VkTensorMemoryBarrierARM
             segment -> new VkTensorMemoryBarrierARM(segment)
         );
     }
-    
+
 }

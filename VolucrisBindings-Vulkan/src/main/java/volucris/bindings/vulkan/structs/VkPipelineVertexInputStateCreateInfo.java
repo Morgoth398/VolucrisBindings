@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineVertexInputStateCreateInfo
 		implements Struct<VkPipelineVertexInputStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle VERTEX_BINDING_DESCRIPTION_COUNT_HANDLE;
-    public static final VarHandle P_VERTEX_BINDING_DESCRIPTIONS_HANDLE;
-    public static final VarHandle VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_HANDLE;
-    public static final VarHandle P_VERTEX_ATTRIBUTE_DESCRIPTIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle VERTEX_BINDING_DESCRIPTION_COUNT_HANDLE;
+	public static final VarHandle P_VERTEX_BINDING_DESCRIPTIONS_HANDLE;
+	public static final VarHandle VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_HANDLE;
+	public static final VarHandle P_VERTEX_ATTRIBUTE_DESCRIPTIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long VERTEX_BINDING_DESCRIPTION_COUNT_BYTE_OFFSET;
-    public static final long P_VERTEX_BINDING_DESCRIPTIONS_BYTE_OFFSET;
-    public static final long VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_BYTE_OFFSET;
-    public static final long P_VERTEX_ATTRIBUTE_DESCRIPTIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long VERTEX_BINDING_DESCRIPTION_COUNT_BYTE_OFFSET;
+	public static final long P_VERTEX_BINDING_DESCRIPTIONS_BYTE_OFFSET;
+	public static final long VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_BYTE_OFFSET;
+	public static final long P_VERTEX_ATTRIBUTE_DESCRIPTIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("vertexBindingDescriptionCount"),
-            UNBOUNDED_ADDRESS.withName("pVertexBindingDescriptions"),
-            JAVA_INT.withName("vertexAttributeDescriptionCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pVertexAttributeDescriptions")
-        ).withName("VkPipelineVertexInputStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        VERTEX_BINDING_DESCRIPTION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingDescriptionCount"));
-        P_VERTEX_BINDING_DESCRIPTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexBindingDescriptions"));
-        VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeDescriptionCount"));
-        P_VERTEX_ATTRIBUTE_DESCRIPTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexAttributeDescriptions"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        VERTEX_BINDING_DESCRIPTION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingDescriptionCount"));
-        P_VERTEX_BINDING_DESCRIPTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexBindingDescriptions"));
-        VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeDescriptionCount"));
-        P_VERTEX_ATTRIBUTE_DESCRIPTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexAttributeDescriptions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("vertexBindingDescriptionCount"),
+		    UNBOUNDED_ADDRESS.withName("pVertexBindingDescriptions"),
+		    JAVA_INT.withName("vertexAttributeDescriptionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pVertexAttributeDescriptions")
+		).withName("VkPipelineVertexInputStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		VERTEX_BINDING_DESCRIPTION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingDescriptionCount"));
+		P_VERTEX_BINDING_DESCRIPTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexBindingDescriptions"));
+		VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexAttributeDescriptionCount"));
+		P_VERTEX_ATTRIBUTE_DESCRIPTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVertexAttributeDescriptions"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		VERTEX_BINDING_DESCRIPTION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingDescriptionCount"));
+		P_VERTEX_BINDING_DESCRIPTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexBindingDescriptions"));
+		VERTEX_ATTRIBUTE_DESCRIPTION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexAttributeDescriptionCount"));
+		P_VERTEX_ATTRIBUTE_DESCRIPTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVertexAttributeDescriptions"));
+		//@formatter:on
+	}
 
-    public VkPipelineVertexInputStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineVertexInputStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineVertexInputStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineVertexInputStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineVertexInputStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineVertexInputStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineVertexInputStateCreateInfo sType(int sType) {
@@ -222,5 +222,5 @@ public final class VkPipelineVertexInputStateCreateInfo
             segment -> new VkPipelineVertexInputStateCreateInfo(segment)
         );
     }
-    
+
 }

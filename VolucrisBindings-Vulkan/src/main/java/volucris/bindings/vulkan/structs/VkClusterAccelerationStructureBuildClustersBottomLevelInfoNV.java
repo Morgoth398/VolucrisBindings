@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV
 		implements Struct<VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CLUSTER_REFERENCES_COUNT_HANDLE;
-    public static final VarHandle CLUSTER_REFERENCES_STRIDE_HANDLE;
-    public static final VarHandle CLUSTER_REFERENCES_HANDLE;
+	public static final VarHandle CLUSTER_REFERENCES_COUNT_HANDLE;
+	public static final VarHandle CLUSTER_REFERENCES_STRIDE_HANDLE;
+	public static final VarHandle CLUSTER_REFERENCES_HANDLE;
 
-    public static final long CLUSTER_REFERENCES_COUNT_BYTE_OFFSET;
-    public static final long CLUSTER_REFERENCES_STRIDE_BYTE_OFFSET;
-    public static final long CLUSTER_REFERENCES_BYTE_OFFSET;
+	public static final long CLUSTER_REFERENCES_COUNT_BYTE_OFFSET;
+	public static final long CLUSTER_REFERENCES_STRIDE_BYTE_OFFSET;
+	public static final long CLUSTER_REFERENCES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("clusterReferencesCount"),
-            JAVA_INT.withName("clusterReferencesStride"),
-            JAVA_LONG.withName("clusterReferences")
-        ).withName("VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV").withByteAlignment(8);
-        
-        CLUSTER_REFERENCES_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterReferencesCount"));
-        CLUSTER_REFERENCES_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterReferencesStride"));
-        CLUSTER_REFERENCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterReferences"));
-        
-        CLUSTER_REFERENCES_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterReferencesCount"));
-        CLUSTER_REFERENCES_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterReferencesStride"));
-        CLUSTER_REFERENCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterReferences"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("clusterReferencesCount"),
+		    JAVA_INT.withName("clusterReferencesStride"),
+		    JAVA_LONG.withName("clusterReferences")
+		).withName("VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV").withByteAlignment(8);
+		
+		CLUSTER_REFERENCES_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterReferencesCount"));
+		CLUSTER_REFERENCES_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterReferencesStride"));
+		CLUSTER_REFERENCES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clusterReferences"));
+		
+		CLUSTER_REFERENCES_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterReferencesCount"));
+		CLUSTER_REFERENCES_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterReferencesStride"));
+		CLUSTER_REFERENCES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clusterReferences"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #clusterReferencesCount()
     public VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV clusterReferencesCount(int clusterReferencesCount) {
@@ -143,5 +143,5 @@ public final class VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV
             segment -> new VkClusterAccelerationStructureBuildClustersBottomLevelInfoNV(segment)
         );
     }
-    
+
 }

@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePresentTimingFeaturesEXT
 		implements Struct<VkPhysicalDevicePresentTimingFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_TIMING_HANDLE;
-    public static final VarHandle PRESENT_AT_ABSOLUTE_TIME_HANDLE;
-    public static final VarHandle PRESENT_AT_RELATIVE_TIME_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_TIMING_HANDLE;
+	public static final VarHandle PRESENT_AT_ABSOLUTE_TIME_HANDLE;
+	public static final VarHandle PRESENT_AT_RELATIVE_TIME_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_TIMING_BYTE_OFFSET;
-    public static final long PRESENT_AT_ABSOLUTE_TIME_BYTE_OFFSET;
-    public static final long PRESENT_AT_RELATIVE_TIME_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_TIMING_BYTE_OFFSET;
+	public static final long PRESENT_AT_ABSOLUTE_TIME_BYTE_OFFSET;
+	public static final long PRESENT_AT_RELATIVE_TIME_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("presentTiming"),
-            JAVA_INT.withName("presentAtAbsoluteTime"),
-            JAVA_INT.withName("presentAtRelativeTime"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePresentTimingFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_TIMING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentTiming"));
-        PRESENT_AT_ABSOLUTE_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtAbsoluteTime"));
-        PRESENT_AT_RELATIVE_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtRelativeTime"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_TIMING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentTiming"));
-        PRESENT_AT_ABSOLUTE_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtAbsoluteTime"));
-        PRESENT_AT_RELATIVE_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtRelativeTime"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("presentTiming"),
+		    JAVA_INT.withName("presentAtAbsoluteTime"),
+		    JAVA_INT.withName("presentAtRelativeTime"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePresentTimingFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_TIMING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentTiming"));
+		PRESENT_AT_ABSOLUTE_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtAbsoluteTime"));
+		PRESENT_AT_RELATIVE_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentAtRelativeTime"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_TIMING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentTiming"));
+		PRESENT_AT_ABSOLUTE_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtAbsoluteTime"));
+		PRESENT_AT_RELATIVE_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentAtRelativeTime"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePresentTimingFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePresentTimingFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePresentTimingFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePresentTimingFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePresentTimingFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePresentTimingFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePresentTimingFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDevicePresentTimingFeaturesEXT
             segment -> new VkPhysicalDevicePresentTimingFeaturesEXT(segment)
         );
     }
-    
+
 }

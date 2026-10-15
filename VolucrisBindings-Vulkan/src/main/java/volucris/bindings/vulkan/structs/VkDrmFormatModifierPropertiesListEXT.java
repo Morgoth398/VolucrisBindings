@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDrmFormatModifierPropertiesListEXT
 		implements Struct<VkDrmFormatModifierPropertiesListEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DRM_FORMAT_MODIFIER_COUNT_HANDLE;
-    public static final VarHandle P_DRM_FORMAT_MODIFIER_PROPERTIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DRM_FORMAT_MODIFIER_COUNT_HANDLE;
+	public static final VarHandle P_DRM_FORMAT_MODIFIER_PROPERTIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DRM_FORMAT_MODIFIER_COUNT_BYTE_OFFSET;
-    public static final long P_DRM_FORMAT_MODIFIER_PROPERTIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DRM_FORMAT_MODIFIER_COUNT_BYTE_OFFSET;
+	public static final long P_DRM_FORMAT_MODIFIER_PROPERTIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("drmFormatModifierCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDrmFormatModifierProperties")
-        ).withName("VkDrmFormatModifierPropertiesListEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DRM_FORMAT_MODIFIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierCount"));
-        P_DRM_FORMAT_MODIFIER_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDrmFormatModifierProperties"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DRM_FORMAT_MODIFIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierCount"));
-        P_DRM_FORMAT_MODIFIER_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDrmFormatModifierProperties"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("drmFormatModifierCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDrmFormatModifierProperties")
+		).withName("VkDrmFormatModifierPropertiesListEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DRM_FORMAT_MODIFIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("drmFormatModifierCount"));
+		P_DRM_FORMAT_MODIFIER_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDrmFormatModifierProperties"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DRM_FORMAT_MODIFIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("drmFormatModifierCount"));
+		P_DRM_FORMAT_MODIFIER_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDrmFormatModifierProperties"));
+		//@formatter:on
+	}
 
-    public VkDrmFormatModifierPropertiesListEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDrmFormatModifierPropertiesListEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDrmFormatModifierPropertiesListEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDrmFormatModifierPropertiesListEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDrmFormatModifierPropertiesListEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDrmFormatModifierPropertiesListEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDrmFormatModifierPropertiesListEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkDrmFormatModifierPropertiesListEXT
             segment -> new VkDrmFormatModifierPropertiesListEXT(segment)
         );
     }
-    
+
 }

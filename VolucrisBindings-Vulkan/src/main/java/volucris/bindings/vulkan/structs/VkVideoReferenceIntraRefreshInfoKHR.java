@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoReferenceIntraRefreshInfoKHR
 		implements Struct<VkVideoReferenceIntraRefreshInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DIRTY_INTRA_REFRESH_REGIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DIRTY_INTRA_REFRESH_REGIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DIRTY_INTRA_REFRESH_REGIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DIRTY_INTRA_REFRESH_REGIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dirtyIntraRefreshRegions"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoReferenceIntraRefreshInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DIRTY_INTRA_REFRESH_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dirtyIntraRefreshRegions"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DIRTY_INTRA_REFRESH_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dirtyIntraRefreshRegions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dirtyIntraRefreshRegions"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoReferenceIntraRefreshInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DIRTY_INTRA_REFRESH_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dirtyIntraRefreshRegions"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DIRTY_INTRA_REFRESH_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dirtyIntraRefreshRegions"));
+		//@formatter:on
+	}
 
-    public VkVideoReferenceIntraRefreshInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoReferenceIntraRefreshInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoReferenceIntraRefreshInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoReferenceIntraRefreshInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoReferenceIntraRefreshInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoReferenceIntraRefreshInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoReferenceIntraRefreshInfoKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkVideoReferenceIntraRefreshInfoKHR
             segment -> new VkVideoReferenceIntraRefreshInfoKHR(segment)
         );
     }
-    
+
 }

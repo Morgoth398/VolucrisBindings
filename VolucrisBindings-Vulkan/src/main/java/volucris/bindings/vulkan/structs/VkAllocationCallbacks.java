@@ -21,63 +21,63 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAllocationCallbacks
 		implements Struct<VkAllocationCallbacks> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle P_USER_DATA_HANDLE;
-    public static final VarHandle PFN_ALLOCATION_HANDLE;
-    public static final VarHandle PFN_REALLOCATION_HANDLE;
-    public static final VarHandle PFN_FREE_HANDLE;
-    public static final VarHandle PFN_INTERNAL_ALLOCATION_HANDLE;
-    public static final VarHandle PFN_INTERNAL_FREE_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle PFN_ALLOCATION_HANDLE;
+	public static final VarHandle PFN_REALLOCATION_HANDLE;
+	public static final VarHandle PFN_FREE_HANDLE;
+	public static final VarHandle PFN_INTERNAL_ALLOCATION_HANDLE;
+	public static final VarHandle PFN_INTERNAL_FREE_HANDLE;
 
-    public static final long P_USER_DATA_BYTE_OFFSET;
-    public static final long PFN_ALLOCATION_BYTE_OFFSET;
-    public static final long PFN_REALLOCATION_BYTE_OFFSET;
-    public static final long PFN_FREE_BYTE_OFFSET;
-    public static final long PFN_INTERNAL_ALLOCATION_BYTE_OFFSET;
-    public static final long PFN_INTERNAL_FREE_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long PFN_ALLOCATION_BYTE_OFFSET;
+	public static final long PFN_REALLOCATION_BYTE_OFFSET;
+	public static final long PFN_FREE_BYTE_OFFSET;
+	public static final long PFN_INTERNAL_ALLOCATION_BYTE_OFFSET;
+	public static final long PFN_INTERNAL_FREE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("pUserData"),
-            UNBOUNDED_ADDRESS.withName("pfnAllocation"),
-            UNBOUNDED_ADDRESS.withName("pfnReallocation"),
-            UNBOUNDED_ADDRESS.withName("pfnFree"),
-            UNBOUNDED_ADDRESS.withName("pfnInternalAllocation"),
-            UNBOUNDED_ADDRESS.withName("pfnInternalFree")
-        ).withName("VkAllocationCallbacks").withByteAlignment(8);
-        
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        PFN_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnAllocation"));
-        PFN_REALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnReallocation"));
-        PFN_FREE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnFree"));
-        PFN_INTERNAL_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnInternalAllocation"));
-        PFN_INTERNAL_FREE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnInternalFree"));
-        
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        PFN_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnAllocation"));
-        PFN_REALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnReallocation"));
-        PFN_FREE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnFree"));
-        PFN_INTERNAL_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnInternalAllocation"));
-        PFN_INTERNAL_FREE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnInternalFree"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("pUserData"),
+		    UNBOUNDED_ADDRESS.withName("pfnAllocation"),
+		    UNBOUNDED_ADDRESS.withName("pfnReallocation"),
+		    UNBOUNDED_ADDRESS.withName("pfnFree"),
+		    UNBOUNDED_ADDRESS.withName("pfnInternalAllocation"),
+		    UNBOUNDED_ADDRESS.withName("pfnInternalFree")
+		).withName("VkAllocationCallbacks").withByteAlignment(8);
+		
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		PFN_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnAllocation"));
+		PFN_REALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnReallocation"));
+		PFN_FREE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnFree"));
+		PFN_INTERNAL_ALLOCATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnInternalAllocation"));
+		PFN_INTERNAL_FREE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnInternalFree"));
+		
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		PFN_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnAllocation"));
+		PFN_REALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnReallocation"));
+		PFN_FREE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnFree"));
+		PFN_INTERNAL_ALLOCATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnInternalAllocation"));
+		PFN_INTERNAL_FREE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnInternalFree"));
+		//@formatter:on
+	}
 
-    public VkAllocationCallbacks() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAllocationCallbacks(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAllocationCallbacks(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAllocationCallbacks() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAllocationCallbacks(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAllocationCallbacks(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pUserData()
     public VkAllocationCallbacks pUserData(MemorySegment pUserData) {
@@ -220,5 +220,5 @@ public final class VkAllocationCallbacks
             segment -> new VkAllocationCallbacks(segment)
         );
     }
-    
+
 }

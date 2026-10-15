@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM
 		implements Struct<VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_CORE_MASK_HANDLE;
-    public static final VarHandle SHADER_CORE_COUNT_HANDLE;
-    public static final VarHandle SHADER_WARPS_PER_CORE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_CORE_MASK_HANDLE;
+	public static final VarHandle SHADER_CORE_COUNT_HANDLE;
+	public static final VarHandle SHADER_WARPS_PER_CORE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_CORE_MASK_BYTE_OFFSET;
-    public static final long SHADER_CORE_COUNT_BYTE_OFFSET;
-    public static final long SHADER_WARPS_PER_CORE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_CORE_MASK_BYTE_OFFSET;
+	public static final long SHADER_CORE_COUNT_BYTE_OFFSET;
+	public static final long SHADER_WARPS_PER_CORE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("shaderCoreMask"),
-            JAVA_INT.withName("shaderCoreCount"),
-            JAVA_INT.withName("shaderWarpsPerCore")
-        ).withName("VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_CORE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCoreMask"));
-        SHADER_CORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCoreCount"));
-        SHADER_WARPS_PER_CORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderWarpsPerCore"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_CORE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCoreMask"));
-        SHADER_CORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCoreCount"));
-        SHADER_WARPS_PER_CORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderWarpsPerCore"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("shaderCoreMask"),
+		    JAVA_INT.withName("shaderCoreCount"),
+		    JAVA_INT.withName("shaderWarpsPerCore")
+		).withName("VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_CORE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCoreMask"));
+		SHADER_CORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCoreCount"));
+		SHADER_WARPS_PER_CORE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderWarpsPerCore"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_CORE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCoreMask"));
+		SHADER_CORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCoreCount"));
+		SHADER_WARPS_PER_CORE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderWarpsPerCore"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM
             segment -> new VkPhysicalDeviceShaderCoreBuiltinsPropertiesARM(segment)
         );
     }
-    
+
 }

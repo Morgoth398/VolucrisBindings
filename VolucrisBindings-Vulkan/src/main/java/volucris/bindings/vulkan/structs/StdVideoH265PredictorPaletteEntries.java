@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265PredictorPaletteEntries
 		implements Struct<StdVideoH265PredictorPaletteEntries> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PREDICTOR_PALETTE_ENTRIES_HANDLE;
+	public static final VarHandle PREDICTOR_PALETTE_ENTRIES_HANDLE;
 
-    public static final long PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET;
+	public static final long PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(3, MemoryLayout.sequenceLayout(128, JAVA_SHORT)).withName("PredictorPaletteEntries")
-        ).withName("StdVideoH265PredictorPaletteEntries").withByteAlignment(2);
-        
-        PREDICTOR_PALETTE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PredictorPaletteEntries"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PredictorPaletteEntries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(3, MemoryLayout.sequenceLayout(128, JAVA_SHORT)).withName("PredictorPaletteEntries")
+		).withName("StdVideoH265PredictorPaletteEntries").withByteAlignment(2);
+		
+		PREDICTOR_PALETTE_ENTRIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PredictorPaletteEntries"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		PREDICTOR_PALETTE_ENTRIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PredictorPaletteEntries"));
+		//@formatter:on
+	}
 
-    public StdVideoH265PredictorPaletteEntries() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoH265PredictorPaletteEntries(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoH265PredictorPaletteEntries(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoH265PredictorPaletteEntries() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265PredictorPaletteEntries(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265PredictorPaletteEntries(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #predictorPaletteEntries(int, int)
     public StdVideoH265PredictorPaletteEntries predictorPaletteEntries(short predictorPaletteEntries, int index0, int index1) {
@@ -113,5 +113,5 @@ public final class StdVideoH265PredictorPaletteEntries
             segment -> new StdVideoH265PredictorPaletteEntries(segment)
         );
     }
-    
+
 }

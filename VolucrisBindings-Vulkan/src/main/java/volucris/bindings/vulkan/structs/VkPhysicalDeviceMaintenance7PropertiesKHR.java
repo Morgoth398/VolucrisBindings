@@ -21,84 +21,84 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance7PropertiesKHR
 		implements Struct<VkPhysicalDeviceMaintenance7PropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_HANDLE;
-    public static final VarHandle SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_HANDLE;
+	public static final VarHandle SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_BYTE_OFFSET;
-    public static final long SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_BYTE_OFFSET;
+	public static final long SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("robustFragmentShadingRateAttachmentAccess"),
-            JAVA_INT.withName("separateDepthStencilAttachmentAccess"),
-            JAVA_INT.withName("maxDescriptorSetTotalUniformBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetTotalStorageBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetTotalBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic")
-        ).withName("VkPhysicalDeviceMaintenance7PropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustFragmentShadingRateAttachmentAccess"));
-        SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("separateDepthStencilAttachmentAccess"));
-        MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetTotalUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetTotalStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetTotalBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustFragmentShadingRateAttachmentAccess"));
-        SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("separateDepthStencilAttachmentAccess"));
-        MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetTotalUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetTotalStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetTotalBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("robustFragmentShadingRateAttachmentAccess"),
+		    JAVA_INT.withName("separateDepthStencilAttachmentAccess"),
+		    JAVA_INT.withName("maxDescriptorSetTotalUniformBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetTotalStorageBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetTotalBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic")
+		).withName("VkPhysicalDeviceMaintenance7PropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("robustFragmentShadingRateAttachmentAccess"));
+		SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("separateDepthStencilAttachmentAccess"));
+		MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetTotalUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetTotalStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetTotalBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ROBUST_FRAGMENT_SHADING_RATE_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("robustFragmentShadingRateAttachmentAccess"));
+		SEPARATE_DEPTH_STENCIL_ATTACHMENT_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("separateDepthStencilAttachmentAccess"));
+		MAX_DESCRIPTOR_SET_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetTotalUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetTotalStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetTotalBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_UNIFORM_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalUniformBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_STORAGE_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalStorageBuffersDynamic"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_TOTAL_BUFFERS_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindTotalBuffersDynamic"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance7PropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance7PropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance7PropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance7PropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance7PropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance7PropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance7PropertiesKHR sType(int sType) {
@@ -256,5 +256,5 @@ public final class VkPhysicalDeviceMaintenance7PropertiesKHR
             segment -> new VkPhysicalDeviceMaintenance7PropertiesKHR(segment)
         );
     }
-    
+
 }

@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMemoryAllocateInfo
 		implements Struct<VkMemoryAllocateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ALLOCATION_SIZE_HANDLE;
-    public static final VarHandle MEMORY_TYPE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ALLOCATION_SIZE_HANDLE;
+	public static final VarHandle MEMORY_TYPE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ALLOCATION_SIZE_BYTE_OFFSET;
-    public static final long MEMORY_TYPE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ALLOCATION_SIZE_BYTE_OFFSET;
+	public static final long MEMORY_TYPE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("allocationSize"),
-            JAVA_INT.withName("memoryTypeIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMemoryAllocateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ALLOCATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationSize"));
-        MEMORY_TYPE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ALLOCATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationSize"));
-        MEMORY_TYPE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("allocationSize"),
+		    JAVA_INT.withName("memoryTypeIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMemoryAllocateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ALLOCATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationSize"));
+		MEMORY_TYPE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryTypeIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ALLOCATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationSize"));
+		MEMORY_TYPE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryTypeIndex"));
+		//@formatter:on
+	}
 
-    public VkMemoryAllocateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMemoryAllocateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMemoryAllocateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMemoryAllocateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMemoryAllocateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMemoryAllocateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMemoryAllocateInfo sType(int sType) {
@@ -167,5 +167,5 @@ public final class VkMemoryAllocateInfo
             segment -> new VkMemoryAllocateInfo(segment)
         );
     }
-    
+
 }

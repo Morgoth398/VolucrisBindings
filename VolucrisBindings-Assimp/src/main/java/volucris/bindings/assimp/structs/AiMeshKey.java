@@ -19,44 +19,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiMeshKey
 		implements Struct<AiMeshKey> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_TIME_HANDLE;
-    public static final VarHandle M_VALUE_HANDLE;
+	public static final VarHandle M_TIME_HANDLE;
+	public static final VarHandle M_VALUE_HANDLE;
 
-    public static final long M_TIME_BYTE_OFFSET;
-    public static final long M_VALUE_BYTE_OFFSET;
+	public static final long M_TIME_BYTE_OFFSET;
+	public static final long M_VALUE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_DOUBLE.withName("mTime"),
-            JAVA_INT.withName("mValue"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("aiMeshKey").withByteAlignment(8);
-        
-        M_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTime"));
-        M_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mValue"));
-        
-        M_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTime"));
-        M_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValue"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_DOUBLE.withName("mTime"),
+		    JAVA_INT.withName("mValue"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("aiMeshKey").withByteAlignment(8);
+		
+		M_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTime"));
+		M_VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mValue"));
+		
+		M_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTime"));
+		M_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValue"));
+		//@formatter:on
+	}
 
-    public AiMeshKey() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMeshKey(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMeshKey(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMeshKey() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMeshKey(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMeshKey(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mTime()
     public AiMeshKey mTime(double mTime) {
@@ -138,5 +138,5 @@ public final class AiMeshKey
             segment -> new AiMeshKey(segment)
         );
     }
-    
+
 }

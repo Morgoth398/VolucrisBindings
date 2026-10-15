@@ -19,49 +19,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoH265DecPicBufMgr
 		implements Struct<StdVideoH265DecPicBufMgr> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MAX_LATENCY_INCREASE_PLUS1_HANDLE;
-    public static final VarHandle MAX_DEC_PIC_BUFFERING_MINUS1_HANDLE;
-    public static final VarHandle MAX_NUM_REORDER_PICS_HANDLE;
+	public static final VarHandle MAX_LATENCY_INCREASE_PLUS1_HANDLE;
+	public static final VarHandle MAX_DEC_PIC_BUFFERING_MINUS1_HANDLE;
+	public static final VarHandle MAX_NUM_REORDER_PICS_HANDLE;
 
-    public static final long MAX_LATENCY_INCREASE_PLUS1_BYTE_OFFSET;
-    public static final long MAX_DEC_PIC_BUFFERING_MINUS1_BYTE_OFFSET;
-    public static final long MAX_NUM_REORDER_PICS_BYTE_OFFSET;
+	public static final long MAX_LATENCY_INCREASE_PLUS1_BYTE_OFFSET;
+	public static final long MAX_DEC_PIC_BUFFERING_MINUS1_BYTE_OFFSET;
+	public static final long MAX_NUM_REORDER_PICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(7, JAVA_INT).withName("max_latency_increase_plus1"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("max_dec_pic_buffering_minus1"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("max_num_reorder_pics"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("StdVideoH265DecPicBufMgr").withByteAlignment(4);
-        
-        MAX_LATENCY_INCREASE_PLUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_latency_increase_plus1"), PathElement.sequenceElement());
-        MAX_DEC_PIC_BUFFERING_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_dec_pic_buffering_minus1"), PathElement.sequenceElement());
-        MAX_NUM_REORDER_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_num_reorder_pics"), PathElement.sequenceElement());
-        
-        MAX_LATENCY_INCREASE_PLUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_latency_increase_plus1"));
-        MAX_DEC_PIC_BUFFERING_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_dec_pic_buffering_minus1"));
-        MAX_NUM_REORDER_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_num_reorder_pics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(7, JAVA_INT).withName("max_latency_increase_plus1"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("max_dec_pic_buffering_minus1"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("max_num_reorder_pics"),
+		    MemoryLayout.paddingLayout(2)
+		).withName("StdVideoH265DecPicBufMgr").withByteAlignment(4);
+		
+		MAX_LATENCY_INCREASE_PLUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_latency_increase_plus1"), PathElement.sequenceElement());
+		MAX_DEC_PIC_BUFFERING_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_dec_pic_buffering_minus1"), PathElement.sequenceElement());
+		MAX_NUM_REORDER_PICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("max_num_reorder_pics"), PathElement.sequenceElement());
+		
+		MAX_LATENCY_INCREASE_PLUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_latency_increase_plus1"));
+		MAX_DEC_PIC_BUFFERING_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_dec_pic_buffering_minus1"));
+		MAX_NUM_REORDER_PICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("max_num_reorder_pics"));
+		//@formatter:on
+	}
 
-    public StdVideoH265DecPicBufMgr() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoH265DecPicBufMgr(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoH265DecPicBufMgr(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoH265DecPicBufMgr() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265DecPicBufMgr(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265DecPicBufMgr(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #max_latency_increase_plus1(int)
     public StdVideoH265DecPicBufMgr max_latency_increase_plus1(int max_latency_increase_plus1, int index0) {
@@ -144,5 +144,5 @@ public final class StdVideoH265DecPicBufMgr
             segment -> new StdVideoH265DecPicBufMgr(segment)
         );
     }
-    
+
 }

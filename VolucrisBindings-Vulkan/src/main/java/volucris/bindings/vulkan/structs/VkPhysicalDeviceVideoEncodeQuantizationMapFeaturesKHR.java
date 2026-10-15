@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR
 		implements Struct<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VIDEO_ENCODE_QUANTIZATION_MAP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VIDEO_ENCODE_QUANTIZATION_MAP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VIDEO_ENCODE_QUANTIZATION_MAP_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VIDEO_ENCODE_QUANTIZATION_MAP_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("videoEncodeQuantizationMap"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VIDEO_ENCODE_QUANTIZATION_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoEncodeQuantizationMap"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VIDEO_ENCODE_QUANTIZATION_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoEncodeQuantizationMap"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("videoEncodeQuantizationMap"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VIDEO_ENCODE_QUANTIZATION_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("videoEncodeQuantizationMap"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VIDEO_ENCODE_QUANTIZATION_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("videoEncodeQuantizationMap"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR
             segment -> new VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(segment)
         );
     }
-    
+
 }

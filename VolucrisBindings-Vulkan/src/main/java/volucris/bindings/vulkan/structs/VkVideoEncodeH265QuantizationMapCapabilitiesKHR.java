@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeH265QuantizationMapCapabilitiesKHR
 		implements Struct<VkVideoEncodeH265QuantizationMapCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MIN_QP_DELTA_HANDLE;
-    public static final VarHandle MAX_QP_DELTA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MIN_QP_DELTA_HANDLE;
+	public static final VarHandle MAX_QP_DELTA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MIN_QP_DELTA_BYTE_OFFSET;
-    public static final long MAX_QP_DELTA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MIN_QP_DELTA_BYTE_OFFSET;
+	public static final long MAX_QP_DELTA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("minQpDelta"),
-            JAVA_INT.withName("maxQpDelta")
-        ).withName("VkVideoEncodeH265QuantizationMapCapabilitiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MIN_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQpDelta"));
-        MAX_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQpDelta"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MIN_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQpDelta"));
-        MAX_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQpDelta"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("minQpDelta"),
+		    JAVA_INT.withName("maxQpDelta")
+		).withName("VkVideoEncodeH265QuantizationMapCapabilitiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MIN_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minQpDelta"));
+		MAX_QP_DELTA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxQpDelta"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MIN_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minQpDelta"));
+		MAX_QP_DELTA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxQpDelta"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH265QuantizationMapCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH265QuantizationMapCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH265QuantizationMapCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH265QuantizationMapCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH265QuantizationMapCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH265QuantizationMapCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeH265QuantizationMapCapabilitiesKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkVideoEncodeH265QuantizationMapCapabilitiesKHR
             segment -> new VkVideoEncodeH265QuantizationMapCapabilitiesKHR(segment)
         );
     }
-    
+
 }

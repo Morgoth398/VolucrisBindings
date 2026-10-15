@@ -21,130 +21,130 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFloatControlsProperties
 		implements Struct<VkPhysicalDeviceFloatControlsProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DENORM_BEHAVIOR_INDEPENDENCE_HANDLE;
-    public static final VarHandle ROUNDING_MODE_INDEPENDENCE_HANDLE;
-    public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE;
-    public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE;
-    public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE;
-    public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DENORM_BEHAVIOR_INDEPENDENCE_HANDLE;
+	public static final VarHandle ROUNDING_MODE_INDEPENDENCE_HANDLE;
+	public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_DENORM_PRESERVE_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE;
+	public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE;
+	public static final VarHandle SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE;
+	public static final VarHandle SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET;
-    public static final long ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET;
-    public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET;
-    public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET;
-    public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET;
-    public static final long SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET;
+	public static final long ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET;
+	public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET;
+	public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET;
+	public static final long SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET;
+	public static final long SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("denormBehaviorIndependence"),
-            JAVA_INT.withName("roundingModeIndependence"),
-            JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat16"),
-            JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat32"),
-            JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat64"),
-            JAVA_INT.withName("shaderDenormPreserveFloat16"),
-            JAVA_INT.withName("shaderDenormPreserveFloat32"),
-            JAVA_INT.withName("shaderDenormPreserveFloat64"),
-            JAVA_INT.withName("shaderDenormFlushToZeroFloat16"),
-            JAVA_INT.withName("shaderDenormFlushToZeroFloat32"),
-            JAVA_INT.withName("shaderDenormFlushToZeroFloat64"),
-            JAVA_INT.withName("shaderRoundingModeRTEFloat16"),
-            JAVA_INT.withName("shaderRoundingModeRTEFloat32"),
-            JAVA_INT.withName("shaderRoundingModeRTEFloat64"),
-            JAVA_INT.withName("shaderRoundingModeRTZFloat16"),
-            JAVA_INT.withName("shaderRoundingModeRTZFloat32"),
-            JAVA_INT.withName("shaderRoundingModeRTZFloat64"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFloatControlsProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DENORM_BEHAVIOR_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("denormBehaviorIndependence"));
-        ROUNDING_MODE_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("roundingModeIndependence"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
-        SHADER_DENORM_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat16"));
-        SHADER_DENORM_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat32"));
-        SHADER_DENORM_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat64"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
-        SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
-        SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
-        SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
-        SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
-        SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
-        SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("denormBehaviorIndependence"));
-        ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("roundingModeIndependence"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
-        SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
-        SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat16"));
-        SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat32"));
-        SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat64"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
-        SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
-        SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
-        SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
-        SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
-        SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
-        SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
-        SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("denormBehaviorIndependence"),
+		    JAVA_INT.withName("roundingModeIndependence"),
+		    JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat16"),
+		    JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat32"),
+		    JAVA_INT.withName("shaderSignedZeroInfNanPreserveFloat64"),
+		    JAVA_INT.withName("shaderDenormPreserveFloat16"),
+		    JAVA_INT.withName("shaderDenormPreserveFloat32"),
+		    JAVA_INT.withName("shaderDenormPreserveFloat64"),
+		    JAVA_INT.withName("shaderDenormFlushToZeroFloat16"),
+		    JAVA_INT.withName("shaderDenormFlushToZeroFloat32"),
+		    JAVA_INT.withName("shaderDenormFlushToZeroFloat64"),
+		    JAVA_INT.withName("shaderRoundingModeRTEFloat16"),
+		    JAVA_INT.withName("shaderRoundingModeRTEFloat32"),
+		    JAVA_INT.withName("shaderRoundingModeRTEFloat64"),
+		    JAVA_INT.withName("shaderRoundingModeRTZFloat16"),
+		    JAVA_INT.withName("shaderRoundingModeRTZFloat32"),
+		    JAVA_INT.withName("shaderRoundingModeRTZFloat64"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFloatControlsProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DENORM_BEHAVIOR_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("denormBehaviorIndependence"));
+		ROUNDING_MODE_INDEPENDENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("roundingModeIndependence"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
+		SHADER_DENORM_PRESERVE_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat16"));
+		SHADER_DENORM_PRESERVE_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat32"));
+		SHADER_DENORM_PRESERVE_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormPreserveFloat64"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
+		SHADER_ROUNDING_MODE_RTEFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
+		SHADER_ROUNDING_MODE_RTEFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
+		SHADER_ROUNDING_MODE_RTEFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
+		SHADER_ROUNDING_MODE_RTZFLOAT16_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
+		SHADER_ROUNDING_MODE_RTZFLOAT32_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
+		SHADER_ROUNDING_MODE_RTZFLOAT64_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DENORM_BEHAVIOR_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("denormBehaviorIndependence"));
+		ROUNDING_MODE_INDEPENDENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("roundingModeIndependence"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat16"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat32"));
+		SHADER_SIGNED_ZERO_INF_NAN_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSignedZeroInfNanPreserveFloat64"));
+		SHADER_DENORM_PRESERVE_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat16"));
+		SHADER_DENORM_PRESERVE_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat32"));
+		SHADER_DENORM_PRESERVE_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormPreserveFloat64"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat16"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat32"));
+		SHADER_DENORM_FLUSH_TO_ZERO_FLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderDenormFlushToZeroFloat64"));
+		SHADER_ROUNDING_MODE_RTEFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat16"));
+		SHADER_ROUNDING_MODE_RTEFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat32"));
+		SHADER_ROUNDING_MODE_RTEFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTEFloat64"));
+		SHADER_ROUNDING_MODE_RTZFLOAT16_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat16"));
+		SHADER_ROUNDING_MODE_RTZFLOAT32_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat32"));
+		SHADER_ROUNDING_MODE_RTZFLOAT64_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderRoundingModeRTZFloat64"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFloatControlsProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFloatControlsProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFloatControlsProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFloatControlsProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFloatControlsProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFloatControlsProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFloatControlsProperties sType(int sType) {
@@ -392,5 +392,5 @@ public final class VkPhysicalDeviceFloatControlsProperties
             segment -> new VkPhysicalDeviceFloatControlsProperties(segment)
         );
     }
-    
+
 }

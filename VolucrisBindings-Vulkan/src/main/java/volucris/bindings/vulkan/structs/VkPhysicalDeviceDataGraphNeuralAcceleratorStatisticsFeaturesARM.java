@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM
 		implements Struct<VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dataGraphNeuralAcceleratorStatistics"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphNeuralAcceleratorStatistics"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphNeuralAcceleratorStatistics"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dataGraphNeuralAcceleratorStatistics"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dataGraphNeuralAcceleratorStatistics"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DATA_GRAPH_NEURAL_ACCELERATOR_STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dataGraphNeuralAcceleratorStatistics"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesA
             segment -> new VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(segment)
         );
     }
-    
+
 }

@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeH264InlineSessionParametersInfoKHR
 		implements Struct<VkVideoDecodeH264InlineSessionParametersInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_STD_SPS_HANDLE;
-    public static final VarHandle P_STD_PPS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_STD_SPS_HANDLE;
+	public static final VarHandle P_STD_PPS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_STD_SPS_BYTE_OFFSET;
-    public static final long P_STD_PPS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_STD_SPS_BYTE_OFFSET;
+	public static final long P_STD_PPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pStdSPS"),
-            UNBOUNDED_ADDRESS.withName("pStdPPS")
-        ).withName("VkVideoDecodeH264InlineSessionParametersInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_STD_SPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdSPS"));
-        P_STD_PPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPPS"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_STD_SPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdSPS"));
-        P_STD_PPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPPS"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pStdSPS"),
+		    UNBOUNDED_ADDRESS.withName("pStdPPS")
+		).withName("VkVideoDecodeH264InlineSessionParametersInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_STD_SPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdSPS"));
+		P_STD_PPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPPS"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_STD_SPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdSPS"));
+		P_STD_PPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPPS"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeH264InlineSessionParametersInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeH264InlineSessionParametersInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeH264InlineSessionParametersInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoDecodeH264InlineSessionParametersInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeH264InlineSessionParametersInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeH264InlineSessionParametersInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoDecodeH264InlineSessionParametersInfoKHR sType(int sType) {
@@ -176,5 +176,5 @@ public final class VkVideoDecodeH264InlineSessionParametersInfoKHR
             segment -> new VkVideoDecodeH264InlineSessionParametersInfoKHR(segment)
         );
     }
-    
+
 }

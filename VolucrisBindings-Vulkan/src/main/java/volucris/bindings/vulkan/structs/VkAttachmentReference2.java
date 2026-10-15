@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAttachmentReference2
 		implements Struct<VkAttachmentReference2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ATTACHMENT_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ATTACHMENT_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ATTACHMENT_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ATTACHMENT_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("attachment"),
-            JAVA_INT.withName("layout"),
-            JAVA_INT.withName("aspectMask"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkAttachmentReference2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachment"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachment"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("attachment"),
+		    JAVA_INT.withName("layout"),
+		    JAVA_INT.withName("aspectMask"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkAttachmentReference2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ATTACHMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attachment"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ATTACHMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attachment"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		//@formatter:on
+	}
 
-    public VkAttachmentReference2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAttachmentReference2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAttachmentReference2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkAttachmentReference2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAttachmentReference2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAttachmentReference2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkAttachmentReference2 sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkAttachmentReference2
             segment -> new VkAttachmentReference2(segment)
         );
     }
-    
+
 }

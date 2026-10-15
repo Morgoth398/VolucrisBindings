@@ -21,74 +21,74 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDrmPropertiesEXT
 		implements Struct<VkPhysicalDeviceDrmPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle HAS_PRIMARY_HANDLE;
-    public static final VarHandle HAS_RENDER_HANDLE;
-    public static final VarHandle PRIMARY_MAJOR_HANDLE;
-    public static final VarHandle PRIMARY_MINOR_HANDLE;
-    public static final VarHandle RENDER_MAJOR_HANDLE;
-    public static final VarHandle RENDER_MINOR_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle HAS_PRIMARY_HANDLE;
+	public static final VarHandle HAS_RENDER_HANDLE;
+	public static final VarHandle PRIMARY_MAJOR_HANDLE;
+	public static final VarHandle PRIMARY_MINOR_HANDLE;
+	public static final VarHandle RENDER_MAJOR_HANDLE;
+	public static final VarHandle RENDER_MINOR_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long HAS_PRIMARY_BYTE_OFFSET;
-    public static final long HAS_RENDER_BYTE_OFFSET;
-    public static final long PRIMARY_MAJOR_BYTE_OFFSET;
-    public static final long PRIMARY_MINOR_BYTE_OFFSET;
-    public static final long RENDER_MAJOR_BYTE_OFFSET;
-    public static final long RENDER_MINOR_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long HAS_PRIMARY_BYTE_OFFSET;
+	public static final long HAS_RENDER_BYTE_OFFSET;
+	public static final long PRIMARY_MAJOR_BYTE_OFFSET;
+	public static final long PRIMARY_MINOR_BYTE_OFFSET;
+	public static final long RENDER_MAJOR_BYTE_OFFSET;
+	public static final long RENDER_MINOR_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("hasPrimary"),
-            JAVA_INT.withName("hasRender"),
-            JAVA_LONG.withName("primaryMajor"),
-            JAVA_LONG.withName("primaryMinor"),
-            JAVA_LONG.withName("renderMajor"),
-            JAVA_LONG.withName("renderMinor")
-        ).withName("VkPhysicalDeviceDrmPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        HAS_PRIMARY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasPrimary"));
-        HAS_RENDER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasRender"));
-        PRIMARY_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primaryMajor"));
-        PRIMARY_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primaryMinor"));
-        RENDER_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderMajor"));
-        RENDER_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderMinor"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        HAS_PRIMARY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasPrimary"));
-        HAS_RENDER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasRender"));
-        PRIMARY_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primaryMajor"));
-        PRIMARY_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primaryMinor"));
-        RENDER_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderMajor"));
-        RENDER_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderMinor"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("hasPrimary"),
+		    JAVA_INT.withName("hasRender"),
+		    JAVA_LONG.withName("primaryMajor"),
+		    JAVA_LONG.withName("primaryMinor"),
+		    JAVA_LONG.withName("renderMajor"),
+		    JAVA_LONG.withName("renderMinor")
+		).withName("VkPhysicalDeviceDrmPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		HAS_PRIMARY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasPrimary"));
+		HAS_RENDER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("hasRender"));
+		PRIMARY_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primaryMajor"));
+		PRIMARY_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primaryMinor"));
+		RENDER_MAJOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderMajor"));
+		RENDER_MINOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("renderMinor"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		HAS_PRIMARY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasPrimary"));
+		HAS_RENDER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("hasRender"));
+		PRIMARY_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primaryMajor"));
+		PRIMARY_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primaryMinor"));
+		RENDER_MAJOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderMajor"));
+		RENDER_MINOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("renderMinor"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDrmPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDrmPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDrmPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDrmPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDrmPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDrmPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDrmPropertiesEXT sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkPhysicalDeviceDrmPropertiesEXT
             segment -> new VkPhysicalDeviceDrmPropertiesEXT(segment)
         );
     }
-    
+
 }

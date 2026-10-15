@@ -19,68 +19,68 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkStencilOpState
 		implements Struct<VkStencilOpState> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FAIL_OP_HANDLE;
-    public static final VarHandle PASS_OP_HANDLE;
-    public static final VarHandle DEPTH_FAIL_OP_HANDLE;
-    public static final VarHandle COMPARE_OP_HANDLE;
-    public static final VarHandle COMPARE_MASK_HANDLE;
-    public static final VarHandle WRITE_MASK_HANDLE;
-    public static final VarHandle REFERENCE_HANDLE;
+	public static final VarHandle FAIL_OP_HANDLE;
+	public static final VarHandle PASS_OP_HANDLE;
+	public static final VarHandle DEPTH_FAIL_OP_HANDLE;
+	public static final VarHandle COMPARE_OP_HANDLE;
+	public static final VarHandle COMPARE_MASK_HANDLE;
+	public static final VarHandle WRITE_MASK_HANDLE;
+	public static final VarHandle REFERENCE_HANDLE;
 
-    public static final long FAIL_OP_BYTE_OFFSET;
-    public static final long PASS_OP_BYTE_OFFSET;
-    public static final long DEPTH_FAIL_OP_BYTE_OFFSET;
-    public static final long COMPARE_OP_BYTE_OFFSET;
-    public static final long COMPARE_MASK_BYTE_OFFSET;
-    public static final long WRITE_MASK_BYTE_OFFSET;
-    public static final long REFERENCE_BYTE_OFFSET;
+	public static final long FAIL_OP_BYTE_OFFSET;
+	public static final long PASS_OP_BYTE_OFFSET;
+	public static final long DEPTH_FAIL_OP_BYTE_OFFSET;
+	public static final long COMPARE_OP_BYTE_OFFSET;
+	public static final long COMPARE_MASK_BYTE_OFFSET;
+	public static final long WRITE_MASK_BYTE_OFFSET;
+	public static final long REFERENCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("failOp"),
-            JAVA_INT.withName("passOp"),
-            JAVA_INT.withName("depthFailOp"),
-            JAVA_INT.withName("compareOp"),
-            JAVA_INT.withName("compareMask"),
-            JAVA_INT.withName("writeMask"),
-            JAVA_INT.withName("reference")
-        ).withName("VkStencilOpState").withByteAlignment(4);
-        
-        FAIL_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("failOp"));
-        PASS_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("passOp"));
-        DEPTH_FAIL_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthFailOp"));
-        COMPARE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareOp"));
-        COMPARE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareMask"));
-        WRITE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("writeMask"));
-        REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reference"));
-        
-        FAIL_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("failOp"));
-        PASS_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("passOp"));
-        DEPTH_FAIL_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthFailOp"));
-        COMPARE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareOp"));
-        COMPARE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareMask"));
-        WRITE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("writeMask"));
-        REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reference"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("failOp"),
+		    JAVA_INT.withName("passOp"),
+		    JAVA_INT.withName("depthFailOp"),
+		    JAVA_INT.withName("compareOp"),
+		    JAVA_INT.withName("compareMask"),
+		    JAVA_INT.withName("writeMask"),
+		    JAVA_INT.withName("reference")
+		).withName("VkStencilOpState").withByteAlignment(4);
+		
+		FAIL_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("failOp"));
+		PASS_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("passOp"));
+		DEPTH_FAIL_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthFailOp"));
+		COMPARE_OP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareOp"));
+		COMPARE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compareMask"));
+		WRITE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("writeMask"));
+		REFERENCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reference"));
+		
+		FAIL_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("failOp"));
+		PASS_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("passOp"));
+		DEPTH_FAIL_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthFailOp"));
+		COMPARE_OP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareOp"));
+		COMPARE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compareMask"));
+		WRITE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("writeMask"));
+		REFERENCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reference"));
+		//@formatter:on
+	}
 
-    public VkStencilOpState() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkStencilOpState(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkStencilOpState(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkStencilOpState() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkStencilOpState(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkStencilOpState(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #failOp()
     public VkStencilOpState failOp(int failOp) {
@@ -203,5 +203,5 @@ public final class VkStencilOpState
             segment -> new VkStencilOpState(segment)
         );
     }
-    
+
 }

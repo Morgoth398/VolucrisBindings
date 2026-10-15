@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkDescriptorMappingSourceHeapDataEXT
 		implements Struct<VkDescriptorMappingSourceHeapDataEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle HEAP_OFFSET_HANDLE;
-    public static final VarHandle PUSH_OFFSET_HANDLE;
+	public static final VarHandle HEAP_OFFSET_HANDLE;
+	public static final VarHandle PUSH_OFFSET_HANDLE;
 
-    public static final long HEAP_OFFSET_BYTE_OFFSET;
-    public static final long PUSH_OFFSET_BYTE_OFFSET;
+	public static final long HEAP_OFFSET_BYTE_OFFSET;
+	public static final long PUSH_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("heapOffset"),
-            JAVA_INT.withName("pushOffset")
-        ).withName("VkDescriptorMappingSourceHeapDataEXT").withByteAlignment(4);
-        
-        HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapOffset"));
-        PUSH_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushOffset"));
-        
-        HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapOffset"));
-        PUSH_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("heapOffset"),
+		    JAVA_INT.withName("pushOffset")
+		).withName("VkDescriptorMappingSourceHeapDataEXT").withByteAlignment(4);
+		
+		HEAP_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("heapOffset"));
+		PUSH_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushOffset"));
+		
+		HEAP_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("heapOffset"));
+		PUSH_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushOffset"));
+		//@formatter:on
+	}
 
-    public VkDescriptorMappingSourceHeapDataEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorMappingSourceHeapDataEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorMappingSourceHeapDataEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorMappingSourceHeapDataEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorMappingSourceHeapDataEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorMappingSourceHeapDataEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #heapOffset()
     public VkDescriptorMappingSourceHeapDataEXT heapOffset(int heapOffset) {
@@ -128,5 +128,5 @@ public final class VkDescriptorMappingSourceHeapDataEXT
             segment -> new VkDescriptorMappingSourceHeapDataEXT(segment)
         );
     }
-    
+
 }

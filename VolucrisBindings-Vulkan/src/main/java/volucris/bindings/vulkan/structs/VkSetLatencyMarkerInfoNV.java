@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSetLatencyMarkerInfoNV
 		implements Struct<VkSetLatencyMarkerInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_ID_HANDLE;
-    public static final VarHandle MARKER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_ID_HANDLE;
+	public static final VarHandle MARKER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_ID_BYTE_OFFSET;
-    public static final long MARKER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_ID_BYTE_OFFSET;
+	public static final long MARKER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("presentID"),
-            JAVA_INT.withName("marker"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSetLatencyMarkerInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentID"));
-        MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("marker"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentID"));
-        MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("marker"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("presentID"),
+		    JAVA_INT.withName("marker"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSetLatencyMarkerInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentID"));
+		MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("marker"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentID"));
+		MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("marker"));
+		//@formatter:on
+	}
 
-    public VkSetLatencyMarkerInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSetLatencyMarkerInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSetLatencyMarkerInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSetLatencyMarkerInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSetLatencyMarkerInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSetLatencyMarkerInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSetLatencyMarkerInfoNV sType(int sType) {
@@ -167,5 +167,5 @@ public final class VkSetLatencyMarkerInfoNV
             segment -> new VkSetLatencyMarkerInfoNV(segment)
         );
     }
-    
+
 }

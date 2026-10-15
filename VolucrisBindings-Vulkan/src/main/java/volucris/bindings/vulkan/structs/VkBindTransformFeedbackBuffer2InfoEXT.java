@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindTransformFeedbackBuffer2InfoEXT
 		implements Struct<VkBindTransformFeedbackBuffer2InfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ADDRESS_FLAGS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ADDRESS_FLAGS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ADDRESS_RANGE_BYTE_OFFSET;
-    public static final long ADDRESS_FLAGS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ADDRESS_RANGE_BYTE_OFFSET;
+	public static final long ADDRESS_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDeviceAddressRangeKHR addressRange;
+	private final VkDeviceAddressRangeKHR addressRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
-            JAVA_INT.withName("addressFlags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkBindTransformFeedbackBuffer2InfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
-        ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkDeviceAddressRangeKHR.LAYOUT.withName("addressRange"),
+		    JAVA_INT.withName("addressFlags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkBindTransformFeedbackBuffer2InfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ADDRESS_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("addressFlags"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ADDRESS_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressRange"));
+		ADDRESS_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("addressFlags"));
+		//@formatter:on
+	}
 
-    public VkBindTransformFeedbackBuffer2InfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindTransformFeedbackBuffer2InfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindTransformFeedbackBuffer2InfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
-    }
+	public VkBindTransformFeedbackBuffer2InfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindTransformFeedbackBuffer2InfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindTransformFeedbackBuffer2InfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    addressRange = new VkDeviceAddressRangeKHR(segment.asSlice(ADDRESS_RANGE_BYTE_OFFSET, VkDeviceAddressRangeKHR.LAYOUT));
+	}
 
     /// @see #sType()
     public VkBindTransformFeedbackBuffer2InfoEXT sType(int sType) {
@@ -98,16 +98,6 @@ public final class VkBindTransformFeedbackBuffer2InfoEXT
     	return segment;
     }
     
-    /// @see #addressFlags()
-    public VkBindTransformFeedbackBuffer2InfoEXT addressFlags(int addressFlags) {
-    	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
-    	return this;
-    }
-    
-    public int addressFlags() {
-    	return (int) ADDRESS_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #addressRange()
     public VkBindTransformFeedbackBuffer2InfoEXT addressRange(Consumer<VkDeviceAddressRangeKHR> consumer) {
     	consumer.accept(addressRange);
@@ -122,6 +112,16 @@ public final class VkBindTransformFeedbackBuffer2InfoEXT
     
     public VkDeviceAddressRangeKHR addressRange() {
     	return addressRange;
+    }
+    
+    /// @see #addressFlags()
+    public VkBindTransformFeedbackBuffer2InfoEXT addressFlags(int addressFlags) {
+    	ADDRESS_FLAGS_HANDLE.set(segment, 0L, addressFlags);
+    	return this;
+    }
+    
+    public int addressFlags() {
+    	return (int) ADDRESS_FLAGS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -175,5 +175,5 @@ public final class VkBindTransformFeedbackBuffer2InfoEXT
             segment -> new VkBindTransformFeedbackBuffer2InfoEXT(segment)
         );
     }
-    
+
 }

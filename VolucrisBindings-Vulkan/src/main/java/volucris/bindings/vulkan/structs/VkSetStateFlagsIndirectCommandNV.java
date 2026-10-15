@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSetStateFlagsIndirectCommandNV
 		implements Struct<VkSetStateFlagsIndirectCommandNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle DATA_HANDLE;
+	public static final VarHandle DATA_HANDLE;
 
-    public static final long DATA_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("data")
-        ).withName("VkSetStateFlagsIndirectCommandNV").withByteAlignment(4);
-        
-        DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
-        
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("data")
+		).withName("VkSetStateFlagsIndirectCommandNV").withByteAlignment(4);
+		
+		DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("data"));
+		
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public VkSetStateFlagsIndirectCommandNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSetStateFlagsIndirectCommandNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSetStateFlagsIndirectCommandNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSetStateFlagsIndirectCommandNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSetStateFlagsIndirectCommandNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSetStateFlagsIndirectCommandNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #data()
     public VkSetStateFlagsIndirectCommandNV data(int data) {
@@ -113,5 +113,5 @@ public final class VkSetStateFlagsIndirectCommandNV
             segment -> new VkSetStateFlagsIndirectCommandNV(segment)
         );
     }
-    
+
 }

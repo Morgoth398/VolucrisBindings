@@ -20,43 +20,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class YGValue
 		implements Struct<YGValue> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle VALUE_HANDLE;
-    public static final VarHandle UNIT_HANDLE;
+	public static final VarHandle VALUE_HANDLE;
+	public static final VarHandle UNIT_HANDLE;
 
-    public static final long VALUE_BYTE_OFFSET;
-    public static final long UNIT_BYTE_OFFSET;
+	public static final long VALUE_BYTE_OFFSET;
+	public static final long UNIT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("value"),
-            JAVA_INT.withName("unit")
-        ).withName("YGValue").withByteAlignment(4);
-        
-        VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("value"));
-        UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unit"));
-        
-        VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value"));
-        UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unit"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("value"),
+		    JAVA_INT.withName("unit")
+		).withName("YGValue").withByteAlignment(4);
+		
+		VALUE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("value"));
+		UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unit"));
+		
+		VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("value"));
+		UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unit"));
+		//@formatter:on
+	}
 
-    public YGValue() {
-        this(Arena.ofAuto());
-    }
-    
-    public YGValue(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public YGValue(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public YGValue() {
+	    this(Arena.ofAuto());
+	}
+	
+	public YGValue(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public YGValue(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #value()
     public YGValue value(float value) {
@@ -129,5 +129,5 @@ public final class YGValue
             segment -> new YGValue(segment)
         );
     }
-    
+
 }

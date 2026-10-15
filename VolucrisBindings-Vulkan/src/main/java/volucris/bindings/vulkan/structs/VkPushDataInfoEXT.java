@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPushDataInfoEXT
 		implements Struct<VkPushDataInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkHostAddressRangeConstEXT data;
+	private final VkHostAddressRangeConstEXT data;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("offset"),
-            MemoryLayout.paddingLayout(4),
-            VkHostAddressRangeConstEXT.LAYOUT.withName("data")
-        ).withName("VkPushDataInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("offset"),
+		    MemoryLayout.paddingLayout(4),
+		    VkHostAddressRangeConstEXT.LAYOUT.withName("data")
+		).withName("VkPushDataInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("data"));
+		//@formatter:on
+	}
 
-    public VkPushDataInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPushDataInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPushDataInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        data = new VkHostAddressRangeConstEXT(segment.asSlice(DATA_BYTE_OFFSET, VkHostAddressRangeConstEXT.LAYOUT));
-    }
+	public VkPushDataInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPushDataInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPushDataInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    data = new VkHostAddressRangeConstEXT(segment.asSlice(DATA_BYTE_OFFSET, VkHostAddressRangeConstEXT.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPushDataInfoEXT sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkPushDataInfoEXT
             segment -> new VkPushDataInfoEXT(segment)
         );
     }
-    
+
 }

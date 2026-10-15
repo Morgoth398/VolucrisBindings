@@ -19,37 +19,37 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkIndirectCommandsPushConstantTokenEXT
 		implements Struct<VkIndirectCommandsPushConstantTokenEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long UPDATE_RANGE_BYTE_OFFSET;
+	public static final long UPDATE_RANGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkPushConstantRange updateRange;
+	private final VkPushConstantRange updateRange;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkPushConstantRange.LAYOUT.withName("updateRange")
-        ).withName("VkIndirectCommandsPushConstantTokenEXT").withByteAlignment(4);
-        
-        UPDATE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("updateRange"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkPushConstantRange.LAYOUT.withName("updateRange")
+		).withName("VkIndirectCommandsPushConstantTokenEXT").withByteAlignment(4);
+		
+		UPDATE_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("updateRange"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsPushConstantTokenEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsPushConstantTokenEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsPushConstantTokenEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        updateRange = new VkPushConstantRange(segment.asSlice(UPDATE_RANGE_BYTE_OFFSET, VkPushConstantRange.LAYOUT));
-    }
+	public VkIndirectCommandsPushConstantTokenEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsPushConstantTokenEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsPushConstantTokenEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    updateRange = new VkPushConstantRange(segment.asSlice(UPDATE_RANGE_BYTE_OFFSET, VkPushConstantRange.LAYOUT));
+	}
 
     /// @see #updateRange()
     public VkIndirectCommandsPushConstantTokenEXT updateRange(Consumer<VkPushConstantRange> consumer) {
@@ -118,5 +118,5 @@ public final class VkIndirectCommandsPushConstantTokenEXT
             segment -> new VkIndirectCommandsPushConstantTokenEXT(segment)
         );
     }
-    
+
 }

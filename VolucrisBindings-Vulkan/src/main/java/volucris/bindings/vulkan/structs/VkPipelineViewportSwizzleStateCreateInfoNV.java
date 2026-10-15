@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineViewportSwizzleStateCreateInfoNV
 		implements Struct<VkPipelineViewportSwizzleStateCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle VIEWPORT_COUNT_HANDLE;
-    public static final VarHandle P_VIEWPORT_SWIZZLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle VIEWPORT_COUNT_HANDLE;
+	public static final VarHandle P_VIEWPORT_SWIZZLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long VIEWPORT_COUNT_BYTE_OFFSET;
-    public static final long P_VIEWPORT_SWIZZLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long VIEWPORT_COUNT_BYTE_OFFSET;
+	public static final long P_VIEWPORT_SWIZZLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("viewportCount"),
-            UNBOUNDED_ADDRESS.withName("pViewportSwizzles")
-        ).withName("VkPipelineViewportSwizzleStateCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        VIEWPORT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportCount"));
-        P_VIEWPORT_SWIZZLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewportSwizzles"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        VIEWPORT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportCount"));
-        P_VIEWPORT_SWIZZLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewportSwizzles"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("viewportCount"),
+		    UNBOUNDED_ADDRESS.withName("pViewportSwizzles")
+		).withName("VkPipelineViewportSwizzleStateCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		VIEWPORT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("viewportCount"));
+		P_VIEWPORT_SWIZZLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pViewportSwizzles"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		VIEWPORT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("viewportCount"));
+		P_VIEWPORT_SWIZZLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pViewportSwizzles"));
+		//@formatter:on
+	}
 
-    public VkPipelineViewportSwizzleStateCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineViewportSwizzleStateCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineViewportSwizzleStateCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineViewportSwizzleStateCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineViewportSwizzleStateCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineViewportSwizzleStateCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineViewportSwizzleStateCreateInfoNV sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkPipelineViewportSwizzleStateCreateInfoNV
             segment -> new VkPipelineViewportSwizzleStateCreateInfoNV(segment)
         );
     }
-    
+
 }

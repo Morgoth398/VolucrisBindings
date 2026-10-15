@@ -22,95 +22,111 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoH265VideoParameterSet
 		implements Struct<StdVideoH265VideoParameterSet> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle VPS_VIDEO_PARAMETER_SET_ID_HANDLE;
-    public static final VarHandle VPS_MAX_SUB_LAYERS_MINUS1_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle RESERVED2_HANDLE;
-    public static final VarHandle VPS_NUM_UNITS_IN_TICK_HANDLE;
-    public static final VarHandle VPS_TIME_SCALE_HANDLE;
-    public static final VarHandle VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE;
-    public static final VarHandle RESERVED3_HANDLE;
-    public static final VarHandle P_DEC_PIC_BUF_MGR_HANDLE;
-    public static final VarHandle P_HRD_PARAMETERS_HANDLE;
-    public static final VarHandle P_PROFILE_TIER_LEVEL_HANDLE;
+	public static final VarHandle VPS_VIDEO_PARAMETER_SET_ID_HANDLE;
+	public static final VarHandle VPS_MAX_SUB_LAYERS_MINUS1_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle RESERVED2_HANDLE;
+	public static final VarHandle VPS_NUM_UNITS_IN_TICK_HANDLE;
+	public static final VarHandle VPS_TIME_SCALE_HANDLE;
+	public static final VarHandle VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE;
+	public static final VarHandle RESERVED3_HANDLE;
+	public static final VarHandle P_DEC_PIC_BUF_MGR_HANDLE;
+	public static final VarHandle P_HRD_PARAMETERS_HANDLE;
+	public static final VarHandle P_PROFILE_TIER_LEVEL_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long VPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET;
-    public static final long VPS_MAX_SUB_LAYERS_MINUS1_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long RESERVED2_BYTE_OFFSET;
-    public static final long VPS_NUM_UNITS_IN_TICK_BYTE_OFFSET;
-    public static final long VPS_TIME_SCALE_BYTE_OFFSET;
-    public static final long VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET;
-    public static final long RESERVED3_BYTE_OFFSET;
-    public static final long P_DEC_PIC_BUF_MGR_BYTE_OFFSET;
-    public static final long P_HRD_PARAMETERS_BYTE_OFFSET;
-    public static final long P_PROFILE_TIER_LEVEL_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long VPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET;
+	public static final long VPS_MAX_SUB_LAYERS_MINUS1_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long RESERVED2_BYTE_OFFSET;
+	public static final long VPS_NUM_UNITS_IN_TICK_BYTE_OFFSET;
+	public static final long VPS_TIME_SCALE_BYTE_OFFSET;
+	public static final long VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET;
+	public static final long RESERVED3_BYTE_OFFSET;
+	public static final long P_DEC_PIC_BUF_MGR_BYTE_OFFSET;
+	public static final long P_HRD_PARAMETERS_BYTE_OFFSET;
+	public static final long P_PROFILE_TIER_LEVEL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoH265VpsFlags flags;
+	private final StdVideoH265VpsFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoH265VpsFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("vps_video_parameter_set_id"),
-            JAVA_BYTE.withName("vps_max_sub_layers_minus1"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_BYTE.withName("reserved2"),
-            JAVA_INT.withName("vps_num_units_in_tick"),
-            JAVA_INT.withName("vps_time_scale"),
-            JAVA_INT.withName("vps_num_ticks_poc_diff_one_minus1"),
-            JAVA_INT.withName("reserved3"),
-            UNBOUNDED_ADDRESS.withName("pDecPicBufMgr"),
-            UNBOUNDED_ADDRESS.withName("pHrdParameters"),
-            UNBOUNDED_ADDRESS.withName("pProfileTierLevel")
-        ).withName("StdVideoH265VideoParameterSet").withByteAlignment(8);
-        
-        VPS_VIDEO_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_video_parameter_set_id"));
-        VPS_MAX_SUB_LAYERS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_max_sub_layers_minus1"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
-        VPS_NUM_UNITS_IN_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_num_units_in_tick"));
-        VPS_TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_time_scale"));
-        VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_num_ticks_poc_diff_one_minus1"));
-        RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
-        P_DEC_PIC_BUF_MGR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDecPicBufMgr"));
-        P_HRD_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHrdParameters"));
-        P_PROFILE_TIER_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pProfileTierLevel"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        VPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_video_parameter_set_id"));
-        VPS_MAX_SUB_LAYERS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_max_sub_layers_minus1"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
-        VPS_NUM_UNITS_IN_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_num_units_in_tick"));
-        VPS_TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_time_scale"));
-        VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_num_ticks_poc_diff_one_minus1"));
-        RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
-        P_DEC_PIC_BUF_MGR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDecPicBufMgr"));
-        P_HRD_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHrdParameters"));
-        P_PROFILE_TIER_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pProfileTierLevel"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoH265VpsFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("vps_video_parameter_set_id"),
+		    JAVA_BYTE.withName("vps_max_sub_layers_minus1"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_BYTE.withName("reserved2"),
+		    JAVA_INT.withName("vps_num_units_in_tick"),
+		    JAVA_INT.withName("vps_time_scale"),
+		    JAVA_INT.withName("vps_num_ticks_poc_diff_one_minus1"),
+		    JAVA_INT.withName("reserved3"),
+		    UNBOUNDED_ADDRESS.withName("pDecPicBufMgr"),
+		    UNBOUNDED_ADDRESS.withName("pHrdParameters"),
+		    UNBOUNDED_ADDRESS.withName("pProfileTierLevel")
+		).withName("StdVideoH265VideoParameterSet").withByteAlignment(8);
+		
+		VPS_VIDEO_PARAMETER_SET_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_video_parameter_set_id"));
+		VPS_MAX_SUB_LAYERS_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_max_sub_layers_minus1"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		RESERVED2_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved2"));
+		VPS_NUM_UNITS_IN_TICK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_num_units_in_tick"));
+		VPS_TIME_SCALE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_time_scale"));
+		VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vps_num_ticks_poc_diff_one_minus1"));
+		RESERVED3_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved3"));
+		P_DEC_PIC_BUF_MGR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDecPicBufMgr"));
+		P_HRD_PARAMETERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHrdParameters"));
+		P_PROFILE_TIER_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pProfileTierLevel"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		VPS_VIDEO_PARAMETER_SET_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_video_parameter_set_id"));
+		VPS_MAX_SUB_LAYERS_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_max_sub_layers_minus1"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		RESERVED2_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved2"));
+		VPS_NUM_UNITS_IN_TICK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_num_units_in_tick"));
+		VPS_TIME_SCALE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_time_scale"));
+		VPS_NUM_TICKS_POC_DIFF_ONE_MINUS1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vps_num_ticks_poc_diff_one_minus1"));
+		RESERVED3_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved3"));
+		P_DEC_PIC_BUF_MGR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDecPicBufMgr"));
+		P_HRD_PARAMETERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHrdParameters"));
+		P_PROFILE_TIER_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pProfileTierLevel"));
+		//@formatter:on
+	}
 
-    public StdVideoH265VideoParameterSet() {
-        this(Arena.ofAuto());
+	public StdVideoH265VideoParameterSet() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoH265VideoParameterSet(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoH265VideoParameterSet(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoH265VpsFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265VpsFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoH265VideoParameterSet flags(Consumer<StdVideoH265VpsFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoH265VideoParameterSet(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoH265VideoParameterSet flags(StdVideoH265VpsFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoH265VideoParameterSet(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoH265VpsFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoH265VpsFlags.LAYOUT));
+    public StdVideoH265VpsFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #vps_video_parameter_set_id()
     public StdVideoH265VideoParameterSet vps_video_parameter_set_id(byte vps_video_parameter_set_id) {
     	VPS_VIDEO_PARAMETER_SET_ID_HANDLE.set(segment, 0L, vps_video_parameter_set_id);
@@ -236,22 +252,6 @@ public final class StdVideoH265VideoParameterSet
     	return new StdVideoH265ProfileTierLevel(segment);
     }
     
-    /// @see #flags()
-    public StdVideoH265VideoParameterSet flags(Consumer<StdVideoH265VpsFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoH265VideoParameterSet flags(StdVideoH265VpsFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoH265VpsFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoH265VideoParameterSet set(StdVideoH265VideoParameterSet other) {
         return set(other.segment);
@@ -303,5 +303,5 @@ public final class StdVideoH265VideoParameterSet
             segment -> new StdVideoH265VideoParameterSet(segment)
         );
     }
-    
+
 }

@@ -22,75 +22,73 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkImageBlit2
 		implements Struct<VkImageBlit2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_SUBRESOURCE_BYTE_OFFSET;
-    public static final long SRC_OFFSETS_BYTE_OFFSET;
-    public static final long DST_SUBRESOURCE_BYTE_OFFSET;
-    public static final long DST_OFFSETS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_SUBRESOURCE_BYTE_OFFSET;
+	public static final long SRC_OFFSETS_BYTE_OFFSET;
+	public static final long DST_SUBRESOURCE_BYTE_OFFSET;
+	public static final long DST_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkImageSubresourceLayers srcSubresource;
-    private final VkOffset3D[] srcOffsets;
-    private final VkImageSubresourceLayers dstSubresource;
-    private final VkOffset3D[] dstOffsets;
+	private final VkImageSubresourceLayers srcSubresource;
+	private final VkOffset3D[] srcOffsets;
+	private final VkImageSubresourceLayers dstSubresource;
+	private final VkOffset3D[] dstOffsets;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkImageSubresourceLayers.LAYOUT.withName("srcSubresource"),
-            MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("srcOffsets"),
-            VkImageSubresourceLayers.LAYOUT.withName("dstSubresource"),
-            MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("dstOffsets")
-        ).withName("VkImageBlit2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubresource"));
-        SRC_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffsets"));
-        DST_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubresource"));
-        DST_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkImageSubresourceLayers.LAYOUT.withName("srcSubresource"),
+		    MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("srcOffsets"),
+		    VkImageSubresourceLayers.LAYOUT.withName("dstSubresource"),
+		    MemoryLayout.sequenceLayout(2, VkOffset3D.LAYOUT).withName("dstOffsets")
+		).withName("VkImageBlit2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcSubresource"));
+		SRC_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcOffsets"));
+		DST_SUBRESOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstSubresource"));
+		DST_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstOffsets"));
+		//@formatter:on
+	}
 
-    public VkImageBlit2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageBlit2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageBlit2(MemorySegment segment) {
-        this.segment = segment;
-    
-        srcSubresource = new VkImageSubresourceLayers(segment.asSlice(SRC_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        srcOffsets = new VkOffset3D[2];
-        for (int i = 0; i < 2; i++) {
-            long offset = SRC_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
-            srcOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
-        }
-    
-        dstSubresource = new VkImageSubresourceLayers(segment.asSlice(DST_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
-        dstOffsets = new VkOffset3D[2];
-        for (int i = 0; i < 2; i++) {
-            long offset = DST_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
-            dstOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
-        }
-    
-    }
+	public VkImageBlit2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageBlit2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageBlit2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    srcSubresource = new VkImageSubresourceLayers(segment.asSlice(SRC_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    srcOffsets = new VkOffset3D[2];
+	    for (int i = 0; i < 2; i++) {
+	        long offset = SRC_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
+	        srcOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
+	    }
+	    dstSubresource = new VkImageSubresourceLayers(segment.asSlice(DST_SUBRESOURCE_BYTE_OFFSET, VkImageSubresourceLayers.LAYOUT));
+	    dstOffsets = new VkOffset3D[2];
+	    for (int i = 0; i < 2; i++) {
+	        long offset = DST_OFFSETS_BYTE_OFFSET + i * VkOffset3D.LAYOUT.byteSize();
+	        dstOffsets[i] = new VkOffset3D(segment.asSlice(offset, VkOffset3D.LAYOUT));
+	    }
+	}
 
     /// @see #sType()
     public VkImageBlit2 sType(int sType) {
@@ -232,5 +230,5 @@ public final class VkImageBlit2
             segment -> new VkImageBlit2(segment)
         );
     }
-    
+
 }

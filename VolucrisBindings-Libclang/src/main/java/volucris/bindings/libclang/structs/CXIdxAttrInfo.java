@@ -17,50 +17,50 @@ import static java.lang.foreign.ValueLayout.*;
 public final class CXIdxAttrInfo
 		implements Struct<CXIdxAttrInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle KIND_HANDLE;
+	public static final VarHandle KIND_HANDLE;
 
-    public static final long KIND_BYTE_OFFSET;
-    public static final long CURSOR_BYTE_OFFSET;
-    public static final long LOC_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
+	public static final long LOC_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
-    private final CXIdxLoc loc;
+	private final CXCursor cursor;
+	private final CXIdxLoc loc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("kind"),
-            MemoryLayout.paddingLayout(4),
-            CXCursor.LAYOUT.withName("cursor"),
-            CXIdxLoc.LAYOUT.withName("loc")
-        ).withName("CXIdxAttrInfo").withByteAlignment(8);
-        
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("kind"),
+		    MemoryLayout.paddingLayout(4),
+		    CXCursor.LAYOUT.withName("cursor"),
+		    CXIdxLoc.LAYOUT.withName("loc")
+		).withName("CXIdxAttrInfo").withByteAlignment(8);
+		
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("loc"));
+		//@formatter:on
+	}
 
-    public CXIdxAttrInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxAttrInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxAttrInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxAttrInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxAttrInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxAttrInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    loc = new CXIdxLoc(segment.asSlice(LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #kind()
     public CXIdxAttrInfo kind(int kind) {
@@ -155,5 +155,5 @@ public final class CXIdxAttrInfo
             segment -> new CXIdxAttrInfo(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSamplerYcbcrConversionFeatures
 		implements Struct<VkPhysicalDeviceSamplerYcbcrConversionFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLER_YCBCR_CONVERSION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLER_YCBCR_CONVERSION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLER_YCBCR_CONVERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLER_YCBCR_CONVERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("samplerYcbcrConversion"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceSamplerYcbcrConversionFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLER_YCBCR_CONVERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerYcbcrConversion"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLER_YCBCR_CONVERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerYcbcrConversion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("samplerYcbcrConversion"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceSamplerYcbcrConversionFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLER_YCBCR_CONVERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerYcbcrConversion"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLER_YCBCR_CONVERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerYcbcrConversion"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSamplerYcbcrConversionFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSamplerYcbcrConversionFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSamplerYcbcrConversionFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSamplerYcbcrConversionFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSamplerYcbcrConversionFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSamplerYcbcrConversionFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSamplerYcbcrConversionFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceSamplerYcbcrConversionFeatures
             segment -> new VkPhysicalDeviceSamplerYcbcrConversionFeatures(segment)
         );
     }
-    
+
 }

@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPerformanceOverrideInfoINTEL
 		implements Struct<VkPerformanceOverrideInfoINTEL> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TYPE_HANDLE;
-    public static final VarHandle ENABLE_HANDLE;
-    public static final VarHandle PARAMETER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TYPE_HANDLE;
+	public static final VarHandle ENABLE_HANDLE;
+	public static final VarHandle PARAMETER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TYPE_BYTE_OFFSET;
-    public static final long ENABLE_BYTE_OFFSET;
-    public static final long PARAMETER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TYPE_BYTE_OFFSET;
+	public static final long ENABLE_BYTE_OFFSET;
+	public static final long PARAMETER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("type"),
-            JAVA_INT.withName("enable"),
-            JAVA_LONG.withName("parameter")
-        ).withName("VkPerformanceOverrideInfoINTEL").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
-        ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enable"));
-        PARAMETER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("parameter"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
-        ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enable"));
-        PARAMETER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("parameter"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("type"),
+		    JAVA_INT.withName("enable"),
+		    JAVA_LONG.withName("parameter")
+		).withName("VkPerformanceOverrideInfoINTEL").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("type"));
+		ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enable"));
+		PARAMETER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("parameter"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("type"));
+		ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enable"));
+		PARAMETER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("parameter"));
+		//@formatter:on
+	}
 
-    public VkPerformanceOverrideInfoINTEL() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerformanceOverrideInfoINTEL(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerformanceOverrideInfoINTEL(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPerformanceOverrideInfoINTEL() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerformanceOverrideInfoINTEL(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerformanceOverrideInfoINTEL(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPerformanceOverrideInfoINTEL sType(int sType) {
@@ -181,5 +181,5 @@ public final class VkPerformanceOverrideInfoINTEL
             segment -> new VkPerformanceOverrideInfoINTEL(segment)
         );
     }
-    
+
 }

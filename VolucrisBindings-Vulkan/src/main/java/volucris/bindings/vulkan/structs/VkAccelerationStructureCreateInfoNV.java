@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkAccelerationStructureCreateInfoNV
 		implements Struct<VkAccelerationStructureCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COMPACTED_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COMPACTED_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COMPACTED_SIZE_BYTE_OFFSET;
-    public static final long INFO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COMPACTED_SIZE_BYTE_OFFSET;
+	public static final long INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkAccelerationStructureInfoNV info;
+	private final VkAccelerationStructureInfoNV info;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("compactedSize"),
-            VkAccelerationStructureInfoNV.LAYOUT.withName("info")
-        ).withName("VkAccelerationStructureCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COMPACTED_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compactedSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COMPACTED_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compactedSize"));
-        INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("info"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("compactedSize"),
+		    VkAccelerationStructureInfoNV.LAYOUT.withName("info")
+		).withName("VkAccelerationStructureCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COMPACTED_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compactedSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COMPACTED_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compactedSize"));
+		INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("info"));
+		//@formatter:on
+	}
 
-    public VkAccelerationStructureCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkAccelerationStructureCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkAccelerationStructureCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        info = new VkAccelerationStructureInfoNV(segment.asSlice(INFO_BYTE_OFFSET, VkAccelerationStructureInfoNV.LAYOUT));
-    }
+	public VkAccelerationStructureCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkAccelerationStructureCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkAccelerationStructureCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    info = new VkAccelerationStructureInfoNV(segment.asSlice(INFO_BYTE_OFFSET, VkAccelerationStructureInfoNV.LAYOUT));
+	}
 
     /// @see #sType()
     public VkAccelerationStructureCreateInfoNV sType(int sType) {
@@ -174,5 +174,5 @@ public final class VkAccelerationStructureCreateInfoNV
             segment -> new VkAccelerationStructureCreateInfoNV(segment)
         );
     }
-    
+
 }

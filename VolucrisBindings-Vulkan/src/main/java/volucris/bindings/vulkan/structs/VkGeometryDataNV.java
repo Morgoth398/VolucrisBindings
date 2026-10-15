@@ -19,42 +19,42 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkGeometryDataNV
 		implements Struct<VkGeometryDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final long TRIANGLES_BYTE_OFFSET;
-    public static final long AABBS_BYTE_OFFSET;
+	public static final long TRIANGLES_BYTE_OFFSET;
+	public static final long AABBS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkGeometryTrianglesNV triangles;
-    private final VkGeometryAABBNV aabbs;
+	private final VkGeometryTrianglesNV triangles;
+	private final VkGeometryAABBNV aabbs;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkGeometryTrianglesNV.LAYOUT.withName("triangles"),
-            VkGeometryAABBNV.LAYOUT.withName("aabbs")
-        ).withName("VkGeometryDataNV").withByteAlignment(8);
-        
-        TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangles"));
-        AABBS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aabbs"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkGeometryTrianglesNV.LAYOUT.withName("triangles"),
+		    VkGeometryAABBNV.LAYOUT.withName("aabbs")
+		).withName("VkGeometryDataNV").withByteAlignment(8);
+		
+		TRIANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("triangles"));
+		AABBS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aabbs"));
+		//@formatter:on
+	}
 
-    public VkGeometryDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeometryDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeometryDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        triangles = new VkGeometryTrianglesNV(segment.asSlice(TRIANGLES_BYTE_OFFSET, VkGeometryTrianglesNV.LAYOUT));
-        aabbs = new VkGeometryAABBNV(segment.asSlice(AABBS_BYTE_OFFSET, VkGeometryAABBNV.LAYOUT));
-    }
+	public VkGeometryDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeometryDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeometryDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    triangles = new VkGeometryTrianglesNV(segment.asSlice(TRIANGLES_BYTE_OFFSET, VkGeometryTrianglesNV.LAYOUT));
+	    aabbs = new VkGeometryAABBNV(segment.asSlice(AABBS_BYTE_OFFSET, VkGeometryAABBNV.LAYOUT));
+	}
 
     /// @see #triangles()
     public VkGeometryDataNV triangles(Consumer<VkGeometryTrianglesNV> consumer) {
@@ -139,5 +139,5 @@ public final class VkGeometryDataNV
             segment -> new VkGeometryDataNV(segment)
         );
     }
-    
+
 }

@@ -19,38 +19,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkRefreshCycleDurationGOOGLE
 		implements Struct<VkRefreshCycleDurationGOOGLE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle REFRESH_DURATION_HANDLE;
+	public static final VarHandle REFRESH_DURATION_HANDLE;
 
-    public static final long REFRESH_DURATION_BYTE_OFFSET;
+	public static final long REFRESH_DURATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("refreshDuration")
-        ).withName("VkRefreshCycleDurationGOOGLE").withByteAlignment(8);
-        
-        REFRESH_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refreshDuration"));
-        
-        REFRESH_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refreshDuration"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("refreshDuration")
+		).withName("VkRefreshCycleDurationGOOGLE").withByteAlignment(8);
+		
+		REFRESH_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refreshDuration"));
+		
+		REFRESH_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refreshDuration"));
+		//@formatter:on
+	}
 
-    public VkRefreshCycleDurationGOOGLE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRefreshCycleDurationGOOGLE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRefreshCycleDurationGOOGLE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRefreshCycleDurationGOOGLE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRefreshCycleDurationGOOGLE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRefreshCycleDurationGOOGLE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #refreshDuration()
     public VkRefreshCycleDurationGOOGLE refreshDuration(long refreshDuration) {
@@ -113,5 +113,5 @@ public final class VkRefreshCycleDurationGOOGLE
             segment -> new VkRefreshCycleDurationGOOGLE(segment)
         );
     }
-    
+
 }

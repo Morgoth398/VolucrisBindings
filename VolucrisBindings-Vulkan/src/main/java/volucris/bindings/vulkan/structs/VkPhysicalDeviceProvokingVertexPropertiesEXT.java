@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceProvokingVertexPropertiesEXT
 		implements Struct<VkPhysicalDeviceProvokingVertexPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PROVOKING_VERTEX_MODE_PER_PIPELINE_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PROVOKING_VERTEX_MODE_PER_PIPELINE_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PROVOKING_VERTEX_MODE_PER_PIPELINE_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PROVOKING_VERTEX_MODE_PER_PIPELINE_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("provokingVertexModePerPipeline"),
-            JAVA_INT.withName("transformFeedbackPreservesTriangleFanProvokingVertex")
-        ).withName("VkPhysicalDeviceProvokingVertexPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PROVOKING_VERTEX_MODE_PER_PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("provokingVertexModePerPipeline"));
-        TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackPreservesTriangleFanProvokingVertex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PROVOKING_VERTEX_MODE_PER_PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("provokingVertexModePerPipeline"));
-        TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackPreservesTriangleFanProvokingVertex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("provokingVertexModePerPipeline"),
+		    JAVA_INT.withName("transformFeedbackPreservesTriangleFanProvokingVertex")
+		).withName("VkPhysicalDeviceProvokingVertexPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PROVOKING_VERTEX_MODE_PER_PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("provokingVertexModePerPipeline"));
+		TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedbackPreservesTriangleFanProvokingVertex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PROVOKING_VERTEX_MODE_PER_PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("provokingVertexModePerPipeline"));
+		TRANSFORM_FEEDBACK_PRESERVES_TRIANGLE_FAN_PROVOKING_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedbackPreservesTriangleFanProvokingVertex"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceProvokingVertexPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceProvokingVertexPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceProvokingVertexPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceProvokingVertexPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceProvokingVertexPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceProvokingVertexPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceProvokingVertexPropertiesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceProvokingVertexPropertiesEXT
             segment -> new VkPhysicalDeviceProvokingVertexPropertiesEXT(segment)
         );
     }
-    
+
 }

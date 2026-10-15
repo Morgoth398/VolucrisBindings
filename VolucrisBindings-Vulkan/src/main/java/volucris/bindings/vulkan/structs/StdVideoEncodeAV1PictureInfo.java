@@ -23,170 +23,186 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class StdVideoEncodeAV1PictureInfo
 		implements Struct<StdVideoEncodeAV1PictureInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FRAME_TYPE_HANDLE;
-    public static final VarHandle FRAME_PRESENTATION_TIME_HANDLE;
-    public static final VarHandle CURRENT_FRAME_ID_HANDLE;
-    public static final VarHandle ORDER_HINT_HANDLE;
-    public static final VarHandle PRIMARY_REF_FRAME_HANDLE;
-    public static final VarHandle REFRESH_FRAME_FLAGS_HANDLE;
-    public static final VarHandle CODED_DENOM_HANDLE;
-    public static final VarHandle RENDER_WIDTH_MINUS_1_HANDLE;
-    public static final VarHandle RENDER_HEIGHT_MINUS_1_HANDLE;
-    public static final VarHandle INTERPOLATION_FILTER_HANDLE;
-    public static final VarHandle TX_MODE_HANDLE;
-    public static final VarHandle DELTA_Q_RES_HANDLE;
-    public static final VarHandle DELTA_LF_RES_HANDLE;
-    public static final VarHandle REF_ORDER_HINT_HANDLE;
-    public static final VarHandle REF_FRAME_IDX_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle DELTA_FRAME_ID_MINUS_1_HANDLE;
-    public static final VarHandle P_TILE_INFO_HANDLE;
-    public static final VarHandle P_QUANTIZATION_HANDLE;
-    public static final VarHandle P_SEGMENTATION_HANDLE;
-    public static final VarHandle P_LOOP_FILTER_HANDLE;
-    public static final VarHandle P_CDEF_HANDLE;
-    public static final VarHandle P_LOOP_RESTORATION_HANDLE;
-    public static final VarHandle P_GLOBAL_MOTION_HANDLE;
-    public static final VarHandle P_EXTENSION_HEADER_HANDLE;
-    public static final VarHandle P_BUFFER_REMOVAL_TIMES_HANDLE;
+	public static final VarHandle FRAME_TYPE_HANDLE;
+	public static final VarHandle FRAME_PRESENTATION_TIME_HANDLE;
+	public static final VarHandle CURRENT_FRAME_ID_HANDLE;
+	public static final VarHandle ORDER_HINT_HANDLE;
+	public static final VarHandle PRIMARY_REF_FRAME_HANDLE;
+	public static final VarHandle REFRESH_FRAME_FLAGS_HANDLE;
+	public static final VarHandle CODED_DENOM_HANDLE;
+	public static final VarHandle RENDER_WIDTH_MINUS_1_HANDLE;
+	public static final VarHandle RENDER_HEIGHT_MINUS_1_HANDLE;
+	public static final VarHandle INTERPOLATION_FILTER_HANDLE;
+	public static final VarHandle TX_MODE_HANDLE;
+	public static final VarHandle DELTA_Q_RES_HANDLE;
+	public static final VarHandle DELTA_LF_RES_HANDLE;
+	public static final VarHandle REF_ORDER_HINT_HANDLE;
+	public static final VarHandle REF_FRAME_IDX_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle DELTA_FRAME_ID_MINUS_1_HANDLE;
+	public static final VarHandle P_TILE_INFO_HANDLE;
+	public static final VarHandle P_QUANTIZATION_HANDLE;
+	public static final VarHandle P_SEGMENTATION_HANDLE;
+	public static final VarHandle P_LOOP_FILTER_HANDLE;
+	public static final VarHandle P_CDEF_HANDLE;
+	public static final VarHandle P_LOOP_RESTORATION_HANDLE;
+	public static final VarHandle P_GLOBAL_MOTION_HANDLE;
+	public static final VarHandle P_EXTENSION_HEADER_HANDLE;
+	public static final VarHandle P_BUFFER_REMOVAL_TIMES_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long FRAME_TYPE_BYTE_OFFSET;
-    public static final long FRAME_PRESENTATION_TIME_BYTE_OFFSET;
-    public static final long CURRENT_FRAME_ID_BYTE_OFFSET;
-    public static final long ORDER_HINT_BYTE_OFFSET;
-    public static final long PRIMARY_REF_FRAME_BYTE_OFFSET;
-    public static final long REFRESH_FRAME_FLAGS_BYTE_OFFSET;
-    public static final long CODED_DENOM_BYTE_OFFSET;
-    public static final long RENDER_WIDTH_MINUS_1_BYTE_OFFSET;
-    public static final long RENDER_HEIGHT_MINUS_1_BYTE_OFFSET;
-    public static final long INTERPOLATION_FILTER_BYTE_OFFSET;
-    public static final long TX_MODE_BYTE_OFFSET;
-    public static final long DELTA_Q_RES_BYTE_OFFSET;
-    public static final long DELTA_LF_RES_BYTE_OFFSET;
-    public static final long REF_ORDER_HINT_BYTE_OFFSET;
-    public static final long REF_FRAME_IDX_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long DELTA_FRAME_ID_MINUS_1_BYTE_OFFSET;
-    public static final long P_TILE_INFO_BYTE_OFFSET;
-    public static final long P_QUANTIZATION_BYTE_OFFSET;
-    public static final long P_SEGMENTATION_BYTE_OFFSET;
-    public static final long P_LOOP_FILTER_BYTE_OFFSET;
-    public static final long P_CDEF_BYTE_OFFSET;
-    public static final long P_LOOP_RESTORATION_BYTE_OFFSET;
-    public static final long P_GLOBAL_MOTION_BYTE_OFFSET;
-    public static final long P_EXTENSION_HEADER_BYTE_OFFSET;
-    public static final long P_BUFFER_REMOVAL_TIMES_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long FRAME_TYPE_BYTE_OFFSET;
+	public static final long FRAME_PRESENTATION_TIME_BYTE_OFFSET;
+	public static final long CURRENT_FRAME_ID_BYTE_OFFSET;
+	public static final long ORDER_HINT_BYTE_OFFSET;
+	public static final long PRIMARY_REF_FRAME_BYTE_OFFSET;
+	public static final long REFRESH_FRAME_FLAGS_BYTE_OFFSET;
+	public static final long CODED_DENOM_BYTE_OFFSET;
+	public static final long RENDER_WIDTH_MINUS_1_BYTE_OFFSET;
+	public static final long RENDER_HEIGHT_MINUS_1_BYTE_OFFSET;
+	public static final long INTERPOLATION_FILTER_BYTE_OFFSET;
+	public static final long TX_MODE_BYTE_OFFSET;
+	public static final long DELTA_Q_RES_BYTE_OFFSET;
+	public static final long DELTA_LF_RES_BYTE_OFFSET;
+	public static final long REF_ORDER_HINT_BYTE_OFFSET;
+	public static final long REF_FRAME_IDX_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long DELTA_FRAME_ID_MINUS_1_BYTE_OFFSET;
+	public static final long P_TILE_INFO_BYTE_OFFSET;
+	public static final long P_QUANTIZATION_BYTE_OFFSET;
+	public static final long P_SEGMENTATION_BYTE_OFFSET;
+	public static final long P_LOOP_FILTER_BYTE_OFFSET;
+	public static final long P_CDEF_BYTE_OFFSET;
+	public static final long P_LOOP_RESTORATION_BYTE_OFFSET;
+	public static final long P_GLOBAL_MOTION_BYTE_OFFSET;
+	public static final long P_EXTENSION_HEADER_BYTE_OFFSET;
+	public static final long P_BUFFER_REMOVAL_TIMES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeAV1PictureInfoFlags flags;
+	private final StdVideoEncodeAV1PictureInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeAV1PictureInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("frame_type"),
-            JAVA_INT.withName("frame_presentation_time"),
-            JAVA_INT.withName("current_frame_id"),
-            JAVA_BYTE.withName("order_hint"),
-            JAVA_BYTE.withName("primary_ref_frame"),
-            JAVA_BYTE.withName("refresh_frame_flags"),
-            JAVA_BYTE.withName("coded_denom"),
-            JAVA_SHORT.withName("render_width_minus_1"),
-            JAVA_SHORT.withName("render_height_minus_1"),
-            JAVA_INT.withName("interpolation_filter"),
-            JAVA_INT.withName("TxMode"),
-            JAVA_BYTE.withName("delta_q_res"),
-            JAVA_BYTE.withName("delta_lf_res"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("ref_order_hint"),
-            MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("ref_frame_idx"),
-            MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("reserved1"),
-            MemoryLayout.sequenceLayout(7, JAVA_INT).withName("delta_frame_id_minus_1"),
-            UNBOUNDED_ADDRESS.withName("pTileInfo"),
-            UNBOUNDED_ADDRESS.withName("pQuantization"),
-            UNBOUNDED_ADDRESS.withName("pSegmentation"),
-            UNBOUNDED_ADDRESS.withName("pLoopFilter"),
-            UNBOUNDED_ADDRESS.withName("pCDEF"),
-            UNBOUNDED_ADDRESS.withName("pLoopRestoration"),
-            UNBOUNDED_ADDRESS.withName("pGlobalMotion"),
-            UNBOUNDED_ADDRESS.withName("pExtensionHeader"),
-            UNBOUNDED_ADDRESS.withName("pBufferRemovalTimes")
-        ).withName("StdVideoEncodeAV1PictureInfo").withByteAlignment(8);
-        
-        FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
-        FRAME_PRESENTATION_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_presentation_time"));
-        CURRENT_FRAME_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("current_frame_id"));
-        ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("order_hint"));
-        PRIMARY_REF_FRAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primary_ref_frame"));
-        REFRESH_FRAME_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refresh_frame_flags"));
-        CODED_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coded_denom"));
-        RENDER_WIDTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("render_width_minus_1"));
-        RENDER_HEIGHT_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("render_height_minus_1"));
-        INTERPOLATION_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("interpolation_filter"));
-        TX_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TxMode"));
-        DELTA_Q_RES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_res"));
-        DELTA_LF_RES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_lf_res"));
-        REF_ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ref_order_hint"), PathElement.sequenceElement());
-        REF_FRAME_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ref_frame_idx"), PathElement.sequenceElement());
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
-        DELTA_FRAME_ID_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_frame_id_minus_1"), PathElement.sequenceElement());
-        P_TILE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTileInfo"));
-        P_QUANTIZATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQuantization"));
-        P_SEGMENTATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSegmentation"));
-        P_LOOP_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLoopFilter"));
-        P_CDEF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCDEF"));
-        P_LOOP_RESTORATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLoopRestoration"));
-        P_GLOBAL_MOTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGlobalMotion"));
-        P_EXTENSION_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtensionHeader"));
-        P_BUFFER_REMOVAL_TIMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferRemovalTimes"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
-        FRAME_PRESENTATION_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_presentation_time"));
-        CURRENT_FRAME_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("current_frame_id"));
-        ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("order_hint"));
-        PRIMARY_REF_FRAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primary_ref_frame"));
-        REFRESH_FRAME_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refresh_frame_flags"));
-        CODED_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coded_denom"));
-        RENDER_WIDTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("render_width_minus_1"));
-        RENDER_HEIGHT_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("render_height_minus_1"));
-        INTERPOLATION_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("interpolation_filter"));
-        TX_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TxMode"));
-        DELTA_Q_RES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_res"));
-        DELTA_LF_RES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_lf_res"));
-        REF_ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ref_order_hint"));
-        REF_FRAME_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ref_frame_idx"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        DELTA_FRAME_ID_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_frame_id_minus_1"));
-        P_TILE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTileInfo"));
-        P_QUANTIZATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQuantization"));
-        P_SEGMENTATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSegmentation"));
-        P_LOOP_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLoopFilter"));
-        P_CDEF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCDEF"));
-        P_LOOP_RESTORATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLoopRestoration"));
-        P_GLOBAL_MOTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGlobalMotion"));
-        P_EXTENSION_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtensionHeader"));
-        P_BUFFER_REMOVAL_TIMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferRemovalTimes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeAV1PictureInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("frame_type"),
+		    JAVA_INT.withName("frame_presentation_time"),
+		    JAVA_INT.withName("current_frame_id"),
+		    JAVA_BYTE.withName("order_hint"),
+		    JAVA_BYTE.withName("primary_ref_frame"),
+		    JAVA_BYTE.withName("refresh_frame_flags"),
+		    JAVA_BYTE.withName("coded_denom"),
+		    JAVA_SHORT.withName("render_width_minus_1"),
+		    JAVA_SHORT.withName("render_height_minus_1"),
+		    JAVA_INT.withName("interpolation_filter"),
+		    JAVA_INT.withName("TxMode"),
+		    JAVA_BYTE.withName("delta_q_res"),
+		    JAVA_BYTE.withName("delta_lf_res"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("ref_order_hint"),
+		    MemoryLayout.sequenceLayout(7, JAVA_BYTE).withName("ref_frame_idx"),
+		    MemoryLayout.sequenceLayout(3, JAVA_BYTE).withName("reserved1"),
+		    MemoryLayout.sequenceLayout(7, JAVA_INT).withName("delta_frame_id_minus_1"),
+		    UNBOUNDED_ADDRESS.withName("pTileInfo"),
+		    UNBOUNDED_ADDRESS.withName("pQuantization"),
+		    UNBOUNDED_ADDRESS.withName("pSegmentation"),
+		    UNBOUNDED_ADDRESS.withName("pLoopFilter"),
+		    UNBOUNDED_ADDRESS.withName("pCDEF"),
+		    UNBOUNDED_ADDRESS.withName("pLoopRestoration"),
+		    UNBOUNDED_ADDRESS.withName("pGlobalMotion"),
+		    UNBOUNDED_ADDRESS.withName("pExtensionHeader"),
+		    UNBOUNDED_ADDRESS.withName("pBufferRemovalTimes")
+		).withName("StdVideoEncodeAV1PictureInfo").withByteAlignment(8);
+		
+		FRAME_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_type"));
+		FRAME_PRESENTATION_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frame_presentation_time"));
+		CURRENT_FRAME_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("current_frame_id"));
+		ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("order_hint"));
+		PRIMARY_REF_FRAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primary_ref_frame"));
+		REFRESH_FRAME_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("refresh_frame_flags"));
+		CODED_DENOM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("coded_denom"));
+		RENDER_WIDTH_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("render_width_minus_1"));
+		RENDER_HEIGHT_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("render_height_minus_1"));
+		INTERPOLATION_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("interpolation_filter"));
+		TX_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TxMode"));
+		DELTA_Q_RES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_q_res"));
+		DELTA_LF_RES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_lf_res"));
+		REF_ORDER_HINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ref_order_hint"), PathElement.sequenceElement());
+		REF_FRAME_IDX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ref_frame_idx"), PathElement.sequenceElement());
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"), PathElement.sequenceElement());
+		DELTA_FRAME_ID_MINUS_1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("delta_frame_id_minus_1"), PathElement.sequenceElement());
+		P_TILE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTileInfo"));
+		P_QUANTIZATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQuantization"));
+		P_SEGMENTATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSegmentation"));
+		P_LOOP_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLoopFilter"));
+		P_CDEF_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCDEF"));
+		P_LOOP_RESTORATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLoopRestoration"));
+		P_GLOBAL_MOTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGlobalMotion"));
+		P_EXTENSION_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pExtensionHeader"));
+		P_BUFFER_REMOVAL_TIMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferRemovalTimes"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		FRAME_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_type"));
+		FRAME_PRESENTATION_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frame_presentation_time"));
+		CURRENT_FRAME_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("current_frame_id"));
+		ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("order_hint"));
+		PRIMARY_REF_FRAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primary_ref_frame"));
+		REFRESH_FRAME_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("refresh_frame_flags"));
+		CODED_DENOM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("coded_denom"));
+		RENDER_WIDTH_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("render_width_minus_1"));
+		RENDER_HEIGHT_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("render_height_minus_1"));
+		INTERPOLATION_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("interpolation_filter"));
+		TX_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TxMode"));
+		DELTA_Q_RES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_q_res"));
+		DELTA_LF_RES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_lf_res"));
+		REF_ORDER_HINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ref_order_hint"));
+		REF_FRAME_IDX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ref_frame_idx"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		DELTA_FRAME_ID_MINUS_1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("delta_frame_id_minus_1"));
+		P_TILE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTileInfo"));
+		P_QUANTIZATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQuantization"));
+		P_SEGMENTATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSegmentation"));
+		P_LOOP_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLoopFilter"));
+		P_CDEF_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCDEF"));
+		P_LOOP_RESTORATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLoopRestoration"));
+		P_GLOBAL_MOTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGlobalMotion"));
+		P_EXTENSION_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pExtensionHeader"));
+		P_BUFFER_REMOVAL_TIMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferRemovalTimes"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeAV1PictureInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeAV1PictureInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeAV1PictureInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeAV1PictureInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeAV1PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeAV1PictureInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeAV1PictureInfo flags(Consumer<StdVideoEncodeAV1PictureInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeAV1PictureInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeAV1PictureInfo flags(StdVideoEncodeAV1PictureInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeAV1PictureInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeAV1PictureInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeAV1PictureInfoFlags.LAYOUT));
+    public StdVideoEncodeAV1PictureInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #frame_type()
     public StdVideoEncodeAV1PictureInfo frame_type(int frame_type) {
     	FRAME_TYPE_HANDLE.set(segment, 0L, frame_type);
@@ -492,22 +508,6 @@ public final class StdVideoEncodeAV1PictureInfo
     	return new NativeIntArray(segment);
     }
     
-    /// @see #flags()
-    public StdVideoEncodeAV1PictureInfo flags(Consumer<StdVideoEncodeAV1PictureInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeAV1PictureInfo flags(StdVideoEncodeAV1PictureInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeAV1PictureInfoFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoEncodeAV1PictureInfo set(StdVideoEncodeAV1PictureInfo other) {
         return set(other.segment);
@@ -559,5 +559,5 @@ public final class StdVideoEncodeAV1PictureInfo
             segment -> new StdVideoEncodeAV1PictureInfo(segment)
         );
     }
-    
+
 }

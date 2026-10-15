@@ -19,44 +19,44 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPipelineCreationFeedback
 		implements Struct<VkPipelineCreationFeedback> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DURATION_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DURATION_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DURATION_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DURATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("duration")
-        ).withName("VkPipelineCreationFeedback").withByteAlignment(8);
-        
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("duration"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("duration"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("duration")
+		).withName("VkPipelineCreationFeedback").withByteAlignment(8);
+		
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("duration"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("duration"));
+		//@formatter:on
+	}
 
-    public VkPipelineCreationFeedback() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineCreationFeedback(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineCreationFeedback(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineCreationFeedback() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineCreationFeedback(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineCreationFeedback(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #flags()
     public VkPipelineCreationFeedback flags(int flags) {
@@ -129,5 +129,5 @@ public final class VkPipelineCreationFeedback
             segment -> new VkPipelineCreationFeedback(segment)
         );
     }
-    
+
 }

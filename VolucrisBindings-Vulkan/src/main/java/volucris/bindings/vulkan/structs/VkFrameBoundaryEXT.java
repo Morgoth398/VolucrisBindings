@@ -22,92 +22,92 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkFrameBoundaryEXT
 		implements Struct<VkFrameBoundaryEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle FRAME_ID_HANDLE;
-    public static final VarHandle IMAGE_COUNT_HANDLE;
-    public static final VarHandle P_IMAGES_HANDLE;
-    public static final VarHandle BUFFER_COUNT_HANDLE;
-    public static final VarHandle P_BUFFERS_HANDLE;
-    public static final VarHandle TAG_NAME_HANDLE;
-    public static final VarHandle TAG_SIZE_HANDLE;
-    public static final VarHandle P_TAG_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle FRAME_ID_HANDLE;
+	public static final VarHandle IMAGE_COUNT_HANDLE;
+	public static final VarHandle P_IMAGES_HANDLE;
+	public static final VarHandle BUFFER_COUNT_HANDLE;
+	public static final VarHandle P_BUFFERS_HANDLE;
+	public static final VarHandle TAG_NAME_HANDLE;
+	public static final VarHandle TAG_SIZE_HANDLE;
+	public static final VarHandle P_TAG_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long FRAME_ID_BYTE_OFFSET;
-    public static final long IMAGE_COUNT_BYTE_OFFSET;
-    public static final long P_IMAGES_BYTE_OFFSET;
-    public static final long BUFFER_COUNT_BYTE_OFFSET;
-    public static final long P_BUFFERS_BYTE_OFFSET;
-    public static final long TAG_NAME_BYTE_OFFSET;
-    public static final long TAG_SIZE_BYTE_OFFSET;
-    public static final long P_TAG_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long FRAME_ID_BYTE_OFFSET;
+	public static final long IMAGE_COUNT_BYTE_OFFSET;
+	public static final long P_IMAGES_BYTE_OFFSET;
+	public static final long BUFFER_COUNT_BYTE_OFFSET;
+	public static final long P_BUFFERS_BYTE_OFFSET;
+	public static final long TAG_NAME_BYTE_OFFSET;
+	public static final long TAG_SIZE_BYTE_OFFSET;
+	public static final long P_TAG_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("frameID"),
-            JAVA_INT.withName("imageCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pImages"),
-            JAVA_INT.withName("bufferCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pBuffers"),
-            JAVA_LONG.withName("tagName"),
-            JAVA_LONG.withName("tagSize"),
-            UNBOUNDED_ADDRESS.withName("pTag")
-        ).withName("VkFrameBoundaryEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        FRAME_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameID"));
-        IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCount"));
-        P_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImages"));
-        BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferCount"));
-        P_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBuffers"));
-        TAG_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagName"));
-        TAG_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagSize"));
-        P_TAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTag"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        FRAME_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameID"));
-        IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCount"));
-        P_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImages"));
-        BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferCount"));
-        P_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBuffers"));
-        TAG_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagName"));
-        TAG_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagSize"));
-        P_TAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTag"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("frameID"),
+		    JAVA_INT.withName("imageCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pImages"),
+		    JAVA_INT.withName("bufferCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pBuffers"),
+		    JAVA_LONG.withName("tagName"),
+		    JAVA_LONG.withName("tagSize"),
+		    UNBOUNDED_ADDRESS.withName("pTag")
+		).withName("VkFrameBoundaryEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		FRAME_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameID"));
+		IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCount"));
+		P_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImages"));
+		BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferCount"));
+		P_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBuffers"));
+		TAG_NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagName"));
+		TAG_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tagSize"));
+		P_TAG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTag"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		FRAME_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameID"));
+		IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCount"));
+		P_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImages"));
+		BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferCount"));
+		P_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBuffers"));
+		TAG_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagName"));
+		TAG_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tagSize"));
+		P_TAG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTag"));
+		//@formatter:on
+	}
 
-    public VkFrameBoundaryEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkFrameBoundaryEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkFrameBoundaryEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkFrameBoundaryEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkFrameBoundaryEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkFrameBoundaryEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkFrameBoundaryEXT sType(int sType) {
@@ -290,5 +290,5 @@ public final class VkFrameBoundaryEXT
             segment -> new VkFrameBoundaryEXT(segment)
         );
     }
-    
+
 }

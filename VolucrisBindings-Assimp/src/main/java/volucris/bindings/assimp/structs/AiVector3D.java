@@ -16,48 +16,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiVector3D
 		implements Struct<AiVector3D> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle X_HANDLE;
-    public static final VarHandle Y_HANDLE;
-    public static final VarHandle Z_HANDLE;
+	public static final VarHandle X_HANDLE;
+	public static final VarHandle Y_HANDLE;
+	public static final VarHandle Z_HANDLE;
 
-    public static final long X_BYTE_OFFSET;
-    public static final long Y_BYTE_OFFSET;
-    public static final long Z_BYTE_OFFSET;
+	public static final long X_BYTE_OFFSET;
+	public static final long Y_BYTE_OFFSET;
+	public static final long Z_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("x"),
-            JAVA_FLOAT.withName("y"),
-            JAVA_FLOAT.withName("z")
-        ).withName("aiVector3D").withByteAlignment(4);
-        
-        X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
-        Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
-        Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("z"));
-        
-        X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
-        Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
-        Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("z"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("x"),
+		    JAVA_FLOAT.withName("y"),
+		    JAVA_FLOAT.withName("z")
+		).withName("aiVector3D").withByteAlignment(4);
+		
+		X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("x"));
+		Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("y"));
+		Z_HANDLE = LAYOUT.varHandle(PathElement.groupElement("z"));
+		
+		X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("x"));
+		Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("y"));
+		Z_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("z"));
+		//@formatter:on
+	}
 
-    public AiVector3D() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiVector3D(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiVector3D(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiVector3D() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiVector3D(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiVector3D(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #x()
     public AiVector3D x(float x) {
@@ -140,5 +140,5 @@ public final class AiVector3D
             segment -> new AiVector3D(segment)
         );
     }
-    
+
 }

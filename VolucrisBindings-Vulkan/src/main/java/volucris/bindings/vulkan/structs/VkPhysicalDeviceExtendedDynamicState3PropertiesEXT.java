@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceExtendedDynamicState3PropertiesEXT
 		implements Struct<VkPhysicalDeviceExtendedDynamicState3PropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dynamicPrimitiveTopologyUnrestricted"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceExtendedDynamicState3PropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicPrimitiveTopologyUnrestricted"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicPrimitiveTopologyUnrestricted"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dynamicPrimitiveTopologyUnrestricted"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceExtendedDynamicState3PropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicPrimitiveTopologyUnrestricted"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DYNAMIC_PRIMITIVE_TOPOLOGY_UNRESTRICTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicPrimitiveTopologyUnrestricted"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceExtendedDynamicState3PropertiesEXT
             segment -> new VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(segment)
         );
     }
-    
+
 }

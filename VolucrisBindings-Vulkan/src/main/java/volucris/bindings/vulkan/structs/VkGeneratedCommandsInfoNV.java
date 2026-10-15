@@ -21,112 +21,112 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGeneratedCommandsInfoNV
 		implements Struct<VkGeneratedCommandsInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
-    public static final VarHandle PIPELINE_HANDLE;
-    public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
-    public static final VarHandle STREAM_COUNT_HANDLE;
-    public static final VarHandle P_STREAMS_HANDLE;
-    public static final VarHandle SEQUENCES_COUNT_HANDLE;
-    public static final VarHandle PREPROCESS_BUFFER_HANDLE;
-    public static final VarHandle PREPROCESS_OFFSET_HANDLE;
-    public static final VarHandle PREPROCESS_SIZE_HANDLE;
-    public static final VarHandle SEQUENCES_COUNT_BUFFER_HANDLE;
-    public static final VarHandle SEQUENCES_COUNT_OFFSET_HANDLE;
-    public static final VarHandle SEQUENCES_INDEX_BUFFER_HANDLE;
-    public static final VarHandle SEQUENCES_INDEX_OFFSET_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PIPELINE_BIND_POINT_HANDLE;
+	public static final VarHandle PIPELINE_HANDLE;
+	public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
+	public static final VarHandle STREAM_COUNT_HANDLE;
+	public static final VarHandle P_STREAMS_HANDLE;
+	public static final VarHandle SEQUENCES_COUNT_HANDLE;
+	public static final VarHandle PREPROCESS_BUFFER_HANDLE;
+	public static final VarHandle PREPROCESS_OFFSET_HANDLE;
+	public static final VarHandle PREPROCESS_SIZE_HANDLE;
+	public static final VarHandle SEQUENCES_COUNT_BUFFER_HANDLE;
+	public static final VarHandle SEQUENCES_COUNT_OFFSET_HANDLE;
+	public static final VarHandle SEQUENCES_INDEX_BUFFER_HANDLE;
+	public static final VarHandle SEQUENCES_INDEX_OFFSET_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
-    public static final long PIPELINE_BYTE_OFFSET;
-    public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
-    public static final long STREAM_COUNT_BYTE_OFFSET;
-    public static final long P_STREAMS_BYTE_OFFSET;
-    public static final long SEQUENCES_COUNT_BYTE_OFFSET;
-    public static final long PREPROCESS_BUFFER_BYTE_OFFSET;
-    public static final long PREPROCESS_OFFSET_BYTE_OFFSET;
-    public static final long PREPROCESS_SIZE_BYTE_OFFSET;
-    public static final long SEQUENCES_COUNT_BUFFER_BYTE_OFFSET;
-    public static final long SEQUENCES_COUNT_OFFSET_BYTE_OFFSET;
-    public static final long SEQUENCES_INDEX_BUFFER_BYTE_OFFSET;
-    public static final long SEQUENCES_INDEX_OFFSET_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PIPELINE_BIND_POINT_BYTE_OFFSET;
+	public static final long PIPELINE_BYTE_OFFSET;
+	public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
+	public static final long STREAM_COUNT_BYTE_OFFSET;
+	public static final long P_STREAMS_BYTE_OFFSET;
+	public static final long SEQUENCES_COUNT_BYTE_OFFSET;
+	public static final long PREPROCESS_BUFFER_BYTE_OFFSET;
+	public static final long PREPROCESS_OFFSET_BYTE_OFFSET;
+	public static final long PREPROCESS_SIZE_BYTE_OFFSET;
+	public static final long SEQUENCES_COUNT_BUFFER_BYTE_OFFSET;
+	public static final long SEQUENCES_COUNT_OFFSET_BYTE_OFFSET;
+	public static final long SEQUENCES_INDEX_BUFFER_BYTE_OFFSET;
+	public static final long SEQUENCES_INDEX_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("pipelineBindPoint"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pipeline"),
-            UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
-            JAVA_INT.withName("streamCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStreams"),
-            JAVA_INT.withName("sequencesCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("preprocessBuffer"),
-            JAVA_LONG.withName("preprocessOffset"),
-            JAVA_LONG.withName("preprocessSize"),
-            UNBOUNDED_ADDRESS.withName("sequencesCountBuffer"),
-            JAVA_LONG.withName("sequencesCountOffset"),
-            UNBOUNDED_ADDRESS.withName("sequencesIndexBuffer"),
-            JAVA_LONG.withName("sequencesIndexOffset")
-        ).withName("VkGeneratedCommandsInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
-        PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipeline"));
-        INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
-        STREAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamCount"));
-        P_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStreams"));
-        SEQUENCES_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesCount"));
-        PREPROCESS_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessBuffer"));
-        PREPROCESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessOffset"));
-        PREPROCESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessSize"));
-        SEQUENCES_COUNT_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesCountBuffer"));
-        SEQUENCES_COUNT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesCountOffset"));
-        SEQUENCES_INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesIndexBuffer"));
-        SEQUENCES_INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesIndexOffset"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
-        PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipeline"));
-        INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
-        STREAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamCount"));
-        P_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStreams"));
-        SEQUENCES_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesCount"));
-        PREPROCESS_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessBuffer"));
-        PREPROCESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessOffset"));
-        PREPROCESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessSize"));
-        SEQUENCES_COUNT_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesCountBuffer"));
-        SEQUENCES_COUNT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesCountOffset"));
-        SEQUENCES_INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesIndexBuffer"));
-        SEQUENCES_INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesIndexOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("pipelineBindPoint"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pipeline"),
+		    UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
+		    JAVA_INT.withName("streamCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStreams"),
+		    JAVA_INT.withName("sequencesCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("preprocessBuffer"),
+		    JAVA_LONG.withName("preprocessOffset"),
+		    JAVA_LONG.withName("preprocessSize"),
+		    UNBOUNDED_ADDRESS.withName("sequencesCountBuffer"),
+		    JAVA_LONG.withName("sequencesCountOffset"),
+		    UNBOUNDED_ADDRESS.withName("sequencesIndexBuffer"),
+		    JAVA_LONG.withName("sequencesIndexOffset")
+		).withName("VkGeneratedCommandsInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PIPELINE_BIND_POINT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineBindPoint"));
+		PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipeline"));
+		INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
+		STREAM_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamCount"));
+		P_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStreams"));
+		SEQUENCES_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesCount"));
+		PREPROCESS_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessBuffer"));
+		PREPROCESS_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessOffset"));
+		PREPROCESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessSize"));
+		SEQUENCES_COUNT_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesCountBuffer"));
+		SEQUENCES_COUNT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesCountOffset"));
+		SEQUENCES_INDEX_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesIndexBuffer"));
+		SEQUENCES_INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequencesIndexOffset"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PIPELINE_BIND_POINT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineBindPoint"));
+		PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipeline"));
+		INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
+		STREAM_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamCount"));
+		P_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStreams"));
+		SEQUENCES_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesCount"));
+		PREPROCESS_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessBuffer"));
+		PREPROCESS_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessOffset"));
+		PREPROCESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessSize"));
+		SEQUENCES_COUNT_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesCountBuffer"));
+		SEQUENCES_COUNT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesCountOffset"));
+		SEQUENCES_INDEX_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesIndexBuffer"));
+		SEQUENCES_INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequencesIndexOffset"));
+		//@formatter:on
+	}
 
-    public VkGeneratedCommandsInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeneratedCommandsInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeneratedCommandsInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGeneratedCommandsInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeneratedCommandsInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeneratedCommandsInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGeneratedCommandsInfoNV sType(int sType) {
@@ -364,5 +364,5 @@ public final class VkGeneratedCommandsInfoNV
             segment -> new VkGeneratedCommandsInfoNV(segment)
         );
     }
-    
+
 }

@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGpaSessionCreateInfoAMD
 		implements Struct<VkGpaSessionCreateInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SECONDARY_COPY_SOURCE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SECONDARY_COPY_SOURCE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SECONDARY_COPY_SOURCE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SECONDARY_COPY_SOURCE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("secondaryCopySource")
-        ).withName("VkGpaSessionCreateInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SECONDARY_COPY_SOURCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("secondaryCopySource"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SECONDARY_COPY_SOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("secondaryCopySource"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("secondaryCopySource")
+		).withName("VkGpaSessionCreateInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SECONDARY_COPY_SOURCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("secondaryCopySource"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SECONDARY_COPY_SOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("secondaryCopySource"));
+		//@formatter:on
+	}
 
-    public VkGpaSessionCreateInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGpaSessionCreateInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGpaSessionCreateInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGpaSessionCreateInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGpaSessionCreateInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGpaSessionCreateInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGpaSessionCreateInfoAMD sType(int sType) {
@@ -156,5 +156,5 @@ public final class VkGpaSessionCreateInfoAMD
             segment -> new VkGpaSessionCreateInfoAMD(segment)
         );
     }
-    
+
 }

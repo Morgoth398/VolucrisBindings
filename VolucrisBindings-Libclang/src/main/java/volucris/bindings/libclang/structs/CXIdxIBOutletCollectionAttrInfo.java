@@ -19,54 +19,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxIBOutletCollectionAttrInfo
 		implements Struct<CXIdxIBOutletCollectionAttrInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ATTR_INFO_HANDLE;
-    public static final VarHandle OBJC_CLASS_HANDLE;
+	public static final VarHandle ATTR_INFO_HANDLE;
+	public static final VarHandle OBJC_CLASS_HANDLE;
 
-    public static final long ATTR_INFO_BYTE_OFFSET;
-    public static final long OBJC_CLASS_BYTE_OFFSET;
-    public static final long CLASS_CURSOR_BYTE_OFFSET;
-    public static final long CLASS_LOC_BYTE_OFFSET;
+	public static final long ATTR_INFO_BYTE_OFFSET;
+	public static final long OBJC_CLASS_BYTE_OFFSET;
+	public static final long CLASS_CURSOR_BYTE_OFFSET;
+	public static final long CLASS_LOC_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor classCursor;
-    private final CXIdxLoc classLoc;
+	private final CXCursor classCursor;
+	private final CXIdxLoc classLoc;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("attrInfo"),
-            UNBOUNDED_ADDRESS.withName("objcClass"),
-            CXCursor.LAYOUT.withName("classCursor"),
-            CXIdxLoc.LAYOUT.withName("classLoc")
-        ).withName("CXIdxIBOutletCollectionAttrInfo").withByteAlignment(8);
-        
-        ATTR_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attrInfo"));
-        OBJC_CLASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objcClass"));
-        
-        ATTR_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attrInfo"));
-        OBJC_CLASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objcClass"));
-        CLASS_CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classCursor"));
-        CLASS_LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classLoc"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("attrInfo"),
+		    UNBOUNDED_ADDRESS.withName("objcClass"),
+		    CXCursor.LAYOUT.withName("classCursor"),
+		    CXIdxLoc.LAYOUT.withName("classLoc")
+		).withName("CXIdxIBOutletCollectionAttrInfo").withByteAlignment(8);
+		
+		ATTR_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attrInfo"));
+		OBJC_CLASS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("objcClass"));
+		
+		ATTR_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attrInfo"));
+		OBJC_CLASS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("objcClass"));
+		CLASS_CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classCursor"));
+		CLASS_LOC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("classLoc"));
+		//@formatter:on
+	}
 
-    public CXIdxIBOutletCollectionAttrInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxIBOutletCollectionAttrInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxIBOutletCollectionAttrInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        classCursor = new CXCursor(segment.asSlice(CLASS_CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-        classLoc = new CXIdxLoc(segment.asSlice(CLASS_LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
-    }
+	public CXIdxIBOutletCollectionAttrInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxIBOutletCollectionAttrInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxIBOutletCollectionAttrInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    classCursor = new CXCursor(segment.asSlice(CLASS_CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	    classLoc = new CXIdxLoc(segment.asSlice(CLASS_LOC_BYTE_OFFSET, CXIdxLoc.LAYOUT));
+	}
 
     /// @see #attrInfo()
     public CXIdxIBOutletCollectionAttrInfo attrInfo(CXIdxAttrInfo attrInfo) {
@@ -181,5 +181,5 @@ public final class CXIdxIBOutletCollectionAttrInfo
             segment -> new CXIdxIBOutletCollectionAttrInfo(segment)
         );
     }
-    
+
 }

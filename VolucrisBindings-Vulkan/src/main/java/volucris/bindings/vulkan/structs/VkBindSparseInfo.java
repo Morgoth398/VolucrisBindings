@@ -22,99 +22,99 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindSparseInfo
 		implements Struct<VkBindSparseInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_WAIT_SEMAPHORES_HANDLE;
-    public static final VarHandle BUFFER_BIND_COUNT_HANDLE;
-    public static final VarHandle P_BUFFER_BINDS_HANDLE;
-    public static final VarHandle IMAGE_OPAQUE_BIND_COUNT_HANDLE;
-    public static final VarHandle P_IMAGE_OPAQUE_BINDS_HANDLE;
-    public static final VarHandle IMAGE_BIND_COUNT_HANDLE;
-    public static final VarHandle P_IMAGE_BINDS_HANDLE;
-    public static final VarHandle SIGNAL_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_SIGNAL_SEMAPHORES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_WAIT_SEMAPHORES_HANDLE;
+	public static final VarHandle BUFFER_BIND_COUNT_HANDLE;
+	public static final VarHandle P_BUFFER_BINDS_HANDLE;
+	public static final VarHandle IMAGE_OPAQUE_BIND_COUNT_HANDLE;
+	public static final VarHandle P_IMAGE_OPAQUE_BINDS_HANDLE;
+	public static final VarHandle IMAGE_BIND_COUNT_HANDLE;
+	public static final VarHandle P_IMAGE_BINDS_HANDLE;
+	public static final VarHandle SIGNAL_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_SIGNAL_SEMAPHORES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_WAIT_SEMAPHORES_BYTE_OFFSET;
-    public static final long BUFFER_BIND_COUNT_BYTE_OFFSET;
-    public static final long P_BUFFER_BINDS_BYTE_OFFSET;
-    public static final long IMAGE_OPAQUE_BIND_COUNT_BYTE_OFFSET;
-    public static final long P_IMAGE_OPAQUE_BINDS_BYTE_OFFSET;
-    public static final long IMAGE_BIND_COUNT_BYTE_OFFSET;
-    public static final long P_IMAGE_BINDS_BYTE_OFFSET;
-    public static final long SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_SIGNAL_SEMAPHORES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_WAIT_SEMAPHORES_BYTE_OFFSET;
+	public static final long BUFFER_BIND_COUNT_BYTE_OFFSET;
+	public static final long P_BUFFER_BINDS_BYTE_OFFSET;
+	public static final long IMAGE_OPAQUE_BIND_COUNT_BYTE_OFFSET;
+	public static final long P_IMAGE_OPAQUE_BINDS_BYTE_OFFSET;
+	public static final long IMAGE_BIND_COUNT_BYTE_OFFSET;
+	public static final long P_IMAGE_BINDS_BYTE_OFFSET;
+	public static final long SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_SIGNAL_SEMAPHORES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("waitSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pWaitSemaphores"),
-            JAVA_INT.withName("bufferBindCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pBufferBinds"),
-            JAVA_INT.withName("imageOpaqueBindCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pImageOpaqueBinds"),
-            JAVA_INT.withName("imageBindCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pImageBinds"),
-            JAVA_INT.withName("signalSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSignalSemaphores")
-        ).withName("VkBindSparseInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphores"));
-        BUFFER_BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferBindCount"));
-        P_BUFFER_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferBinds"));
-        IMAGE_OPAQUE_BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageOpaqueBindCount"));
-        P_IMAGE_OPAQUE_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageOpaqueBinds"));
-        IMAGE_BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageBindCount"));
-        P_IMAGE_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageBinds"));
-        SIGNAL_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreCount"));
-        P_SIGNAL_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphores"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphores"));
-        BUFFER_BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferBindCount"));
-        P_BUFFER_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferBinds"));
-        IMAGE_OPAQUE_BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOpaqueBindCount"));
-        P_IMAGE_OPAQUE_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageOpaqueBinds"));
-        IMAGE_BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageBindCount"));
-        P_IMAGE_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageBinds"));
-        SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreCount"));
-        P_SIGNAL_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphores"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("waitSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pWaitSemaphores"),
+		    JAVA_INT.withName("bufferBindCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pBufferBinds"),
+		    JAVA_INT.withName("imageOpaqueBindCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pImageOpaqueBinds"),
+		    JAVA_INT.withName("imageBindCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pImageBinds"),
+		    JAVA_INT.withName("signalSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSignalSemaphores")
+		).withName("VkBindSparseInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphores"));
+		BUFFER_BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferBindCount"));
+		P_BUFFER_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferBinds"));
+		IMAGE_OPAQUE_BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageOpaqueBindCount"));
+		P_IMAGE_OPAQUE_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageOpaqueBinds"));
+		IMAGE_BIND_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageBindCount"));
+		P_IMAGE_BINDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageBinds"));
+		SIGNAL_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreCount"));
+		P_SIGNAL_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphores"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphores"));
+		BUFFER_BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferBindCount"));
+		P_BUFFER_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferBinds"));
+		IMAGE_OPAQUE_BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageOpaqueBindCount"));
+		P_IMAGE_OPAQUE_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageOpaqueBinds"));
+		IMAGE_BIND_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageBindCount"));
+		P_IMAGE_BINDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageBinds"));
+		SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreCount"));
+		P_SIGNAL_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphores"));
+		//@formatter:on
+	}
 
-    public VkBindSparseInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindSparseInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindSparseInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindSparseInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindSparseInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindSparseInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBindSparseInfo sType(int sType) {
@@ -317,5 +317,5 @@ public final class VkBindSparseInfo
             segment -> new VkBindSparseInfo(segment)
         );
     }
-    
+
 }

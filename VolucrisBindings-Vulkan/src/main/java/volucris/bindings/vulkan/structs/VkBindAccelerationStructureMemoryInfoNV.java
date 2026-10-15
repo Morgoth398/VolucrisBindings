@@ -22,70 +22,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindAccelerationStructureMemoryInfoNV
 		implements Struct<VkBindAccelerationStructureMemoryInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
-    public static final VarHandle MEMORY_HANDLE;
-    public static final VarHandle MEMORY_OFFSET_HANDLE;
-    public static final VarHandle DEVICE_INDEX_COUNT_HANDLE;
-    public static final VarHandle P_DEVICE_INDICES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle MEMORY_HANDLE;
+	public static final VarHandle MEMORY_OFFSET_HANDLE;
+	public static final VarHandle DEVICE_INDEX_COUNT_HANDLE;
+	public static final VarHandle P_DEVICE_INDICES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
-    public static final long MEMORY_BYTE_OFFSET;
-    public static final long MEMORY_OFFSET_BYTE_OFFSET;
-    public static final long DEVICE_INDEX_COUNT_BYTE_OFFSET;
-    public static final long P_DEVICE_INDICES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long MEMORY_BYTE_OFFSET;
+	public static final long MEMORY_OFFSET_BYTE_OFFSET;
+	public static final long DEVICE_INDEX_COUNT_BYTE_OFFSET;
+	public static final long P_DEVICE_INDICES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("accelerationStructure"),
-            UNBOUNDED_ADDRESS.withName("memory"),
-            JAVA_LONG.withName("memoryOffset"),
-            JAVA_INT.withName("deviceIndexCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pDeviceIndices")
-        ).withName("VkBindAccelerationStructureMemoryInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
-        MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
-        DEVICE_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceIndexCount"));
-        P_DEVICE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDeviceIndices"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
-        MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
-        DEVICE_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceIndexCount"));
-        P_DEVICE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDeviceIndices"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("accelerationStructure"),
+		    UNBOUNDED_ADDRESS.withName("memory"),
+		    JAVA_LONG.withName("memoryOffset"),
+		    JAVA_INT.withName("deviceIndexCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pDeviceIndices")
+		).withName("VkBindAccelerationStructureMemoryInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
+		MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
+		DEVICE_INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceIndexCount"));
+		P_DEVICE_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDeviceIndices"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
+		MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
+		DEVICE_INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceIndexCount"));
+		P_DEVICE_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDeviceIndices"));
+		//@formatter:on
+	}
 
-    public VkBindAccelerationStructureMemoryInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindAccelerationStructureMemoryInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindAccelerationStructureMemoryInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindAccelerationStructureMemoryInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindAccelerationStructureMemoryInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindAccelerationStructureMemoryInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBindAccelerationStructureMemoryInfoNV sType(int sType) {
@@ -228,5 +228,5 @@ public final class VkBindAccelerationStructureMemoryInfoNV
             segment -> new VkBindAccelerationStructureMemoryInfoNV(segment)
         );
     }
-    
+
 }

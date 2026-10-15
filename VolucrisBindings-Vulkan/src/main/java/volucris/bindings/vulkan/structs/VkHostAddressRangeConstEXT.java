@@ -21,43 +21,43 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkHostAddressRangeConstEXT
 		implements Struct<VkHostAddressRangeConstEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ADDRESS_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle ADDRESS_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long ADDRESS_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long ADDRESS_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("address"),
-            JAVA_LONG.withName("size")
-        ).withName("VkHostAddressRangeConstEXT").withByteAlignment(8);
-        
-        ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("address"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("address"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("address"),
+		    JAVA_LONG.withName("size")
+		).withName("VkHostAddressRangeConstEXT").withByteAlignment(8);
+		
+		ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("address"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("address"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkHostAddressRangeConstEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkHostAddressRangeConstEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkHostAddressRangeConstEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkHostAddressRangeConstEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkHostAddressRangeConstEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkHostAddressRangeConstEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #address()
     public VkHostAddressRangeConstEXT address(MemorySegment address) {
@@ -135,5 +135,5 @@ public final class VkHostAddressRangeConstEXT
             segment -> new VkHostAddressRangeConstEXT(segment)
         );
     }
-    
+
 }

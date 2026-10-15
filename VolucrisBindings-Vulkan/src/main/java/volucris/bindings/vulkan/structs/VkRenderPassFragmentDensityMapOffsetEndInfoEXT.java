@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRenderPassFragmentDensityMapOffsetEndInfoEXT
 		implements Struct<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FRAGMENT_DENSITY_OFFSET_COUNT_HANDLE;
-    public static final VarHandle P_FRAGMENT_DENSITY_OFFSETS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FRAGMENT_DENSITY_OFFSET_COUNT_HANDLE;
+	public static final VarHandle P_FRAGMENT_DENSITY_OFFSETS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_OFFSET_COUNT_BYTE_OFFSET;
-    public static final long P_FRAGMENT_DENSITY_OFFSETS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_OFFSET_COUNT_BYTE_OFFSET;
+	public static final long P_FRAGMENT_DENSITY_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("fragmentDensityOffsetCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pFragmentDensityOffsets")
-        ).withName("VkRenderPassFragmentDensityMapOffsetEndInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_OFFSET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityOffsetCount"));
-        P_FRAGMENT_DENSITY_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pFragmentDensityOffsets"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_OFFSET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityOffsetCount"));
-        P_FRAGMENT_DENSITY_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pFragmentDensityOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("fragmentDensityOffsetCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pFragmentDensityOffsets")
+		).withName("VkRenderPassFragmentDensityMapOffsetEndInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_OFFSET_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityOffsetCount"));
+		P_FRAGMENT_DENSITY_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pFragmentDensityOffsets"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_OFFSET_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityOffsetCount"));
+		P_FRAGMENT_DENSITY_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pFragmentDensityOffsets"));
+		//@formatter:on
+	}
 
-    public VkRenderPassFragmentDensityMapOffsetEndInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRenderPassFragmentDensityMapOffsetEndInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRenderPassFragmentDensityMapOffsetEndInfoEXT sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkRenderPassFragmentDensityMapOffsetEndInfoEXT
             segment -> new VkRenderPassFragmentDensityMapOffsetEndInfoEXT(segment)
         );
     }
-    
+
 }

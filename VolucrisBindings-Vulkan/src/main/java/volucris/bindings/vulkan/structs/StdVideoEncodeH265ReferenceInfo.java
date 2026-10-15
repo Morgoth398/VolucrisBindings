@@ -20,56 +20,72 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoEncodeH265ReferenceInfo
 		implements Struct<StdVideoEncodeH265ReferenceInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PIC_TYPE_HANDLE;
-    public static final VarHandle PIC_ORDER_CNT_VAL_HANDLE;
-    public static final VarHandle TEMPORAL_ID_HANDLE;
+	public static final VarHandle PIC_TYPE_HANDLE;
+	public static final VarHandle PIC_ORDER_CNT_VAL_HANDLE;
+	public static final VarHandle TEMPORAL_ID_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PIC_TYPE_BYTE_OFFSET;
-    public static final long PIC_ORDER_CNT_VAL_BYTE_OFFSET;
-    public static final long TEMPORAL_ID_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PIC_TYPE_BYTE_OFFSET;
+	public static final long PIC_ORDER_CNT_VAL_BYTE_OFFSET;
+	public static final long TEMPORAL_ID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoEncodeH265ReferenceInfoFlags flags;
+	private final StdVideoEncodeH265ReferenceInfoFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoEncodeH265ReferenceInfoFlags.LAYOUT.withName("flags"),
-            JAVA_INT.withName("pic_type"),
-            JAVA_INT.withName("PicOrderCntVal"),
-            JAVA_BYTE.withName("TemporalId"),
-            MemoryLayout.paddingLayout(3)
-        ).withName("StdVideoEncodeH265ReferenceInfo").withByteAlignment(4);
-        
-        PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_type"));
-        PIC_ORDER_CNT_VAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCntVal"));
-        TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TemporalId"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_type"));
-        PIC_ORDER_CNT_VAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCntVal"));
-        TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TemporalId"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoEncodeH265ReferenceInfoFlags.LAYOUT.withName("flags"),
+		    JAVA_INT.withName("pic_type"),
+		    JAVA_INT.withName("PicOrderCntVal"),
+		    JAVA_BYTE.withName("TemporalId"),
+		    MemoryLayout.paddingLayout(3)
+		).withName("StdVideoEncodeH265ReferenceInfo").withByteAlignment(4);
+		
+		PIC_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pic_type"));
+		PIC_ORDER_CNT_VAL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("PicOrderCntVal"));
+		TEMPORAL_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("TemporalId"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PIC_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pic_type"));
+		PIC_ORDER_CNT_VAL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("PicOrderCntVal"));
+		TEMPORAL_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("TemporalId"));
+		//@formatter:on
+	}
 
-    public StdVideoEncodeH265ReferenceInfo() {
-        this(Arena.ofAuto());
+	public StdVideoEncodeH265ReferenceInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoEncodeH265ReferenceInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoEncodeH265ReferenceInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoEncodeH265ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265ReferenceInfoFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoEncodeH265ReferenceInfo flags(Consumer<StdVideoEncodeH265ReferenceInfoFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoEncodeH265ReferenceInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoEncodeH265ReferenceInfo flags(StdVideoEncodeH265ReferenceInfoFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoEncodeH265ReferenceInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoEncodeH265ReferenceInfoFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoEncodeH265ReferenceInfoFlags.LAYOUT));
+    public StdVideoEncodeH265ReferenceInfoFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #pic_type()
     public StdVideoEncodeH265ReferenceInfo pic_type(int pic_type) {
     	PIC_TYPE_HANDLE.set(segment, 0L, pic_type);
@@ -98,22 +114,6 @@ public final class StdVideoEncodeH265ReferenceInfo
     
     public byte temporalId() {
     	return (byte) TEMPORAL_ID_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH265ReferenceInfo flags(Consumer<StdVideoEncodeH265ReferenceInfoFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoEncodeH265ReferenceInfo flags(StdVideoEncodeH265ReferenceInfoFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoEncodeH265ReferenceInfoFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -167,5 +167,5 @@ public final class StdVideoEncodeH265ReferenceInfo
             segment -> new StdVideoEncodeH265ReferenceInfo(segment)
         );
     }
-    
+
 }

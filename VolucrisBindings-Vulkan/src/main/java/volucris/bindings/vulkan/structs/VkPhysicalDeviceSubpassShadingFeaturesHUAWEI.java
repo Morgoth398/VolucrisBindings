@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceSubpassShadingFeaturesHUAWEI
 		implements Struct<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SUBPASS_SHADING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SUBPASS_SHADING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SUBPASS_SHADING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SUBPASS_SHADING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("subpassShading"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceSubpassShadingFeaturesHUAWEI").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SUBPASS_SHADING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassShading"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SUBPASS_SHADING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassShading"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("subpassShading"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceSubpassShadingFeaturesHUAWEI").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SUBPASS_SHADING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subpassShading"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SUBPASS_SHADING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subpassShading"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceSubpassShadingFeaturesHUAWEI
             segment -> new VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(segment)
         );
     }
-    
+
 }

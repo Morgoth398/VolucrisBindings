@@ -21,101 +21,101 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGeometryTrianglesNV
 		implements Struct<VkGeometryTrianglesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VERTEX_DATA_HANDLE;
-    public static final VarHandle VERTEX_OFFSET_HANDLE;
-    public static final VarHandle VERTEX_COUNT_HANDLE;
-    public static final VarHandle VERTEX_STRIDE_HANDLE;
-    public static final VarHandle VERTEX_FORMAT_HANDLE;
-    public static final VarHandle INDEX_DATA_HANDLE;
-    public static final VarHandle INDEX_OFFSET_HANDLE;
-    public static final VarHandle INDEX_COUNT_HANDLE;
-    public static final VarHandle INDEX_TYPE_HANDLE;
-    public static final VarHandle TRANSFORM_DATA_HANDLE;
-    public static final VarHandle TRANSFORM_OFFSET_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VERTEX_DATA_HANDLE;
+	public static final VarHandle VERTEX_OFFSET_HANDLE;
+	public static final VarHandle VERTEX_COUNT_HANDLE;
+	public static final VarHandle VERTEX_STRIDE_HANDLE;
+	public static final VarHandle VERTEX_FORMAT_HANDLE;
+	public static final VarHandle INDEX_DATA_HANDLE;
+	public static final VarHandle INDEX_OFFSET_HANDLE;
+	public static final VarHandle INDEX_COUNT_HANDLE;
+	public static final VarHandle INDEX_TYPE_HANDLE;
+	public static final VarHandle TRANSFORM_DATA_HANDLE;
+	public static final VarHandle TRANSFORM_OFFSET_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VERTEX_DATA_BYTE_OFFSET;
-    public static final long VERTEX_OFFSET_BYTE_OFFSET;
-    public static final long VERTEX_COUNT_BYTE_OFFSET;
-    public static final long VERTEX_STRIDE_BYTE_OFFSET;
-    public static final long VERTEX_FORMAT_BYTE_OFFSET;
-    public static final long INDEX_DATA_BYTE_OFFSET;
-    public static final long INDEX_OFFSET_BYTE_OFFSET;
-    public static final long INDEX_COUNT_BYTE_OFFSET;
-    public static final long INDEX_TYPE_BYTE_OFFSET;
-    public static final long TRANSFORM_DATA_BYTE_OFFSET;
-    public static final long TRANSFORM_OFFSET_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VERTEX_DATA_BYTE_OFFSET;
+	public static final long VERTEX_OFFSET_BYTE_OFFSET;
+	public static final long VERTEX_COUNT_BYTE_OFFSET;
+	public static final long VERTEX_STRIDE_BYTE_OFFSET;
+	public static final long VERTEX_FORMAT_BYTE_OFFSET;
+	public static final long INDEX_DATA_BYTE_OFFSET;
+	public static final long INDEX_OFFSET_BYTE_OFFSET;
+	public static final long INDEX_COUNT_BYTE_OFFSET;
+	public static final long INDEX_TYPE_BYTE_OFFSET;
+	public static final long TRANSFORM_DATA_BYTE_OFFSET;
+	public static final long TRANSFORM_OFFSET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("vertexData"),
-            JAVA_LONG.withName("vertexOffset"),
-            JAVA_INT.withName("vertexCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("vertexStride"),
-            JAVA_INT.withName("vertexFormat"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("indexData"),
-            JAVA_LONG.withName("indexOffset"),
-            JAVA_INT.withName("indexCount"),
-            JAVA_INT.withName("indexType"),
-            UNBOUNDED_ADDRESS.withName("transformData"),
-            JAVA_LONG.withName("transformOffset")
-        ).withName("VkGeometryTrianglesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VERTEX_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexData"));
-        VERTEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexOffset"));
-        VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexCount"));
-        VERTEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexStride"));
-        VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
-        INDEX_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexData"));
-        INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexOffset"));
-        INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexCount"));
-        INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
-        TRANSFORM_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformData"));
-        TRANSFORM_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformOffset"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VERTEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexData"));
-        VERTEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexOffset"));
-        VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexCount"));
-        VERTEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexStride"));
-        VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
-        INDEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexData"));
-        INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexOffset"));
-        INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexCount"));
-        INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
-        TRANSFORM_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformData"));
-        TRANSFORM_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformOffset"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("vertexData"),
+		    JAVA_LONG.withName("vertexOffset"),
+		    JAVA_INT.withName("vertexCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("vertexStride"),
+		    JAVA_INT.withName("vertexFormat"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("indexData"),
+		    JAVA_LONG.withName("indexOffset"),
+		    JAVA_INT.withName("indexCount"),
+		    JAVA_INT.withName("indexType"),
+		    UNBOUNDED_ADDRESS.withName("transformData"),
+		    JAVA_LONG.withName("transformOffset")
+		).withName("VkGeometryTrianglesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VERTEX_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexData"));
+		VERTEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexOffset"));
+		VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexCount"));
+		VERTEX_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexStride"));
+		VERTEX_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexFormat"));
+		INDEX_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexData"));
+		INDEX_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexOffset"));
+		INDEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexCount"));
+		INDEX_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexType"));
+		TRANSFORM_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformData"));
+		TRANSFORM_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformOffset"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VERTEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexData"));
+		VERTEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexOffset"));
+		VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexCount"));
+		VERTEX_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexStride"));
+		VERTEX_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexFormat"));
+		INDEX_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexData"));
+		INDEX_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexOffset"));
+		INDEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexCount"));
+		INDEX_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexType"));
+		TRANSFORM_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformData"));
+		TRANSFORM_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformOffset"));
+		//@formatter:on
+	}
 
-    public VkGeometryTrianglesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeometryTrianglesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeometryTrianglesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGeometryTrianglesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeometryTrianglesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeometryTrianglesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGeometryTrianglesNV sType(int sType) {
@@ -318,5 +318,5 @@ public final class VkGeometryTrianglesNV
             segment -> new VkGeometryTrianglesNV(segment)
         );
     }
-    
+
 }

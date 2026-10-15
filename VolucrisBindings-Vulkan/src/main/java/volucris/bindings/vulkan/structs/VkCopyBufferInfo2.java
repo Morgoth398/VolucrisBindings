@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCopyBufferInfo2
 		implements Struct<VkCopyBufferInfo2> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SRC_BUFFER_HANDLE;
-    public static final VarHandle DST_BUFFER_HANDLE;
-    public static final VarHandle REGION_COUNT_HANDLE;
-    public static final VarHandle P_REGIONS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SRC_BUFFER_HANDLE;
+	public static final VarHandle DST_BUFFER_HANDLE;
+	public static final VarHandle REGION_COUNT_HANDLE;
+	public static final VarHandle P_REGIONS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SRC_BUFFER_BYTE_OFFSET;
-    public static final long DST_BUFFER_BYTE_OFFSET;
-    public static final long REGION_COUNT_BYTE_OFFSET;
-    public static final long P_REGIONS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SRC_BUFFER_BYTE_OFFSET;
+	public static final long DST_BUFFER_BYTE_OFFSET;
+	public static final long REGION_COUNT_BYTE_OFFSET;
+	public static final long P_REGIONS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("srcBuffer"),
-            UNBOUNDED_ADDRESS.withName("dstBuffer"),
-            JAVA_INT.withName("regionCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pRegions")
-        ).withName("VkCopyBufferInfo2").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SRC_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBuffer"));
-        DST_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBuffer"));
-        REGION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionCount"));
-        P_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRegions"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SRC_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBuffer"));
-        DST_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBuffer"));
-        REGION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionCount"));
-        P_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRegions"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("srcBuffer"),
+		    UNBOUNDED_ADDRESS.withName("dstBuffer"),
+		    JAVA_INT.withName("regionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pRegions")
+		).withName("VkCopyBufferInfo2").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SRC_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("srcBuffer"));
+		DST_BUFFER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dstBuffer"));
+		REGION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("regionCount"));
+		P_REGIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRegions"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SRC_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("srcBuffer"));
+		DST_BUFFER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dstBuffer"));
+		REGION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("regionCount"));
+		P_REGIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRegions"));
+		//@formatter:on
+	}
 
-    public VkCopyBufferInfo2() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCopyBufferInfo2(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCopyBufferInfo2(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCopyBufferInfo2() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCopyBufferInfo2(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCopyBufferInfo2(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCopyBufferInfo2 sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkCopyBufferInfo2
             segment -> new VkCopyBufferInfo2(segment)
         );
     }
-    
+
 }

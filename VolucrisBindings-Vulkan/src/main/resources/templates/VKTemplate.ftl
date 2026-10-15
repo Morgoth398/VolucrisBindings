@@ -15,15 +15,14 @@ import volucris.bindings.vulkan.unions.VkClearColorValue;
 <#assign modifiers = clazz.modifiers?join(" ")>
 ${modifiers} class ${desc.name}${clazz.classHeader} {
 
-    <#list clazz.fields?filter(f -> !f.type?contains("MethodHandle")) as field>
-    <#if field.blankLineBefore>
+	<#list clazz.fields as fieldGroup>
+	<#list fieldGroup?filter(f -> !f.type?contains("MethodHandle")) as field>
+	private final ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
+	</#list>
+	<#sep>
 
-    </#if>
-    private final ${field.type} ${field.name}<#if field.value?has_content> = ${field.value}</#if>;
-    <#if field.blankLineAfter>
-
-    </#if>
-    </#list> 
+	</#sep>
+	</#list>
 
     static {
 

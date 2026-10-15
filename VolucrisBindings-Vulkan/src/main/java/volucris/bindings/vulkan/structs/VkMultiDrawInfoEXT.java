@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkMultiDrawInfoEXT
 		implements Struct<VkMultiDrawInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FIRST_VERTEX_HANDLE;
-    public static final VarHandle VERTEX_COUNT_HANDLE;
+	public static final VarHandle FIRST_VERTEX_HANDLE;
+	public static final VarHandle VERTEX_COUNT_HANDLE;
 
-    public static final long FIRST_VERTEX_BYTE_OFFSET;
-    public static final long VERTEX_COUNT_BYTE_OFFSET;
+	public static final long FIRST_VERTEX_BYTE_OFFSET;
+	public static final long VERTEX_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("firstVertex"),
-            JAVA_INT.withName("vertexCount")
-        ).withName("VkMultiDrawInfoEXT").withByteAlignment(4);
-        
-        FIRST_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstVertex"));
-        VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexCount"));
-        
-        FIRST_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstVertex"));
-        VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("firstVertex"),
+		    JAVA_INT.withName("vertexCount")
+		).withName("VkMultiDrawInfoEXT").withByteAlignment(4);
+		
+		FIRST_VERTEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstVertex"));
+		VERTEX_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexCount"));
+		
+		FIRST_VERTEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstVertex"));
+		VERTEX_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexCount"));
+		//@formatter:on
+	}
 
-    public VkMultiDrawInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMultiDrawInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMultiDrawInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMultiDrawInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMultiDrawInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMultiDrawInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #firstVertex()
     public VkMultiDrawInfoEXT firstVertex(int firstVertex) {
@@ -128,5 +128,5 @@ public final class VkMultiDrawInfoEXT
             segment -> new VkMultiDrawInfoEXT(segment)
         );
     }
-    
+
 }

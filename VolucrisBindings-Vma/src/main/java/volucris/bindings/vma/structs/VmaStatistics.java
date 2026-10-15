@@ -22,53 +22,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VmaStatistics
 		implements Struct<VmaStatistics> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BLOCK_COUNT_HANDLE;
-    public static final VarHandle ALLOCATION_COUNT_HANDLE;
-    public static final VarHandle BLOCK_BYTES_HANDLE;
-    public static final VarHandle ALLOCATION_BYTES_HANDLE;
+	public static final VarHandle BLOCK_COUNT_HANDLE;
+	public static final VarHandle ALLOCATION_COUNT_HANDLE;
+	public static final VarHandle BLOCK_BYTES_HANDLE;
+	public static final VarHandle ALLOCATION_BYTES_HANDLE;
 
-    public static final long BLOCK_COUNT_BYTE_OFFSET;
-    public static final long ALLOCATION_COUNT_BYTE_OFFSET;
-    public static final long BLOCK_BYTES_BYTE_OFFSET;
-    public static final long ALLOCATION_BYTES_BYTE_OFFSET;
+	public static final long BLOCK_COUNT_BYTE_OFFSET;
+	public static final long ALLOCATION_COUNT_BYTE_OFFSET;
+	public static final long BLOCK_BYTES_BYTE_OFFSET;
+	public static final long ALLOCATION_BYTES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("blockCount"),
-            JAVA_INT.withName("allocationCount"),
-            JAVA_LONG.withName("blockBytes"),
-            JAVA_LONG.withName("allocationBytes")
-        ).withName("VmaStatistics").withByteAlignment(8);
-        
-        BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockCount"));
-        ALLOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationCount"));
-        BLOCK_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockBytes"));
-        ALLOCATION_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationBytes"));
-        
-        BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockCount"));
-        ALLOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationCount"));
-        BLOCK_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockBytes"));
-        ALLOCATION_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationBytes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("blockCount"),
+		    JAVA_INT.withName("allocationCount"),
+		    JAVA_LONG.withName("blockBytes"),
+		    JAVA_LONG.withName("allocationBytes")
+		).withName("VmaStatistics").withByteAlignment(8);
+		
+		BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockCount"));
+		ALLOCATION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationCount"));
+		BLOCK_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockBytes"));
+		ALLOCATION_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("allocationBytes"));
+		
+		BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockCount"));
+		ALLOCATION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationCount"));
+		BLOCK_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockBytes"));
+		ALLOCATION_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("allocationBytes"));
+		//@formatter:on
+	}
 
-    public VmaStatistics() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaStatistics(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaStatistics(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaStatistics() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaStatistics(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaStatistics(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #blockCount()
     public VmaStatistics blockCount(int blockCount) {
@@ -183,5 +183,5 @@ public final class VmaStatistics
             segment -> new VmaStatistics(segment)
         );
     }
-    
+
 }

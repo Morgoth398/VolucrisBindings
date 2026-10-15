@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineInputAssemblyStateCreateInfo
 		implements Struct<VkPipelineInputAssemblyStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle TOPOLOGY_HANDLE;
-    public static final VarHandle PRIMITIVE_RESTART_ENABLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle TOPOLOGY_HANDLE;
+	public static final VarHandle PRIMITIVE_RESTART_ENABLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long TOPOLOGY_BYTE_OFFSET;
-    public static final long PRIMITIVE_RESTART_ENABLE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long TOPOLOGY_BYTE_OFFSET;
+	public static final long PRIMITIVE_RESTART_ENABLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("topology"),
-            JAVA_INT.withName("primitiveRestartEnable"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPipelineInputAssemblyStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        TOPOLOGY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("topology"));
-        PRIMITIVE_RESTART_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveRestartEnable"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        TOPOLOGY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("topology"));
-        PRIMITIVE_RESTART_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveRestartEnable"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("topology"),
+		    JAVA_INT.withName("primitiveRestartEnable"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPipelineInputAssemblyStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		TOPOLOGY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("topology"));
+		PRIMITIVE_RESTART_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveRestartEnable"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		TOPOLOGY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("topology"));
+		PRIMITIVE_RESTART_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveRestartEnable"));
+		//@formatter:on
+	}
 
-    public VkPipelineInputAssemblyStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineInputAssemblyStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineInputAssemblyStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineInputAssemblyStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineInputAssemblyStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineInputAssemblyStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineInputAssemblyStateCreateInfo sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPipelineInputAssemblyStateCreateInfo
             segment -> new VkPipelineInputAssemblyStateCreateInfo(segment)
         );
     }
-    
+
 }

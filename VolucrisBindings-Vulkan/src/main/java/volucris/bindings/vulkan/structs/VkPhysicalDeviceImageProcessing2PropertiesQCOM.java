@@ -22,50 +22,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageProcessing2PropertiesQCOM
 		implements Struct<VkPhysicalDeviceImageProcessing2PropertiesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_BLOCK_MATCH_WINDOW_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_BLOCK_MATCH_WINDOW_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D maxBlockMatchWindow;
+	private final VkExtent2D maxBlockMatchWindow;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("maxBlockMatchWindow")
-        ).withName("VkPhysicalDeviceImageProcessing2PropertiesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_BLOCK_MATCH_WINDOW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBlockMatchWindow"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("maxBlockMatchWindow")
+		).withName("VkPhysicalDeviceImageProcessing2PropertiesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_BLOCK_MATCH_WINDOW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxBlockMatchWindow"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageProcessing2PropertiesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageProcessing2PropertiesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageProcessing2PropertiesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-        maxBlockMatchWindow = new VkExtent2D(segment.asSlice(MAX_BLOCK_MATCH_WINDOW_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceImageProcessing2PropertiesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageProcessing2PropertiesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageProcessing2PropertiesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    maxBlockMatchWindow = new VkExtent2D(segment.asSlice(MAX_BLOCK_MATCH_WINDOW_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageProcessing2PropertiesQCOM sType(int sType) {
@@ -159,5 +159,5 @@ public final class VkPhysicalDeviceImageProcessing2PropertiesQCOM
             segment -> new VkPhysicalDeviceImageProcessing2PropertiesQCOM(segment)
         );
     }
-    
+
 }

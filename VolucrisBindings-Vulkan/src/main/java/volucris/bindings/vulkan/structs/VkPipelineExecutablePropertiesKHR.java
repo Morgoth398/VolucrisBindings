@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineExecutablePropertiesKHR
 		implements Struct<VkPipelineExecutablePropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGES_HANDLE;
-    public static final VarHandle NAME_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
-    public static final VarHandle SUBGROUP_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGES_HANDLE;
+	public static final VarHandle NAME_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle SUBGROUP_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGES_BYTE_OFFSET;
-    public static final long NAME_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
-    public static final long SUBGROUP_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGES_BYTE_OFFSET;
+	public static final long NAME_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long SUBGROUP_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("stages"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            JAVA_INT.withName("subgroupSize")
-        ).withName("VkPipelineExecutablePropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stages"));
-        NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stages"));
-        NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("stages"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    JAVA_INT.withName("subgroupSize")
+		).withName("VkPipelineExecutablePropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stages"));
+		NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stages"));
+		NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSize"));
+		//@formatter:on
+	}
 
-    public VkPipelineExecutablePropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineExecutablePropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineExecutablePropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineExecutablePropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineExecutablePropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineExecutablePropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineExecutablePropertiesKHR sType(int sType) {
@@ -125,6 +125,10 @@ public final class VkPipelineExecutablePropertiesKHR
     	return (byte) NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String name() {
+        return segment.getString(NAME_BYTE_OFFSET);
+    }
+    
     /// @see #description(int)
     public VkPipelineExecutablePropertiesKHR description(byte description, int index0) {
     	DESCRIPTION_HANDLE.set(segment, 0L, index0, description);
@@ -135,6 +139,10 @@ public final class VkPipelineExecutablePropertiesKHR
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
     }
     
+    public String description() {
+        return segment.getString(DESCRIPTION_BYTE_OFFSET);
+    }
+    
     /// @see #subgroupSize()
     public VkPipelineExecutablePropertiesKHR subgroupSize(int subgroupSize) {
     	SUBGROUP_SIZE_HANDLE.set(segment, 0L, subgroupSize);
@@ -143,14 +151,6 @@ public final class VkPipelineExecutablePropertiesKHR
     
     public int subgroupSize() {
     	return (int) SUBGROUP_SIZE_HANDLE.get(segment, 0L);
-    }
-    
-    public String name() {
-        return segment.getString(NAME_BYTE_OFFSET);
-    }
-    
-    public String description() {
-        return segment.getString(DESCRIPTION_BYTE_OFFSET);
     }
     
     @Override
@@ -204,5 +204,5 @@ public final class VkPipelineExecutablePropertiesKHR
             segment -> new VkPipelineExecutablePropertiesKHR(segment)
         );
     }
-    
+
 }

@@ -21,90 +21,90 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceConservativeRasterizationPropertiesEXT
 		implements Struct<VkPhysicalDeviceConservativeRasterizationPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRIMITIVE_OVERESTIMATION_SIZE_HANDLE;
-    public static final VarHandle MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE;
-    public static final VarHandle EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_HANDLE;
-    public static final VarHandle PRIMITIVE_UNDERESTIMATION_HANDLE;
-    public static final VarHandle CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_HANDLE;
-    public static final VarHandle DEGENERATE_TRIANGLES_RASTERIZED_HANDLE;
-    public static final VarHandle DEGENERATE_LINES_RASTERIZED_HANDLE;
-    public static final VarHandle FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_HANDLE;
-    public static final VarHandle CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRIMITIVE_OVERESTIMATION_SIZE_HANDLE;
+	public static final VarHandle MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE;
+	public static final VarHandle EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_HANDLE;
+	public static final VarHandle PRIMITIVE_UNDERESTIMATION_HANDLE;
+	public static final VarHandle CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_HANDLE;
+	public static final VarHandle DEGENERATE_TRIANGLES_RASTERIZED_HANDLE;
+	public static final VarHandle DEGENERATE_LINES_RASTERIZED_HANDLE;
+	public static final VarHandle FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_HANDLE;
+	public static final VarHandle CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET;
-    public static final long MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET;
-    public static final long EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_BYTE_OFFSET;
-    public static final long PRIMITIVE_UNDERESTIMATION_BYTE_OFFSET;
-    public static final long CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_BYTE_OFFSET;
-    public static final long DEGENERATE_TRIANGLES_RASTERIZED_BYTE_OFFSET;
-    public static final long DEGENERATE_LINES_RASTERIZED_BYTE_OFFSET;
-    public static final long FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_BYTE_OFFSET;
-    public static final long CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET;
+	public static final long MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET;
+	public static final long EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_BYTE_OFFSET;
+	public static final long PRIMITIVE_UNDERESTIMATION_BYTE_OFFSET;
+	public static final long CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_BYTE_OFFSET;
+	public static final long DEGENERATE_TRIANGLES_RASTERIZED_BYTE_OFFSET;
+	public static final long DEGENERATE_LINES_RASTERIZED_BYTE_OFFSET;
+	public static final long FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_BYTE_OFFSET;
+	public static final long CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_FLOAT.withName("primitiveOverestimationSize"),
-            JAVA_FLOAT.withName("maxExtraPrimitiveOverestimationSize"),
-            JAVA_FLOAT.withName("extraPrimitiveOverestimationSizeGranularity"),
-            JAVA_INT.withName("primitiveUnderestimation"),
-            JAVA_INT.withName("conservativePointAndLineRasterization"),
-            JAVA_INT.withName("degenerateTrianglesRasterized"),
-            JAVA_INT.withName("degenerateLinesRasterized"),
-            JAVA_INT.withName("fullyCoveredFragmentShaderInputVariable"),
-            JAVA_INT.withName("conservativeRasterizationPostDepthCoverage"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceConservativeRasterizationPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRIMITIVE_OVERESTIMATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveOverestimationSize"));
-        MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxExtraPrimitiveOverestimationSize"));
-        EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extraPrimitiveOverestimationSizeGranularity"));
-        PRIMITIVE_UNDERESTIMATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveUnderestimation"));
-        CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("conservativePointAndLineRasterization"));
-        DEGENERATE_TRIANGLES_RASTERIZED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("degenerateTrianglesRasterized"));
-        DEGENERATE_LINES_RASTERIZED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("degenerateLinesRasterized"));
-        FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fullyCoveredFragmentShaderInputVariable"));
-        CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("conservativeRasterizationPostDepthCoverage"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveOverestimationSize"));
-        MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxExtraPrimitiveOverestimationSize"));
-        EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extraPrimitiveOverestimationSizeGranularity"));
-        PRIMITIVE_UNDERESTIMATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveUnderestimation"));
-        CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conservativePointAndLineRasterization"));
-        DEGENERATE_TRIANGLES_RASTERIZED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("degenerateTrianglesRasterized"));
-        DEGENERATE_LINES_RASTERIZED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("degenerateLinesRasterized"));
-        FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fullyCoveredFragmentShaderInputVariable"));
-        CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conservativeRasterizationPostDepthCoverage"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_FLOAT.withName("primitiveOverestimationSize"),
+		    JAVA_FLOAT.withName("maxExtraPrimitiveOverestimationSize"),
+		    JAVA_FLOAT.withName("extraPrimitiveOverestimationSizeGranularity"),
+		    JAVA_INT.withName("primitiveUnderestimation"),
+		    JAVA_INT.withName("conservativePointAndLineRasterization"),
+		    JAVA_INT.withName("degenerateTrianglesRasterized"),
+		    JAVA_INT.withName("degenerateLinesRasterized"),
+		    JAVA_INT.withName("fullyCoveredFragmentShaderInputVariable"),
+		    JAVA_INT.withName("conservativeRasterizationPostDepthCoverage"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceConservativeRasterizationPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRIMITIVE_OVERESTIMATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveOverestimationSize"));
+		MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxExtraPrimitiveOverestimationSize"));
+		EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("extraPrimitiveOverestimationSizeGranularity"));
+		PRIMITIVE_UNDERESTIMATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveUnderestimation"));
+		CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("conservativePointAndLineRasterization"));
+		DEGENERATE_TRIANGLES_RASTERIZED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("degenerateTrianglesRasterized"));
+		DEGENERATE_LINES_RASTERIZED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("degenerateLinesRasterized"));
+		FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fullyCoveredFragmentShaderInputVariable"));
+		CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("conservativeRasterizationPostDepthCoverage"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveOverestimationSize"));
+		MAX_EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxExtraPrimitiveOverestimationSize"));
+		EXTRA_PRIMITIVE_OVERESTIMATION_SIZE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("extraPrimitiveOverestimationSizeGranularity"));
+		PRIMITIVE_UNDERESTIMATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveUnderestimation"));
+		CONSERVATIVE_POINT_AND_LINE_RASTERIZATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conservativePointAndLineRasterization"));
+		DEGENERATE_TRIANGLES_RASTERIZED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("degenerateTrianglesRasterized"));
+		DEGENERATE_LINES_RASTERIZED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("degenerateLinesRasterized"));
+		FULLY_COVERED_FRAGMENT_SHADER_INPUT_VARIABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fullyCoveredFragmentShaderInputVariable"));
+		CONSERVATIVE_RASTERIZATION_POST_DEPTH_COVERAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("conservativeRasterizationPostDepthCoverage"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceConservativeRasterizationPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceConservativeRasterizationPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceConservativeRasterizationPropertiesEXT sType(int sType) {
@@ -272,5 +272,5 @@ public final class VkPhysicalDeviceConservativeRasterizationPropertiesEXT
             segment -> new VkPhysicalDeviceConservativeRasterizationPropertiesEXT(segment)
         );
     }
-    
+
 }

@@ -21,75 +21,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeRateControlInfoKHR
 		implements Struct<VkVideoEncodeRateControlInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle RATE_CONTROL_MODE_HANDLE;
-    public static final VarHandle LAYER_COUNT_HANDLE;
-    public static final VarHandle P_LAYERS_HANDLE;
-    public static final VarHandle VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE;
-    public static final VarHandle INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle RATE_CONTROL_MODE_HANDLE;
+	public static final VarHandle LAYER_COUNT_HANDLE;
+	public static final VarHandle P_LAYERS_HANDLE;
+	public static final VarHandle VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE;
+	public static final VarHandle INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long RATE_CONTROL_MODE_BYTE_OFFSET;
-    public static final long LAYER_COUNT_BYTE_OFFSET;
-    public static final long P_LAYERS_BYTE_OFFSET;
-    public static final long VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET;
-    public static final long INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long RATE_CONTROL_MODE_BYTE_OFFSET;
+	public static final long LAYER_COUNT_BYTE_OFFSET;
+	public static final long P_LAYERS_BYTE_OFFSET;
+	public static final long VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET;
+	public static final long INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("rateControlMode"),
-            JAVA_INT.withName("layerCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pLayers"),
-            JAVA_INT.withName("virtualBufferSizeInMs"),
-            JAVA_INT.withName("initialVirtualBufferSizeInMs")
-        ).withName("VkVideoEncodeRateControlInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        RATE_CONTROL_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rateControlMode"));
-        LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
-        P_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLayers"));
-        VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("virtualBufferSizeInMs"));
-        INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initialVirtualBufferSizeInMs"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        RATE_CONTROL_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rateControlMode"));
-        LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
-        P_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLayers"));
-        VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("virtualBufferSizeInMs"));
-        INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initialVirtualBufferSizeInMs"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("rateControlMode"),
+		    JAVA_INT.withName("layerCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pLayers"),
+		    JAVA_INT.withName("virtualBufferSizeInMs"),
+		    JAVA_INT.withName("initialVirtualBufferSizeInMs")
+		).withName("VkVideoEncodeRateControlInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		RATE_CONTROL_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rateControlMode"));
+		LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
+		P_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLayers"));
+		VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("virtualBufferSizeInMs"));
+		INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("initialVirtualBufferSizeInMs"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		RATE_CONTROL_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rateControlMode"));
+		LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
+		P_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLayers"));
+		VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("virtualBufferSizeInMs"));
+		INITIAL_VIRTUAL_BUFFER_SIZE_IN_MS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("initialVirtualBufferSizeInMs"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeRateControlInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeRateControlInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeRateControlInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeRateControlInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeRateControlInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeRateControlInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeRateControlInfoKHR sType(int sType) {
@@ -232,5 +232,5 @@ public final class VkVideoEncodeRateControlInfoKHR
             segment -> new VkVideoEncodeRateControlInfoKHR(segment)
         );
     }
-    
+
 }

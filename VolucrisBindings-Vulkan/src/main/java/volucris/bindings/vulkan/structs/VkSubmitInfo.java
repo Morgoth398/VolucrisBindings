@@ -23,82 +23,82 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSubmitInfo
 		implements Struct<VkSubmitInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_WAIT_SEMAPHORES_HANDLE;
-    public static final VarHandle P_WAIT_DST_STAGE_MASK_HANDLE;
-    public static final VarHandle COMMAND_BUFFER_COUNT_HANDLE;
-    public static final VarHandle P_COMMAND_BUFFERS_HANDLE;
-    public static final VarHandle SIGNAL_SEMAPHORE_COUNT_HANDLE;
-    public static final VarHandle P_SIGNAL_SEMAPHORES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle WAIT_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_WAIT_SEMAPHORES_HANDLE;
+	public static final VarHandle P_WAIT_DST_STAGE_MASK_HANDLE;
+	public static final VarHandle COMMAND_BUFFER_COUNT_HANDLE;
+	public static final VarHandle P_COMMAND_BUFFERS_HANDLE;
+	public static final VarHandle SIGNAL_SEMAPHORE_COUNT_HANDLE;
+	public static final VarHandle P_SIGNAL_SEMAPHORES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_WAIT_SEMAPHORES_BYTE_OFFSET;
-    public static final long P_WAIT_DST_STAGE_MASK_BYTE_OFFSET;
-    public static final long COMMAND_BUFFER_COUNT_BYTE_OFFSET;
-    public static final long P_COMMAND_BUFFERS_BYTE_OFFSET;
-    public static final long SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET;
-    public static final long P_SIGNAL_SEMAPHORES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long WAIT_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_WAIT_SEMAPHORES_BYTE_OFFSET;
+	public static final long P_WAIT_DST_STAGE_MASK_BYTE_OFFSET;
+	public static final long COMMAND_BUFFER_COUNT_BYTE_OFFSET;
+	public static final long P_COMMAND_BUFFERS_BYTE_OFFSET;
+	public static final long SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET;
+	public static final long P_SIGNAL_SEMAPHORES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("waitSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pWaitSemaphores"),
-            UNBOUNDED_ADDRESS.withName("pWaitDstStageMask"),
-            JAVA_INT.withName("commandBufferCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCommandBuffers"),
-            JAVA_INT.withName("signalSemaphoreCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSignalSemaphores")
-        ).withName("VkSubmitInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphores"));
-        P_WAIT_DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitDstStageMask"));
-        COMMAND_BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferCount"));
-        P_COMMAND_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCommandBuffers"));
-        SIGNAL_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreCount"));
-        P_SIGNAL_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphores"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
-        P_WAIT_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphores"));
-        P_WAIT_DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitDstStageMask"));
-        COMMAND_BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferCount"));
-        P_COMMAND_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCommandBuffers"));
-        SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreCount"));
-        P_SIGNAL_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphores"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("waitSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pWaitSemaphores"),
+		    UNBOUNDED_ADDRESS.withName("pWaitDstStageMask"),
+		    JAVA_INT.withName("commandBufferCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCommandBuffers"),
+		    JAVA_INT.withName("signalSemaphoreCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSignalSemaphores")
+		).withName("VkSubmitInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitSemaphores"));
+		P_WAIT_DST_STAGE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pWaitDstStageMask"));
+		COMMAND_BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferCount"));
+		P_COMMAND_BUFFERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCommandBuffers"));
+		SIGNAL_SEMAPHORE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("signalSemaphoreCount"));
+		P_SIGNAL_SEMAPHORES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSignalSemaphores"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		WAIT_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("waitSemaphoreCount"));
+		P_WAIT_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitSemaphores"));
+		P_WAIT_DST_STAGE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pWaitDstStageMask"));
+		COMMAND_BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferCount"));
+		P_COMMAND_BUFFERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCommandBuffers"));
+		SIGNAL_SEMAPHORE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("signalSemaphoreCount"));
+		P_SIGNAL_SEMAPHORES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSignalSemaphores"));
+		//@formatter:on
+	}
 
-    public VkSubmitInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSubmitInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSubmitInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSubmitInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSubmitInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSubmitInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkSubmitInfo sType(int sType) {
@@ -266,5 +266,5 @@ public final class VkSubmitInfo
             segment -> new VkSubmitInfo(segment)
         );
     }
-    
+
 }

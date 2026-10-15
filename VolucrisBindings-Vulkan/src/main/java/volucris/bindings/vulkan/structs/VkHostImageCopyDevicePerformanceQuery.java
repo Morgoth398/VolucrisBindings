@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkHostImageCopyDevicePerformanceQuery
 		implements Struct<VkHostImageCopyDevicePerformanceQuery> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OPTIMAL_DEVICE_ACCESS_HANDLE;
-    public static final VarHandle IDENTICAL_MEMORY_LAYOUT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OPTIMAL_DEVICE_ACCESS_HANDLE;
+	public static final VarHandle IDENTICAL_MEMORY_LAYOUT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OPTIMAL_DEVICE_ACCESS_BYTE_OFFSET;
-    public static final long IDENTICAL_MEMORY_LAYOUT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OPTIMAL_DEVICE_ACCESS_BYTE_OFFSET;
+	public static final long IDENTICAL_MEMORY_LAYOUT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("optimalDeviceAccess"),
-            JAVA_INT.withName("identicalMemoryLayout")
-        ).withName("VkHostImageCopyDevicePerformanceQuery").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OPTIMAL_DEVICE_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalDeviceAccess"));
-        IDENTICAL_MEMORY_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identicalMemoryLayout"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OPTIMAL_DEVICE_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalDeviceAccess"));
-        IDENTICAL_MEMORY_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identicalMemoryLayout"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("optimalDeviceAccess"),
+		    JAVA_INT.withName("identicalMemoryLayout")
+		).withName("VkHostImageCopyDevicePerformanceQuery").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OPTIMAL_DEVICE_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalDeviceAccess"));
+		IDENTICAL_MEMORY_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identicalMemoryLayout"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OPTIMAL_DEVICE_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalDeviceAccess"));
+		IDENTICAL_MEMORY_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identicalMemoryLayout"));
+		//@formatter:on
+	}
 
-    public VkHostImageCopyDevicePerformanceQuery() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkHostImageCopyDevicePerformanceQuery(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkHostImageCopyDevicePerformanceQuery(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkHostImageCopyDevicePerformanceQuery() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkHostImageCopyDevicePerformanceQuery(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkHostImageCopyDevicePerformanceQuery(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkHostImageCopyDevicePerformanceQuery sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkHostImageCopyDevicePerformanceQuery
             segment -> new VkHostImageCopyDevicePerformanceQuery(segment)
         );
     }
-    
+
 }

@@ -21,49 +21,49 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkOpaqueCaptureDescriptorDataCreateInfoEXT
 		implements Struct<VkOpaqueCaptureDescriptorDataCreateInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle OPAQUE_CAPTURE_DESCRIPTOR_DATA_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle OPAQUE_CAPTURE_DESCRIPTOR_DATA_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OPAQUE_CAPTURE_DESCRIPTOR_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OPAQUE_CAPTURE_DESCRIPTOR_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("opaqueCaptureDescriptorData")
-        ).withName("VkOpaqueCaptureDescriptorDataCreateInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        OPAQUE_CAPTURE_DESCRIPTOR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opaqueCaptureDescriptorData"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OPAQUE_CAPTURE_DESCRIPTOR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opaqueCaptureDescriptorData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("opaqueCaptureDescriptorData")
+		).withName("VkOpaqueCaptureDescriptorDataCreateInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		OPAQUE_CAPTURE_DESCRIPTOR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opaqueCaptureDescriptorData"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OPAQUE_CAPTURE_DESCRIPTOR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opaqueCaptureDescriptorData"));
+		//@formatter:on
+	}
 
-    public VkOpaqueCaptureDescriptorDataCreateInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkOpaqueCaptureDescriptorDataCreateInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkOpaqueCaptureDescriptorDataCreateInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkOpaqueCaptureDescriptorDataCreateInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkOpaqueCaptureDescriptorDataCreateInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkOpaqueCaptureDescriptorDataCreateInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkOpaqueCaptureDescriptorDataCreateInfoEXT sType(int sType) {
@@ -156,5 +156,5 @@ public final class VkOpaqueCaptureDescriptorDataCreateInfoEXT
             segment -> new VkOpaqueCaptureDescriptorDataCreateInfoEXT(segment)
         );
     }
-    
+
 }

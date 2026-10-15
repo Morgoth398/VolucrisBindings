@@ -19,59 +19,59 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkShaderResourceUsageAMD
 		implements Struct<VkShaderResourceUsageAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle NUM_USED_VGPRS_HANDLE;
-    public static final VarHandle NUM_USED_SGPRS_HANDLE;
-    public static final VarHandle LDS_SIZE_PER_LOCAL_WORK_GROUP_HANDLE;
-    public static final VarHandle LDS_USAGE_SIZE_IN_BYTES_HANDLE;
-    public static final VarHandle SCRATCH_MEM_USAGE_IN_BYTES_HANDLE;
+	public static final VarHandle NUM_USED_VGPRS_HANDLE;
+	public static final VarHandle NUM_USED_SGPRS_HANDLE;
+	public static final VarHandle LDS_SIZE_PER_LOCAL_WORK_GROUP_HANDLE;
+	public static final VarHandle LDS_USAGE_SIZE_IN_BYTES_HANDLE;
+	public static final VarHandle SCRATCH_MEM_USAGE_IN_BYTES_HANDLE;
 
-    public static final long NUM_USED_VGPRS_BYTE_OFFSET;
-    public static final long NUM_USED_SGPRS_BYTE_OFFSET;
-    public static final long LDS_SIZE_PER_LOCAL_WORK_GROUP_BYTE_OFFSET;
-    public static final long LDS_USAGE_SIZE_IN_BYTES_BYTE_OFFSET;
-    public static final long SCRATCH_MEM_USAGE_IN_BYTES_BYTE_OFFSET;
+	public static final long NUM_USED_VGPRS_BYTE_OFFSET;
+	public static final long NUM_USED_SGPRS_BYTE_OFFSET;
+	public static final long LDS_SIZE_PER_LOCAL_WORK_GROUP_BYTE_OFFSET;
+	public static final long LDS_USAGE_SIZE_IN_BYTES_BYTE_OFFSET;
+	public static final long SCRATCH_MEM_USAGE_IN_BYTES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("numUsedVgprs"),
-            JAVA_INT.withName("numUsedSgprs"),
-            JAVA_INT.withName("ldsSizePerLocalWorkGroup"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("ldsUsageSizeInBytes"),
-            JAVA_LONG.withName("scratchMemUsageInBytes")
-        ).withName("VkShaderResourceUsageAMD").withByteAlignment(8);
-        
-        NUM_USED_VGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numUsedVgprs"));
-        NUM_USED_SGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numUsedSgprs"));
-        LDS_SIZE_PER_LOCAL_WORK_GROUP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ldsSizePerLocalWorkGroup"));
-        LDS_USAGE_SIZE_IN_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ldsUsageSizeInBytes"));
-        SCRATCH_MEM_USAGE_IN_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scratchMemUsageInBytes"));
-        
-        NUM_USED_VGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numUsedVgprs"));
-        NUM_USED_SGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numUsedSgprs"));
-        LDS_SIZE_PER_LOCAL_WORK_GROUP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ldsSizePerLocalWorkGroup"));
-        LDS_USAGE_SIZE_IN_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ldsUsageSizeInBytes"));
-        SCRATCH_MEM_USAGE_IN_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchMemUsageInBytes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("numUsedVgprs"),
+		    JAVA_INT.withName("numUsedSgprs"),
+		    JAVA_INT.withName("ldsSizePerLocalWorkGroup"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("ldsUsageSizeInBytes"),
+		    JAVA_LONG.withName("scratchMemUsageInBytes")
+		).withName("VkShaderResourceUsageAMD").withByteAlignment(8);
+		
+		NUM_USED_VGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numUsedVgprs"));
+		NUM_USED_SGPRS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numUsedSgprs"));
+		LDS_SIZE_PER_LOCAL_WORK_GROUP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ldsSizePerLocalWorkGroup"));
+		LDS_USAGE_SIZE_IN_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ldsUsageSizeInBytes"));
+		SCRATCH_MEM_USAGE_IN_BYTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scratchMemUsageInBytes"));
+		
+		NUM_USED_VGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numUsedVgprs"));
+		NUM_USED_SGPRS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numUsedSgprs"));
+		LDS_SIZE_PER_LOCAL_WORK_GROUP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ldsSizePerLocalWorkGroup"));
+		LDS_USAGE_SIZE_IN_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ldsUsageSizeInBytes"));
+		SCRATCH_MEM_USAGE_IN_BYTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scratchMemUsageInBytes"));
+		//@formatter:on
+	}
 
-    public VkShaderResourceUsageAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkShaderResourceUsageAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkShaderResourceUsageAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkShaderResourceUsageAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkShaderResourceUsageAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkShaderResourceUsageAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #numUsedVgprs()
     public VkShaderResourceUsageAMD numUsedVgprs(int numUsedVgprs) {
@@ -174,5 +174,5 @@ public final class VkShaderResourceUsageAMD
             segment -> new VkShaderResourceUsageAMD(segment)
         );
     }
-    
+
 }

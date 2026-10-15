@@ -22,55 +22,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
 		implements Struct<VkPipelineFragmentShadingRateStateCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COMBINER_OPS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COMBINER_OPS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FRAGMENT_SIZE_BYTE_OFFSET;
-    public static final long COMBINER_OPS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FRAGMENT_SIZE_BYTE_OFFSET;
+	public static final long COMBINER_OPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D fragmentSize;
+	private final VkExtent2D fragmentSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("fragmentSize"),
-            MemoryLayout.sequenceLayout(2, JAVA_INT).withName("combinerOps")
-        ).withName("VkPipelineFragmentShadingRateStateCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("combinerOps"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentSize"));
-        COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("combinerOps"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("fragmentSize"),
+		    MemoryLayout.sequenceLayout(2, JAVA_INT).withName("combinerOps")
+		).withName("VkPipelineFragmentShadingRateStateCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("combinerOps"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentSize"));
+		COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("combinerOps"));
+		//@formatter:on
+	}
 
-    public VkPipelineFragmentShadingRateStateCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineFragmentShadingRateStateCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineFragmentShadingRateStateCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        fragmentSize = new VkExtent2D(segment.asSlice(FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPipelineFragmentShadingRateStateCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineFragmentShadingRateStateCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineFragmentShadingRateStateCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    fragmentSize = new VkExtent2D(segment.asSlice(FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPipelineFragmentShadingRateStateCreateInfoKHR sType(int sType) {
@@ -97,16 +97,6 @@ public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
     	return segment;
     }
     
-    /// @see #combinerOps(int)
-    public VkPipelineFragmentShadingRateStateCreateInfoKHR combinerOps(int combinerOps, int index0) {
-    	COMBINER_OPS_HANDLE.set(segment, 0L, index0, combinerOps);
-    	return this;
-    }
-    
-    public int combinerOps(int index0) {
-    	return (int) COMBINER_OPS_HANDLE.get(segment, 0L, index0);
-    }
-    
     /// @see #fragmentSize()
     public VkPipelineFragmentShadingRateStateCreateInfoKHR fragmentSize(Consumer<VkExtent2D> consumer) {
     	consumer.accept(fragmentSize);
@@ -121,6 +111,16 @@ public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
     
     public VkExtent2D fragmentSize() {
     	return fragmentSize;
+    }
+    
+    /// @see #combinerOps(int)
+    public VkPipelineFragmentShadingRateStateCreateInfoKHR combinerOps(int combinerOps, int index0) {
+    	COMBINER_OPS_HANDLE.set(segment, 0L, index0, combinerOps);
+    	return this;
+    }
+    
+    public int combinerOps(int index0) {
+    	return (int) COMBINER_OPS_HANDLE.get(segment, 0L, index0);
     }
     
     @Override
@@ -174,5 +174,5 @@ public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
             segment -> new VkPipelineFragmentShadingRateStateCreateInfoKHR(segment)
         );
     }
-    
+
 }

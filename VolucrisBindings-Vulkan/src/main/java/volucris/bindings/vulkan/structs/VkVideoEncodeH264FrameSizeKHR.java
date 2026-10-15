@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVideoEncodeH264FrameSizeKHR
 		implements Struct<VkVideoEncodeH264FrameSizeKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FRAME_ISIZE_HANDLE;
-    public static final VarHandle FRAME_PSIZE_HANDLE;
-    public static final VarHandle FRAME_BSIZE_HANDLE;
+	public static final VarHandle FRAME_ISIZE_HANDLE;
+	public static final VarHandle FRAME_PSIZE_HANDLE;
+	public static final VarHandle FRAME_BSIZE_HANDLE;
 
-    public static final long FRAME_ISIZE_BYTE_OFFSET;
-    public static final long FRAME_PSIZE_BYTE_OFFSET;
-    public static final long FRAME_BSIZE_BYTE_OFFSET;
+	public static final long FRAME_ISIZE_BYTE_OFFSET;
+	public static final long FRAME_PSIZE_BYTE_OFFSET;
+	public static final long FRAME_BSIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("frameISize"),
-            JAVA_INT.withName("framePSize"),
-            JAVA_INT.withName("frameBSize")
-        ).withName("VkVideoEncodeH264FrameSizeKHR").withByteAlignment(4);
-        
-        FRAME_ISIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameISize"));
-        FRAME_PSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framePSize"));
-        FRAME_BSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameBSize"));
-        
-        FRAME_ISIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameISize"));
-        FRAME_PSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framePSize"));
-        FRAME_BSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameBSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("frameISize"),
+		    JAVA_INT.withName("framePSize"),
+		    JAVA_INT.withName("frameBSize")
+		).withName("VkVideoEncodeH264FrameSizeKHR").withByteAlignment(4);
+		
+		FRAME_ISIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameISize"));
+		FRAME_PSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("framePSize"));
+		FRAME_BSIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameBSize"));
+		
+		FRAME_ISIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameISize"));
+		FRAME_PSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("framePSize"));
+		FRAME_BSIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameBSize"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH264FrameSizeKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH264FrameSizeKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH264FrameSizeKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH264FrameSizeKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH264FrameSizeKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH264FrameSizeKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #frameISize()
     public VkVideoEncodeH264FrameSizeKHR frameISize(int frameISize) {
@@ -143,5 +143,5 @@ public final class VkVideoEncodeH264FrameSizeKHR
             segment -> new VkVideoEncodeH264FrameSizeKHR(segment)
         );
     }
-    
+
 }

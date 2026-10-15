@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPerformanceCounterKHR
 		implements Struct<VkPerformanceCounterKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle UNIT_HANDLE;
-    public static final VarHandle SCOPE_HANDLE;
-    public static final VarHandle STORAGE_HANDLE;
-    public static final VarHandle UUID_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle UNIT_HANDLE;
+	public static final VarHandle SCOPE_HANDLE;
+	public static final VarHandle STORAGE_HANDLE;
+	public static final VarHandle UUID_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long UNIT_BYTE_OFFSET;
-    public static final long SCOPE_BYTE_OFFSET;
-    public static final long STORAGE_BYTE_OFFSET;
-    public static final long UUID_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long UNIT_BYTE_OFFSET;
+	public static final long SCOPE_BYTE_OFFSET;
+	public static final long STORAGE_BYTE_OFFSET;
+	public static final long UUID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("unit"),
-            JAVA_INT.withName("scope"),
-            JAVA_INT.withName("storage"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("uuid"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPerformanceCounterKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unit"));
-        SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scope"));
-        STORAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storage"));
-        UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uuid"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unit"));
-        SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scope"));
-        STORAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storage"));
-        UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uuid"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("unit"),
+		    JAVA_INT.withName("scope"),
+		    JAVA_INT.withName("storage"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("uuid"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPerformanceCounterKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("unit"));
+		SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("scope"));
+		STORAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("storage"));
+		UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uuid"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("unit"));
+		SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("scope"));
+		STORAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("storage"));
+		UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uuid"));
+		//@formatter:on
+	}
 
-    public VkPerformanceCounterKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerformanceCounterKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerformanceCounterKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPerformanceCounterKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerformanceCounterKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerformanceCounterKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPerformanceCounterKHR sType(int sType) {
@@ -197,5 +197,5 @@ public final class VkPerformanceCounterKHR
             segment -> new VkPerformanceCounterKHR(segment)
         );
     }
-    
+
 }

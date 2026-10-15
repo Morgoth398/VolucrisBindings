@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoFormatAV1QuantizationMapPropertiesKHR
 		implements Struct<VkVideoFormatAV1QuantizationMapPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COMPATIBLE_SUPERBLOCK_SIZES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COMPATIBLE_SUPERBLOCK_SIZES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COMPATIBLE_SUPERBLOCK_SIZES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COMPATIBLE_SUPERBLOCK_SIZES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("compatibleSuperblockSizes"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoFormatAV1QuantizationMapPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COMPATIBLE_SUPERBLOCK_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleSuperblockSizes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COMPATIBLE_SUPERBLOCK_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleSuperblockSizes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("compatibleSuperblockSizes"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoFormatAV1QuantizationMapPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COMPATIBLE_SUPERBLOCK_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleSuperblockSizes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COMPATIBLE_SUPERBLOCK_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleSuperblockSizes"));
+		//@formatter:on
+	}
 
-    public VkVideoFormatAV1QuantizationMapPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoFormatAV1QuantizationMapPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoFormatAV1QuantizationMapPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoFormatAV1QuantizationMapPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoFormatAV1QuantizationMapPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoFormatAV1QuantizationMapPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoFormatAV1QuantizationMapPropertiesKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkVideoFormatAV1QuantizationMapPropertiesKHR
             segment -> new VkVideoFormatAV1QuantizationMapPropertiesKHR(segment)
         );
     }
-    
+
 }

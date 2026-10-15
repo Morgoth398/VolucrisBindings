@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance6Properties
 		implements Struct<VkPhysicalDeviceMaintenance6Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE;
-    public static final VarHandle MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE;
+	public static final VarHandle MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET;
-    public static final long MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET;
+	public static final long MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("blockTexelViewCompatibleMultipleLayers"),
-            JAVA_INT.withName("maxCombinedImageSamplerDescriptorCount"),
-            JAVA_INT.withName("fragmentShadingRateClampCombinerInputs"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMaintenance6Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
-        MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
-        FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
-        MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
-        FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("blockTexelViewCompatibleMultipleLayers"),
+		    JAVA_INT.withName("maxCombinedImageSamplerDescriptorCount"),
+		    JAVA_INT.withName("fragmentShadingRateClampCombinerInputs"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMaintenance6Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
+		MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
+		FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		BLOCK_TEXEL_VIEW_COMPATIBLE_MULTIPLE_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("blockTexelViewCompatibleMultipleLayers"));
+		MAX_COMBINED_IMAGE_SAMPLER_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCombinedImageSamplerDescriptorCount"));
+		FRAGMENT_SHADING_RATE_CLAMP_COMBINER_INPUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateClampCombinerInputs"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance6Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance6Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance6Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance6Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance6Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance6Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance6Properties sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceMaintenance6Properties
             segment -> new VkPhysicalDeviceMaintenance6Properties(segment)
         );
     }
-    
+
 }

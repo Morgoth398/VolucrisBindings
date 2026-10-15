@@ -22,79 +22,65 @@ import static java.lang.foreign.ValueLayout.*;
 public final class CXPlatformAvailability
 		implements Struct<CXPlatformAvailability> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle UNAVAILABLE_HANDLE;
+	public static final VarHandle UNAVAILABLE_HANDLE;
 
-    public static final long PLATFORM_BYTE_OFFSET;
-    public static final long INTRODUCED_BYTE_OFFSET;
-    public static final long DEPRECATED_BYTE_OFFSET;
-    public static final long OBSOLETED_BYTE_OFFSET;
-    public static final long UNAVAILABLE_BYTE_OFFSET;
-    public static final long MESSAGE_BYTE_OFFSET;
+	public static final long PLATFORM_BYTE_OFFSET;
+	public static final long INTRODUCED_BYTE_OFFSET;
+	public static final long DEPRECATED_BYTE_OFFSET;
+	public static final long OBSOLETED_BYTE_OFFSET;
+	public static final long UNAVAILABLE_BYTE_OFFSET;
+	public static final long MESSAGE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXString platform;
-    private final CXVersion introduced;
-    private final CXVersion deprecated;
-    private final CXVersion obsoleted;
-    private final CXString message;
+	private final CXString platform;
+	private final CXVersion introduced;
+	private final CXVersion deprecated;
+	private final CXVersion obsoleted;
+	private final CXString message;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            CXString.LAYOUT.withName("Platform"),
-            CXVersion.LAYOUT.withName("Introduced"),
-            CXVersion.LAYOUT.withName("Deprecated"),
-            CXVersion.LAYOUT.withName("Obsoleted"),
-            JAVA_INT.withName("Unavailable"),
-            CXString.LAYOUT.withName("Message")
-        ).withName("CXPlatformAvailability").withByteAlignment(8);
-        
-        UNAVAILABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Unavailable"));
-        
-        PLATFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Platform"));
-        INTRODUCED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Introduced"));
-        DEPRECATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Deprecated"));
-        OBSOLETED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Obsoleted"));
-        UNAVAILABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Unavailable"));
-        MESSAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Message"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    CXString.LAYOUT.withName("Platform"),
+		    CXVersion.LAYOUT.withName("Introduced"),
+		    CXVersion.LAYOUT.withName("Deprecated"),
+		    CXVersion.LAYOUT.withName("Obsoleted"),
+		    JAVA_INT.withName("Unavailable"),
+		    CXString.LAYOUT.withName("Message")
+		).withName("CXPlatformAvailability").withByteAlignment(8);
+		
+		UNAVAILABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("Unavailable"));
+		
+		PLATFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Platform"));
+		INTRODUCED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Introduced"));
+		DEPRECATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Deprecated"));
+		OBSOLETED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Obsoleted"));
+		UNAVAILABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Unavailable"));
+		MESSAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("Message"));
+		//@formatter:on
+	}
 
-    public CXPlatformAvailability() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXPlatformAvailability(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXPlatformAvailability(MemorySegment segment) {
-        this.segment = segment;
-    
-        platform = new CXString(segment.asSlice(PLATFORM_BYTE_OFFSET, CXString.LAYOUT));
-        introduced = new CXVersion(segment.asSlice(INTRODUCED_BYTE_OFFSET, CXVersion.LAYOUT));
-        deprecated = new CXVersion(segment.asSlice(DEPRECATED_BYTE_OFFSET, CXVersion.LAYOUT));
-        obsoleted = new CXVersion(segment.asSlice(OBSOLETED_BYTE_OFFSET, CXVersion.LAYOUT));
-        message = new CXString(segment.asSlice(MESSAGE_BYTE_OFFSET, CXString.LAYOUT));
-    }
+	public CXPlatformAvailability() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXPlatformAvailability(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXPlatformAvailability(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    platform = new CXString(segment.asSlice(PLATFORM_BYTE_OFFSET, CXString.LAYOUT));
+	    introduced = new CXVersion(segment.asSlice(INTRODUCED_BYTE_OFFSET, CXVersion.LAYOUT));
+	    deprecated = new CXVersion(segment.asSlice(DEPRECATED_BYTE_OFFSET, CXVersion.LAYOUT));
+	    obsoleted = new CXVersion(segment.asSlice(OBSOLETED_BYTE_OFFSET, CXVersion.LAYOUT));
+	    message = new CXString(segment.asSlice(MESSAGE_BYTE_OFFSET, CXString.LAYOUT));
+	}
 
-    /// @see #unavailable()
-    public CXPlatformAvailability unavailable(int unavailable) {
-    	UNAVAILABLE_HANDLE.set(segment, 0L, unavailable);
-    	return this;
-    }
-    
-    /// ```
-    /// 
-    /// Whether the entity is unconditionally unavailable on this platform.
-    /// ```
-    public int unavailable() {
-    	return (int) UNAVAILABLE_HANDLE.get(segment, 0L);
-    }
-    
     /// @see #platform()
     public CXPlatformAvailability platform(Consumer<CXString> consumer) {
     	consumer.accept(platform);
@@ -180,6 +166,20 @@ public final class CXPlatformAvailability
     	return obsoleted;
     }
     
+    /// @see #unavailable()
+    public CXPlatformAvailability unavailable(int unavailable) {
+    	UNAVAILABLE_HANDLE.set(segment, 0L, unavailable);
+    	return this;
+    }
+    
+    /// ```
+    /// 
+    /// Whether the entity is unconditionally unavailable on this platform.
+    /// ```
+    public int unavailable() {
+    	return (int) UNAVAILABLE_HANDLE.get(segment, 0L);
+    }
+    
     /// @see #message()
     public CXPlatformAvailability message(Consumer<CXString> consumer) {
     	consumer.accept(message);
@@ -252,5 +252,5 @@ public final class CXPlatformAvailability
             segment -> new CXPlatformAvailability(segment)
         );
     }
-    
+
 }

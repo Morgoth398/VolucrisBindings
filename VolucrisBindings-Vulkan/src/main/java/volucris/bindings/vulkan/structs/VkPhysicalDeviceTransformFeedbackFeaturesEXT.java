@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTransformFeedbackFeaturesEXT
 		implements Struct<VkPhysicalDeviceTransformFeedbackFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TRANSFORM_FEEDBACK_HANDLE;
-    public static final VarHandle GEOMETRY_STREAMS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TRANSFORM_FEEDBACK_HANDLE;
+	public static final VarHandle GEOMETRY_STREAMS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TRANSFORM_FEEDBACK_BYTE_OFFSET;
-    public static final long GEOMETRY_STREAMS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TRANSFORM_FEEDBACK_BYTE_OFFSET;
+	public static final long GEOMETRY_STREAMS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("transformFeedback"),
-            JAVA_INT.withName("geometryStreams")
-        ).withName("VkPhysicalDeviceTransformFeedbackFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TRANSFORM_FEEDBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedback"));
-        GEOMETRY_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryStreams"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TRANSFORM_FEEDBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedback"));
-        GEOMETRY_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryStreams"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("transformFeedback"),
+		    JAVA_INT.withName("geometryStreams")
+		).withName("VkPhysicalDeviceTransformFeedbackFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TRANSFORM_FEEDBACK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transformFeedback"));
+		GEOMETRY_STREAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("geometryStreams"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TRANSFORM_FEEDBACK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transformFeedback"));
+		GEOMETRY_STREAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("geometryStreams"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTransformFeedbackFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTransformFeedbackFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTransformFeedbackFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTransformFeedbackFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTransformFeedbackFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTransformFeedbackFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTransformFeedbackFeaturesEXT sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceTransformFeedbackFeaturesEXT
             segment -> new VkPhysicalDeviceTransformFeedbackFeaturesEXT(segment)
         );
     }
-    
+
 }

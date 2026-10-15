@@ -19,113 +19,113 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSRTDataNV
 		implements Struct<VkSRTDataNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle SX_HANDLE;
-    public static final VarHandle A_HANDLE;
-    public static final VarHandle B_HANDLE;
-    public static final VarHandle PVX_HANDLE;
-    public static final VarHandle SY_HANDLE;
-    public static final VarHandle C_HANDLE;
-    public static final VarHandle PVY_HANDLE;
-    public static final VarHandle SZ_HANDLE;
-    public static final VarHandle PVZ_HANDLE;
-    public static final VarHandle QX_HANDLE;
-    public static final VarHandle QY_HANDLE;
-    public static final VarHandle QZ_HANDLE;
-    public static final VarHandle QW_HANDLE;
-    public static final VarHandle TX_HANDLE;
-    public static final VarHandle TY_HANDLE;
-    public static final VarHandle TZ_HANDLE;
+	public static final VarHandle SX_HANDLE;
+	public static final VarHandle A_HANDLE;
+	public static final VarHandle B_HANDLE;
+	public static final VarHandle PVX_HANDLE;
+	public static final VarHandle SY_HANDLE;
+	public static final VarHandle C_HANDLE;
+	public static final VarHandle PVY_HANDLE;
+	public static final VarHandle SZ_HANDLE;
+	public static final VarHandle PVZ_HANDLE;
+	public static final VarHandle QX_HANDLE;
+	public static final VarHandle QY_HANDLE;
+	public static final VarHandle QZ_HANDLE;
+	public static final VarHandle QW_HANDLE;
+	public static final VarHandle TX_HANDLE;
+	public static final VarHandle TY_HANDLE;
+	public static final VarHandle TZ_HANDLE;
 
-    public static final long SX_BYTE_OFFSET;
-    public static final long A_BYTE_OFFSET;
-    public static final long B_BYTE_OFFSET;
-    public static final long PVX_BYTE_OFFSET;
-    public static final long SY_BYTE_OFFSET;
-    public static final long C_BYTE_OFFSET;
-    public static final long PVY_BYTE_OFFSET;
-    public static final long SZ_BYTE_OFFSET;
-    public static final long PVZ_BYTE_OFFSET;
-    public static final long QX_BYTE_OFFSET;
-    public static final long QY_BYTE_OFFSET;
-    public static final long QZ_BYTE_OFFSET;
-    public static final long QW_BYTE_OFFSET;
-    public static final long TX_BYTE_OFFSET;
-    public static final long TY_BYTE_OFFSET;
-    public static final long TZ_BYTE_OFFSET;
+	public static final long SX_BYTE_OFFSET;
+	public static final long A_BYTE_OFFSET;
+	public static final long B_BYTE_OFFSET;
+	public static final long PVX_BYTE_OFFSET;
+	public static final long SY_BYTE_OFFSET;
+	public static final long C_BYTE_OFFSET;
+	public static final long PVY_BYTE_OFFSET;
+	public static final long SZ_BYTE_OFFSET;
+	public static final long PVZ_BYTE_OFFSET;
+	public static final long QX_BYTE_OFFSET;
+	public static final long QY_BYTE_OFFSET;
+	public static final long QZ_BYTE_OFFSET;
+	public static final long QW_BYTE_OFFSET;
+	public static final long TX_BYTE_OFFSET;
+	public static final long TY_BYTE_OFFSET;
+	public static final long TZ_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("sx"),
-            JAVA_FLOAT.withName("a"),
-            JAVA_FLOAT.withName("b"),
-            JAVA_FLOAT.withName("pvx"),
-            JAVA_FLOAT.withName("sy"),
-            JAVA_FLOAT.withName("c"),
-            JAVA_FLOAT.withName("pvy"),
-            JAVA_FLOAT.withName("sz"),
-            JAVA_FLOAT.withName("pvz"),
-            JAVA_FLOAT.withName("qx"),
-            JAVA_FLOAT.withName("qy"),
-            JAVA_FLOAT.withName("qz"),
-            JAVA_FLOAT.withName("qw"),
-            JAVA_FLOAT.withName("tx"),
-            JAVA_FLOAT.withName("ty"),
-            JAVA_FLOAT.withName("tz")
-        ).withName("VkSRTDataNV").withByteAlignment(4);
-        
-        SX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sx"));
-        A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
-        B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
-        PVX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pvx"));
-        SY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sy"));
-        C_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c"));
-        PVY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pvy"));
-        SZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sz"));
-        PVZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pvz"));
-        QX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qx"));
-        QY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qy"));
-        QZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qz"));
-        QW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qw"));
-        TX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tx"));
-        TY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ty"));
-        TZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tz"));
-        
-        SX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sx"));
-        A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
-        B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
-        PVX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pvx"));
-        SY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sy"));
-        C_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c"));
-        PVY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pvy"));
-        SZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sz"));
-        PVZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pvz"));
-        QX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qx"));
-        QY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qy"));
-        QZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qz"));
-        QW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qw"));
-        TX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tx"));
-        TY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ty"));
-        TZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tz"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("sx"),
+		    JAVA_FLOAT.withName("a"),
+		    JAVA_FLOAT.withName("b"),
+		    JAVA_FLOAT.withName("pvx"),
+		    JAVA_FLOAT.withName("sy"),
+		    JAVA_FLOAT.withName("c"),
+		    JAVA_FLOAT.withName("pvy"),
+		    JAVA_FLOAT.withName("sz"),
+		    JAVA_FLOAT.withName("pvz"),
+		    JAVA_FLOAT.withName("qx"),
+		    JAVA_FLOAT.withName("qy"),
+		    JAVA_FLOAT.withName("qz"),
+		    JAVA_FLOAT.withName("qw"),
+		    JAVA_FLOAT.withName("tx"),
+		    JAVA_FLOAT.withName("ty"),
+		    JAVA_FLOAT.withName("tz")
+		).withName("VkSRTDataNV").withByteAlignment(4);
+		
+		SX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sx"));
+		A_HANDLE = LAYOUT.varHandle(PathElement.groupElement("a"));
+		B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("b"));
+		PVX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pvx"));
+		SY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sy"));
+		C_HANDLE = LAYOUT.varHandle(PathElement.groupElement("c"));
+		PVY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pvy"));
+		SZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sz"));
+		PVZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pvz"));
+		QX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qx"));
+		QY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qy"));
+		QZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qz"));
+		QW_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qw"));
+		TX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tx"));
+		TY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ty"));
+		TZ_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tz"));
+		
+		SX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sx"));
+		A_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("a"));
+		B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("b"));
+		PVX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pvx"));
+		SY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sy"));
+		C_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("c"));
+		PVY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pvy"));
+		SZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sz"));
+		PVZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pvz"));
+		QX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qx"));
+		QY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qy"));
+		QZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qz"));
+		QW_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qw"));
+		TX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tx"));
+		TY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ty"));
+		TZ_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tz"));
+		//@formatter:on
+	}
 
-    public VkSRTDataNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSRTDataNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSRTDataNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSRTDataNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSRTDataNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSRTDataNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sx()
     public VkSRTDataNV sx(float sx) {
@@ -338,5 +338,5 @@ public final class VkSRTDataNV
             segment -> new VkSRTDataNV(segment)
         );
     }
-    
+
 }

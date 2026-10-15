@@ -22,130 +22,130 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
 		implements Struct<VkPhysicalDeviceFragmentShadingRatePropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_HANDLE;
-    public static final VarHandle PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_HANDLE;
-    public static final VarHandle LAYERED_SHADING_RATE_ATTACHMENTS_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_SIZE_ASPECT_RATIO_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_HANDLE;
-    public static final VarHandle MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_HANDLE;
-    public static final VarHandle FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_HANDLE;
+	public static final VarHandle PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_HANDLE;
+	public static final VarHandle LAYERED_SHADING_RATE_ATTACHMENTS_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_SIZE_ASPECT_RATIO_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_HANDLE;
+	public static final VarHandle MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_HANDLE;
+	public static final VarHandle FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_BYTE_OFFSET;
-    public static final long PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_BYTE_OFFSET;
-    public static final long LAYERED_SHADING_RATE_ATTACHMENTS_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_SIZE_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_SIZE_ASPECT_RATIO_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_BYTE_OFFSET;
-    public static final long MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_BYTE_OFFSET;
-    public static final long FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_BYTE_OFFSET;
+	public static final long PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_BYTE_OFFSET;
+	public static final long LAYERED_SHADING_RATE_ATTACHMENTS_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_SIZE_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_SIZE_ASPECT_RATIO_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_BYTE_OFFSET;
+	public static final long MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_BYTE_OFFSET;
+	public static final long FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D minFragmentShadingRateAttachmentTexelSize;
-    private final VkExtent2D maxFragmentShadingRateAttachmentTexelSize;
-    private final VkExtent2D maxFragmentSize;
+	private final VkExtent2D minFragmentShadingRateAttachmentTexelSize;
+	private final VkExtent2D maxFragmentShadingRateAttachmentTexelSize;
+	private final VkExtent2D maxFragmentSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("minFragmentShadingRateAttachmentTexelSize"),
-            VkExtent2D.LAYOUT.withName("maxFragmentShadingRateAttachmentTexelSize"),
-            JAVA_INT.withName("maxFragmentShadingRateAttachmentTexelSizeAspectRatio"),
-            JAVA_INT.withName("primitiveFragmentShadingRateWithMultipleViewports"),
-            JAVA_INT.withName("layeredShadingRateAttachments"),
-            JAVA_INT.withName("fragmentShadingRateNonTrivialCombinerOps"),
-            VkExtent2D.LAYOUT.withName("maxFragmentSize"),
-            JAVA_INT.withName("maxFragmentSizeAspectRatio"),
-            JAVA_INT.withName("maxFragmentShadingRateCoverageSamples"),
-            JAVA_INT.withName("maxFragmentShadingRateRasterizationSamples"),
-            JAVA_INT.withName("fragmentShadingRateWithShaderDepthStencilWrites"),
-            JAVA_INT.withName("fragmentShadingRateWithSampleMask"),
-            JAVA_INT.withName("fragmentShadingRateWithShaderSampleMask"),
-            JAVA_INT.withName("fragmentShadingRateWithConservativeRasterization"),
-            JAVA_INT.withName("fragmentShadingRateWithFragmentShaderInterlock"),
-            JAVA_INT.withName("fragmentShadingRateWithCustomSampleLocations"),
-            JAVA_INT.withName("fragmentShadingRateStrictMultiplyCombiner")
-        ).withName("VkPhysicalDeviceFragmentShadingRatePropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentShadingRateAttachmentTexelSizeAspectRatio"));
-        PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveFragmentShadingRateWithMultipleViewports"));
-        LAYERED_SHADING_RATE_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layeredShadingRateAttachments"));
-        FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateNonTrivialCombinerOps"));
-        MAX_FRAGMENT_SIZE_ASPECT_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentSizeAspectRatio"));
-        MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentShadingRateCoverageSamples"));
-        MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentShadingRateRasterizationSamples"));
-        FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithShaderDepthStencilWrites"));
-        FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithSampleMask"));
-        FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithShaderSampleMask"));
-        FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithConservativeRasterization"));
-        FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithFragmentShaderInterlock"));
-        FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithCustomSampleLocations"));
-        FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateStrictMultiplyCombiner"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minFragmentShadingRateAttachmentTexelSize"));
-        MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateAttachmentTexelSize"));
-        MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateAttachmentTexelSizeAspectRatio"));
-        PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveFragmentShadingRateWithMultipleViewports"));
-        LAYERED_SHADING_RATE_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layeredShadingRateAttachments"));
-        FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateNonTrivialCombinerOps"));
-        MAX_FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentSize"));
-        MAX_FRAGMENT_SIZE_ASPECT_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentSizeAspectRatio"));
-        MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateCoverageSamples"));
-        MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateRasterizationSamples"));
-        FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithShaderDepthStencilWrites"));
-        FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithSampleMask"));
-        FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithShaderSampleMask"));
-        FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithConservativeRasterization"));
-        FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithFragmentShaderInterlock"));
-        FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithCustomSampleLocations"));
-        FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateStrictMultiplyCombiner"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("minFragmentShadingRateAttachmentTexelSize"),
+		    VkExtent2D.LAYOUT.withName("maxFragmentShadingRateAttachmentTexelSize"),
+		    JAVA_INT.withName("maxFragmentShadingRateAttachmentTexelSizeAspectRatio"),
+		    JAVA_INT.withName("primitiveFragmentShadingRateWithMultipleViewports"),
+		    JAVA_INT.withName("layeredShadingRateAttachments"),
+		    JAVA_INT.withName("fragmentShadingRateNonTrivialCombinerOps"),
+		    VkExtent2D.LAYOUT.withName("maxFragmentSize"),
+		    JAVA_INT.withName("maxFragmentSizeAspectRatio"),
+		    JAVA_INT.withName("maxFragmentShadingRateCoverageSamples"),
+		    JAVA_INT.withName("maxFragmentShadingRateRasterizationSamples"),
+		    JAVA_INT.withName("fragmentShadingRateWithShaderDepthStencilWrites"),
+		    JAVA_INT.withName("fragmentShadingRateWithSampleMask"),
+		    JAVA_INT.withName("fragmentShadingRateWithShaderSampleMask"),
+		    JAVA_INT.withName("fragmentShadingRateWithConservativeRasterization"),
+		    JAVA_INT.withName("fragmentShadingRateWithFragmentShaderInterlock"),
+		    JAVA_INT.withName("fragmentShadingRateWithCustomSampleLocations"),
+		    JAVA_INT.withName("fragmentShadingRateStrictMultiplyCombiner")
+		).withName("VkPhysicalDeviceFragmentShadingRatePropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentShadingRateAttachmentTexelSizeAspectRatio"));
+		PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveFragmentShadingRateWithMultipleViewports"));
+		LAYERED_SHADING_RATE_ATTACHMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layeredShadingRateAttachments"));
+		FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateNonTrivialCombinerOps"));
+		MAX_FRAGMENT_SIZE_ASPECT_RATIO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentSizeAspectRatio"));
+		MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentShadingRateCoverageSamples"));
+		MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxFragmentShadingRateRasterizationSamples"));
+		FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithShaderDepthStencilWrites"));
+		FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithSampleMask"));
+		FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithShaderSampleMask"));
+		FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithConservativeRasterization"));
+		FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithFragmentShaderInterlock"));
+		FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateWithCustomSampleLocations"));
+		FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentShadingRateStrictMultiplyCombiner"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minFragmentShadingRateAttachmentTexelSize"));
+		MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateAttachmentTexelSize"));
+		MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_ASPECT_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateAttachmentTexelSizeAspectRatio"));
+		PRIMITIVE_FRAGMENT_SHADING_RATE_WITH_MULTIPLE_VIEWPORTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveFragmentShadingRateWithMultipleViewports"));
+		LAYERED_SHADING_RATE_ATTACHMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layeredShadingRateAttachments"));
+		FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateNonTrivialCombinerOps"));
+		MAX_FRAGMENT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentSize"));
+		MAX_FRAGMENT_SIZE_ASPECT_RATIO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentSizeAspectRatio"));
+		MAX_FRAGMENT_SHADING_RATE_COVERAGE_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateCoverageSamples"));
+		MAX_FRAGMENT_SHADING_RATE_RASTERIZATION_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxFragmentShadingRateRasterizationSamples"));
+		FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithShaderDepthStencilWrites"));
+		FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithSampleMask"));
+		FRAGMENT_SHADING_RATE_WITH_SHADER_SAMPLE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithShaderSampleMask"));
+		FRAGMENT_SHADING_RATE_WITH_CONSERVATIVE_RASTERIZATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithConservativeRasterization"));
+		FRAGMENT_SHADING_RATE_WITH_FRAGMENT_SHADER_INTERLOCK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithFragmentShaderInterlock"));
+		FRAGMENT_SHADING_RATE_WITH_CUSTOM_SAMPLE_LOCATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateWithCustomSampleLocations"));
+		FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentShadingRateStrictMultiplyCombiner"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        minFragmentShadingRateAttachmentTexelSize = new VkExtent2D(segment.asSlice(MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxFragmentShadingRateAttachmentTexelSize = new VkExtent2D(segment.asSlice(MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxFragmentSize = new VkExtent2D(segment.asSlice(MAX_FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceFragmentShadingRatePropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    minFragmentShadingRateAttachmentTexelSize = new VkExtent2D(segment.asSlice(MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxFragmentShadingRateAttachmentTexelSize = new VkExtent2D(segment.asSlice(MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxFragmentSize = new VkExtent2D(segment.asSlice(MAX_FRAGMENT_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentShadingRatePropertiesKHR sType(int sType) {
@@ -170,6 +170,38 @@ public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
     		return null;
     	
     	return segment;
+    }
+    
+    /// @see #minFragmentShadingRateAttachmentTexelSize()
+    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR minFragmentShadingRateAttachmentTexelSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(minFragmentShadingRateAttachmentTexelSize);
+    	return this;
+    }
+    
+    /// @see #minFragmentShadingRateAttachmentTexelSize()
+    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR minFragmentShadingRateAttachmentTexelSize(VkExtent2D other) {
+    	minFragmentShadingRateAttachmentTexelSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D minFragmentShadingRateAttachmentTexelSize() {
+    	return minFragmentShadingRateAttachmentTexelSize;
+    }
+    
+    /// @see #maxFragmentShadingRateAttachmentTexelSize()
+    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentShadingRateAttachmentTexelSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxFragmentShadingRateAttachmentTexelSize);
+    	return this;
+    }
+    
+    /// @see #maxFragmentShadingRateAttachmentTexelSize()
+    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentShadingRateAttachmentTexelSize(VkExtent2D other) {
+    	maxFragmentShadingRateAttachmentTexelSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxFragmentShadingRateAttachmentTexelSize() {
+    	return maxFragmentShadingRateAttachmentTexelSize;
     }
     
     /// @see #maxFragmentShadingRateAttachmentTexelSizeAspectRatio()
@@ -210,6 +242,22 @@ public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
     
     public int fragmentShadingRateNonTrivialCombinerOps() {
     	return (int) FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINER_OPS_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #maxFragmentSize()
+    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxFragmentSize);
+    	return this;
+    }
+    
+    /// @see #maxFragmentSize()
+    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentSize(VkExtent2D other) {
+    	maxFragmentSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxFragmentSize() {
+    	return maxFragmentSize;
     }
     
     /// @see #maxFragmentSizeAspectRatio()
@@ -312,54 +360,6 @@ public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
     	return (int) FRAGMENT_SHADING_RATE_STRICT_MULTIPLY_COMBINER_HANDLE.get(segment, 0L);
     }
     
-    /// @see #minFragmentShadingRateAttachmentTexelSize()
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR minFragmentShadingRateAttachmentTexelSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(minFragmentShadingRateAttachmentTexelSize);
-    	return this;
-    }
-    
-    /// @see #minFragmentShadingRateAttachmentTexelSize()
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR minFragmentShadingRateAttachmentTexelSize(VkExtent2D other) {
-    	minFragmentShadingRateAttachmentTexelSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D minFragmentShadingRateAttachmentTexelSize() {
-    	return minFragmentShadingRateAttachmentTexelSize;
-    }
-    
-    /// @see #maxFragmentShadingRateAttachmentTexelSize()
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentShadingRateAttachmentTexelSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxFragmentShadingRateAttachmentTexelSize);
-    	return this;
-    }
-    
-    /// @see #maxFragmentShadingRateAttachmentTexelSize()
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentShadingRateAttachmentTexelSize(VkExtent2D other) {
-    	maxFragmentShadingRateAttachmentTexelSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxFragmentShadingRateAttachmentTexelSize() {
-    	return maxFragmentShadingRateAttachmentTexelSize;
-    }
-    
-    /// @see #maxFragmentSize()
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxFragmentSize);
-    	return this;
-    }
-    
-    /// @see #maxFragmentSize()
-    public VkPhysicalDeviceFragmentShadingRatePropertiesKHR maxFragmentSize(VkExtent2D other) {
-    	maxFragmentSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxFragmentSize() {
-    	return maxFragmentSize;
-    }
-    
     @Override
     public VkPhysicalDeviceFragmentShadingRatePropertiesKHR set(VkPhysicalDeviceFragmentShadingRatePropertiesKHR other) {
         return set(other.segment);
@@ -411,5 +411,5 @@ public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
             segment -> new VkPhysicalDeviceFragmentShadingRatePropertiesKHR(segment)
         );
     }
-    
+
 }

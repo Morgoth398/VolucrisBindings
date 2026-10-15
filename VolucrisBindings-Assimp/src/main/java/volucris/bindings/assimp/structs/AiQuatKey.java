@@ -21,50 +21,50 @@ import static java.lang.foreign.ValueLayout.*;
 public final class AiQuatKey
 		implements Struct<AiQuatKey> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_TIME_HANDLE;
-    public static final VarHandle M_INTERPOLATION_HANDLE;
+	public static final VarHandle M_TIME_HANDLE;
+	public static final VarHandle M_INTERPOLATION_HANDLE;
 
-    public static final long M_TIME_BYTE_OFFSET;
-    public static final long M_VALUE_BYTE_OFFSET;
-    public static final long M_INTERPOLATION_BYTE_OFFSET;
+	public static final long M_TIME_BYTE_OFFSET;
+	public static final long M_VALUE_BYTE_OFFSET;
+	public static final long M_INTERPOLATION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiQuaternion mValue;
+	private final AiQuaternion mValue;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_DOUBLE.withName("mTime"),
-            AiQuaternion.LAYOUT.withName("mValue"),
-            JAVA_INT.withName("mInterpolation"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("aiQuatKey").withByteAlignment(8);
-        
-        M_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTime"));
-        M_INTERPOLATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mInterpolation"));
-        
-        M_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTime"));
-        M_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValue"));
-        M_INTERPOLATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mInterpolation"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_DOUBLE.withName("mTime"),
+		    AiQuaternion.LAYOUT.withName("mValue"),
+		    JAVA_INT.withName("mInterpolation"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("aiQuatKey").withByteAlignment(8);
+		
+		M_TIME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTime"));
+		M_INTERPOLATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mInterpolation"));
+		
+		M_TIME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTime"));
+		M_VALUE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mValue"));
+		M_INTERPOLATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mInterpolation"));
+		//@formatter:on
+	}
 
-    public AiQuatKey() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiQuatKey(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiQuatKey(MemorySegment segment) {
-        this.segment = segment;
-    
-        mValue = new AiQuaternion(segment.asSlice(M_VALUE_BYTE_OFFSET, AiQuaternion.LAYOUT));
-    }
+	public AiQuatKey() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiQuatKey(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiQuatKey(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mValue = new AiQuaternion(segment.asSlice(M_VALUE_BYTE_OFFSET, AiQuaternion.LAYOUT));
+	}
 
     /// @see #mTime()
     public AiQuatKey mTime(double mTime) {
@@ -77,19 +77,6 @@ public final class AiQuatKey
     /// ```
     public double mTime() {
     	return (double) M_TIME_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #mInterpolation()
-    public AiQuatKey mInterpolation(int mInterpolation) {
-    	M_INTERPOLATION_HANDLE.set(segment, 0L, mInterpolation);
-    	return this;
-    }
-    
-    /// ```
-    /// The interpolation setting of this key
-    /// ```
-    public int mInterpolation() {
-    	return (int) M_INTERPOLATION_HANDLE.get(segment, 0L);
     }
     
     /// @see #mValue()
@@ -109,6 +96,19 @@ public final class AiQuatKey
     /// ```
     public AiQuaternion mValue() {
     	return mValue;
+    }
+    
+    /// @see #mInterpolation()
+    public AiQuatKey mInterpolation(int mInterpolation) {
+    	M_INTERPOLATION_HANDLE.set(segment, 0L, mInterpolation);
+    	return this;
+    }
+    
+    /// ```
+    /// The interpolation setting of this key
+    /// ```
+    public int mInterpolation() {
+    	return (int) M_INTERPOLATION_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -162,5 +162,5 @@ public final class AiQuatKey
             segment -> new AiQuatKey(segment)
         );
     }
-    
+
 }

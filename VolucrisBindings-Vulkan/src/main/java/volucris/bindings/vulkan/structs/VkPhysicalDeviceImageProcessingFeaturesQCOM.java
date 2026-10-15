@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceImageProcessingFeaturesQCOM
 		implements Struct<VkPhysicalDeviceImageProcessingFeaturesQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TEXTURE_SAMPLE_WEIGHTED_HANDLE;
-    public static final VarHandle TEXTURE_BOX_FILTER_HANDLE;
-    public static final VarHandle TEXTURE_BLOCK_MATCH_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TEXTURE_SAMPLE_WEIGHTED_HANDLE;
+	public static final VarHandle TEXTURE_BOX_FILTER_HANDLE;
+	public static final VarHandle TEXTURE_BLOCK_MATCH_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TEXTURE_SAMPLE_WEIGHTED_BYTE_OFFSET;
-    public static final long TEXTURE_BOX_FILTER_BYTE_OFFSET;
-    public static final long TEXTURE_BLOCK_MATCH_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TEXTURE_SAMPLE_WEIGHTED_BYTE_OFFSET;
+	public static final long TEXTURE_BOX_FILTER_BYTE_OFFSET;
+	public static final long TEXTURE_BLOCK_MATCH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("textureSampleWeighted"),
-            JAVA_INT.withName("textureBoxFilter"),
-            JAVA_INT.withName("textureBlockMatch"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceImageProcessingFeaturesQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TEXTURE_SAMPLE_WEIGHTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureSampleWeighted"));
-        TEXTURE_BOX_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureBoxFilter"));
-        TEXTURE_BLOCK_MATCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureBlockMatch"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TEXTURE_SAMPLE_WEIGHTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureSampleWeighted"));
-        TEXTURE_BOX_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureBoxFilter"));
-        TEXTURE_BLOCK_MATCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureBlockMatch"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("textureSampleWeighted"),
+		    JAVA_INT.withName("textureBoxFilter"),
+		    JAVA_INT.withName("textureBlockMatch"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceImageProcessingFeaturesQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TEXTURE_SAMPLE_WEIGHTED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureSampleWeighted"));
+		TEXTURE_BOX_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureBoxFilter"));
+		TEXTURE_BLOCK_MATCH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("textureBlockMatch"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TEXTURE_SAMPLE_WEIGHTED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureSampleWeighted"));
+		TEXTURE_BOX_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureBoxFilter"));
+		TEXTURE_BLOCK_MATCH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("textureBlockMatch"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceImageProcessingFeaturesQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceImageProcessingFeaturesQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceImageProcessingFeaturesQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceImageProcessingFeaturesQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceImageProcessingFeaturesQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceImageProcessingFeaturesQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceImageProcessingFeaturesQCOM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceImageProcessingFeaturesQCOM
             segment -> new VkPhysicalDeviceImageProcessingFeaturesQCOM(segment)
         );
     }
-    
+
 }

@@ -16,38 +16,38 @@ import static java.lang.foreign.ValueLayout.*;
 public final class MsdfConfig
 		implements Struct<MsdfConfig> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OVERLAP_SUPPORT_HANDLE;
+	public static final VarHandle OVERLAP_SUPPORT_HANDLE;
 
-    public static final long OVERLAP_SUPPORT_BYTE_OFFSET;
+	public static final long OVERLAP_SUPPORT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("overlap_support")
-        ).withName("msdf_config").withByteAlignment(4);
-        
-        OVERLAP_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("overlap_support"));
-        
-        OVERLAP_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("overlap_support"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("overlap_support")
+		).withName("msdf_config").withByteAlignment(4);
+		
+		OVERLAP_SUPPORT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("overlap_support"));
+		
+		OVERLAP_SUPPORT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("overlap_support"));
+		//@formatter:on
+	}
 
-    public MsdfConfig() {
-        this(Arena.ofAuto());
-    }
-    
-    public MsdfConfig(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public MsdfConfig(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public MsdfConfig() {
+	    this(Arena.ofAuto());
+	}
+	
+	public MsdfConfig(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public MsdfConfig(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #overlap_support()
     public MsdfConfig overlap_support(int overlap_support) {
@@ -110,5 +110,5 @@ public final class MsdfConfig
             segment -> new MsdfConfig(segment)
         );
     }
-    
+
 }

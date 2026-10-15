@@ -21,110 +21,110 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTensorPropertiesARM
 		implements Struct<VkPhysicalDeviceTensorPropertiesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MAX_TENSOR_DIMENSION_COUNT_HANDLE;
-    public static final VarHandle MAX_TENSOR_ELEMENTS_HANDLE;
-    public static final VarHandle MAX_PER_DIMENSION_TENSOR_ELEMENTS_HANDLE;
-    public static final VarHandle MAX_TENSOR_STRIDE_HANDLE;
-    public static final VarHandle MAX_TENSOR_SIZE_HANDLE;
-    public static final VarHandle MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_HANDLE;
-    public static final VarHandle MAX_TENSOR_SHADER_ACCESS_SIZE_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE;
-    public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
-    public static final VarHandle SHADER_TENSOR_SUPPORTED_STAGES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MAX_TENSOR_DIMENSION_COUNT_HANDLE;
+	public static final VarHandle MAX_TENSOR_ELEMENTS_HANDLE;
+	public static final VarHandle MAX_PER_DIMENSION_TENSOR_ELEMENTS_HANDLE;
+	public static final VarHandle MAX_TENSOR_STRIDE_HANDLE;
+	public static final VarHandle MAX_TENSOR_SIZE_HANDLE;
+	public static final VarHandle MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_HANDLE;
+	public static final VarHandle MAX_TENSOR_SHADER_ACCESS_SIZE_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE;
+	public static final VarHandle MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE;
+	public static final VarHandle SHADER_TENSOR_SUPPORTED_STAGES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MAX_TENSOR_DIMENSION_COUNT_BYTE_OFFSET;
-    public static final long MAX_TENSOR_ELEMENTS_BYTE_OFFSET;
-    public static final long MAX_PER_DIMENSION_TENSOR_ELEMENTS_BYTE_OFFSET;
-    public static final long MAX_TENSOR_STRIDE_BYTE_OFFSET;
-    public static final long MAX_TENSOR_SIZE_BYTE_OFFSET;
-    public static final long MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_BYTE_OFFSET;
-    public static final long MAX_TENSOR_SHADER_ACCESS_SIZE_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET;
-    public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
-    public static final long SHADER_TENSOR_SUPPORTED_STAGES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MAX_TENSOR_DIMENSION_COUNT_BYTE_OFFSET;
+	public static final long MAX_TENSOR_ELEMENTS_BYTE_OFFSET;
+	public static final long MAX_PER_DIMENSION_TENSOR_ELEMENTS_BYTE_OFFSET;
+	public static final long MAX_TENSOR_STRIDE_BYTE_OFFSET;
+	public static final long MAX_TENSOR_SIZE_BYTE_OFFSET;
+	public static final long MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_BYTE_OFFSET;
+	public static final long MAX_TENSOR_SHADER_ACCESS_SIZE_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET;
+	public static final long MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET;
+	public static final long SHADER_TENSOR_SUPPORTED_STAGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("maxTensorDimensionCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("maxTensorElements"),
-            JAVA_LONG.withName("maxPerDimensionTensorElements"),
-            JAVA_LONG.withName("maxTensorStride"),
-            JAVA_LONG.withName("maxTensorSize"),
-            JAVA_INT.withName("maxTensorShaderAccessArrayLength"),
-            JAVA_INT.withName("maxTensorShaderAccessSize"),
-            JAVA_INT.withName("maxDescriptorSetStorageTensors"),
-            JAVA_INT.withName("maxPerStageDescriptorSetStorageTensors"),
-            JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageTensors"),
-            JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageTensors"),
-            JAVA_INT.withName("shaderStorageTensorArrayNonUniformIndexingNative"),
-            JAVA_INT.withName("shaderTensorSupportedStages")
-        ).withName("VkPhysicalDeviceTensorPropertiesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MAX_TENSOR_DIMENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorDimensionCount"));
-        MAX_TENSOR_ELEMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorElements"));
-        MAX_PER_DIMENSION_TENSOR_ELEMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerDimensionTensorElements"));
-        MAX_TENSOR_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorStride"));
-        MAX_TENSOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorSize"));
-        MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorShaderAccessArrayLength"));
-        MAX_TENSOR_SHADER_ACCESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorShaderAccessSize"));
-        MAX_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageTensors"));
-        MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorSetStorageTensors"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageTensors"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageTensors"));
-        SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexingNative"));
-        SHADER_TENSOR_SUPPORTED_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTensorSupportedStages"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MAX_TENSOR_DIMENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorDimensionCount"));
-        MAX_TENSOR_ELEMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorElements"));
-        MAX_PER_DIMENSION_TENSOR_ELEMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerDimensionTensorElements"));
-        MAX_TENSOR_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorStride"));
-        MAX_TENSOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorSize"));
-        MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorShaderAccessArrayLength"));
-        MAX_TENSOR_SHADER_ACCESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorShaderAccessSize"));
-        MAX_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageTensors"));
-        MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorSetStorageTensors"));
-        MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageTensors"));
-        MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageTensors"));
-        SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexingNative"));
-        SHADER_TENSOR_SUPPORTED_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTensorSupportedStages"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("maxTensorDimensionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("maxTensorElements"),
+		    JAVA_LONG.withName("maxPerDimensionTensorElements"),
+		    JAVA_LONG.withName("maxTensorStride"),
+		    JAVA_LONG.withName("maxTensorSize"),
+		    JAVA_INT.withName("maxTensorShaderAccessArrayLength"),
+		    JAVA_INT.withName("maxTensorShaderAccessSize"),
+		    JAVA_INT.withName("maxDescriptorSetStorageTensors"),
+		    JAVA_INT.withName("maxPerStageDescriptorSetStorageTensors"),
+		    JAVA_INT.withName("maxDescriptorSetUpdateAfterBindStorageTensors"),
+		    JAVA_INT.withName("maxPerStageDescriptorUpdateAfterBindStorageTensors"),
+		    JAVA_INT.withName("shaderStorageTensorArrayNonUniformIndexingNative"),
+		    JAVA_INT.withName("shaderTensorSupportedStages")
+		).withName("VkPhysicalDeviceTensorPropertiesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MAX_TENSOR_DIMENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorDimensionCount"));
+		MAX_TENSOR_ELEMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorElements"));
+		MAX_PER_DIMENSION_TENSOR_ELEMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerDimensionTensorElements"));
+		MAX_TENSOR_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorStride"));
+		MAX_TENSOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorSize"));
+		MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorShaderAccessArrayLength"));
+		MAX_TENSOR_SHADER_ACCESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTensorShaderAccessSize"));
+		MAX_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetStorageTensors"));
+		MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorSetStorageTensors"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageTensors"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageTensors"));
+		SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexingNative"));
+		SHADER_TENSOR_SUPPORTED_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTensorSupportedStages"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MAX_TENSOR_DIMENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorDimensionCount"));
+		MAX_TENSOR_ELEMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorElements"));
+		MAX_PER_DIMENSION_TENSOR_ELEMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerDimensionTensorElements"));
+		MAX_TENSOR_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorStride"));
+		MAX_TENSOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorSize"));
+		MAX_TENSOR_SHADER_ACCESS_ARRAY_LENGTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorShaderAccessArrayLength"));
+		MAX_TENSOR_SHADER_ACCESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTensorShaderAccessSize"));
+		MAX_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetStorageTensors"));
+		MAX_PER_STAGE_DESCRIPTOR_SET_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorSetStorageTensors"));
+		MAX_DESCRIPTOR_SET_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetUpdateAfterBindStorageTensors"));
+		MAX_PER_STAGE_DESCRIPTOR_UPDATE_AFTER_BIND_STORAGE_TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerStageDescriptorUpdateAfterBindStorageTensors"));
+		SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_NATIVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexingNative"));
+		SHADER_TENSOR_SUPPORTED_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTensorSupportedStages"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTensorPropertiesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTensorPropertiesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTensorPropertiesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTensorPropertiesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTensorPropertiesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTensorPropertiesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTensorPropertiesARM sType(int sType) {
@@ -332,5 +332,5 @@ public final class VkPhysicalDeviceTensorPropertiesARM
             segment -> new VkPhysicalDeviceTensorPropertiesARM(segment)
         );
     }
-    
+
 }

@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePipelineRobustnessFeatures
 		implements Struct<VkPhysicalDevicePipelineRobustnessFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PIPELINE_ROBUSTNESS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PIPELINE_ROBUSTNESS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PIPELINE_ROBUSTNESS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PIPELINE_ROBUSTNESS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("pipelineRobustness"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePipelineRobustnessFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PIPELINE_ROBUSTNESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineRobustness"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PIPELINE_ROBUSTNESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineRobustness"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("pipelineRobustness"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePipelineRobustnessFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PIPELINE_ROBUSTNESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipelineRobustness"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PIPELINE_ROBUSTNESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipelineRobustness"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePipelineRobustnessFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePipelineRobustnessFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePipelineRobustnessFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePipelineRobustnessFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePipelineRobustnessFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePipelineRobustnessFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePipelineRobustnessFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePipelineRobustnessFeatures
             segment -> new VkPhysicalDevicePipelineRobustnessFeatures(segment)
         );
     }
-    
+
 }

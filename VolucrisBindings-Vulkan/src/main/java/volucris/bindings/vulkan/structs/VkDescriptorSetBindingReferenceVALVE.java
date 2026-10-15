@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetBindingReferenceVALVE
 		implements Struct<VkDescriptorSetBindingReferenceVALVE> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_LAYOUT_HANDLE;
-    public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_LAYOUT_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET;
-    public static final long BINDING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("descriptorSetLayout"),
-            JAVA_INT.withName("binding"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDescriptorSetBindingReferenceVALVE").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetLayout"));
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetLayout"));
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("descriptorSetLayout"),
+		    JAVA_INT.withName("binding"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDescriptorSetBindingReferenceVALVE").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSetLayout"));
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSetLayout"));
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetBindingReferenceVALVE() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetBindingReferenceVALVE(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetBindingReferenceVALVE(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDescriptorSetBindingReferenceVALVE() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetBindingReferenceVALVE(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetBindingReferenceVALVE(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDescriptorSetBindingReferenceVALVE sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkDescriptorSetBindingReferenceVALVE
             segment -> new VkDescriptorSetBindingReferenceVALVE(segment)
         );
     }
-    
+
 }

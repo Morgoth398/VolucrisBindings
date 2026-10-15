@@ -28,90 +28,90 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaAllocatorCreateInfo
 		implements Struct<VmaAllocatorCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle PHYSICAL_DEVICE_HANDLE;
-    public static final VarHandle DEVICE_HANDLE;
-    public static final VarHandle PREFERRED_LARGE_HEAP_BLOCK_SIZE_HANDLE;
-    public static final VarHandle P_ALLOCATION_CALLBACKS_HANDLE;
-    public static final VarHandle P_DEVICE_MEMORY_CALLBACKS_HANDLE;
-    public static final VarHandle P_HEAP_SIZE_LIMIT_HANDLE;
-    public static final VarHandle P_VULKAN_FUNCTIONS_HANDLE;
-    public static final VarHandle INSTANCE_HANDLE;
-    public static final VarHandle VULKAN_API_VERSION_HANDLE;
-    public static final VarHandle P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle PHYSICAL_DEVICE_HANDLE;
+	public static final VarHandle DEVICE_HANDLE;
+	public static final VarHandle PREFERRED_LARGE_HEAP_BLOCK_SIZE_HANDLE;
+	public static final VarHandle P_ALLOCATION_CALLBACKS_HANDLE;
+	public static final VarHandle P_DEVICE_MEMORY_CALLBACKS_HANDLE;
+	public static final VarHandle P_HEAP_SIZE_LIMIT_HANDLE;
+	public static final VarHandle P_VULKAN_FUNCTIONS_HANDLE;
+	public static final VarHandle INSTANCE_HANDLE;
+	public static final VarHandle VULKAN_API_VERSION_HANDLE;
+	public static final VarHandle P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long PHYSICAL_DEVICE_BYTE_OFFSET;
-    public static final long DEVICE_BYTE_OFFSET;
-    public static final long PREFERRED_LARGE_HEAP_BLOCK_SIZE_BYTE_OFFSET;
-    public static final long P_ALLOCATION_CALLBACKS_BYTE_OFFSET;
-    public static final long P_DEVICE_MEMORY_CALLBACKS_BYTE_OFFSET;
-    public static final long P_HEAP_SIZE_LIMIT_BYTE_OFFSET;
-    public static final long P_VULKAN_FUNCTIONS_BYTE_OFFSET;
-    public static final long INSTANCE_BYTE_OFFSET;
-    public static final long VULKAN_API_VERSION_BYTE_OFFSET;
-    public static final long P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long PHYSICAL_DEVICE_BYTE_OFFSET;
+	public static final long DEVICE_BYTE_OFFSET;
+	public static final long PREFERRED_LARGE_HEAP_BLOCK_SIZE_BYTE_OFFSET;
+	public static final long P_ALLOCATION_CALLBACKS_BYTE_OFFSET;
+	public static final long P_DEVICE_MEMORY_CALLBACKS_BYTE_OFFSET;
+	public static final long P_HEAP_SIZE_LIMIT_BYTE_OFFSET;
+	public static final long P_VULKAN_FUNCTIONS_BYTE_OFFSET;
+	public static final long INSTANCE_BYTE_OFFSET;
+	public static final long VULKAN_API_VERSION_BYTE_OFFSET;
+	public static final long P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("physicalDevice"),
-            UNBOUNDED_ADDRESS.withName("device"),
-            JAVA_LONG.withName("preferredLargeHeapBlockSize"),
-            UNBOUNDED_ADDRESS.withName("pAllocationCallbacks"),
-            UNBOUNDED_ADDRESS.withName("pDeviceMemoryCallbacks"),
-            UNBOUNDED_ADDRESS.withName("pHeapSizeLimit"),
-            UNBOUNDED_ADDRESS.withName("pVulkanFunctions"),
-            UNBOUNDED_ADDRESS.withName("instance"),
-            JAVA_INT.withName("vulkanApiVersion"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTypeExternalMemoryHandleTypes")
-        ).withName("VmaAllocatorCreateInfo").withByteAlignment(8);
-        
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        PHYSICAL_DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDevice"));
-        DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("device"));
-        PREFERRED_LARGE_HEAP_BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredLargeHeapBlockSize"));
-        P_ALLOCATION_CALLBACKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAllocationCallbacks"));
-        P_DEVICE_MEMORY_CALLBACKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDeviceMemoryCallbacks"));
-        P_HEAP_SIZE_LIMIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHeapSizeLimit"));
-        P_VULKAN_FUNCTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVulkanFunctions"));
-        INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instance"));
-        VULKAN_API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanApiVersion"));
-        P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTypeExternalMemoryHandleTypes"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        PHYSICAL_DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDevice"));
-        DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("device"));
-        PREFERRED_LARGE_HEAP_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredLargeHeapBlockSize"));
-        P_ALLOCATION_CALLBACKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAllocationCallbacks"));
-        P_DEVICE_MEMORY_CALLBACKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDeviceMemoryCallbacks"));
-        P_HEAP_SIZE_LIMIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHeapSizeLimit"));
-        P_VULKAN_FUNCTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVulkanFunctions"));
-        INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instance"));
-        VULKAN_API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanApiVersion"));
-        P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTypeExternalMemoryHandleTypes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("physicalDevice"),
+		    UNBOUNDED_ADDRESS.withName("device"),
+		    JAVA_LONG.withName("preferredLargeHeapBlockSize"),
+		    UNBOUNDED_ADDRESS.withName("pAllocationCallbacks"),
+		    UNBOUNDED_ADDRESS.withName("pDeviceMemoryCallbacks"),
+		    UNBOUNDED_ADDRESS.withName("pHeapSizeLimit"),
+		    UNBOUNDED_ADDRESS.withName("pVulkanFunctions"),
+		    UNBOUNDED_ADDRESS.withName("instance"),
+		    JAVA_INT.withName("vulkanApiVersion"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTypeExternalMemoryHandleTypes")
+		).withName("VmaAllocatorCreateInfo").withByteAlignment(8);
+		
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		PHYSICAL_DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDevice"));
+		DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("device"));
+		PREFERRED_LARGE_HEAP_BLOCK_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preferredLargeHeapBlockSize"));
+		P_ALLOCATION_CALLBACKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pAllocationCallbacks"));
+		P_DEVICE_MEMORY_CALLBACKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDeviceMemoryCallbacks"));
+		P_HEAP_SIZE_LIMIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pHeapSizeLimit"));
+		P_VULKAN_FUNCTIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVulkanFunctions"));
+		INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instance"));
+		VULKAN_API_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanApiVersion"));
+		P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTypeExternalMemoryHandleTypes"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		PHYSICAL_DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDevice"));
+		DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("device"));
+		PREFERRED_LARGE_HEAP_BLOCK_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preferredLargeHeapBlockSize"));
+		P_ALLOCATION_CALLBACKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pAllocationCallbacks"));
+		P_DEVICE_MEMORY_CALLBACKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDeviceMemoryCallbacks"));
+		P_HEAP_SIZE_LIMIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pHeapSizeLimit"));
+		P_VULKAN_FUNCTIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVulkanFunctions"));
+		INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instance"));
+		VULKAN_API_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanApiVersion"));
+		P_TYPE_EXTERNAL_MEMORY_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTypeExternalMemoryHandleTypes"));
+		//@formatter:on
+	}
 
-    public VmaAllocatorCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaAllocatorCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaAllocatorCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaAllocatorCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaAllocatorCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaAllocatorCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #flags()
     public VmaAllocatorCreateInfo flags(int flags) {
@@ -393,5 +393,5 @@ public final class VmaAllocatorCreateInfo
             segment -> new VmaAllocatorCreateInfo(segment)
         );
     }
-    
+
 }

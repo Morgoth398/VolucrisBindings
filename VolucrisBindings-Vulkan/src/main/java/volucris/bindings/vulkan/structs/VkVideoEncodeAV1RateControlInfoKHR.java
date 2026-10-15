@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1RateControlInfoKHR
 		implements Struct<VkVideoEncodeAV1RateControlInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle GOP_FRAME_COUNT_HANDLE;
-    public static final VarHandle KEY_FRAME_PERIOD_HANDLE;
-    public static final VarHandle CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE;
-    public static final VarHandle TEMPORAL_LAYER_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle GOP_FRAME_COUNT_HANDLE;
+	public static final VarHandle KEY_FRAME_PERIOD_HANDLE;
+	public static final VarHandle CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE;
+	public static final VarHandle TEMPORAL_LAYER_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long GOP_FRAME_COUNT_BYTE_OFFSET;
-    public static final long KEY_FRAME_PERIOD_BYTE_OFFSET;
-    public static final long CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET;
-    public static final long TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long GOP_FRAME_COUNT_BYTE_OFFSET;
+	public static final long KEY_FRAME_PERIOD_BYTE_OFFSET;
+	public static final long CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET;
+	public static final long TEMPORAL_LAYER_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("gopFrameCount"),
-            JAVA_INT.withName("keyFramePeriod"),
-            JAVA_INT.withName("consecutiveBipredictiveFrameCount"),
-            JAVA_INT.withName("temporalLayerCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeAV1RateControlInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopFrameCount"));
-        KEY_FRAME_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("keyFramePeriod"));
-        CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("consecutiveBipredictiveFrameCount"));
-        TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporalLayerCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopFrameCount"));
-        KEY_FRAME_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("keyFramePeriod"));
-        CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("consecutiveBipredictiveFrameCount"));
-        TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporalLayerCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("gopFrameCount"),
+		    JAVA_INT.withName("keyFramePeriod"),
+		    JAVA_INT.withName("consecutiveBipredictiveFrameCount"),
+		    JAVA_INT.withName("temporalLayerCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeAV1RateControlInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		GOP_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gopFrameCount"));
+		KEY_FRAME_PERIOD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("keyFramePeriod"));
+		CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("consecutiveBipredictiveFrameCount"));
+		TEMPORAL_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("temporalLayerCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		GOP_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gopFrameCount"));
+		KEY_FRAME_PERIOD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("keyFramePeriod"));
+		CONSECUTIVE_BIPREDICTIVE_FRAME_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("consecutiveBipredictiveFrameCount"));
+		TEMPORAL_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("temporalLayerCount"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1RateControlInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1RateControlInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1RateControlInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1RateControlInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1RateControlInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1RateControlInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1RateControlInfoKHR sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkVideoEncodeAV1RateControlInfoKHR
             segment -> new VkVideoEncodeAV1RateControlInfoKHR(segment)
         );
     }
-    
+
 }

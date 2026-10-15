@@ -20,65 +20,81 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoVP9ColorConfig
 		implements Struct<StdVideoVP9ColorConfig> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_DEPTH_HANDLE;
-    public static final VarHandle SUBSAMPLING_X_HANDLE;
-    public static final VarHandle SUBSAMPLING_Y_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle COLOR_SPACE_HANDLE;
+	public static final VarHandle BIT_DEPTH_HANDLE;
+	public static final VarHandle SUBSAMPLING_X_HANDLE;
+	public static final VarHandle SUBSAMPLING_Y_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle COLOR_SPACE_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long BIT_DEPTH_BYTE_OFFSET;
-    public static final long SUBSAMPLING_X_BYTE_OFFSET;
-    public static final long SUBSAMPLING_Y_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long COLOR_SPACE_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long BIT_DEPTH_BYTE_OFFSET;
+	public static final long SUBSAMPLING_X_BYTE_OFFSET;
+	public static final long SUBSAMPLING_Y_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long COLOR_SPACE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoVP9ColorConfigFlags flags;
+	private final StdVideoVP9ColorConfigFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoVP9ColorConfigFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("BitDepth"),
-            JAVA_BYTE.withName("subsampling_x"),
-            JAVA_BYTE.withName("subsampling_y"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_INT.withName("color_space")
-        ).withName("StdVideoVP9ColorConfig").withByteAlignment(4);
-        
-        BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("BitDepth"));
-        SUBSAMPLING_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_x"));
-        SUBSAMPLING_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_y"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        COLOR_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("color_space"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("BitDepth"));
-        SUBSAMPLING_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_x"));
-        SUBSAMPLING_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_y"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        COLOR_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("color_space"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoVP9ColorConfigFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("BitDepth"),
+		    JAVA_BYTE.withName("subsampling_x"),
+		    JAVA_BYTE.withName("subsampling_y"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_INT.withName("color_space")
+		).withName("StdVideoVP9ColorConfig").withByteAlignment(4);
+		
+		BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("BitDepth"));
+		SUBSAMPLING_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_x"));
+		SUBSAMPLING_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_y"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		COLOR_SPACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("color_space"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("BitDepth"));
+		SUBSAMPLING_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_x"));
+		SUBSAMPLING_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_y"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		COLOR_SPACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("color_space"));
+		//@formatter:on
+	}
 
-    public StdVideoVP9ColorConfig() {
-        this(Arena.ofAuto());
+	public StdVideoVP9ColorConfig() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoVP9ColorConfig(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoVP9ColorConfig(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoVP9ColorConfigFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoVP9ColorConfigFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoVP9ColorConfig flags(Consumer<StdVideoVP9ColorConfigFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoVP9ColorConfig(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoVP9ColorConfig flags(StdVideoVP9ColorConfigFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoVP9ColorConfig(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoVP9ColorConfigFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoVP9ColorConfigFlags.LAYOUT));
+    public StdVideoVP9ColorConfigFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #bitDepth()
     public StdVideoVP9ColorConfig bitDepth(byte bitDepth) {
     	BIT_DEPTH_HANDLE.set(segment, 0L, bitDepth);
@@ -127,22 +143,6 @@ public final class StdVideoVP9ColorConfig
     
     public int color_space() {
     	return (int) COLOR_SPACE_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #flags()
-    public StdVideoVP9ColorConfig flags(Consumer<StdVideoVP9ColorConfigFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoVP9ColorConfig flags(StdVideoVP9ColorConfigFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoVP9ColorConfigFlags flags() {
-    	return flags;
     }
     
     @Override
@@ -196,5 +196,5 @@ public final class StdVideoVP9ColorConfig
             segment -> new StdVideoVP9ColorConfig(segment)
         );
     }
-    
+
 }

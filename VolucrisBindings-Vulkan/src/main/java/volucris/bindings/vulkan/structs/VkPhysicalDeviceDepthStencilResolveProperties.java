@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDepthStencilResolveProperties
 		implements Struct<VkPhysicalDeviceDepthStencilResolveProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE;
-    public static final VarHandle SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE;
-    public static final VarHandle INDEPENDENT_RESOLVE_NONE_HANDLE;
-    public static final VarHandle INDEPENDENT_RESOLVE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE;
+	public static final VarHandle SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE;
+	public static final VarHandle INDEPENDENT_RESOLVE_NONE_HANDLE;
+	public static final VarHandle INDEPENDENT_RESOLVE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET;
-    public static final long SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET;
-    public static final long INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET;
-    public static final long INDEPENDENT_RESOLVE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET;
+	public static final long SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET;
+	public static final long INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET;
+	public static final long INDEPENDENT_RESOLVE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("supportedDepthResolveModes"),
-            JAVA_INT.withName("supportedStencilResolveModes"),
-            JAVA_INT.withName("independentResolveNone"),
-            JAVA_INT.withName("independentResolve")
-        ).withName("VkPhysicalDeviceDepthStencilResolveProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedDepthResolveModes"));
-        SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedStencilResolveModes"));
-        INDEPENDENT_RESOLVE_NONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolveNone"));
-        INDEPENDENT_RESOLVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolve"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedDepthResolveModes"));
-        SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedStencilResolveModes"));
-        INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolveNone"));
-        INDEPENDENT_RESOLVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolve"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("supportedDepthResolveModes"),
+		    JAVA_INT.withName("supportedStencilResolveModes"),
+		    JAVA_INT.withName("independentResolveNone"),
+		    JAVA_INT.withName("independentResolve")
+		).withName("VkPhysicalDeviceDepthStencilResolveProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SUPPORTED_DEPTH_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedDepthResolveModes"));
+		SUPPORTED_STENCIL_RESOLVE_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedStencilResolveModes"));
+		INDEPENDENT_RESOLVE_NONE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolveNone"));
+		INDEPENDENT_RESOLVE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("independentResolve"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SUPPORTED_DEPTH_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedDepthResolveModes"));
+		SUPPORTED_STENCIL_RESOLVE_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedStencilResolveModes"));
+		INDEPENDENT_RESOLVE_NONE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolveNone"));
+		INDEPENDENT_RESOLVE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("independentResolve"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDepthStencilResolveProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDepthStencilResolveProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDepthStencilResolveProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDepthStencilResolveProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDepthStencilResolveProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDepthStencilResolveProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDepthStencilResolveProperties sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceDepthStencilResolveProperties
             segment -> new VkPhysicalDeviceDepthStencilResolveProperties(segment)
         );
     }
-    
+
 }

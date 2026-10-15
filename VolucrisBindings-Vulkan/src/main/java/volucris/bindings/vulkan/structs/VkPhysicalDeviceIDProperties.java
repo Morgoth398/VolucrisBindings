@@ -21,69 +21,69 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceIDProperties
 		implements Struct<VkPhysicalDeviceIDProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEVICE_UUID_HANDLE;
-    public static final VarHandle DRIVER_UUID_HANDLE;
-    public static final VarHandle DEVICE_LUID_HANDLE;
-    public static final VarHandle DEVICE_NODE_MASK_HANDLE;
-    public static final VarHandle DEVICE_LUIDVALID_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEVICE_UUID_HANDLE;
+	public static final VarHandle DRIVER_UUID_HANDLE;
+	public static final VarHandle DEVICE_LUID_HANDLE;
+	public static final VarHandle DEVICE_NODE_MASK_HANDLE;
+	public static final VarHandle DEVICE_LUIDVALID_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEVICE_UUID_BYTE_OFFSET;
-    public static final long DRIVER_UUID_BYTE_OFFSET;
-    public static final long DEVICE_LUID_BYTE_OFFSET;
-    public static final long DEVICE_NODE_MASK_BYTE_OFFSET;
-    public static final long DEVICE_LUIDVALID_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEVICE_UUID_BYTE_OFFSET;
+	public static final long DRIVER_UUID_BYTE_OFFSET;
+	public static final long DEVICE_LUID_BYTE_OFFSET;
+	public static final long DEVICE_NODE_MASK_BYTE_OFFSET;
+	public static final long DEVICE_LUIDVALID_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("deviceUUID"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("driverUUID"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("deviceLUID"),
-            JAVA_INT.withName("deviceNodeMask"),
-            JAVA_INT.withName("deviceLUIDValid")
-        ).withName("VkPhysicalDeviceIDProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEVICE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceUUID"), PathElement.sequenceElement());
-        DRIVER_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverUUID"), PathElement.sequenceElement());
-        DEVICE_LUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUID"), PathElement.sequenceElement());
-        DEVICE_NODE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceNodeMask"));
-        DEVICE_LUIDVALID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUIDValid"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEVICE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceUUID"));
-        DRIVER_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverUUID"));
-        DEVICE_LUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUID"));
-        DEVICE_NODE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceNodeMask"));
-        DEVICE_LUIDVALID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUIDValid"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("deviceUUID"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("driverUUID"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("deviceLUID"),
+		    JAVA_INT.withName("deviceNodeMask"),
+		    JAVA_INT.withName("deviceLUIDValid")
+		).withName("VkPhysicalDeviceIDProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEVICE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceUUID"), PathElement.sequenceElement());
+		DRIVER_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverUUID"), PathElement.sequenceElement());
+		DEVICE_LUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUID"), PathElement.sequenceElement());
+		DEVICE_NODE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceNodeMask"));
+		DEVICE_LUIDVALID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUIDValid"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEVICE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceUUID"));
+		DRIVER_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverUUID"));
+		DEVICE_LUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUID"));
+		DEVICE_NODE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceNodeMask"));
+		DEVICE_LUIDVALID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUIDValid"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceIDProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceIDProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceIDProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceIDProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceIDProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceIDProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceIDProperties sType(int sType) {
@@ -211,5 +211,5 @@ public final class VkPhysicalDeviceIDProperties
             segment -> new VkPhysicalDeviceIDProperties(segment)
         );
     }
-    
+
 }

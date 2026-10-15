@@ -22,56 +22,56 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoSessionMemoryRequirementsKHR
 		implements Struct<VkVideoSessionMemoryRequirementsKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MEMORY_BIND_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MEMORY_BIND_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MEMORY_BIND_INDEX_BYTE_OFFSET;
-    public static final long MEMORY_REQUIREMENTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MEMORY_BIND_INDEX_BYTE_OFFSET;
+	public static final long MEMORY_REQUIREMENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkMemoryRequirements memoryRequirements;
+	private final VkMemoryRequirements memoryRequirements;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("memoryBindIndex"),
-            MemoryLayout.paddingLayout(4),
-            VkMemoryRequirements.LAYOUT.withName("memoryRequirements")
-        ).withName("VkVideoSessionMemoryRequirementsKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MEMORY_BIND_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryBindIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MEMORY_BIND_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryBindIndex"));
-        MEMORY_REQUIREMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryRequirements"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("memoryBindIndex"),
+		    MemoryLayout.paddingLayout(4),
+		    VkMemoryRequirements.LAYOUT.withName("memoryRequirements")
+		).withName("VkVideoSessionMemoryRequirementsKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MEMORY_BIND_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryBindIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MEMORY_BIND_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryBindIndex"));
+		MEMORY_REQUIREMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryRequirements"));
+		//@formatter:on
+	}
 
-    public VkVideoSessionMemoryRequirementsKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoSessionMemoryRequirementsKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoSessionMemoryRequirementsKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        memoryRequirements = new VkMemoryRequirements(segment.asSlice(MEMORY_REQUIREMENTS_BYTE_OFFSET, VkMemoryRequirements.LAYOUT));
-    }
+	public VkVideoSessionMemoryRequirementsKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoSessionMemoryRequirementsKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoSessionMemoryRequirementsKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    memoryRequirements = new VkMemoryRequirements(segment.asSlice(MEMORY_REQUIREMENTS_BYTE_OFFSET, VkMemoryRequirements.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoSessionMemoryRequirementsKHR sType(int sType) {
@@ -175,5 +175,5 @@ public final class VkVideoSessionMemoryRequirementsKHR
             segment -> new VkVideoSessionMemoryRequirementsKHR(segment)
         );
     }
-    
+
 }

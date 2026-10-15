@@ -19,42 +19,42 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClearValue
 		implements Struct<VkClearValue> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final long COLOR_BYTE_OFFSET;
-    public static final long DEPTH_STENCIL_BYTE_OFFSET;
+	public static final long COLOR_BYTE_OFFSET;
+	public static final long DEPTH_STENCIL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkClearColorValue color;
-    private final VkClearDepthStencilValue depthStencil;
+	private final VkClearColorValue color;
+	private final VkClearDepthStencilValue depthStencil;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            VkClearColorValue.LAYOUT.withName("color"),
-            VkClearDepthStencilValue.LAYOUT.withName("depthStencil")
-        ).withName("VkClearValue").withByteAlignment(4);
-        
-        COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("color"));
-        DEPTH_STENCIL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencil"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    VkClearColorValue.LAYOUT.withName("color"),
+		    VkClearDepthStencilValue.LAYOUT.withName("depthStencil")
+		).withName("VkClearValue").withByteAlignment(4);
+		
+		COLOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("color"));
+		DEPTH_STENCIL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthStencil"));
+		//@formatter:on
+	}
 
-    public VkClearValue() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClearValue(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClearValue(MemorySegment segment) {
-        this.segment = segment;
-    
-        color = new VkClearColorValue(segment.asSlice(COLOR_BYTE_OFFSET, VkClearColorValue.LAYOUT));
-        depthStencil = new VkClearDepthStencilValue(segment.asSlice(DEPTH_STENCIL_BYTE_OFFSET, VkClearDepthStencilValue.LAYOUT));
-    }
+	public VkClearValue() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClearValue(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClearValue(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    color = new VkClearColorValue(segment.asSlice(COLOR_BYTE_OFFSET, VkClearColorValue.LAYOUT));
+	    depthStencil = new VkClearDepthStencilValue(segment.asSlice(DEPTH_STENCIL_BYTE_OFFSET, VkClearDepthStencilValue.LAYOUT));
+	}
 
     /// @see #color()
     public VkClearValue color(Consumer<VkClearColorValue> consumer) {
@@ -139,5 +139,5 @@ public final class VkClearValue
             segment -> new VkClearValue(segment)
         );
     }
-    
+
 }

@@ -25,48 +25,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXSourceRange
 		implements Struct<CXSourceRange> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PTR_DATA_HANDLE;
-    public static final VarHandle BEGIN_INT_DATA_HANDLE;
-    public static final VarHandle END_INT_DATA_HANDLE;
+	public static final VarHandle PTR_DATA_HANDLE;
+	public static final VarHandle BEGIN_INT_DATA_HANDLE;
+	public static final VarHandle END_INT_DATA_HANDLE;
 
-    public static final long PTR_DATA_BYTE_OFFSET;
-    public static final long BEGIN_INT_DATA_BYTE_OFFSET;
-    public static final long END_INT_DATA_BYTE_OFFSET;
+	public static final long PTR_DATA_BYTE_OFFSET;
+	public static final long BEGIN_INT_DATA_BYTE_OFFSET;
+	public static final long END_INT_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(2, UNBOUNDED_ADDRESS).withName("ptr_data"),
-            JAVA_INT.withName("begin_int_data"),
-            JAVA_INT.withName("end_int_data")
-        ).withName("CXSourceRange").withByteAlignment(8);
-        
-        PTR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ptr_data"), PathElement.sequenceElement());
-        BEGIN_INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("begin_int_data"));
-        END_INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("end_int_data"));
-        
-        PTR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ptr_data"));
-        BEGIN_INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("begin_int_data"));
-        END_INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("end_int_data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(2, UNBOUNDED_ADDRESS).withName("ptr_data"),
+		    JAVA_INT.withName("begin_int_data"),
+		    JAVA_INT.withName("end_int_data")
+		).withName("CXSourceRange").withByteAlignment(8);
+		
+		PTR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ptr_data"), PathElement.sequenceElement());
+		BEGIN_INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("begin_int_data"));
+		END_INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("end_int_data"));
+		
+		PTR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ptr_data"));
+		BEGIN_INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("begin_int_data"));
+		END_INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("end_int_data"));
+		//@formatter:on
+	}
 
-    public CXSourceRange() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXSourceRange(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXSourceRange(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXSourceRange() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXSourceRange(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXSourceRange(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #ptr_data(int)
     public CXSourceRange ptr_data(MemorySegment ptr_data, int index0) {
@@ -154,5 +154,5 @@ public final class CXSourceRange
             segment -> new CXSourceRange(segment)
         );
     }
-    
+
 }

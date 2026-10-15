@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPerformanceCounterDescriptionKHR
 		implements Struct<VkPerformanceCounterDescriptionKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle NAME_HANDLE;
-    public static final VarHandle CATEGORY_HANDLE;
-    public static final VarHandle DESCRIPTION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle NAME_HANDLE;
+	public static final VarHandle CATEGORY_HANDLE;
+	public static final VarHandle DESCRIPTION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long NAME_BYTE_OFFSET;
-    public static final long CATEGORY_BYTE_OFFSET;
-    public static final long DESCRIPTION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long NAME_BYTE_OFFSET;
+	public static final long CATEGORY_BYTE_OFFSET;
+	public static final long DESCRIPTION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("category"),
-            MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPerformanceCounterDescriptionKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
-        CATEGORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("category"), PathElement.sequenceElement());
-        DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
-        CATEGORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("category"));
-        DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("name"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("category"),
+		    MemoryLayout.sequenceLayout(256, JAVA_BYTE).withName("description"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPerformanceCounterDescriptionKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"), PathElement.sequenceElement());
+		CATEGORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("category"), PathElement.sequenceElement());
+		DESCRIPTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("description"), PathElement.sequenceElement());
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
+		CATEGORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("category"));
+		DESCRIPTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("description"));
+		//@formatter:on
+	}
 
-    public VkPerformanceCounterDescriptionKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPerformanceCounterDescriptionKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPerformanceCounterDescriptionKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPerformanceCounterDescriptionKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPerformanceCounterDescriptionKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPerformanceCounterDescriptionKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPerformanceCounterDescriptionKHR sType(int sType) {
@@ -126,6 +126,10 @@ public final class VkPerformanceCounterDescriptionKHR
     	return (byte) NAME_HANDLE.get(segment, 0L, index0);
     }
     
+    public String name() {
+        return segment.getString(NAME_BYTE_OFFSET);
+    }
+    
     /// @see #category(int)
     public VkPerformanceCounterDescriptionKHR category(byte category, int index0) {
     	CATEGORY_HANDLE.set(segment, 0L, index0, category);
@@ -136,6 +140,10 @@ public final class VkPerformanceCounterDescriptionKHR
     	return (byte) CATEGORY_HANDLE.get(segment, 0L, index0);
     }
     
+    public String category() {
+        return segment.getString(CATEGORY_BYTE_OFFSET);
+    }
+    
     /// @see #description(int)
     public VkPerformanceCounterDescriptionKHR description(byte description, int index0) {
     	DESCRIPTION_HANDLE.set(segment, 0L, index0, description);
@@ -144,14 +152,6 @@ public final class VkPerformanceCounterDescriptionKHR
     
     public byte description(int index0) {
     	return (byte) DESCRIPTION_HANDLE.get(segment, 0L, index0);
-    }
-    
-    public String name() {
-        return segment.getString(NAME_BYTE_OFFSET);
-    }
-    
-    public String category() {
-        return segment.getString(CATEGORY_BYTE_OFFSET);
     }
     
     public String description() {
@@ -209,5 +209,5 @@ public final class VkPerformanceCounterDescriptionKHR
             segment -> new VkPerformanceCounterDescriptionKHR(segment)
         );
     }
-    
+
 }

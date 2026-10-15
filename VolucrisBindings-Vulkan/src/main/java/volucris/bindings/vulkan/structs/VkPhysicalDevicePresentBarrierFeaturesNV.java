@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDevicePresentBarrierFeaturesNV
 		implements Struct<VkPhysicalDevicePresentBarrierFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PRESENT_BARRIER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PRESENT_BARRIER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PRESENT_BARRIER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PRESENT_BARRIER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("presentBarrier"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDevicePresentBarrierFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PRESENT_BARRIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentBarrier"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PRESENT_BARRIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentBarrier"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("presentBarrier"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDevicePresentBarrierFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PRESENT_BARRIER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("presentBarrier"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PRESENT_BARRIER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("presentBarrier"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDevicePresentBarrierFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDevicePresentBarrierFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDevicePresentBarrierFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDevicePresentBarrierFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDevicePresentBarrierFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDevicePresentBarrierFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDevicePresentBarrierFeaturesNV sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDevicePresentBarrierFeaturesNV
             segment -> new VkPhysicalDevicePresentBarrierFeaturesNV(segment)
         );
     }
-    
+
 }

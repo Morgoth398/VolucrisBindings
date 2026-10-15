@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSpecializationMapEntry
 		implements Struct<VkSpecializationMapEntry> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CONSTANT_ID_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle CONSTANT_ID_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long CONSTANT_ID_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long CONSTANT_ID_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("constantID"),
-            JAVA_INT.withName("offset"),
-            JAVA_LONG.withName("size")
-        ).withName("VkSpecializationMapEntry").withByteAlignment(8);
-        
-        CONSTANT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("constantID"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        CONSTANT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantID"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("constantID"),
+		    JAVA_INT.withName("offset"),
+		    JAVA_LONG.withName("size")
+		).withName("VkSpecializationMapEntry").withByteAlignment(8);
+		
+		CONSTANT_ID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("constantID"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		CONSTANT_ID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantID"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkSpecializationMapEntry() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSpecializationMapEntry(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSpecializationMapEntry(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSpecializationMapEntry() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSpecializationMapEntry(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSpecializationMapEntry(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #constantID()
     public VkSpecializationMapEntry constantID(int constantID) {
@@ -143,5 +143,5 @@ public final class VkSpecializationMapEntry
             segment -> new VkSpecializationMapEntry(segment)
         );
     }
-    
+
 }

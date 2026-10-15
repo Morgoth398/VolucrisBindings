@@ -21,81 +21,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeAV1PictureInfoKHR
 		implements Struct<VkVideoEncodeAV1PictureInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PREDICTION_MODE_HANDLE;
-    public static final VarHandle RATE_CONTROL_GROUP_HANDLE;
-    public static final VarHandle CONSTANT_QINDEX_HANDLE;
-    public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
-    public static final VarHandle REFERENCE_NAME_SLOT_INDICES_HANDLE;
-    public static final VarHandle PRIMARY_REFERENCE_CDF_ONLY_HANDLE;
-    public static final VarHandle GENERATE_OBU_EXTENSION_HEADER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PREDICTION_MODE_HANDLE;
+	public static final VarHandle RATE_CONTROL_GROUP_HANDLE;
+	public static final VarHandle CONSTANT_QINDEX_HANDLE;
+	public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
+	public static final VarHandle REFERENCE_NAME_SLOT_INDICES_HANDLE;
+	public static final VarHandle PRIMARY_REFERENCE_CDF_ONLY_HANDLE;
+	public static final VarHandle GENERATE_OBU_EXTENSION_HEADER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PREDICTION_MODE_BYTE_OFFSET;
-    public static final long RATE_CONTROL_GROUP_BYTE_OFFSET;
-    public static final long CONSTANT_QINDEX_BYTE_OFFSET;
-    public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
-    public static final long REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET;
-    public static final long PRIMARY_REFERENCE_CDF_ONLY_BYTE_OFFSET;
-    public static final long GENERATE_OBU_EXTENSION_HEADER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PREDICTION_MODE_BYTE_OFFSET;
+	public static final long RATE_CONTROL_GROUP_BYTE_OFFSET;
+	public static final long CONSTANT_QINDEX_BYTE_OFFSET;
+	public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
+	public static final long REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET;
+	public static final long PRIMARY_REFERENCE_CDF_ONLY_BYTE_OFFSET;
+	public static final long GENERATE_OBU_EXTENSION_HEADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("predictionMode"),
-            JAVA_INT.withName("rateControlGroup"),
-            JAVA_INT.withName("constantQIndex"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
-            MemoryLayout.sequenceLayout(7, JAVA_INT).withName("referenceNameSlotIndices"),
-            JAVA_INT.withName("primaryReferenceCdfOnly"),
-            JAVA_INT.withName("generateObuExtensionHeader"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoEncodeAV1PictureInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PREDICTION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("predictionMode"));
-        RATE_CONTROL_GROUP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rateControlGroup"));
-        CONSTANT_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("constantQIndex"));
-        P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
-        REFERENCE_NAME_SLOT_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceNameSlotIndices"), PathElement.sequenceElement());
-        PRIMARY_REFERENCE_CDF_ONLY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primaryReferenceCdfOnly"));
-        GENERATE_OBU_EXTENSION_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("generateObuExtensionHeader"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PREDICTION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("predictionMode"));
-        RATE_CONTROL_GROUP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rateControlGroup"));
-        CONSTANT_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantQIndex"));
-        P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
-        REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceNameSlotIndices"));
-        PRIMARY_REFERENCE_CDF_ONLY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primaryReferenceCdfOnly"));
-        GENERATE_OBU_EXTENSION_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("generateObuExtensionHeader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("predictionMode"),
+		    JAVA_INT.withName("rateControlGroup"),
+		    JAVA_INT.withName("constantQIndex"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
+		    MemoryLayout.sequenceLayout(7, JAVA_INT).withName("referenceNameSlotIndices"),
+		    JAVA_INT.withName("primaryReferenceCdfOnly"),
+		    JAVA_INT.withName("generateObuExtensionHeader"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoEncodeAV1PictureInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PREDICTION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("predictionMode"));
+		RATE_CONTROL_GROUP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rateControlGroup"));
+		CONSTANT_QINDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("constantQIndex"));
+		P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
+		REFERENCE_NAME_SLOT_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceNameSlotIndices"), PathElement.sequenceElement());
+		PRIMARY_REFERENCE_CDF_ONLY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primaryReferenceCdfOnly"));
+		GENERATE_OBU_EXTENSION_HEADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("generateObuExtensionHeader"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PREDICTION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("predictionMode"));
+		RATE_CONTROL_GROUP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rateControlGroup"));
+		CONSTANT_QINDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("constantQIndex"));
+		P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
+		REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceNameSlotIndices"));
+		PRIMARY_REFERENCE_CDF_ONLY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primaryReferenceCdfOnly"));
+		GENERATE_OBU_EXTENSION_HEADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("generateObuExtensionHeader"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeAV1PictureInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeAV1PictureInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeAV1PictureInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeAV1PictureInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeAV1PictureInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeAV1PictureInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeAV1PictureInfoKHR sType(int sType) {
@@ -248,5 +248,5 @@ public final class VkVideoEncodeAV1PictureInfoKHR
             segment -> new VkVideoEncodeAV1PictureInfoKHR(segment)
         );
     }
-    
+
 }

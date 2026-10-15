@@ -21,81 +21,81 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDependencyInfo
 		implements Struct<VkDependencyInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEPENDENCY_FLAGS_HANDLE;
-    public static final VarHandle MEMORY_BARRIER_COUNT_HANDLE;
-    public static final VarHandle P_MEMORY_BARRIERS_HANDLE;
-    public static final VarHandle BUFFER_MEMORY_BARRIER_COUNT_HANDLE;
-    public static final VarHandle P_BUFFER_MEMORY_BARRIERS_HANDLE;
-    public static final VarHandle IMAGE_MEMORY_BARRIER_COUNT_HANDLE;
-    public static final VarHandle P_IMAGE_MEMORY_BARRIERS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEPENDENCY_FLAGS_HANDLE;
+	public static final VarHandle MEMORY_BARRIER_COUNT_HANDLE;
+	public static final VarHandle P_MEMORY_BARRIERS_HANDLE;
+	public static final VarHandle BUFFER_MEMORY_BARRIER_COUNT_HANDLE;
+	public static final VarHandle P_BUFFER_MEMORY_BARRIERS_HANDLE;
+	public static final VarHandle IMAGE_MEMORY_BARRIER_COUNT_HANDLE;
+	public static final VarHandle P_IMAGE_MEMORY_BARRIERS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEPENDENCY_FLAGS_BYTE_OFFSET;
-    public static final long MEMORY_BARRIER_COUNT_BYTE_OFFSET;
-    public static final long P_MEMORY_BARRIERS_BYTE_OFFSET;
-    public static final long BUFFER_MEMORY_BARRIER_COUNT_BYTE_OFFSET;
-    public static final long P_BUFFER_MEMORY_BARRIERS_BYTE_OFFSET;
-    public static final long IMAGE_MEMORY_BARRIER_COUNT_BYTE_OFFSET;
-    public static final long P_IMAGE_MEMORY_BARRIERS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEPENDENCY_FLAGS_BYTE_OFFSET;
+	public static final long MEMORY_BARRIER_COUNT_BYTE_OFFSET;
+	public static final long P_MEMORY_BARRIERS_BYTE_OFFSET;
+	public static final long BUFFER_MEMORY_BARRIER_COUNT_BYTE_OFFSET;
+	public static final long P_BUFFER_MEMORY_BARRIERS_BYTE_OFFSET;
+	public static final long IMAGE_MEMORY_BARRIER_COUNT_BYTE_OFFSET;
+	public static final long P_IMAGE_MEMORY_BARRIERS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dependencyFlags"),
-            JAVA_INT.withName("memoryBarrierCount"),
-            UNBOUNDED_ADDRESS.withName("pMemoryBarriers"),
-            JAVA_INT.withName("bufferMemoryBarrierCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pBufferMemoryBarriers"),
-            JAVA_INT.withName("imageMemoryBarrierCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pImageMemoryBarriers")
-        ).withName("VkDependencyInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEPENDENCY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyFlags"));
-        MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryBarrierCount"));
-        P_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMemoryBarriers"));
-        BUFFER_MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferMemoryBarrierCount"));
-        P_BUFFER_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferMemoryBarriers"));
-        IMAGE_MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMemoryBarrierCount"));
-        P_IMAGE_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageMemoryBarriers"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEPENDENCY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyFlags"));
-        MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryBarrierCount"));
-        P_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMemoryBarriers"));
-        BUFFER_MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferMemoryBarrierCount"));
-        P_BUFFER_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferMemoryBarriers"));
-        IMAGE_MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMemoryBarrierCount"));
-        P_IMAGE_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageMemoryBarriers"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dependencyFlags"),
+		    JAVA_INT.withName("memoryBarrierCount"),
+		    UNBOUNDED_ADDRESS.withName("pMemoryBarriers"),
+		    JAVA_INT.withName("bufferMemoryBarrierCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pBufferMemoryBarriers"),
+		    JAVA_INT.withName("imageMemoryBarrierCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pImageMemoryBarriers")
+		).withName("VkDependencyInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEPENDENCY_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dependencyFlags"));
+		MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryBarrierCount"));
+		P_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMemoryBarriers"));
+		BUFFER_MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferMemoryBarrierCount"));
+		P_BUFFER_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pBufferMemoryBarriers"));
+		IMAGE_MEMORY_BARRIER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageMemoryBarrierCount"));
+		P_IMAGE_MEMORY_BARRIERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pImageMemoryBarriers"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEPENDENCY_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dependencyFlags"));
+		MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryBarrierCount"));
+		P_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMemoryBarriers"));
+		BUFFER_MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferMemoryBarrierCount"));
+		P_BUFFER_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pBufferMemoryBarriers"));
+		IMAGE_MEMORY_BARRIER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageMemoryBarrierCount"));
+		P_IMAGE_MEMORY_BARRIERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pImageMemoryBarriers"));
+		//@formatter:on
+	}
 
-    public VkDependencyInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDependencyInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDependencyInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDependencyInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDependencyInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDependencyInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDependencyInfo sType(int sType) {
@@ -258,5 +258,5 @@ public final class VkDependencyInfo
             segment -> new VkDependencyInfo(segment)
         );
     }
-    
+
 }

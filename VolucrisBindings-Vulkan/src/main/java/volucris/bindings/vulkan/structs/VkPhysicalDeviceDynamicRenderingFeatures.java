@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDynamicRenderingFeatures
 		implements Struct<VkPhysicalDeviceDynamicRenderingFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DYNAMIC_RENDERING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DYNAMIC_RENDERING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DYNAMIC_RENDERING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DYNAMIC_RENDERING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("dynamicRendering"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceDynamicRenderingFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DYNAMIC_RENDERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRendering"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DYNAMIC_RENDERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRendering"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("dynamicRendering"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceDynamicRenderingFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DYNAMIC_RENDERING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("dynamicRendering"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DYNAMIC_RENDERING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("dynamicRendering"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDynamicRenderingFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDynamicRenderingFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDynamicRenderingFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDynamicRenderingFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDynamicRenderingFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDynamicRenderingFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDynamicRenderingFeatures sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceDynamicRenderingFeatures
             segment -> new VkPhysicalDeviceDynamicRenderingFeatures(segment)
         );
     }
-    
+
 }

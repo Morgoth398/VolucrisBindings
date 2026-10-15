@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkExtent2D
 		implements Struct<VkExtent2D> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
 
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("width"),
-            JAVA_INT.withName("height")
-        ).withName("VkExtent2D").withByteAlignment(4);
-        
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("width"),
+		    JAVA_INT.withName("height")
+		).withName("VkExtent2D").withByteAlignment(4);
+		
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		//@formatter:on
+	}
 
-    public VkExtent2D() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkExtent2D(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkExtent2D(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkExtent2D() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkExtent2D(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkExtent2D(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #width()
     public VkExtent2D width(int width) {
@@ -128,5 +128,5 @@ public final class VkExtent2D
             segment -> new VkExtent2D(segment)
         );
     }
-    
+
 }

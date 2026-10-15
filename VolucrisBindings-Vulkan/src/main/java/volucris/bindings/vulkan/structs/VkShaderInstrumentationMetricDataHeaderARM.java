@@ -19,53 +19,53 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkShaderInstrumentationMetricDataHeaderARM
 		implements Struct<VkShaderInstrumentationMetricDataHeaderARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RESULT_INDEX_HANDLE;
-    public static final VarHandle RESULT_SUB_INDEX_HANDLE;
-    public static final VarHandle STAGES_HANDLE;
-    public static final VarHandle BASIC_BLOCK_INDEX_HANDLE;
+	public static final VarHandle RESULT_INDEX_HANDLE;
+	public static final VarHandle RESULT_SUB_INDEX_HANDLE;
+	public static final VarHandle STAGES_HANDLE;
+	public static final VarHandle BASIC_BLOCK_INDEX_HANDLE;
 
-    public static final long RESULT_INDEX_BYTE_OFFSET;
-    public static final long RESULT_SUB_INDEX_BYTE_OFFSET;
-    public static final long STAGES_BYTE_OFFSET;
-    public static final long BASIC_BLOCK_INDEX_BYTE_OFFSET;
+	public static final long RESULT_INDEX_BYTE_OFFSET;
+	public static final long RESULT_SUB_INDEX_BYTE_OFFSET;
+	public static final long STAGES_BYTE_OFFSET;
+	public static final long BASIC_BLOCK_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("resultIndex"),
-            JAVA_INT.withName("resultSubIndex"),
-            JAVA_INT.withName("stages"),
-            JAVA_INT.withName("basicBlockIndex")
-        ).withName("VkShaderInstrumentationMetricDataHeaderARM").withByteAlignment(4);
-        
-        RESULT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resultIndex"));
-        RESULT_SUB_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resultSubIndex"));
-        STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stages"));
-        BASIC_BLOCK_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basicBlockIndex"));
-        
-        RESULT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resultIndex"));
-        RESULT_SUB_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resultSubIndex"));
-        STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stages"));
-        BASIC_BLOCK_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basicBlockIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("resultIndex"),
+		    JAVA_INT.withName("resultSubIndex"),
+		    JAVA_INT.withName("stages"),
+		    JAVA_INT.withName("basicBlockIndex")
+		).withName("VkShaderInstrumentationMetricDataHeaderARM").withByteAlignment(4);
+		
+		RESULT_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resultIndex"));
+		RESULT_SUB_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resultSubIndex"));
+		STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stages"));
+		BASIC_BLOCK_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basicBlockIndex"));
+		
+		RESULT_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resultIndex"));
+		RESULT_SUB_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resultSubIndex"));
+		STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stages"));
+		BASIC_BLOCK_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basicBlockIndex"));
+		//@formatter:on
+	}
 
-    public VkShaderInstrumentationMetricDataHeaderARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkShaderInstrumentationMetricDataHeaderARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkShaderInstrumentationMetricDataHeaderARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkShaderInstrumentationMetricDataHeaderARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkShaderInstrumentationMetricDataHeaderARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkShaderInstrumentationMetricDataHeaderARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #resultIndex()
     public VkShaderInstrumentationMetricDataHeaderARM resultIndex(int resultIndex) {
@@ -158,5 +158,5 @@ public final class VkShaderInstrumentationMetricDataHeaderARM
             segment -> new VkShaderInstrumentationMetricDataHeaderARM(segment)
         );
     }
-    
+
 }

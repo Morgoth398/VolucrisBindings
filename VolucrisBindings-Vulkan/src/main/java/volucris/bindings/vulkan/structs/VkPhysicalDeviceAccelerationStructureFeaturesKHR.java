@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceAccelerationStructureFeaturesKHR
 		implements Struct<VkPhysicalDeviceAccelerationStructureFeaturesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_CAPTURE_REPLAY_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_INDIRECT_BUILD_HANDLE;
-    public static final VarHandle ACCELERATION_STRUCTURE_HOST_COMMANDS_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_CAPTURE_REPLAY_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_INDIRECT_BUILD_HANDLE;
+	public static final VarHandle ACCELERATION_STRUCTURE_HOST_COMMANDS_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_CAPTURE_REPLAY_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_INDIRECT_BUILD_BYTE_OFFSET;
-    public static final long ACCELERATION_STRUCTURE_HOST_COMMANDS_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_CAPTURE_REPLAY_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_INDIRECT_BUILD_BYTE_OFFSET;
+	public static final long ACCELERATION_STRUCTURE_HOST_COMMANDS_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("accelerationStructure"),
-            JAVA_INT.withName("accelerationStructureCaptureReplay"),
-            JAVA_INT.withName("accelerationStructureIndirectBuild"),
-            JAVA_INT.withName("accelerationStructureHostCommands"),
-            JAVA_INT.withName("descriptorBindingAccelerationStructureUpdateAfterBind"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceAccelerationStructureFeaturesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
-        ACCELERATION_STRUCTURE_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureCaptureReplay"));
-        ACCELERATION_STRUCTURE_INDIRECT_BUILD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureIndirectBuild"));
-        ACCELERATION_STRUCTURE_HOST_COMMANDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureHostCommands"));
-        DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingAccelerationStructureUpdateAfterBind"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
-        ACCELERATION_STRUCTURE_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureCaptureReplay"));
-        ACCELERATION_STRUCTURE_INDIRECT_BUILD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureIndirectBuild"));
-        ACCELERATION_STRUCTURE_HOST_COMMANDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureHostCommands"));
-        DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingAccelerationStructureUpdateAfterBind"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("accelerationStructure"),
+		    JAVA_INT.withName("accelerationStructureCaptureReplay"),
+		    JAVA_INT.withName("accelerationStructureIndirectBuild"),
+		    JAVA_INT.withName("accelerationStructureHostCommands"),
+		    JAVA_INT.withName("descriptorBindingAccelerationStructureUpdateAfterBind"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceAccelerationStructureFeaturesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		ACCELERATION_STRUCTURE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructure"));
+		ACCELERATION_STRUCTURE_CAPTURE_REPLAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureCaptureReplay"));
+		ACCELERATION_STRUCTURE_INDIRECT_BUILD_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureIndirectBuild"));
+		ACCELERATION_STRUCTURE_HOST_COMMANDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("accelerationStructureHostCommands"));
+		DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingAccelerationStructureUpdateAfterBind"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		ACCELERATION_STRUCTURE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructure"));
+		ACCELERATION_STRUCTURE_CAPTURE_REPLAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureCaptureReplay"));
+		ACCELERATION_STRUCTURE_INDIRECT_BUILD_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureIndirectBuild"));
+		ACCELERATION_STRUCTURE_HOST_COMMANDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("accelerationStructureHostCommands"));
+		DESCRIPTOR_BINDING_ACCELERATION_STRUCTURE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingAccelerationStructureUpdateAfterBind"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceAccelerationStructureFeaturesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceAccelerationStructureFeaturesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceAccelerationStructureFeaturesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceAccelerationStructureFeaturesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceAccelerationStructureFeaturesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceAccelerationStructureFeaturesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceAccelerationStructureFeaturesKHR sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceAccelerationStructureFeaturesKHR
             segment -> new VkPhysicalDeviceAccelerationStructureFeaturesKHR(segment)
         );
     }
-    
+
 }

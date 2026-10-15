@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineBinaryCreateInfoKHR
 		implements Struct<VkPipelineBinaryCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_KEYS_AND_DATA_INFO_HANDLE;
-    public static final VarHandle PIPELINE_HANDLE;
-    public static final VarHandle P_PIPELINE_CREATE_INFO_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_KEYS_AND_DATA_INFO_HANDLE;
+	public static final VarHandle PIPELINE_HANDLE;
+	public static final VarHandle P_PIPELINE_CREATE_INFO_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_KEYS_AND_DATA_INFO_BYTE_OFFSET;
-    public static final long PIPELINE_BYTE_OFFSET;
-    public static final long P_PIPELINE_CREATE_INFO_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_KEYS_AND_DATA_INFO_BYTE_OFFSET;
+	public static final long PIPELINE_BYTE_OFFSET;
+	public static final long P_PIPELINE_CREATE_INFO_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pKeysAndDataInfo"),
-            UNBOUNDED_ADDRESS.withName("pipeline"),
-            UNBOUNDED_ADDRESS.withName("pPipelineCreateInfo")
-        ).withName("VkPipelineBinaryCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_KEYS_AND_DATA_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pKeysAndDataInfo"));
-        PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipeline"));
-        P_PIPELINE_CREATE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineCreateInfo"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_KEYS_AND_DATA_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pKeysAndDataInfo"));
-        PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipeline"));
-        P_PIPELINE_CREATE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineCreateInfo"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pKeysAndDataInfo"),
+		    UNBOUNDED_ADDRESS.withName("pipeline"),
+		    UNBOUNDED_ADDRESS.withName("pPipelineCreateInfo")
+		).withName("VkPipelineBinaryCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_KEYS_AND_DATA_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pKeysAndDataInfo"));
+		PIPELINE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pipeline"));
+		P_PIPELINE_CREATE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPipelineCreateInfo"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_KEYS_AND_DATA_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pKeysAndDataInfo"));
+		PIPELINE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pipeline"));
+		P_PIPELINE_CREATE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPipelineCreateInfo"));
+		//@formatter:on
+	}
 
-    public VkPipelineBinaryCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineBinaryCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineBinaryCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineBinaryCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineBinaryCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineBinaryCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineBinaryCreateInfoKHR sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPipelineBinaryCreateInfoKHR
             segment -> new VkPipelineBinaryCreateInfoKHR(segment)
         );
     }
-    
+
 }

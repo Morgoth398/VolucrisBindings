@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMeshShaderFeaturesNV
 		implements Struct<VkPhysicalDeviceMeshShaderFeaturesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TASK_SHADER_HANDLE;
-    public static final VarHandle MESH_SHADER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TASK_SHADER_HANDLE;
+	public static final VarHandle MESH_SHADER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TASK_SHADER_BYTE_OFFSET;
-    public static final long MESH_SHADER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TASK_SHADER_BYTE_OFFSET;
+	public static final long MESH_SHADER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("taskShader"),
-            JAVA_INT.withName("meshShader")
-        ).withName("VkPhysicalDeviceMeshShaderFeaturesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TASK_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("taskShader"));
-        MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshShader"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TASK_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("taskShader"));
-        MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshShader"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("taskShader"),
+		    JAVA_INT.withName("meshShader")
+		).withName("VkPhysicalDeviceMeshShaderFeaturesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TASK_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("taskShader"));
+		MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshShader"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TASK_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("taskShader"));
+		MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshShader"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMeshShaderFeaturesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMeshShaderFeaturesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMeshShaderFeaturesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMeshShaderFeaturesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMeshShaderFeaturesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMeshShaderFeaturesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMeshShaderFeaturesNV sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceMeshShaderFeaturesNV
             segment -> new VkPhysicalDeviceMeshShaderFeaturesNV(segment)
         );
     }
-    
+
 }

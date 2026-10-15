@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPushConstantRange
 		implements Struct<VkPushConstantRange> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle STAGE_FLAGS_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle STAGE_FLAGS_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
 
-    public static final long STAGE_FLAGS_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
+	public static final long STAGE_FLAGS_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("stageFlags"),
-            JAVA_INT.withName("offset"),
-            JAVA_INT.withName("size")
-        ).withName("VkPushConstantRange").withByteAlignment(4);
-        
-        STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        
-        STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("stageFlags"),
+		    JAVA_INT.withName("offset"),
+		    JAVA_INT.withName("size")
+		).withName("VkPushConstantRange").withByteAlignment(4);
+		
+		STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageFlags"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		
+		STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageFlags"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		//@formatter:on
+	}
 
-    public VkPushConstantRange() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPushConstantRange(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPushConstantRange(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPushConstantRange() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPushConstantRange(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPushConstantRange(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #stageFlags()
     public VkPushConstantRange stageFlags(int stageFlags) {
@@ -143,5 +143,5 @@ public final class VkPushConstantRange
             segment -> new VkPushConstantRange(segment)
         );
     }
-    
+
 }

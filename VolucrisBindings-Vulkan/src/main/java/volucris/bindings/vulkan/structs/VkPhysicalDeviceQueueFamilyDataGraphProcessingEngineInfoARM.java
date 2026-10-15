@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM
 		implements Struct<VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle ENGINE_TYPE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle ENGINE_TYPE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long ENGINE_TYPE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long ENGINE_TYPE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("queueFamilyIndex"),
-            JAVA_INT.withName("engineType")
-        ).withName("VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
-        ENGINE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineType"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
-        ENGINE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineType"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("queueFamilyIndex"),
+		    JAVA_INT.withName("engineType")
+		).withName("VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
+		ENGINE_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineType"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
+		ENGINE_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineType"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM
             segment -> new VkPhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoARM(segment)
         );
     }
-    
+
 }

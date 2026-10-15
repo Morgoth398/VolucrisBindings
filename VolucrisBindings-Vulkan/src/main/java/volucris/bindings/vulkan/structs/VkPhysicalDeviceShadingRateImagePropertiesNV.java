@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShadingRateImagePropertiesNV
 		implements Struct<VkPhysicalDeviceShadingRateImagePropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADING_RATE_PALETTE_SIZE_HANDLE;
-    public static final VarHandle SHADING_RATE_MAX_COARSE_SAMPLES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADING_RATE_PALETTE_SIZE_HANDLE;
+	public static final VarHandle SHADING_RATE_MAX_COARSE_SAMPLES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADING_RATE_TEXEL_SIZE_BYTE_OFFSET;
-    public static final long SHADING_RATE_PALETTE_SIZE_BYTE_OFFSET;
-    public static final long SHADING_RATE_MAX_COARSE_SAMPLES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADING_RATE_TEXEL_SIZE_BYTE_OFFSET;
+	public static final long SHADING_RATE_PALETTE_SIZE_BYTE_OFFSET;
+	public static final long SHADING_RATE_MAX_COARSE_SAMPLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D shadingRateTexelSize;
+	private final VkExtent2D shadingRateTexelSize;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent2D.LAYOUT.withName("shadingRateTexelSize"),
-            JAVA_INT.withName("shadingRatePaletteSize"),
-            JAVA_INT.withName("shadingRateMaxCoarseSamples")
-        ).withName("VkPhysicalDeviceShadingRateImagePropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADING_RATE_PALETTE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRatePaletteSize"));
-        SHADING_RATE_MAX_COARSE_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateMaxCoarseSamples"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADING_RATE_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateTexelSize"));
-        SHADING_RATE_PALETTE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRatePaletteSize"));
-        SHADING_RATE_MAX_COARSE_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateMaxCoarseSamples"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent2D.LAYOUT.withName("shadingRateTexelSize"),
+		    JAVA_INT.withName("shadingRatePaletteSize"),
+		    JAVA_INT.withName("shadingRateMaxCoarseSamples")
+		).withName("VkPhysicalDeviceShadingRateImagePropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADING_RATE_PALETTE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRatePaletteSize"));
+		SHADING_RATE_MAX_COARSE_SAMPLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shadingRateMaxCoarseSamples"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADING_RATE_TEXEL_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateTexelSize"));
+		SHADING_RATE_PALETTE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRatePaletteSize"));
+		SHADING_RATE_MAX_COARSE_SAMPLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shadingRateMaxCoarseSamples"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShadingRateImagePropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShadingRateImagePropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShadingRateImagePropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        shadingRateTexelSize = new VkExtent2D(segment.asSlice(SHADING_RATE_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkPhysicalDeviceShadingRateImagePropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShadingRateImagePropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShadingRateImagePropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    shadingRateTexelSize = new VkExtent2D(segment.asSlice(SHADING_RATE_TEXEL_SIZE_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShadingRateImagePropertiesNV sType(int sType) {
@@ -102,6 +102,22 @@ public final class VkPhysicalDeviceShadingRateImagePropertiesNV
     	return segment;
     }
     
+    /// @see #shadingRateTexelSize()
+    public VkPhysicalDeviceShadingRateImagePropertiesNV shadingRateTexelSize(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(shadingRateTexelSize);
+    	return this;
+    }
+    
+    /// @see #shadingRateTexelSize()
+    public VkPhysicalDeviceShadingRateImagePropertiesNV shadingRateTexelSize(VkExtent2D other) {
+    	shadingRateTexelSize.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D shadingRateTexelSize() {
+    	return shadingRateTexelSize;
+    }
+    
     /// @see #shadingRatePaletteSize()
     public VkPhysicalDeviceShadingRateImagePropertiesNV shadingRatePaletteSize(int shadingRatePaletteSize) {
     	SHADING_RATE_PALETTE_SIZE_HANDLE.set(segment, 0L, shadingRatePaletteSize);
@@ -120,22 +136,6 @@ public final class VkPhysicalDeviceShadingRateImagePropertiesNV
     
     public int shadingRateMaxCoarseSamples() {
     	return (int) SHADING_RATE_MAX_COARSE_SAMPLES_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #shadingRateTexelSize()
-    public VkPhysicalDeviceShadingRateImagePropertiesNV shadingRateTexelSize(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(shadingRateTexelSize);
-    	return this;
-    }
-    
-    /// @see #shadingRateTexelSize()
-    public VkPhysicalDeviceShadingRateImagePropertiesNV shadingRateTexelSize(VkExtent2D other) {
-    	shadingRateTexelSize.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D shadingRateTexelSize() {
-    	return shadingRateTexelSize;
     }
     
     @Override
@@ -189,5 +189,5 @@ public final class VkPhysicalDeviceShadingRateImagePropertiesNV
             segment -> new VkPhysicalDeviceShadingRateImagePropertiesNV(segment)
         );
     }
-    
+
 }

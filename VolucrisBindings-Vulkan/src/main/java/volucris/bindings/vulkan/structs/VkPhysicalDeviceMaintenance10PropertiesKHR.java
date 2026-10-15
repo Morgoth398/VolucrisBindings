@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMaintenance10PropertiesKHR
 		implements Struct<VkPhysicalDeviceMaintenance10PropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle RGBA4_OPAQUE_BLACK_SWIZZLED_HANDLE;
-    public static final VarHandle RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_HANDLE;
-    public static final VarHandle RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle RGBA4_OPAQUE_BLACK_SWIZZLED_HANDLE;
+	public static final VarHandle RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_HANDLE;
+	public static final VarHandle RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long RGBA4_OPAQUE_BLACK_SWIZZLED_BYTE_OFFSET;
-    public static final long RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_BYTE_OFFSET;
-    public static final long RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long RGBA4_OPAQUE_BLACK_SWIZZLED_BYTE_OFFSET;
+	public static final long RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_BYTE_OFFSET;
+	public static final long RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("rgba4OpaqueBlackSwizzled"),
-            JAVA_INT.withName("resolveSrgbFormatAppliesTransferFunction"),
-            JAVA_INT.withName("resolveSrgbFormatSupportsTransferFunctionControl"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMaintenance10PropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        RGBA4_OPAQUE_BLACK_SWIZZLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rgba4OpaqueBlackSwizzled"));
-        RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveSrgbFormatAppliesTransferFunction"));
-        RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveSrgbFormatSupportsTransferFunctionControl"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        RGBA4_OPAQUE_BLACK_SWIZZLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rgba4OpaqueBlackSwizzled"));
-        RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveSrgbFormatAppliesTransferFunction"));
-        RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveSrgbFormatSupportsTransferFunctionControl"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("rgba4OpaqueBlackSwizzled"),
+		    JAVA_INT.withName("resolveSrgbFormatAppliesTransferFunction"),
+		    JAVA_INT.withName("resolveSrgbFormatSupportsTransferFunctionControl"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMaintenance10PropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		RGBA4_OPAQUE_BLACK_SWIZZLED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rgba4OpaqueBlackSwizzled"));
+		RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveSrgbFormatAppliesTransferFunction"));
+		RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resolveSrgbFormatSupportsTransferFunctionControl"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		RGBA4_OPAQUE_BLACK_SWIZZLED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rgba4OpaqueBlackSwizzled"));
+		RESOLVE_SRGB_FORMAT_APPLIES_TRANSFER_FUNCTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveSrgbFormatAppliesTransferFunction"));
+		RESOLVE_SRGB_FORMAT_SUPPORTS_TRANSFER_FUNCTION_CONTROL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resolveSrgbFormatSupportsTransferFunctionControl"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMaintenance10PropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMaintenance10PropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMaintenance10PropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMaintenance10PropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMaintenance10PropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMaintenance10PropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMaintenance10PropertiesKHR sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceMaintenance10PropertiesKHR
             segment -> new VkPhysicalDeviceMaintenance10PropertiesKHR(segment)
         );
     }
-    
+
 }

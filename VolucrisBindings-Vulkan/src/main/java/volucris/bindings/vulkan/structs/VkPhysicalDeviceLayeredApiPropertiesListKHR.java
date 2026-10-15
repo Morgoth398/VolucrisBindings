@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceLayeredApiPropertiesListKHR
 		implements Struct<VkPhysicalDeviceLayeredApiPropertiesListKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LAYERED_API_COUNT_HANDLE;
-    public static final VarHandle P_LAYERED_APIS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LAYERED_API_COUNT_HANDLE;
+	public static final VarHandle P_LAYERED_APIS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LAYERED_API_COUNT_BYTE_OFFSET;
-    public static final long P_LAYERED_APIS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LAYERED_API_COUNT_BYTE_OFFSET;
+	public static final long P_LAYERED_APIS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("layeredApiCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pLayeredApis")
-        ).withName("VkPhysicalDeviceLayeredApiPropertiesListKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LAYERED_API_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layeredApiCount"));
-        P_LAYERED_APIS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLayeredApis"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LAYERED_API_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layeredApiCount"));
-        P_LAYERED_APIS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLayeredApis"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("layeredApiCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pLayeredApis")
+		).withName("VkPhysicalDeviceLayeredApiPropertiesListKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LAYERED_API_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layeredApiCount"));
+		P_LAYERED_APIS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pLayeredApis"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LAYERED_API_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layeredApiCount"));
+		P_LAYERED_APIS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pLayeredApis"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceLayeredApiPropertiesListKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceLayeredApiPropertiesListKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceLayeredApiPropertiesListKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceLayeredApiPropertiesListKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceLayeredApiPropertiesListKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceLayeredApiPropertiesListKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceLayeredApiPropertiesListKHR sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkPhysicalDeviceLayeredApiPropertiesListKHR
             segment -> new VkPhysicalDeviceLayeredApiPropertiesListKHR(segment)
         );
     }
-    
+
 }

@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMicromapBuildSizesInfoEXT
 		implements Struct<VkMicromapBuildSizesInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MICROMAP_SIZE_HANDLE;
-    public static final VarHandle BUILD_SCRATCH_SIZE_HANDLE;
-    public static final VarHandle DISCARDABLE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MICROMAP_SIZE_HANDLE;
+	public static final VarHandle BUILD_SCRATCH_SIZE_HANDLE;
+	public static final VarHandle DISCARDABLE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MICROMAP_SIZE_BYTE_OFFSET;
-    public static final long BUILD_SCRATCH_SIZE_BYTE_OFFSET;
-    public static final long DISCARDABLE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MICROMAP_SIZE_BYTE_OFFSET;
+	public static final long BUILD_SCRATCH_SIZE_BYTE_OFFSET;
+	public static final long DISCARDABLE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("micromapSize"),
-            JAVA_LONG.withName("buildScratchSize"),
-            JAVA_INT.withName("discardable"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkMicromapBuildSizesInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MICROMAP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromapSize"));
-        BUILD_SCRATCH_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buildScratchSize"));
-        DISCARDABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discardable"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MICROMAP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromapSize"));
-        BUILD_SCRATCH_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buildScratchSize"));
-        DISCARDABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discardable"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("micromapSize"),
+		    JAVA_LONG.withName("buildScratchSize"),
+		    JAVA_INT.withName("discardable"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkMicromapBuildSizesInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MICROMAP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("micromapSize"));
+		BUILD_SCRATCH_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("buildScratchSize"));
+		DISCARDABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("discardable"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MICROMAP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("micromapSize"));
+		BUILD_SCRATCH_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("buildScratchSize"));
+		DISCARDABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("discardable"));
+		//@formatter:on
+	}
 
-    public VkMicromapBuildSizesInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMicromapBuildSizesInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMicromapBuildSizesInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMicromapBuildSizesInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMicromapBuildSizesInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMicromapBuildSizesInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMicromapBuildSizesInfoEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkMicromapBuildSizesInfoEXT
             segment -> new VkMicromapBuildSizesInfoEXT(segment)
         );
     }
-    
+
 }

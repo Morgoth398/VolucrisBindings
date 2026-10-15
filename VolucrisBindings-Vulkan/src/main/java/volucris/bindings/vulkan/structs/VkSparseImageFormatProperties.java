@@ -20,49 +20,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSparseImageFormatProperties
 		implements Struct<VkSparseImageFormatProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_MASK_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long ASPECT_MASK_BYTE_OFFSET;
-    public static final long IMAGE_GRANULARITY_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long IMAGE_GRANULARITY_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent3D imageGranularity;
+	private final VkExtent3D imageGranularity;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("aspectMask"),
-            VkExtent3D.LAYOUT.withName("imageGranularity"),
-            JAVA_INT.withName("flags")
-        ).withName("VkSparseImageFormatProperties").withByteAlignment(4);
-        
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        IMAGE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageGranularity"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("aspectMask"),
+		    VkExtent3D.LAYOUT.withName("imageGranularity"),
+		    JAVA_INT.withName("flags")
+		).withName("VkSparseImageFormatProperties").withByteAlignment(4);
+		
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		IMAGE_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageGranularity"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkSparseImageFormatProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSparseImageFormatProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSparseImageFormatProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-        imageGranularity = new VkExtent3D(segment.asSlice(IMAGE_GRANULARITY_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkSparseImageFormatProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseImageFormatProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseImageFormatProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    imageGranularity = new VkExtent3D(segment.asSlice(IMAGE_GRANULARITY_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #aspectMask()
     public VkSparseImageFormatProperties aspectMask(int aspectMask) {
@@ -72,16 +72,6 @@ public final class VkSparseImageFormatProperties
     
     public int aspectMask() {
     	return (int) ASPECT_MASK_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #flags()
-    public VkSparseImageFormatProperties flags(int flags) {
-    	FLAGS_HANDLE.set(segment, 0L, flags);
-    	return this;
-    }
-    
-    public int flags() {
-    	return (int) FLAGS_HANDLE.get(segment, 0L);
     }
     
     /// @see #imageGranularity()
@@ -98,6 +88,16 @@ public final class VkSparseImageFormatProperties
     
     public VkExtent3D imageGranularity() {
     	return imageGranularity;
+    }
+    
+    /// @see #flags()
+    public VkSparseImageFormatProperties flags(int flags) {
+    	FLAGS_HANDLE.set(segment, 0L, flags);
+    	return this;
+    }
+    
+    public int flags() {
+    	return (int) FLAGS_HANDLE.get(segment, 0L);
     }
     
     @Override
@@ -151,5 +151,5 @@ public final class VkSparseImageFormatProperties
             segment -> new VkSparseImageFormatProperties(segment)
         );
     }
-    
+
 }

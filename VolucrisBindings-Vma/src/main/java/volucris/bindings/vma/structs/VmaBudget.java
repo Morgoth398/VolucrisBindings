@@ -23,50 +23,69 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VmaBudget
 		implements Struct<VmaBudget> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle USAGE_HANDLE;
-    public static final VarHandle BUDGET_HANDLE;
+	public static final VarHandle USAGE_HANDLE;
+	public static final VarHandle BUDGET_HANDLE;
 
-    public static final long STATISTICS_BYTE_OFFSET;
-    public static final long USAGE_BYTE_OFFSET;
-    public static final long BUDGET_BYTE_OFFSET;
+	public static final long STATISTICS_BYTE_OFFSET;
+	public static final long USAGE_BYTE_OFFSET;
+	public static final long BUDGET_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VmaStatistics statistics;
+	private final VmaStatistics statistics;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VmaStatistics.LAYOUT.withName("statistics"),
-            JAVA_LONG.withName("usage"),
-            JAVA_LONG.withName("budget")
-        ).withName("VmaBudget").withByteAlignment(8);
-        
-        USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
-        BUDGET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("budget"));
-        
-        STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("statistics"));
-        USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
-        BUDGET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("budget"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VmaStatistics.LAYOUT.withName("statistics"),
+		    JAVA_LONG.withName("usage"),
+		    JAVA_LONG.withName("budget")
+		).withName("VmaBudget").withByteAlignment(8);
+		
+		USAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("usage"));
+		BUDGET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("budget"));
+		
+		STATISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("statistics"));
+		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
+		BUDGET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("budget"));
+		//@formatter:on
+	}
 
-    public VmaBudget() {
-        this(Arena.ofAuto());
+	public VmaBudget() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaBudget(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaBudget(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    statistics = new VmaStatistics(segment.asSlice(STATISTICS_BYTE_OFFSET, VmaStatistics.LAYOUT));
+	}
+
+    /// @see #statistics()
+    public VmaBudget statistics(Consumer<VmaStatistics> consumer) {
+    	consumer.accept(statistics);
+    	return this;
     }
     
-    public VmaBudget(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #statistics()
+    public VmaBudget statistics(VmaStatistics other) {
+    	statistics.set(other);
+    	return this;
     }
     
-    public VmaBudget(MemorySegment segment) {
-        this.segment = segment;
-    
-        statistics = new VmaStatistics(segment.asSlice(STATISTICS_BYTE_OFFSET, VmaStatistics.LAYOUT));
+    /// ```
+    /// \brief Statistics fetched from the library.
+    /// ```
+    public VmaStatistics statistics() {
+    	return statistics;
     }
-
+    
     /// @see #usage()
     public VmaBudget usage(long usage) {
     	USAGE_HANDLE.set(segment, 0L, usage);
@@ -104,25 +123,6 @@ public final class VmaBudget
     /// ```
     public long budget() {
     	return (long) BUDGET_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #statistics()
-    public VmaBudget statistics(Consumer<VmaStatistics> consumer) {
-    	consumer.accept(statistics);
-    	return this;
-    }
-    
-    /// @see #statistics()
-    public VmaBudget statistics(VmaStatistics other) {
-    	statistics.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// \brief Statistics fetched from the library.
-    /// ```
-    public VmaStatistics statistics() {
-    	return statistics;
     }
     
     @Override
@@ -176,5 +176,5 @@ public final class VmaBudget
             segment -> new VmaBudget(segment)
         );
     }
-    
+
 }

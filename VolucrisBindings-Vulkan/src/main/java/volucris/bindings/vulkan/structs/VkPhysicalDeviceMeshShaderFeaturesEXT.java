@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMeshShaderFeaturesEXT
 		implements Struct<VkPhysicalDeviceMeshShaderFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TASK_SHADER_HANDLE;
-    public static final VarHandle MESH_SHADER_HANDLE;
-    public static final VarHandle MULTIVIEW_MESH_SHADER_HANDLE;
-    public static final VarHandle PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_HANDLE;
-    public static final VarHandle MESH_SHADER_QUERIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TASK_SHADER_HANDLE;
+	public static final VarHandle MESH_SHADER_HANDLE;
+	public static final VarHandle MULTIVIEW_MESH_SHADER_HANDLE;
+	public static final VarHandle PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_HANDLE;
+	public static final VarHandle MESH_SHADER_QUERIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TASK_SHADER_BYTE_OFFSET;
-    public static final long MESH_SHADER_BYTE_OFFSET;
-    public static final long MULTIVIEW_MESH_SHADER_BYTE_OFFSET;
-    public static final long PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_BYTE_OFFSET;
-    public static final long MESH_SHADER_QUERIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TASK_SHADER_BYTE_OFFSET;
+	public static final long MESH_SHADER_BYTE_OFFSET;
+	public static final long MULTIVIEW_MESH_SHADER_BYTE_OFFSET;
+	public static final long PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_BYTE_OFFSET;
+	public static final long MESH_SHADER_QUERIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("taskShader"),
-            JAVA_INT.withName("meshShader"),
-            JAVA_INT.withName("multiviewMeshShader"),
-            JAVA_INT.withName("primitiveFragmentShadingRateMeshShader"),
-            JAVA_INT.withName("meshShaderQueries"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMeshShaderFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TASK_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("taskShader"));
-        MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshShader"));
-        MULTIVIEW_MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewMeshShader"));
-        PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveFragmentShadingRateMeshShader"));
-        MESH_SHADER_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshShaderQueries"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TASK_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("taskShader"));
-        MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshShader"));
-        MULTIVIEW_MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewMeshShader"));
-        PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveFragmentShadingRateMeshShader"));
-        MESH_SHADER_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshShaderQueries"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("taskShader"),
+		    JAVA_INT.withName("meshShader"),
+		    JAVA_INT.withName("multiviewMeshShader"),
+		    JAVA_INT.withName("primitiveFragmentShadingRateMeshShader"),
+		    JAVA_INT.withName("meshShaderQueries"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMeshShaderFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TASK_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("taskShader"));
+		MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshShader"));
+		MULTIVIEW_MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multiviewMeshShader"));
+		PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("primitiveFragmentShadingRateMeshShader"));
+		MESH_SHADER_QUERIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("meshShaderQueries"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TASK_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("taskShader"));
+		MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshShader"));
+		MULTIVIEW_MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multiviewMeshShader"));
+		PRIMITIVE_FRAGMENT_SHADING_RATE_MESH_SHADER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("primitiveFragmentShadingRateMeshShader"));
+		MESH_SHADER_QUERIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("meshShaderQueries"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMeshShaderFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMeshShaderFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMeshShaderFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMeshShaderFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMeshShaderFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMeshShaderFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMeshShaderFeaturesEXT sType(int sType) {
@@ -212,5 +212,5 @@ public final class VkPhysicalDeviceMeshShaderFeaturesEXT
             segment -> new VkPhysicalDeviceMeshShaderFeaturesEXT(segment)
         );
     }
-    
+
 }

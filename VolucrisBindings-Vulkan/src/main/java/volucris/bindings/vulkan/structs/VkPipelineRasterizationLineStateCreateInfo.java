@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineRasterizationLineStateCreateInfo
 		implements Struct<VkPipelineRasterizationLineStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle LINE_RASTERIZATION_MODE_HANDLE;
-    public static final VarHandle STIPPLED_LINE_ENABLE_HANDLE;
-    public static final VarHandle LINE_STIPPLE_FACTOR_HANDLE;
-    public static final VarHandle LINE_STIPPLE_PATTERN_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle LINE_RASTERIZATION_MODE_HANDLE;
+	public static final VarHandle STIPPLED_LINE_ENABLE_HANDLE;
+	public static final VarHandle LINE_STIPPLE_FACTOR_HANDLE;
+	public static final VarHandle LINE_STIPPLE_PATTERN_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long LINE_RASTERIZATION_MODE_BYTE_OFFSET;
-    public static final long STIPPLED_LINE_ENABLE_BYTE_OFFSET;
-    public static final long LINE_STIPPLE_FACTOR_BYTE_OFFSET;
-    public static final long LINE_STIPPLE_PATTERN_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long LINE_RASTERIZATION_MODE_BYTE_OFFSET;
+	public static final long STIPPLED_LINE_ENABLE_BYTE_OFFSET;
+	public static final long LINE_STIPPLE_FACTOR_BYTE_OFFSET;
+	public static final long LINE_STIPPLE_PATTERN_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("lineRasterizationMode"),
-            JAVA_INT.withName("stippledLineEnable"),
-            JAVA_INT.withName("lineStippleFactor"),
-            JAVA_SHORT.withName("lineStipplePattern"),
-            MemoryLayout.paddingLayout(2)
-        ).withName("VkPipelineRasterizationLineStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        LINE_RASTERIZATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineRasterizationMode"));
-        STIPPLED_LINE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledLineEnable"));
-        LINE_STIPPLE_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineStippleFactor"));
-        LINE_STIPPLE_PATTERN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineStipplePattern"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        LINE_RASTERIZATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineRasterizationMode"));
-        STIPPLED_LINE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledLineEnable"));
-        LINE_STIPPLE_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineStippleFactor"));
-        LINE_STIPPLE_PATTERN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineStipplePattern"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("lineRasterizationMode"),
+		    JAVA_INT.withName("stippledLineEnable"),
+		    JAVA_INT.withName("lineStippleFactor"),
+		    JAVA_SHORT.withName("lineStipplePattern"),
+		    MemoryLayout.paddingLayout(2)
+		).withName("VkPipelineRasterizationLineStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		LINE_RASTERIZATION_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineRasterizationMode"));
+		STIPPLED_LINE_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stippledLineEnable"));
+		LINE_STIPPLE_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineStippleFactor"));
+		LINE_STIPPLE_PATTERN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineStipplePattern"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		LINE_RASTERIZATION_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineRasterizationMode"));
+		STIPPLED_LINE_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stippledLineEnable"));
+		LINE_STIPPLE_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineStippleFactor"));
+		LINE_STIPPLE_PATTERN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineStipplePattern"));
+		//@formatter:on
+	}
 
-    public VkPipelineRasterizationLineStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineRasterizationLineStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineRasterizationLineStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineRasterizationLineStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineRasterizationLineStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineRasterizationLineStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineRasterizationLineStateCreateInfo sType(int sType) {
@@ -197,5 +197,5 @@ public final class VkPipelineRasterizationLineStateCreateInfo
             segment -> new VkPipelineRasterizationLineStateCreateInfo(segment)
         );
     }
-    
+
 }

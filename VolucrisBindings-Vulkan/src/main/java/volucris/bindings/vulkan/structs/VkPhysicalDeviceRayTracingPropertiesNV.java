@@ -21,85 +21,85 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceRayTracingPropertiesNV
 		implements Struct<VkPhysicalDeviceRayTracingPropertiesNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_GROUP_HANDLE_SIZE_HANDLE;
-    public static final VarHandle MAX_RECURSION_DEPTH_HANDLE;
-    public static final VarHandle MAX_SHADER_GROUP_STRIDE_HANDLE;
-    public static final VarHandle SHADER_GROUP_BASE_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_GEOMETRY_COUNT_HANDLE;
-    public static final VarHandle MAX_INSTANCE_COUNT_HANDLE;
-    public static final VarHandle MAX_TRIANGLE_COUNT_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_GROUP_HANDLE_SIZE_HANDLE;
+	public static final VarHandle MAX_RECURSION_DEPTH_HANDLE;
+	public static final VarHandle MAX_SHADER_GROUP_STRIDE_HANDLE;
+	public static final VarHandle SHADER_GROUP_BASE_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_GEOMETRY_COUNT_HANDLE;
+	public static final VarHandle MAX_INSTANCE_COUNT_HANDLE;
+	public static final VarHandle MAX_TRIANGLE_COUNT_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET;
-    public static final long MAX_RECURSION_DEPTH_BYTE_OFFSET;
-    public static final long MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET;
-    public static final long SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_GEOMETRY_COUNT_BYTE_OFFSET;
-    public static final long MAX_INSTANCE_COUNT_BYTE_OFFSET;
-    public static final long MAX_TRIANGLE_COUNT_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET;
+	public static final long MAX_RECURSION_DEPTH_BYTE_OFFSET;
+	public static final long MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET;
+	public static final long SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_GEOMETRY_COUNT_BYTE_OFFSET;
+	public static final long MAX_INSTANCE_COUNT_BYTE_OFFSET;
+	public static final long MAX_TRIANGLE_COUNT_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderGroupHandleSize"),
-            JAVA_INT.withName("maxRecursionDepth"),
-            JAVA_INT.withName("maxShaderGroupStride"),
-            JAVA_INT.withName("shaderGroupBaseAlignment"),
-            JAVA_LONG.withName("maxGeometryCount"),
-            JAVA_LONG.withName("maxInstanceCount"),
-            JAVA_LONG.withName("maxTriangleCount"),
-            JAVA_INT.withName("maxDescriptorSetAccelerationStructures"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceRayTracingPropertiesNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_GROUP_HANDLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleSize"));
-        MAX_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRecursionDepth"));
-        MAX_SHADER_GROUP_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderGroupStride"));
-        SHADER_GROUP_BASE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupBaseAlignment"));
-        MAX_GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryCount"));
-        MAX_INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInstanceCount"));
-        MAX_TRIANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTriangleCount"));
-        MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleSize"));
-        MAX_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRecursionDepth"));
-        MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderGroupStride"));
-        SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupBaseAlignment"));
-        MAX_GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryCount"));
-        MAX_INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInstanceCount"));
-        MAX_TRIANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTriangleCount"));
-        MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderGroupHandleSize"),
+		    JAVA_INT.withName("maxRecursionDepth"),
+		    JAVA_INT.withName("maxShaderGroupStride"),
+		    JAVA_INT.withName("shaderGroupBaseAlignment"),
+		    JAVA_LONG.withName("maxGeometryCount"),
+		    JAVA_LONG.withName("maxInstanceCount"),
+		    JAVA_LONG.withName("maxTriangleCount"),
+		    JAVA_INT.withName("maxDescriptorSetAccelerationStructures"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceRayTracingPropertiesNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_GROUP_HANDLE_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupHandleSize"));
+		MAX_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRecursionDepth"));
+		MAX_SHADER_GROUP_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxShaderGroupStride"));
+		SHADER_GROUP_BASE_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderGroupBaseAlignment"));
+		MAX_GEOMETRY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxGeometryCount"));
+		MAX_INSTANCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxInstanceCount"));
+		MAX_TRIANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxTriangleCount"));
+		MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_GROUP_HANDLE_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupHandleSize"));
+		MAX_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRecursionDepth"));
+		MAX_SHADER_GROUP_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxShaderGroupStride"));
+		SHADER_GROUP_BASE_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderGroupBaseAlignment"));
+		MAX_GEOMETRY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxGeometryCount"));
+		MAX_INSTANCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxInstanceCount"));
+		MAX_TRIANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxTriangleCount"));
+		MAX_DESCRIPTOR_SET_ACCELERATION_STRUCTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorSetAccelerationStructures"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceRayTracingPropertiesNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceRayTracingPropertiesNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceRayTracingPropertiesNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceRayTracingPropertiesNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceRayTracingPropertiesNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceRayTracingPropertiesNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceRayTracingPropertiesNV sType(int sType) {
@@ -257,5 +257,5 @@ public final class VkPhysicalDeviceRayTracingPropertiesNV
             segment -> new VkPhysicalDeviceRayTracingPropertiesNV(segment)
         );
     }
-    
+
 }

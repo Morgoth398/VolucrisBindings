@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoProfileListInfoKHR
 		implements Struct<VkVideoProfileListInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PROFILE_COUNT_HANDLE;
-    public static final VarHandle P_PROFILES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PROFILE_COUNT_HANDLE;
+	public static final VarHandle P_PROFILES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PROFILE_COUNT_BYTE_OFFSET;
-    public static final long P_PROFILES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PROFILE_COUNT_BYTE_OFFSET;
+	public static final long P_PROFILES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("profileCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pProfiles")
-        ).withName("VkVideoProfileListInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PROFILE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("profileCount"));
-        P_PROFILES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pProfiles"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PROFILE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("profileCount"));
-        P_PROFILES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pProfiles"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("profileCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pProfiles")
+		).withName("VkVideoProfileListInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PROFILE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("profileCount"));
+		P_PROFILES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pProfiles"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PROFILE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("profileCount"));
+		P_PROFILES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pProfiles"));
+		//@formatter:on
+	}
 
-    public VkVideoProfileListInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoProfileListInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoProfileListInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoProfileListInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoProfileListInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoProfileListInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoProfileListInfoKHR sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkVideoProfileListInfoKHR
             segment -> new VkVideoProfileListInfoKHR(segment)
         );
     }
-    
+
 }

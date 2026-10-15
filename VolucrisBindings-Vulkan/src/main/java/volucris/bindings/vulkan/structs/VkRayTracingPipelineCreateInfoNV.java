@@ -21,92 +21,92 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkRayTracingPipelineCreateInfoNV
 		implements Struct<VkRayTracingPipelineCreateInfoNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle STAGE_COUNT_HANDLE;
-    public static final VarHandle P_STAGES_HANDLE;
-    public static final VarHandle GROUP_COUNT_HANDLE;
-    public static final VarHandle P_GROUPS_HANDLE;
-    public static final VarHandle MAX_RECURSION_DEPTH_HANDLE;
-    public static final VarHandle LAYOUT_HANDLE;
-    public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
-    public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle STAGE_COUNT_HANDLE;
+	public static final VarHandle P_STAGES_HANDLE;
+	public static final VarHandle GROUP_COUNT_HANDLE;
+	public static final VarHandle P_GROUPS_HANDLE;
+	public static final VarHandle MAX_RECURSION_DEPTH_HANDLE;
+	public static final VarHandle LAYOUT_HANDLE;
+	public static final VarHandle BASE_PIPELINE_HANDLE_HANDLE;
+	public static final VarHandle BASE_PIPELINE_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long STAGE_COUNT_BYTE_OFFSET;
-    public static final long P_STAGES_BYTE_OFFSET;
-    public static final long GROUP_COUNT_BYTE_OFFSET;
-    public static final long P_GROUPS_BYTE_OFFSET;
-    public static final long MAX_RECURSION_DEPTH_BYTE_OFFSET;
-    public static final long LAYOUT_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
-    public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long STAGE_COUNT_BYTE_OFFSET;
+	public static final long P_STAGES_BYTE_OFFSET;
+	public static final long GROUP_COUNT_BYTE_OFFSET;
+	public static final long P_GROUPS_BYTE_OFFSET;
+	public static final long MAX_RECURSION_DEPTH_BYTE_OFFSET;
+	public static final long LAYOUT_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_HANDLE_BYTE_OFFSET;
+	public static final long BASE_PIPELINE_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("stageCount"),
-            UNBOUNDED_ADDRESS.withName("pStages"),
-            JAVA_INT.withName("groupCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pGroups"),
-            JAVA_INT.withName("maxRecursionDepth"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("layout"),
-            UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
-            JAVA_INT.withName("basePipelineIndex"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkRayTracingPipelineCreateInfoNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
-        P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
-        GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCount"));
-        P_GROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGroups"));
-        MAX_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRecursionDepth"));
-        LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
-        BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
-        P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
-        GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCount"));
-        P_GROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGroups"));
-        MAX_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRecursionDepth"));
-        LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
-        BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
-        BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("stageCount"),
+		    UNBOUNDED_ADDRESS.withName("pStages"),
+		    JAVA_INT.withName("groupCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pGroups"),
+		    JAVA_INT.withName("maxRecursionDepth"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("layout"),
+		    UNBOUNDED_ADDRESS.withName("basePipelineHandle"),
+		    JAVA_INT.withName("basePipelineIndex"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkRayTracingPipelineCreateInfoNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		STAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stageCount"));
+		P_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStages"));
+		GROUP_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("groupCount"));
+		P_GROUPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pGroups"));
+		MAX_RECURSION_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxRecursionDepth"));
+		LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layout"));
+		BASE_PIPELINE_HANDLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("basePipelineIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		STAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stageCount"));
+		P_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStages"));
+		GROUP_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("groupCount"));
+		P_GROUPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pGroups"));
+		MAX_RECURSION_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxRecursionDepth"));
+		LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layout"));
+		BASE_PIPELINE_HANDLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineHandle"));
+		BASE_PIPELINE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("basePipelineIndex"));
+		//@formatter:on
+	}
 
-    public VkRayTracingPipelineCreateInfoNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkRayTracingPipelineCreateInfoNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkRayTracingPipelineCreateInfoNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkRayTracingPipelineCreateInfoNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkRayTracingPipelineCreateInfoNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkRayTracingPipelineCreateInfoNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkRayTracingPipelineCreateInfoNV sType(int sType) {
@@ -294,5 +294,5 @@ public final class VkRayTracingPipelineCreateInfoNV
             segment -> new VkRayTracingPipelineCreateInfoNV(segment)
         );
     }
-    
+
 }

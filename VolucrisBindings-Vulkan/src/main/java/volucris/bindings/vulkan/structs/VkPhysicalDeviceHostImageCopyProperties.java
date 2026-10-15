@@ -22,77 +22,77 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceHostImageCopyProperties
 		implements Struct<VkPhysicalDeviceHostImageCopyProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COPY_SRC_LAYOUT_COUNT_HANDLE;
-    public static final VarHandle P_COPY_SRC_LAYOUTS_HANDLE;
-    public static final VarHandle COPY_DST_LAYOUT_COUNT_HANDLE;
-    public static final VarHandle P_COPY_DST_LAYOUTS_HANDLE;
-    public static final VarHandle OPTIMAL_TILING_LAYOUT_UUID_HANDLE;
-    public static final VarHandle IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COPY_SRC_LAYOUT_COUNT_HANDLE;
+	public static final VarHandle P_COPY_SRC_LAYOUTS_HANDLE;
+	public static final VarHandle COPY_DST_LAYOUT_COUNT_HANDLE;
+	public static final VarHandle P_COPY_DST_LAYOUTS_HANDLE;
+	public static final VarHandle OPTIMAL_TILING_LAYOUT_UUID_HANDLE;
+	public static final VarHandle IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET;
-    public static final long P_COPY_SRC_LAYOUTS_BYTE_OFFSET;
-    public static final long COPY_DST_LAYOUT_COUNT_BYTE_OFFSET;
-    public static final long P_COPY_DST_LAYOUTS_BYTE_OFFSET;
-    public static final long OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET;
-    public static final long IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET;
+	public static final long P_COPY_SRC_LAYOUTS_BYTE_OFFSET;
+	public static final long COPY_DST_LAYOUT_COUNT_BYTE_OFFSET;
+	public static final long P_COPY_DST_LAYOUTS_BYTE_OFFSET;
+	public static final long OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET;
+	public static final long IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("copySrcLayoutCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCopySrcLayouts"),
-            JAVA_INT.withName("copyDstLayoutCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pCopyDstLayouts"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("optimalTilingLayoutUUID"),
-            JAVA_INT.withName("identicalMemoryTypeRequirements"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceHostImageCopyProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COPY_SRC_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copySrcLayoutCount"));
-        P_COPY_SRC_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopySrcLayouts"));
-        COPY_DST_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copyDstLayoutCount"));
-        P_COPY_DST_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopyDstLayouts"));
-        OPTIMAL_TILING_LAYOUT_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingLayoutUUID"), PathElement.sequenceElement());
-        IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identicalMemoryTypeRequirements"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copySrcLayoutCount"));
-        P_COPY_SRC_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopySrcLayouts"));
-        COPY_DST_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyDstLayoutCount"));
-        P_COPY_DST_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopyDstLayouts"));
-        OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingLayoutUUID"));
-        IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identicalMemoryTypeRequirements"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("copySrcLayoutCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCopySrcLayouts"),
+		    JAVA_INT.withName("copyDstLayoutCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pCopyDstLayouts"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("optimalTilingLayoutUUID"),
+		    JAVA_INT.withName("identicalMemoryTypeRequirements"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceHostImageCopyProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COPY_SRC_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copySrcLayoutCount"));
+		P_COPY_SRC_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopySrcLayouts"));
+		COPY_DST_LAYOUT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("copyDstLayoutCount"));
+		P_COPY_DST_LAYOUTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCopyDstLayouts"));
+		OPTIMAL_TILING_LAYOUT_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("optimalTilingLayoutUUID"), PathElement.sequenceElement());
+		IDENTICAL_MEMORY_TYPE_REQUIREMENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("identicalMemoryTypeRequirements"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COPY_SRC_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copySrcLayoutCount"));
+		P_COPY_SRC_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopySrcLayouts"));
+		COPY_DST_LAYOUT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("copyDstLayoutCount"));
+		P_COPY_DST_LAYOUTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCopyDstLayouts"));
+		OPTIMAL_TILING_LAYOUT_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalTilingLayoutUUID"));
+		IDENTICAL_MEMORY_TYPE_REQUIREMENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("identicalMemoryTypeRequirements"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceHostImageCopyProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceHostImageCopyProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceHostImageCopyProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceHostImageCopyProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceHostImageCopyProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceHostImageCopyProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceHostImageCopyProperties sType(int sType) {
@@ -240,5 +240,5 @@ public final class VkPhysicalDeviceHostImageCopyProperties
             segment -> new VkPhysicalDeviceHostImageCopyProperties(segment)
         );
     }
-    
+
 }

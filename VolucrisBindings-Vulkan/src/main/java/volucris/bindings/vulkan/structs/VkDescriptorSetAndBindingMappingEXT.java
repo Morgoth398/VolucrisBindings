@@ -22,76 +22,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDescriptorSetAndBindingMappingEXT
 		implements Struct<VkDescriptorSetAndBindingMappingEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_HANDLE;
-    public static final VarHandle FIRST_BINDING_HANDLE;
-    public static final VarHandle BINDING_COUNT_HANDLE;
-    public static final VarHandle RESOURCE_MASK_HANDLE;
-    public static final VarHandle SOURCE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_HANDLE;
+	public static final VarHandle FIRST_BINDING_HANDLE;
+	public static final VarHandle BINDING_COUNT_HANDLE;
+	public static final VarHandle RESOURCE_MASK_HANDLE;
+	public static final VarHandle SOURCE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_BYTE_OFFSET;
-    public static final long FIRST_BINDING_BYTE_OFFSET;
-    public static final long BINDING_COUNT_BYTE_OFFSET;
-    public static final long RESOURCE_MASK_BYTE_OFFSET;
-    public static final long SOURCE_BYTE_OFFSET;
-    public static final long SOURCE_DATA_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_BYTE_OFFSET;
+	public static final long FIRST_BINDING_BYTE_OFFSET;
+	public static final long BINDING_COUNT_BYTE_OFFSET;
+	public static final long RESOURCE_MASK_BYTE_OFFSET;
+	public static final long SOURCE_BYTE_OFFSET;
+	public static final long SOURCE_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkDescriptorMappingSourceDataEXT sourceData;
+	private final VkDescriptorMappingSourceDataEXT sourceData;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("descriptorSet"),
-            JAVA_INT.withName("firstBinding"),
-            JAVA_INT.withName("bindingCount"),
-            JAVA_INT.withName("resourceMask"),
-            JAVA_INT.withName("source"),
-            MemoryLayout.paddingLayout(4),
-            VkDescriptorMappingSourceDataEXT.LAYOUT.withName("sourceData")
-        ).withName("VkDescriptorSetAndBindingMappingEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSet"));
-        FIRST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstBinding"));
-        BINDING_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindingCount"));
-        RESOURCE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resourceMask"));
-        SOURCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("source"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSet"));
-        FIRST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstBinding"));
-        BINDING_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindingCount"));
-        RESOURCE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceMask"));
-        SOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("source"));
-        SOURCE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sourceData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("descriptorSet"),
+		    JAVA_INT.withName("firstBinding"),
+		    JAVA_INT.withName("bindingCount"),
+		    JAVA_INT.withName("resourceMask"),
+		    JAVA_INT.withName("source"),
+		    MemoryLayout.paddingLayout(4),
+		    VkDescriptorMappingSourceDataEXT.LAYOUT.withName("sourceData")
+		).withName("VkDescriptorSetAndBindingMappingEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSet"));
+		FIRST_BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstBinding"));
+		BINDING_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bindingCount"));
+		RESOURCE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resourceMask"));
+		SOURCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("source"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSet"));
+		FIRST_BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstBinding"));
+		BINDING_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bindingCount"));
+		RESOURCE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceMask"));
+		SOURCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("source"));
+		SOURCE_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sourceData"));
+		//@formatter:on
+	}
 
-    public VkDescriptorSetAndBindingMappingEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDescriptorSetAndBindingMappingEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDescriptorSetAndBindingMappingEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-        sourceData = new VkDescriptorMappingSourceDataEXT(segment.asSlice(SOURCE_DATA_BYTE_OFFSET, VkDescriptorMappingSourceDataEXT.LAYOUT));
-    }
+	public VkDescriptorSetAndBindingMappingEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDescriptorSetAndBindingMappingEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDescriptorSetAndBindingMappingEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    sourceData = new VkDescriptorMappingSourceDataEXT(segment.asSlice(SOURCE_DATA_BYTE_OFFSET, VkDescriptorMappingSourceDataEXT.LAYOUT));
+	}
 
     /// @see #sType()
     public VkDescriptorSetAndBindingMappingEXT sType(int sType) {
@@ -235,5 +235,5 @@ public final class VkDescriptorSetAndBindingMappingEXT
             segment -> new VkDescriptorSetAndBindingMappingEXT(segment)
         );
     }
-    
+
 }

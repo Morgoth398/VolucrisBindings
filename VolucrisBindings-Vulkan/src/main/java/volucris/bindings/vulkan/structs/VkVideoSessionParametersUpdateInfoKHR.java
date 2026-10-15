@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoSessionParametersUpdateInfoKHR
 		implements Struct<VkVideoSessionParametersUpdateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle UPDATE_SEQUENCE_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle UPDATE_SEQUENCE_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long UPDATE_SEQUENCE_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long UPDATE_SEQUENCE_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("updateSequenceCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkVideoSessionParametersUpdateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        UPDATE_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("updateSequenceCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        UPDATE_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("updateSequenceCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("updateSequenceCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkVideoSessionParametersUpdateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		UPDATE_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("updateSequenceCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		UPDATE_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("updateSequenceCount"));
+		//@formatter:on
+	}
 
-    public VkVideoSessionParametersUpdateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoSessionParametersUpdateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoSessionParametersUpdateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoSessionParametersUpdateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoSessionParametersUpdateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoSessionParametersUpdateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoSessionParametersUpdateInfoKHR sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkVideoSessionParametersUpdateInfoKHR
             segment -> new VkVideoSessionParametersUpdateInfoKHR(segment)
         );
     }
-    
+
 }

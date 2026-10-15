@@ -22,51 +22,51 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR
 		implements Struct<VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long OPTIMAL_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long OPTIMAL_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent3D optimalImageTransferGranularity;
+	private final VkExtent3D optimalImageTransferGranularity;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            VkExtent3D.LAYOUT.withName("optimalImageTransferGranularity"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        OPTIMAL_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalImageTransferGranularity"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    VkExtent3D.LAYOUT.withName("optimalImageTransferGranularity"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		OPTIMAL_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("optimalImageTransferGranularity"));
+		//@formatter:on
+	}
 
-    public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        optimalImageTransferGranularity = new VkExtent3D(segment.asSlice(OPTIMAL_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET, VkExtent3D.LAYOUT));
-    }
+	public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    optimalImageTransferGranularity = new VkExtent3D(segment.asSlice(OPTIMAL_IMAGE_TRANSFER_GRANULARITY_BYTE_OFFSET, VkExtent3D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR sType(int sType) {
@@ -160,5 +160,5 @@ public final class VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR
             segment -> new VkQueueFamilyOptimalImageTransferGranularityPropertiesKHR(segment)
         );
     }
-    
+
 }

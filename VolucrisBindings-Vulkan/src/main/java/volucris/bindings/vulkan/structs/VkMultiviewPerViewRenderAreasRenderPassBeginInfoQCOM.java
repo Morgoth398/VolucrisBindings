@@ -21,55 +21,55 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
 		implements Struct<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PER_VIEW_RENDER_AREA_COUNT_HANDLE;
-    public static final VarHandle P_PER_VIEW_RENDER_AREAS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PER_VIEW_RENDER_AREA_COUNT_HANDLE;
+	public static final VarHandle P_PER_VIEW_RENDER_AREAS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PER_VIEW_RENDER_AREA_COUNT_BYTE_OFFSET;
-    public static final long P_PER_VIEW_RENDER_AREAS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PER_VIEW_RENDER_AREA_COUNT_BYTE_OFFSET;
+	public static final long P_PER_VIEW_RENDER_AREAS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("perViewRenderAreaCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pPerViewRenderAreas")
-        ).withName("VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PER_VIEW_RENDER_AREA_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perViewRenderAreaCount"));
-        P_PER_VIEW_RENDER_AREAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPerViewRenderAreas"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PER_VIEW_RENDER_AREA_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perViewRenderAreaCount"));
-        P_PER_VIEW_RENDER_AREAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPerViewRenderAreas"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("perViewRenderAreaCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pPerViewRenderAreas")
+		).withName("VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PER_VIEW_RENDER_AREA_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perViewRenderAreaCount"));
+		P_PER_VIEW_RENDER_AREAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPerViewRenderAreas"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PER_VIEW_RENDER_AREA_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perViewRenderAreaCount"));
+		P_PER_VIEW_RENDER_AREAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPerViewRenderAreas"));
+		//@formatter:on
+	}
 
-    public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM sType(int sType) {
@@ -172,5 +172,5 @@ public final class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
             segment -> new VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(segment)
         );
     }
-    
+
 }

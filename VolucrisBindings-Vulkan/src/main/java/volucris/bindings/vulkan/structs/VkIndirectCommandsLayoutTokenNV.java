@@ -22,111 +22,111 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkIndirectCommandsLayoutTokenNV
 		implements Struct<VkIndirectCommandsLayoutTokenNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TOKEN_TYPE_HANDLE;
-    public static final VarHandle STREAM_HANDLE;
-    public static final VarHandle OFFSET_HANDLE;
-    public static final VarHandle VERTEX_BINDING_UNIT_HANDLE;
-    public static final VarHandle VERTEX_DYNAMIC_STRIDE_HANDLE;
-    public static final VarHandle PUSHCONSTANT_PIPELINE_LAYOUT_HANDLE;
-    public static final VarHandle PUSHCONSTANT_SHADER_STAGE_FLAGS_HANDLE;
-    public static final VarHandle PUSHCONSTANT_OFFSET_HANDLE;
-    public static final VarHandle PUSHCONSTANT_SIZE_HANDLE;
-    public static final VarHandle INDIRECT_STATE_FLAGS_HANDLE;
-    public static final VarHandle INDEX_TYPE_COUNT_HANDLE;
-    public static final VarHandle P_INDEX_TYPES_HANDLE;
-    public static final VarHandle P_INDEX_TYPE_VALUES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TOKEN_TYPE_HANDLE;
+	public static final VarHandle STREAM_HANDLE;
+	public static final VarHandle OFFSET_HANDLE;
+	public static final VarHandle VERTEX_BINDING_UNIT_HANDLE;
+	public static final VarHandle VERTEX_DYNAMIC_STRIDE_HANDLE;
+	public static final VarHandle PUSHCONSTANT_PIPELINE_LAYOUT_HANDLE;
+	public static final VarHandle PUSHCONSTANT_SHADER_STAGE_FLAGS_HANDLE;
+	public static final VarHandle PUSHCONSTANT_OFFSET_HANDLE;
+	public static final VarHandle PUSHCONSTANT_SIZE_HANDLE;
+	public static final VarHandle INDIRECT_STATE_FLAGS_HANDLE;
+	public static final VarHandle INDEX_TYPE_COUNT_HANDLE;
+	public static final VarHandle P_INDEX_TYPES_HANDLE;
+	public static final VarHandle P_INDEX_TYPE_VALUES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TOKEN_TYPE_BYTE_OFFSET;
-    public static final long STREAM_BYTE_OFFSET;
-    public static final long OFFSET_BYTE_OFFSET;
-    public static final long VERTEX_BINDING_UNIT_BYTE_OFFSET;
-    public static final long VERTEX_DYNAMIC_STRIDE_BYTE_OFFSET;
-    public static final long PUSHCONSTANT_PIPELINE_LAYOUT_BYTE_OFFSET;
-    public static final long PUSHCONSTANT_SHADER_STAGE_FLAGS_BYTE_OFFSET;
-    public static final long PUSHCONSTANT_OFFSET_BYTE_OFFSET;
-    public static final long PUSHCONSTANT_SIZE_BYTE_OFFSET;
-    public static final long INDIRECT_STATE_FLAGS_BYTE_OFFSET;
-    public static final long INDEX_TYPE_COUNT_BYTE_OFFSET;
-    public static final long P_INDEX_TYPES_BYTE_OFFSET;
-    public static final long P_INDEX_TYPE_VALUES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TOKEN_TYPE_BYTE_OFFSET;
+	public static final long STREAM_BYTE_OFFSET;
+	public static final long OFFSET_BYTE_OFFSET;
+	public static final long VERTEX_BINDING_UNIT_BYTE_OFFSET;
+	public static final long VERTEX_DYNAMIC_STRIDE_BYTE_OFFSET;
+	public static final long PUSHCONSTANT_PIPELINE_LAYOUT_BYTE_OFFSET;
+	public static final long PUSHCONSTANT_SHADER_STAGE_FLAGS_BYTE_OFFSET;
+	public static final long PUSHCONSTANT_OFFSET_BYTE_OFFSET;
+	public static final long PUSHCONSTANT_SIZE_BYTE_OFFSET;
+	public static final long INDIRECT_STATE_FLAGS_BYTE_OFFSET;
+	public static final long INDEX_TYPE_COUNT_BYTE_OFFSET;
+	public static final long P_INDEX_TYPES_BYTE_OFFSET;
+	public static final long P_INDEX_TYPE_VALUES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("tokenType"),
-            JAVA_INT.withName("stream"),
-            JAVA_INT.withName("offset"),
-            JAVA_INT.withName("vertexBindingUnit"),
-            JAVA_INT.withName("vertexDynamicStride"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pushconstantPipelineLayout"),
-            JAVA_INT.withName("pushconstantShaderStageFlags"),
-            JAVA_INT.withName("pushconstantOffset"),
-            JAVA_INT.withName("pushconstantSize"),
-            JAVA_INT.withName("indirectStateFlags"),
-            JAVA_INT.withName("indexTypeCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pIndexTypes"),
-            UNBOUNDED_ADDRESS.withName("pIndexTypeValues")
-        ).withName("VkIndirectCommandsLayoutTokenNV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TOKEN_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tokenType"));
-        STREAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stream"));
-        OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
-        VERTEX_BINDING_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingUnit"));
-        VERTEX_DYNAMIC_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexDynamicStride"));
-        PUSHCONSTANT_PIPELINE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantPipelineLayout"));
-        PUSHCONSTANT_SHADER_STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantShaderStageFlags"));
-        PUSHCONSTANT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantOffset"));
-        PUSHCONSTANT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantSize"));
-        INDIRECT_STATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectStateFlags"));
-        INDEX_TYPE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexTypeCount"));
-        P_INDEX_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIndexTypes"));
-        P_INDEX_TYPE_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIndexTypeValues"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TOKEN_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tokenType"));
-        STREAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stream"));
-        OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
-        VERTEX_BINDING_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingUnit"));
-        VERTEX_DYNAMIC_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexDynamicStride"));
-        PUSHCONSTANT_PIPELINE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantPipelineLayout"));
-        PUSHCONSTANT_SHADER_STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantShaderStageFlags"));
-        PUSHCONSTANT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantOffset"));
-        PUSHCONSTANT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantSize"));
-        INDIRECT_STATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectStateFlags"));
-        INDEX_TYPE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexTypeCount"));
-        P_INDEX_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIndexTypes"));
-        P_INDEX_TYPE_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIndexTypeValues"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("tokenType"),
+		    JAVA_INT.withName("stream"),
+		    JAVA_INT.withName("offset"),
+		    JAVA_INT.withName("vertexBindingUnit"),
+		    JAVA_INT.withName("vertexDynamicStride"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pushconstantPipelineLayout"),
+		    JAVA_INT.withName("pushconstantShaderStageFlags"),
+		    JAVA_INT.withName("pushconstantOffset"),
+		    JAVA_INT.withName("pushconstantSize"),
+		    JAVA_INT.withName("indirectStateFlags"),
+		    JAVA_INT.withName("indexTypeCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pIndexTypes"),
+		    UNBOUNDED_ADDRESS.withName("pIndexTypeValues")
+		).withName("VkIndirectCommandsLayoutTokenNV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TOKEN_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tokenType"));
+		STREAM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stream"));
+		OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("offset"));
+		VERTEX_BINDING_UNIT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexBindingUnit"));
+		VERTEX_DYNAMIC_STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vertexDynamicStride"));
+		PUSHCONSTANT_PIPELINE_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantPipelineLayout"));
+		PUSHCONSTANT_SHADER_STAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantShaderStageFlags"));
+		PUSHCONSTANT_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantOffset"));
+		PUSHCONSTANT_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pushconstantSize"));
+		INDIRECT_STATE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectStateFlags"));
+		INDEX_TYPE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indexTypeCount"));
+		P_INDEX_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIndexTypes"));
+		P_INDEX_TYPE_VALUES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pIndexTypeValues"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TOKEN_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tokenType"));
+		STREAM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stream"));
+		OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("offset"));
+		VERTEX_BINDING_UNIT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexBindingUnit"));
+		VERTEX_DYNAMIC_STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vertexDynamicStride"));
+		PUSHCONSTANT_PIPELINE_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantPipelineLayout"));
+		PUSHCONSTANT_SHADER_STAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantShaderStageFlags"));
+		PUSHCONSTANT_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantOffset"));
+		PUSHCONSTANT_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pushconstantSize"));
+		INDIRECT_STATE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectStateFlags"));
+		INDEX_TYPE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indexTypeCount"));
+		P_INDEX_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIndexTypes"));
+		P_INDEX_TYPE_VALUES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pIndexTypeValues"));
+		//@formatter:on
+	}
 
-    public VkIndirectCommandsLayoutTokenNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkIndirectCommandsLayoutTokenNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkIndirectCommandsLayoutTokenNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkIndirectCommandsLayoutTokenNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkIndirectCommandsLayoutTokenNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkIndirectCommandsLayoutTokenNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkIndirectCommandsLayoutTokenNV sType(int sType) {
@@ -349,5 +349,5 @@ public final class VkIndirectCommandsLayoutTokenNV
             segment -> new VkIndirectCommandsLayoutTokenNV(segment)
         );
     }
-    
+
 }

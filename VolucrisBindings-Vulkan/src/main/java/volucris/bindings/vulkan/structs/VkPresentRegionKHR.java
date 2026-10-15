@@ -21,44 +21,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPresentRegionKHR
 		implements Struct<VkPresentRegionKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RECTANGLE_COUNT_HANDLE;
-    public static final VarHandle P_RECTANGLES_HANDLE;
+	public static final VarHandle RECTANGLE_COUNT_HANDLE;
+	public static final VarHandle P_RECTANGLES_HANDLE;
 
-    public static final long RECTANGLE_COUNT_BYTE_OFFSET;
-    public static final long P_RECTANGLES_BYTE_OFFSET;
+	public static final long RECTANGLE_COUNT_BYTE_OFFSET;
+	public static final long P_RECTANGLES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("rectangleCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pRectangles")
-        ).withName("VkPresentRegionKHR").withByteAlignment(8);
-        
-        RECTANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rectangleCount"));
-        P_RECTANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRectangles"));
-        
-        RECTANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rectangleCount"));
-        P_RECTANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRectangles"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("rectangleCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pRectangles")
+		).withName("VkPresentRegionKHR").withByteAlignment(8);
+		
+		RECTANGLE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rectangleCount"));
+		P_RECTANGLES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pRectangles"));
+		
+		RECTANGLE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rectangleCount"));
+		P_RECTANGLES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pRectangles"));
+		//@formatter:on
+	}
 
-    public VkPresentRegionKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPresentRegionKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPresentRegionKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPresentRegionKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPresentRegionKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPresentRegionKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #rectangleCount()
     public VkPresentRegionKHR rectangleCount(int rectangleCount) {
@@ -136,5 +136,5 @@ public final class VkPresentRegionKHR
             segment -> new VkPresentRegionKHR(segment)
         );
     }
-    
+
 }

@@ -20,50 +20,66 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkClearRect
 		implements Struct<VkClearRect> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
-    public static final VarHandle LAYER_COUNT_HANDLE;
+	public static final VarHandle BASE_ARRAY_LAYER_HANDLE;
+	public static final VarHandle LAYER_COUNT_HANDLE;
 
-    public static final long RECT_BYTE_OFFSET;
-    public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
-    public static final long LAYER_COUNT_BYTE_OFFSET;
+	public static final long RECT_BYTE_OFFSET;
+	public static final long BASE_ARRAY_LAYER_BYTE_OFFSET;
+	public static final long LAYER_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkRect2D rect;
+	private final VkRect2D rect;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            VkRect2D.LAYOUT.withName("rect"),
-            JAVA_INT.withName("baseArrayLayer"),
-            JAVA_INT.withName("layerCount")
-        ).withName("VkClearRect").withByteAlignment(4);
-        
-        BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
-        LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
-        
-        RECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rect"));
-        BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
-        LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    VkRect2D.LAYOUT.withName("rect"),
+		    JAVA_INT.withName("baseArrayLayer"),
+		    JAVA_INT.withName("layerCount")
+		).withName("VkClearRect").withByteAlignment(4);
+		
+		BASE_ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("baseArrayLayer"));
+		LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("layerCount"));
+		
+		RECT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rect"));
+		BASE_ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("baseArrayLayer"));
+		LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("layerCount"));
+		//@formatter:on
+	}
 
-    public VkClearRect() {
-        this(Arena.ofAuto());
+	public VkClearRect() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClearRect(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClearRect(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    rect = new VkRect2D(segment.asSlice(RECT_BYTE_OFFSET, VkRect2D.LAYOUT));
+	}
+
+    /// @see #rect()
+    public VkClearRect rect(Consumer<VkRect2D> consumer) {
+    	consumer.accept(rect);
+    	return this;
     }
     
-    public VkClearRect(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #rect()
+    public VkClearRect rect(VkRect2D other) {
+    	rect.set(other);
+    	return this;
     }
     
-    public VkClearRect(MemorySegment segment) {
-        this.segment = segment;
-    
-        rect = new VkRect2D(segment.asSlice(RECT_BYTE_OFFSET, VkRect2D.LAYOUT));
+    public VkRect2D rect() {
+    	return rect;
     }
-
+    
     /// @see #baseArrayLayer()
     public VkClearRect baseArrayLayer(int baseArrayLayer) {
     	BASE_ARRAY_LAYER_HANDLE.set(segment, 0L, baseArrayLayer);
@@ -82,22 +98,6 @@ public final class VkClearRect
     
     public int layerCount() {
     	return (int) LAYER_COUNT_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #rect()
-    public VkClearRect rect(Consumer<VkRect2D> consumer) {
-    	consumer.accept(rect);
-    	return this;
-    }
-    
-    /// @see #rect()
-    public VkClearRect rect(VkRect2D other) {
-    	rect.set(other);
-    	return this;
-    }
-    
-    public VkRect2D rect() {
-    	return rect;
     }
     
     @Override
@@ -151,5 +151,5 @@ public final class VkClearRect
             segment -> new VkClearRect(segment)
         );
     }
-    
+
 }

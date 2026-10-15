@@ -19,48 +19,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiMaterial
 		implements Struct<AiMaterial> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_PROPERTIES_HANDLE;
-    public static final VarHandle M_NUM_PROPERTIES_HANDLE;
-    public static final VarHandle M_NUM_ALLOCATED_HANDLE;
+	public static final VarHandle M_PROPERTIES_HANDLE;
+	public static final VarHandle M_NUM_PROPERTIES_HANDLE;
+	public static final VarHandle M_NUM_ALLOCATED_HANDLE;
 
-    public static final long M_PROPERTIES_BYTE_OFFSET;
-    public static final long M_NUM_PROPERTIES_BYTE_OFFSET;
-    public static final long M_NUM_ALLOCATED_BYTE_OFFSET;
+	public static final long M_PROPERTIES_BYTE_OFFSET;
+	public static final long M_NUM_PROPERTIES_BYTE_OFFSET;
+	public static final long M_NUM_ALLOCATED_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("mProperties"),
-            JAVA_INT.withName("mNumProperties"),
-            JAVA_INT.withName("mNumAllocated")
-        ).withName("aiMaterial").withByteAlignment(8);
-        
-        M_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mProperties"));
-        M_NUM_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumProperties"));
-        M_NUM_ALLOCATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumAllocated"));
-        
-        M_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mProperties"));
-        M_NUM_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumProperties"));
-        M_NUM_ALLOCATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumAllocated"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("mProperties"),
+		    JAVA_INT.withName("mNumProperties"),
+		    JAVA_INT.withName("mNumAllocated")
+		).withName("aiMaterial").withByteAlignment(8);
+		
+		M_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mProperties"));
+		M_NUM_PROPERTIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumProperties"));
+		M_NUM_ALLOCATED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumAllocated"));
+		
+		M_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mProperties"));
+		M_NUM_PROPERTIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumProperties"));
+		M_NUM_ALLOCATED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumAllocated"));
+		//@formatter:on
+	}
 
-    public AiMaterial() {
-        this(Arena.ofAuto());
-    }
-    
-    public AiMaterial(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public AiMaterial(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public AiMaterial() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiMaterial(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiMaterial(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #mProperties()
     public AiMaterial mProperties(NativePointerArray mProperties) {
@@ -157,5 +157,5 @@ public final class AiMaterial
             segment -> new AiMaterial(segment)
         );
     }
-    
+
 }

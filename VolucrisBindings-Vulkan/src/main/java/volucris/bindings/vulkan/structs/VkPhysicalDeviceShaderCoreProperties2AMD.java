@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceShaderCoreProperties2AMD
 		implements Struct<VkPhysicalDeviceShaderCoreProperties2AMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_CORE_FEATURES_HANDLE;
-    public static final VarHandle ACTIVE_COMPUTE_UNIT_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_CORE_FEATURES_HANDLE;
+	public static final VarHandle ACTIVE_COMPUTE_UNIT_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_CORE_FEATURES_BYTE_OFFSET;
-    public static final long ACTIVE_COMPUTE_UNIT_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_CORE_FEATURES_BYTE_OFFSET;
+	public static final long ACTIVE_COMPUTE_UNIT_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderCoreFeatures"),
-            JAVA_INT.withName("activeComputeUnitCount")
-        ).withName("VkPhysicalDeviceShaderCoreProperties2AMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_CORE_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCoreFeatures"));
-        ACTIVE_COMPUTE_UNIT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("activeComputeUnitCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_CORE_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCoreFeatures"));
-        ACTIVE_COMPUTE_UNIT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("activeComputeUnitCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderCoreFeatures"),
+		    JAVA_INT.withName("activeComputeUnitCount")
+		).withName("VkPhysicalDeviceShaderCoreProperties2AMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_CORE_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderCoreFeatures"));
+		ACTIVE_COMPUTE_UNIT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("activeComputeUnitCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_CORE_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderCoreFeatures"));
+		ACTIVE_COMPUTE_UNIT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("activeComputeUnitCount"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceShaderCoreProperties2AMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceShaderCoreProperties2AMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceShaderCoreProperties2AMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceShaderCoreProperties2AMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceShaderCoreProperties2AMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceShaderCoreProperties2AMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceShaderCoreProperties2AMD sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkPhysicalDeviceShaderCoreProperties2AMD
             segment -> new VkPhysicalDeviceShaderCoreProperties2AMD(segment)
         );
     }
-    
+
 }

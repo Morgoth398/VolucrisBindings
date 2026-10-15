@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT
 		implements Struct<VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle NON_SEAMLESS_CUBE_MAP_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle NON_SEAMLESS_CUBE_MAP_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long NON_SEAMLESS_CUBE_MAP_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long NON_SEAMLESS_CUBE_MAP_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("nonSeamlessCubeMap"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        NON_SEAMLESS_CUBE_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonSeamlessCubeMap"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        NON_SEAMLESS_CUBE_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonSeamlessCubeMap"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("nonSeamlessCubeMap"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		NON_SEAMLESS_CUBE_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("nonSeamlessCubeMap"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		NON_SEAMLESS_CUBE_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("nonSeamlessCubeMap"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT
             segment -> new VkPhysicalDeviceNonSeamlessCubeMapFeaturesEXT(segment)
         );
     }
-    
+
 }

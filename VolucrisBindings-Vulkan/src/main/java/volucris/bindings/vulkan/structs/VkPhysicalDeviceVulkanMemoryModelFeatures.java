@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkanMemoryModelFeatures
 		implements Struct<VkPhysicalDeviceVulkanMemoryModelFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle VULKAN_MEMORY_MODEL_HANDLE;
-    public static final VarHandle VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE;
-    public static final VarHandle VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle VULKAN_MEMORY_MODEL_HANDLE;
+	public static final VarHandle VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE;
+	public static final VarHandle VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long VULKAN_MEMORY_MODEL_BYTE_OFFSET;
-    public static final long VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET;
-    public static final long VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long VULKAN_MEMORY_MODEL_BYTE_OFFSET;
+	public static final long VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET;
+	public static final long VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("vulkanMemoryModel"),
-            JAVA_INT.withName("vulkanMemoryModelDeviceScope"),
-            JAVA_INT.withName("vulkanMemoryModelAvailabilityVisibilityChains"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceVulkanMemoryModelFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        VULKAN_MEMORY_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModel"));
-        VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
-        VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        VULKAN_MEMORY_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModel"));
-        VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
-        VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("vulkanMemoryModel"),
+		    JAVA_INT.withName("vulkanMemoryModelDeviceScope"),
+		    JAVA_INT.withName("vulkanMemoryModelAvailabilityVisibilityChains"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceVulkanMemoryModelFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		VULKAN_MEMORY_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModel"));
+		VULKAN_MEMORY_MODEL_DEVICE_SCOPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
+		VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		VULKAN_MEMORY_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModel"));
+		VULKAN_MEMORY_MODEL_DEVICE_SCOPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelDeviceScope"));
+		VULKAN_MEMORY_MODEL_AVAILABILITY_VISIBILITY_CHAINS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("vulkanMemoryModelAvailabilityVisibilityChains"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkanMemoryModelFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkanMemoryModelFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkanMemoryModelFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkanMemoryModelFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkanMemoryModelFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkanMemoryModelFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkanMemoryModelFeatures sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceVulkanMemoryModelFeatures
             segment -> new VkPhysicalDeviceVulkanMemoryModelFeatures(segment)
         );
     }
-    
+
 }

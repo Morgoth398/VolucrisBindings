@@ -19,43 +19,43 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1GlobalMotion
 		implements Struct<StdVideoAV1GlobalMotion> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle GM_TYPE_HANDLE;
-    public static final VarHandle GM_PARAMS_HANDLE;
+	public static final VarHandle GM_TYPE_HANDLE;
+	public static final VarHandle GM_PARAMS_HANDLE;
 
-    public static final long GM_TYPE_BYTE_OFFSET;
-    public static final long GM_PARAMS_BYTE_OFFSET;
+	public static final long GM_TYPE_BYTE_OFFSET;
+	public static final long GM_PARAMS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("GmType"),
-            MemoryLayout.sequenceLayout(8, MemoryLayout.sequenceLayout(6, JAVA_INT)).withName("gm_params")
-        ).withName("StdVideoAV1GlobalMotion").withByteAlignment(4);
-        
-        GM_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("GmType"), PathElement.sequenceElement());
-        GM_PARAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gm_params"), PathElement.sequenceElement(), PathElement.sequenceElement());
-        
-        GM_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("GmType"));
-        GM_PARAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gm_params"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("GmType"),
+		    MemoryLayout.sequenceLayout(8, MemoryLayout.sequenceLayout(6, JAVA_INT)).withName("gm_params")
+		).withName("StdVideoAV1GlobalMotion").withByteAlignment(4);
+		
+		GM_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("GmType"), PathElement.sequenceElement());
+		GM_PARAMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("gm_params"), PathElement.sequenceElement(), PathElement.sequenceElement());
+		
+		GM_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("GmType"));
+		GM_PARAMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("gm_params"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1GlobalMotion() {
-        this(Arena.ofAuto());
-    }
-    
-    public StdVideoAV1GlobalMotion(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public StdVideoAV1GlobalMotion(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public StdVideoAV1GlobalMotion() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1GlobalMotion(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1GlobalMotion(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #gmType(int)
     public StdVideoAV1GlobalMotion gmType(byte gmType, int index0) {
@@ -128,5 +128,5 @@ public final class StdVideoAV1GlobalMotion
             segment -> new StdVideoAV1GlobalMotion(segment)
         );
     }
-    
+
 }

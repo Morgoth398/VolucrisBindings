@@ -29,48 +29,48 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaDeviceMemoryCallbacks
 		implements Struct<VmaDeviceMemoryCallbacks> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PFN_ALLOCATE_HANDLE;
-    public static final VarHandle PFN_FREE_HANDLE;
-    public static final VarHandle P_USER_DATA_HANDLE;
+	public static final VarHandle PFN_ALLOCATE_HANDLE;
+	public static final VarHandle PFN_FREE_HANDLE;
+	public static final VarHandle P_USER_DATA_HANDLE;
 
-    public static final long PFN_ALLOCATE_BYTE_OFFSET;
-    public static final long PFN_FREE_BYTE_OFFSET;
-    public static final long P_USER_DATA_BYTE_OFFSET;
+	public static final long PFN_ALLOCATE_BYTE_OFFSET;
+	public static final long PFN_FREE_BYTE_OFFSET;
+	public static final long P_USER_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("pfnAllocate"),
-            UNBOUNDED_ADDRESS.withName("pfnFree"),
-            UNBOUNDED_ADDRESS.withName("pUserData")
-        ).withName("VmaDeviceMemoryCallbacks").withByteAlignment(8);
-        
-        PFN_ALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnAllocate"));
-        PFN_FREE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnFree"));
-        P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
-        
-        PFN_ALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnAllocate"));
-        PFN_FREE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnFree"));
-        P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("pfnAllocate"),
+		    UNBOUNDED_ADDRESS.withName("pfnFree"),
+		    UNBOUNDED_ADDRESS.withName("pUserData")
+		).withName("VmaDeviceMemoryCallbacks").withByteAlignment(8);
+		
+		PFN_ALLOCATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnAllocate"));
+		PFN_FREE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pfnFree"));
+		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
+		
+		PFN_ALLOCATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnAllocate"));
+		PFN_FREE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pfnFree"));
+		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
+		//@formatter:on
+	}
 
-    public VmaDeviceMemoryCallbacks() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaDeviceMemoryCallbacks(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaDeviceMemoryCallbacks(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaDeviceMemoryCallbacks() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaDeviceMemoryCallbacks(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaDeviceMemoryCallbacks(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pfnAllocate()
     public VmaDeviceMemoryCallbacks pfnAllocate(VmaAllocateDeviceMemoryFunction pfnAllocate) {
@@ -177,5 +177,5 @@ public final class VmaDeviceMemoryCallbacks
             segment -> new VmaDeviceMemoryCallbacks(segment)
         );
     }
-    
+
 }

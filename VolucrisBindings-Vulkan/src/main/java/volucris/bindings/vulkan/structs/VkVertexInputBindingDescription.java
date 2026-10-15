@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVertexInputBindingDescription
 		implements Struct<VkVertexInputBindingDescription> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle STRIDE_HANDLE;
-    public static final VarHandle INPUT_RATE_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle STRIDE_HANDLE;
+	public static final VarHandle INPUT_RATE_HANDLE;
 
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long STRIDE_BYTE_OFFSET;
-    public static final long INPUT_RATE_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long STRIDE_BYTE_OFFSET;
+	public static final long INPUT_RATE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("stride"),
-            JAVA_INT.withName("inputRate")
-        ).withName("VkVertexInputBindingDescription").withByteAlignment(4);
-        
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
-        INPUT_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputRate"));
-        
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
-        INPUT_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputRate"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("stride"),
+		    JAVA_INT.withName("inputRate")
+		).withName("VkVertexInputBindingDescription").withByteAlignment(4);
+		
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		STRIDE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stride"));
+		INPUT_RATE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("inputRate"));
+		
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		STRIDE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stride"));
+		INPUT_RATE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("inputRate"));
+		//@formatter:on
+	}
 
-    public VkVertexInputBindingDescription() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVertexInputBindingDescription(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVertexInputBindingDescription(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVertexInputBindingDescription() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVertexInputBindingDescription(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVertexInputBindingDescription(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #binding()
     public VkVertexInputBindingDescription binding(int binding) {
@@ -143,5 +143,5 @@ public final class VkVertexInputBindingDescription
             segment -> new VkVertexInputBindingDescription(segment)
         );
     }
-    
+
 }

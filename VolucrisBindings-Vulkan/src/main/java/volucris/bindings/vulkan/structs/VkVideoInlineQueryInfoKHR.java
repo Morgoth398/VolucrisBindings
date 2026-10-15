@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoInlineQueryInfoKHR
 		implements Struct<VkVideoInlineQueryInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle QUERY_POOL_HANDLE;
-    public static final VarHandle FIRST_QUERY_HANDLE;
-    public static final VarHandle QUERY_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle QUERY_POOL_HANDLE;
+	public static final VarHandle FIRST_QUERY_HANDLE;
+	public static final VarHandle QUERY_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long QUERY_POOL_BYTE_OFFSET;
-    public static final long FIRST_QUERY_BYTE_OFFSET;
-    public static final long QUERY_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long QUERY_POOL_BYTE_OFFSET;
+	public static final long FIRST_QUERY_BYTE_OFFSET;
+	public static final long QUERY_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("queryPool"),
-            JAVA_INT.withName("firstQuery"),
-            JAVA_INT.withName("queryCount")
-        ).withName("VkVideoInlineQueryInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        QUERY_POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryPool"));
-        FIRST_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstQuery"));
-        QUERY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        QUERY_POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryPool"));
-        FIRST_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstQuery"));
-        QUERY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("queryPool"),
+		    JAVA_INT.withName("firstQuery"),
+		    JAVA_INT.withName("queryCount")
+		).withName("VkVideoInlineQueryInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		QUERY_POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryPool"));
+		FIRST_QUERY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("firstQuery"));
+		QUERY_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queryCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		QUERY_POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryPool"));
+		FIRST_QUERY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("firstQuery"));
+		QUERY_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queryCount"));
+		//@formatter:on
+	}
 
-    public VkVideoInlineQueryInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoInlineQueryInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoInlineQueryInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoInlineQueryInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoInlineQueryInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoInlineQueryInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoInlineQueryInfoKHR sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkVideoInlineQueryInfoKHR
             segment -> new VkVideoInlineQueryInfoKHR(segment)
         );
     }
-    
+
 }

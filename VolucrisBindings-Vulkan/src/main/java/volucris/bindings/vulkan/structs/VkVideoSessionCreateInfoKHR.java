@@ -22,90 +22,90 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoSessionCreateInfoKHR
 		implements Struct<VkVideoSessionCreateInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle P_VIDEO_PROFILE_HANDLE;
-    public static final VarHandle PICTURE_FORMAT_HANDLE;
-    public static final VarHandle REFERENCE_PICTURE_FORMAT_HANDLE;
-    public static final VarHandle MAX_DPB_SLOTS_HANDLE;
-    public static final VarHandle MAX_ACTIVE_REFERENCE_PICTURES_HANDLE;
-    public static final VarHandle P_STD_HEADER_VERSION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle P_VIDEO_PROFILE_HANDLE;
+	public static final VarHandle PICTURE_FORMAT_HANDLE;
+	public static final VarHandle REFERENCE_PICTURE_FORMAT_HANDLE;
+	public static final VarHandle MAX_DPB_SLOTS_HANDLE;
+	public static final VarHandle MAX_ACTIVE_REFERENCE_PICTURES_HANDLE;
+	public static final VarHandle P_STD_HEADER_VERSION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long P_VIDEO_PROFILE_BYTE_OFFSET;
-    public static final long PICTURE_FORMAT_BYTE_OFFSET;
-    public static final long MAX_CODED_EXTENT_BYTE_OFFSET;
-    public static final long REFERENCE_PICTURE_FORMAT_BYTE_OFFSET;
-    public static final long MAX_DPB_SLOTS_BYTE_OFFSET;
-    public static final long MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET;
-    public static final long P_STD_HEADER_VERSION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long P_VIDEO_PROFILE_BYTE_OFFSET;
+	public static final long PICTURE_FORMAT_BYTE_OFFSET;
+	public static final long MAX_CODED_EXTENT_BYTE_OFFSET;
+	public static final long REFERENCE_PICTURE_FORMAT_BYTE_OFFSET;
+	public static final long MAX_DPB_SLOTS_BYTE_OFFSET;
+	public static final long MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET;
+	public static final long P_STD_HEADER_VERSION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D maxCodedExtent;
+	private final VkExtent2D maxCodedExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("queueFamilyIndex"),
-            JAVA_INT.withName("flags"),
-            UNBOUNDED_ADDRESS.withName("pVideoProfile"),
-            JAVA_INT.withName("pictureFormat"),
-            VkExtent2D.LAYOUT.withName("maxCodedExtent"),
-            JAVA_INT.withName("referencePictureFormat"),
-            JAVA_INT.withName("maxDpbSlots"),
-            JAVA_INT.withName("maxActiveReferencePictures"),
-            UNBOUNDED_ADDRESS.withName("pStdHeaderVersion")
-        ).withName("VkVideoSessionCreateInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        P_VIDEO_PROFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVideoProfile"));
-        PICTURE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pictureFormat"));
-        REFERENCE_PICTURE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referencePictureFormat"));
-        MAX_DPB_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDpbSlots"));
-        MAX_ACTIVE_REFERENCE_PICTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxActiveReferencePictures"));
-        P_STD_HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdHeaderVersion"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        P_VIDEO_PROFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVideoProfile"));
-        PICTURE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pictureFormat"));
-        MAX_CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCodedExtent"));
-        REFERENCE_PICTURE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referencePictureFormat"));
-        MAX_DPB_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDpbSlots"));
-        MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxActiveReferencePictures"));
-        P_STD_HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdHeaderVersion"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("queueFamilyIndex"),
+		    JAVA_INT.withName("flags"),
+		    UNBOUNDED_ADDRESS.withName("pVideoProfile"),
+		    JAVA_INT.withName("pictureFormat"),
+		    VkExtent2D.LAYOUT.withName("maxCodedExtent"),
+		    JAVA_INT.withName("referencePictureFormat"),
+		    JAVA_INT.withName("maxDpbSlots"),
+		    JAVA_INT.withName("maxActiveReferencePictures"),
+		    UNBOUNDED_ADDRESS.withName("pStdHeaderVersion")
+		).withName("VkVideoSessionCreateInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		P_VIDEO_PROFILE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pVideoProfile"));
+		PICTURE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pictureFormat"));
+		REFERENCE_PICTURE_FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referencePictureFormat"));
+		MAX_DPB_SLOTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDpbSlots"));
+		MAX_ACTIVE_REFERENCE_PICTURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxActiveReferencePictures"));
+		P_STD_HEADER_VERSION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdHeaderVersion"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		P_VIDEO_PROFILE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pVideoProfile"));
+		PICTURE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pictureFormat"));
+		MAX_CODED_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxCodedExtent"));
+		REFERENCE_PICTURE_FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referencePictureFormat"));
+		MAX_DPB_SLOTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDpbSlots"));
+		MAX_ACTIVE_REFERENCE_PICTURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxActiveReferencePictures"));
+		P_STD_HEADER_VERSION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdHeaderVersion"));
+		//@formatter:on
+	}
 
-    public VkVideoSessionCreateInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoSessionCreateInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoSessionCreateInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        maxCodedExtent = new VkExtent2D(segment.asSlice(MAX_CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkVideoSessionCreateInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoSessionCreateInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoSessionCreateInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    maxCodedExtent = new VkExtent2D(segment.asSlice(MAX_CODED_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #sType()
     public VkVideoSessionCreateInfoKHR sType(int sType) {
@@ -177,6 +177,22 @@ public final class VkVideoSessionCreateInfoKHR
     	return (int) PICTURE_FORMAT_HANDLE.get(segment, 0L);
     }
     
+    /// @see #maxCodedExtent()
+    public VkVideoSessionCreateInfoKHR maxCodedExtent(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxCodedExtent);
+    	return this;
+    }
+    
+    /// @see #maxCodedExtent()
+    public VkVideoSessionCreateInfoKHR maxCodedExtent(VkExtent2D other) {
+    	maxCodedExtent.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxCodedExtent() {
+    	return maxCodedExtent;
+    }
+    
     /// @see #referencePictureFormat()
     public VkVideoSessionCreateInfoKHR referencePictureFormat(int referencePictureFormat) {
     	REFERENCE_PICTURE_FORMAT_HANDLE.set(segment, 0L, referencePictureFormat);
@@ -220,22 +236,6 @@ public final class VkVideoSessionCreateInfoKHR
     		return null;
     	
     	return new VkExtensionProperties(segment);
-    }
-    
-    /// @see #maxCodedExtent()
-    public VkVideoSessionCreateInfoKHR maxCodedExtent(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxCodedExtent);
-    	return this;
-    }
-    
-    /// @see #maxCodedExtent()
-    public VkVideoSessionCreateInfoKHR maxCodedExtent(VkExtent2D other) {
-    	maxCodedExtent.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxCodedExtent() {
-    	return maxCodedExtent;
     }
     
     @Override
@@ -289,5 +289,5 @@ public final class VkVideoSessionCreateInfoKHR
             segment -> new VkVideoSessionCreateInfoKHR(segment)
         );
     }
-    
+
 }

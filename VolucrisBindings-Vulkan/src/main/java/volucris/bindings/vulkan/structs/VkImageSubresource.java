@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkImageSubresource
 		implements Struct<VkImageSubresource> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle ASPECT_MASK_HANDLE;
-    public static final VarHandle MIP_LEVEL_HANDLE;
-    public static final VarHandle ARRAY_LAYER_HANDLE;
+	public static final VarHandle ASPECT_MASK_HANDLE;
+	public static final VarHandle MIP_LEVEL_HANDLE;
+	public static final VarHandle ARRAY_LAYER_HANDLE;
 
-    public static final long ASPECT_MASK_BYTE_OFFSET;
-    public static final long MIP_LEVEL_BYTE_OFFSET;
-    public static final long ARRAY_LAYER_BYTE_OFFSET;
+	public static final long ASPECT_MASK_BYTE_OFFSET;
+	public static final long MIP_LEVEL_BYTE_OFFSET;
+	public static final long ARRAY_LAYER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("aspectMask"),
-            JAVA_INT.withName("mipLevel"),
-            JAVA_INT.withName("arrayLayer")
-        ).withName("VkImageSubresource").withByteAlignment(4);
-        
-        ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
-        MIP_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipLevel"));
-        ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayLayer"));
-        
-        ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
-        MIP_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipLevel"));
-        ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayLayer"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("aspectMask"),
+		    JAVA_INT.withName("mipLevel"),
+		    JAVA_INT.withName("arrayLayer")
+		).withName("VkImageSubresource").withByteAlignment(4);
+		
+		ASPECT_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("aspectMask"));
+		MIP_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mipLevel"));
+		ARRAY_LAYER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayLayer"));
+		
+		ASPECT_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("aspectMask"));
+		MIP_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mipLevel"));
+		ARRAY_LAYER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayLayer"));
+		//@formatter:on
+	}
 
-    public VkImageSubresource() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkImageSubresource(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkImageSubresource(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkImageSubresource() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkImageSubresource(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkImageSubresource(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #aspectMask()
     public VkImageSubresource aspectMask(int aspectMask) {
@@ -143,5 +143,5 @@ public final class VkImageSubresource
             segment -> new VkImageSubresource(segment)
         );
     }
-    
+
 }

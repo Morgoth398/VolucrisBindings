@@ -21,120 +21,120 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceVulkan11Properties
 		implements Struct<VkPhysicalDeviceVulkan11Properties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEVICE_UUID_HANDLE;
-    public static final VarHandle DRIVER_UUID_HANDLE;
-    public static final VarHandle DEVICE_LUID_HANDLE;
-    public static final VarHandle DEVICE_NODE_MASK_HANDLE;
-    public static final VarHandle DEVICE_LUIDVALID_HANDLE;
-    public static final VarHandle SUBGROUP_SIZE_HANDLE;
-    public static final VarHandle SUBGROUP_SUPPORTED_STAGES_HANDLE;
-    public static final VarHandle SUBGROUP_SUPPORTED_OPERATIONS_HANDLE;
-    public static final VarHandle SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_HANDLE;
-    public static final VarHandle POINT_CLIPPING_BEHAVIOR_HANDLE;
-    public static final VarHandle MAX_MULTIVIEW_VIEW_COUNT_HANDLE;
-    public static final VarHandle MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE;
-    public static final VarHandle PROTECTED_NO_FAULT_HANDLE;
-    public static final VarHandle MAX_PER_SET_DESCRIPTORS_HANDLE;
-    public static final VarHandle MAX_MEMORY_ALLOCATION_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEVICE_UUID_HANDLE;
+	public static final VarHandle DRIVER_UUID_HANDLE;
+	public static final VarHandle DEVICE_LUID_HANDLE;
+	public static final VarHandle DEVICE_NODE_MASK_HANDLE;
+	public static final VarHandle DEVICE_LUIDVALID_HANDLE;
+	public static final VarHandle SUBGROUP_SIZE_HANDLE;
+	public static final VarHandle SUBGROUP_SUPPORTED_STAGES_HANDLE;
+	public static final VarHandle SUBGROUP_SUPPORTED_OPERATIONS_HANDLE;
+	public static final VarHandle SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_HANDLE;
+	public static final VarHandle POINT_CLIPPING_BEHAVIOR_HANDLE;
+	public static final VarHandle MAX_MULTIVIEW_VIEW_COUNT_HANDLE;
+	public static final VarHandle MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE;
+	public static final VarHandle PROTECTED_NO_FAULT_HANDLE;
+	public static final VarHandle MAX_PER_SET_DESCRIPTORS_HANDLE;
+	public static final VarHandle MAX_MEMORY_ALLOCATION_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEVICE_UUID_BYTE_OFFSET;
-    public static final long DRIVER_UUID_BYTE_OFFSET;
-    public static final long DEVICE_LUID_BYTE_OFFSET;
-    public static final long DEVICE_NODE_MASK_BYTE_OFFSET;
-    public static final long DEVICE_LUIDVALID_BYTE_OFFSET;
-    public static final long SUBGROUP_SIZE_BYTE_OFFSET;
-    public static final long SUBGROUP_SUPPORTED_STAGES_BYTE_OFFSET;
-    public static final long SUBGROUP_SUPPORTED_OPERATIONS_BYTE_OFFSET;
-    public static final long SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_BYTE_OFFSET;
-    public static final long POINT_CLIPPING_BEHAVIOR_BYTE_OFFSET;
-    public static final long MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
-    public static final long MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET;
-    public static final long PROTECTED_NO_FAULT_BYTE_OFFSET;
-    public static final long MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET;
-    public static final long MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEVICE_UUID_BYTE_OFFSET;
+	public static final long DRIVER_UUID_BYTE_OFFSET;
+	public static final long DEVICE_LUID_BYTE_OFFSET;
+	public static final long DEVICE_NODE_MASK_BYTE_OFFSET;
+	public static final long DEVICE_LUIDVALID_BYTE_OFFSET;
+	public static final long SUBGROUP_SIZE_BYTE_OFFSET;
+	public static final long SUBGROUP_SUPPORTED_STAGES_BYTE_OFFSET;
+	public static final long SUBGROUP_SUPPORTED_OPERATIONS_BYTE_OFFSET;
+	public static final long SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_BYTE_OFFSET;
+	public static final long POINT_CLIPPING_BEHAVIOR_BYTE_OFFSET;
+	public static final long MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET;
+	public static final long MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET;
+	public static final long PROTECTED_NO_FAULT_BYTE_OFFSET;
+	public static final long MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET;
+	public static final long MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("deviceUUID"),
-            MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("driverUUID"),
-            MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("deviceLUID"),
-            JAVA_INT.withName("deviceNodeMask"),
-            JAVA_INT.withName("deviceLUIDValid"),
-            JAVA_INT.withName("subgroupSize"),
-            JAVA_INT.withName("subgroupSupportedStages"),
-            JAVA_INT.withName("subgroupSupportedOperations"),
-            JAVA_INT.withName("subgroupQuadOperationsInAllStages"),
-            JAVA_INT.withName("pointClippingBehavior"),
-            JAVA_INT.withName("maxMultiviewViewCount"),
-            JAVA_INT.withName("maxMultiviewInstanceIndex"),
-            JAVA_INT.withName("protectedNoFault"),
-            JAVA_INT.withName("maxPerSetDescriptors"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("maxMemoryAllocationSize")
-        ).withName("VkPhysicalDeviceVulkan11Properties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEVICE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceUUID"), PathElement.sequenceElement());
-        DRIVER_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverUUID"), PathElement.sequenceElement());
-        DEVICE_LUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUID"), PathElement.sequenceElement());
-        DEVICE_NODE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceNodeMask"));
-        DEVICE_LUIDVALID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUIDValid"));
-        SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSize"));
-        SUBGROUP_SUPPORTED_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSupportedStages"));
-        SUBGROUP_SUPPORTED_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSupportedOperations"));
-        SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupQuadOperationsInAllStages"));
-        POINT_CLIPPING_BEHAVIOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pointClippingBehavior"));
-        MAX_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewViewCount"));
-        MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewInstanceIndex"));
-        PROTECTED_NO_FAULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protectedNoFault"));
-        MAX_PER_SET_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerSetDescriptors"));
-        MAX_MEMORY_ALLOCATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMemoryAllocationSize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEVICE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceUUID"));
-        DRIVER_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverUUID"));
-        DEVICE_LUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUID"));
-        DEVICE_NODE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceNodeMask"));
-        DEVICE_LUIDVALID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUIDValid"));
-        SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSize"));
-        SUBGROUP_SUPPORTED_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSupportedStages"));
-        SUBGROUP_SUPPORTED_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSupportedOperations"));
-        SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupQuadOperationsInAllStages"));
-        POINT_CLIPPING_BEHAVIOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pointClippingBehavior"));
-        MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewViewCount"));
-        MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewInstanceIndex"));
-        PROTECTED_NO_FAULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protectedNoFault"));
-        MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerSetDescriptors"));
-        MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMemoryAllocationSize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("deviceUUID"),
+		    MemoryLayout.sequenceLayout(16, JAVA_BYTE).withName("driverUUID"),
+		    MemoryLayout.sequenceLayout(8, JAVA_BYTE).withName("deviceLUID"),
+		    JAVA_INT.withName("deviceNodeMask"),
+		    JAVA_INT.withName("deviceLUIDValid"),
+		    JAVA_INT.withName("subgroupSize"),
+		    JAVA_INT.withName("subgroupSupportedStages"),
+		    JAVA_INT.withName("subgroupSupportedOperations"),
+		    JAVA_INT.withName("subgroupQuadOperationsInAllStages"),
+		    JAVA_INT.withName("pointClippingBehavior"),
+		    JAVA_INT.withName("maxMultiviewViewCount"),
+		    JAVA_INT.withName("maxMultiviewInstanceIndex"),
+		    JAVA_INT.withName("protectedNoFault"),
+		    JAVA_INT.withName("maxPerSetDescriptors"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("maxMemoryAllocationSize")
+		).withName("VkPhysicalDeviceVulkan11Properties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEVICE_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceUUID"), PathElement.sequenceElement());
+		DRIVER_UUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("driverUUID"), PathElement.sequenceElement());
+		DEVICE_LUID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUID"), PathElement.sequenceElement());
+		DEVICE_NODE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceNodeMask"));
+		DEVICE_LUIDVALID_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceLUIDValid"));
+		SUBGROUP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSize"));
+		SUBGROUP_SUPPORTED_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSupportedStages"));
+		SUBGROUP_SUPPORTED_OPERATIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupSupportedOperations"));
+		SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subgroupQuadOperationsInAllStages"));
+		POINT_CLIPPING_BEHAVIOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pointClippingBehavior"));
+		MAX_MULTIVIEW_VIEW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewViewCount"));
+		MAX_MULTIVIEW_INSTANCE_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMultiviewInstanceIndex"));
+		PROTECTED_NO_FAULT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protectedNoFault"));
+		MAX_PER_SET_DESCRIPTORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPerSetDescriptors"));
+		MAX_MEMORY_ALLOCATION_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxMemoryAllocationSize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEVICE_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceUUID"));
+		DRIVER_UUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("driverUUID"));
+		DEVICE_LUID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUID"));
+		DEVICE_NODE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceNodeMask"));
+		DEVICE_LUIDVALID_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceLUIDValid"));
+		SUBGROUP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSize"));
+		SUBGROUP_SUPPORTED_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSupportedStages"));
+		SUBGROUP_SUPPORTED_OPERATIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupSupportedOperations"));
+		SUBGROUP_QUAD_OPERATIONS_IN_ALL_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subgroupQuadOperationsInAllStages"));
+		POINT_CLIPPING_BEHAVIOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pointClippingBehavior"));
+		MAX_MULTIVIEW_VIEW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewViewCount"));
+		MAX_MULTIVIEW_INSTANCE_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMultiviewInstanceIndex"));
+		PROTECTED_NO_FAULT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protectedNoFault"));
+		MAX_PER_SET_DESCRIPTORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPerSetDescriptors"));
+		MAX_MEMORY_ALLOCATION_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxMemoryAllocationSize"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceVulkan11Properties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceVulkan11Properties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceVulkan11Properties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceVulkan11Properties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceVulkan11Properties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceVulkan11Properties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceVulkan11Properties sType(int sType) {
@@ -362,5 +362,5 @@ public final class VkPhysicalDeviceVulkan11Properties
             segment -> new VkPhysicalDeviceVulkan11Properties(segment)
         );
     }
-    
+
 }

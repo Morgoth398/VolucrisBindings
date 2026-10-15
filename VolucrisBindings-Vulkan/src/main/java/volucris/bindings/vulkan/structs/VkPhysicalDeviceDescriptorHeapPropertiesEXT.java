@@ -21,139 +21,139 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDescriptorHeapPropertiesEXT
 		implements Struct<VkPhysicalDeviceDescriptorHeapPropertiesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SAMPLER_HEAP_ALIGNMENT_HANDLE;
-    public static final VarHandle RESOURCE_HEAP_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_SAMPLER_HEAP_SIZE_HANDLE;
-    public static final VarHandle MAX_RESOURCE_HEAP_SIZE_HANDLE;
-    public static final VarHandle MIN_SAMPLER_HEAP_RESERVED_RANGE_HANDLE;
-    public static final VarHandle MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_HANDLE;
-    public static final VarHandle MIN_RESOURCE_HEAP_RESERVED_RANGE_HANDLE;
-    public static final VarHandle SAMPLER_DESCRIPTOR_SIZE_HANDLE;
-    public static final VarHandle IMAGE_DESCRIPTOR_SIZE_HANDLE;
-    public static final VarHandle BUFFER_DESCRIPTOR_SIZE_HANDLE;
-    public static final VarHandle SAMPLER_DESCRIPTOR_ALIGNMENT_HANDLE;
-    public static final VarHandle IMAGE_DESCRIPTOR_ALIGNMENT_HANDLE;
-    public static final VarHandle BUFFER_DESCRIPTOR_ALIGNMENT_HANDLE;
-    public static final VarHandle MAX_PUSH_DATA_SIZE_HANDLE;
-    public static final VarHandle IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE;
-    public static final VarHandle MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_HANDLE;
-    public static final VarHandle SAMPLER_YCBCR_CONVERSION_COUNT_HANDLE;
-    public static final VarHandle SPARSE_DESCRIPTOR_HEAPS_HANDLE;
-    public static final VarHandle PROTECTED_DESCRIPTOR_HEAPS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SAMPLER_HEAP_ALIGNMENT_HANDLE;
+	public static final VarHandle RESOURCE_HEAP_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_SAMPLER_HEAP_SIZE_HANDLE;
+	public static final VarHandle MAX_RESOURCE_HEAP_SIZE_HANDLE;
+	public static final VarHandle MIN_SAMPLER_HEAP_RESERVED_RANGE_HANDLE;
+	public static final VarHandle MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_HANDLE;
+	public static final VarHandle MIN_RESOURCE_HEAP_RESERVED_RANGE_HANDLE;
+	public static final VarHandle SAMPLER_DESCRIPTOR_SIZE_HANDLE;
+	public static final VarHandle IMAGE_DESCRIPTOR_SIZE_HANDLE;
+	public static final VarHandle BUFFER_DESCRIPTOR_SIZE_HANDLE;
+	public static final VarHandle SAMPLER_DESCRIPTOR_ALIGNMENT_HANDLE;
+	public static final VarHandle IMAGE_DESCRIPTOR_ALIGNMENT_HANDLE;
+	public static final VarHandle BUFFER_DESCRIPTOR_ALIGNMENT_HANDLE;
+	public static final VarHandle MAX_PUSH_DATA_SIZE_HANDLE;
+	public static final VarHandle IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE;
+	public static final VarHandle MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_HANDLE;
+	public static final VarHandle SAMPLER_YCBCR_CONVERSION_COUNT_HANDLE;
+	public static final VarHandle SPARSE_DESCRIPTOR_HEAPS_HANDLE;
+	public static final VarHandle PROTECTED_DESCRIPTOR_HEAPS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SAMPLER_HEAP_ALIGNMENT_BYTE_OFFSET;
-    public static final long RESOURCE_HEAP_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_SAMPLER_HEAP_SIZE_BYTE_OFFSET;
-    public static final long MAX_RESOURCE_HEAP_SIZE_BYTE_OFFSET;
-    public static final long MIN_SAMPLER_HEAP_RESERVED_RANGE_BYTE_OFFSET;
-    public static final long MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_BYTE_OFFSET;
-    public static final long MIN_RESOURCE_HEAP_RESERVED_RANGE_BYTE_OFFSET;
-    public static final long SAMPLER_DESCRIPTOR_SIZE_BYTE_OFFSET;
-    public static final long IMAGE_DESCRIPTOR_SIZE_BYTE_OFFSET;
-    public static final long BUFFER_DESCRIPTOR_SIZE_BYTE_OFFSET;
-    public static final long SAMPLER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
-    public static final long IMAGE_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
-    public static final long BUFFER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
-    public static final long MAX_PUSH_DATA_SIZE_BYTE_OFFSET;
-    public static final long IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET;
-    public static final long MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_BYTE_OFFSET;
-    public static final long SAMPLER_YCBCR_CONVERSION_COUNT_BYTE_OFFSET;
-    public static final long SPARSE_DESCRIPTOR_HEAPS_BYTE_OFFSET;
-    public static final long PROTECTED_DESCRIPTOR_HEAPS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SAMPLER_HEAP_ALIGNMENT_BYTE_OFFSET;
+	public static final long RESOURCE_HEAP_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_SAMPLER_HEAP_SIZE_BYTE_OFFSET;
+	public static final long MAX_RESOURCE_HEAP_SIZE_BYTE_OFFSET;
+	public static final long MIN_SAMPLER_HEAP_RESERVED_RANGE_BYTE_OFFSET;
+	public static final long MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_BYTE_OFFSET;
+	public static final long MIN_RESOURCE_HEAP_RESERVED_RANGE_BYTE_OFFSET;
+	public static final long SAMPLER_DESCRIPTOR_SIZE_BYTE_OFFSET;
+	public static final long IMAGE_DESCRIPTOR_SIZE_BYTE_OFFSET;
+	public static final long BUFFER_DESCRIPTOR_SIZE_BYTE_OFFSET;
+	public static final long SAMPLER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
+	public static final long IMAGE_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
+	public static final long BUFFER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET;
+	public static final long MAX_PUSH_DATA_SIZE_BYTE_OFFSET;
+	public static final long IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET;
+	public static final long MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_BYTE_OFFSET;
+	public static final long SAMPLER_YCBCR_CONVERSION_COUNT_BYTE_OFFSET;
+	public static final long SPARSE_DESCRIPTOR_HEAPS_BYTE_OFFSET;
+	public static final long PROTECTED_DESCRIPTOR_HEAPS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("samplerHeapAlignment"),
-            JAVA_LONG.withName("resourceHeapAlignment"),
-            JAVA_LONG.withName("maxSamplerHeapSize"),
-            JAVA_LONG.withName("maxResourceHeapSize"),
-            JAVA_LONG.withName("minSamplerHeapReservedRange"),
-            JAVA_LONG.withName("minSamplerHeapReservedRangeWithEmbedded"),
-            JAVA_LONG.withName("minResourceHeapReservedRange"),
-            JAVA_LONG.withName("samplerDescriptorSize"),
-            JAVA_LONG.withName("imageDescriptorSize"),
-            JAVA_LONG.withName("bufferDescriptorSize"),
-            JAVA_LONG.withName("samplerDescriptorAlignment"),
-            JAVA_LONG.withName("imageDescriptorAlignment"),
-            JAVA_LONG.withName("bufferDescriptorAlignment"),
-            JAVA_LONG.withName("maxPushDataSize"),
-            JAVA_LONG.withName("imageCaptureReplayOpaqueDataSize"),
-            JAVA_INT.withName("maxDescriptorHeapEmbeddedSamplers"),
-            JAVA_INT.withName("samplerYcbcrConversionCount"),
-            JAVA_INT.withName("sparseDescriptorHeaps"),
-            JAVA_INT.withName("protectedDescriptorHeaps")
-        ).withName("VkPhysicalDeviceDescriptorHeapPropertiesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SAMPLER_HEAP_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapAlignment"));
-        RESOURCE_HEAP_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resourceHeapAlignment"));
-        MAX_SAMPLER_HEAP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerHeapSize"));
-        MAX_RESOURCE_HEAP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxResourceHeapSize"));
-        MIN_SAMPLER_HEAP_RESERVED_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSamplerHeapReservedRange"));
-        MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSamplerHeapReservedRangeWithEmbedded"));
-        MIN_RESOURCE_HEAP_RESERVED_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minResourceHeapReservedRange"));
-        SAMPLER_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerDescriptorSize"));
-        IMAGE_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageDescriptorSize"));
-        BUFFER_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDescriptorSize"));
-        SAMPLER_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerDescriptorAlignment"));
-        IMAGE_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageDescriptorAlignment"));
-        BUFFER_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDescriptorAlignment"));
-        MAX_PUSH_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushDataSize"));
-        IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCaptureReplayOpaqueDataSize"));
-        MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorHeapEmbeddedSamplers"));
-        SAMPLER_YCBCR_CONVERSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerYcbcrConversionCount"));
-        SPARSE_DESCRIPTOR_HEAPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseDescriptorHeaps"));
-        PROTECTED_DESCRIPTOR_HEAPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protectedDescriptorHeaps"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SAMPLER_HEAP_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapAlignment"));
-        RESOURCE_HEAP_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceHeapAlignment"));
-        MAX_SAMPLER_HEAP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerHeapSize"));
-        MAX_RESOURCE_HEAP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxResourceHeapSize"));
-        MIN_SAMPLER_HEAP_RESERVED_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSamplerHeapReservedRange"));
-        MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSamplerHeapReservedRangeWithEmbedded"));
-        MIN_RESOURCE_HEAP_RESERVED_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minResourceHeapReservedRange"));
-        SAMPLER_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerDescriptorSize"));
-        IMAGE_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageDescriptorSize"));
-        BUFFER_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDescriptorSize"));
-        SAMPLER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerDescriptorAlignment"));
-        IMAGE_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageDescriptorAlignment"));
-        BUFFER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDescriptorAlignment"));
-        MAX_PUSH_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushDataSize"));
-        IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCaptureReplayOpaqueDataSize"));
-        MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorHeapEmbeddedSamplers"));
-        SAMPLER_YCBCR_CONVERSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerYcbcrConversionCount"));
-        SPARSE_DESCRIPTOR_HEAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseDescriptorHeaps"));
-        PROTECTED_DESCRIPTOR_HEAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protectedDescriptorHeaps"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("samplerHeapAlignment"),
+		    JAVA_LONG.withName("resourceHeapAlignment"),
+		    JAVA_LONG.withName("maxSamplerHeapSize"),
+		    JAVA_LONG.withName("maxResourceHeapSize"),
+		    JAVA_LONG.withName("minSamplerHeapReservedRange"),
+		    JAVA_LONG.withName("minSamplerHeapReservedRangeWithEmbedded"),
+		    JAVA_LONG.withName("minResourceHeapReservedRange"),
+		    JAVA_LONG.withName("samplerDescriptorSize"),
+		    JAVA_LONG.withName("imageDescriptorSize"),
+		    JAVA_LONG.withName("bufferDescriptorSize"),
+		    JAVA_LONG.withName("samplerDescriptorAlignment"),
+		    JAVA_LONG.withName("imageDescriptorAlignment"),
+		    JAVA_LONG.withName("bufferDescriptorAlignment"),
+		    JAVA_LONG.withName("maxPushDataSize"),
+		    JAVA_LONG.withName("imageCaptureReplayOpaqueDataSize"),
+		    JAVA_INT.withName("maxDescriptorHeapEmbeddedSamplers"),
+		    JAVA_INT.withName("samplerYcbcrConversionCount"),
+		    JAVA_INT.withName("sparseDescriptorHeaps"),
+		    JAVA_INT.withName("protectedDescriptorHeaps")
+		).withName("VkPhysicalDeviceDescriptorHeapPropertiesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SAMPLER_HEAP_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerHeapAlignment"));
+		RESOURCE_HEAP_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resourceHeapAlignment"));
+		MAX_SAMPLER_HEAP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSamplerHeapSize"));
+		MAX_RESOURCE_HEAP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxResourceHeapSize"));
+		MIN_SAMPLER_HEAP_RESERVED_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSamplerHeapReservedRange"));
+		MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minSamplerHeapReservedRangeWithEmbedded"));
+		MIN_RESOURCE_HEAP_RESERVED_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minResourceHeapReservedRange"));
+		SAMPLER_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerDescriptorSize"));
+		IMAGE_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageDescriptorSize"));
+		BUFFER_DESCRIPTOR_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDescriptorSize"));
+		SAMPLER_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerDescriptorAlignment"));
+		IMAGE_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageDescriptorAlignment"));
+		BUFFER_DESCRIPTOR_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("bufferDescriptorAlignment"));
+		MAX_PUSH_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxPushDataSize"));
+		IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("imageCaptureReplayOpaqueDataSize"));
+		MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDescriptorHeapEmbeddedSamplers"));
+		SAMPLER_YCBCR_CONVERSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("samplerYcbcrConversionCount"));
+		SPARSE_DESCRIPTOR_HEAPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sparseDescriptorHeaps"));
+		PROTECTED_DESCRIPTOR_HEAPS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("protectedDescriptorHeaps"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SAMPLER_HEAP_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerHeapAlignment"));
+		RESOURCE_HEAP_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceHeapAlignment"));
+		MAX_SAMPLER_HEAP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSamplerHeapSize"));
+		MAX_RESOURCE_HEAP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxResourceHeapSize"));
+		MIN_SAMPLER_HEAP_RESERVED_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSamplerHeapReservedRange"));
+		MIN_SAMPLER_HEAP_RESERVED_RANGE_WITH_EMBEDDED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minSamplerHeapReservedRangeWithEmbedded"));
+		MIN_RESOURCE_HEAP_RESERVED_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minResourceHeapReservedRange"));
+		SAMPLER_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerDescriptorSize"));
+		IMAGE_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageDescriptorSize"));
+		BUFFER_DESCRIPTOR_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDescriptorSize"));
+		SAMPLER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerDescriptorAlignment"));
+		IMAGE_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageDescriptorAlignment"));
+		BUFFER_DESCRIPTOR_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("bufferDescriptorAlignment"));
+		MAX_PUSH_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxPushDataSize"));
+		IMAGE_CAPTURE_REPLAY_OPAQUE_DATA_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("imageCaptureReplayOpaqueDataSize"));
+		MAX_DESCRIPTOR_HEAP_EMBEDDED_SAMPLERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDescriptorHeapEmbeddedSamplers"));
+		SAMPLER_YCBCR_CONVERSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("samplerYcbcrConversionCount"));
+		SPARSE_DESCRIPTOR_HEAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sparseDescriptorHeaps"));
+		PROTECTED_DESCRIPTOR_HEAPS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("protectedDescriptorHeaps"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDescriptorHeapPropertiesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDescriptorHeapPropertiesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDescriptorHeapPropertiesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDescriptorHeapPropertiesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDescriptorHeapPropertiesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDescriptorHeapPropertiesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDescriptorHeapPropertiesEXT sType(int sType) {
@@ -421,5 +421,5 @@ public final class VkPhysicalDeviceDescriptorHeapPropertiesEXT
             segment -> new VkPhysicalDeviceDescriptorHeapPropertiesEXT(segment)
         );
     }
-    
+
 }

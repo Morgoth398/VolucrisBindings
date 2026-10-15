@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCommandBufferAllocateInfo
 		implements Struct<VkCommandBufferAllocateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle COMMAND_POOL_HANDLE;
-    public static final VarHandle LEVEL_HANDLE;
-    public static final VarHandle COMMAND_BUFFER_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle COMMAND_POOL_HANDLE;
+	public static final VarHandle LEVEL_HANDLE;
+	public static final VarHandle COMMAND_BUFFER_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long COMMAND_POOL_BYTE_OFFSET;
-    public static final long LEVEL_BYTE_OFFSET;
-    public static final long COMMAND_BUFFER_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long COMMAND_POOL_BYTE_OFFSET;
+	public static final long LEVEL_BYTE_OFFSET;
+	public static final long COMMAND_BUFFER_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("commandPool"),
-            JAVA_INT.withName("level"),
-            JAVA_INT.withName("commandBufferCount")
-        ).withName("VkCommandBufferAllocateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        COMMAND_POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandPool"));
-        LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("level"));
-        COMMAND_BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        COMMAND_POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandPool"));
-        LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("level"));
-        COMMAND_BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("commandPool"),
+		    JAVA_INT.withName("level"),
+		    JAVA_INT.withName("commandBufferCount")
+		).withName("VkCommandBufferAllocateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		COMMAND_POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandPool"));
+		LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("level"));
+		COMMAND_BUFFER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("commandBufferCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		COMMAND_POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandPool"));
+		LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("level"));
+		COMMAND_BUFFER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("commandBufferCount"));
+		//@formatter:on
+	}
 
-    public VkCommandBufferAllocateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCommandBufferAllocateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCommandBufferAllocateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCommandBufferAllocateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCommandBufferAllocateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCommandBufferAllocateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCommandBufferAllocateInfo sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkCommandBufferAllocateInfo
             segment -> new VkCommandBufferAllocateInfo(segment)
         );
     }
-    
+
 }

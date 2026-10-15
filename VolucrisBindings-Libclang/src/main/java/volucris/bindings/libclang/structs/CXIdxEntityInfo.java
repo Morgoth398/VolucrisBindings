@@ -21,76 +21,76 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxEntityInfo
 		implements Struct<CXIdxEntityInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle KIND_HANDLE;
-    public static final VarHandle TEMPLATE_KIND_HANDLE;
-    public static final VarHandle LANG_HANDLE;
-    public static final VarHandle NAME_HANDLE;
-    public static final VarHandle USR_HANDLE;
-    public static final VarHandle ATTRIBUTES_HANDLE;
-    public static final VarHandle NUM_ATTRIBUTES_HANDLE;
+	public static final VarHandle KIND_HANDLE;
+	public static final VarHandle TEMPLATE_KIND_HANDLE;
+	public static final VarHandle LANG_HANDLE;
+	public static final VarHandle NAME_HANDLE;
+	public static final VarHandle USR_HANDLE;
+	public static final VarHandle ATTRIBUTES_HANDLE;
+	public static final VarHandle NUM_ATTRIBUTES_HANDLE;
 
-    public static final long KIND_BYTE_OFFSET;
-    public static final long TEMPLATE_KIND_BYTE_OFFSET;
-    public static final long LANG_BYTE_OFFSET;
-    public static final long NAME_BYTE_OFFSET;
-    public static final long USR_BYTE_OFFSET;
-    public static final long CURSOR_BYTE_OFFSET;
-    public static final long ATTRIBUTES_BYTE_OFFSET;
-    public static final long NUM_ATTRIBUTES_BYTE_OFFSET;
+	public static final long KIND_BYTE_OFFSET;
+	public static final long TEMPLATE_KIND_BYTE_OFFSET;
+	public static final long LANG_BYTE_OFFSET;
+	public static final long NAME_BYTE_OFFSET;
+	public static final long USR_BYTE_OFFSET;
+	public static final long CURSOR_BYTE_OFFSET;
+	public static final long ATTRIBUTES_BYTE_OFFSET;
+	public static final long NUM_ATTRIBUTES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final CXCursor cursor;
+	private final CXCursor cursor;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("kind"),
-            JAVA_INT.withName("templateKind"),
-            JAVA_INT.withName("lang"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("name"),
-            UNBOUNDED_ADDRESS.withName("USR"),
-            CXCursor.LAYOUT.withName("cursor"),
-            UNBOUNDED_ADDRESS.withName("attributes"),
-            JAVA_INT.withName("numAttributes"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxEntityInfo").withByteAlignment(8);
-        
-        KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
-        TEMPLATE_KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("templateKind"));
-        LANG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lang"));
-        NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"));
-        USR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("USR"));
-        ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attributes"));
-        NUM_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAttributes"));
-        
-        KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
-        TEMPLATE_KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("templateKind"));
-        LANG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lang"));
-        NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
-        USR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("USR"));
-        CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
-        ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attributes"));
-        NUM_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAttributes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("kind"),
+		    JAVA_INT.withName("templateKind"),
+		    JAVA_INT.withName("lang"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("name"),
+		    UNBOUNDED_ADDRESS.withName("USR"),
+		    CXCursor.LAYOUT.withName("cursor"),
+		    UNBOUNDED_ADDRESS.withName("attributes"),
+		    JAVA_INT.withName("numAttributes"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxEntityInfo").withByteAlignment(8);
+		
+		KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("kind"));
+		TEMPLATE_KIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("templateKind"));
+		LANG_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lang"));
+		NAME_HANDLE = LAYOUT.varHandle(PathElement.groupElement("name"));
+		USR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("USR"));
+		ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("attributes"));
+		NUM_ATTRIBUTES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("numAttributes"));
+		
+		KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("kind"));
+		TEMPLATE_KIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("templateKind"));
+		LANG_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lang"));
+		NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("name"));
+		USR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("USR"));
+		CURSOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cursor"));
+		ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("attributes"));
+		NUM_ATTRIBUTES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("numAttributes"));
+		//@formatter:on
+	}
 
-    public CXIdxEntityInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxEntityInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxEntityInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
-    }
+	public CXIdxEntityInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxEntityInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxEntityInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    cursor = new CXCursor(segment.asSlice(CURSOR_BYTE_OFFSET, CXCursor.LAYOUT));
+	}
 
     /// @see #kind()
     public CXIdxEntityInfo kind(int kind) {
@@ -152,6 +152,22 @@ public final class CXIdxEntityInfo
     	return new NativeByteArray(segment);
     }
     
+    /// @see #cursor()
+    public CXIdxEntityInfo cursor(Consumer<CXCursor> consumer) {
+    	consumer.accept(cursor);
+    	return this;
+    }
+    
+    /// @see #cursor()
+    public CXIdxEntityInfo cursor(CXCursor other) {
+    	cursor.set(other);
+    	return this;
+    }
+    
+    public CXCursor cursor() {
+    	return cursor;
+    }
+    
     /// @see #attributes()
     public CXIdxEntityInfo attributes(NativePointerArray attributes) {
     	ATTRIBUTES_HANDLE.set(segment, 0L, attributes.memorySegment());
@@ -175,22 +191,6 @@ public final class CXIdxEntityInfo
     
     public int numAttributes() {
     	return (int) NUM_ATTRIBUTES_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #cursor()
-    public CXIdxEntityInfo cursor(Consumer<CXCursor> consumer) {
-    	consumer.accept(cursor);
-    	return this;
-    }
-    
-    /// @see #cursor()
-    public CXIdxEntityInfo cursor(CXCursor other) {
-    	cursor.set(other);
-    	return this;
-    }
-    
-    public CXCursor cursor() {
-    	return cursor;
     }
     
     @Override
@@ -244,5 +244,5 @@ public final class CXIdxEntityInfo
             segment -> new CXIdxEntityInfo(segment)
         );
     }
-    
+
 }

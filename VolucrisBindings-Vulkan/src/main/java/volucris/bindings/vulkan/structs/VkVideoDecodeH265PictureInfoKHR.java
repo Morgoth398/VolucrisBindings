@@ -22,60 +22,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeH265PictureInfoKHR
 		implements Struct<VkVideoDecodeH265PictureInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
-    public static final VarHandle SLICE_SEGMENT_COUNT_HANDLE;
-    public static final VarHandle P_SLICE_SEGMENT_OFFSETS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
+	public static final VarHandle SLICE_SEGMENT_COUNT_HANDLE;
+	public static final VarHandle P_SLICE_SEGMENT_OFFSETS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
-    public static final long SLICE_SEGMENT_COUNT_BYTE_OFFSET;
-    public static final long P_SLICE_SEGMENT_OFFSETS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
+	public static final long SLICE_SEGMENT_COUNT_BYTE_OFFSET;
+	public static final long P_SLICE_SEGMENT_OFFSETS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
-            JAVA_INT.withName("sliceSegmentCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pSliceSegmentOffsets")
-        ).withName("VkVideoDecodeH265PictureInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
-        SLICE_SEGMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sliceSegmentCount"));
-        P_SLICE_SEGMENT_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSliceSegmentOffsets"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
-        SLICE_SEGMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sliceSegmentCount"));
-        P_SLICE_SEGMENT_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSliceSegmentOffsets"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
+		    JAVA_INT.withName("sliceSegmentCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pSliceSegmentOffsets")
+		).withName("VkVideoDecodeH265PictureInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
+		SLICE_SEGMENT_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sliceSegmentCount"));
+		P_SLICE_SEGMENT_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pSliceSegmentOffsets"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
+		SLICE_SEGMENT_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sliceSegmentCount"));
+		P_SLICE_SEGMENT_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pSliceSegmentOffsets"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeH265PictureInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeH265PictureInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeH265PictureInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoDecodeH265PictureInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeH265PictureInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeH265PictureInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoDecodeH265PictureInfoKHR sType(int sType) {
@@ -193,5 +193,5 @@ public final class VkVideoDecodeH265PictureInfoKHR
             segment -> new VkVideoDecodeH265PictureInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkExternalSemaphoreProperties
 		implements Struct<VkExternalSemaphoreProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE;
-    public static final VarHandle COMPATIBLE_HANDLE_TYPES_HANDLE;
-    public static final VarHandle EXTERNAL_SEMAPHORE_FEATURES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE;
+	public static final VarHandle COMPATIBLE_HANDLE_TYPES_HANDLE;
+	public static final VarHandle EXTERNAL_SEMAPHORE_FEATURES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET;
-    public static final long COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET;
-    public static final long EXTERNAL_SEMAPHORE_FEATURES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET;
+	public static final long EXTERNAL_SEMAPHORE_FEATURES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("exportFromImportedHandleTypes"),
-            JAVA_INT.withName("compatibleHandleTypes"),
-            JAVA_INT.withName("externalSemaphoreFeatures"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkExternalSemaphoreProperties").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exportFromImportedHandleTypes"));
-        COMPATIBLE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleHandleTypes"));
-        EXTERNAL_SEMAPHORE_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalSemaphoreFeatures"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exportFromImportedHandleTypes"));
-        COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleHandleTypes"));
-        EXTERNAL_SEMAPHORE_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalSemaphoreFeatures"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("exportFromImportedHandleTypes"),
+		    JAVA_INT.withName("compatibleHandleTypes"),
+		    JAVA_INT.withName("externalSemaphoreFeatures"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkExternalSemaphoreProperties").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		EXPORT_FROM_IMPORTED_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("exportFromImportedHandleTypes"));
+		COMPATIBLE_HANDLE_TYPES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("compatibleHandleTypes"));
+		EXTERNAL_SEMAPHORE_FEATURES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("externalSemaphoreFeatures"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		EXPORT_FROM_IMPORTED_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("exportFromImportedHandleTypes"));
+		COMPATIBLE_HANDLE_TYPES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("compatibleHandleTypes"));
+		EXTERNAL_SEMAPHORE_FEATURES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("externalSemaphoreFeatures"));
+		//@formatter:on
+	}
 
-    public VkExternalSemaphoreProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkExternalSemaphoreProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkExternalSemaphoreProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkExternalSemaphoreProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkExternalSemaphoreProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkExternalSemaphoreProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkExternalSemaphoreProperties sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkExternalSemaphoreProperties
             segment -> new VkExternalSemaphoreProperties(segment)
         );
     }
-    
+
 }

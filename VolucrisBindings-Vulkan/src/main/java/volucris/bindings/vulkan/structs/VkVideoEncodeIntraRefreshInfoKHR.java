@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoEncodeIntraRefreshInfoKHR
 		implements Struct<VkVideoEncodeIntraRefreshInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle INTRA_REFRESH_CYCLE_DURATION_HANDLE;
-    public static final VarHandle INTRA_REFRESH_INDEX_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle INTRA_REFRESH_CYCLE_DURATION_HANDLE;
+	public static final VarHandle INTRA_REFRESH_INDEX_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET;
-    public static final long INTRA_REFRESH_INDEX_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET;
+	public static final long INTRA_REFRESH_INDEX_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("intraRefreshCycleDuration"),
-            JAVA_INT.withName("intraRefreshIndex")
-        ).withName("VkVideoEncodeIntraRefreshInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        INTRA_REFRESH_CYCLE_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshCycleDuration"));
-        INTRA_REFRESH_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshIndex"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshCycleDuration"));
-        INTRA_REFRESH_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshIndex"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("intraRefreshCycleDuration"),
+		    JAVA_INT.withName("intraRefreshIndex")
+		).withName("VkVideoEncodeIntraRefreshInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		INTRA_REFRESH_CYCLE_DURATION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshCycleDuration"));
+		INTRA_REFRESH_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("intraRefreshIndex"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		INTRA_REFRESH_CYCLE_DURATION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshCycleDuration"));
+		INTRA_REFRESH_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("intraRefreshIndex"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeIntraRefreshInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeIntraRefreshInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeIntraRefreshInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeIntraRefreshInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeIntraRefreshInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeIntraRefreshInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoEncodeIntraRefreshInfoKHR sType(int sType) {
@@ -166,5 +166,5 @@ public final class VkVideoEncodeIntraRefreshInfoKHR
             segment -> new VkVideoEncodeIntraRefreshInfoKHR(segment)
         );
     }
-    
+
 }

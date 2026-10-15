@@ -21,48 +21,48 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkClusterAccelerationStructureOpInputNV
 		implements Struct<VkClusterAccelerationStructureOpInputNV> {
 
-    public static final UnionLayout LAYOUT;
+	public static final UnionLayout LAYOUT;
 
-    public static final VarHandle P_CLUSTERS_BOTTOM_LEVEL_HANDLE;
-    public static final VarHandle P_TRIANGLE_CLUSTERS_HANDLE;
-    public static final VarHandle P_MOVE_OBJECTS_HANDLE;
+	public static final VarHandle P_CLUSTERS_BOTTOM_LEVEL_HANDLE;
+	public static final VarHandle P_TRIANGLE_CLUSTERS_HANDLE;
+	public static final VarHandle P_MOVE_OBJECTS_HANDLE;
 
-    public static final long P_CLUSTERS_BOTTOM_LEVEL_BYTE_OFFSET;
-    public static final long P_TRIANGLE_CLUSTERS_BYTE_OFFSET;
-    public static final long P_MOVE_OBJECTS_BYTE_OFFSET;
+	public static final long P_CLUSTERS_BOTTOM_LEVEL_BYTE_OFFSET;
+	public static final long P_TRIANGLE_CLUSTERS_BYTE_OFFSET;
+	public static final long P_MOVE_OBJECTS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.unionLayout(
-            UNBOUNDED_ADDRESS.withName("pClustersBottomLevel"),
-            UNBOUNDED_ADDRESS.withName("pTriangleClusters"),
-            UNBOUNDED_ADDRESS.withName("pMoveObjects")
-        ).withName("VkClusterAccelerationStructureOpInputNV").withByteAlignment(8);
-        
-        P_CLUSTERS_BOTTOM_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pClustersBottomLevel"));
-        P_TRIANGLE_CLUSTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTriangleClusters"));
-        P_MOVE_OBJECTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMoveObjects"));
-        
-        P_CLUSTERS_BOTTOM_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pClustersBottomLevel"));
-        P_TRIANGLE_CLUSTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTriangleClusters"));
-        P_MOVE_OBJECTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMoveObjects"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.unionLayout(
+		    UNBOUNDED_ADDRESS.withName("pClustersBottomLevel"),
+		    UNBOUNDED_ADDRESS.withName("pTriangleClusters"),
+		    UNBOUNDED_ADDRESS.withName("pMoveObjects")
+		).withName("VkClusterAccelerationStructureOpInputNV").withByteAlignment(8);
+		
+		P_CLUSTERS_BOTTOM_LEVEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pClustersBottomLevel"));
+		P_TRIANGLE_CLUSTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTriangleClusters"));
+		P_MOVE_OBJECTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pMoveObjects"));
+		
+		P_CLUSTERS_BOTTOM_LEVEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pClustersBottomLevel"));
+		P_TRIANGLE_CLUSTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTriangleClusters"));
+		P_MOVE_OBJECTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pMoveObjects"));
+		//@formatter:on
+	}
 
-    public VkClusterAccelerationStructureOpInputNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkClusterAccelerationStructureOpInputNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkClusterAccelerationStructureOpInputNV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkClusterAccelerationStructureOpInputNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkClusterAccelerationStructureOpInputNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkClusterAccelerationStructureOpInputNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #pClustersBottomLevel()
     public VkClusterAccelerationStructureOpInputNV pClustersBottomLevel(VkClusterAccelerationStructureClustersBottomLevelInputNV pClustersBottomLevel) {
@@ -160,5 +160,5 @@ public final class VkClusterAccelerationStructureOpInputNV
             segment -> new VkClusterAccelerationStructureOpInputNV(segment)
         );
     }
-    
+
 }

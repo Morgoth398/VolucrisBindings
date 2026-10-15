@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT
 		implements Struct<VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MULTISAMPLED_RENDER_TO_SWAPCHAIN_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MULTISAMPLED_RENDER_TO_SWAPCHAIN_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MULTISAMPLED_RENDER_TO_SWAPCHAIN_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MULTISAMPLED_RENDER_TO_SWAPCHAIN_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("multisampledRenderToSwapchain"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MULTISAMPLED_RENDER_TO_SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multisampledRenderToSwapchain"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MULTISAMPLED_RENDER_TO_SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multisampledRenderToSwapchain"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("multisampledRenderToSwapchain"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MULTISAMPLED_RENDER_TO_SWAPCHAIN_HANDLE = LAYOUT.varHandle(PathElement.groupElement("multisampledRenderToSwapchain"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MULTISAMPLED_RENDER_TO_SWAPCHAIN_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("multisampledRenderToSwapchain"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT
             segment -> new VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(segment)
         );
     }
-    
+
 }

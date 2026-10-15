@@ -30,81 +30,100 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class AiAnimMesh
 		implements Struct<AiAnimMesh> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle M_VERTICES_HANDLE;
-    public static final VarHandle M_NORMALS_HANDLE;
-    public static final VarHandle M_TANGENTS_HANDLE;
-    public static final VarHandle M_BITANGENTS_HANDLE;
-    public static final VarHandle M_COLORS_HANDLE;
-    public static final VarHandle M_TEXTURE_COORDS_HANDLE;
-    public static final VarHandle M_NUM_VERTICES_HANDLE;
-    public static final VarHandle M_WEIGHT_HANDLE;
+	public static final VarHandle M_VERTICES_HANDLE;
+	public static final VarHandle M_NORMALS_HANDLE;
+	public static final VarHandle M_TANGENTS_HANDLE;
+	public static final VarHandle M_BITANGENTS_HANDLE;
+	public static final VarHandle M_COLORS_HANDLE;
+	public static final VarHandle M_TEXTURE_COORDS_HANDLE;
+	public static final VarHandle M_NUM_VERTICES_HANDLE;
+	public static final VarHandle M_WEIGHT_HANDLE;
 
-    public static final long M_NAME_BYTE_OFFSET;
-    public static final long M_VERTICES_BYTE_OFFSET;
-    public static final long M_NORMALS_BYTE_OFFSET;
-    public static final long M_TANGENTS_BYTE_OFFSET;
-    public static final long M_BITANGENTS_BYTE_OFFSET;
-    public static final long M_COLORS_BYTE_OFFSET;
-    public static final long M_TEXTURE_COORDS_BYTE_OFFSET;
-    public static final long M_NUM_VERTICES_BYTE_OFFSET;
-    public static final long M_WEIGHT_BYTE_OFFSET;
+	public static final long M_NAME_BYTE_OFFSET;
+	public static final long M_VERTICES_BYTE_OFFSET;
+	public static final long M_NORMALS_BYTE_OFFSET;
+	public static final long M_TANGENTS_BYTE_OFFSET;
+	public static final long M_BITANGENTS_BYTE_OFFSET;
+	public static final long M_COLORS_BYTE_OFFSET;
+	public static final long M_TEXTURE_COORDS_BYTE_OFFSET;
+	public static final long M_NUM_VERTICES_BYTE_OFFSET;
+	public static final long M_WEIGHT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final AiString mName;
+	private final AiString mName;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            AiString.LAYOUT.withName("mName"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("mVertices"),
-            UNBOUNDED_ADDRESS.withName("mNormals"),
-            UNBOUNDED_ADDRESS.withName("mTangents"),
-            UNBOUNDED_ADDRESS.withName("mBitangents"),
-            MemoryLayout.sequenceLayout(8, UNBOUNDED_ADDRESS).withName("mColors"),
-            MemoryLayout.sequenceLayout(8, UNBOUNDED_ADDRESS).withName("mTextureCoords"),
-            JAVA_INT.withName("mNumVertices"),
-            JAVA_FLOAT.withName("mWeight")
-        ).withName("aiAnimMesh").withByteAlignment(8);
-        
-        M_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mVertices"));
-        M_NORMALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNormals"));
-        M_TANGENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTangents"));
-        M_BITANGENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mBitangents"));
-        M_COLORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mColors"), PathElement.sequenceElement());
-        M_TEXTURE_COORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTextureCoords"), PathElement.sequenceElement());
-        M_NUM_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumVertices"));
-        M_WEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeight"));
-        
-        M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
-        M_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mVertices"));
-        M_NORMALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNormals"));
-        M_TANGENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTangents"));
-        M_BITANGENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mBitangents"));
-        M_COLORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mColors"));
-        M_TEXTURE_COORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTextureCoords"));
-        M_NUM_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumVertices"));
-        M_WEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeight"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    AiString.LAYOUT.withName("mName"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("mVertices"),
+		    UNBOUNDED_ADDRESS.withName("mNormals"),
+		    UNBOUNDED_ADDRESS.withName("mTangents"),
+		    UNBOUNDED_ADDRESS.withName("mBitangents"),
+		    MemoryLayout.sequenceLayout(8, UNBOUNDED_ADDRESS).withName("mColors"),
+		    MemoryLayout.sequenceLayout(8, UNBOUNDED_ADDRESS).withName("mTextureCoords"),
+		    JAVA_INT.withName("mNumVertices"),
+		    JAVA_FLOAT.withName("mWeight")
+		).withName("aiAnimMesh").withByteAlignment(8);
+		
+		M_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mVertices"));
+		M_NORMALS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNormals"));
+		M_TANGENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTangents"));
+		M_BITANGENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mBitangents"));
+		M_COLORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mColors"), PathElement.sequenceElement());
+		M_TEXTURE_COORDS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mTextureCoords"), PathElement.sequenceElement());
+		M_NUM_VERTICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mNumVertices"));
+		M_WEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("mWeight"));
+		
+		M_NAME_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mName"));
+		M_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mVertices"));
+		M_NORMALS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNormals"));
+		M_TANGENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTangents"));
+		M_BITANGENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mBitangents"));
+		M_COLORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mColors"));
+		M_TEXTURE_COORDS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mTextureCoords"));
+		M_NUM_VERTICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mNumVertices"));
+		M_WEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("mWeight"));
+		//@formatter:on
+	}
 
-    public AiAnimMesh() {
-        this(Arena.ofAuto());
+	public AiAnimMesh() {
+	    this(Arena.ofAuto());
+	}
+	
+	public AiAnimMesh(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public AiAnimMesh(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+	}
+
+    /// @see #mName()
+    public AiAnimMesh mName(Consumer<AiString> consumer) {
+    	consumer.accept(mName);
+    	return this;
     }
     
-    public AiAnimMesh(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #mName()
+    public AiAnimMesh mName(AiString other) {
+    	mName.set(other);
+    	return this;
     }
     
-    public AiAnimMesh(MemorySegment segment) {
-        this.segment = segment;
-    
-        mName = new AiString(segment.asSlice(M_NAME_BYTE_OFFSET, AiString.LAYOUT));
+    /// ```
+    /// Anim Mesh name
+    /// ```
+    public AiString mName() {
+    	return mName;
     }
-
+    
     /// @see #mVertices()
     public AiAnimMesh mVertices(NativeStructArray<AiVector3D> mVertices) {
     	M_VERTICES_HANDLE.set(segment, 0L, mVertices.memorySegment());
@@ -251,25 +270,6 @@ public final class AiAnimMesh
     	return (float) M_WEIGHT_HANDLE.get(segment, 0L);
     }
     
-    /// @see #mName()
-    public AiAnimMesh mName(Consumer<AiString> consumer) {
-    	consumer.accept(mName);
-    	return this;
-    }
-    
-    /// @see #mName()
-    public AiAnimMesh mName(AiString other) {
-    	mName.set(other);
-    	return this;
-    }
-    
-    /// ```
-    /// Anim Mesh name
-    /// ```
-    public AiString mName() {
-    	return mName;
-    }
-    
     @Override
     public AiAnimMesh set(AiAnimMesh other) {
         return set(other.segment);
@@ -321,5 +321,5 @@ public final class AiAnimMesh
             segment -> new AiAnimMesh(segment)
         );
     }
-    
+
 }

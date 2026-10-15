@@ -19,58 +19,58 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkPhysicalDeviceSparseProperties
 		implements Struct<VkPhysicalDeviceSparseProperties> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RESIDENCY_STANDARD2_DBLOCK_SHAPE_HANDLE;
-    public static final VarHandle RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_HANDLE;
-    public static final VarHandle RESIDENCY_STANDARD3_DBLOCK_SHAPE_HANDLE;
-    public static final VarHandle RESIDENCY_ALIGNED_MIP_SIZE_HANDLE;
-    public static final VarHandle RESIDENCY_NON_RESIDENT_STRICT_HANDLE;
+	public static final VarHandle RESIDENCY_STANDARD2_DBLOCK_SHAPE_HANDLE;
+	public static final VarHandle RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_HANDLE;
+	public static final VarHandle RESIDENCY_STANDARD3_DBLOCK_SHAPE_HANDLE;
+	public static final VarHandle RESIDENCY_ALIGNED_MIP_SIZE_HANDLE;
+	public static final VarHandle RESIDENCY_NON_RESIDENT_STRICT_HANDLE;
 
-    public static final long RESIDENCY_STANDARD2_DBLOCK_SHAPE_BYTE_OFFSET;
-    public static final long RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_BYTE_OFFSET;
-    public static final long RESIDENCY_STANDARD3_DBLOCK_SHAPE_BYTE_OFFSET;
-    public static final long RESIDENCY_ALIGNED_MIP_SIZE_BYTE_OFFSET;
-    public static final long RESIDENCY_NON_RESIDENT_STRICT_BYTE_OFFSET;
+	public static final long RESIDENCY_STANDARD2_DBLOCK_SHAPE_BYTE_OFFSET;
+	public static final long RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_BYTE_OFFSET;
+	public static final long RESIDENCY_STANDARD3_DBLOCK_SHAPE_BYTE_OFFSET;
+	public static final long RESIDENCY_ALIGNED_MIP_SIZE_BYTE_OFFSET;
+	public static final long RESIDENCY_NON_RESIDENT_STRICT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("residencyStandard2DBlockShape"),
-            JAVA_INT.withName("residencyStandard2DMultisampleBlockShape"),
-            JAVA_INT.withName("residencyStandard3DBlockShape"),
-            JAVA_INT.withName("residencyAlignedMipSize"),
-            JAVA_INT.withName("residencyNonResidentStrict")
-        ).withName("VkPhysicalDeviceSparseProperties").withByteAlignment(4);
-        
-        RESIDENCY_STANDARD2_DBLOCK_SHAPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyStandard2DBlockShape"));
-        RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyStandard2DMultisampleBlockShape"));
-        RESIDENCY_STANDARD3_DBLOCK_SHAPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyStandard3DBlockShape"));
-        RESIDENCY_ALIGNED_MIP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyAlignedMipSize"));
-        RESIDENCY_NON_RESIDENT_STRICT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyNonResidentStrict"));
-        
-        RESIDENCY_STANDARD2_DBLOCK_SHAPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyStandard2DBlockShape"));
-        RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyStandard2DMultisampleBlockShape"));
-        RESIDENCY_STANDARD3_DBLOCK_SHAPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyStandard3DBlockShape"));
-        RESIDENCY_ALIGNED_MIP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyAlignedMipSize"));
-        RESIDENCY_NON_RESIDENT_STRICT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyNonResidentStrict"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("residencyStandard2DBlockShape"),
+		    JAVA_INT.withName("residencyStandard2DMultisampleBlockShape"),
+		    JAVA_INT.withName("residencyStandard3DBlockShape"),
+		    JAVA_INT.withName("residencyAlignedMipSize"),
+		    JAVA_INT.withName("residencyNonResidentStrict")
+		).withName("VkPhysicalDeviceSparseProperties").withByteAlignment(4);
+		
+		RESIDENCY_STANDARD2_DBLOCK_SHAPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyStandard2DBlockShape"));
+		RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyStandard2DMultisampleBlockShape"));
+		RESIDENCY_STANDARD3_DBLOCK_SHAPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyStandard3DBlockShape"));
+		RESIDENCY_ALIGNED_MIP_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyAlignedMipSize"));
+		RESIDENCY_NON_RESIDENT_STRICT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("residencyNonResidentStrict"));
+		
+		RESIDENCY_STANDARD2_DBLOCK_SHAPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyStandard2DBlockShape"));
+		RESIDENCY_STANDARD2_DMULTISAMPLE_BLOCK_SHAPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyStandard2DMultisampleBlockShape"));
+		RESIDENCY_STANDARD3_DBLOCK_SHAPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyStandard3DBlockShape"));
+		RESIDENCY_ALIGNED_MIP_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyAlignedMipSize"));
+		RESIDENCY_NON_RESIDENT_STRICT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("residencyNonResidentStrict"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceSparseProperties() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceSparseProperties(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceSparseProperties(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceSparseProperties() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceSparseProperties(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceSparseProperties(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #residencyStandard2DBlockShape()
     public VkPhysicalDeviceSparseProperties residencyStandard2DBlockShape(int residencyStandard2DBlockShape) {
@@ -173,5 +173,5 @@ public final class VkPhysicalDeviceSparseProperties
             segment -> new VkPhysicalDeviceSparseProperties(segment)
         );
     }
-    
+
 }

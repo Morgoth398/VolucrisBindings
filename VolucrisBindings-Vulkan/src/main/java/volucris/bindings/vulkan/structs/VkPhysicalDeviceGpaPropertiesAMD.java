@@ -21,70 +21,70 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceGpaPropertiesAMD
 		implements Struct<VkPhysicalDeviceGpaPropertiesAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle MAX_SQTT_SE_BUFFER_SIZE_HANDLE;
-    public static final VarHandle SHADER_ENGINE_COUNT_HANDLE;
-    public static final VarHandle PERF_BLOCK_COUNT_HANDLE;
-    public static final VarHandle P_PERF_BLOCKS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle MAX_SQTT_SE_BUFFER_SIZE_HANDLE;
+	public static final VarHandle SHADER_ENGINE_COUNT_HANDLE;
+	public static final VarHandle PERF_BLOCK_COUNT_HANDLE;
+	public static final VarHandle P_PERF_BLOCKS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long MAX_SQTT_SE_BUFFER_SIZE_BYTE_OFFSET;
-    public static final long SHADER_ENGINE_COUNT_BYTE_OFFSET;
-    public static final long PERF_BLOCK_COUNT_BYTE_OFFSET;
-    public static final long P_PERF_BLOCKS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long MAX_SQTT_SE_BUFFER_SIZE_BYTE_OFFSET;
+	public static final long SHADER_ENGINE_COUNT_BYTE_OFFSET;
+	public static final long PERF_BLOCK_COUNT_BYTE_OFFSET;
+	public static final long P_PERF_BLOCKS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("maxSqttSeBufferSize"),
-            JAVA_INT.withName("shaderEngineCount"),
-            JAVA_INT.withName("perfBlockCount"),
-            UNBOUNDED_ADDRESS.withName("pPerfBlocks")
-        ).withName("VkPhysicalDeviceGpaPropertiesAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        MAX_SQTT_SE_BUFFER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSqttSeBufferSize"));
-        SHADER_ENGINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderEngineCount"));
-        PERF_BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfBlockCount"));
-        P_PERF_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPerfBlocks"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        MAX_SQTT_SE_BUFFER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSqttSeBufferSize"));
-        SHADER_ENGINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderEngineCount"));
-        PERF_BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfBlockCount"));
-        P_PERF_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPerfBlocks"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("maxSqttSeBufferSize"),
+		    JAVA_INT.withName("shaderEngineCount"),
+		    JAVA_INT.withName("perfBlockCount"),
+		    UNBOUNDED_ADDRESS.withName("pPerfBlocks")
+		).withName("VkPhysicalDeviceGpaPropertiesAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		MAX_SQTT_SE_BUFFER_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSqttSeBufferSize"));
+		SHADER_ENGINE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderEngineCount"));
+		PERF_BLOCK_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfBlockCount"));
+		P_PERF_BLOCKS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pPerfBlocks"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		MAX_SQTT_SE_BUFFER_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSqttSeBufferSize"));
+		SHADER_ENGINE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderEngineCount"));
+		PERF_BLOCK_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfBlockCount"));
+		P_PERF_BLOCKS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pPerfBlocks"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceGpaPropertiesAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceGpaPropertiesAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceGpaPropertiesAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceGpaPropertiesAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceGpaPropertiesAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceGpaPropertiesAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceGpaPropertiesAMD sType(int sType) {
@@ -217,5 +217,5 @@ public final class VkPhysicalDeviceGpaPropertiesAMD
             segment -> new VkPhysicalDeviceGpaPropertiesAMD(segment)
         );
     }
-    
+
 }

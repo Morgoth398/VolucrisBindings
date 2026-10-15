@@ -22,75 +22,75 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkVideoDecodeAV1PictureInfoKHR
 		implements Struct<VkVideoDecodeAV1PictureInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
-    public static final VarHandle REFERENCE_NAME_SLOT_INDICES_HANDLE;
-    public static final VarHandle FRAME_HEADER_OFFSET_HANDLE;
-    public static final VarHandle TILE_COUNT_HANDLE;
-    public static final VarHandle P_TILE_OFFSETS_HANDLE;
-    public static final VarHandle P_TILE_SIZES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle P_STD_PICTURE_INFO_HANDLE;
+	public static final VarHandle REFERENCE_NAME_SLOT_INDICES_HANDLE;
+	public static final VarHandle FRAME_HEADER_OFFSET_HANDLE;
+	public static final VarHandle TILE_COUNT_HANDLE;
+	public static final VarHandle P_TILE_OFFSETS_HANDLE;
+	public static final VarHandle P_TILE_SIZES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
-    public static final long REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET;
-    public static final long FRAME_HEADER_OFFSET_BYTE_OFFSET;
-    public static final long TILE_COUNT_BYTE_OFFSET;
-    public static final long P_TILE_OFFSETS_BYTE_OFFSET;
-    public static final long P_TILE_SIZES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long P_STD_PICTURE_INFO_BYTE_OFFSET;
+	public static final long REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET;
+	public static final long FRAME_HEADER_OFFSET_BYTE_OFFSET;
+	public static final long TILE_COUNT_BYTE_OFFSET;
+	public static final long P_TILE_OFFSETS_BYTE_OFFSET;
+	public static final long P_TILE_SIZES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
-            MemoryLayout.sequenceLayout(7, JAVA_INT).withName("referenceNameSlotIndices"),
-            JAVA_INT.withName("frameHeaderOffset"),
-            JAVA_INT.withName("tileCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pTileOffsets"),
-            UNBOUNDED_ADDRESS.withName("pTileSizes")
-        ).withName("VkVideoDecodeAV1PictureInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
-        REFERENCE_NAME_SLOT_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceNameSlotIndices"), PathElement.sequenceElement());
-        FRAME_HEADER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameHeaderOffset"));
-        TILE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tileCount"));
-        P_TILE_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTileOffsets"));
-        P_TILE_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTileSizes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
-        REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceNameSlotIndices"));
-        FRAME_HEADER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameHeaderOffset"));
-        TILE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileCount"));
-        P_TILE_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTileOffsets"));
-        P_TILE_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTileSizes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    UNBOUNDED_ADDRESS.withName("pStdPictureInfo"),
+		    MemoryLayout.sequenceLayout(7, JAVA_INT).withName("referenceNameSlotIndices"),
+		    JAVA_INT.withName("frameHeaderOffset"),
+		    JAVA_INT.withName("tileCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pTileOffsets"),
+		    UNBOUNDED_ADDRESS.withName("pTileSizes")
+		).withName("VkVideoDecodeAV1PictureInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		P_STD_PICTURE_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pStdPictureInfo"));
+		REFERENCE_NAME_SLOT_INDICES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("referenceNameSlotIndices"), PathElement.sequenceElement());
+		FRAME_HEADER_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frameHeaderOffset"));
+		TILE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tileCount"));
+		P_TILE_OFFSETS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTileOffsets"));
+		P_TILE_SIZES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pTileSizes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		P_STD_PICTURE_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pStdPictureInfo"));
+		REFERENCE_NAME_SLOT_INDICES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("referenceNameSlotIndices"));
+		FRAME_HEADER_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frameHeaderOffset"));
+		TILE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tileCount"));
+		P_TILE_OFFSETS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTileOffsets"));
+		P_TILE_SIZES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pTileSizes"));
+		//@formatter:on
+	}
 
-    public VkVideoDecodeAV1PictureInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoDecodeAV1PictureInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoDecodeAV1PictureInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoDecodeAV1PictureInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoDecodeAV1PictureInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoDecodeAV1PictureInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkVideoDecodeAV1PictureInfoKHR sType(int sType) {
@@ -243,5 +243,5 @@ public final class VkVideoDecodeAV1PictureInfoKHR
             segment -> new VkVideoDecodeAV1PictureInfoKHR(segment)
         );
     }
-    
+
 }

@@ -21,144 +21,144 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceDescriptorIndexingFeatures
 		implements Struct<VkPhysicalDeviceDescriptorIndexingFeatures> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE;
-    public static final VarHandle RUNTIME_DESCRIPTOR_ARRAY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE;
+	public static final VarHandle RUNTIME_DESCRIPTOR_ARRAY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET;
-    public static final long RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET;
+	public static final long RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderInputAttachmentArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderUniformTexelBufferArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderStorageTexelBufferArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderUniformTexelBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("shaderStorageTexelBufferArrayNonUniformIndexing"),
-            JAVA_INT.withName("descriptorBindingUniformBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingSampledImageUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingStorageImageUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingStorageBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingUniformTexelBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingStorageTexelBufferUpdateAfterBind"),
-            JAVA_INT.withName("descriptorBindingUpdateUnusedWhilePending"),
-            JAVA_INT.withName("descriptorBindingPartiallyBound"),
-            JAVA_INT.withName("descriptorBindingVariableDescriptorCount"),
-            JAVA_INT.withName("runtimeDescriptorArray")
-        ).withName("VkPhysicalDeviceDescriptorIndexingFeatures").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
-        DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
-        DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingPartiallyBound"));
-        DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
-        RUNTIME_DESCRIPTOR_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("runtimeDescriptorArray"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
-        SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
-        SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
-        SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
-        SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
-        SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
-        SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
-        DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
-        DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
-        DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingPartiallyBound"));
-        DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
-        RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("runtimeDescriptorArray"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderInputAttachmentArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderUniformTexelBufferArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderStorageTexelBufferArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderUniformBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderSampledImageArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderStorageBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderStorageImageArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderInputAttachmentArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderUniformTexelBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("shaderStorageTexelBufferArrayNonUniformIndexing"),
+		    JAVA_INT.withName("descriptorBindingUniformBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingSampledImageUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingStorageImageUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingStorageBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingUniformTexelBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingStorageTexelBufferUpdateAfterBind"),
+		    JAVA_INT.withName("descriptorBindingUpdateUnusedWhilePending"),
+		    JAVA_INT.withName("descriptorBindingPartiallyBound"),
+		    JAVA_INT.withName("descriptorBindingVariableDescriptorCount"),
+		    JAVA_INT.withName("runtimeDescriptorArray")
+		).withName("VkPhysicalDeviceDescriptorIndexingFeatures").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
+		DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
+		DESCRIPTOR_BINDING_PARTIALLY_BOUND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingPartiallyBound"));
+		DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
+		RUNTIME_DESCRIPTOR_ARRAY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("runtimeDescriptorArray"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayDynamicIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayDynamicIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayDynamicIndexing"));
+		SHADER_UNIFORM_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformBufferArrayNonUniformIndexing"));
+		SHADER_SAMPLED_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderSampledImageArrayNonUniformIndexing"));
+		SHADER_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_IMAGE_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageImageArrayNonUniformIndexing"));
+		SHADER_INPUT_ATTACHMENT_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderInputAttachmentArrayNonUniformIndexing"));
+		SHADER_UNIFORM_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderUniformTexelBufferArrayNonUniformIndexing"));
+		SHADER_STORAGE_TEXEL_BUFFER_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTexelBufferArrayNonUniformIndexing"));
+		DESCRIPTOR_BINDING_UNIFORM_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_SAMPLED_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingSampledImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_IMAGE_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageImageUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UNIFORM_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUniformTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_STORAGE_TEXEL_BUFFER_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageTexelBufferUpdateAfterBind"));
+		DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingUpdateUnusedWhilePending"));
+		DESCRIPTOR_BINDING_PARTIALLY_BOUND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingPartiallyBound"));
+		DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingVariableDescriptorCount"));
+		RUNTIME_DESCRIPTOR_ARRAY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("runtimeDescriptorArray"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceDescriptorIndexingFeatures() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceDescriptorIndexingFeatures(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceDescriptorIndexingFeatures(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceDescriptorIndexingFeatures() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceDescriptorIndexingFeatures(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceDescriptorIndexingFeatures(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceDescriptorIndexingFeatures sType(int sType) {
@@ -436,5 +436,5 @@ public final class VkPhysicalDeviceDescriptorIndexingFeatures
             segment -> new VkPhysicalDeviceDescriptorIndexingFeatures(segment)
         );
     }
-    
+
 }

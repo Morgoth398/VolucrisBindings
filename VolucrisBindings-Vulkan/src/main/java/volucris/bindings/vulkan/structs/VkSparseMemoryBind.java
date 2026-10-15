@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSparseMemoryBind
 		implements Struct<VkSparseMemoryBind> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle RESOURCE_OFFSET_HANDLE;
-    public static final VarHandle SIZE_HANDLE;
-    public static final VarHandle MEMORY_HANDLE;
-    public static final VarHandle MEMORY_OFFSET_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle RESOURCE_OFFSET_HANDLE;
+	public static final VarHandle SIZE_HANDLE;
+	public static final VarHandle MEMORY_HANDLE;
+	public static final VarHandle MEMORY_OFFSET_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
 
-    public static final long RESOURCE_OFFSET_BYTE_OFFSET;
-    public static final long SIZE_BYTE_OFFSET;
-    public static final long MEMORY_BYTE_OFFSET;
-    public static final long MEMORY_OFFSET_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
+	public static final long RESOURCE_OFFSET_BYTE_OFFSET;
+	public static final long SIZE_BYTE_OFFSET;
+	public static final long MEMORY_BYTE_OFFSET;
+	public static final long MEMORY_OFFSET_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_LONG.withName("resourceOffset"),
-            JAVA_LONG.withName("size"),
-            UNBOUNDED_ADDRESS.withName("memory"),
-            JAVA_LONG.withName("memoryOffset"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSparseMemoryBind").withByteAlignment(8);
-        
-        RESOURCE_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resourceOffset"));
-        SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
-        MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        
-        RESOURCE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceOffset"));
-        SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
-        MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_LONG.withName("resourceOffset"),
+		    JAVA_LONG.withName("size"),
+		    UNBOUNDED_ADDRESS.withName("memory"),
+		    JAVA_LONG.withName("memoryOffset"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSparseMemoryBind").withByteAlignment(8);
+		
+		RESOURCE_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("resourceOffset"));
+		SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("size"));
+		MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		
+		RESOURCE_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("resourceOffset"));
+		SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("size"));
+		MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		//@formatter:on
+	}
 
-    public VkSparseMemoryBind() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSparseMemoryBind(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSparseMemoryBind(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkSparseMemoryBind() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSparseMemoryBind(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSparseMemoryBind(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #resourceOffset()
     public VkSparseMemoryBind resourceOffset(long resourceOffset) {
@@ -181,5 +181,5 @@ public final class VkSparseMemoryBind
             segment -> new VkSparseMemoryBind(segment)
         );
     }
-    
+
 }

@@ -20,84 +20,84 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkSurfaceCapabilitiesKHR
 		implements Struct<VkSurfaceCapabilitiesKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle MIN_IMAGE_COUNT_HANDLE;
-    public static final VarHandle MAX_IMAGE_COUNT_HANDLE;
-    public static final VarHandle MAX_IMAGE_ARRAY_LAYERS_HANDLE;
-    public static final VarHandle SUPPORTED_TRANSFORMS_HANDLE;
-    public static final VarHandle CURRENT_TRANSFORM_HANDLE;
-    public static final VarHandle SUPPORTED_COMPOSITE_ALPHA_HANDLE;
-    public static final VarHandle SUPPORTED_USAGE_FLAGS_HANDLE;
+	public static final VarHandle MIN_IMAGE_COUNT_HANDLE;
+	public static final VarHandle MAX_IMAGE_COUNT_HANDLE;
+	public static final VarHandle MAX_IMAGE_ARRAY_LAYERS_HANDLE;
+	public static final VarHandle SUPPORTED_TRANSFORMS_HANDLE;
+	public static final VarHandle CURRENT_TRANSFORM_HANDLE;
+	public static final VarHandle SUPPORTED_COMPOSITE_ALPHA_HANDLE;
+	public static final VarHandle SUPPORTED_USAGE_FLAGS_HANDLE;
 
-    public static final long MIN_IMAGE_COUNT_BYTE_OFFSET;
-    public static final long MAX_IMAGE_COUNT_BYTE_OFFSET;
-    public static final long CURRENT_EXTENT_BYTE_OFFSET;
-    public static final long MIN_IMAGE_EXTENT_BYTE_OFFSET;
-    public static final long MAX_IMAGE_EXTENT_BYTE_OFFSET;
-    public static final long MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET;
-    public static final long SUPPORTED_TRANSFORMS_BYTE_OFFSET;
-    public static final long CURRENT_TRANSFORM_BYTE_OFFSET;
-    public static final long SUPPORTED_COMPOSITE_ALPHA_BYTE_OFFSET;
-    public static final long SUPPORTED_USAGE_FLAGS_BYTE_OFFSET;
+	public static final long MIN_IMAGE_COUNT_BYTE_OFFSET;
+	public static final long MAX_IMAGE_COUNT_BYTE_OFFSET;
+	public static final long CURRENT_EXTENT_BYTE_OFFSET;
+	public static final long MIN_IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long MAX_IMAGE_EXTENT_BYTE_OFFSET;
+	public static final long MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET;
+	public static final long SUPPORTED_TRANSFORMS_BYTE_OFFSET;
+	public static final long CURRENT_TRANSFORM_BYTE_OFFSET;
+	public static final long SUPPORTED_COMPOSITE_ALPHA_BYTE_OFFSET;
+	public static final long SUPPORTED_USAGE_FLAGS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkExtent2D currentExtent;
-    private final VkExtent2D minImageExtent;
-    private final VkExtent2D maxImageExtent;
+	private final VkExtent2D currentExtent;
+	private final VkExtent2D minImageExtent;
+	private final VkExtent2D maxImageExtent;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("minImageCount"),
-            JAVA_INT.withName("maxImageCount"),
-            VkExtent2D.LAYOUT.withName("currentExtent"),
-            VkExtent2D.LAYOUT.withName("minImageExtent"),
-            VkExtent2D.LAYOUT.withName("maxImageExtent"),
-            JAVA_INT.withName("maxImageArrayLayers"),
-            JAVA_INT.withName("supportedTransforms"),
-            JAVA_INT.withName("currentTransform"),
-            JAVA_INT.withName("supportedCompositeAlpha"),
-            JAVA_INT.withName("supportedUsageFlags")
-        ).withName("VkSurfaceCapabilitiesKHR").withByteAlignment(4);
-        
-        MIN_IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minImageCount"));
-        MAX_IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageCount"));
-        MAX_IMAGE_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageArrayLayers"));
-        SUPPORTED_TRANSFORMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedTransforms"));
-        CURRENT_TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("currentTransform"));
-        SUPPORTED_COMPOSITE_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedCompositeAlpha"));
-        SUPPORTED_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedUsageFlags"));
-        
-        MIN_IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageCount"));
-        MAX_IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageCount"));
-        CURRENT_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentExtent"));
-        MIN_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageExtent"));
-        MAX_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageExtent"));
-        MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageArrayLayers"));
-        SUPPORTED_TRANSFORMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedTransforms"));
-        CURRENT_TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentTransform"));
-        SUPPORTED_COMPOSITE_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedCompositeAlpha"));
-        SUPPORTED_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedUsageFlags"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("minImageCount"),
+		    JAVA_INT.withName("maxImageCount"),
+		    VkExtent2D.LAYOUT.withName("currentExtent"),
+		    VkExtent2D.LAYOUT.withName("minImageExtent"),
+		    VkExtent2D.LAYOUT.withName("maxImageExtent"),
+		    JAVA_INT.withName("maxImageArrayLayers"),
+		    JAVA_INT.withName("supportedTransforms"),
+		    JAVA_INT.withName("currentTransform"),
+		    JAVA_INT.withName("supportedCompositeAlpha"),
+		    JAVA_INT.withName("supportedUsageFlags")
+		).withName("VkSurfaceCapabilitiesKHR").withByteAlignment(4);
+		
+		MIN_IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minImageCount"));
+		MAX_IMAGE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageCount"));
+		MAX_IMAGE_ARRAY_LAYERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxImageArrayLayers"));
+		SUPPORTED_TRANSFORMS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedTransforms"));
+		CURRENT_TRANSFORM_HANDLE = LAYOUT.varHandle(PathElement.groupElement("currentTransform"));
+		SUPPORTED_COMPOSITE_ALPHA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedCompositeAlpha"));
+		SUPPORTED_USAGE_FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("supportedUsageFlags"));
+		
+		MIN_IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageCount"));
+		MAX_IMAGE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageCount"));
+		CURRENT_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentExtent"));
+		MIN_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minImageExtent"));
+		MAX_IMAGE_EXTENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageExtent"));
+		MAX_IMAGE_ARRAY_LAYERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxImageArrayLayers"));
+		SUPPORTED_TRANSFORMS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedTransforms"));
+		CURRENT_TRANSFORM_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("currentTransform"));
+		SUPPORTED_COMPOSITE_ALPHA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedCompositeAlpha"));
+		SUPPORTED_USAGE_FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("supportedUsageFlags"));
+		//@formatter:on
+	}
 
-    public VkSurfaceCapabilitiesKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSurfaceCapabilitiesKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSurfaceCapabilitiesKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-        currentExtent = new VkExtent2D(segment.asSlice(CURRENT_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        minImageExtent = new VkExtent2D(segment.asSlice(MIN_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-        maxImageExtent = new VkExtent2D(segment.asSlice(MAX_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
-    }
+	public VkSurfaceCapabilitiesKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSurfaceCapabilitiesKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSurfaceCapabilitiesKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    currentExtent = new VkExtent2D(segment.asSlice(CURRENT_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    minImageExtent = new VkExtent2D(segment.asSlice(MIN_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	    maxImageExtent = new VkExtent2D(segment.asSlice(MAX_IMAGE_EXTENT_BYTE_OFFSET, VkExtent2D.LAYOUT));
+	}
 
     /// @see #minImageCount()
     public VkSurfaceCapabilitiesKHR minImageCount(int minImageCount) {
@@ -117,6 +117,54 @@ public final class VkSurfaceCapabilitiesKHR
     
     public int maxImageCount() {
     	return (int) MAX_IMAGE_COUNT_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #currentExtent()
+    public VkSurfaceCapabilitiesKHR currentExtent(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(currentExtent);
+    	return this;
+    }
+    
+    /// @see #currentExtent()
+    public VkSurfaceCapabilitiesKHR currentExtent(VkExtent2D other) {
+    	currentExtent.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D currentExtent() {
+    	return currentExtent;
+    }
+    
+    /// @see #minImageExtent()
+    public VkSurfaceCapabilitiesKHR minImageExtent(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(minImageExtent);
+    	return this;
+    }
+    
+    /// @see #minImageExtent()
+    public VkSurfaceCapabilitiesKHR minImageExtent(VkExtent2D other) {
+    	minImageExtent.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D minImageExtent() {
+    	return minImageExtent;
+    }
+    
+    /// @see #maxImageExtent()
+    public VkSurfaceCapabilitiesKHR maxImageExtent(Consumer<VkExtent2D> consumer) {
+    	consumer.accept(maxImageExtent);
+    	return this;
+    }
+    
+    /// @see #maxImageExtent()
+    public VkSurfaceCapabilitiesKHR maxImageExtent(VkExtent2D other) {
+    	maxImageExtent.set(other);
+    	return this;
+    }
+    
+    public VkExtent2D maxImageExtent() {
+    	return maxImageExtent;
     }
     
     /// @see #maxImageArrayLayers()
@@ -167,54 +215,6 @@ public final class VkSurfaceCapabilitiesKHR
     
     public int supportedUsageFlags() {
     	return (int) SUPPORTED_USAGE_FLAGS_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #currentExtent()
-    public VkSurfaceCapabilitiesKHR currentExtent(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(currentExtent);
-    	return this;
-    }
-    
-    /// @see #currentExtent()
-    public VkSurfaceCapabilitiesKHR currentExtent(VkExtent2D other) {
-    	currentExtent.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D currentExtent() {
-    	return currentExtent;
-    }
-    
-    /// @see #minImageExtent()
-    public VkSurfaceCapabilitiesKHR minImageExtent(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(minImageExtent);
-    	return this;
-    }
-    
-    /// @see #minImageExtent()
-    public VkSurfaceCapabilitiesKHR minImageExtent(VkExtent2D other) {
-    	minImageExtent.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D minImageExtent() {
-    	return minImageExtent;
-    }
-    
-    /// @see #maxImageExtent()
-    public VkSurfaceCapabilitiesKHR maxImageExtent(Consumer<VkExtent2D> consumer) {
-    	consumer.accept(maxImageExtent);
-    	return this;
-    }
-    
-    /// @see #maxImageExtent()
-    public VkSurfaceCapabilitiesKHR maxImageExtent(VkExtent2D other) {
-    	maxImageExtent.set(other);
-    	return this;
-    }
-    
-    public VkExtent2D maxImageExtent() {
-    	return maxImageExtent;
     }
     
     @Override
@@ -268,5 +268,5 @@ public final class VkSurfaceCapabilitiesKHR
             segment -> new VkSurfaceCapabilitiesKHR(segment)
         );
     }
-    
+
 }

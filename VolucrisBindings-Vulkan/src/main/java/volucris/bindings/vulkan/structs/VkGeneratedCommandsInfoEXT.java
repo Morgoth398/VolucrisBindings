@@ -21,97 +21,97 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGeneratedCommandsInfoEXT
 		implements Struct<VkGeneratedCommandsInfoEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle SHADER_STAGES_HANDLE;
-    public static final VarHandle INDIRECT_EXECUTION_SET_HANDLE;
-    public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
-    public static final VarHandle INDIRECT_ADDRESS_HANDLE;
-    public static final VarHandle INDIRECT_ADDRESS_SIZE_HANDLE;
-    public static final VarHandle PREPROCESS_ADDRESS_HANDLE;
-    public static final VarHandle PREPROCESS_SIZE_HANDLE;
-    public static final VarHandle MAX_SEQUENCE_COUNT_HANDLE;
-    public static final VarHandle SEQUENCE_COUNT_ADDRESS_HANDLE;
-    public static final VarHandle MAX_DRAW_COUNT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle SHADER_STAGES_HANDLE;
+	public static final VarHandle INDIRECT_EXECUTION_SET_HANDLE;
+	public static final VarHandle INDIRECT_COMMANDS_LAYOUT_HANDLE;
+	public static final VarHandle INDIRECT_ADDRESS_HANDLE;
+	public static final VarHandle INDIRECT_ADDRESS_SIZE_HANDLE;
+	public static final VarHandle PREPROCESS_ADDRESS_HANDLE;
+	public static final VarHandle PREPROCESS_SIZE_HANDLE;
+	public static final VarHandle MAX_SEQUENCE_COUNT_HANDLE;
+	public static final VarHandle SEQUENCE_COUNT_ADDRESS_HANDLE;
+	public static final VarHandle MAX_DRAW_COUNT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long SHADER_STAGES_BYTE_OFFSET;
-    public static final long INDIRECT_EXECUTION_SET_BYTE_OFFSET;
-    public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
-    public static final long INDIRECT_ADDRESS_BYTE_OFFSET;
-    public static final long INDIRECT_ADDRESS_SIZE_BYTE_OFFSET;
-    public static final long PREPROCESS_ADDRESS_BYTE_OFFSET;
-    public static final long PREPROCESS_SIZE_BYTE_OFFSET;
-    public static final long MAX_SEQUENCE_COUNT_BYTE_OFFSET;
-    public static final long SEQUENCE_COUNT_ADDRESS_BYTE_OFFSET;
-    public static final long MAX_DRAW_COUNT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long SHADER_STAGES_BYTE_OFFSET;
+	public static final long INDIRECT_EXECUTION_SET_BYTE_OFFSET;
+	public static final long INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET;
+	public static final long INDIRECT_ADDRESS_BYTE_OFFSET;
+	public static final long INDIRECT_ADDRESS_SIZE_BYTE_OFFSET;
+	public static final long PREPROCESS_ADDRESS_BYTE_OFFSET;
+	public static final long PREPROCESS_SIZE_BYTE_OFFSET;
+	public static final long MAX_SEQUENCE_COUNT_BYTE_OFFSET;
+	public static final long SEQUENCE_COUNT_ADDRESS_BYTE_OFFSET;
+	public static final long MAX_DRAW_COUNT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("shaderStages"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("indirectExecutionSet"),
-            UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
-            JAVA_LONG.withName("indirectAddress"),
-            JAVA_LONG.withName("indirectAddressSize"),
-            JAVA_LONG.withName("preprocessAddress"),
-            JAVA_LONG.withName("preprocessSize"),
-            JAVA_INT.withName("maxSequenceCount"),
-            MemoryLayout.paddingLayout(4),
-            JAVA_LONG.withName("sequenceCountAddress"),
-            JAVA_INT.withName("maxDrawCount"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkGeneratedCommandsInfoEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStages"));
-        INDIRECT_EXECUTION_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectExecutionSet"));
-        INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
-        INDIRECT_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectAddress"));
-        INDIRECT_ADDRESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectAddressSize"));
-        PREPROCESS_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessAddress"));
-        PREPROCESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessSize"));
-        MAX_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSequenceCount"));
-        SEQUENCE_COUNT_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequenceCountAddress"));
-        MAX_DRAW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawCount"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStages"));
-        INDIRECT_EXECUTION_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectExecutionSet"));
-        INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
-        INDIRECT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectAddress"));
-        INDIRECT_ADDRESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectAddressSize"));
-        PREPROCESS_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessAddress"));
-        PREPROCESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessSize"));
-        MAX_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSequenceCount"));
-        SEQUENCE_COUNT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequenceCountAddress"));
-        MAX_DRAW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawCount"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("shaderStages"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("indirectExecutionSet"),
+		    UNBOUNDED_ADDRESS.withName("indirectCommandsLayout"),
+		    JAVA_LONG.withName("indirectAddress"),
+		    JAVA_LONG.withName("indirectAddressSize"),
+		    JAVA_LONG.withName("preprocessAddress"),
+		    JAVA_LONG.withName("preprocessSize"),
+		    JAVA_INT.withName("maxSequenceCount"),
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("sequenceCountAddress"),
+		    JAVA_INT.withName("maxDrawCount"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkGeneratedCommandsInfoEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		SHADER_STAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStages"));
+		INDIRECT_EXECUTION_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectExecutionSet"));
+		INDIRECT_COMMANDS_LAYOUT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectCommandsLayout"));
+		INDIRECT_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectAddress"));
+		INDIRECT_ADDRESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("indirectAddressSize"));
+		PREPROCESS_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessAddress"));
+		PREPROCESS_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("preprocessSize"));
+		MAX_SEQUENCE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxSequenceCount"));
+		SEQUENCE_COUNT_ADDRESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sequenceCountAddress"));
+		MAX_DRAW_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("maxDrawCount"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		SHADER_STAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStages"));
+		INDIRECT_EXECUTION_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectExecutionSet"));
+		INDIRECT_COMMANDS_LAYOUT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectCommandsLayout"));
+		INDIRECT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectAddress"));
+		INDIRECT_ADDRESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("indirectAddressSize"));
+		PREPROCESS_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessAddress"));
+		PREPROCESS_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("preprocessSize"));
+		MAX_SEQUENCE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxSequenceCount"));
+		SEQUENCE_COUNT_ADDRESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sequenceCountAddress"));
+		MAX_DRAW_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("maxDrawCount"));
+		//@formatter:on
+	}
 
-    public VkGeneratedCommandsInfoEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGeneratedCommandsInfoEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGeneratedCommandsInfoEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGeneratedCommandsInfoEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGeneratedCommandsInfoEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGeneratedCommandsInfoEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGeneratedCommandsInfoEXT sType(int sType) {
@@ -299,5 +299,5 @@ public final class VkGeneratedCommandsInfoEXT
             segment -> new VkGeneratedCommandsInfoEXT(segment)
         );
     }
-    
+
 }

@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDataGraphPipelineResourceInfoARM
 		implements Struct<VkDataGraphPipelineResourceInfoARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DESCRIPTOR_SET_HANDLE;
-    public static final VarHandle BINDING_HANDLE;
-    public static final VarHandle ARRAY_ELEMENT_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DESCRIPTOR_SET_HANDLE;
+	public static final VarHandle BINDING_HANDLE;
+	public static final VarHandle ARRAY_ELEMENT_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DESCRIPTOR_SET_BYTE_OFFSET;
-    public static final long BINDING_BYTE_OFFSET;
-    public static final long ARRAY_ELEMENT_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DESCRIPTOR_SET_BYTE_OFFSET;
+	public static final long BINDING_BYTE_OFFSET;
+	public static final long ARRAY_ELEMENT_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("descriptorSet"),
-            JAVA_INT.withName("binding"),
-            JAVA_INT.withName("arrayElement"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkDataGraphPipelineResourceInfoARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSet"));
-        BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
-        ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayElement"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DESCRIPTOR_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSet"));
-        BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
-        ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayElement"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("descriptorSet"),
+		    JAVA_INT.withName("binding"),
+		    JAVA_INT.withName("arrayElement"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkDataGraphPipelineResourceInfoARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorSet"));
+		BINDING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("binding"));
+		ARRAY_ELEMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("arrayElement"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DESCRIPTOR_SET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorSet"));
+		BINDING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("binding"));
+		ARRAY_ELEMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("arrayElement"));
+		//@formatter:on
+	}
 
-    public VkDataGraphPipelineResourceInfoARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDataGraphPipelineResourceInfoARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDataGraphPipelineResourceInfoARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDataGraphPipelineResourceInfoARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDataGraphPipelineResourceInfoARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDataGraphPipelineResourceInfoARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDataGraphPipelineResourceInfoARM sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkDataGraphPipelineResourceInfoARM
             segment -> new VkDataGraphPipelineResourceInfoARM(segment)
         );
     }
-    
+
 }

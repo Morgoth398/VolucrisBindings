@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkGpaDeviceGetClockInfoAMD
 		implements Struct<VkGpaDeviceGetClockInfoAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MEMORY_CLOCK_RATIO_TO_PEAK_HANDLE;
-    public static final VarHandle ENGINE_CLOCK_RATIO_TO_PEAK_HANDLE;
-    public static final VarHandle MEMORY_CLOCK_FREQUENCY_HANDLE;
-    public static final VarHandle ENGINE_CLOCK_FREQUENCY_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MEMORY_CLOCK_RATIO_TO_PEAK_HANDLE;
+	public static final VarHandle ENGINE_CLOCK_RATIO_TO_PEAK_HANDLE;
+	public static final VarHandle MEMORY_CLOCK_FREQUENCY_HANDLE;
+	public static final VarHandle ENGINE_CLOCK_FREQUENCY_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MEMORY_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET;
-    public static final long ENGINE_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET;
-    public static final long MEMORY_CLOCK_FREQUENCY_BYTE_OFFSET;
-    public static final long ENGINE_CLOCK_FREQUENCY_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MEMORY_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET;
+	public static final long ENGINE_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET;
+	public static final long MEMORY_CLOCK_FREQUENCY_BYTE_OFFSET;
+	public static final long ENGINE_CLOCK_FREQUENCY_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_FLOAT.withName("memoryClockRatioToPeak"),
-            JAVA_FLOAT.withName("engineClockRatioToPeak"),
-            JAVA_INT.withName("memoryClockFrequency"),
-            JAVA_INT.withName("engineClockFrequency")
-        ).withName("VkGpaDeviceGetClockInfoAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MEMORY_CLOCK_RATIO_TO_PEAK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryClockRatioToPeak"));
-        ENGINE_CLOCK_RATIO_TO_PEAK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineClockRatioToPeak"));
-        MEMORY_CLOCK_FREQUENCY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryClockFrequency"));
-        ENGINE_CLOCK_FREQUENCY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineClockFrequency"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MEMORY_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryClockRatioToPeak"));
-        ENGINE_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineClockRatioToPeak"));
-        MEMORY_CLOCK_FREQUENCY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryClockFrequency"));
-        ENGINE_CLOCK_FREQUENCY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineClockFrequency"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_FLOAT.withName("memoryClockRatioToPeak"),
+		    JAVA_FLOAT.withName("engineClockRatioToPeak"),
+		    JAVA_INT.withName("memoryClockFrequency"),
+		    JAVA_INT.withName("engineClockFrequency")
+		).withName("VkGpaDeviceGetClockInfoAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MEMORY_CLOCK_RATIO_TO_PEAK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryClockRatioToPeak"));
+		ENGINE_CLOCK_RATIO_TO_PEAK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineClockRatioToPeak"));
+		MEMORY_CLOCK_FREQUENCY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryClockFrequency"));
+		ENGINE_CLOCK_FREQUENCY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("engineClockFrequency"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MEMORY_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryClockRatioToPeak"));
+		ENGINE_CLOCK_RATIO_TO_PEAK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineClockRatioToPeak"));
+		MEMORY_CLOCK_FREQUENCY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryClockFrequency"));
+		ENGINE_CLOCK_FREQUENCY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("engineClockFrequency"));
+		//@formatter:on
+	}
 
-    public VkGpaDeviceGetClockInfoAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkGpaDeviceGetClockInfoAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkGpaDeviceGetClockInfoAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkGpaDeviceGetClockInfoAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkGpaDeviceGetClockInfoAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkGpaDeviceGetClockInfoAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkGpaDeviceGetClockInfoAMD sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkGpaDeviceGetClockInfoAMD
             segment -> new VkGpaDeviceGetClockInfoAMD(segment)
         );
     }
-    
+
 }

@@ -22,77 +22,77 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkInstanceCreateInfo
 		implements Struct<VkInstanceCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle P_APPLICATION_INFO_HANDLE;
-    public static final VarHandle ENABLED_LAYER_COUNT_HANDLE;
-    public static final VarHandle PP_ENABLED_LAYER_NAMES_HANDLE;
-    public static final VarHandle ENABLED_EXTENSION_COUNT_HANDLE;
-    public static final VarHandle PP_ENABLED_EXTENSION_NAMES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle P_APPLICATION_INFO_HANDLE;
+	public static final VarHandle ENABLED_LAYER_COUNT_HANDLE;
+	public static final VarHandle PP_ENABLED_LAYER_NAMES_HANDLE;
+	public static final VarHandle ENABLED_EXTENSION_COUNT_HANDLE;
+	public static final VarHandle PP_ENABLED_EXTENSION_NAMES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long P_APPLICATION_INFO_BYTE_OFFSET;
-    public static final long ENABLED_LAYER_COUNT_BYTE_OFFSET;
-    public static final long PP_ENABLED_LAYER_NAMES_BYTE_OFFSET;
-    public static final long ENABLED_EXTENSION_COUNT_BYTE_OFFSET;
-    public static final long PP_ENABLED_EXTENSION_NAMES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long P_APPLICATION_INFO_BYTE_OFFSET;
+	public static final long ENABLED_LAYER_COUNT_BYTE_OFFSET;
+	public static final long PP_ENABLED_LAYER_NAMES_BYTE_OFFSET;
+	public static final long ENABLED_EXTENSION_COUNT_BYTE_OFFSET;
+	public static final long PP_ENABLED_EXTENSION_NAMES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pApplicationInfo"),
-            JAVA_INT.withName("enabledLayerCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("ppEnabledLayerNames"),
-            JAVA_INT.withName("enabledExtensionCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("ppEnabledExtensionNames")
-        ).withName("VkInstanceCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        P_APPLICATION_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pApplicationInfo"));
-        ENABLED_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enabledLayerCount"));
-        PP_ENABLED_LAYER_NAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppEnabledLayerNames"));
-        ENABLED_EXTENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enabledExtensionCount"));
-        PP_ENABLED_EXTENSION_NAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppEnabledExtensionNames"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        P_APPLICATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pApplicationInfo"));
-        ENABLED_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enabledLayerCount"));
-        PP_ENABLED_LAYER_NAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppEnabledLayerNames"));
-        ENABLED_EXTENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enabledExtensionCount"));
-        PP_ENABLED_EXTENSION_NAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppEnabledExtensionNames"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pApplicationInfo"),
+		    JAVA_INT.withName("enabledLayerCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("ppEnabledLayerNames"),
+		    JAVA_INT.withName("enabledExtensionCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("ppEnabledExtensionNames")
+		).withName("VkInstanceCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		P_APPLICATION_INFO_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pApplicationInfo"));
+		ENABLED_LAYER_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enabledLayerCount"));
+		PP_ENABLED_LAYER_NAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppEnabledLayerNames"));
+		ENABLED_EXTENSION_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("enabledExtensionCount"));
+		PP_ENABLED_EXTENSION_NAMES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ppEnabledExtensionNames"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		P_APPLICATION_INFO_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pApplicationInfo"));
+		ENABLED_LAYER_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enabledLayerCount"));
+		PP_ENABLED_LAYER_NAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppEnabledLayerNames"));
+		ENABLED_EXTENSION_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("enabledExtensionCount"));
+		PP_ENABLED_EXTENSION_NAMES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ppEnabledExtensionNames"));
+		//@formatter:on
+	}
 
-    public VkInstanceCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkInstanceCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkInstanceCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkInstanceCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkInstanceCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkInstanceCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkInstanceCreateInfo sType(int sType) {
@@ -245,5 +245,5 @@ public final class VkInstanceCreateInfo
             segment -> new VkInstanceCreateInfo(segment)
         );
     }
-    
+
 }

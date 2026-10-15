@@ -21,60 +21,60 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceFragmentDensityMapFeaturesEXT
 		implements Struct<VkPhysicalDeviceFragmentDensityMapFeaturesEXT> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FRAGMENT_DENSITY_MAP_HANDLE;
-    public static final VarHandle FRAGMENT_DENSITY_MAP_DYNAMIC_HANDLE;
-    public static final VarHandle FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FRAGMENT_DENSITY_MAP_HANDLE;
+	public static final VarHandle FRAGMENT_DENSITY_MAP_DYNAMIC_HANDLE;
+	public static final VarHandle FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_MAP_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_MAP_DYNAMIC_BYTE_OFFSET;
-    public static final long FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_MAP_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_MAP_DYNAMIC_BYTE_OFFSET;
+	public static final long FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("fragmentDensityMap"),
-            JAVA_INT.withName("fragmentDensityMapDynamic"),
-            JAVA_INT.withName("fragmentDensityMapNonSubsampledImages"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPhysicalDeviceFragmentDensityMapFeaturesEXT").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityMap"));
-        FRAGMENT_DENSITY_MAP_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityMapDynamic"));
-        FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityMapNonSubsampledImages"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FRAGMENT_DENSITY_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMap"));
-        FRAGMENT_DENSITY_MAP_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMapDynamic"));
-        FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMapNonSubsampledImages"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("fragmentDensityMap"),
+		    JAVA_INT.withName("fragmentDensityMapDynamic"),
+		    JAVA_INT.withName("fragmentDensityMapNonSubsampledImages"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPhysicalDeviceFragmentDensityMapFeaturesEXT").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_MAP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityMap"));
+		FRAGMENT_DENSITY_MAP_DYNAMIC_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityMapDynamic"));
+		FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("fragmentDensityMapNonSubsampledImages"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FRAGMENT_DENSITY_MAP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMap"));
+		FRAGMENT_DENSITY_MAP_DYNAMIC_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMapDynamic"));
+		FRAGMENT_DENSITY_MAP_NON_SUBSAMPLED_IMAGES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("fragmentDensityMapNonSubsampledImages"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceFragmentDensityMapFeaturesEXT() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMapFeaturesEXT(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceFragmentDensityMapFeaturesEXT(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceFragmentDensityMapFeaturesEXT() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMapFeaturesEXT(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceFragmentDensityMapFeaturesEXT(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceFragmentDensityMapFeaturesEXT sType(int sType) {
@@ -182,5 +182,5 @@ public final class VkPhysicalDeviceFragmentDensityMapFeaturesEXT
             segment -> new VkPhysicalDeviceFragmentDensityMapFeaturesEXT(segment)
         );
     }
-    
+
 }

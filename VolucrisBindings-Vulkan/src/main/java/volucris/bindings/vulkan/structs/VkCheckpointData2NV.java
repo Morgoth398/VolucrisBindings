@@ -21,54 +21,54 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCheckpointData2NV
 		implements Struct<VkCheckpointData2NV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle STAGE_HANDLE;
-    public static final VarHandle P_CHECKPOINT_MARKER_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle STAGE_HANDLE;
+	public static final VarHandle P_CHECKPOINT_MARKER_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long STAGE_BYTE_OFFSET;
-    public static final long P_CHECKPOINT_MARKER_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long STAGE_BYTE_OFFSET;
+	public static final long P_CHECKPOINT_MARKER_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_LONG.withName("stage"),
-            UNBOUNDED_ADDRESS.withName("pCheckpointMarker")
-        ).withName("VkCheckpointData2NV").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
-        P_CHECKPOINT_MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCheckpointMarker"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
-        P_CHECKPOINT_MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCheckpointMarker"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_LONG.withName("stage"),
+		    UNBOUNDED_ADDRESS.withName("pCheckpointMarker")
+		).withName("VkCheckpointData2NV").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		STAGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("stage"));
+		P_CHECKPOINT_MARKER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pCheckpointMarker"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		STAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("stage"));
+		P_CHECKPOINT_MARKER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pCheckpointMarker"));
+		//@formatter:on
+	}
 
-    public VkCheckpointData2NV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCheckpointData2NV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCheckpointData2NV(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCheckpointData2NV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCheckpointData2NV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCheckpointData2NV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCheckpointData2NV sType(int sType) {
@@ -171,5 +171,5 @@ public final class VkCheckpointData2NV
             segment -> new VkCheckpointData2NV(segment)
         );
     }
-    
+
 }

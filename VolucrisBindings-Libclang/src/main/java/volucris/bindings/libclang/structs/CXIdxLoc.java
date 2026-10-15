@@ -22,44 +22,44 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class CXIdxLoc
 		implements Struct<CXIdxLoc> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle PTR_DATA_HANDLE;
-    public static final VarHandle INT_DATA_HANDLE;
+	public static final VarHandle PTR_DATA_HANDLE;
+	public static final VarHandle INT_DATA_HANDLE;
 
-    public static final long PTR_DATA_BYTE_OFFSET;
-    public static final long INT_DATA_BYTE_OFFSET;
+	public static final long PTR_DATA_BYTE_OFFSET;
+	public static final long INT_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            MemoryLayout.sequenceLayout(2, UNBOUNDED_ADDRESS).withName("ptr_data"),
-            JAVA_INT.withName("int_data"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("CXIdxLoc").withByteAlignment(8);
-        
-        PTR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ptr_data"), PathElement.sequenceElement());
-        INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int_data"));
-        
-        PTR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ptr_data"));
-        INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int_data"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    MemoryLayout.sequenceLayout(2, UNBOUNDED_ADDRESS).withName("ptr_data"),
+		    JAVA_INT.withName("int_data"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("CXIdxLoc").withByteAlignment(8);
+		
+		PTR_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ptr_data"), PathElement.sequenceElement());
+		INT_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("int_data"));
+		
+		PTR_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ptr_data"));
+		INT_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("int_data"));
+		//@formatter:on
+	}
 
-    public CXIdxLoc() {
-        this(Arena.ofAuto());
-    }
-    
-    public CXIdxLoc(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public CXIdxLoc(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public CXIdxLoc() {
+	    this(Arena.ofAuto());
+	}
+	
+	public CXIdxLoc(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public CXIdxLoc(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #ptr_data(int)
     public CXIdxLoc ptr_data(MemorySegment ptr_data, int index0) {
@@ -137,5 +137,5 @@ public final class CXIdxLoc
             segment -> new CXIdxLoc(segment)
         );
     }
-    
+
 }

@@ -21,65 +21,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkBindVideoSessionMemoryInfoKHR
 		implements Struct<VkBindVideoSessionMemoryInfoKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle MEMORY_BIND_INDEX_HANDLE;
-    public static final VarHandle MEMORY_HANDLE;
-    public static final VarHandle MEMORY_OFFSET_HANDLE;
-    public static final VarHandle MEMORY_SIZE_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle MEMORY_BIND_INDEX_HANDLE;
+	public static final VarHandle MEMORY_HANDLE;
+	public static final VarHandle MEMORY_OFFSET_HANDLE;
+	public static final VarHandle MEMORY_SIZE_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long MEMORY_BIND_INDEX_BYTE_OFFSET;
-    public static final long MEMORY_BYTE_OFFSET;
-    public static final long MEMORY_OFFSET_BYTE_OFFSET;
-    public static final long MEMORY_SIZE_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long MEMORY_BIND_INDEX_BYTE_OFFSET;
+	public static final long MEMORY_BYTE_OFFSET;
+	public static final long MEMORY_OFFSET_BYTE_OFFSET;
+	public static final long MEMORY_SIZE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("memoryBindIndex"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("memory"),
-            JAVA_LONG.withName("memoryOffset"),
-            JAVA_LONG.withName("memorySize")
-        ).withName("VkBindVideoSessionMemoryInfoKHR").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        MEMORY_BIND_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryBindIndex"));
-        MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
-        MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memorySize"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        MEMORY_BIND_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryBindIndex"));
-        MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
-        MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
-        MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memorySize"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("memoryBindIndex"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("memory"),
+		    JAVA_LONG.withName("memoryOffset"),
+		    JAVA_LONG.withName("memorySize")
+		).withName("VkBindVideoSessionMemoryInfoKHR").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		MEMORY_BIND_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryBindIndex"));
+		MEMORY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memoryOffset"));
+		MEMORY_SIZE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("memorySize"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		MEMORY_BIND_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryBindIndex"));
+		MEMORY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memory"));
+		MEMORY_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memoryOffset"));
+		MEMORY_SIZE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("memorySize"));
+		//@formatter:on
+	}
 
-    public VkBindVideoSessionMemoryInfoKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBindVideoSessionMemoryInfoKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBindVideoSessionMemoryInfoKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkBindVideoSessionMemoryInfoKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBindVideoSessionMemoryInfoKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBindVideoSessionMemoryInfoKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkBindVideoSessionMemoryInfoKHR sType(int sType) {
@@ -202,5 +202,5 @@ public final class VkBindVideoSessionMemoryInfoKHR
             segment -> new VkBindVideoSessionMemoryInfoKHR(segment)
         );
     }
-    
+
 }

@@ -22,65 +22,65 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceQueueCreateInfo
 		implements Struct<VkDeviceQueueCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
-    public static final VarHandle QUEUE_COUNT_HANDLE;
-    public static final VarHandle P_QUEUE_PRIORITIES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle QUEUE_FAMILY_INDEX_HANDLE;
+	public static final VarHandle QUEUE_COUNT_HANDLE;
+	public static final VarHandle P_QUEUE_PRIORITIES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
-    public static final long QUEUE_COUNT_BYTE_OFFSET;
-    public static final long P_QUEUE_PRIORITIES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long QUEUE_FAMILY_INDEX_BYTE_OFFSET;
+	public static final long QUEUE_COUNT_BYTE_OFFSET;
+	public static final long P_QUEUE_PRIORITIES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("queueFamilyIndex"),
-            JAVA_INT.withName("queueCount"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pQueuePriorities")
-        ).withName("VkDeviceQueueCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
-        QUEUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueCount"));
-        P_QUEUE_PRIORITIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueuePriorities"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
-        QUEUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueCount"));
-        P_QUEUE_PRIORITIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueuePriorities"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("queueFamilyIndex"),
+		    JAVA_INT.withName("queueCount"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pQueuePriorities")
+		).withName("VkDeviceQueueCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		QUEUE_FAMILY_INDEX_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueFamilyIndex"));
+		QUEUE_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("queueCount"));
+		P_QUEUE_PRIORITIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pQueuePriorities"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		QUEUE_FAMILY_INDEX_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueFamilyIndex"));
+		QUEUE_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("queueCount"));
+		P_QUEUE_PRIORITIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pQueuePriorities"));
+		//@formatter:on
+	}
 
-    public VkDeviceQueueCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceQueueCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceQueueCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceQueueCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceQueueCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceQueueCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceQueueCreateInfo sType(int sType) {
@@ -203,5 +203,5 @@ public final class VkDeviceQueueCreateInfo
             segment -> new VkDeviceQueueCreateInfo(segment)
         );
     }
-    
+
 }

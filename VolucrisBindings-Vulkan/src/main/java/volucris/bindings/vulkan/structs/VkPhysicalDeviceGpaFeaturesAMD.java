@@ -21,64 +21,64 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceGpaFeaturesAMD
 		implements Struct<VkPhysicalDeviceGpaFeaturesAMD> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle PERF_COUNTERS_HANDLE;
-    public static final VarHandle STREAMING_PERF_COUNTERS_HANDLE;
-    public static final VarHandle SQ_THREAD_TRACING_HANDLE;
-    public static final VarHandle CLOCK_MODES_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle PERF_COUNTERS_HANDLE;
+	public static final VarHandle STREAMING_PERF_COUNTERS_HANDLE;
+	public static final VarHandle SQ_THREAD_TRACING_HANDLE;
+	public static final VarHandle CLOCK_MODES_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long PERF_COUNTERS_BYTE_OFFSET;
-    public static final long STREAMING_PERF_COUNTERS_BYTE_OFFSET;
-    public static final long SQ_THREAD_TRACING_BYTE_OFFSET;
-    public static final long CLOCK_MODES_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long PERF_COUNTERS_BYTE_OFFSET;
+	public static final long STREAMING_PERF_COUNTERS_BYTE_OFFSET;
+	public static final long SQ_THREAD_TRACING_BYTE_OFFSET;
+	public static final long CLOCK_MODES_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("perfCounters"),
-            JAVA_INT.withName("streamingPerfCounters"),
-            JAVA_INT.withName("sqThreadTracing"),
-            JAVA_INT.withName("clockModes")
-        ).withName("VkPhysicalDeviceGpaFeaturesAMD").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        PERF_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfCounters"));
-        STREAMING_PERF_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamingPerfCounters"));
-        SQ_THREAD_TRACING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTracing"));
-        CLOCK_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clockModes"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        PERF_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfCounters"));
-        STREAMING_PERF_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamingPerfCounters"));
-        SQ_THREAD_TRACING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTracing"));
-        CLOCK_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clockModes"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("perfCounters"),
+		    JAVA_INT.withName("streamingPerfCounters"),
+		    JAVA_INT.withName("sqThreadTracing"),
+		    JAVA_INT.withName("clockModes")
+		).withName("VkPhysicalDeviceGpaFeaturesAMD").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		PERF_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("perfCounters"));
+		STREAMING_PERF_COUNTERS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("streamingPerfCounters"));
+		SQ_THREAD_TRACING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sqThreadTracing"));
+		CLOCK_MODES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("clockModes"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		PERF_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("perfCounters"));
+		STREAMING_PERF_COUNTERS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("streamingPerfCounters"));
+		SQ_THREAD_TRACING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sqThreadTracing"));
+		CLOCK_MODES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("clockModes"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceGpaFeaturesAMD() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceGpaFeaturesAMD(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceGpaFeaturesAMD(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceGpaFeaturesAMD() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceGpaFeaturesAMD(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceGpaFeaturesAMD(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceGpaFeaturesAMD sType(int sType) {
@@ -196,5 +196,5 @@ public final class VkPhysicalDeviceGpaFeaturesAMD
             segment -> new VkPhysicalDeviceGpaFeaturesAMD(segment)
         );
     }
-    
+
 }

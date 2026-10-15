@@ -21,74 +21,74 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPhysicalDeviceTensorFeaturesARM
 		implements Struct<VkPhysicalDeviceTensorFeaturesARM> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle TENSOR_NON_PACKED_HANDLE;
-    public static final VarHandle SHADER_TENSOR_ACCESS_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_HANDLE;
-    public static final VarHandle SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
-    public static final VarHandle DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_HANDLE;
-    public static final VarHandle TENSORS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle TENSOR_NON_PACKED_HANDLE;
+	public static final VarHandle SHADER_TENSOR_ACCESS_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_HANDLE;
+	public static final VarHandle SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_HANDLE;
+	public static final VarHandle DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_HANDLE;
+	public static final VarHandle TENSORS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long TENSOR_NON_PACKED_BYTE_OFFSET;
-    public static final long SHADER_TENSOR_ACCESS_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
-    public static final long SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
-    public static final long DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_BYTE_OFFSET;
-    public static final long TENSORS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long TENSOR_NON_PACKED_BYTE_OFFSET;
+	public static final long SHADER_TENSOR_ACCESS_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET;
+	public static final long SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET;
+	public static final long DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_BYTE_OFFSET;
+	public static final long TENSORS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("tensorNonPacked"),
-            JAVA_INT.withName("shaderTensorAccess"),
-            JAVA_INT.withName("shaderStorageTensorArrayDynamicIndexing"),
-            JAVA_INT.withName("shaderStorageTensorArrayNonUniformIndexing"),
-            JAVA_INT.withName("descriptorBindingStorageTensorUpdateAfterBind"),
-            JAVA_INT.withName("tensors")
-        ).withName("VkPhysicalDeviceTensorFeaturesARM").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        TENSOR_NON_PACKED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorNonPacked"));
-        SHADER_TENSOR_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTensorAccess"));
-        SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTensorArrayDynamicIndexing"));
-        SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexing"));
-        DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageTensorUpdateAfterBind"));
-        TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensors"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        TENSOR_NON_PACKED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorNonPacked"));
-        SHADER_TENSOR_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTensorAccess"));
-        SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTensorArrayDynamicIndexing"));
-        SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexing"));
-        DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageTensorUpdateAfterBind"));
-        TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensors"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("tensorNonPacked"),
+		    JAVA_INT.withName("shaderTensorAccess"),
+		    JAVA_INT.withName("shaderStorageTensorArrayDynamicIndexing"),
+		    JAVA_INT.withName("shaderStorageTensorArrayNonUniformIndexing"),
+		    JAVA_INT.withName("descriptorBindingStorageTensorUpdateAfterBind"),
+		    JAVA_INT.withName("tensors")
+		).withName("VkPhysicalDeviceTensorFeaturesARM").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		TENSOR_NON_PACKED_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensorNonPacked"));
+		SHADER_TENSOR_ACCESS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderTensorAccess"));
+		SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTensorArrayDynamicIndexing"));
+		SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexing"));
+		DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_HANDLE = LAYOUT.varHandle(PathElement.groupElement("descriptorBindingStorageTensorUpdateAfterBind"));
+		TENSORS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("tensors"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		TENSOR_NON_PACKED_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensorNonPacked"));
+		SHADER_TENSOR_ACCESS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderTensorAccess"));
+		SHADER_STORAGE_TENSOR_ARRAY_DYNAMIC_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTensorArrayDynamicIndexing"));
+		SHADER_STORAGE_TENSOR_ARRAY_NON_UNIFORM_INDEXING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("shaderStorageTensorArrayNonUniformIndexing"));
+		DESCRIPTOR_BINDING_STORAGE_TENSOR_UPDATE_AFTER_BIND_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("descriptorBindingStorageTensorUpdateAfterBind"));
+		TENSORS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("tensors"));
+		//@formatter:on
+	}
 
-    public VkPhysicalDeviceTensorFeaturesARM() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPhysicalDeviceTensorFeaturesARM(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPhysicalDeviceTensorFeaturesARM(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPhysicalDeviceTensorFeaturesARM() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPhysicalDeviceTensorFeaturesARM(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPhysicalDeviceTensorFeaturesARM(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPhysicalDeviceTensorFeaturesARM sType(int sType) {
@@ -226,5 +226,5 @@ public final class VkPhysicalDeviceTensorFeaturesARM
             segment -> new VkPhysicalDeviceTensorFeaturesARM(segment)
         );
     }
-    
+
 }

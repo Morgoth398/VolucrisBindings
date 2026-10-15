@@ -25,48 +25,48 @@ import static volucris.bindings.core.FFMUtils.UNBOUNDED_ADDRESS;
 public final class VmaAllocatorInfo
 		implements Struct<VmaAllocatorInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle INSTANCE_HANDLE;
-    public static final VarHandle PHYSICAL_DEVICE_HANDLE;
-    public static final VarHandle DEVICE_HANDLE;
+	public static final VarHandle INSTANCE_HANDLE;
+	public static final VarHandle PHYSICAL_DEVICE_HANDLE;
+	public static final VarHandle DEVICE_HANDLE;
 
-    public static final long INSTANCE_BYTE_OFFSET;
-    public static final long PHYSICAL_DEVICE_BYTE_OFFSET;
-    public static final long DEVICE_BYTE_OFFSET;
+	public static final long INSTANCE_BYTE_OFFSET;
+	public static final long PHYSICAL_DEVICE_BYTE_OFFSET;
+	public static final long DEVICE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            UNBOUNDED_ADDRESS.withName("instance"),
-            UNBOUNDED_ADDRESS.withName("physicalDevice"),
-            UNBOUNDED_ADDRESS.withName("device")
-        ).withName("VmaAllocatorInfo").withByteAlignment(8);
-        
-        INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instance"));
-        PHYSICAL_DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDevice"));
-        DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("device"));
-        
-        INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instance"));
-        PHYSICAL_DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDevice"));
-        DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("device"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    UNBOUNDED_ADDRESS.withName("instance"),
+		    UNBOUNDED_ADDRESS.withName("physicalDevice"),
+		    UNBOUNDED_ADDRESS.withName("device")
+		).withName("VmaAllocatorInfo").withByteAlignment(8);
+		
+		INSTANCE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("instance"));
+		PHYSICAL_DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("physicalDevice"));
+		DEVICE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("device"));
+		
+		INSTANCE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("instance"));
+		PHYSICAL_DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("physicalDevice"));
+		DEVICE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("device"));
+		//@formatter:on
+	}
 
-    public VmaAllocatorInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VmaAllocatorInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VmaAllocatorInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VmaAllocatorInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VmaAllocatorInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VmaAllocatorInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #instance()
     public VmaAllocatorInfo instance(VkInstance instance) {
@@ -179,5 +179,5 @@ public final class VmaAllocatorInfo
             segment -> new VmaAllocatorInfo(segment)
         );
     }
-    
+
 }

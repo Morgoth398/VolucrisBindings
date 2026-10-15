@@ -20,49 +20,49 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkBuildPartitionedAccelerationStructureIndirectCommandNV
 		implements Struct<VkBuildPartitionedAccelerationStructureIndirectCommandNV> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle OP_TYPE_HANDLE;
-    public static final VarHandle ARG_COUNT_HANDLE;
+	public static final VarHandle OP_TYPE_HANDLE;
+	public static final VarHandle ARG_COUNT_HANDLE;
 
-    public static final long OP_TYPE_BYTE_OFFSET;
-    public static final long ARG_COUNT_BYTE_OFFSET;
-    public static final long ARG_DATA_BYTE_OFFSET;
+	public static final long OP_TYPE_BYTE_OFFSET;
+	public static final long ARG_COUNT_BYTE_OFFSET;
+	public static final long ARG_DATA_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkStridedDeviceAddressNV argData;
+	private final VkStridedDeviceAddressNV argData;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("opType"),
-            JAVA_INT.withName("argCount"),
-            VkStridedDeviceAddressNV.LAYOUT.withName("argData")
-        ).withName("VkBuildPartitionedAccelerationStructureIndirectCommandNV").withByteAlignment(8);
-        
-        OP_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opType"));
-        ARG_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("argCount"));
-        
-        OP_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opType"));
-        ARG_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("argCount"));
-        ARG_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("argData"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("opType"),
+		    JAVA_INT.withName("argCount"),
+		    VkStridedDeviceAddressNV.LAYOUT.withName("argData")
+		).withName("VkBuildPartitionedAccelerationStructureIndirectCommandNV").withByteAlignment(8);
+		
+		OP_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("opType"));
+		ARG_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("argCount"));
+		
+		OP_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("opType"));
+		ARG_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("argCount"));
+		ARG_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("argData"));
+		//@formatter:on
+	}
 
-    public VkBuildPartitionedAccelerationStructureIndirectCommandNV() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkBuildPartitionedAccelerationStructureIndirectCommandNV(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkBuildPartitionedAccelerationStructureIndirectCommandNV(MemorySegment segment) {
-        this.segment = segment;
-    
-        argData = new VkStridedDeviceAddressNV(segment.asSlice(ARG_DATA_BYTE_OFFSET, VkStridedDeviceAddressNV.LAYOUT));
-    }
+	public VkBuildPartitionedAccelerationStructureIndirectCommandNV() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkBuildPartitionedAccelerationStructureIndirectCommandNV(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkBuildPartitionedAccelerationStructureIndirectCommandNV(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    argData = new VkStridedDeviceAddressNV(segment.asSlice(ARG_DATA_BYTE_OFFSET, VkStridedDeviceAddressNV.LAYOUT));
+	}
 
     /// @see #opType()
     public VkBuildPartitionedAccelerationStructureIndirectCommandNV opType(int opType) {
@@ -151,5 +151,5 @@ public final class VkBuildPartitionedAccelerationStructureIndirectCommandNV
             segment -> new VkBuildPartitionedAccelerationStructureIndirectCommandNV(segment)
         );
     }
-    
+
 }

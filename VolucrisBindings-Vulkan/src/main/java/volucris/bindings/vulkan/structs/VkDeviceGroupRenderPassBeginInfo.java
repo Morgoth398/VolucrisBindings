@@ -21,59 +21,59 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkDeviceGroupRenderPassBeginInfo
 		implements Struct<VkDeviceGroupRenderPassBeginInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle DEVICE_MASK_HANDLE;
-    public static final VarHandle DEVICE_RENDER_AREA_COUNT_HANDLE;
-    public static final VarHandle P_DEVICE_RENDER_AREAS_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle DEVICE_MASK_HANDLE;
+	public static final VarHandle DEVICE_RENDER_AREA_COUNT_HANDLE;
+	public static final VarHandle P_DEVICE_RENDER_AREAS_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long DEVICE_MASK_BYTE_OFFSET;
-    public static final long DEVICE_RENDER_AREA_COUNT_BYTE_OFFSET;
-    public static final long P_DEVICE_RENDER_AREAS_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long DEVICE_MASK_BYTE_OFFSET;
+	public static final long DEVICE_RENDER_AREA_COUNT_BYTE_OFFSET;
+	public static final long P_DEVICE_RENDER_AREAS_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("deviceMask"),
-            JAVA_INT.withName("deviceRenderAreaCount"),
-            UNBOUNDED_ADDRESS.withName("pDeviceRenderAreas")
-        ).withName("VkDeviceGroupRenderPassBeginInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        DEVICE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMask"));
-        DEVICE_RENDER_AREA_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceRenderAreaCount"));
-        P_DEVICE_RENDER_AREAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDeviceRenderAreas"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        DEVICE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMask"));
-        DEVICE_RENDER_AREA_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceRenderAreaCount"));
-        P_DEVICE_RENDER_AREAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDeviceRenderAreas"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("deviceMask"),
+		    JAVA_INT.withName("deviceRenderAreaCount"),
+		    UNBOUNDED_ADDRESS.withName("pDeviceRenderAreas")
+		).withName("VkDeviceGroupRenderPassBeginInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		DEVICE_MASK_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceMask"));
+		DEVICE_RENDER_AREA_COUNT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("deviceRenderAreaCount"));
+		P_DEVICE_RENDER_AREAS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pDeviceRenderAreas"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		DEVICE_MASK_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceMask"));
+		DEVICE_RENDER_AREA_COUNT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("deviceRenderAreaCount"));
+		P_DEVICE_RENDER_AREAS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pDeviceRenderAreas"));
+		//@formatter:on
+	}
 
-    public VkDeviceGroupRenderPassBeginInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkDeviceGroupRenderPassBeginInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkDeviceGroupRenderPassBeginInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkDeviceGroupRenderPassBeginInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkDeviceGroupRenderPassBeginInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkDeviceGroupRenderPassBeginInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkDeviceGroupRenderPassBeginInfo sType(int sType) {
@@ -186,5 +186,5 @@ public final class VkDeviceGroupRenderPassBeginInfo
             segment -> new VkDeviceGroupRenderPassBeginInfo(segment)
         );
     }
-    
+
 }

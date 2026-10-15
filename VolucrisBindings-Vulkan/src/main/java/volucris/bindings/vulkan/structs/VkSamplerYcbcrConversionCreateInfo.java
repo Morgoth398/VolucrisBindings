@@ -22,86 +22,86 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkSamplerYcbcrConversionCreateInfo
 		implements Struct<VkSamplerYcbcrConversionCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FORMAT_HANDLE;
-    public static final VarHandle YCBCR_MODEL_HANDLE;
-    public static final VarHandle YCBCR_RANGE_HANDLE;
-    public static final VarHandle X_CHROMA_OFFSET_HANDLE;
-    public static final VarHandle Y_CHROMA_OFFSET_HANDLE;
-    public static final VarHandle CHROMA_FILTER_HANDLE;
-    public static final VarHandle FORCE_EXPLICIT_RECONSTRUCTION_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FORMAT_HANDLE;
+	public static final VarHandle YCBCR_MODEL_HANDLE;
+	public static final VarHandle YCBCR_RANGE_HANDLE;
+	public static final VarHandle X_CHROMA_OFFSET_HANDLE;
+	public static final VarHandle Y_CHROMA_OFFSET_HANDLE;
+	public static final VarHandle CHROMA_FILTER_HANDLE;
+	public static final VarHandle FORCE_EXPLICIT_RECONSTRUCTION_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FORMAT_BYTE_OFFSET;
-    public static final long YCBCR_MODEL_BYTE_OFFSET;
-    public static final long YCBCR_RANGE_BYTE_OFFSET;
-    public static final long COMPONENTS_BYTE_OFFSET;
-    public static final long X_CHROMA_OFFSET_BYTE_OFFSET;
-    public static final long Y_CHROMA_OFFSET_BYTE_OFFSET;
-    public static final long CHROMA_FILTER_BYTE_OFFSET;
-    public static final long FORCE_EXPLICIT_RECONSTRUCTION_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FORMAT_BYTE_OFFSET;
+	public static final long YCBCR_MODEL_BYTE_OFFSET;
+	public static final long YCBCR_RANGE_BYTE_OFFSET;
+	public static final long COMPONENTS_BYTE_OFFSET;
+	public static final long X_CHROMA_OFFSET_BYTE_OFFSET;
+	public static final long Y_CHROMA_OFFSET_BYTE_OFFSET;
+	public static final long CHROMA_FILTER_BYTE_OFFSET;
+	public static final long FORCE_EXPLICIT_RECONSTRUCTION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final VkComponentMapping components;
+	private final VkComponentMapping components;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("format"),
-            JAVA_INT.withName("ycbcrModel"),
-            JAVA_INT.withName("ycbcrRange"),
-            VkComponentMapping.LAYOUT.withName("components"),
-            JAVA_INT.withName("xChromaOffset"),
-            JAVA_INT.withName("yChromaOffset"),
-            JAVA_INT.withName("chromaFilter"),
-            JAVA_INT.withName("forceExplicitReconstruction"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkSamplerYcbcrConversionCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
-        YCBCR_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycbcrModel"));
-        YCBCR_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycbcrRange"));
-        X_CHROMA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xChromaOffset"));
-        Y_CHROMA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("yChromaOffset"));
-        CHROMA_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chromaFilter"));
-        FORCE_EXPLICIT_RECONSTRUCTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("forceExplicitReconstruction"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
-        YCBCR_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycbcrModel"));
-        YCBCR_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycbcrRange"));
-        COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("components"));
-        X_CHROMA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xChromaOffset"));
-        Y_CHROMA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("yChromaOffset"));
-        CHROMA_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chromaFilter"));
-        FORCE_EXPLICIT_RECONSTRUCTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("forceExplicitReconstruction"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("format"),
+		    JAVA_INT.withName("ycbcrModel"),
+		    JAVA_INT.withName("ycbcrRange"),
+		    VkComponentMapping.LAYOUT.withName("components"),
+		    JAVA_INT.withName("xChromaOffset"),
+		    JAVA_INT.withName("yChromaOffset"),
+		    JAVA_INT.withName("chromaFilter"),
+		    JAVA_INT.withName("forceExplicitReconstruction"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkSamplerYcbcrConversionCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FORMAT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("format"));
+		YCBCR_MODEL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycbcrModel"));
+		YCBCR_RANGE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("ycbcrRange"));
+		X_CHROMA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("xChromaOffset"));
+		Y_CHROMA_OFFSET_HANDLE = LAYOUT.varHandle(PathElement.groupElement("yChromaOffset"));
+		CHROMA_FILTER_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chromaFilter"));
+		FORCE_EXPLICIT_RECONSTRUCTION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("forceExplicitReconstruction"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FORMAT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("format"));
+		YCBCR_MODEL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycbcrModel"));
+		YCBCR_RANGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("ycbcrRange"));
+		COMPONENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("components"));
+		X_CHROMA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("xChromaOffset"));
+		Y_CHROMA_OFFSET_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("yChromaOffset"));
+		CHROMA_FILTER_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chromaFilter"));
+		FORCE_EXPLICIT_RECONSTRUCTION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("forceExplicitReconstruction"));
+		//@formatter:on
+	}
 
-    public VkSamplerYcbcrConversionCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkSamplerYcbcrConversionCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkSamplerYcbcrConversionCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-        components = new VkComponentMapping(segment.asSlice(COMPONENTS_BYTE_OFFSET, VkComponentMapping.LAYOUT));
-    }
+	public VkSamplerYcbcrConversionCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkSamplerYcbcrConversionCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkSamplerYcbcrConversionCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    components = new VkComponentMapping(segment.asSlice(COMPONENTS_BYTE_OFFSET, VkComponentMapping.LAYOUT));
+	}
 
     /// @see #sType()
     public VkSamplerYcbcrConversionCreateInfo sType(int sType) {
@@ -158,6 +158,22 @@ public final class VkSamplerYcbcrConversionCreateInfo
     	return (int) YCBCR_RANGE_HANDLE.get(segment, 0L);
     }
     
+    /// @see #components()
+    public VkSamplerYcbcrConversionCreateInfo components(Consumer<VkComponentMapping> consumer) {
+    	consumer.accept(components);
+    	return this;
+    }
+    
+    /// @see #components()
+    public VkSamplerYcbcrConversionCreateInfo components(VkComponentMapping other) {
+    	components.set(other);
+    	return this;
+    }
+    
+    public VkComponentMapping components() {
+    	return components;
+    }
+    
     /// @see #xChromaOffset()
     public VkSamplerYcbcrConversionCreateInfo xChromaOffset(int xChromaOffset) {
     	X_CHROMA_OFFSET_HANDLE.set(segment, 0L, xChromaOffset);
@@ -196,22 +212,6 @@ public final class VkSamplerYcbcrConversionCreateInfo
     
     public int forceExplicitReconstruction() {
     	return (int) FORCE_EXPLICIT_RECONSTRUCTION_HANDLE.get(segment, 0L);
-    }
-    
-    /// @see #components()
-    public VkSamplerYcbcrConversionCreateInfo components(Consumer<VkComponentMapping> consumer) {
-    	consumer.accept(components);
-    	return this;
-    }
-    
-    /// @see #components()
-    public VkSamplerYcbcrConversionCreateInfo components(VkComponentMapping other) {
-    	components.set(other);
-    	return this;
-    }
-    
-    public VkComponentMapping components() {
-    	return components;
     }
     
     @Override
@@ -265,5 +265,5 @@ public final class VkSamplerYcbcrConversionCreateInfo
             segment -> new VkSamplerYcbcrConversionCreateInfo(segment)
         );
     }
-    
+
 }

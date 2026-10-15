@@ -21,50 +21,50 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkCuModuleTexturingModeCreateInfoNVX
 		implements Struct<VkCuModuleTexturingModeCreateInfoNVX> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle USE64BIT_TEXTURING_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle USE64BIT_TEXTURING_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long USE64BIT_TEXTURING_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long USE64BIT_TEXTURING_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("use64bitTexturing"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkCuModuleTexturingModeCreateInfoNVX").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        USE64BIT_TEXTURING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("use64bitTexturing"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        USE64BIT_TEXTURING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("use64bitTexturing"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("use64bitTexturing"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkCuModuleTexturingModeCreateInfoNVX").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		USE64BIT_TEXTURING_HANDLE = LAYOUT.varHandle(PathElement.groupElement("use64bitTexturing"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		USE64BIT_TEXTURING_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("use64bitTexturing"));
+		//@formatter:on
+	}
 
-    public VkCuModuleTexturingModeCreateInfoNVX() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkCuModuleTexturingModeCreateInfoNVX(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkCuModuleTexturingModeCreateInfoNVX(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkCuModuleTexturingModeCreateInfoNVX() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkCuModuleTexturingModeCreateInfoNVX(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkCuModuleTexturingModeCreateInfoNVX(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkCuModuleTexturingModeCreateInfoNVX sType(int sType) {
@@ -152,5 +152,5 @@ public final class VkCuModuleTexturingModeCreateInfoNVX
             segment -> new VkCuModuleTexturingModeCreateInfoNVX(segment)
         );
     }
-    
+
 }

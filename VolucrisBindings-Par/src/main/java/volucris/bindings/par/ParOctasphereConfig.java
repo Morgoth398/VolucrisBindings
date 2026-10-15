@@ -16,68 +16,68 @@ import static java.lang.foreign.ValueLayout.*;
 public final class ParOctasphereConfig
 		implements Struct<ParOctasphereConfig> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle CORNER_RADIUS_HANDLE;
-    public static final VarHandle WIDTH_HANDLE;
-    public static final VarHandle HEIGHT_HANDLE;
-    public static final VarHandle DEPTH_HANDLE;
-    public static final VarHandle NUM_SUBDIVISIONS_HANDLE;
-    public static final VarHandle UV_MODE_HANDLE;
-    public static final VarHandle NORMALS_MODE_HANDLE;
+	public static final VarHandle CORNER_RADIUS_HANDLE;
+	public static final VarHandle WIDTH_HANDLE;
+	public static final VarHandle HEIGHT_HANDLE;
+	public static final VarHandle DEPTH_HANDLE;
+	public static final VarHandle NUM_SUBDIVISIONS_HANDLE;
+	public static final VarHandle UV_MODE_HANDLE;
+	public static final VarHandle NORMALS_MODE_HANDLE;
 
-    public static final long CORNER_RADIUS_BYTE_OFFSET;
-    public static final long WIDTH_BYTE_OFFSET;
-    public static final long HEIGHT_BYTE_OFFSET;
-    public static final long DEPTH_BYTE_OFFSET;
-    public static final long NUM_SUBDIVISIONS_BYTE_OFFSET;
-    public static final long UV_MODE_BYTE_OFFSET;
-    public static final long NORMALS_MODE_BYTE_OFFSET;
+	public static final long CORNER_RADIUS_BYTE_OFFSET;
+	public static final long WIDTH_BYTE_OFFSET;
+	public static final long HEIGHT_BYTE_OFFSET;
+	public static final long DEPTH_BYTE_OFFSET;
+	public static final long NUM_SUBDIVISIONS_BYTE_OFFSET;
+	public static final long UV_MODE_BYTE_OFFSET;
+	public static final long NORMALS_MODE_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_FLOAT.withName("corner_radius"),
-            JAVA_FLOAT.withName("width"),
-            JAVA_FLOAT.withName("height"),
-            JAVA_FLOAT.withName("depth"),
-            JAVA_INT.withName("num_subdivisions"),
-            JAVA_INT.withName("uv_mode"),
-            JAVA_INT.withName("normals_mode")
-        ).withName("par_octasphere_config").withByteAlignment(4);
-        
-        CORNER_RADIUS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("corner_radius"));
-        WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
-        HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
-        DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
-        NUM_SUBDIVISIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_subdivisions"));
-        UV_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uv_mode"));
-        NORMALS_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("normals_mode"));
-        
-        CORNER_RADIUS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("corner_radius"));
-        WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
-        HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
-        DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
-        NUM_SUBDIVISIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_subdivisions"));
-        UV_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uv_mode"));
-        NORMALS_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("normals_mode"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_FLOAT.withName("corner_radius"),
+		    JAVA_FLOAT.withName("width"),
+		    JAVA_FLOAT.withName("height"),
+		    JAVA_FLOAT.withName("depth"),
+		    JAVA_INT.withName("num_subdivisions"),
+		    JAVA_INT.withName("uv_mode"),
+		    JAVA_INT.withName("normals_mode")
+		).withName("par_octasphere_config").withByteAlignment(4);
+		
+		CORNER_RADIUS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("corner_radius"));
+		WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("width"));
+		HEIGHT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("height"));
+		DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depth"));
+		NUM_SUBDIVISIONS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("num_subdivisions"));
+		UV_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("uv_mode"));
+		NORMALS_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("normals_mode"));
+		
+		CORNER_RADIUS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("corner_radius"));
+		WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("width"));
+		HEIGHT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("height"));
+		DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depth"));
+		NUM_SUBDIVISIONS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("num_subdivisions"));
+		UV_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("uv_mode"));
+		NORMALS_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("normals_mode"));
+		//@formatter:on
+	}
 
-    public ParOctasphereConfig() {
-        this(Arena.ofAuto());
-    }
-    
-    public ParOctasphereConfig(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public ParOctasphereConfig(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public ParOctasphereConfig() {
+	    this(Arena.ofAuto());
+	}
+	
+	public ParOctasphereConfig(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public ParOctasphereConfig(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #corner_radius()
     public ParOctasphereConfig corner_radius(float corner_radius) {
@@ -200,5 +200,5 @@ public final class ParOctasphereConfig
             segment -> new ParOctasphereConfig(segment)
         );
     }
-    
+
 }

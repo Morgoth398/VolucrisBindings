@@ -20,80 +20,96 @@ import static java.lang.foreign.ValueLayout.*;
 public final class StdVideoAV1ColorConfig
 		implements Struct<StdVideoAV1ColorConfig> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle BIT_DEPTH_HANDLE;
-    public static final VarHandle SUBSAMPLING_X_HANDLE;
-    public static final VarHandle SUBSAMPLING_Y_HANDLE;
-    public static final VarHandle RESERVED1_HANDLE;
-    public static final VarHandle COLOR_PRIMARIES_HANDLE;
-    public static final VarHandle TRANSFER_CHARACTERISTICS_HANDLE;
-    public static final VarHandle MATRIX_COEFFICIENTS_HANDLE;
-    public static final VarHandle CHROMA_SAMPLE_POSITION_HANDLE;
+	public static final VarHandle BIT_DEPTH_HANDLE;
+	public static final VarHandle SUBSAMPLING_X_HANDLE;
+	public static final VarHandle SUBSAMPLING_Y_HANDLE;
+	public static final VarHandle RESERVED1_HANDLE;
+	public static final VarHandle COLOR_PRIMARIES_HANDLE;
+	public static final VarHandle TRANSFER_CHARACTERISTICS_HANDLE;
+	public static final VarHandle MATRIX_COEFFICIENTS_HANDLE;
+	public static final VarHandle CHROMA_SAMPLE_POSITION_HANDLE;
 
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long BIT_DEPTH_BYTE_OFFSET;
-    public static final long SUBSAMPLING_X_BYTE_OFFSET;
-    public static final long SUBSAMPLING_Y_BYTE_OFFSET;
-    public static final long RESERVED1_BYTE_OFFSET;
-    public static final long COLOR_PRIMARIES_BYTE_OFFSET;
-    public static final long TRANSFER_CHARACTERISTICS_BYTE_OFFSET;
-    public static final long MATRIX_COEFFICIENTS_BYTE_OFFSET;
-    public static final long CHROMA_SAMPLE_POSITION_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long BIT_DEPTH_BYTE_OFFSET;
+	public static final long SUBSAMPLING_X_BYTE_OFFSET;
+	public static final long SUBSAMPLING_Y_BYTE_OFFSET;
+	public static final long RESERVED1_BYTE_OFFSET;
+	public static final long COLOR_PRIMARIES_BYTE_OFFSET;
+	public static final long TRANSFER_CHARACTERISTICS_BYTE_OFFSET;
+	public static final long MATRIX_COEFFICIENTS_BYTE_OFFSET;
+	public static final long CHROMA_SAMPLE_POSITION_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    private final StdVideoAV1ColorConfigFlags flags;
+	private final StdVideoAV1ColorConfigFlags flags;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            StdVideoAV1ColorConfigFlags.LAYOUT.withName("flags"),
-            JAVA_BYTE.withName("BitDepth"),
-            JAVA_BYTE.withName("subsampling_x"),
-            JAVA_BYTE.withName("subsampling_y"),
-            JAVA_BYTE.withName("reserved1"),
-            JAVA_INT.withName("color_primaries"),
-            JAVA_INT.withName("transfer_characteristics"),
-            JAVA_INT.withName("matrix_coefficients"),
-            JAVA_INT.withName("chroma_sample_position")
-        ).withName("StdVideoAV1ColorConfig").withByteAlignment(4);
-        
-        BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("BitDepth"));
-        SUBSAMPLING_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_x"));
-        SUBSAMPLING_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_y"));
-        RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
-        COLOR_PRIMARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("color_primaries"));
-        TRANSFER_CHARACTERISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transfer_characteristics"));
-        MATRIX_COEFFICIENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix_coefficients"));
-        CHROMA_SAMPLE_POSITION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_position"));
-        
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("BitDepth"));
-        SUBSAMPLING_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_x"));
-        SUBSAMPLING_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_y"));
-        RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
-        COLOR_PRIMARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("color_primaries"));
-        TRANSFER_CHARACTERISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transfer_characteristics"));
-        MATRIX_COEFFICIENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix_coefficients"));
-        CHROMA_SAMPLE_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_position"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    StdVideoAV1ColorConfigFlags.LAYOUT.withName("flags"),
+		    JAVA_BYTE.withName("BitDepth"),
+		    JAVA_BYTE.withName("subsampling_x"),
+		    JAVA_BYTE.withName("subsampling_y"),
+		    JAVA_BYTE.withName("reserved1"),
+		    JAVA_INT.withName("color_primaries"),
+		    JAVA_INT.withName("transfer_characteristics"),
+		    JAVA_INT.withName("matrix_coefficients"),
+		    JAVA_INT.withName("chroma_sample_position")
+		).withName("StdVideoAV1ColorConfig").withByteAlignment(4);
+		
+		BIT_DEPTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("BitDepth"));
+		SUBSAMPLING_X_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_x"));
+		SUBSAMPLING_Y_HANDLE = LAYOUT.varHandle(PathElement.groupElement("subsampling_y"));
+		RESERVED1_HANDLE = LAYOUT.varHandle(PathElement.groupElement("reserved1"));
+		COLOR_PRIMARIES_HANDLE = LAYOUT.varHandle(PathElement.groupElement("color_primaries"));
+		TRANSFER_CHARACTERISTICS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("transfer_characteristics"));
+		MATRIX_COEFFICIENTS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("matrix_coefficients"));
+		CHROMA_SAMPLE_POSITION_HANDLE = LAYOUT.varHandle(PathElement.groupElement("chroma_sample_position"));
+		
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		BIT_DEPTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("BitDepth"));
+		SUBSAMPLING_X_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_x"));
+		SUBSAMPLING_Y_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("subsampling_y"));
+		RESERVED1_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("reserved1"));
+		COLOR_PRIMARIES_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("color_primaries"));
+		TRANSFER_CHARACTERISTICS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("transfer_characteristics"));
+		MATRIX_COEFFICIENTS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("matrix_coefficients"));
+		CHROMA_SAMPLE_POSITION_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("chroma_sample_position"));
+		//@formatter:on
+	}
 
-    public StdVideoAV1ColorConfig() {
-        this(Arena.ofAuto());
+	public StdVideoAV1ColorConfig() {
+	    this(Arena.ofAuto());
+	}
+	
+	public StdVideoAV1ColorConfig(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public StdVideoAV1ColorConfig(MemorySegment segment) {
+	    this.segment = segment;
+	
+	    flags = new StdVideoAV1ColorConfigFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1ColorConfigFlags.LAYOUT));
+	}
+
+    /// @see #flags()
+    public StdVideoAV1ColorConfig flags(Consumer<StdVideoAV1ColorConfigFlags> consumer) {
+    	consumer.accept(flags);
+    	return this;
     }
     
-    public StdVideoAV1ColorConfig(Arena arena) {
-        this(arena.allocate(LAYOUT));
+    /// @see #flags()
+    public StdVideoAV1ColorConfig flags(StdVideoAV1ColorConfigFlags other) {
+    	flags.set(other);
+    	return this;
     }
     
-    public StdVideoAV1ColorConfig(MemorySegment segment) {
-        this.segment = segment;
-    
-        flags = new StdVideoAV1ColorConfigFlags(segment.asSlice(FLAGS_BYTE_OFFSET, StdVideoAV1ColorConfigFlags.LAYOUT));
+    public StdVideoAV1ColorConfigFlags flags() {
+    	return flags;
     }
-
+    
     /// @see #bitDepth()
     public StdVideoAV1ColorConfig bitDepth(byte bitDepth) {
     	BIT_DEPTH_HANDLE.set(segment, 0L, bitDepth);
@@ -174,22 +190,6 @@ public final class StdVideoAV1ColorConfig
     	return (int) CHROMA_SAMPLE_POSITION_HANDLE.get(segment, 0L);
     }
     
-    /// @see #flags()
-    public StdVideoAV1ColorConfig flags(Consumer<StdVideoAV1ColorConfigFlags> consumer) {
-    	consumer.accept(flags);
-    	return this;
-    }
-    
-    /// @see #flags()
-    public StdVideoAV1ColorConfig flags(StdVideoAV1ColorConfigFlags other) {
-    	flags.set(other);
-    	return this;
-    }
-    
-    public StdVideoAV1ColorConfigFlags flags() {
-    	return flags;
-    }
-    
     @Override
     public StdVideoAV1ColorConfig set(StdVideoAV1ColorConfig other) {
         return set(other.segment);
@@ -241,5 +241,5 @@ public final class StdVideoAV1ColorConfig
             segment -> new StdVideoAV1ColorConfig(segment)
         );
     }
-    
+
 }

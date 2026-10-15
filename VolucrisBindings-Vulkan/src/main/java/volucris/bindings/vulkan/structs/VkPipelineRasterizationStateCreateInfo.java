@@ -21,100 +21,100 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class VkPipelineRasterizationStateCreateInfo
 		implements Struct<VkPipelineRasterizationStateCreateInfo> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle S_TYPE_HANDLE;
-    public static final VarHandle P_NEXT_HANDLE;
-    public static final VarHandle FLAGS_HANDLE;
-    public static final VarHandle DEPTH_CLAMP_ENABLE_HANDLE;
-    public static final VarHandle RASTERIZER_DISCARD_ENABLE_HANDLE;
-    public static final VarHandle POLYGON_MODE_HANDLE;
-    public static final VarHandle CULL_MODE_HANDLE;
-    public static final VarHandle FRONT_FACE_HANDLE;
-    public static final VarHandle DEPTH_BIAS_ENABLE_HANDLE;
-    public static final VarHandle DEPTH_BIAS_CONSTANT_FACTOR_HANDLE;
-    public static final VarHandle DEPTH_BIAS_CLAMP_HANDLE;
-    public static final VarHandle DEPTH_BIAS_SLOPE_FACTOR_HANDLE;
-    public static final VarHandle LINE_WIDTH_HANDLE;
+	public static final VarHandle S_TYPE_HANDLE;
+	public static final VarHandle P_NEXT_HANDLE;
+	public static final VarHandle FLAGS_HANDLE;
+	public static final VarHandle DEPTH_CLAMP_ENABLE_HANDLE;
+	public static final VarHandle RASTERIZER_DISCARD_ENABLE_HANDLE;
+	public static final VarHandle POLYGON_MODE_HANDLE;
+	public static final VarHandle CULL_MODE_HANDLE;
+	public static final VarHandle FRONT_FACE_HANDLE;
+	public static final VarHandle DEPTH_BIAS_ENABLE_HANDLE;
+	public static final VarHandle DEPTH_BIAS_CONSTANT_FACTOR_HANDLE;
+	public static final VarHandle DEPTH_BIAS_CLAMP_HANDLE;
+	public static final VarHandle DEPTH_BIAS_SLOPE_FACTOR_HANDLE;
+	public static final VarHandle LINE_WIDTH_HANDLE;
 
-    public static final long S_TYPE_BYTE_OFFSET;
-    public static final long P_NEXT_BYTE_OFFSET;
-    public static final long FLAGS_BYTE_OFFSET;
-    public static final long DEPTH_CLAMP_ENABLE_BYTE_OFFSET;
-    public static final long RASTERIZER_DISCARD_ENABLE_BYTE_OFFSET;
-    public static final long POLYGON_MODE_BYTE_OFFSET;
-    public static final long CULL_MODE_BYTE_OFFSET;
-    public static final long FRONT_FACE_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_ENABLE_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_CLAMP_BYTE_OFFSET;
-    public static final long DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET;
-    public static final long LINE_WIDTH_BYTE_OFFSET;
+	public static final long S_TYPE_BYTE_OFFSET;
+	public static final long P_NEXT_BYTE_OFFSET;
+	public static final long FLAGS_BYTE_OFFSET;
+	public static final long DEPTH_CLAMP_ENABLE_BYTE_OFFSET;
+	public static final long RASTERIZER_DISCARD_ENABLE_BYTE_OFFSET;
+	public static final long POLYGON_MODE_BYTE_OFFSET;
+	public static final long CULL_MODE_BYTE_OFFSET;
+	public static final long FRONT_FACE_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_ENABLE_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_CLAMP_BYTE_OFFSET;
+	public static final long DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET;
+	public static final long LINE_WIDTH_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("sType"),
-            MemoryLayout.paddingLayout(4),
-            UNBOUNDED_ADDRESS.withName("pNext"),
-            JAVA_INT.withName("flags"),
-            JAVA_INT.withName("depthClampEnable"),
-            JAVA_INT.withName("rasterizerDiscardEnable"),
-            JAVA_INT.withName("polygonMode"),
-            JAVA_INT.withName("cullMode"),
-            JAVA_INT.withName("frontFace"),
-            JAVA_INT.withName("depthBiasEnable"),
-            JAVA_FLOAT.withName("depthBiasConstantFactor"),
-            JAVA_FLOAT.withName("depthBiasClamp"),
-            JAVA_FLOAT.withName("depthBiasSlopeFactor"),
-            JAVA_FLOAT.withName("lineWidth"),
-            MemoryLayout.paddingLayout(4)
-        ).withName("VkPipelineRasterizationStateCreateInfo").withByteAlignment(8);
-        
-        S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
-        P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
-        FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
-        DEPTH_CLAMP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthClampEnable"));
-        RASTERIZER_DISCARD_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizerDiscardEnable"));
-        POLYGON_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("polygonMode"));
-        CULL_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cullMode"));
-        FRONT_FACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frontFace"));
-        DEPTH_BIAS_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasEnable"));
-        DEPTH_BIAS_CONSTANT_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasConstantFactor"));
-        DEPTH_BIAS_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasClamp"));
-        DEPTH_BIAS_SLOPE_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasSlopeFactor"));
-        LINE_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineWidth"));
-        
-        S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
-        P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
-        FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
-        DEPTH_CLAMP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthClampEnable"));
-        RASTERIZER_DISCARD_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizerDiscardEnable"));
-        POLYGON_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("polygonMode"));
-        CULL_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cullMode"));
-        FRONT_FACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frontFace"));
-        DEPTH_BIAS_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasEnable"));
-        DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasConstantFactor"));
-        DEPTH_BIAS_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasClamp"));
-        DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasSlopeFactor"));
-        LINE_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineWidth"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("sType"),
+		    MemoryLayout.paddingLayout(4),
+		    UNBOUNDED_ADDRESS.withName("pNext"),
+		    JAVA_INT.withName("flags"),
+		    JAVA_INT.withName("depthClampEnable"),
+		    JAVA_INT.withName("rasterizerDiscardEnable"),
+		    JAVA_INT.withName("polygonMode"),
+		    JAVA_INT.withName("cullMode"),
+		    JAVA_INT.withName("frontFace"),
+		    JAVA_INT.withName("depthBiasEnable"),
+		    JAVA_FLOAT.withName("depthBiasConstantFactor"),
+		    JAVA_FLOAT.withName("depthBiasClamp"),
+		    JAVA_FLOAT.withName("depthBiasSlopeFactor"),
+		    JAVA_FLOAT.withName("lineWidth"),
+		    MemoryLayout.paddingLayout(4)
+		).withName("VkPipelineRasterizationStateCreateInfo").withByteAlignment(8);
+		
+		S_TYPE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("sType"));
+		P_NEXT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pNext"));
+		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
+		DEPTH_CLAMP_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthClampEnable"));
+		RASTERIZER_DISCARD_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("rasterizerDiscardEnable"));
+		POLYGON_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("polygonMode"));
+		CULL_MODE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("cullMode"));
+		FRONT_FACE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("frontFace"));
+		DEPTH_BIAS_ENABLE_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasEnable"));
+		DEPTH_BIAS_CONSTANT_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasConstantFactor"));
+		DEPTH_BIAS_CLAMP_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasClamp"));
+		DEPTH_BIAS_SLOPE_FACTOR_HANDLE = LAYOUT.varHandle(PathElement.groupElement("depthBiasSlopeFactor"));
+		LINE_WIDTH_HANDLE = LAYOUT.varHandle(PathElement.groupElement("lineWidth"));
+		
+		S_TYPE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("sType"));
+		P_NEXT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pNext"));
+		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
+		DEPTH_CLAMP_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthClampEnable"));
+		RASTERIZER_DISCARD_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("rasterizerDiscardEnable"));
+		POLYGON_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("polygonMode"));
+		CULL_MODE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("cullMode"));
+		FRONT_FACE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("frontFace"));
+		DEPTH_BIAS_ENABLE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasEnable"));
+		DEPTH_BIAS_CONSTANT_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasConstantFactor"));
+		DEPTH_BIAS_CLAMP_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasClamp"));
+		DEPTH_BIAS_SLOPE_FACTOR_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("depthBiasSlopeFactor"));
+		LINE_WIDTH_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("lineWidth"));
+		//@formatter:on
+	}
 
-    public VkPipelineRasterizationStateCreateInfo() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkPipelineRasterizationStateCreateInfo(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkPipelineRasterizationStateCreateInfo(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkPipelineRasterizationStateCreateInfo() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkPipelineRasterizationStateCreateInfo(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkPipelineRasterizationStateCreateInfo(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #sType()
     public VkPipelineRasterizationStateCreateInfo sType(int sType) {
@@ -302,5 +302,5 @@ public final class VkPipelineRasterizationStateCreateInfo
             segment -> new VkPipelineRasterizationStateCreateInfo(segment)
         );
     }
-    
+
 }

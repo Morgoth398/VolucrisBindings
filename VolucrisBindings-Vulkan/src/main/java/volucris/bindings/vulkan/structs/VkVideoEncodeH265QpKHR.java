@@ -19,48 +19,48 @@ import static java.lang.foreign.ValueLayout.*;
 public final class VkVideoEncodeH265QpKHR
 		implements Struct<VkVideoEncodeH265QpKHR> {
 
-    public static final StructLayout LAYOUT;
+	public static final StructLayout LAYOUT;
 
-    public static final VarHandle QP_I_HANDLE;
-    public static final VarHandle QP_P_HANDLE;
-    public static final VarHandle QP_B_HANDLE;
+	public static final VarHandle QP_I_HANDLE;
+	public static final VarHandle QP_P_HANDLE;
+	public static final VarHandle QP_B_HANDLE;
 
-    public static final long QP_I_BYTE_OFFSET;
-    public static final long QP_P_BYTE_OFFSET;
-    public static final long QP_B_BYTE_OFFSET;
+	public static final long QP_I_BYTE_OFFSET;
+	public static final long QP_P_BYTE_OFFSET;
+	public static final long QP_B_BYTE_OFFSET;
 
-    private final MemorySegment segment;
+	private final MemorySegment segment;
 
-    static {
-        //@formatter:off
-        LAYOUT = MemoryLayout.structLayout(
-            JAVA_INT.withName("qpI"),
-            JAVA_INT.withName("qpP"),
-            JAVA_INT.withName("qpB")
-        ).withName("VkVideoEncodeH265QpKHR").withByteAlignment(4);
-        
-        QP_I_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qpI"));
-        QP_P_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qpP"));
-        QP_B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qpB"));
-        
-        QP_I_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qpI"));
-        QP_P_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qpP"));
-        QP_B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qpB"));
-        //@formatter:on
-    }
+	static {
+		//@formatter:off
+		LAYOUT = MemoryLayout.structLayout(
+		    JAVA_INT.withName("qpI"),
+		    JAVA_INT.withName("qpP"),
+		    JAVA_INT.withName("qpB")
+		).withName("VkVideoEncodeH265QpKHR").withByteAlignment(4);
+		
+		QP_I_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qpI"));
+		QP_P_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qpP"));
+		QP_B_HANDLE = LAYOUT.varHandle(PathElement.groupElement("qpB"));
+		
+		QP_I_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qpI"));
+		QP_P_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qpP"));
+		QP_B_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("qpB"));
+		//@formatter:on
+	}
 
-    public VkVideoEncodeH265QpKHR() {
-        this(Arena.ofAuto());
-    }
-    
-    public VkVideoEncodeH265QpKHR(Arena arena) {
-        this(arena.allocate(LAYOUT));
-    }
-    
-    public VkVideoEncodeH265QpKHR(MemorySegment segment) {
-        this.segment = segment;
-    
-    }
+	public VkVideoEncodeH265QpKHR() {
+	    this(Arena.ofAuto());
+	}
+	
+	public VkVideoEncodeH265QpKHR(Arena arena) {
+	    this(arena.allocate(LAYOUT));
+	}
+	
+	public VkVideoEncodeH265QpKHR(MemorySegment segment) {
+	    this.segment = segment;
+	
+	}
 
     /// @see #qpI()
     public VkVideoEncodeH265QpKHR qpI(int qpI) {
@@ -143,5 +143,5 @@ public final class VkVideoEncodeH265QpKHR
             segment -> new VkVideoEncodeH265QpKHR(segment)
         );
     }
-    
+
 }
