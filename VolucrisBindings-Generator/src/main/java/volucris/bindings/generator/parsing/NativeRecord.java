@@ -79,7 +79,17 @@ public class NativeRecord {
 									)
 							);
 						} else {
-							members.add(new NativeField(cursor));
+							List<Integer> dimensions = new ArrayList<>();
+
+							if (ParsingUtils.isArrayOfUnnamedRecordField(cursor, cursorResult, dimensions)) {
+								members.add(
+										new UnnamedRecordField(
+												cursor, cursorResult, dimensions, reportPlatformSpecificity
+										)
+								);
+							} else {
+								members.add(new NativeField(cursor));
+							}
 						}
 					}
 
@@ -516,9 +526,12 @@ public class NativeRecord {
 	}
 
 	/// @see ParsingUtils#isUnnamedRecordField(CXCursor, CXCursor)
+	/// @see ParsingUtils#isArrayOfUnnamedRecordField(CXCursor, CXCursor, List)
 	public static final class UnnamedRecordField extends NativeField {
 
 		private final NativeRecord nativeRecord;
+
+		private final List<Integer> arrayDimensions;
 
 		public UnnamedRecordField(
 				CXCursor fieldCursor,
@@ -532,10 +545,34 @@ public class NativeRecord {
 					unnamedRecordCursor,
 					reportPlatformSpecificity
 			);
+
+			this.arrayDimensions = List.of();
+		}
+
+		public UnnamedRecordField(
+				CXCursor fieldCursor,
+				CXCursor unnamedRecordCursor,
+				List<Integer> arrayDimensions,
+				boolean reportPlatformSpecificity
+		) {
+			super(fieldCursor);
+
+			this.nativeRecord = new NativeRecord(
+					Character.toUpperCase(getName().charAt(0)) + getName().substring(1),
+					unnamedRecordCursor,
+					reportPlatformSpecificity
+			);
+
+			this.arrayDimensions = List.copyOf(arrayDimensions);
 		}
 
 		public NativeRecord getNativeRecord() {
 			return nativeRecord;
+		}
+
+		/// Returns an empty list if this field is not an array.
+		public List<Integer> getArrayDimensions() {
+			return arrayDimensions;
 		}
 
 		@Override

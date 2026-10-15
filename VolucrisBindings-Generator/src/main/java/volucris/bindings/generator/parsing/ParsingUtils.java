@@ -1,6 +1,8 @@
 package volucris.bindings.generator.parsing;
 
 import java.lang.foreign.Arena;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.jspecify.annotations.Nullable;
 
@@ -325,6 +327,72 @@ public final class ParsingUtils {
 			return false;
 
 		return ClangIndex.clang_Cursor_isAnonymousRecordDecl(cursor) != 0;
+	}
+
+	/// Checks if the given cursor is a field that is an array of an unnamed record.
+	/// 
+	/// If true, the declaration cursor of the record is copied into `cursorResult` and
+	/// the `dimensions` list is filled with the array dimensions.
+	/// 
+	/// ```
+	/// struct Example {
+	///     struct {
+	///         int a;
+	///         int b;
+	///     } named;  		// Unnamed record field
+	///
+	///     struct {
+	///         int x;
+	///         int y;
+	///     } named2[5];	// Array of an unnamed record field
+	/// };
+	/// ```
+	public static boolean isArrayOfUnnamedRecordField(
+			CXCursor cursor, CXCursor cursorResult, List<Integer> dimensions
+	) {
+		try (Arena arena = Arena.ofConfined()) {
+			List<Integer> internalDimensions = new ArrayList<Integer>();
+			
+			CXType type = ClangIndex.clang_getCursorType(arena, cursor);
+
+			while (isArray(type.kind())) {
+				long elementCount = ClangIndex.clang_getArraySize(type);
+
+				type = ClangIndex.clang_getArrayElementType(arena, type);
+				
+				internalDimensions.add((int) elementCount);
+			}
+
+			CXCursor typeDeclaration = ClangIndex.clang_getTypeDeclaration(arena, type);
+
+			if (ClangIndex.clang_Cursor_isAnonymous(typeDeclaration) == 0)
+				return false;
+			if (ClangIndex.clang_Cursor_isAnonymousRecordDecl(typeDeclaration) != 0)
+				return false;
+
+			int cursorKind = ClangIndex.clang_getCursorKind(typeDeclaration);
+
+			boolean isStruct = cursorKind == CXCursorKind.CX_CURSOR_STRUCT_DECL;
+			boolean isUnion = cursorKind == CXCursorKind.CX_CURSOR_UNION_DECL;
+
+			if (!isStruct && !isUnion)
+				return false;
+
+			cursorResult.set(typeDeclaration);
+			dimensions.addAll(internalDimensions);
+			
+			return true;
+		}
+	}
+
+	private static boolean isArray(int typeKind) {
+	    return switch (typeKind) {
+	        case CXTypeKind.CX_TYPE_INCOMPLETE_ARRAY,
+	             CXTypeKind.CX_TYPE_CONSTANT_ARRAY,
+	             CXTypeKind.CX_TYPE_VARIABLE_ARRAY,
+	             CXTypeKind.CX_TYPE_DEPENDENT_SIZED_ARRAY -> true;
+	        default -> false;
+	    };
 	}
 
 }

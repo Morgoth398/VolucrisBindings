@@ -797,6 +797,11 @@ public class NativeRecordHandler {
 						globalConfig
 				);
 
+				/// Update the array information as an array of an unnamed record
+				/// is also stored in the `NativeRecord.UnnamedRecordField` class.
+				arrayDimensions = unnamedRecordField.getArrayDimensions();
+				
+				arrayDepth = arrayDimensions.size();				
 			} else {
 				recordTypeName = GeneratorUtils.transformName(globalConfig, recordType.typeName(), false);
 
