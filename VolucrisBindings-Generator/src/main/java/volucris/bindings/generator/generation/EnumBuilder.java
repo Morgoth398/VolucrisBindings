@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.jspecify.annotations.Nullable;
 import freemarker.template.Template;
+import volucris.bindings.generator.config.EnumsConfig.EnumConfig;
 import volucris.bindings.generator.config.GlobalConfig;
 import volucris.bindings.generator.parsing.NativeEnum;
 import volucris.bindings.generator.parsing.NativeEnum.NativeEnumConstant;
@@ -20,19 +21,27 @@ public class EnumBuilder {
 
 	private final List<ConstantInfo> constantsInfos;
 
-	public EnumBuilder(GlobalConfig globalConfig, NativeEnum nativeEnum, String packageName, boolean transformNames) {
+	public EnumBuilder(
+			GlobalConfig globalConfig,
+			EnumConfig enumConfig,
+			NativeEnum nativeEnum,
+			String packageName,
+			boolean transformNames
+	) {
 		this.packageName = packageName;
 
-		String name = nativeEnum.getName();
+		Map<String, String> nameMappings = enumConfig.getNameMappings();
 
-		name = GeneratorUtils.transformName(globalConfig, name, false);
-
-		this.name = name;
+		if (nameMappings.containsKey(nativeEnum.getName())) {
+			this.name = nameMappings.get(nativeEnum.getName());
+		} else {
+			this.name = GeneratorUtils.transformName(globalConfig, nativeEnum.getName(), false);
+		}
 
 		this.constantsInfos = new ArrayList<ConstantInfo>();
 
 		nativeEnum.getConstants().forEach(constant -> {
-			ConstantInfo info = getConstantInfo(globalConfig, constant, transformNames);
+			ConstantInfo info = getConstantInfo(nameMappings, constant, transformNames);
 
 			if (info != null)
 				constantsInfos.add(info);
@@ -40,39 +49,28 @@ public class EnumBuilder {
 	}
 
 	private @Nullable ConstantInfo getConstantInfo(
-			GlobalConfig globalConfig, NativeEnumConstant constant, boolean transformName
+			Map<String, String> nameMappings,
+			NativeEnumConstant constant,
+			boolean transformName
 	) {
 
 		if (constant.getName().startsWith("_"))
 			return null;
 
-		String name = constant.getName();
+		String name;
 
-		name = GeneratorUtils.transformName(globalConfig, name, false);
-
-		if (transformName) {
-			name = name.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2")
+		if (nameMappings.containsKey(constant.getName())) {
+			name = nameMappings.get(constant.getName());
+		} else if (transformName) {
+			name = constant.getName()
+					.replaceAll("([\\p{Ll}\\p{Nd}])(\\p{Lu})", "$1_$2")
 					.replaceAll("(\\p{Lu})(\\p{Lu}\\p{Ll})", "$1_$2")
 					.toUpperCase();
+		} else {
+			name = constant.getName();
 		}
-
-		String javadoc = getJavadoc(constant.getComment());
-
-		return new ConstantInfo(name, javadoc, constant.getValue());
-	}
-
-	private @Nullable String getJavadoc(String nativeComment) {
-		if (nativeComment == null)
-			return null;
-
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("/// ```\n");
-		nativeComment.lines().forEach(line -> {
-			stringBuilder.append("/// ").append(line).append("\n");
-		});
-		stringBuilder.append("/// ```");
-
-		return stringBuilder.toString();
+		
+		return new ConstantInfo(name, GeneratorUtils.getJavadoc(constant.getComment()), constant.getValue());
 	}
 
 	public String build(Template template) {

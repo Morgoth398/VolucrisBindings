@@ -561,20 +561,27 @@ public class Generator {
 	}
 
 	public void generateEnums(String enumConfigPath) {
-		EnumsConfig config = EnumsConfig.create(enumConfigPath);
+		EnumsConfig enumsConfig = EnumsConfig.create(enumConfigPath);
 
-		if (config.generateAll()) {
+		if (enumsConfig.generateAll()) {
 			List<NativeEnum> enums = headerFile.getEnums();
 
 			for (NativeEnum nativeEnum : enums) {
+
+				EnumConfig enumConfig = enumsConfig.getEnumConfig(nativeEnum.getName());
+
 				EnumBuilder enumBuilder = new EnumBuilder(
-						globalConfig, nativeEnum, config.getPackageName(), config.transformConstantsNames()
+						globalConfig,
+						enumConfig,
+						nativeEnum,
+						enumsConfig.getPackageName(),
+						enumsConfig.transformConstantsNames()
 				);
 
 				String output = enumBuilder.build(ENUM_TEMPLATE);
 
 				try {
-					String outputDirectory = config.getDirectory();
+					String outputDirectory = enumsConfig.getDirectory();
 					Path path = Path.of(outputDirectory + "/" + enumBuilder.getClassName() + ".java");
 
 					createDirectoryAndFile(path);
@@ -584,13 +591,17 @@ public class Generator {
 				}
 			}
 		} else {
-			List<EnumConfig> configs = config.getConfigs();
+			List<EnumConfig> configs = enumsConfig.getConfigs();
 
 			for (EnumConfig enumConfig : configs) {
 				NativeEnum nativeEnum = headerFile.getEnum(enumConfig.getName());
 
 				EnumBuilder enumBuilder = new EnumBuilder(
-						globalConfig, nativeEnum, enumConfig.getPackageName(), enumConfig.transformConstantsNames()
+						globalConfig,
+						enumConfig,
+						nativeEnum,
+						enumConfig.getPackageName(),
+						enumConfig.transformConstantsNames()
 				);
 
 				String output = enumBuilder.build(ENUM_TEMPLATE);

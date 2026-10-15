@@ -2,7 +2,10 @@ package volucris.bindings.generator.config;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.Nulls;
@@ -24,7 +27,7 @@ public class EnumsConfig {
 
 	public EnumsConfig() {
 		configs = new ArrayList<EnumConfig>();
-		
+
 		transformConstantsNames = true;
 	}
 
@@ -38,10 +41,17 @@ public class EnumsConfig {
 			return mapper.readValue(Path.of(path).toFile(), EnumsConfig.class);
 		} catch (Exception e) {
 			System.err.println("File: " + path);
-			throw new RuntimeException(e.getMessage());
+			throw new RuntimeException(e);
 		}
 	}
-	
+
+	public EnumConfig getEnumConfig(String enumName) {
+		return configs.stream()
+				.filter(config -> config.getName().equals(enumName))
+				.findFirst()
+				.orElse(new EnumConfig());
+	}
+
 	public List<EnumConfig> getConfigs() {
 		return configs;
 	}
@@ -64,12 +74,18 @@ public class EnumsConfig {
 
 	public static class EnumConfig {
 
+		private Map<String, String> nameMappings;
+
 		private String name;
 		private String packageName;
 		private String directory;
 
 		private boolean transformConstantsNames;
-		
+
+		public EnumConfig() {
+			nameMappings = new LinkedHashMap<String, String>();
+		}
+
 		public String getName() {
 			return name;
 		}
@@ -85,6 +101,10 @@ public class EnumsConfig {
 		public boolean transformConstantsNames() {
 			return transformConstantsNames;
 		}
-		
+
+		public Map<String, String> getNameMappings() {
+			return Collections.unmodifiableMap(nameMappings);
+		}
+
 	}
 }
