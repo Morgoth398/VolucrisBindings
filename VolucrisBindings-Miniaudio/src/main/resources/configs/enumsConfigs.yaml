@@ -1,0 +1,5 @@
+package-name: volucris.bindings.miniaudio.enums
+directory: src/main/java/volucris/bindings/miniaudio/enums
+generate-all: true
+transform-constants-names: true
+configs:

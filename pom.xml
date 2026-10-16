@@ -68,6 +68,7 @@
 		<module>VolucrisBindings-Par</module>
 		<module>VolucrisBindings-Yoga</module>
 		<module>VolucrisBindings-Libclang</module>
+		<module>VolucrisBindings-Miniaudio</module>
 	</modules>
 	<properties>
 		<revision>1.0.0</revision>
@@ -137,6 +138,11 @@
 			<dependency>
 				<groupId>dev.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Libclang</artifactId>
+				<version>${revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>dev.morgoth398</groupId>
+				<artifactId>VolucrisBindings-Miniaudio</artifactId>
 				<version>${revision}</version>
 			</dependency>
 		</dependencies>

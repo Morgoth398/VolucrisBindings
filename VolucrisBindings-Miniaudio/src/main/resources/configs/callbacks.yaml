@@ -1,0 +1,335 @@
+callbacks:
+  - name: ma_log_callback_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_data_source_get_next_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_enum_devices_callback_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaContext
+      - volucris.bindings.miniaudio.structs.MaDeviceInfo
+  - name: ma_decoder_read_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecoder
+  - name: ma_decoder_seek_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecoder
+  - name: ma_decoder_tell_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecoder
+
+  - name: ma_encoder_write_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaEncoder
+  - name: ma_encoder_seek_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaEncoder
+  - name: ma_encoder_init_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaEncoder
+  - name: ma_encoder_uninit_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaEncoder
+  - name: ma_encoder_write_pcm_frames_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaEncoder
+  - name: ma_sound_end_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaSound
+
+  - name: ma_allocation_callbacks_onMalloc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_allocation_callbacks_onRealloc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_allocation_callbacks_onFree
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+
+  - name: ma_async_notification_callbacks_onSignal
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+
+  - name: ma_backend_callbacks_onContextInit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaContext
+      - volucris.bindings.miniaudio.structs.MaContextConfig
+      - volucris.bindings.miniaudio.structs.MaBackendCallbacks
+  - name: ma_backend_callbacks_onContextUninit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaContext
+  - name: ma_backend_callbacks_onContextEnumerateDevices
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaContext
+  - name: ma_backend_callbacks_onContextGetDeviceInfo
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaContext
+      - volucris.bindings.miniaudio.structs.MaDeviceId
+      - volucris.bindings.miniaudio.structs.MaDeviceInfo
+  - name: ma_backend_callbacks_onDeviceInit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+      - volucris.bindings.miniaudio.structs.MaDeviceConfig
+      - volucris.bindings.miniaudio.structs.MaDeviceDescriptor
+  - name: ma_backend_callbacks_onDeviceUninit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceStart
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceStop
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceRead
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceWrite
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceDataLoop
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceDataLoopWakeup
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+  - name: ma_backend_callbacks_onDeviceGetInfo
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+      - volucris.bindings.miniaudio.structs.MaDeviceInfo
+
+  - name: ma_data_source_vtable_onRead
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_data_source_vtable_onSeek
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_data_source_vtable_onGetDataFormat
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_data_source_vtable_onGetCursor
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_data_source_vtable_onGetLength
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_data_source_vtable_onSetLooping
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+
+  - name: ma_decoding_backend_vtable_onInit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecodingBackendConfig
+      - volucris.bindings.miniaudio.structs.MaAllocationCallbacks
+  - name: ma_decoding_backend_vtable_onInitFile
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecodingBackendConfig
+      - volucris.bindings.miniaudio.structs.MaAllocationCallbacks
+  - name: ma_decoding_backend_vtable_onInitFileW
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecodingBackendConfig
+      - volucris.bindings.miniaudio.structs.MaAllocationCallbacks
+  - name: ma_decoding_backend_vtable_onInitMemory
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDecodingBackendConfig
+      - volucris.bindings.miniaudio.structs.MaAllocationCallbacks
+  - name: ma_decoding_backend_vtable_onUninit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaAllocationCallbacks
+
+  - name: ma_device_notification_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDeviceNotification
+  - name: ma_device_data_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+
+  - name: ma_stop_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaDevice
+    
+  - name: ma_engine_process_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+    
+  - name: ma_job_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaJob
+
+  - name: ma_node_vtable_onProcess
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_node_vtable_onGetRequiredInputFrameCount
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+
+  - name: ma_resampling_backend_vtable_onGetHeapSize
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaResamplerConfig
+  - name: ma_resampling_backend_vtable_onInit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaResamplerConfig
+  - name: ma_resampling_backend_vtable_onUninit
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaAllocationCallbacks
+  - name: ma_resampling_backend_vtable_onProcess
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_resampling_backend_vtable_onSetRate
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_resampling_backend_vtable_onGetInputLatency
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_resampling_backend_vtable_onGetOutputLatency
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_resampling_backend_vtable_onGetRequiredInputFrameCount
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_resampling_backend_vtable_onGetExpectedOutputFrameCount
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_resampling_backend_vtable_onReset
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+    
+  - name: ma_vfs_callbacks_onOpen
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onOpenW
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onClose
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onRead
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onWrite
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onSeek
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onTell
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_vfs_callbacks_onInfo
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+      - volucris.bindings.miniaudio.structs.MaFileInfo
+
+  - name: ma_read_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_seek_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:
+  - name: ma_tell_proc
+    package-name: volucris.bindings.miniaudio.callbacks
+    directory: src/main/java/volucris/bindings/miniaudio/callbacks
+    imports:

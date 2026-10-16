@@ -1,0 +1,156 @@
+class-description:
+  name: Miniaudio
+  package-name: volucris.bindings.miniaudio
+  directory: src/main/java/volucris/bindings/miniaudio
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+  - volucris.bindings.miniaudio.structs.*
+  - volucris.bindings.miniaudio.callbacks.*
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+  - name: MA_TRUE
+    type: int
+  - name: MA_FALSE
+    type: int
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - ma_
+excluded-function-name-prefixes:
+  - ma_get_bytes_per_frame
+  - ma_offset_pcm_frames_ptr_f32
+  - ma_offset_pcm_frames_const_ptr_f32
+  - ma_log_callback_proc
+  - ma_data_source_get_next_proc
+  - ma_job_proc
+  - ma_device_notification_proc
+  - ma_device_data_proc
+  - ma_stop_proc
+  - ma_enum_devices_callback_proc
+  - ma_read_proc
+  - ma_seek_proc
+  - ma_tell_proc
+  - ma_decoder_read_proc
+  - ma_decoder_seek_proc
+  - ma_decoder_tell_proc
+  - ma_encoder_write_proc
+  - ma_encoder_seek_proc
+  - ma_encoder_init_proc
+  - ma_encoder_uninit_proc
+  - ma_encoder_write_pcm_frames_proc
+  - ma_sound_end_proc
+  - ma_engine_process_proc
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name : ma_version_string
+    string-return-type: true
+  - name: ma_log_post
+    string-parameters:
+      - pMessage
+  - name: ma_channel_position_to_string
+    string-return-type: true
+  - name: ma_result_description
+    string-return-type: true
+  - name: ma_get_format_name
+    string-return-type: true
+  - name: ma_log_level_to_string
+    string-return-type: true
+  - name: ma_get_backend_name
+    string-return-type: true
+  - name: ma_get_backend_from_name
+    string-parameters:
+      - pBackendName
+  - name: ma_vfs_open
+    string-parameters:
+      - pFilePath
+  - name: ma_vfs_open_and_read_file
+    string-parameters:
+      - pFilePath
+  - name: ma_decoder_init_vfs
+    string-parameters:
+      - pFilePath
+  - name: ma_decoder_init_file
+    string-parameters:
+      - pFilePath
+  - name: ma_decode_from_vfs
+    string-parameters:
+      - pFilePath
+  - name: ma_decode_file
+    string-parameters:
+      - pFilePath
+  - name: ma_encoder_init_vfs
+    string-parameters:
+      - pFilePath
+  - name: ma_encoder_init_file
+    string-parameters:
+      - pFilePath
+  - name: ma_resource_manager_register_file
+    string-parameters:
+      - pFilePath
+  - name: ma_resource_manager_register_decoded_data
+    string-parameters:
+      - pName
+  - name: ma_resource_manager_register_encoded_data
+    string-parameters:
+      - pName
+  - name: ma_resource_manager_unregister_file
+    string-parameters:
+      - pFilePath
+  - name: ma_resource_manager_unregister_data
+    string-parameters:
+      - pName
+  - name: ma_resource_manager_data_buffer_init
+    string-parameters:
+      - pFilePath
+  - name: ma_resource_manager_data_stream_init
+    string-parameters:
+      - pFilePath
+  - name: ma_resource_manager_data_source_init
+    string-parameters:
+      - pName
+  - name: ma_engine_play_sound_ex
+    string-parameters:
+      - pFilePath
+  - name: ma_engine_play_sound
+    string-parameters:
+      - pFilePath
+    nullable-parameters:
+      - pGroup
+  - name: ma_sound_init_from_file
+    nullable-parameters:
+      - pGroup
+      - pDoneFence
+    string-parameters:
+      - pFilePath
+  - name: ma_log_callback_proc
+    string-parameters:
+      - pMessage
+  - name: ma_vfs_callbacks_onOpen
+    string-parameters:
+      - pFilePath
+  - name: ma_decoding_backend_vtable_onInitFile
+    string-parameters:
+      - pFilePath
+  - name: ma_engine_init
+    nullable-parameters:
+      - pConfig
+native-function-pointers:
