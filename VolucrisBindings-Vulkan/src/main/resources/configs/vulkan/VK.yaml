@@ -588,6 +588,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - submitCount
+        - pSubmits
         - fence
       struct-arrays:
         - pSubmits
@@ -653,6 +654,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - bindInfoCount
+        - pBindInfo
         - fence
       struct-arrays:
         - pBindInfo
@@ -950,7 +952,9 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - descriptorWriteCount
+        - pDescriptorWrites
         - descriptorCopyCount
+        - pDescriptorCopies
       struct-arrays:
         - pDescriptorWrites
         - pDescriptorCopies
@@ -1068,6 +1072,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - dynamicOffsetCount
+        - pDynamicOffsets
       struct-arrays:
         - pDescriptorSets
         - pDynamicOffsets
@@ -1093,6 +1098,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - drawCount
+        - pVertexInfo
       struct-arrays:
         - pVertexInfo
     - name: vkCmdDrawMultiIndexedEXT
@@ -1100,6 +1106,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - drawCount
+        - pIndexInfo
         - pVertexOffset
       struct-arrays:
         - pIndexInfo
@@ -1212,8 +1219,11 @@ native-functions:
         - srcStageMask
         - dstStageMask
         - memoryBarrierCount
+        - pMemoryBarriers
         - bufferMemoryBarrierCount
+        - pBufferMemoryBarriers
         - imageMemoryBarrierCount
+        - pImageMemoryBarriers
       struct-arrays:
         - pEvents
         - pMemoryBarriers
@@ -1227,8 +1237,11 @@ native-functions:
         - dstStageMask
         - dependencyFlags
         - memoryBarrierCount
+        - pMemoryBarriers
         - bufferMemoryBarrierCount
+        - pBufferMemoryBarriers
         - imageMemoryBarrierCount
+        - pImageMemoryBarriers
       struct-arrays:
         - pMemoryBarriers
         - pBufferMemoryBarriers
@@ -1782,6 +1795,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - counterBufferCount
+        - pCounterBuffers
         - pCounterBufferOffsets
       struct-arrays:
         - pCounterBuffers
@@ -1791,6 +1805,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - counterBufferCount
+        - pCounterBuffers
         - pCounterBufferOffsets
       struct-arrays:
         - pCounterBuffers
@@ -1831,6 +1846,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - customSampleOrderCount
+        - pCustomSampleOrders
       struct-arrays:
         - pCustomSampleOrders
     - name: vkCmdDrawMeshTasksNV
@@ -2408,7 +2424,9 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - vertexBindingDescriptionCount
+        - pVertexBindingDescriptions
         - vertexAttributeDescriptionCount
+        - pVertexAttributeDescriptions
       struct-arrays:
         - pVertexBindingDescriptions
         - pVertexAttributeDescriptions
@@ -2439,6 +2457,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - submitCount
+        - pSubmits
         - fence
       struct-arrays:
         - pSubmits
@@ -3347,6 +3366,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - submitCount
+        - pSubmits
         - fence
       struct-arrays:
         - pSubmits
@@ -3358,6 +3378,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - bindInfoCount
+        - pBindInfo
         - fence
       struct-arrays:
         - pBindInfo
@@ -3393,6 +3414,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - submitCount
+        - pSubmits
         - fence
       struct-arrays:
         - pSubmits
@@ -3477,6 +3499,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - dynamicOffsetCount
+        - pDynamicOffsets
       struct-arrays:
         - pDescriptorSets
         - pDynamicOffsets
@@ -3502,6 +3525,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - drawCount
+        - pVertexInfo
       struct-arrays:
         - pVertexInfo
     - name: vkCmdDrawMultiIndexedEXT
@@ -3509,6 +3533,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - drawCount
+        - pIndexInfo
         - pVertexOffset
       struct-arrays:
         - pIndexInfo
@@ -3621,8 +3646,11 @@ native-functions:
         - srcStageMask
         - dstStageMask
         - memoryBarrierCount
+        - pMemoryBarriers
         - bufferMemoryBarrierCount
+        - pBufferMemoryBarriers
         - imageMemoryBarrierCount
+        - pImageMemoryBarriers
       struct-arrays:
         - pEvents
         - pMemoryBarriers
@@ -3636,8 +3664,11 @@ native-functions:
         - dstStageMask
         - dependencyFlags
         - memoryBarrierCount
+        - pMemoryBarriers
         - bufferMemoryBarrierCount
+        - pBufferMemoryBarriers
         - imageMemoryBarrierCount
+        - pImageMemoryBarriers
       struct-arrays:
         - pMemoryBarriers
         - pBufferMemoryBarriers
@@ -3794,6 +3825,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - counterBufferCount
+        - pCounterBuffers
         - pCounterBufferOffsets
       struct-arrays:
         - pCounterBuffers
@@ -3803,6 +3835,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - counterBufferCount
+        - pCounterBuffers
         - pCounterBufferOffsets
       struct-arrays:
         - pCounterBuffers
@@ -3843,6 +3876,7 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - customSampleOrderCount
+        - pCustomSampleOrders
       struct-arrays:
         - pCustomSampleOrders
     - name: vkCmdDrawMeshTasksNV
@@ -4155,7 +4189,9 @@ native-functions:
       string-return-type: false
       nullable-parameters:
         - vertexBindingDescriptionCount
+        - pVertexBindingDescriptions
         - vertexAttributeDescriptionCount
+        - pVertexAttributeDescriptions
       struct-arrays:
         - pVertexBindingDescriptions
         - pVertexAttributeDescriptions

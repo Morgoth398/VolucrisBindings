@@ -38,8 +38,8 @@ native-functions:
     <#if allInformation>
     <#list functions as function>
     - name: ${function.name}
-      return-type-is-struct-array: ${function.returnTypeIsStructArray?then("true", "false")}
-      string-return-type: ${function.returnTypeIsString?then("true", "false")}
+      return-type-is-struct-array: false
+      string-return-type: false
     <#if function.nullableParameters?has_content>
       nullable-parameters:
       <#list function.nullableParameters as nullableParameter>

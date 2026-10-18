@@ -20,18 +20,12 @@ public final class VkExtensionsQCOM {
     public static final String VK_QCOM_IMAGE_PROCESSING_3_EXTENSION_NAME = "VK_QCOM_image_processing3";
     public static final int VK_QCOM_SHADER_MULTIPLE_WAIT_QUEUES_SPEC_VERSION = 1;
     public static final String VK_QCOM_SHADER_MULTIPLE_WAIT_QUEUES_EXTENSION_NAME = "VK_QCOM_shader_multiple_wait_queues";
-    public static final int VK_QCOM_EXTENSION_307_SPEC_VERSION = 0;
-    public static final String VK_QCOM_EXTENSION_307_EXTENSION_NAME = "VK_QCOM_extension_307";
     public static final int VK_QCOM_TILE_SHADING_SPEC_VERSION = 2;
     public static final String VK_QCOM_TILE_SHADING_EXTENSION_NAME = "VK_QCOM_tile_shading";
     public static final int VK_QCOM_ROTATED_COPY_COMMANDS_SPEC_VERSION = 2;
     public static final String VK_QCOM_ROTATED_COPY_COMMANDS_EXTENSION_NAME = "VK_QCOM_rotated_copy_commands";
-    public static final int VK_QCOM_EXTENSION_369_SPEC_VERSION = 0;
-    public static final String VK_QCOM_EXTENSION_369_EXTENSION_NAME = "VK_QCOM_extension_369";
     public static final int VK_QCOM_FRAGMENT_DENSITY_MAP_OFFSET_SPEC_VERSION = 3;
     public static final String VK_QCOM_FRAGMENT_DENSITY_MAP_OFFSET_EXTENSION_NAME = "VK_QCOM_fragment_density_map_offset";
-    public static final int VK_QCOM_EXTENSION_440_SPEC_VERSION = 0;
-    public static final String VK_QCOM_EXTENSION_440_EXTENSION_NAME = "VK_QCOM_extension_440";
     public static final int VK_QCOM_IMAGE_PROCESSING_SPEC_VERSION = 1;
     public static final String VK_QCOM_IMAGE_PROCESSING_EXTENSION_NAME = "VK_QCOM_image_processing";
     public static final int VK_QCOM_TILE_PROPERTIES_SPEC_VERSION = 1;
@@ -48,15 +42,9 @@ public final class VkExtensionsQCOM {
     public static final String VK_QCOM_YCBCR_DEGAMMA_EXTENSION_NAME = "VK_QCOM_ycbcr_degamma";
     public static final int VK_QCOM_FILTER_CUBIC_CLAMP_SPEC_VERSION = 1;
     public static final String VK_QCOM_FILTER_CUBIC_CLAMP_EXTENSION_NAME = "VK_QCOM_filter_cubic_clamp";
-    public static final int VK_QCOM_EXTENSION_536_SPEC_VERSION = 0;
-    public static final String VK_QCOM_EXTENSION_536_EXTENSION_NAME = "VK_QCOM_extension_536";
     public static final int VK_QCOM_TILE_MEMORY_HEAP_SPEC_VERSION = 1;
     public static final String VK_QCOM_TILE_MEMORY_HEAP_EXTENSION_NAME = "VK_QCOM_tile_memory_heap";
-    public static final int VK_QCOM_EXTENSION_615_SPEC_VERSION = 0;
-    public static final String VK_QCOM_EXTENSION_615_EXTENSION_NAME = "VK_QCOM_extension_615";
     public static final int VK_QCOM_DATA_GRAPH_MODEL_SPEC_VERSION = 1;
     public static final String VK_QCOM_DATA_GRAPH_MODEL_EXTENSION_NAME = "VK_QCOM_data_graph_model";
-    public static final int VK_QCOM_EXTENSION_695_SPEC_VERSION = 0;
-    public static final String VK_QCOM_EXTENSION_695_EXTENSION_NAME = "VK_QCOM_extension_695";
     
 }

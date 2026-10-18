@@ -454,13 +454,13 @@ public final class VK extends VulkanBase {
     public static int vkQueueSubmit(
     	VkQueue queue,
     	int submitCount,
-    	NativeStructArray<VkSubmitInfo> pSubmits,
+    	@Nullable NativeStructArray<VkSubmitInfo> pSubmits,
     	@Nullable VkFence fence
     ) {
     	return vkQueueSubmit(
     		queue,
     		submitCount,
-    		pSubmits.memorySegment(),
+    		pSubmits == null ? MemorySegment.NULL : pSubmits.memorySegment(),
     		fence == null ? MemorySegment.NULL : fence.memorySegment()
     	);
     }
@@ -950,13 +950,13 @@ public final class VK extends VulkanBase {
     public static int vkQueueBindSparse(
     	VkQueue queue,
     	int bindInfoCount,
-    	NativeStructArray<VkBindSparseInfo> pBindInfo,
+    	@Nullable NativeStructArray<VkBindSparseInfo> pBindInfo,
     	@Nullable VkFence fence
     ) {
     	return vkQueueBindSparse(
     		queue,
     		bindInfoCount,
-    		pBindInfo.memorySegment(),
+    		pBindInfo == null ? MemorySegment.NULL : pBindInfo.memorySegment(),
     		fence == null ? MemorySegment.NULL : fence.memorySegment()
     	);
     }
@@ -2019,11 +2019,11 @@ public final class VK extends VulkanBase {
     	int dstStageMask,
     	int dependencyFlags,
     	int memoryBarrierCount,
-    	NativeStructArray<VkMemoryBarrier> pMemoryBarriers,
+    	@Nullable NativeStructArray<VkMemoryBarrier> pMemoryBarriers,
     	int bufferMemoryBarrierCount,
-    	NativeStructArray<VkBufferMemoryBarrier> pBufferMemoryBarriers,
+    	@Nullable NativeStructArray<VkBufferMemoryBarrier> pBufferMemoryBarriers,
     	int imageMemoryBarrierCount,
-    	NativeStructArray<VkImageMemoryBarrier> pImageMemoryBarriers
+    	@Nullable NativeStructArray<VkImageMemoryBarrier> pImageMemoryBarriers
     ) {
     	vkCmdPipelineBarrier(
     		commandBuffer,
@@ -2031,11 +2031,11 @@ public final class VK extends VulkanBase {
     		dstStageMask,
     		dependencyFlags,
     		memoryBarrierCount,
-    		pMemoryBarriers.memorySegment(),
+    		pMemoryBarriers == null ? MemorySegment.NULL : pMemoryBarriers.memorySegment(),
     		bufferMemoryBarrierCount,
-    		pBufferMemoryBarriers.memorySegment(),
+    		pBufferMemoryBarriers == null ? MemorySegment.NULL : pBufferMemoryBarriers.memorySegment(),
     		imageMemoryBarrierCount,
-    		pImageMemoryBarriers.memorySegment()
+    		pImageMemoryBarriers == null ? MemorySegment.NULL : pImageMemoryBarriers.memorySegment()
     	);
     }
     
@@ -3100,16 +3100,16 @@ public final class VK extends VulkanBase {
     public static void vkUpdateDescriptorSets(
     	VkDevice device,
     	int descriptorWriteCount,
-    	NativeStructArray<VkWriteDescriptorSet> pDescriptorWrites,
+    	@Nullable NativeStructArray<VkWriteDescriptorSet> pDescriptorWrites,
     	int descriptorCopyCount,
-    	NativeStructArray<VkCopyDescriptorSet> pDescriptorCopies
+    	@Nullable NativeStructArray<VkCopyDescriptorSet> pDescriptorCopies
     ) {
     	vkUpdateDescriptorSets(
     		device,
     		descriptorWriteCount,
-    		pDescriptorWrites.memorySegment(),
+    		pDescriptorWrites == null ? MemorySegment.NULL : pDescriptorWrites.memorySegment(),
     		descriptorCopyCount,
-    		pDescriptorCopies.memorySegment()
+    		pDescriptorCopies == null ? MemorySegment.NULL : pDescriptorCopies.memorySegment()
     	);
     }
     
@@ -3179,7 +3179,7 @@ public final class VK extends VulkanBase {
     	int descriptorSetCount,
     	NativePointerArray pDescriptorSets,
     	int dynamicOffsetCount,
-    	NativeIntArray pDynamicOffsets
+    	@Nullable NativeIntArray pDynamicOffsets
     ) {
     	vkCmdBindDescriptorSets(
     		commandBuffer,
@@ -3189,7 +3189,7 @@ public final class VK extends VulkanBase {
     		descriptorSetCount,
     		pDescriptorSets.memorySegment(),
     		dynamicOffsetCount,
-    		pDynamicOffsets.memorySegment()
+    		pDynamicOffsets == null ? MemorySegment.NULL : pDynamicOffsets.memorySegment()
     	);
     }
     
@@ -3386,11 +3386,11 @@ public final class VK extends VulkanBase {
     	int srcStageMask,
     	int dstStageMask,
     	int memoryBarrierCount,
-    	NativeStructArray<VkMemoryBarrier> pMemoryBarriers,
+    	@Nullable NativeStructArray<VkMemoryBarrier> pMemoryBarriers,
     	int bufferMemoryBarrierCount,
-    	NativeStructArray<VkBufferMemoryBarrier> pBufferMemoryBarriers,
+    	@Nullable NativeStructArray<VkBufferMemoryBarrier> pBufferMemoryBarriers,
     	int imageMemoryBarrierCount,
-    	NativeStructArray<VkImageMemoryBarrier> pImageMemoryBarriers
+    	@Nullable NativeStructArray<VkImageMemoryBarrier> pImageMemoryBarriers
     ) {
     	vkCmdWaitEvents(
     		commandBuffer,
@@ -3399,11 +3399,11 @@ public final class VK extends VulkanBase {
     		srcStageMask,
     		dstStageMask,
     		memoryBarrierCount,
-    		pMemoryBarriers.memorySegment(),
+    		pMemoryBarriers == null ? MemorySegment.NULL : pMemoryBarriers.memorySegment(),
     		bufferMemoryBarrierCount,
-    		pBufferMemoryBarriers.memorySegment(),
+    		pBufferMemoryBarriers == null ? MemorySegment.NULL : pBufferMemoryBarriers.memorySegment(),
     		imageMemoryBarrierCount,
-    		pImageMemoryBarriers.memorySegment()
+    		pImageMemoryBarriers == null ? MemorySegment.NULL : pImageMemoryBarriers.memorySegment()
     	);
     }
     
@@ -5742,13 +5742,13 @@ public final class VK extends VulkanBase {
     public static int vkQueueSubmit2(
     	VkQueue queue,
     	int submitCount,
-    	NativeStructArray<VkSubmitInfo2> pSubmits,
+    	@Nullable NativeStructArray<VkSubmitInfo2> pSubmits,
     	@Nullable VkFence fence
     ) {
     	return vkQueueSubmit2(
     		queue,
     		submitCount,
-    		pSubmits.memorySegment(),
+    		pSubmits == null ? MemorySegment.NULL : pSubmits.memorySegment(),
     		fence == null ? MemorySegment.NULL : fence.memorySegment()
     	);
     }
@@ -10525,14 +10525,14 @@ public final class VK extends VulkanBase {
     	VkCommandBuffer commandBuffer,
     	int firstCounterBuffer,
     	int counterBufferCount,
-    	NativePointerArray pCounterBuffers,
+    	@Nullable NativePointerArray pCounterBuffers,
     	@Nullable NativeLongArray pCounterBufferOffsets
     ) {
     	vkCmdBeginTransformFeedbackEXT(
     		commandBuffer,
     		firstCounterBuffer,
     		counterBufferCount,
-    		pCounterBuffers.memorySegment(),
+    		pCounterBuffers == null ? MemorySegment.NULL : pCounterBuffers.memorySegment(),
     		pCounterBufferOffsets == null ? MemorySegment.NULL : pCounterBufferOffsets.memorySegment()
     	);
     }
@@ -10563,14 +10563,14 @@ public final class VK extends VulkanBase {
     	VkCommandBuffer commandBuffer,
     	int firstCounterBuffer,
     	int counterBufferCount,
-    	NativePointerArray pCounterBuffers,
+    	@Nullable NativePointerArray pCounterBuffers,
     	@Nullable NativeLongArray pCounterBufferOffsets
     ) {
     	vkCmdEndTransformFeedbackEXT(
     		commandBuffer,
     		firstCounterBuffer,
     		counterBufferCount,
-    		pCounterBuffers.memorySegment(),
+    		pCounterBuffers == null ? MemorySegment.NULL : pCounterBuffers.memorySegment(),
     		pCounterBufferOffsets == null ? MemorySegment.NULL : pCounterBufferOffsets.memorySegment()
     	);
     }
@@ -12685,13 +12685,13 @@ public final class VK extends VulkanBase {
     	VkCommandBuffer commandBuffer,
     	int sampleOrderType,
     	int customSampleOrderCount,
-    	NativeStructArray<VkCoarseSampleOrderCustomNV> pCustomSampleOrders
+    	@Nullable NativeStructArray<VkCoarseSampleOrderCustomNV> pCustomSampleOrders
     ) {
     	vkCmdSetCoarseSampleOrderNV(
     		commandBuffer,
     		sampleOrderType,
     		customSampleOrderCount,
-    		pCustomSampleOrders.memorySegment()
+    		pCustomSampleOrders == null ? MemorySegment.NULL : pCustomSampleOrders.memorySegment()
     	);
     }
     
@@ -14962,16 +14962,16 @@ public final class VK extends VulkanBase {
     public static void vkCmdSetVertexInputEXT(
     	VkCommandBuffer commandBuffer,
     	int vertexBindingDescriptionCount,
-    	NativeStructArray<VkVertexInputBindingDescription2EXT> pVertexBindingDescriptions,
+    	@Nullable NativeStructArray<VkVertexInputBindingDescription2EXT> pVertexBindingDescriptions,
     	int vertexAttributeDescriptionCount,
-    	NativeStructArray<VkVertexInputAttributeDescription2EXT> pVertexAttributeDescriptions
+    	@Nullable NativeStructArray<VkVertexInputAttributeDescription2EXT> pVertexAttributeDescriptions
     ) {
     	vkCmdSetVertexInputEXT(
     		commandBuffer,
     		vertexBindingDescriptionCount,
-    		pVertexBindingDescriptions.memorySegment(),
+    		pVertexBindingDescriptions == null ? MemorySegment.NULL : pVertexBindingDescriptions.memorySegment(),
     		vertexAttributeDescriptionCount,
-    		pVertexAttributeDescriptions.memorySegment()
+    		pVertexAttributeDescriptions == null ? MemorySegment.NULL : pVertexAttributeDescriptions.memorySegment()
     	);
     }
     
@@ -15198,7 +15198,7 @@ public final class VK extends VulkanBase {
     public static void vkCmdDrawMultiEXT(
     	VkCommandBuffer commandBuffer,
     	int drawCount,
-    	NativeStructArray<VkMultiDrawInfoEXT> pVertexInfo,
+    	@Nullable NativeStructArray<VkMultiDrawInfoEXT> pVertexInfo,
     	int instanceCount,
     	int firstInstance,
     	int stride
@@ -15206,7 +15206,7 @@ public final class VK extends VulkanBase {
     	vkCmdDrawMultiEXT(
     		commandBuffer,
     		drawCount,
-    		pVertexInfo.memorySegment(),
+    		pVertexInfo == null ? MemorySegment.NULL : pVertexInfo.memorySegment(),
     		instanceCount,
     		firstInstance,
     		stride
@@ -15242,7 +15242,7 @@ public final class VK extends VulkanBase {
     public static void vkCmdDrawMultiIndexedEXT(
     	VkCommandBuffer commandBuffer,
     	int drawCount,
-    	NativeStructArray<VkMultiDrawIndexedInfoEXT> pIndexInfo,
+    	@Nullable NativeStructArray<VkMultiDrawIndexedInfoEXT> pIndexInfo,
     	int instanceCount,
     	int firstInstance,
     	int stride,
@@ -15251,7 +15251,7 @@ public final class VK extends VulkanBase {
     	vkCmdDrawMultiIndexedEXT(
     		commandBuffer,
     		drawCount,
-    		pIndexInfo.memorySegment(),
+    		pIndexInfo == null ? MemorySegment.NULL : pIndexInfo.memorySegment(),
     		instanceCount,
     		firstInstance,
     		stride,
