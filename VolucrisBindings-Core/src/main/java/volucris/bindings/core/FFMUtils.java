@@ -76,14 +76,37 @@ public final class FFMUtils {
 		});
 	}
 
-	public static LazyConstant<MethodHandle> downcallHandleVoid(String name, MemoryLayout... argLayouts) {
-		return downcallHandleVoid(false, name, argLayouts);
+	public static LazyConstant<MethodHandle> downcallHandleVoid(
+			String name,
+			MemoryLayout... argLayouts
+	) {
+		return downcallHandleVoid(SYMBOL_LOOKUP, name, argLayouts);
+	}
+	
+	public static LazyConstant<MethodHandle> downcallHandleVoid(
+			SymbolLookup symbolLookup,
+			String name,
+			MemoryLayout... argLayouts
+	) {
+		return downcallHandleVoid(symbolLookup, false, name, argLayouts);
 	}
 
-	public static LazyConstant<MethodHandle> downcallHandleVoid(boolean functionPointer, String name,
-			MemoryLayout... argLayouts) {
+	public static LazyConstant<MethodHandle> downcallHandleVoid(
+			boolean functionPointer,
+			String name,
+			MemoryLayout... argLayouts
+	) {
+		return downcallHandleVoid(SYMBOL_LOOKUP, functionPointer, name, argLayouts);
+	}
+	
+	public static LazyConstant<MethodHandle> downcallHandleVoid(
+			SymbolLookup symbolLookup,
+			boolean functionPointer,
+			String name,
+			MemoryLayout... argLayouts
+	) {
 		return LazyConstant.of(() -> {
-			MemorySegment symbol = SYMBOL_LOOKUP.findOrThrow(name);
+			MemorySegment symbol = symbolLookup.findOrThrow(name);
 
 			MemorySegment address = functionPointer
 					? symbol.reinterpret(ValueLayout.ADDRESS.byteSize()).get(ValueLayout.ADDRESS, 0)
@@ -92,15 +115,41 @@ public final class FFMUtils {
 		});
 	}
 
-	public static LazyConstant<MethodHandle> downcallHandle(String name, MemoryLayout resLayout,
-			MemoryLayout... argLayouts) {
-		return downcallHandle(false, name, resLayout, argLayouts);
+	public static LazyConstant<MethodHandle> downcallHandle(
+			String name,
+			MemoryLayout resLayout,
+			MemoryLayout... argLayouts
+	) {
+		return downcallHandle(SYMBOL_LOOKUP, name, resLayout, argLayouts);
 	}
 
-	public static LazyConstant<MethodHandle> downcallHandle(boolean functionPointer, String name,
-			MemoryLayout resLayout, MemoryLayout... argLayouts) {
+	public static LazyConstant<MethodHandle> downcallHandle(
+			SymbolLookup symbolLookup,
+			String name,
+			MemoryLayout resLayout,
+			MemoryLayout... argLayouts
+	) {
+		return downcallHandle(symbolLookup, false, name, resLayout, argLayouts);
+	}
+
+	public static LazyConstant<MethodHandle> downcallHandle(
+			boolean functionPointer,
+			String name,
+			MemoryLayout resLayout,
+			MemoryLayout... argLayouts
+	) {
+		return downcallHandle(SYMBOL_LOOKUP, functionPointer, name, resLayout, argLayouts);
+	}
+
+	public static LazyConstant<MethodHandle> downcallHandle(
+			SymbolLookup symbolLookup,
+			boolean functionPointer,
+			String name,
+			MemoryLayout resLayout,
+			MemoryLayout... argLayouts
+	) {
 		return LazyConstant.of(() -> {
-			MemorySegment symbol = SYMBOL_LOOKUP.findOrThrow(name);
+			MemorySegment symbol = symbolLookup.findOrThrow(name);
 
 			MemorySegment address = functionPointer
 					? symbol.reinterpret(ValueLayout.ADDRESS.byteSize()).get(ValueLayout.ADDRESS, 0)
