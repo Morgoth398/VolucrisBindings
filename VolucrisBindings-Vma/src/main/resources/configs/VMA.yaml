@@ -55,7 +55,6 @@ native-functions:
       - pAllocationInfo
   - name: vmaAllocateDedicatedMemory
     nullable-parameters:
-      - pMemoryAllocateNext
       - pAllocationInfo
   - name: vmaAllocateMemoryPages
     nullable-parameters:
@@ -74,14 +73,12 @@ native-functions:
       - pAllocationInfo
   - name: vmaCreateDedicatedBuffer
     nullable-parameters:
-      - pMemoryAllocateNext
       - pAllocationInfo
   - name: vmaCreateImage
     nullable-parameters:
       - pAllocationInfo
   - name: vmaCreateDedicatedImage
     nullable-parameters:
-      - pMemoryAllocateNext
       - pAllocationInfo
   - name: vmaCreateAliasingBuffer2
     nullable-parameters:

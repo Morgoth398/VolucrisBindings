@@ -44,6 +44,7 @@ public final class VMA {
 	private static final LazyConstant<MethodHandle> VMA_GET_POOL_NAME;
 	private static final LazyConstant<MethodHandle> VMA_SET_POOL_NAME;
 	private static final LazyConstant<MethodHandle> VMA_ALLOCATE_MEMORY;
+	private static final LazyConstant<MethodHandle> VMA_ALLOCATE_DEDICATED_MEMORY;
 	private static final LazyConstant<MethodHandle> VMA_ALLOCATE_MEMORY_PAGES;
 	private static final LazyConstant<MethodHandle> VMA_ALLOCATE_MEMORY_FOR_BUFFER;
 	private static final LazyConstant<MethodHandle> VMA_ALLOCATE_MEMORY_FOR_IMAGE;
@@ -73,10 +74,12 @@ public final class VMA {
 	private static final LazyConstant<MethodHandle> VMA_BIND_IMAGE_MEMORY2;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_BUFFER;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_BUFFER_WITH_ALIGNMENT;
+	private static final LazyConstant<MethodHandle> VMA_CREATE_DEDICATED_BUFFER;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_ALIASING_BUFFER;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_ALIASING_BUFFER2;
 	private static final LazyConstant<MethodHandle> VMA_DESTROY_BUFFER;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_IMAGE;
+	private static final LazyConstant<MethodHandle> VMA_CREATE_DEDICATED_IMAGE;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_ALIASING_IMAGE;
 	private static final LazyConstant<MethodHandle> VMA_CREATE_ALIASING_IMAGE2;
 	private static final LazyConstant<MethodHandle> VMA_DESTROY_IMAGE;
@@ -117,6 +120,7 @@ public final class VMA {
 		VMA_GET_POOL_NAME = downcallHandleVoid("vmaGetPoolName", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_SET_POOL_NAME = downcallHandleVoid("vmaSetPoolName", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_ALLOCATE_MEMORY = downcallHandle("vmaAllocateMemory", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		VMA_ALLOCATE_DEDICATED_MEMORY = downcallHandle("vmaAllocateDedicatedMemory", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_ALLOCATE_MEMORY_PAGES = downcallHandle("vmaAllocateMemoryPages", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_LONG, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_ALLOCATE_MEMORY_FOR_BUFFER = downcallHandle("vmaAllocateMemoryForBuffer", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_ALLOCATE_MEMORY_FOR_IMAGE = downcallHandle("vmaAllocateMemoryForImage", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
@@ -146,10 +150,12 @@ public final class VMA {
 		VMA_BIND_IMAGE_MEMORY2 = downcallHandle("vmaBindImageMemory2", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_LONG, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_BUFFER = downcallHandle("vmaCreateBuffer", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_BUFFER_WITH_ALIGNMENT = downcallHandle("vmaCreateBufferWithAlignment", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_LONG, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		VMA_CREATE_DEDICATED_BUFFER = downcallHandle("vmaCreateDedicatedBuffer", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_ALIASING_BUFFER = downcallHandle("vmaCreateAliasingBuffer", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_ALIASING_BUFFER2 = downcallHandle("vmaCreateAliasingBuffer2", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_LONG, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_DESTROY_BUFFER = downcallHandleVoid("vmaDestroyBuffer", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_IMAGE = downcallHandle("vmaCreateImage", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
+		VMA_CREATE_DEDICATED_IMAGE = downcallHandle("vmaCreateDedicatedImage", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_ALIASING_IMAGE = downcallHandle("vmaCreateAliasingImage", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_CREATE_ALIASING_IMAGE2 = downcallHandle("vmaCreateAliasingImage2", JAVA_INT, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, JAVA_LONG, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
 		VMA_DESTROY_IMAGE = downcallHandleVoid("vmaDestroyImage", UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS, UNBOUNDED_ADDRESS);
@@ -464,20 +470,20 @@ public final class VMA {
     
     /// ```
     /// 
-    /// \brief Helps to find memoryTypeIndex, given memoryTypeBits and VmaAllocationCreateInfo.
+    /// \brief Helps to find `memoryTypeIndex`, given `memoryTypeBits` and #VmaAllocationCreateInfo.
     /// 
     /// This algorithm tries to find a memory type that:
     /// 
-    /// - Is allowed by memoryTypeBits.
-    /// - Contains all the flags from pAllocationCreateInfo->requiredFlags.
+    /// - Is allowed by `memoryTypeBits`.
+    /// - Contains all the flags from `pAllocationCreateInfo->requiredFlags`.
     /// - Matches intended usage.
-    /// - Has as many flags from pAllocationCreateInfo->preferredFlags as possible.
+    /// - Has as many flags from `pAllocationCreateInfo->preferredFlags` as possible.
     /// 
-    /// \return Returns VK_ERROR_FEATURE_NOT_PRESENT if not found. Receiving such result
+    /// \return Returns `VK_ERROR_FEATURE_NOT_PRESENT` if not found. Receiving such result
     /// from this function or any other allocating function probably means that your
     /// device doesn't support any memory type with requested features for the specific
     /// type of resource you want to use it for. Please check parameters of your
-    /// resource, like image layout (OPTIMAL versus LINEAR) or mip level count.
+    /// resource, like image layout (`OPTIMAL` versus `LINEAR`) or mip level count.
     /// ```
     public static int vmaFindMemoryTypeIndex(
     	MemorySegment allocator,
@@ -515,10 +521,10 @@ public final class VMA {
     
     /// ```
     /// 
-    /// \brief Helps to find memoryTypeIndex, given VkBufferCreateInfo and VmaAllocationCreateInfo.
+    /// \brief Helps to find `memoryTypeIndex`, given `VkBufferCreateInfo` and #VmaAllocationCreateInfo.
     /// 
     /// It can be useful e.g. to determine value to be used as VmaPoolCreateInfo::memoryTypeIndex.
-    /// It internally creates a temporary, dummy buffer that never has memory bound.
+    /// It may need to internally create a temporary, dummy buffer that never has memory bound.
     /// ```
     public static int vmaFindMemoryTypeIndexForBufferInfo(
     	MemorySegment allocator,
@@ -556,10 +562,10 @@ public final class VMA {
     
     /// ```
     /// 
-    /// \brief Helps to find memoryTypeIndex, given VkImageCreateInfo and VmaAllocationCreateInfo.
+    /// \brief Helps to find `memoryTypeIndex`, given `VkImageCreateInfo` and #VmaAllocationCreateInfo.
     /// 
     /// It can be useful e.g. to determine value to be used as VmaPoolCreateInfo::memoryTypeIndex.
-    /// It internally creates a temporary, dummy image that never has memory bound.
+    /// It may need to internally create a temporary, dummy image that never has memory bound.
     /// ```
     public static int vmaFindMemoryTypeIndexForImageInfo(
     	MemorySegment allocator,
@@ -857,16 +863,25 @@ public final class VMA {
     /// ```
     /// \brief General purpose memory allocation.
     /// 
-    /// \param allocator
-    /// \param pVkMemoryRequirements
-    /// \param pCreateInfo
+    /// \param allocator The main allocator object.
+    /// \param pVkMemoryRequirements Requirements for the allocated memory.
+    /// \param pCreateInfo Allocation creation parameters.
     /// \param[out] pAllocation Handle to allocated memory.
-    /// \param[out] pAllocationInfo Optional. Information about allocated memory. It can be later fetched using function vmaGetAllocationInfo().
+    /// \param[out] pAllocationInfo Optional, can be null. Information about allocated memory. It can be also fetched later using vmaGetAllocationInfo().
     /// 
-    /// You should free the memory using vmaFreeMemory() or vmaFreeMemoryPages().
+    /// The function creates a #VmaAllocation object without creating a buffer or an image together with it.
     /// 
-    /// It is recommended to use vmaAllocateMemoryForBuffer(), vmaAllocateMemoryForImage(),
-    /// vmaCreateBuffer(), vmaCreateImage() instead whenever possible.
+    /// - It is recommended to use vmaAllocateMemoryForBuffer(), vmaAllocateMemoryForImage(),
+    ///   vmaCreateBuffer(), vmaCreateImage() instead whenever possible.
+    /// - You can also create a buffer or an image later in an existing allocation using
+    ///   vmaCreateAliasingBuffer2(), vmaCreateAliasingImage2().
+    /// - You can also create a buffer or an image on your own and bind it to an existing allocation
+    ///   using vmaBindBufferMemory2(), vmaBindImageMemory2().
+    /// 
+    /// You must free the returned allocation object using vmaFreeMemory() or vmaFreeMemoryPages().
+    /// 
+    /// There is also extended version of this function: vmaAllocateDedicatedMemory()
+    /// that offers additional parameter `pMemoryAllocateNext`.
     /// ```
     public static int vmaAllocateMemory(
     	MemorySegment allocator,
@@ -901,6 +916,57 @@ public final class VMA {
     		allocator.memorySegment(),
     		pVkMemoryRequirements.memorySegment(),
     		pCreateInfo.memorySegment(),
+    		pAllocation.memorySegment(),
+    		pAllocationInfo == null ? MemorySegment.NULL : pAllocationInfo.memorySegment()
+    	);
+    }
+    
+    /// ```
+    /// \brief General purpose allocation of a dedicated memory.
+    /// 
+    /// This function is similar vmaAllocateMemory(), but
+    /// it always allocates dedicated memory - flag #VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT is implied.
+    /// It offers additional parameter `pMemoryAllocateNext`,
+    /// which can be used to attach `pNext` chain to the `VkMemoryAllocateInfo` structure.
+    /// It can be useful for importing external memory. For more information, see \ref other_api_interop.
+    /// ```
+    public static int vmaAllocateDedicatedMemory(
+    	MemorySegment allocator,
+    	MemorySegment pVkMemoryRequirements,
+    	MemorySegment pCreateInfo,
+    	MemorySegment pMemoryAllocateNext,
+    	MemorySegment pAllocation,
+    	MemorySegment pAllocationInfo
+    ) {
+    	MethodHandle method = VMA_ALLOCATE_DEDICATED_MEMORY.get();
+    	try {
+    		return (int) method.invokeExact(
+    			allocator,
+    			pVkMemoryRequirements,
+    			pCreateInfo,
+    			pMemoryAllocateNext,
+    			pAllocation,
+    			pAllocationInfo
+    		);
+    	} catch (Throwable e) {
+    		throw new RuntimeException(e);
+    	}
+    }
+    
+    /// Typed method of [#vmaAllocateDedicatedMemory].
+    public static int vmaAllocateDedicatedMemory(
+    	VmaAllocator allocator,
+    	VkMemoryRequirements pVkMemoryRequirements,
+    	VmaAllocationCreateInfo pCreateInfo,
+    	MemorySegment pMemoryAllocateNext,
+    	NativePointerArray pAllocation,
+    	@Nullable VmaAllocationInfo pAllocationInfo
+    ) {
+    	return vmaAllocateDedicatedMemory(
+    		allocator.memorySegment(),
+    		pVkMemoryRequirements.memorySegment(),
+    		pCreateInfo.memorySegment(),
+    		pMemoryAllocateNext,
     		pAllocation.memorySegment(),
     		pAllocationInfo == null ? MemorySegment.NULL : pAllocationInfo.memorySegment()
     	);
@@ -2192,12 +2258,13 @@ public final class VMA {
     /// ```
     /// \brief Creates a new `VkBuffer`, allocates and binds memory for it.
     /// 
-    /// \param allocator
-    /// \param pBufferCreateInfo
-    /// \param pAllocationCreateInfo
+    /// \param allocator The main allocator object.
+    /// \param pBufferCreateInfo Buffer creation parameters.
+    /// \param pAllocationCreateInfo Allocation creation parameters.
     /// \param[out] pBuffer Buffer that was created.
     /// \param[out] pAllocation Allocation that was created.
-    /// \param[out] pAllocationInfo Optional. Information about allocated memory. It can be later fetched using function vmaGetAllocationInfo().
+    /// \param[out] pAllocationInfo Optional, can be null. Information about allocated memory.
+    ///     It can be also fetched later using vmaGetAllocationInfo().
     /// 
     /// This function automatically:
     /// 
@@ -2206,14 +2273,14 @@ public final class VMA {
     /// -# Binds the buffer with the memory.
     /// 
     /// If any of these operations fail, buffer and allocation are not created,
-    /// returned value is negative error code, `*pBuffer` and `*pAllocation` are null.
+    /// returned value is negative error code, `*pBuffer` and `*pAllocation` are returned as null.
     /// 
     /// If the function succeeded, you must destroy both buffer and allocation when you
     /// no longer need them using either convenience function vmaDestroyBuffer() or
     /// separately, using `vkDestroyBuffer()` and vmaFreeMemory().
     /// 
-    /// If #VMA_ALLOCATOR_CREATE_KHR_DEDICATED_ALLOCATION_BIT flag was used,
-    /// VK_KHR_dedicated_allocation extension is used internally to query driver whether
+    /// If VK_KHR_dedicated_allocation extenion or Vulkan version >= 1.1 is used,
+    /// the function queries the driver whether
     /// it requires or prefers the new buffer to have dedicated allocation. If yes,
     /// and if dedicated allocation is possible
     /// (#VMA_ALLOCATION_CREATE_NEVER_ALLOCATE_BIT is not used), it creates dedicated
@@ -2223,6 +2290,9 @@ public final class VMA {
     /// \note This function creates a new `VkBuffer`. Sub-allocation of parts of one large buffer,
     /// although recommended as a good practice, is out of scope of this library and could be implemented
     /// by the user as a higher-level logic on top of VMA.
+    /// 
+    /// There is also an extended versions of this function available with additional parameter `pMemoryAllocateNext` -
+    /// see vmaCreateDedicatedBuffer().
     /// ```
     public static int vmaCreateBuffer(
     	MemorySegment allocator,
@@ -2272,6 +2342,10 @@ public final class VMA {
     /// Similar to vmaCreateBuffer() but provides additional parameter `minAlignment` which allows to specify custom,
     /// minimum alignment to be used when placing the buffer inside a larger memory block, which may be needed e.g.
     /// for interop with OpenGL.
+    /// 
+    /// \deprecated
+    /// This function in obsolete since new VmaAllocationCreateInfo::minAlignment member allows specifying custom
+    /// alignment while using any allocation function, like the standard vmaCreateBuffer().
     /// ```
     public static int vmaCreateBufferWithAlignment(
     	MemorySegment allocator,
@@ -2313,6 +2387,61 @@ public final class VMA {
     		pBufferCreateInfo.memorySegment(),
     		pAllocationCreateInfo.memorySegment(),
     		minAlignment,
+    		pBuffer.memorySegment(),
+    		pAllocation.memorySegment(),
+    		pAllocationInfo == null ? MemorySegment.NULL : pAllocationInfo.memorySegment()
+    	);
+    }
+    
+    /// ```
+    /// \brief Creates a dedicated buffer while offering extra parameter `pMemoryAllocateNext`.
+    /// 
+    /// This function is similar vmaCreateBuffer(), but
+    /// it always allocates dedicated memory for the buffer - flag #VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT is implied.
+    /// It offers additional parameter `pMemoryAllocateNext`,
+    /// which can be used to attach `pNext` chain to the `VkMemoryAllocateInfo` structure.
+    /// It can be useful for importing external memory. For more information, see \ref other_api_interop.
+    /// ```
+    public static int vmaCreateDedicatedBuffer(
+    	MemorySegment allocator,
+    	MemorySegment pBufferCreateInfo,
+    	MemorySegment pAllocationCreateInfo,
+    	MemorySegment pMemoryAllocateNext,
+    	MemorySegment pBuffer,
+    	MemorySegment pAllocation,
+    	MemorySegment pAllocationInfo
+    ) {
+    	MethodHandle method = VMA_CREATE_DEDICATED_BUFFER.get();
+    	try {
+    		return (int) method.invokeExact(
+    			allocator,
+    			pBufferCreateInfo,
+    			pAllocationCreateInfo,
+    			pMemoryAllocateNext,
+    			pBuffer,
+    			pAllocation,
+    			pAllocationInfo
+    		);
+    	} catch (Throwable e) {
+    		throw new RuntimeException(e);
+    	}
+    }
+    
+    /// Typed method of [#vmaCreateDedicatedBuffer].
+    public static int vmaCreateDedicatedBuffer(
+    	VmaAllocator allocator,
+    	VkBufferCreateInfo pBufferCreateInfo,
+    	VmaAllocationCreateInfo pAllocationCreateInfo,
+    	MemorySegment pMemoryAllocateNext,
+    	NativePointerArray pBuffer,
+    	NativePointerArray pAllocation,
+    	@Nullable VmaAllocationInfo pAllocationInfo
+    ) {
+    	return vmaCreateDedicatedBuffer(
+    		allocator.memorySegment(),
+    		pBufferCreateInfo.memorySegment(),
+    		pAllocationCreateInfo.memorySegment(),
+    		pMemoryAllocateNext,
     		pBuffer.memorySegment(),
     		pAllocation.memorySegment(),
     		pAllocationInfo == null ? MemorySegment.NULL : pAllocationInfo.memorySegment()
@@ -2479,7 +2608,10 @@ public final class VMA {
     }
     
     /// ```
-    /// Function similar to vmaCreateBuffer().
+    /// \brief Function similar to vmaCreateBuffer() but for images.
+    /// 
+    /// There is also an extended version of this function available: vmaCreateDedicatedImage()
+    /// which offers additional parameter `pMemoryAllocateNext`.
     /// ```
     public static int vmaCreateImage(
     	MemorySegment allocator,
@@ -2517,6 +2649,61 @@ public final class VMA {
     		allocator.memorySegment(),
     		pImageCreateInfo.memorySegment(),
     		pAllocationCreateInfo.memorySegment(),
+    		pImage.memorySegment(),
+    		pAllocation.memorySegment(),
+    		pAllocationInfo == null ? MemorySegment.NULL : pAllocationInfo.memorySegment()
+    	);
+    }
+    
+    /// ```
+    /// \brief Function similar to vmaCreateDedicatedBuffer() but for images.
+    /// 
+    /// This function is similar vmaCreateImage(), but
+    /// it always allocates dedicated memory for the image - flag #VMA_ALLOCATION_CREATE_DEDICATED_MEMORY_BIT is implied.
+    /// It offers additional parameter `pMemoryAllocateNext`,
+    /// which can be used to attach `pNext` chain to the `VkMemoryAllocateInfo` structure.
+    /// It can be useful for importing external memory. For more information, see \ref other_api_interop.
+    /// ```
+    public static int vmaCreateDedicatedImage(
+    	MemorySegment allocator,
+    	MemorySegment pImageCreateInfo,
+    	MemorySegment pAllocationCreateInfo,
+    	MemorySegment pMemoryAllocateNext,
+    	MemorySegment pImage,
+    	MemorySegment pAllocation,
+    	MemorySegment pAllocationInfo
+    ) {
+    	MethodHandle method = VMA_CREATE_DEDICATED_IMAGE.get();
+    	try {
+    		return (int) method.invokeExact(
+    			allocator,
+    			pImageCreateInfo,
+    			pAllocationCreateInfo,
+    			pMemoryAllocateNext,
+    			pImage,
+    			pAllocation,
+    			pAllocationInfo
+    		);
+    	} catch (Throwable e) {
+    		throw new RuntimeException(e);
+    	}
+    }
+    
+    /// Typed method of [#vmaCreateDedicatedImage].
+    public static int vmaCreateDedicatedImage(
+    	VmaAllocator allocator,
+    	VkImageCreateInfo pImageCreateInfo,
+    	VmaAllocationCreateInfo pAllocationCreateInfo,
+    	MemorySegment pMemoryAllocateNext,
+    	NativePointerArray pImage,
+    	NativePointerArray pAllocation,
+    	@Nullable VmaAllocationInfo pAllocationInfo
+    ) {
+    	return vmaCreateDedicatedImage(
+    		allocator.memorySegment(),
+    		pImageCreateInfo.memorySegment(),
+    		pAllocationCreateInfo.memorySegment(),
+    		pMemoryAllocateNext,
     		pImage.memorySegment(),
     		pAllocation.memorySegment(),
     		pAllocationInfo == null ? MemorySegment.NULL : pAllocationInfo.memorySegment()

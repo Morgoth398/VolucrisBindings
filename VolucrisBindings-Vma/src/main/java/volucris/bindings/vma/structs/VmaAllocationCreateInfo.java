@@ -35,6 +35,7 @@ public final class VmaAllocationCreateInfo
 	public static final VarHandle POOL_HANDLE;
 	public static final VarHandle P_USER_DATA_HANDLE;
 	public static final VarHandle PRIORITY_HANDLE;
+	public static final VarHandle MIN_ALIGNMENT_HANDLE;
 
 	public static final long FLAGS_BYTE_OFFSET;
 	public static final long USAGE_BYTE_OFFSET;
@@ -44,6 +45,7 @@ public final class VmaAllocationCreateInfo
 	public static final long POOL_BYTE_OFFSET;
 	public static final long P_USER_DATA_BYTE_OFFSET;
 	public static final long PRIORITY_BYTE_OFFSET;
+	public static final long MIN_ALIGNMENT_BYTE_OFFSET;
 
 	private final MemorySegment segment;
 
@@ -59,7 +61,8 @@ public final class VmaAllocationCreateInfo
 		    UNBOUNDED_ADDRESS.withName("pool"),
 		    UNBOUNDED_ADDRESS.withName("pUserData"),
 		    JAVA_FLOAT.withName("priority"),
-		    MemoryLayout.paddingLayout(4)
+		    MemoryLayout.paddingLayout(4),
+		    JAVA_LONG.withName("minAlignment")
 		).withName("VmaAllocationCreateInfo").withByteAlignment(8);
 		
 		FLAGS_HANDLE = LAYOUT.varHandle(PathElement.groupElement("flags"));
@@ -70,6 +73,7 @@ public final class VmaAllocationCreateInfo
 		POOL_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pool"));
 		P_USER_DATA_HANDLE = LAYOUT.varHandle(PathElement.groupElement("pUserData"));
 		PRIORITY_HANDLE = LAYOUT.varHandle(PathElement.groupElement("priority"));
+		MIN_ALIGNMENT_HANDLE = LAYOUT.varHandle(PathElement.groupElement("minAlignment"));
 		
 		FLAGS_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("flags"));
 		USAGE_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("usage"));
@@ -79,6 +83,7 @@ public final class VmaAllocationCreateInfo
 		POOL_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pool"));
 		P_USER_DATA_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("pUserData"));
 		PRIORITY_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("priority"));
+		MIN_ALIGNMENT_BYTE_OFFSET = LAYOUT.byteOffset(PathElement.groupElement("minAlignment"));
 		//@formatter:on
 	}
 
@@ -232,6 +237,29 @@ public final class VmaAllocationCreateInfo
     /// ```
     public float priority() {
     	return (float) PRIORITY_HANDLE.get(segment, 0L);
+    }
+    
+    /// @see #minAlignment()
+    public VmaAllocationCreateInfo minAlignment(long minAlignment) {
+    	MIN_ALIGNMENT_HANDLE.set(segment, 0L, minAlignment);
+    	return this;
+    }
+    
+    /// ```
+    /// \brief Additional minimum alignment to be used for this allocation. Can be 0.
+    /// 
+    ///     Leave 0 (default) not to impose any additional alignment. If not 0, it must be a power of two.
+    ///     
+    ///     When creating a buffer or an image, specifying a custom alignment is not needed in most cases,
+    ///     because Vulkan implementation inspects the `CreateInfo` structure (including intended usage flags)
+    ///     and returns required alignment through functions like `vkGetBufferMemoryRequirements2`, which VMA automatically
+    ///     uses and respects.
+    ///     Extra alignment may be needed in some cases, like when using a buffer for acceleration structure scratch
+    ///     (`VkPhysicalDeviceAccelerationStructurePropertiesKHR::minAccelerationStructureScratchOffsetAlignment`, see also issue #523)
+    ///     or when doing interop with OpenGL.
+    /// ```
+    public long minAlignment() {
+    	return (long) MIN_ALIGNMENT_HANDLE.get(segment, 0L);
     }
     
     @Override

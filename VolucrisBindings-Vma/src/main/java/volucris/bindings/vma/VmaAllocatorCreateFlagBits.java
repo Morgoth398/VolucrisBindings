@@ -144,7 +144,7 @@ public final class VmaAllocatorCreateFlagBits {
     /// 
     ///     You should set this flag if you found available and enabled this device extension,
     ///     while creating Vulkan device passed as VmaAllocatorCreateInfo::device.
-    ///     For more information, see \ref vk_khr_external_memory_win32.
+    ///     For more information, see \ref other_api_interop.
     /// ```
     public static final int VMA_ALLOCATOR_CREATE_KHR_EXTERNAL_MEMORY_WIN32_BIT = 512;
     public static final int VMA_ALLOCATOR_CREATE_FLAG_BITS_MAX_ENUM = 2147483647;

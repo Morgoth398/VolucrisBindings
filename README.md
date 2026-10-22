@@ -53,7 +53,7 @@ If you are using the Eclipse IDE, you do not need to build the project explicitl
 | [StbImage](https://github.com/nothings/stb/blob/master/stb_image.h) | 2.30 | Image loading/decoding from file/memory: JPG, PNG, TGA, BMP, PSD, GIF, HDR, PIC |
 | [StbImageWrite](https://github.com/nothings/stb/blob/master/stb_image_write.h) | 1.16 | Image writing to disk: PNG, TGA, BMP |
 | [StbVorbis](https://github.com/nothings/stb/blob/master/stb_vorbis.c)| 1.22 | Decode ogg vorbis files from file/memory to float/16-bit signed output |
-| [Vma](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator) | 3.3.0 | Easy to integrate Vulkan memory allocation library. |
+| [Vma](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator) | 3.4.0 | Easy to integrate Vulkan memory allocation library. |
 | [Vulkan](https://www.vulkan.org/) | 1.4.357.0 | Vulkan® is a modern cross-platform graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices from PCs and consoles to mobile phones and embedded platforms.  |
 | [Yoga](https://github.com/react/yoga) | 3.2.1 | Yoga is an embeddable and performant flexbox layout engine |
 | [Libclang](https://github.com/llvm/llvm-project) | 23.1.3 | The C Interface to Clang provides a relatively small API that exposes facilities for parsing source code into an abstract syntax tree (AST), loading already-parsed ASTs, traversing the AST, associating physical source locations with elements within the AST, and other facilities that support Clang-based development tools. |

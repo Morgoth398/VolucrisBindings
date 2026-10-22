@@ -18,7 +18,7 @@ public class VmaGenerator {
 
 		String vulkanIncludeDirectory = System.getenv("VULKAN_SDK") + "/Include";
 		HeaderFile headerFile = new HeaderFile(
-				"src/main/resources/nativeSources/VulkanMemoryAllocator-3.3.0/include/vk_mem_alloc.h",
+				"src/main/resources/nativeSources/VulkanMemoryAllocator-3.4.0/include/vk_mem_alloc.h",
 				options,
 				"-I" + vulkanIncludeDirectory);
 		
