@@ -7,6 +7,18 @@
 	<version>${revision}</version>
 	<packaging>pom</packaging>
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/..</directory>
+				<includes>
+					<include>LICENSE</include>
+				</includes>
+				<targetPath>META-INF</targetPath>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -18,6 +30,18 @@
 					<compilerArgs>
 						<arg>--enable-preview</arg>
 					</compilerArgs>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.5.0</version>
+				<configuration>
+					<excludes>
+						<exclude>configs/**</exclude>
+						<exclude>nativeSources/**</exclude>
+						<exclude>generation/**</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
