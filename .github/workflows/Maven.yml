@@ -6,11 +6,13 @@ on:
     paths-ignore:
       - '**/nativeSources/**'
       - '.github/workflows/*_Build.yml'
+      - '**/natives/**'
   pull_request:
     branches: [ "main" ]
     paths-ignore:
       - '**/nativeSources/**'
       - '.github/workflows/*_Build.yml'
+      - '**/natives/**'
 
 jobs:
   Linux_x64:
