@@ -12,5 +12,7 @@ public final class VkExtensionsVALVE {
     public static final String VK_VALVE_FRAGMENT_DENSITY_MAP_LAYERED_EXTENSION_NAME = "VK_VALVE_fragment_density_map_layered";
     public static final int VK_VALVE_SHADER_MIXED_FLOAT_DOT_PRODUCT_SPEC_VERSION = 1;
     public static final String VK_VALVE_SHADER_MIXED_FLOAT_DOT_PRODUCT_EXTENSION_NAME = "VK_VALVE_shader_mixed_float_dot_product";
+    public static final int VK_VALVE_BUFFER_DEVICE_ADDRESS_ALLOCATION_ALIGNMENT_SPEC_VERSION = 1;
+    public static final String VK_VALVE_BUFFER_DEVICE_ADDRESS_ALLOCATION_ALIGNMENT_EXTENSION_NAME = "VK_VALVE_buffer_device_address_allocation_alignment";
     
 }

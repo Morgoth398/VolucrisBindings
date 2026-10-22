@@ -14996,7 +14996,7 @@ public final class VK extends VulkanBase {
     public static int vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI(
     	VkDevice device,
     	VkRenderPass renderpass,
-    	NativeStructArray<VkExtent2D> pMaxWorkgroupSize
+    	VkExtent2D pMaxWorkgroupSize
     ) {
     	return vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI(
     		device,
@@ -18919,7 +18919,7 @@ public final class VK extends VulkanBase {
     	VkDevice device,
     	VkShaderInstrumentationARM instrumentation,
     	NativeIntArray pMetricBlockCount,
-    	MemorySegment pMetricValues,
+    	@Nullable MemorySegment pMetricValues,
     	int flags
     ) {
     	return vkGetShaderInstrumentationValuesARM(
@@ -19048,6 +19048,40 @@ public final class VK extends VulkanBase {
     	vkCmdSetComputeOccupancyPriorityNV(
     		commandBuffer,
     		pParameters.memorySegment()
+    	);
+    }
+    
+    public static int vkGetPhysicalDeviceCooperativeMatrixProperties2EXT(
+        VkPhysicalDevice physicalDevice,
+    	MemorySegment pCooperativeMatrixInfo,
+    	MemorySegment pPropertyCount,
+    	MemorySegment pProperties
+    ) {
+        MethodHandle method = physicalDevice.VK_GET_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_PROPERTIES2_EXT().get();
+        try {
+            return (int) method.invokeExact(
+                physicalDevice.memorySegment(),
+                pCooperativeMatrixInfo,
+                pPropertyCount,
+                pProperties
+            );
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    /// Typed method of [#vkGetPhysicalDeviceCooperativeMatrixProperties2EXT].
+    public static int vkGetPhysicalDeviceCooperativeMatrixProperties2EXT(
+    	VkPhysicalDevice physicalDevice,
+    	VkPhysicalDeviceCooperativeMatrixInfo2EXT pCooperativeMatrixInfo,
+    	NativeIntArray pPropertyCount,
+    	@Nullable NativeStructArray<VkCooperativeMatrixProperties2EXT> pProperties
+    ) {
+    	return vkGetPhysicalDeviceCooperativeMatrixProperties2EXT(
+    		physicalDevice,
+    		pCooperativeMatrixInfo.memorySegment(),
+    		pPropertyCount.memorySegment(),
+    		pProperties == null ? MemorySegment.NULL : pProperties.memorySegment()
     	);
     }
     

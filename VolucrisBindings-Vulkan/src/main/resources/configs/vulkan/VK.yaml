@@ -518,6 +518,13 @@ native-functions:
         - pProperties
       struct-arrays:
         - pProperties
+    - name: vkGetPhysicalDeviceCooperativeMatrixProperties2EXT
+      return-type-is-struct-array: false
+      string-return-type: false
+      nullable-parameters:
+        - pProperties
+      struct-arrays:
+        - pProperties
     - name: vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV
       return-type-is-struct-array: false
       string-return-type: false
@@ -880,8 +887,6 @@ native-functions:
     - name: vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI
       return-type-is-struct-array: false
       string-return-type: false
-      struct-arrays:
-        - pMaxWorkgroupSize
     - name: vkDestroyPipeline
       return-type-is-struct-array: false
       string-return-type: false
@@ -3096,6 +3101,7 @@ native-functions:
       return-type-is-struct-array: false
       string-return-type: false
       nullable-parameters:
+        - pMetricValues
         - flags
     - name: vkClearShaderInstrumentationMetricsARM
       return-type-is-struct-array: false

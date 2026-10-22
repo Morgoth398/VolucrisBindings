@@ -35,6 +35,7 @@ public final class VkDriverId {
     public static final int VK_DRIVER_ID_MESA_KOSMICKRISP = 28;
     public static final int VK_DRIVER_ID_MESA_GFXSTREAM = 29;
     public static final int VK_DRIVER_ID_APE_SOFT = 30;
+    public static final int VK_DRIVER_ID_RESERVED_31 = 31;
     public static final int VK_DRIVER_ID_AMD_PROPRIETARY_KHR = 1;
     public static final int VK_DRIVER_ID_AMD_OPEN_SOURCE_KHR = 2;
     public static final int VK_DRIVER_ID_MESA_RADV_KHR = 3;

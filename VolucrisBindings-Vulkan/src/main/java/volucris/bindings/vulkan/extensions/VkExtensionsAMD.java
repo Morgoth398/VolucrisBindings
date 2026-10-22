@@ -60,5 +60,7 @@ public final class VkExtensionsAMD {
     public static final String VK_AMD_ANTI_LAG_EXTENSION_NAME = "VK_AMD_anti_lag";
     public static final int VK_AMDX_DENSE_GEOMETRY_FORMAT_SPEC_VERSION = 1;
     public static final String VK_AMDX_DENSE_GEOMETRY_FORMAT_EXTENSION_NAME = "VK_AMDX_dense_geometry_format";
+    public static final int VK_EXT_IMAGE_TILING_CONTROL_SPEC_VERSION = 1;
+    public static final String VK_EXT_IMAGE_TILING_CONTROL_EXTENSION_NAME = "VK_EXT_image_tiling_control";
     
 }

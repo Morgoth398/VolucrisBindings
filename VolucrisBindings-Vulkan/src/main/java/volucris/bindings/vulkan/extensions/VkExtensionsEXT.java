@@ -226,6 +226,8 @@ public final class VkExtensionsEXT {
     public static final String VK_EXT_SHADER_LONG_VECTOR_EXTENSION_NAME = "VK_EXT_shader_long_vector";
     public static final int VK_EXT_SHADER_UNIFORM_BUFFER_UNSIZED_ARRAY_SPEC_VERSION = 1;
     public static final String VK_EXT_SHADER_UNIFORM_BUFFER_UNSIZED_ARRAY_EXTENSION_NAME = "VK_EXT_shader_uniform_buffer_unsized_array";
+    public static final int VK_EXT_COOPERATIVE_MATRIX_MAINTENANCE_1_SPEC_VERSION = 1;
+    public static final String VK_EXT_COOPERATIVE_MATRIX_MAINTENANCE_1_EXTENSION_NAME = "VK_EXT_cooperative_matrix_maintenance1";
     public static final int VK_EXT_SHADER_SUBGROUP_PARTITIONED_SPEC_VERSION = 1;
     public static final String VK_EXT_SHADER_SUBGROUP_PARTITIONED_EXTENSION_NAME = "VK_EXT_shader_subgroup_partitioned";
     public static final int VK_EXT_SHADER_OCP_MICROSCALING_TYPES_SPEC_VERSION = 1;

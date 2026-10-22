@@ -106,6 +106,7 @@ native-functions:
     - name: vkGetDrmDisplayEXT
     - name: vkGetPhysicalDeviceOpticalFlowImageFormatsNV
     - name: vkGetPhysicalDeviceCooperativeMatrixPropertiesKHR
+    - name: vkGetPhysicalDeviceCooperativeMatrixProperties2EXT
     - name: vkGetPhysicalDeviceCooperativeMatrixFlexibleDimensionsPropertiesNV
     - name: vkGetPhysicalDeviceCooperativeVectorPropertiesNV
     - name: vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM

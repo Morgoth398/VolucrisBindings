@@ -296,6 +296,8 @@ public final class VkExtensionsKHR {
     public static final String VK_KHR_OPACITY_MICROMAP_EXTENSION_NAME = "VK_KHR_opacity_micromap";
     public static final int VK_KHR_MAINTENANCE_10_SPEC_VERSION = 1;
     public static final String VK_KHR_MAINTENANCE_10_EXTENSION_NAME = "VK_KHR_maintenance10";
+    public static final int VK_KHR_PIPELINE_LIBRARY_GROUP_HANDLES_SPEC_VERSION = 1;
+    public static final String VK_KHR_PIPELINE_LIBRARY_GROUP_HANDLES_EXTENSION_NAME = "VK_KHR_pipeline_library_group_handles";
     public static final int VK_KHR_MAINTENANCE_11_SPEC_VERSION = 1;
     public static final String VK_KHR_MAINTENANCE_11_EXTENSION_NAME = "VK_KHR_maintenance11";
     public static final int VK_KHR_EXTENDED_FLAGS_SPEC_VERSION = 1;

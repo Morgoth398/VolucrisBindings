@@ -144,7 +144,7 @@ public final class VkExtensionsNV {
     public static final String VK_NV_COOPERATIVE_VECTOR_EXTENSION_NAME = "VK_NV_cooperative_vector";
     public static final int VK_NV_EXTENDED_SPARSE_ADDRESS_SPACE_SPEC_VERSION = 1;
     public static final String VK_NV_EXTENDED_SPARSE_ADDRESS_SPACE_EXTENSION_NAME = "VK_NV_extended_sparse_address_space";
-    public static final int VK_NV_LOW_LATENCY_2_SPEC_VERSION = 2;
+    public static final int VK_NV_LOW_LATENCY_2_SPEC_VERSION = 3;
     public static final String VK_NV_LOW_LATENCY_2_EXTENSION_NAME = "VK_NV_low_latency2";
     public static final int VK_NV_PER_STAGE_DESCRIPTOR_SET_SPEC_VERSION = 1;
     public static final String VK_NV_PER_STAGE_DESCRIPTOR_SET_EXTENSION_NAME = "VK_NV_per_stage_descriptor_set";
@@ -176,6 +176,8 @@ public final class VkExtensionsNV {
     public static final String VK_NV_COMPUTE_OCCUPANCY_PRIORITY_EXTENSION_NAME = "VK_NV_compute_occupancy_priority";
     public static final int VK_NV_COOPERATIVE_MATRIX_DECODE_VECTOR_SPEC_VERSION = 1;
     public static final String VK_NV_COOPERATIVE_MATRIX_DECODE_VECTOR_EXTENSION_NAME = "VK_NV_cooperative_matrix_decode_vector";
+    public static final int VK_NV_PRIVATE_DATA_BASE_HANDLE_SPEC_VERSION = 1;
+    public static final String VK_NV_PRIVATE_DATA_BASE_HANDLE_EXTENSION_NAME = "VK_NV_private_data_base_handle";
     public static final int VK_NVX_BINARY_IMPORT_SPEC_VERSION = 2;
     public static final String VK_NVX_BINARY_IMPORT_EXTENSION_NAME = "VK_NVX_binary_import";
     public static final int VK_NVX_IMAGE_VIEW_HANDLE_SPEC_VERSION = 4;
