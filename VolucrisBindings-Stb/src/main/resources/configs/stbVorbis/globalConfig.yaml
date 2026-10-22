@@ -1,0 +1,8 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    stb_vorbis: StbVorbisHandle
+    stb_vorbis_alloc: StbVorbisAlloc
+    stb_vorbis_info: StbVorbisInfo
+    stb_vorbis_comment: StbVorbisComment

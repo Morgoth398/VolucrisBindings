@@ -52,6 +52,7 @@ If you are using the Eclipse IDE, you do not need to build the project explicitl
 | [ParOctasphere](https://github.com/prideout/par/blob/master/par_octasphere.h) | - | Malloc-free mesh gen for spheres and rounded cuboids 	 |
 | [StbImage](https://github.com/nothings/stb/blob/master/stb_image.h) | 2.30 | Image loading/decoding from file/memory: JPG, PNG, TGA, BMP, PSD, GIF, HDR, PIC |
 | [StbImageWrite](https://github.com/nothings/stb/blob/master/stb_image_write.h) | 1.16 | Image writing to disk: PNG, TGA, BMP |
+| [StbVorbis](https://github.com/nothings/stb/blob/master/stb_vorbis.c)| 1.22 | Decode ogg vorbis files from file/memory to float/16-bit signed output |
 | [Vma](https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator) | 3.3.0 | Easy to integrate Vulkan memory allocation library. |
 | [Vulkan](https://www.vulkan.org/) | 1.4.357.0 | Vulkan® is a modern cross-platform graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices from PCs and consoles to mobile phones and embedded platforms.  |
 | [Yoga](https://github.com/react/yoga) | 3.2.1 | Yoga is an embeddable and performant flexbox layout engine |
@@ -62,5 +63,5 @@ If you are using the Eclipse IDE, you do not need to build the project explicitl
 | Library | Bindings | Version | Notes |
 |---|---|---|---|
 | [JoltPhysics](https://github.com/jrouwe/joltphysics) | [JoltPhysics-JavaFFM](https://github.com/Morgoth398/JoltPhysics-JavaFFM) | 5.6.0 | A multi core friendly rigid body physics and collision detection library. Suitable for games and VR applications. Used by Horizon Forbidden West and Death Stranding 2: On the Beach.
-| [Box2D](https://github.com/erincatto/box2d) | [Box2D-JavaFFM](https://github.com/Morgoth398/Box2D-JavaFFM) | 3.1.1 | Box2D is a 2D physics engine for games.
+| [Box2D](https://github.com/erincatto/box2d) | [Box2D-JavaFFM](https://github.com/Morgoth398/Box2D-JavaFFM) | 3.2.0 | Box2D is a 2D physics engine for games.
 | [Box3D](https://github.com/erincatto/box3d) | [Box3D-JavaFFM](https://github.com/Morgoth398/Box3D-JavaFFM) | 0.1.0 | Box3D is a 3D physics engine for games

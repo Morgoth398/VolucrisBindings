@@ -1,0 +1,40 @@
+class-description:
+  name: StbVorbis
+  package-name: volucris.bindings.stb.vorbis
+  directory: src/main/java/volucris/bindings/stb/vorbis
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - stb_vorbis
+excluded-function-name-prefixes:
+  - stb_vorbis_open_file
+  - stb_vorbis_open_file_section
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: stb_vorbis_decode_filename
+    string-parameters:
+      - filename
+native-function-pointers:

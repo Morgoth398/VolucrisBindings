@@ -98,3 +98,42 @@ public static void main(String[] args) {
 	}
 }
 ```
+
+# StbVorbis
+```Java
+public static void main(String[] args) {
+
+	StbLoader.loadStbVorbisNativeLibrary();
+
+	try (Arena arena = Arena.ofConfined();
+			InputStream inputStream = VorbisTest.class.getResourceAsStream("/Sound.ogg")) {
+
+		if (inputStream == null)
+			throw new FileNotFoundException();
+
+		byte[] bytes = inputStream.readAllBytes();
+
+		NativeByteArray byteArray = new NativeByteArray(arena, bytes);
+
+		NativeIntArray channels = new NativeIntArray(arena, 1);
+		NativeIntArray sampleRate = new NativeIntArray(arena, 1);
+
+		NativePointerArray output = new NativePointerArray(arena, 1);
+
+		/// Use `StbVorbis.stb_vorbis_decode_filename` to load from a file
+		int samples = StbVorbis.stb_vorbis_decode_memory(byteArray, bytes.length, channels, sampleRate, output);
+
+		if (samples == -1)
+			throw new RuntimeException("Failed to decode sound.");
+
+		System.out.println("Samples: " + samples);
+		System.out.println("Channels: " + channels.get(0));
+		System.out.println("SampleRate: " + sampleRate.get(0));
+		
+		LibC.free(output.get(0));
+
+	} catch (Exception e) {
+		throw new RuntimeException(e);
+	}
+}
+```

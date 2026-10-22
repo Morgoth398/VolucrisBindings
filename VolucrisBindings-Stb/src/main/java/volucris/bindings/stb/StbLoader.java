@@ -16,4 +16,8 @@ public final class StbLoader {
 		NativeLibraryLoader.loadLibrary("natives/stbImageWrite", "stbImageWrite");
 	}
 	
+	public static void loadStbVorbisNativeLibrary() {
+		NativeLibraryLoader.loadLibrary("natives/stbVorbis", "stbVorbis");
+	}
+	
 }

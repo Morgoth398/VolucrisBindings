@@ -1,0 +1,8 @@
+package-name: volucris.bindings.stb.vorbis
+directory: src/main/java/volucris/bindings/stb/vorbis
+generate-all: false
+configs:
+  - name: STBVorbisError
+    package-name: volucris.bindings.stb.vorbis
+    directory: src/main/java/volucris/bindings/stb/vorbis
+    transform-constants-names: true
