@@ -38,7 +38,7 @@ import static volucris.bindings.core.FFMUtils.*;
 /// @sa @ref glfwSetMouseButtonCallback
 /// 
 /// @since Added in version 1.0.
-/// @glfw3 Added window handle and modifier mask parameters.
+/// __GLFW 3:__ Added window handle and modifier mask parameters.
 /// 
 /// @ingroup input
 /// ```

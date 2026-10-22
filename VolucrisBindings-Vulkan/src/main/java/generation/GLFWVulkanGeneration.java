@@ -8,16 +8,19 @@ import volucris.bindings.generator.parsing.HeaderFile;
 public class GLFWVulkanGeneration {
 
 	public static void main(String[] args) {
-		
-		String vulkanIncludeDirectory = "-I" + System.getenv("VULKAN_SDK") + "/Include";
-		
+
 		Path glfwHeaders = Path.of(System.getProperty("user.dir"))
 				.getParent()
 				.resolve("VolucrisBindings-GLFW")
-				.resolve("src/main/resources/nativeSources/glfw-3.4/include/GLFW/glfw.h");
-		
-		HeaderFile headerFile = new HeaderFile(glfwHeaders.toString(), 0, vulkanIncludeDirectory);
-		
+				.resolve("src/main/resources/nativeSources/glfw-3.5.1/include/GLFW/glfw3.h");
+
+		HeaderFile headerFile = new HeaderFile(
+				glfwHeaders.toString(),
+				0,
+				"-I" + System.getenv("VULKAN_SDK") + "/Include",
+				"-DGLFW_INCLUDE_VULKAN"
+		);
+
 		Generator generator = new Generator("src/main/resources/configs/globalConfig.yaml", headerFile);
 
 		generator.generate("src/main/resources/configs/glfw/GLFWVulkan.yaml");

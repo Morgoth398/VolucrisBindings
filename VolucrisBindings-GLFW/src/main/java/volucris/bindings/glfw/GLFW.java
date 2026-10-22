@@ -21,8 +21,8 @@ import static volucris.bindings.core.FFMUtils.*;
 public final class GLFW {
 
 	public static final int GLFW_VERSION_MAJOR = 3;
-	public static final int GLFW_VERSION_MINOR = 4;
-	public static final int GLFW_VERSION_REVISION = 0;
+	public static final int GLFW_VERSION_MINOR = 5;
+	public static final int GLFW_VERSION_REVISION = 1;
 	public static final int GLFW_TRUE = 1;
 	public static final int GLFW_FALSE = 0;
 	public static final int GLFW_RELEASE = 0;
@@ -303,6 +303,7 @@ public final class GLFW {
 	public static final int GLFW_STICKY_MOUSE_BUTTONS = 0x00033003;
 	public static final int GLFW_LOCK_KEY_MODS = 0x00033004;
 	public static final int GLFW_RAW_MOUSE_MOTION = 0x00033005;
+	public static final int GLFW_UNLIMITED_MOUSE_BUTTONS = 0x00033006;
 	public static final int GLFW_CURSOR_NORMAL = 0x00034001;
 	public static final int GLFW_CURSOR_HIDDEN = 0x00034002;
 	public static final int GLFW_CURSOR_DISABLED = 0x00034003;
@@ -630,12 +631,12 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_PLATFORM_UNAVAILABLE and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @macos This function will change the current directory of the
+    /// @remark __macOS:__ This function will change the current directory of the
     /// application to the `Contents/Resources` subdirectory of the application's
     /// bundle, if present.  This can be disabled with the @ref
     /// GLFW_COCOA_CHDIR_RESOURCES init hint.
     /// 
-    /// @remark @macos This function will create the main menu and dock icon for the
+    /// @remark __macOS:__ This function will create the main menu and dock icon for the
     /// application.  If GLFW finds a `MainMenu.nib` it is loaded and assumed to
     /// contain a menu bar.  Otherwise a minimal menu bar is created manually with
     /// common commands like Hide, Quit and About.  The About entry opens a minimal
@@ -650,7 +651,7 @@ public final class GLFW {
     /// to something other than `wayland` or `x11`, the regular detection mechanism
     /// will be used instead.
     /// 
-    /// @remark @x11 This function will set the `LC_CTYPE` category of the
+    /// @remark __X11:__ This function will set the `LC_CTYPE` category of the
     /// application locale according to the current environment if that category is
     /// still "C".  This is because the "C" locale breaks Unicode text input.
     /// 
@@ -1353,7 +1354,7 @@ public final class GLFW {
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
     /// 
-    /// @remark @win32 On Windows 8 and earlier the physical size is calculated from
+    /// @remark __Win32:__ On Windows 8 and earlier the physical size is calculated from
     /// the current resolution and system DPI instead of querying the monitor EDID data.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -1416,7 +1417,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @wayland Fractional scaling information is not yet available for
+    /// @remark __Wayland:__ Fractional scaling information is not yet available for
     /// monitors, so this function only returns integer content scales.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -1696,7 +1697,7 @@ public final class GLFW {
     /// @sa @ref glfwGetVideoMode
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Changed to return an array of modes for a specific monitor.
+    /// __GLFW 3:__ Changed to return an array of modes for a specific monitor.
     /// 
     /// @ingroup monitor
     /// ```
@@ -1806,8 +1807,8 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref GLFW_INVALID_VALUE,
     /// @ref GLFW_PLATFORM_ERROR and @ref GLFW_FEATURE_UNAVAILABLE (see remarks).
     /// 
-    /// @remark @wayland Gamma handling is a privileged protocol, this function
-    /// will thus never be implemented and emits @ref GLFW_FEATURE_UNAVAILABLE.
+    /// @remark __Wayland:__ Monitor gamma is a privileged protocol, so this function
+    /// cannot be implemented and emits @ref GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
@@ -1855,8 +1856,8 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref GLFW_PLATFORM_ERROR
     /// and @ref GLFW_FEATURE_UNAVAILABLE (see remarks).
     /// 
-    /// @remark @wayland Gamma handling is a privileged protocol, this function
-    /// will thus never be implemented and emits @ref GLFW_FEATURE_UNAVAILABLE while
+    /// @remark __Wayland:__ Monitor gamma is a privileged protocol, so this function
+    /// cannot be implemented and emits @ref GLFW_FEATURE_UNAVAILABLE while
     /// returning `NULL`.
     /// 
     /// @pointer_lifetime The returned structure and its arrays are allocated and
@@ -1923,10 +1924,10 @@ public final class GLFW {
     /// @remark The size of the specified gamma ramp should match the size of the
     /// current ramp for that monitor.
     /// 
-    /// @remark @win32 The gamma ramp size must be 256.
+    /// @remark __Win32:__ The gamma ramp size must be 256.
     /// 
-    /// @remark @wayland Gamma handling is a privileged protocol, this function
-    /// will thus never be implemented and emits @ref GLFW_FEATURE_UNAVAILABLE.
+    /// @remark __Wayland:__ Monitor gamma is a privileged protocol, so this function
+    /// cannot be implemented and emits @ref GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @pointer_lifetime The specified gamma ramp is copied before this function
     /// returns.
@@ -2173,32 +2174,32 @@ public final class GLFW {
     /// GLFW_VERSION_UNAVAILABLE, @ref GLFW_FORMAT_UNAVAILABLE, @ref
     /// GLFW_NO_WINDOW_CONTEXT and @ref GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @win32 Window creation will fail if the Microsoft GDI software
+    /// @remark __Win32:__ Window creation will fail if the Microsoft GDI software
     /// OpenGL implementation is the only one available.
     /// 
-    /// @remark @win32 If the executable has an icon resource named `GLFW_ICON,` it
+    /// @remark __Win32:__ If the executable has an icon resource named `GLFW_ICON,` it
     /// will be set as the initial icon for the window.  If no such icon is present,
     /// the `IDI_APPLICATION` icon will be used instead.  To set a different icon,
     /// see @ref glfwSetWindowIcon.
     /// 
-    /// @remark @win32 The context to share resources with must not be current on
+    /// @remark __Win32:__ The context to share resources with must not be current on
     /// any other thread.
     /// 
-    /// @remark @macos The OS only supports core profile contexts for OpenGL
+    /// @remark __macOS:__ The OS only supports core profile contexts for OpenGL
     /// versions 3.2 and later.  Before creating an OpenGL context of version 3.2 or
     /// later you must set the [GLFW_OPENGL_PROFILE](@ref GLFW_OPENGL_PROFILE_hint)
     /// hint accordingly.  OpenGL 3.0 and 3.1 contexts are not supported at all
     /// on macOS.
     /// 
-    /// @remark @macos The GLFW window has no icon, as it is not a document
+    /// @remark __macOS:__ The GLFW window has no icon, as it is not a document
     /// window, but the dock icon will be the same as the application bundle's icon.
     /// For more information on bundles, see the
     /// [Bundle Programming Guide][bundle-guide] in the Mac Developer Library.
     /// 
     /// [bundle-guide]: https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/
     /// 
-    /// @remark @macos On OS X 10.10 and later the window frame will not be rendered
-    /// at full resolution on Retina displays unless the
+    /// @remark __macOS:__  The window frame will not be rendered at full resolution
+    /// on Retina displays unless the
     /// [GLFW_SCALE_FRAMEBUFFER](@ref GLFW_SCALE_FRAMEBUFFER_hint)
     /// hint is `GLFW_TRUE` and the `NSHighResolutionCapable` key is enabled in the
     /// application bundle's `Info.plist`.  For more information, see
@@ -2209,11 +2210,11 @@ public final class GLFW {
     /// 
     /// [hidpi-guide]: https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Explained/Explained.html
     /// 
-    /// @remark @macos When activating frame autosaving with
+    /// @remark __macOS:__ When activating frame autosaving with
     /// [GLFW_COCOA_FRAME_NAME](@ref GLFW_COCOA_FRAME_NAME_hint), the specified
     /// window size and position may be overridden by previously saved values.
     /// 
-    /// @remark @wayland GLFW uses [libdecor][] where available to create its window
+    /// @remark __Wayland:__ GLFW uses [libdecor][] where available to create its window
     /// decorations.  This in turn uses server-side XDG decorations where available
     /// and provides high quality client-side decorations on compositors like GNOME.
     /// If both XDG decorations and libdecor are unavailable, GLFW falls back to
@@ -2222,15 +2223,15 @@ public final class GLFW {
     /// 
     /// [libdecor]: https://gitlab.freedesktop.org/libdecor/libdecor
     /// 
-    /// @remark @x11 Some window managers will not respect the placement of
+    /// @remark __X11:__ Some window managers will not respect the placement of
     /// initially hidden windows.
     /// 
-    /// @remark @x11 Due to the asynchronous nature of X11, it may take a moment for
+    /// @remark __X11:__ Due to the asynchronous nature of X11, it may take a moment for
     /// a window to reach its requested state.  This means you may not be able to
     /// query the final size, position or other attributes directly after window
     /// creation.
     /// 
-    /// @remark @x11 The class part of the `WM_CLASS` window property will by
+    /// @remark __X11:__ The class part of the `WM_CLASS` window property will by
     /// default be set to the window title passed to this function.  The instance
     /// part will use the contents of the `RESOURCE_NAME` environment variable, if
     /// present and not empty, or fall back to the window title.  Set the
@@ -2500,7 +2501,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @macos The window title will not be updated until the next time you
+    /// @remark __macOS:__ The window title will not be updated until the next time you
     /// process events.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -2509,7 +2510,7 @@ public final class GLFW {
     /// @sa @ref glfwGetWindowTitle
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```
@@ -2570,14 +2571,14 @@ public final class GLFW {
     /// @pointer_lifetime The specified image data is copied before this function
     /// returns.
     /// 
-    /// @remark @macos Regular windows do not have icons on macOS.  This function
+    /// @remark __macOS:__ Regular windows do not have icons on macOS.  This function
     /// will emit @ref GLFW_FEATURE_UNAVAILABLE.  The dock icon will be the same as
     /// the application bundle's icon.  For more information on bundles, see the
     /// [Bundle Programming Guide][bundle-guide] in the Mac Developer Library.
     /// 
     /// [bundle-guide]: https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/
     /// 
-    /// @remark @wayland There is no existing protocol to change an icon, the
+    /// @remark __Wayland:__ There is no existing protocol to change an icon, the
     /// window will thus inherit the one defined in the application's desktop file.
     /// This function will emit @ref GLFW_FEATURE_UNAVAILABLE.
     /// 
@@ -2637,8 +2638,8 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_PLATFORM_ERROR and @ref GLFW_FEATURE_UNAVAILABLE (see remarks).
     /// 
-    /// @remark @wayland There is no way for an application to retrieve the global
-    /// position of its windows.  This function will emit @ref
+    /// @remark __Wayland:__ Window positions are not currently part of any common
+    /// Wayland protocol, so this function cannot be implemented and will emit @ref
     /// GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -2700,8 +2701,8 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_PLATFORM_ERROR and @ref GLFW_FEATURE_UNAVAILABLE (see remarks).
     /// 
-    /// @remark @wayland There is no way for an application to set the global
-    /// position of its windows.  This function will emit @ref
+    /// @remark __Wayland:__ Window positions are not currently part of any common
+    /// Wayland protocol, so this function cannot be implemented and will emit @ref
     /// GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -2710,7 +2711,7 @@ public final class GLFW {
     /// @sa @ref glfwGetWindowPos
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```
@@ -2769,7 +2770,7 @@ public final class GLFW {
     /// @sa @ref glfwSetWindowSize
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```
@@ -2833,7 +2834,7 @@ public final class GLFW {
     /// @remark If you set size limits and an aspect ratio that conflict, the
     /// results are undefined.
     /// 
-    /// @remark @wayland The size limits will not be applied until the window is
+    /// @remark __Wayland:__ The size limits will not be applied until the window is
     /// actually resized, either by the user or by the compositor.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -2913,7 +2914,7 @@ public final class GLFW {
     /// @remark If you set size limits and an aspect ratio that conflict, the
     /// results are undefined.
     /// 
-    /// @remark @wayland The aspect ratio will not be applied until the window is
+    /// @remark __Wayland:__ The aspect ratio will not be applied until the window is
     /// actually resized, either by the user or by the compositor.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -2988,7 +2989,7 @@ public final class GLFW {
     /// @sa @ref glfwSetWindowMonitor
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```
@@ -3283,7 +3284,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_PLATFORM_ERROR and @ref GLFW_FEATURE_UNAVAILABLE (see remarks).
     /// 
-    /// @remark @wayland There is no way to set an opacity factor for a window.
+    /// @remark __Wayland:__ There is no way to set an opacity factor for a window.
     /// This function will emit @ref GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -3337,10 +3338,6 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @wayland Once a window is iconified, @ref glfwRestoreWindow won’t
-    /// be able to restore it.  This is a design decision of the xdg-shell
-    /// protocol.
-    /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
     /// @sa @ref window_iconify
@@ -3348,7 +3345,7 @@ public final class GLFW {
     /// @sa @ref glfwMaximizeWindow
     /// 
     /// @since Added in version 2.1.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```
@@ -3389,6 +3386,10 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
+    /// @remark __Wayland:__ Restoring a window from maximization is not currently
+    /// part of any common Wayland protocol, so this function can only restore
+    /// windows from maximization.
+    /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
     /// @sa @ref window_iconify
@@ -3396,7 +3397,7 @@ public final class GLFW {
     /// @sa @ref glfwMaximizeWindow
     /// 
     /// @since Added in version 2.1.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```
@@ -3485,7 +3486,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @wayland Because Wayland wants every frame of the desktop to be
+    /// @remark __Wayland:__ Because Wayland wants every frame of the desktop to be
     /// complete, this function does not immediately make the window visible.
     /// Instead it will become visible the next time the window framebuffer is
     /// updated after this call.
@@ -3590,7 +3591,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @wayland The compositor will likely ignore focus requests unless
+    /// @remark __Wayland:__ The compositor will likely ignore focus requests unless
     /// another window created by the same application already has input focus.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -3639,7 +3640,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @macos Attention is requested to the application as a whole, not the
+    /// @remark __macOS:__ Attention is requested to the application as a whole, not the
     /// specific window.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -3761,8 +3762,8 @@ public final class GLFW {
     /// affected by any resizing or mode switching, although you may need to update
     /// your viewport if the framebuffer size has changed.
     /// 
-    /// @remark @wayland The desired window position is ignored, as there is no way
-    /// for an application to set this property.
+    /// @remark __Wayland:__ Window positions are not currently part of any common
+    /// Wayland protocol.  The window position arguments are ignored.
     /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
@@ -3844,8 +3845,9 @@ public final class GLFW {
     /// errors.  However, this function should not fail as long as it is passed
     /// valid arguments and the library has been [initialized](@ref intro_init).
     /// 
-    /// @remark @wayland The Wayland protocol provides no way to check whether a
-    /// window is iconfied, so @ref GLFW_ICONIFIED always returns `GLFW_FALSE`.
+    /// @remark __Wayland:__ Checking whether a window is iconified is not currently
+    /// part of any common Wayland protocol, so the @ref GLFW_ICONIFIED attribute
+    /// cannot be implemented and is always `GLFW_FALSE`.
     /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
@@ -3912,7 +3914,7 @@ public final class GLFW {
     /// @remark Calling @ref glfwGetWindowAttrib will always return the latest
     /// value, even if that value is ignored by the current mode of the window.
     /// 
-    /// @remark @wayland The [GLFW_FLOATING](@ref GLFW_FLOATING_attrib) window attribute is
+    /// @remark __Wayland:__ The [GLFW_FLOATING](@ref GLFW_FLOATING_attrib) window attribute is
     /// not supported.  Setting this will emit @ref GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -4072,8 +4074,8 @@ public final class GLFW {
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
     /// 
-    /// @remark @wayland This callback will never be called, as there is no way for
-    /// an application to know its global position.
+    /// @remark __Wayland:__ This callback will not be called.  The Wayland protocol
+    /// provides no way to be notified of when a window is moved.
     /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
@@ -4141,7 +4143,7 @@ public final class GLFW {
     /// @sa @ref window_size
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter and return value.
+    /// __GLFW 3:__ Added window handle parameter and return value.
     /// 
     /// @ingroup window
     /// ```
@@ -4203,7 +4205,7 @@ public final class GLFW {
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
     /// 
-    /// @remark @macos Selecting Quit from the application menu will trigger the
+    /// @remark __macOS:__ Selecting Quit from the application menu will trigger the
     /// close callback for all windows.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -4211,7 +4213,7 @@ public final class GLFW {
     /// @sa @ref window_close
     /// 
     /// @since Added in version 2.5.
-    /// @glfw3 Added window handle parameter and return value.
+    /// __GLFW 3:__ Added window handle parameter and return value.
     /// 
     /// @ingroup window
     /// ```
@@ -4277,7 +4279,7 @@ public final class GLFW {
     /// @sa @ref window_refresh
     /// 
     /// @since Added in version 2.5.
-    /// @glfw3 Added window handle parameter and return value.
+    /// __GLFW 3:__ Added window handle parameter and return value.
     /// 
     /// @ingroup window
     /// ```
@@ -4397,6 +4399,10 @@ public final class GLFW {
     /// [function pointer type](@ref GLFWwindowiconifyfun).
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+    /// 
+    /// @remark __Wayland:__ This callback will not be called.  The Wayland protocol
+    /// provides no way to be notified of when a window is iconified, and no way to
+    /// check whether a window is currently iconified.
     /// 
     /// @thread_safety This function must only be called from the main thread.
     /// 
@@ -4638,7 +4644,8 @@ public final class GLFW {
     /// GLFW will pass those events on to the application callbacks before
     /// returning.
     /// 
-    /// Event processing is not required for joystick input to work.
+    /// Event processing is not required to receive joystick input.  Joystick state
+    /// is polled when a joystick input or gamepad input function is called.
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
@@ -4691,7 +4698,8 @@ public final class GLFW {
     /// GLFW will pass those events on to the application callbacks before
     /// returning.
     /// 
-    /// Event processing is not required for joystick input to work.
+    /// Event processing is not required to receive joystick input.  Joystick state
+    /// is polled when a joystick input or gamepad input function is called.
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
@@ -4746,7 +4754,8 @@ public final class GLFW {
     /// GLFW will pass those events on to the application callbacks before
     /// returning.
     /// 
-    /// Event processing is not required for joystick input to work.
+    /// Event processing is not required to receive joystick input.  Joystick state
+    /// is polled when a joystick input or gamepad input function is called.
     /// 
     /// @param[in] timeout The maximum amount of time, in seconds, to wait.
     /// 
@@ -4861,8 +4870,8 @@ public final class GLFW {
     /// 
     /// This function sets an input mode option for the specified window.  The mode
     /// must be one of @ref GLFW_CURSOR, @ref GLFW_STICKY_KEYS,
-    /// @ref GLFW_STICKY_MOUSE_BUTTONS, @ref GLFW_LOCK_KEY_MODS or
-    /// @ref GLFW_RAW_MOUSE_MOTION.
+    /// @ref GLFW_STICKY_MOUSE_BUTTONS, @ref GLFW_LOCK_KEY_MODS
+    /// @ref GLFW_RAW_MOUSE_MOTION, or @ref GLFW_UNLIMITED_MOUSE_BUTTONS.
     /// 
     /// If the mode is `GLFW_CURSOR`, the value must be one of the following cursor
     /// modes:
@@ -4901,6 +4910,11 @@ public final class GLFW {
     /// disabled, or `GLFW_FALSE` to disable it.  If raw motion is not supported,
     /// attempting to set this will emit @ref GLFW_FEATURE_UNAVAILABLE.  Call @ref
     /// glfwRawMouseMotionSupported to check for support.
+    /// 
+    /// If the mode is `GLFW_UNLIMITED_MOUSE_BUTTONS`, the value must be either
+    /// `GLFW_TRUE` to disable the mouse button limit when calling the mouse button
+    /// callback, or `GLFW_FALSE` to limit the mouse buttons sent to the callback
+    /// to the mouse button token values up to `GLFW_MOUSE_BUTTON_LAST`.
     /// 
     /// @param[in] window The window whose input mode to set.
     /// @param[in] mode One of `GLFW_CURSOR`, `GLFW_STICKY_KEYS`,
@@ -5158,7 +5172,7 @@ public final class GLFW {
     /// @sa @ref input_key
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup input
     /// ```
@@ -5200,8 +5214,11 @@ public final class GLFW {
     /// returns `GLFW_PRESS` the first time you call it for a mouse button that was
     /// pressed, even if that mouse button has already been released.
     /// 
+    /// The @ref GLFW_UNLIMITED_MOUSE_BUTTONS input mode does not effect the
+    /// limit on buttons which can be polled with this function.
+    /// 
     /// @param[in] window The desired window.
-    /// @param[in] button The desired [mouse button](@ref buttons).
+    /// @param[in] button The desired [mouse button token](@ref buttons).
     /// @return One of `GLFW_PRESS` or `GLFW_RELEASE`.
     /// 
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
@@ -5212,7 +5229,7 @@ public final class GLFW {
     /// @sa @ref input_mouse_button
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup input
     /// ```
@@ -5336,7 +5353,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_PLATFORM_ERROR and @ref GLFW_FEATURE_UNAVAILABLE (see remarks).
     /// 
-    /// @remark @wayland This function will only work when the cursor mode is
+    /// @remark __Wayland:__ This function will only work when the cursor mode is
     /// `GLFW_CURSOR_DISABLED`, otherwise it will emit @ref GLFW_FEATURE_UNAVAILABLE.
     /// 
     /// @thread_safety This function must only be called from the main thread.
@@ -5669,7 +5686,7 @@ public final class GLFW {
     /// @sa @ref input_key
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter and return value.
+    /// __GLFW 3:__ Added window handle parameter and return value.
     /// 
     /// @ingroup input
     /// ```
@@ -5742,7 +5759,7 @@ public final class GLFW {
     /// @sa @ref input_char
     /// 
     /// @since Added in version 2.4.
-    /// @glfw3 Added window handle parameter and return value.
+    /// __GLFW 3:__ Added window handle parameter and return value.
     /// 
     /// @ingroup input
     /// ```
@@ -5856,10 +5873,15 @@ public final class GLFW {
     /// is called when a mouse button is pressed or released.
     /// 
     /// When a window loses input focus, it will generate synthetic mouse button
-    /// release events for all pressed mouse buttons.  You can tell these events
-    /// from user-generated events by the fact that the synthetic ones are generated
-    /// after the focus loss event has been processed, i.e. after the
-    /// [window focus callback](@ref glfwSetWindowFocusCallback) has been called.
+    /// release events for all pressed mouse buttons with associated button tokens.
+    /// You can tell these events from user-generated events by the fact that the
+    /// synthetic ones are generated after the focus loss event has been processed,
+    /// i.e. after the [window focus callback](@ref glfwSetWindowFocusCallback) has
+    /// been called.
+    /// 
+    /// The reported `button` value can be higher than `GLFW_MOUSE_BUTTON_LAST` if
+    /// the button does not have an associated [button token](@ref buttons) and the
+    /// @ref GLFW_UNLIMITED_MOUSE_BUTTONS input mode is set.
     /// 
     /// @param[in] window The window whose callback to set.
     /// @param[in] callback The new callback, or `NULL` to remove the currently set
@@ -5881,7 +5903,7 @@ public final class GLFW {
     /// @sa @ref input_mouse_button
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter and return value.
+    /// __GLFW 3:__ Added window handle parameter and return value.
     /// 
     /// @ingroup input
     /// ```
@@ -6303,7 +6325,7 @@ public final class GLFW {
     /// @sa @ref joystick_button
     /// 
     /// @since Added in version 2.2.
-    /// @glfw3 Changed to return a dynamic array.
+    /// __GLFW 3:__ Changed to return a dynamic array.
     /// 
     /// @ingroup input
     /// ```
@@ -6915,7 +6937,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
     /// GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @win32 The clipboard on Windows has a single global lock for reading and
+    /// @remark __Win32:__ The clipboard on Windows has a single global lock for reading and
     /// writing.  GLFW tries to acquire it a few times, which is almost always enough.  If it
     /// cannot acquire the lock then this function emits @ref GLFW_PLATFORM_ERROR and returns.
     /// It is safe to try this multiple times.
@@ -6973,7 +6995,7 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_FORMAT_UNAVAILABLE and @ref GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @win32 The clipboard on Windows has a single global lock for reading and
+    /// @remark __Win32:__ The clipboard on Windows has a single global lock for reading and
     /// writing.  GLFW tries to acquire it a few times, which is almost always enough.  If it
     /// cannot acquire the lock then this function emits @ref GLFW_PLATFORM_ERROR and returns.
     /// It is safe to try this multiple times.
@@ -7282,6 +7304,10 @@ public final class GLFW {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_NO_WINDOW_CONTEXT and @ref GLFW_PLATFORM_ERROR.
     /// 
+    /// @remark __Wayland:__ When the swap interval is greater than zero and the
+    /// window is not in view, this function may take a few extra milliseconds to
+    /// return.
+    /// 
     /// @remark __EGL:__ The context of the specified window must be current on the
     /// calling thread.
     /// 
@@ -7291,7 +7317,7 @@ public final class GLFW {
     /// @sa @ref glfwSwapInterval
     /// 
     /// @since Added in version 1.0.
-    /// @glfw3 Added window handle parameter.
+    /// __GLFW 3:__ Added window handle parameter.
     /// 
     /// @ingroup window
     /// ```

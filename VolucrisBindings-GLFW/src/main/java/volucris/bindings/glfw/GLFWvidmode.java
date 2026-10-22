@@ -23,7 +23,7 @@ import static java.lang.foreign.ValueLayout.*;
 /// @sa @ref glfwGetVideoModes
 /// 
 /// @since Added in version 1.0.
-/// @glfw3 Added refresh rate member.
+/// __GLFW 3:__ Added refresh rate member.
 /// 
 /// @ingroup monitor
 /// ```

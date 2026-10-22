@@ -241,7 +241,7 @@ public final class GLFWVulkan {
     /// @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
     /// GLFW_API_UNAVAILABLE and @ref GLFW_PLATFORM_ERROR.
     /// 
-    /// @remark @macos This function currently always returns `GLFW_TRUE`, as the
+    /// @remark __macOS:__ This function currently always returns `GLFW_TRUE`, as the
     /// `VK_MVK_macos_surface` and `VK_EXT_metal_surface` extensions do not provide
     /// a `vkGetPhysicalDevice*PresentationSupport` type function.
     /// 
@@ -328,15 +328,15 @@ public final class GLFWVulkan {
     /// @ref glfwVulkanSupported and @ref glfwGetRequiredInstanceExtensions should
     /// eliminate almost all occurrences of these errors.
     /// 
-    /// @remark @macos GLFW prefers the `VK_EXT_metal_surface` extension, with the
+    /// @remark __macOS:__ GLFW prefers the `VK_EXT_metal_surface` extension, with the
     /// `VK_MVK_macos_surface` extension as a fallback.  The name of the selected
     /// extension, if any, is included in the array returned by @ref
     /// glfwGetRequiredInstanceExtensions.
     /// 
-    /// @remark @macos This function creates and sets a `CAMetalLayer` instance for
+    /// @remark __macOS:__ This function creates and sets a `CAMetalLayer` instance for
     /// the window content view, which is required for MoltenVK to function.
     /// 
-    /// @remark @x11 By default GLFW prefers the `VK_KHR_xcb_surface` extension,
+    /// @remark __X11:__ By default GLFW prefers the `VK_KHR_xcb_surface` extension,
     /// with the `VK_KHR_xlib_surface` extension as a fallback.  You can make
     /// `VK_KHR_xlib_surface` the preferred extension by setting the
     /// [GLFW_X11_XCB_VULKAN_SURFACE](@ref GLFW_X11_XCB_VULKAN_SURFACE_hint) init

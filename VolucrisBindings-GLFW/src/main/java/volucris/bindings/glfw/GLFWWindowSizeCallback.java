@@ -34,7 +34,7 @@ import static volucris.bindings.core.FFMUtils.*;
 /// @sa @ref glfwSetWindowSizeCallback
 /// 
 /// @since Added in version 1.0.
-/// @glfw3 Added window handle parameter.
+/// __GLFW 3:__ Added window handle parameter.
 /// 
 /// @ingroup window
 /// ```

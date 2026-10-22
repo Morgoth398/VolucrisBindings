@@ -10,10 +10,10 @@ public class GLFWGeneration {
 		int options = CXTranslationUnit_Flags.CX_TRANSLATION_UNIT_DETAILED_PREPROCESSING_RECORD;
 
 		HeaderFile headerFile = new HeaderFile(
-				"src/main/resources/nativeSources/glfw-3.4/include/GLFW/glfw.h",
+				"src/main/resources/nativeSources/glfw-3.5.1/include/GLFW/glfw3.h",
 				options,
 				"-I" + System.getenv("VULKAN_SDK") + "/Include",
-				"-Isrc/main/resources/nativeSources/glfw-3.4/include/"
+				"-Isrc/main/resources/nativeSources/glfw-3.5.1/include/"
 		);
 
 		Generator generator = new Generator("src/main/resources/configs/globalConfig.yaml", headerFile);

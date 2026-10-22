@@ -26,7 +26,7 @@ import static volucris.bindings.core.FFMUtils.*;
 /// @sa @ref window_icon
 /// 
 /// @since Added in version 2.1.
-/// @glfw3 Removed format and bytes-per-pixel members.
+/// __GLFW 3:__ Removed format and bytes-per-pixel members.
 /// 
 /// @ingroup window
 /// ```

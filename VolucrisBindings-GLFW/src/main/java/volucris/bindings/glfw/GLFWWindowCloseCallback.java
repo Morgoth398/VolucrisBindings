@@ -31,7 +31,7 @@ import static volucris.bindings.core.FFMUtils.*;
 /// @sa @ref glfwSetWindowCloseCallback
 /// 
 /// @since Added in version 2.5.
-/// @glfw3 Added window handle parameter.
+/// __GLFW 3:__ Added window handle parameter.
 /// 
 /// @ingroup window
 /// ```

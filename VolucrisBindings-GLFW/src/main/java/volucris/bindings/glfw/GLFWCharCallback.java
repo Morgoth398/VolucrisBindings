@@ -33,7 +33,7 @@ import static volucris.bindings.core.FFMUtils.*;
 /// @sa @ref glfwSetCharCallback
 /// 
 /// @since Added in version 2.4.
-/// @glfw3 Added window handle parameter.
+/// __GLFW 3:__ Added window handle parameter.
 /// 
 /// @ingroup input
 /// ```
