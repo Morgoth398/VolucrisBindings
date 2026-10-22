@@ -95,7 +95,7 @@
 		<module>VolucrisBindings-Miniaudio</module>
 	</modules>
 	<properties>
-		<revision>2.0.0</revision>
+		<revision>2.1.0</revision>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
