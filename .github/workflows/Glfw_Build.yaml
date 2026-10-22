@@ -3,7 +3,7 @@ name: GLFW
 on: workflow_dispatch
 
 env:
-  SOURCE_DIRECTORY: VolucrisBindings-GLFW/src/main/resources/nativeSources/glfw-3.4/
+  SOURCE_DIRECTORY: VolucrisBindings-GLFW/src/main/resources/nativeSources/glfw-3.5.1/
   SHARED_LIBRARY_FILE_NAME: glfw
 
 jobs:
