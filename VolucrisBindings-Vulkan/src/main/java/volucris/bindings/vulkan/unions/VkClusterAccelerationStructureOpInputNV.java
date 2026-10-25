@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.unions;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -55,8 +56,8 @@ public final class VkClusterAccelerationStructureOpInputNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkClusterAccelerationStructureOpInputNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkClusterAccelerationStructureOpInputNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkClusterAccelerationStructureOpInputNV(MemorySegment segment) {
@@ -129,18 +130,18 @@ public final class VkClusterAccelerationStructureOpInputNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureOpInputNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkClusterAccelerationStructureOpInputNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureOpInputNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureOpInputNV> array(Arena arena, VkClusterAccelerationStructureOpInputNV... structs) {
+    public static NativeStructArray<VkClusterAccelerationStructureOpInputNV> array(SegmentAllocator allocator, VkClusterAccelerationStructureOpInputNV... structs) {
         NativeStructArray<VkClusterAccelerationStructureOpInputNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureOpInputNV(segment),
             structs.length

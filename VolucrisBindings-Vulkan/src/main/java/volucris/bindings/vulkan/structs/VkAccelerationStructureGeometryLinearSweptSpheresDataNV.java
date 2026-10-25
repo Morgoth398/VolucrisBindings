@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -108,8 +109,8 @@ public final class VkAccelerationStructureGeometryLinearSweptSpheresDataNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureGeometryLinearSweptSpheresDataNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureGeometryLinearSweptSpheresDataNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureGeometryLinearSweptSpheresDataNV(MemorySegment segment) {
@@ -293,18 +294,18 @@ public final class VkAccelerationStructureGeometryLinearSweptSpheresDataNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureGeometryLinearSweptSpheresDataNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureGeometryLinearSweptSpheresDataNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureGeometryLinearSweptSpheresDataNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureGeometryLinearSweptSpheresDataNV> array(Arena arena, VkAccelerationStructureGeometryLinearSweptSpheresDataNV... structs) {
+    public static NativeStructArray<VkAccelerationStructureGeometryLinearSweptSpheresDataNV> array(SegmentAllocator allocator, VkAccelerationStructureGeometryLinearSweptSpheresDataNV... structs) {
         NativeStructArray<VkAccelerationStructureGeometryLinearSweptSpheresDataNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureGeometryLinearSweptSpheresDataNV(segment),
             structs.length

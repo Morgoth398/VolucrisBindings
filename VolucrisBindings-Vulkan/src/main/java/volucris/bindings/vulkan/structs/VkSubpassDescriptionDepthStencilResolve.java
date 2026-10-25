@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkSubpassDescriptionDepthStencilResolve
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSubpassDescriptionDepthStencilResolve(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSubpassDescriptionDepthStencilResolve(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSubpassDescriptionDepthStencilResolve(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkSubpassDescriptionDepthStencilResolve
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSubpassDescriptionDepthStencilResolve> array(Arena arena, int count) {
+    public static NativeStructArray<VkSubpassDescriptionDepthStencilResolve> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassDescriptionDepthStencilResolve(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSubpassDescriptionDepthStencilResolve> array(Arena arena, VkSubpassDescriptionDepthStencilResolve... structs) {
+    public static NativeStructArray<VkSubpassDescriptionDepthStencilResolve> array(SegmentAllocator allocator, VkSubpassDescriptionDepthStencilResolve... structs) {
         NativeStructArray<VkSubpassDescriptionDepthStencilResolve> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassDescriptionDepthStencilResolve(segment),
             structs.length

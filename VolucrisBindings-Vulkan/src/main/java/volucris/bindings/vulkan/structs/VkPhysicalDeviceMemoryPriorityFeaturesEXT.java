@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceMemoryPriorityFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMemoryPriorityFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMemoryPriorityFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMemoryPriorityFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceMemoryPriorityFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMemoryPriorityFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMemoryPriorityFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMemoryPriorityFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMemoryPriorityFeaturesEXT> array(Arena arena, VkPhysicalDeviceMemoryPriorityFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMemoryPriorityFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceMemoryPriorityFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceMemoryPriorityFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMemoryPriorityFeaturesEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceShaderSMBuiltinsPropertiesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderSMBuiltinsPropertiesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderSMBuiltinsPropertiesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderSMBuiltinsPropertiesNV(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceShaderSMBuiltinsPropertiesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSMBuiltinsPropertiesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSMBuiltinsPropertiesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSMBuiltinsPropertiesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSMBuiltinsPropertiesNV> array(Arena arena, VkPhysicalDeviceShaderSMBuiltinsPropertiesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSMBuiltinsPropertiesNV> array(SegmentAllocator allocator, VkPhysicalDeviceShaderSMBuiltinsPropertiesNV... structs) {
         NativeStructArray<VkPhysicalDeviceShaderSMBuiltinsPropertiesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSMBuiltinsPropertiesNV(segment),
             structs.length

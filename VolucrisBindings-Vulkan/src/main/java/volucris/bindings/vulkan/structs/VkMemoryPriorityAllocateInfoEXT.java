@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkMemoryPriorityAllocateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMemoryPriorityAllocateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMemoryPriorityAllocateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMemoryPriorityAllocateInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkMemoryPriorityAllocateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMemoryPriorityAllocateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMemoryPriorityAllocateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryPriorityAllocateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMemoryPriorityAllocateInfoEXT> array(Arena arena, VkMemoryPriorityAllocateInfoEXT... structs) {
+    public static NativeStructArray<VkMemoryPriorityAllocateInfoEXT> array(SegmentAllocator allocator, VkMemoryPriorityAllocateInfoEXT... structs) {
         NativeStructArray<VkMemoryPriorityAllocateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryPriorityAllocateInfoEXT(segment),
             structs.length

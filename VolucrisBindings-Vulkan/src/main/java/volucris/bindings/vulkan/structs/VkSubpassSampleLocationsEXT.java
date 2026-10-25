@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -50,8 +51,8 @@ public final class VkSubpassSampleLocationsEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSubpassSampleLocationsEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSubpassSampleLocationsEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSubpassSampleLocationsEXT(MemorySegment segment) {
@@ -106,18 +107,18 @@ public final class VkSubpassSampleLocationsEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSubpassSampleLocationsEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkSubpassSampleLocationsEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassSampleLocationsEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSubpassSampleLocationsEXT> array(Arena arena, VkSubpassSampleLocationsEXT... structs) {
+    public static NativeStructArray<VkSubpassSampleLocationsEXT> array(SegmentAllocator allocator, VkSubpassSampleLocationsEXT... structs) {
         NativeStructArray<VkSubpassSampleLocationsEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassSampleLocationsEXT(segment),
             structs.length

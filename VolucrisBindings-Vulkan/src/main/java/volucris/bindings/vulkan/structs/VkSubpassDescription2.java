@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -109,8 +110,8 @@ public final class VkSubpassDescription2
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSubpassDescription2(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSubpassDescription2(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSubpassDescription2(MemorySegment segment) {
@@ -298,18 +299,18 @@ public final class VkSubpassDescription2
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSubpassDescription2> array(Arena arena, int count) {
+    public static NativeStructArray<VkSubpassDescription2> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassDescription2(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSubpassDescription2> array(Arena arena, VkSubpassDescription2... structs) {
+    public static NativeStructArray<VkSubpassDescription2> array(SegmentAllocator allocator, VkSubpassDescription2... structs) {
         NativeStructArray<VkSubpassDescription2> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassDescription2(segment),
             structs.length

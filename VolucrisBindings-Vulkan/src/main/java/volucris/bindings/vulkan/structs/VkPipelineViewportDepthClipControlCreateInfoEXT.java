@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPipelineViewportDepthClipControlCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineViewportDepthClipControlCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineViewportDepthClipControlCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineViewportDepthClipControlCreateInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPipelineViewportDepthClipControlCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineViewportDepthClipControlCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineViewportDepthClipControlCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportDepthClipControlCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineViewportDepthClipControlCreateInfoEXT> array(Arena arena, VkPipelineViewportDepthClipControlCreateInfoEXT... structs) {
+    public static NativeStructArray<VkPipelineViewportDepthClipControlCreateInfoEXT> array(SegmentAllocator allocator, VkPipelineViewportDepthClipControlCreateInfoEXT... structs) {
         NativeStructArray<VkPipelineViewportDepthClipControlCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportDepthClipControlCreateInfoEXT(segment),
             structs.length

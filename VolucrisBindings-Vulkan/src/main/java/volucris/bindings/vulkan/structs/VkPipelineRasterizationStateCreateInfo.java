@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -107,8 +108,8 @@ public final class VkPipelineRasterizationStateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineRasterizationStateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineRasterizationStateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineRasterizationStateCreateInfo(MemorySegment segment) {
@@ -271,18 +272,18 @@ public final class VkPipelineRasterizationStateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineRasterizationStateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineRasterizationStateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRasterizationStateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineRasterizationStateCreateInfo> array(Arena arena, VkPipelineRasterizationStateCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineRasterizationStateCreateInfo> array(SegmentAllocator allocator, VkPipelineRasterizationStateCreateInfo... structs) {
         NativeStructArray<VkPipelineRasterizationStateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRasterizationStateCreateInfo(segment),
             structs.length

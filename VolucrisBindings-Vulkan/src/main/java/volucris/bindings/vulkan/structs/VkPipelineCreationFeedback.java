@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -49,8 +50,8 @@ public final class VkPipelineCreationFeedback
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineCreationFeedback(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineCreationFeedback(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineCreationFeedback(MemorySegment segment) {
@@ -98,18 +99,18 @@ public final class VkPipelineCreationFeedback
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineCreationFeedback> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineCreationFeedback> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCreationFeedback(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineCreationFeedback> array(Arena arena, VkPipelineCreationFeedback... structs) {
+    public static NativeStructArray<VkPipelineCreationFeedback> array(SegmentAllocator allocator, VkPipelineCreationFeedback... structs) {
         NativeStructArray<VkPipelineCreationFeedback> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCreationFeedback(segment),
             structs.length

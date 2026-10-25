@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoH264SpsFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH264SpsFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH264SpsFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH264SpsFlags(MemorySegment segment) {
@@ -101,18 +102,18 @@ public final class StdVideoH264SpsFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH264SpsFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH264SpsFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH264SpsFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH264SpsFlags> array(Arena arena, StdVideoH264SpsFlags... structs) {
+    public static NativeStructArray<StdVideoH264SpsFlags> array(SegmentAllocator allocator, StdVideoH264SpsFlags... structs) {
         NativeStructArray<StdVideoH264SpsFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH264SpsFlags(segment),
             structs.length

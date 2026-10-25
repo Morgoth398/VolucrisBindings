@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -90,8 +91,8 @@ public final class MaContextConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaContextConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaContextConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaContextConfig(MemorySegment segment) {
@@ -288,18 +289,18 @@ public final class MaContextConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaContextConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaContextConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaContextConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaContextConfig> array(Arena arena, MaContextConfig... structs) {
+    public static NativeStructArray<MaContextConfig> array(SegmentAllocator allocator, MaContextConfig... structs) {
         NativeStructArray<MaContextConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaContextConfig(segment),
             structs.length
@@ -346,8 +347,8 @@ public final class MaContextConfig
 		    this(Arena.ofAuto());
 		}
 		
-		public Dsound(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Dsound(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Dsound(MemorySegment segment) {
@@ -390,18 +391,18 @@ public final class MaContextConfig
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Dsound> array(Arena arena, int count) {
+	    public static NativeStructArray<Dsound> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Dsound(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Dsound> array(Arena arena, Dsound... structs) {
+	    public static NativeStructArray<Dsound> array(SegmentAllocator allocator, Dsound... structs) {
 	        NativeStructArray<Dsound> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Dsound(segment),
 	            structs.length
@@ -450,8 +451,8 @@ public final class MaContextConfig
 		    this(Arena.ofAuto());
 		}
 		
-		public Alsa(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Alsa(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Alsa(MemorySegment segment) {
@@ -489,18 +490,18 @@ public final class MaContextConfig
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Alsa> array(Arena arena, int count) {
+	    public static NativeStructArray<Alsa> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Alsa(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Alsa> array(Arena arena, Alsa... structs) {
+	    public static NativeStructArray<Alsa> array(SegmentAllocator allocator, Alsa... structs) {
 	        NativeStructArray<Alsa> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Alsa(segment),
 	            structs.length
@@ -560,8 +561,8 @@ public final class MaContextConfig
 		    this(Arena.ofAuto());
 		}
 		
-		public Pulse(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Pulse(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Pulse(MemorySegment segment) {
@@ -629,18 +630,18 @@ public final class MaContextConfig
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Pulse> array(Arena arena, int count) {
+	    public static NativeStructArray<Pulse> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Pulse(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Pulse> array(Arena arena, Pulse... structs) {
+	    public static NativeStructArray<Pulse> array(SegmentAllocator allocator, Pulse... structs) {
 	        NativeStructArray<Pulse> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Pulse(segment),
 	            structs.length
@@ -704,8 +705,8 @@ public final class MaContextConfig
 		    this(Arena.ofAuto());
 		}
 		
-		public Coreaudio(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Coreaudio(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Coreaudio(MemorySegment segment) {
@@ -773,18 +774,18 @@ public final class MaContextConfig
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Coreaudio> array(Arena arena, int count) {
+	    public static NativeStructArray<Coreaudio> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Coreaudio(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Coreaudio> array(Arena arena, Coreaudio... structs) {
+	    public static NativeStructArray<Coreaudio> array(SegmentAllocator allocator, Coreaudio... structs) {
 	        NativeStructArray<Coreaudio> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Coreaudio(segment),
 	            structs.length
@@ -839,8 +840,8 @@ public final class MaContextConfig
 		    this(Arena.ofAuto());
 		}
 		
-		public Jack(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Jack(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Jack(MemorySegment segment) {
@@ -893,18 +894,18 @@ public final class MaContextConfig
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Jack> array(Arena arena, int count) {
+	    public static NativeStructArray<Jack> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Jack(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Jack> array(Arena arena, Jack... structs) {
+	    public static NativeStructArray<Jack> array(SegmentAllocator allocator, Jack... structs) {
 	        NativeStructArray<Jack> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Jack(segment),
 	            structs.length

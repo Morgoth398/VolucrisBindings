@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR> array(Arena arena, VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR> array(SegmentAllocator allocator, VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR... structs) {
         NativeStructArray<VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeQuantizationMapSessionParametersCreateInfoKHR(segment),
             structs.length

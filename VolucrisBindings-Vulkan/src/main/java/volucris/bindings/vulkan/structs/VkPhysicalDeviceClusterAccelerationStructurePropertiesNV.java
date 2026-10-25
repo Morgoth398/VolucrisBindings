@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -91,8 +92,8 @@ public final class VkPhysicalDeviceClusterAccelerationStructurePropertiesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(MemorySegment segment) {
@@ -225,18 +226,18 @@ public final class VkPhysicalDeviceClusterAccelerationStructurePropertiesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> array(Arena arena, VkPhysicalDeviceClusterAccelerationStructurePropertiesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> array(SegmentAllocator allocator, VkPhysicalDeviceClusterAccelerationStructurePropertiesNV... structs) {
         NativeStructArray<VkPhysicalDeviceClusterAccelerationStructurePropertiesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceClusterAccelerationStructurePropertiesNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkBufferCopy2
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBufferCopy2(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBufferCopy2(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBufferCopy2(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkBufferCopy2
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBufferCopy2> array(Arena arena, int count) {
+    public static NativeStructArray<VkBufferCopy2> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBufferCopy2(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBufferCopy2> array(Arena arena, VkBufferCopy2... structs) {
+    public static NativeStructArray<VkBufferCopy2> array(SegmentAllocator allocator, VkBufferCopy2... structs) {
         NativeStructArray<VkBufferCopy2> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBufferCopy2(segment),
             structs.length

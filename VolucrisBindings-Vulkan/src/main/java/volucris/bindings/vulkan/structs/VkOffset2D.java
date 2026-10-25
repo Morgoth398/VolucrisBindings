@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkOffset2D
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOffset2D(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOffset2D(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOffset2D(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkOffset2D
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOffset2D> array(Arena arena, int count) {
+    public static NativeStructArray<VkOffset2D> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOffset2D(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOffset2D> array(Arena arena, VkOffset2D... structs) {
+    public static NativeStructArray<VkOffset2D> array(SegmentAllocator allocator, VkOffset2D... structs) {
         NativeStructArray<VkOffset2D> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOffset2D(segment),
             structs.length

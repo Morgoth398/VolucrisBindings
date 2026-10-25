@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -84,8 +85,8 @@ public final class VkPartitionedAccelerationStructureWriteInstanceDataNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPartitionedAccelerationStructureWriteInstanceDataNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPartitionedAccelerationStructureWriteInstanceDataNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPartitionedAccelerationStructureWriteInstanceDataNV(MemorySegment segment) {
@@ -210,18 +211,18 @@ public final class VkPartitionedAccelerationStructureWriteInstanceDataNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureWriteInstanceDataNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureWriteInstanceDataNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureWriteInstanceDataNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureWriteInstanceDataNV> array(Arena arena, VkPartitionedAccelerationStructureWriteInstanceDataNV... structs) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureWriteInstanceDataNV> array(SegmentAllocator allocator, VkPartitionedAccelerationStructureWriteInstanceDataNV... structs) {
         NativeStructArray<VkPartitionedAccelerationStructureWriteInstanceDataNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureWriteInstanceDataNV(segment),
             structs.length

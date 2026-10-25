@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -78,8 +79,8 @@ public final class VkRenderPassBeginInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassBeginInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassBeginInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassBeginInfo(MemorySegment segment) {
@@ -204,18 +205,18 @@ public final class VkRenderPassBeginInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassBeginInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassBeginInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassBeginInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassBeginInfo> array(Arena arena, VkRenderPassBeginInfo... structs) {
+    public static NativeStructArray<VkRenderPassBeginInfo> array(SegmentAllocator allocator, VkRenderPassBeginInfo... structs) {
         NativeStructArray<VkRenderPassBeginInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassBeginInfo(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR> array(Arena arena, VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSubgroupUniformControlFlowFeaturesKHR(segment),
             structs.length

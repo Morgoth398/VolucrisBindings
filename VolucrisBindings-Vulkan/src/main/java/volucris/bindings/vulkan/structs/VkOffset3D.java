@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkOffset3D
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOffset3D(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOffset3D(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOffset3D(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkOffset3D
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOffset3D> array(Arena arena, int count) {
+    public static NativeStructArray<VkOffset3D> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOffset3D(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOffset3D> array(Arena arena, VkOffset3D... structs) {
+    public static NativeStructArray<VkOffset3D> array(SegmentAllocator allocator, VkOffset3D... structs) {
         NativeStructArray<VkOffset3D> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOffset3D(segment),
             structs.length

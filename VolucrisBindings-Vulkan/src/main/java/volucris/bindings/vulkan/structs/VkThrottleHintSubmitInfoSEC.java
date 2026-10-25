@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkThrottleHintSubmitInfoSEC
 	    this(Arena.ofAuto());
 	}
 	
-	public VkThrottleHintSubmitInfoSEC(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkThrottleHintSubmitInfoSEC(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkThrottleHintSubmitInfoSEC(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkThrottleHintSubmitInfoSEC
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkThrottleHintSubmitInfoSEC> array(Arena arena, int count) {
+    public static NativeStructArray<VkThrottleHintSubmitInfoSEC> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkThrottleHintSubmitInfoSEC(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkThrottleHintSubmitInfoSEC> array(Arena arena, VkThrottleHintSubmitInfoSEC... structs) {
+    public static NativeStructArray<VkThrottleHintSubmitInfoSEC> array(SegmentAllocator allocator, VkThrottleHintSubmitInfoSEC... structs) {
         NativeStructArray<VkThrottleHintSubmitInfoSEC> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkThrottleHintSubmitInfoSEC(segment),
             structs.length

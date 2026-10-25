@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -119,8 +120,8 @@ public final class MaDataConverterConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDataConverterConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDataConverterConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDataConverterConfig(MemorySegment segment) {
@@ -310,18 +311,18 @@ public final class MaDataConverterConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDataConverterConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaDataConverterConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDataConverterConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDataConverterConfig> array(Arena arena, MaDataConverterConfig... structs) {
+    public static NativeStructArray<MaDataConverterConfig> array(SegmentAllocator allocator, MaDataConverterConfig... structs) {
         NativeStructArray<MaDataConverterConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDataConverterConfig(segment),
             structs.length

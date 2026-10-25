@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -42,8 +43,8 @@ public final class MaLoshelfNodeConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaLoshelfNodeConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaLoshelfNodeConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaLoshelfNodeConfig(MemorySegment segment) {
@@ -105,18 +106,18 @@ public final class MaLoshelfNodeConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaLoshelfNodeConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaLoshelfNodeConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLoshelfNodeConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaLoshelfNodeConfig> array(Arena arena, MaLoshelfNodeConfig... structs) {
+    public static NativeStructArray<MaLoshelfNodeConfig> array(SegmentAllocator allocator, MaLoshelfNodeConfig... structs) {
         NativeStructArray<MaLoshelfNodeConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLoshelfNodeConfig(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkLatencySurfaceCapabilitiesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkLatencySurfaceCapabilitiesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkLatencySurfaceCapabilitiesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkLatencySurfaceCapabilitiesNV(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkLatencySurfaceCapabilitiesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkLatencySurfaceCapabilitiesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkLatencySurfaceCapabilitiesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLatencySurfaceCapabilitiesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkLatencySurfaceCapabilitiesNV> array(Arena arena, VkLatencySurfaceCapabilitiesNV... structs) {
+    public static NativeStructArray<VkLatencySurfaceCapabilitiesNV> array(SegmentAllocator allocator, VkLatencySurfaceCapabilitiesNV... structs) {
         NativeStructArray<VkLatencySurfaceCapabilitiesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLatencySurfaceCapabilitiesNV(segment),
             structs.length

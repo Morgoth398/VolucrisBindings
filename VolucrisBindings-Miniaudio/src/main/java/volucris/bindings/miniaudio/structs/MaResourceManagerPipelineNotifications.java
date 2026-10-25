@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -42,8 +43,8 @@ public final class MaResourceManagerPipelineNotifications
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerPipelineNotifications(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerPipelineNotifications(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerPipelineNotifications(MemorySegment segment) {
@@ -105,18 +106,18 @@ public final class MaResourceManagerPipelineNotifications
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerPipelineNotifications> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerPipelineNotifications> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerPipelineNotifications(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerPipelineNotifications> array(Arena arena, MaResourceManagerPipelineNotifications... structs) {
+    public static NativeStructArray<MaResourceManagerPipelineNotifications> array(SegmentAllocator allocator, MaResourceManagerPipelineNotifications... structs) {
         NativeStructArray<MaResourceManagerPipelineNotifications> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerPipelineNotifications(segment),
             structs.length

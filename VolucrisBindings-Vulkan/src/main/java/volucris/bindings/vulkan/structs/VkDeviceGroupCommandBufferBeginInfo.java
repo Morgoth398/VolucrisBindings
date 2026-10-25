@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDeviceGroupCommandBufferBeginInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceGroupCommandBufferBeginInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceGroupCommandBufferBeginInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceGroupCommandBufferBeginInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDeviceGroupCommandBufferBeginInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceGroupCommandBufferBeginInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceGroupCommandBufferBeginInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupCommandBufferBeginInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceGroupCommandBufferBeginInfo> array(Arena arena, VkDeviceGroupCommandBufferBeginInfo... structs) {
+    public static NativeStructArray<VkDeviceGroupCommandBufferBeginInfo> array(SegmentAllocator allocator, VkDeviceGroupCommandBufferBeginInfo... structs) {
         NativeStructArray<VkDeviceGroupCommandBufferBeginInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupCommandBufferBeginInfo(segment),
             structs.length

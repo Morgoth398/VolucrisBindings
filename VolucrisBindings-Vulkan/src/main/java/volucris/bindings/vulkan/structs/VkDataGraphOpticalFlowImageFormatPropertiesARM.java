@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDataGraphOpticalFlowImageFormatPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphOpticalFlowImageFormatPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphOpticalFlowImageFormatPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphOpticalFlowImageFormatPropertiesARM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDataGraphOpticalFlowImageFormatPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphOpticalFlowImageFormatPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphOpticalFlowImageFormatPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphOpticalFlowImageFormatPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphOpticalFlowImageFormatPropertiesARM> array(Arena arena, VkDataGraphOpticalFlowImageFormatPropertiesARM... structs) {
+    public static NativeStructArray<VkDataGraphOpticalFlowImageFormatPropertiesARM> array(SegmentAllocator allocator, VkDataGraphOpticalFlowImageFormatPropertiesARM... structs) {
         NativeStructArray<VkDataGraphOpticalFlowImageFormatPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphOpticalFlowImageFormatPropertiesARM(segment),
             structs.length

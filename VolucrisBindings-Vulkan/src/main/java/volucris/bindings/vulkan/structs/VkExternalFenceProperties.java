@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkExternalFenceProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkExternalFenceProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkExternalFenceProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkExternalFenceProperties(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkExternalFenceProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkExternalFenceProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkExternalFenceProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalFenceProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkExternalFenceProperties> array(Arena arena, VkExternalFenceProperties... structs) {
+    public static NativeStructArray<VkExternalFenceProperties> array(SegmentAllocator allocator, VkExternalFenceProperties... structs) {
         NativeStructArray<VkExternalFenceProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalFenceProperties(segment),
             structs.length

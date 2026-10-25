@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkStridedDeviceAddressRangeKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkStridedDeviceAddressRangeKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkStridedDeviceAddressRangeKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkStridedDeviceAddressRangeKHR(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkStridedDeviceAddressRangeKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkStridedDeviceAddressRangeKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkStridedDeviceAddressRangeKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkStridedDeviceAddressRangeKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkStridedDeviceAddressRangeKHR> array(Arena arena, VkStridedDeviceAddressRangeKHR... structs) {
+    public static NativeStructArray<VkStridedDeviceAddressRangeKHR> array(SegmentAllocator allocator, VkStridedDeviceAddressRangeKHR... structs) {
         NativeStructArray<VkStridedDeviceAddressRangeKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkStridedDeviceAddressRangeKHR(segment),
             structs.length

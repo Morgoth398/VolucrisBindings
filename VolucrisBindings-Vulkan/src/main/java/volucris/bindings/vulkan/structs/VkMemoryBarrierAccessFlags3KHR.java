@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkMemoryBarrierAccessFlags3KHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMemoryBarrierAccessFlags3KHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMemoryBarrierAccessFlags3KHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMemoryBarrierAccessFlags3KHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkMemoryBarrierAccessFlags3KHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMemoryBarrierAccessFlags3KHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkMemoryBarrierAccessFlags3KHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryBarrierAccessFlags3KHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMemoryBarrierAccessFlags3KHR> array(Arena arena, VkMemoryBarrierAccessFlags3KHR... structs) {
+    public static NativeStructArray<VkMemoryBarrierAccessFlags3KHR> array(SegmentAllocator allocator, VkMemoryBarrierAccessFlags3KHR... structs) {
         NativeStructArray<VkMemoryBarrierAccessFlags3KHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryBarrierAccessFlags3KHR(segment),
             structs.length

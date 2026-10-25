@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkPartitionedAccelerationStructureInstancesInputNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPartitionedAccelerationStructureInstancesInputNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPartitionedAccelerationStructureInstancesInputNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPartitionedAccelerationStructureInstancesInputNV(MemorySegment segment) {
@@ -181,18 +182,18 @@ public final class VkPartitionedAccelerationStructureInstancesInputNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureInstancesInputNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureInstancesInputNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureInstancesInputNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureInstancesInputNV> array(Arena arena, VkPartitionedAccelerationStructureInstancesInputNV... structs) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureInstancesInputNV> array(SegmentAllocator allocator, VkPartitionedAccelerationStructureInstancesInputNV... structs) {
         NativeStructArray<VkPartitionedAccelerationStructureInstancesInputNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureInstancesInputNV(segment),
             structs.length

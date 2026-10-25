@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkDebugUtilsLabelEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDebugUtilsLabelEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDebugUtilsLabelEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDebugUtilsLabelEXT(MemorySegment segment) {
@@ -96,8 +97,8 @@ public final class VkDebugUtilsLabelEXT
     }
     
     /// @see #pLabelName()
-    public VkDebugUtilsLabelEXT pLabelName(Arena arena, String pLabelName) {
-    	P_LABEL_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pLabelName));
+    public VkDebugUtilsLabelEXT pLabelName(SegmentAllocator allocator, String pLabelName) {
+    	P_LABEL_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pLabelName));
     	return this;
     }
     
@@ -140,18 +141,18 @@ public final class VkDebugUtilsLabelEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDebugUtilsLabelEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDebugUtilsLabelEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsLabelEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDebugUtilsLabelEXT> array(Arena arena, VkDebugUtilsLabelEXT... structs) {
+    public static NativeStructArray<VkDebugUtilsLabelEXT> array(SegmentAllocator allocator, VkDebugUtilsLabelEXT... structs) {
         NativeStructArray<VkDebugUtilsLabelEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsLabelEXT(segment),
             structs.length

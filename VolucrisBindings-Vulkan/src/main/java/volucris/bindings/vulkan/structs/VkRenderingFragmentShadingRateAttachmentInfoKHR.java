@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -68,8 +69,8 @@ public final class VkRenderingFragmentShadingRateAttachmentInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderingFragmentShadingRateAttachmentInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderingFragmentShadingRateAttachmentInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderingFragmentShadingRateAttachmentInfoKHR(MemorySegment segment) {
@@ -164,18 +165,18 @@ public final class VkRenderingFragmentShadingRateAttachmentInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderingFragmentShadingRateAttachmentInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderingFragmentShadingRateAttachmentInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingFragmentShadingRateAttachmentInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderingFragmentShadingRateAttachmentInfoKHR> array(Arena arena, VkRenderingFragmentShadingRateAttachmentInfoKHR... structs) {
+    public static NativeStructArray<VkRenderingFragmentShadingRateAttachmentInfoKHR> array(SegmentAllocator allocator, VkRenderingFragmentShadingRateAttachmentInfoKHR... structs) {
         NativeStructArray<VkRenderingFragmentShadingRateAttachmentInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingFragmentShadingRateAttachmentInfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkRenderPassTransformBeginInfoQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassTransformBeginInfoQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassTransformBeginInfoQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassTransformBeginInfoQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkRenderPassTransformBeginInfoQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassTransformBeginInfoQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassTransformBeginInfoQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassTransformBeginInfoQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassTransformBeginInfoQCOM> array(Arena arena, VkRenderPassTransformBeginInfoQCOM... structs) {
+    public static NativeStructArray<VkRenderPassTransformBeginInfoQCOM> array(SegmentAllocator allocator, VkRenderPassTransformBeginInfoQCOM... structs) {
         NativeStructArray<VkRenderPassTransformBeginInfoQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassTransformBeginInfoQCOM(segment),
             structs.length

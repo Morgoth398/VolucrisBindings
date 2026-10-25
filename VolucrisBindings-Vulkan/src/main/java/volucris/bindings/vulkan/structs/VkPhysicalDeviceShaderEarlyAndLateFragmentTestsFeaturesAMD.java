@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD> array(Arena arena, VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD> array(SegmentAllocator allocator, VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD... structs) {
         NativeStructArray<VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderEarlyAndLateFragmentTestsFeaturesAMD(segment),
             structs.length

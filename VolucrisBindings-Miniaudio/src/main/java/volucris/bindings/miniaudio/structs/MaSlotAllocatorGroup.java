@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -40,8 +41,8 @@ public final class MaSlotAllocatorGroup
 	    this(Arena.ofAuto());
 	}
 	
-	public MaSlotAllocatorGroup(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaSlotAllocatorGroup(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaSlotAllocatorGroup(MemorySegment segment) {
@@ -79,18 +80,18 @@ public final class MaSlotAllocatorGroup
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaSlotAllocatorGroup> array(Arena arena, int count) {
+    public static NativeStructArray<MaSlotAllocatorGroup> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaSlotAllocatorGroup(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaSlotAllocatorGroup> array(Arena arena, MaSlotAllocatorGroup... structs) {
+    public static NativeStructArray<MaSlotAllocatorGroup> array(SegmentAllocator allocator, MaSlotAllocatorGroup... structs) {
         NativeStructArray<MaSlotAllocatorGroup> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaSlotAllocatorGroup(segment),
             structs.length

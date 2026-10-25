@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -54,8 +55,8 @@ public final class VkAccelerationStructureMotionInstanceNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureMotionInstanceNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureMotionInstanceNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureMotionInstanceNV(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkAccelerationStructureMotionInstanceNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureMotionInstanceNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureMotionInstanceNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureMotionInstanceNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureMotionInstanceNV> array(Arena arena, VkAccelerationStructureMotionInstanceNV... structs) {
+    public static NativeStructArray<VkAccelerationStructureMotionInstanceNV> array(SegmentAllocator allocator, VkAccelerationStructureMotionInstanceNV... structs) {
         NativeStructArray<VkAccelerationStructureMotionInstanceNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureMotionInstanceNV(segment),
             structs.length

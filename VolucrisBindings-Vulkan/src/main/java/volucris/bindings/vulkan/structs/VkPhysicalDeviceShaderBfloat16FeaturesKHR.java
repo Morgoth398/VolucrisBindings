@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPhysicalDeviceShaderBfloat16FeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderBfloat16FeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderBfloat16FeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderBfloat16FeaturesKHR(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPhysicalDeviceShaderBfloat16FeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderBfloat16FeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderBfloat16FeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderBfloat16FeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderBfloat16FeaturesKHR> array(Arena arena, VkPhysicalDeviceShaderBfloat16FeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderBfloat16FeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceShaderBfloat16FeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceShaderBfloat16FeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderBfloat16FeaturesKHR(segment),
             structs.length

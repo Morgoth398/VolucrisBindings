@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -63,8 +64,8 @@ public final class VkPhysicalDeviceSparseProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceSparseProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceSparseProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceSparseProperties(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkPhysicalDeviceSparseProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSparseProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceSparseProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSparseProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSparseProperties> array(Arena arena, VkPhysicalDeviceSparseProperties... structs) {
+    public static NativeStructArray<VkPhysicalDeviceSparseProperties> array(SegmentAllocator allocator, VkPhysicalDeviceSparseProperties... structs) {
         NativeStructArray<VkPhysicalDeviceSparseProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSparseProperties(segment),
             structs.length

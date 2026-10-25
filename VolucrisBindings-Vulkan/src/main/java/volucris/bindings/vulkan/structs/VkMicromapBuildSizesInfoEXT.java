@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkMicromapBuildSizesInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMicromapBuildSizesInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMicromapBuildSizesInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMicromapBuildSizesInfoEXT(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkMicromapBuildSizesInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMicromapBuildSizesInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMicromapBuildSizesInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMicromapBuildSizesInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMicromapBuildSizesInfoEXT> array(Arena arena, VkMicromapBuildSizesInfoEXT... structs) {
+    public static NativeStructArray<VkMicromapBuildSizesInfoEXT> array(SegmentAllocator allocator, VkMicromapBuildSizesInfoEXT... structs) {
         NativeStructArray<VkMicromapBuildSizesInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMicromapBuildSizesInfoEXT(segment),
             structs.length

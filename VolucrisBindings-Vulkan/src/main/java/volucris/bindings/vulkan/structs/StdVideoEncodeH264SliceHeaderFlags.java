@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoEncodeH264SliceHeaderFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeH264SliceHeaderFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeH264SliceHeaderFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeH264SliceHeaderFlags(MemorySegment segment) {
@@ -88,18 +89,18 @@ public final class StdVideoEncodeH264SliceHeaderFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeH264SliceHeaderFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeH264SliceHeaderFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH264SliceHeaderFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeH264SliceHeaderFlags> array(Arena arena, StdVideoEncodeH264SliceHeaderFlags... structs) {
+    public static NativeStructArray<StdVideoEncodeH264SliceHeaderFlags> array(SegmentAllocator allocator, StdVideoEncodeH264SliceHeaderFlags... structs) {
         NativeStructArray<StdVideoEncodeH264SliceHeaderFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH264SliceHeaderFlags(segment),
             structs.length

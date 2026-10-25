@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkMemoryType
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMemoryType(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMemoryType(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMemoryType(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkMemoryType
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMemoryType> array(Arena arena, int count) {
+    public static NativeStructArray<VkMemoryType> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryType(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMemoryType> array(Arena arena, VkMemoryType... structs) {
+    public static NativeStructArray<VkMemoryType> array(SegmentAllocator allocator, VkMemoryType... structs) {
         NativeStructArray<VkMemoryType> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryType(segment),
             structs.length

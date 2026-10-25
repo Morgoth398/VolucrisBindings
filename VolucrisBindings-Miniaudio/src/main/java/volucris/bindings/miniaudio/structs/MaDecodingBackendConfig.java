@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -45,8 +46,8 @@ public final class MaDecodingBackendConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDecodingBackendConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDecodingBackendConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDecodingBackendConfig(MemorySegment segment) {
@@ -94,18 +95,18 @@ public final class MaDecodingBackendConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDecodingBackendConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaDecodingBackendConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDecodingBackendConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDecodingBackendConfig> array(Arena arena, MaDecodingBackendConfig... structs) {
+    public static NativeStructArray<MaDecodingBackendConfig> array(SegmentAllocator allocator, MaDecodingBackendConfig... structs) {
         NativeStructArray<MaDecodingBackendConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDecodingBackendConfig(segment),
             structs.length

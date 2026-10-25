@@ -6,6 +6,7 @@ package volucris.bindings.assimp.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -46,8 +47,8 @@ public final class AiAABB
 	    this(Arena.ofAuto());
 	}
 	
-	public AiAABB(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public AiAABB(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public AiAABB(MemorySegment segment) {

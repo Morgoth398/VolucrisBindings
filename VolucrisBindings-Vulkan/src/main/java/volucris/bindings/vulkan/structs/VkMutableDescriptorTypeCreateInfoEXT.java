@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkMutableDescriptorTypeCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMutableDescriptorTypeCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMutableDescriptorTypeCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMutableDescriptorTypeCreateInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkMutableDescriptorTypeCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMutableDescriptorTypeCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMutableDescriptorTypeCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMutableDescriptorTypeCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMutableDescriptorTypeCreateInfoEXT> array(Arena arena, VkMutableDescriptorTypeCreateInfoEXT... structs) {
+    public static NativeStructArray<VkMutableDescriptorTypeCreateInfoEXT> array(SegmentAllocator allocator, VkMutableDescriptorTypeCreateInfoEXT... structs) {
         NativeStructArray<VkMutableDescriptorTypeCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMutableDescriptorTypeCreateInfoEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceCooperativeMatrixFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceCooperativeMatrixFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceCooperativeMatrixFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceCooperativeMatrixFeaturesKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceCooperativeMatrixFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrixFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixFeaturesKHR> array(Arena arena, VkPhysicalDeviceCooperativeMatrixFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceCooperativeMatrixFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceCooperativeMatrixFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrixFeaturesKHR(segment),
             structs.length

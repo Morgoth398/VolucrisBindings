@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class VkClusterAccelerationStructureGetTemplateIndicesInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkClusterAccelerationStructureGetTemplateIndicesInfoNV(MemorySegment segment) {
@@ -82,18 +83,18 @@ public final class VkClusterAccelerationStructureGetTemplateIndicesInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureGetTemplateIndicesInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkClusterAccelerationStructureGetTemplateIndicesInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureGetTemplateIndicesInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureGetTemplateIndicesInfoNV> array(Arena arena, VkClusterAccelerationStructureGetTemplateIndicesInfoNV... structs) {
+    public static NativeStructArray<VkClusterAccelerationStructureGetTemplateIndicesInfoNV> array(SegmentAllocator allocator, VkClusterAccelerationStructureGetTemplateIndicesInfoNV... structs) {
         NativeStructArray<VkClusterAccelerationStructureGetTemplateIndicesInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureGetTemplateIndicesInfoNV(segment),
             structs.length

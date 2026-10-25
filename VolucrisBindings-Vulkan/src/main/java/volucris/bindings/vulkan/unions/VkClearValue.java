@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.unions;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -45,8 +46,8 @@ public final class VkClearValue
 	    this(Arena.ofAuto());
 	}
 	
-	public VkClearValue(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkClearValue(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkClearValue(MemorySegment segment) {
@@ -108,18 +109,18 @@ public final class VkClearValue
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkClearValue> array(Arena arena, int count) {
+    public static NativeStructArray<VkClearValue> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClearValue(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkClearValue> array(Arena arena, VkClearValue... structs) {
+    public static NativeStructArray<VkClearValue> array(SegmentAllocator allocator, VkClearValue... structs) {
         NativeStructArray<VkClearValue> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClearValue(segment),
             structs.length

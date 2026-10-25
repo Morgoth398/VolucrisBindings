@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPhysicalDeviceCooperativeMatrix2PropertiesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceCooperativeMatrix2PropertiesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceCooperativeMatrix2PropertiesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceCooperativeMatrix2PropertiesNV(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPhysicalDeviceCooperativeMatrix2PropertiesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrix2PropertiesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrix2PropertiesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrix2PropertiesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrix2PropertiesNV> array(Arena arena, VkPhysicalDeviceCooperativeMatrix2PropertiesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrix2PropertiesNV> array(SegmentAllocator allocator, VkPhysicalDeviceCooperativeMatrix2PropertiesNV... structs) {
         NativeStructArray<VkPhysicalDeviceCooperativeMatrix2PropertiesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrix2PropertiesNV(segment),
             structs.length

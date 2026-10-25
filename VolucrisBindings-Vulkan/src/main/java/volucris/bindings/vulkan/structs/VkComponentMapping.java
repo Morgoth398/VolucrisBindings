@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class VkComponentMapping
 	    this(Arena.ofAuto());
 	}
 	
-	public VkComponentMapping(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkComponentMapping(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkComponentMapping(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class VkComponentMapping
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkComponentMapping> array(Arena arena, int count) {
+    public static NativeStructArray<VkComponentMapping> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkComponentMapping(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkComponentMapping> array(Arena arena, VkComponentMapping... structs) {
+    public static NativeStructArray<VkComponentMapping> array(SegmentAllocator allocator, VkComponentMapping... structs) {
         NativeStructArray<VkComponentMapping> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkComponentMapping(segment),
             structs.length

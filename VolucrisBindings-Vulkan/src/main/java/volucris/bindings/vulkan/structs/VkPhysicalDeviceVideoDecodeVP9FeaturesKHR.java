@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceVideoDecodeVP9FeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceVideoDecodeVP9FeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> array(Arena arena, VkPhysicalDeviceVideoDecodeVP9FeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceVideoDecodeVP9FeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceVideoDecodeVP9FeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceVideoDecodeVP9FeaturesKHR(segment),
             structs.length

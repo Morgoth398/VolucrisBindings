@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -135,8 +136,8 @@ public final class VkSwapchainCreateInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSwapchainCreateInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSwapchainCreateInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSwapchainCreateInfoKHR(MemorySegment segment) {
@@ -371,18 +372,18 @@ public final class VkSwapchainCreateInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSwapchainCreateInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkSwapchainCreateInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainCreateInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSwapchainCreateInfoKHR> array(Arena arena, VkSwapchainCreateInfoKHR... structs) {
+    public static NativeStructArray<VkSwapchainCreateInfoKHR> array(SegmentAllocator allocator, VkSwapchainCreateInfoKHR... structs) {
         NativeStructArray<VkSwapchainCreateInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainCreateInfoKHR(segment),
             structs.length

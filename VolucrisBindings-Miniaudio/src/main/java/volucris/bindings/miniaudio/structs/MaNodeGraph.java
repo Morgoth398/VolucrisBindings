@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -74,8 +75,8 @@ public final class MaNodeGraph
 	    this(Arena.ofAuto());
 	}
 	
-	public MaNodeGraph(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaNodeGraph(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaNodeGraph(MemorySegment segment) {
@@ -197,18 +198,18 @@ public final class MaNodeGraph
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaNodeGraph> array(Arena arena, int count) {
+    public static NativeStructArray<MaNodeGraph> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaNodeGraph(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaNodeGraph> array(Arena arena, MaNodeGraph... structs) {
+    public static NativeStructArray<MaNodeGraph> array(SegmentAllocator allocator, MaNodeGraph... structs) {
         NativeStructArray<MaNodeGraph> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaNodeGraph(segment),
             structs.length

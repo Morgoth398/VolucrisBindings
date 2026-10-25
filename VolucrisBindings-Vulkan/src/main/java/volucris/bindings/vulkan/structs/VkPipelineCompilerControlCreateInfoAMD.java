@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPipelineCompilerControlCreateInfoAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineCompilerControlCreateInfoAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineCompilerControlCreateInfoAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineCompilerControlCreateInfoAMD(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPipelineCompilerControlCreateInfoAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineCompilerControlCreateInfoAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineCompilerControlCreateInfoAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCompilerControlCreateInfoAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineCompilerControlCreateInfoAMD> array(Arena arena, VkPipelineCompilerControlCreateInfoAMD... structs) {
+    public static NativeStructArray<VkPipelineCompilerControlCreateInfoAMD> array(SegmentAllocator allocator, VkPipelineCompilerControlCreateInfoAMD... structs) {
         NativeStructArray<VkPipelineCompilerControlCreateInfoAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCompilerControlCreateInfoAMD(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkExternalComputeQueueCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkExternalComputeQueueCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkExternalComputeQueueCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkExternalComputeQueueCreateInfoNV(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkExternalComputeQueueCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkExternalComputeQueueCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkExternalComputeQueueCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalComputeQueueCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkExternalComputeQueueCreateInfoNV> array(Arena arena, VkExternalComputeQueueCreateInfoNV... structs) {
+    public static NativeStructArray<VkExternalComputeQueueCreateInfoNV> array(SegmentAllocator allocator, VkExternalComputeQueueCreateInfoNV... structs) {
         NativeStructArray<VkExternalComputeQueueCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalComputeQueueCreateInfoNV(segment),
             structs.length

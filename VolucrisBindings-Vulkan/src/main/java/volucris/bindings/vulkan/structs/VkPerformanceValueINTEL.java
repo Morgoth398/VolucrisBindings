@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -50,8 +51,8 @@ public final class VkPerformanceValueINTEL
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPerformanceValueINTEL(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPerformanceValueINTEL(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPerformanceValueINTEL(MemorySegment segment) {
@@ -106,18 +107,18 @@ public final class VkPerformanceValueINTEL
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPerformanceValueINTEL> array(Arena arena, int count) {
+    public static NativeStructArray<VkPerformanceValueINTEL> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceValueINTEL(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPerformanceValueINTEL> array(Arena arena, VkPerformanceValueINTEL... structs) {
+    public static NativeStructArray<VkPerformanceValueINTEL> array(SegmentAllocator allocator, VkPerformanceValueINTEL... structs) {
         NativeStructArray<VkPerformanceValueINTEL> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceValueINTEL(segment),
             structs.length

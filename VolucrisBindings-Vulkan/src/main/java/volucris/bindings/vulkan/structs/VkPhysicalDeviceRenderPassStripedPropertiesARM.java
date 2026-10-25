@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkPhysicalDeviceRenderPassStripedPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRenderPassStripedPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRenderPassStripedPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRenderPassStripedPropertiesARM(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkPhysicalDeviceRenderPassStripedPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRenderPassStripedPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRenderPassStripedPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRenderPassStripedPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRenderPassStripedPropertiesARM> array(Arena arena, VkPhysicalDeviceRenderPassStripedPropertiesARM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRenderPassStripedPropertiesARM> array(SegmentAllocator allocator, VkPhysicalDeviceRenderPassStripedPropertiesARM... structs) {
         NativeStructArray<VkPhysicalDeviceRenderPassStripedPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRenderPassStripedPropertiesARM(segment),
             structs.length

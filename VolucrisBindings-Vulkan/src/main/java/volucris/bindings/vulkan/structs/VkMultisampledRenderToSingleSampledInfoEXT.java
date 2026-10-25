@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkMultisampledRenderToSingleSampledInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMultisampledRenderToSingleSampledInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMultisampledRenderToSingleSampledInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMultisampledRenderToSingleSampledInfoEXT(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkMultisampledRenderToSingleSampledInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMultisampledRenderToSingleSampledInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMultisampledRenderToSingleSampledInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultisampledRenderToSingleSampledInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMultisampledRenderToSingleSampledInfoEXT> array(Arena arena, VkMultisampledRenderToSingleSampledInfoEXT... structs) {
+    public static NativeStructArray<VkMultisampledRenderToSingleSampledInfoEXT> array(SegmentAllocator allocator, VkMultisampledRenderToSingleSampledInfoEXT... structs) {
         NativeStructArray<VkMultisampledRenderToSingleSampledInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultisampledRenderToSingleSampledInfoEXT(segment),
             structs.length

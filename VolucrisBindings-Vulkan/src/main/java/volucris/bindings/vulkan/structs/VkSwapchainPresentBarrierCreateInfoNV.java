@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkSwapchainPresentBarrierCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSwapchainPresentBarrierCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSwapchainPresentBarrierCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSwapchainPresentBarrierCreateInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkSwapchainPresentBarrierCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSwapchainPresentBarrierCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkSwapchainPresentBarrierCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainPresentBarrierCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSwapchainPresentBarrierCreateInfoNV> array(Arena arena, VkSwapchainPresentBarrierCreateInfoNV... structs) {
+    public static NativeStructArray<VkSwapchainPresentBarrierCreateInfoNV> array(SegmentAllocator allocator, VkSwapchainPresentBarrierCreateInfoNV... structs) {
         NativeStructArray<VkSwapchainPresentBarrierCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainPresentBarrierCreateInfoNV(segment),
             structs.length

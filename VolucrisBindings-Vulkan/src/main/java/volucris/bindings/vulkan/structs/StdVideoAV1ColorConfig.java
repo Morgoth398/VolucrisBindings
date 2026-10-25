@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -84,8 +85,8 @@ public final class StdVideoAV1ColorConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoAV1ColorConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoAV1ColorConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoAV1ColorConfig(MemorySegment segment) {
@@ -210,18 +211,18 @@ public final class StdVideoAV1ColorConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoAV1ColorConfig> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoAV1ColorConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1ColorConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoAV1ColorConfig> array(Arena arena, StdVideoAV1ColorConfig... structs) {
+    public static NativeStructArray<StdVideoAV1ColorConfig> array(SegmentAllocator allocator, StdVideoAV1ColorConfig... structs) {
         NativeStructArray<StdVideoAV1ColorConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1ColorConfig(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -52,8 +53,8 @@ public final class VkShadingRatePaletteNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkShadingRatePaletteNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkShadingRatePaletteNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkShadingRatePaletteNV(MemorySegment segment) {
@@ -106,18 +107,18 @@ public final class VkShadingRatePaletteNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkShadingRatePaletteNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkShadingRatePaletteNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShadingRatePaletteNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkShadingRatePaletteNV> array(Arena arena, VkShadingRatePaletteNV... structs) {
+    public static NativeStructArray<VkShadingRatePaletteNV> array(SegmentAllocator allocator, VkShadingRatePaletteNV... structs) {
         NativeStructArray<VkShadingRatePaletteNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShadingRatePaletteNV(segment),
             structs.length

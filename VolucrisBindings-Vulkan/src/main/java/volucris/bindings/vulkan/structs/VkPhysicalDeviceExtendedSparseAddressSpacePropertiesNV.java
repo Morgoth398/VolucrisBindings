@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV> array(Arena arena, VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV> array(SegmentAllocator allocator, VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV... structs) {
         NativeStructArray<VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExtendedSparseAddressSpacePropertiesNV(segment),
             structs.length

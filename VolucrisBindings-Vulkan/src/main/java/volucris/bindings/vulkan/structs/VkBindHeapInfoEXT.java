@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -67,8 +68,8 @@ public final class VkBindHeapInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindHeapInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindHeapInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindHeapInfoEXT(MemorySegment segment) {
@@ -158,18 +159,18 @@ public final class VkBindHeapInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindHeapInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindHeapInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindHeapInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindHeapInfoEXT> array(Arena arena, VkBindHeapInfoEXT... structs) {
+    public static NativeStructArray<VkBindHeapInfoEXT> array(SegmentAllocator allocator, VkBindHeapInfoEXT... structs) {
         NativeStructArray<VkBindHeapInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindHeapInfoEXT(segment),
             structs.length

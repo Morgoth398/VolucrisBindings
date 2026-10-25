@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkOpaqueCaptureDescriptorDataCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOpaqueCaptureDescriptorDataCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOpaqueCaptureDescriptorDataCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOpaqueCaptureDescriptorDataCreateInfoEXT(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkOpaqueCaptureDescriptorDataCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOpaqueCaptureDescriptorDataCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkOpaqueCaptureDescriptorDataCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpaqueCaptureDescriptorDataCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOpaqueCaptureDescriptorDataCreateInfoEXT> array(Arena arena, VkOpaqueCaptureDescriptorDataCreateInfoEXT... structs) {
+    public static NativeStructArray<VkOpaqueCaptureDescriptorDataCreateInfoEXT> array(SegmentAllocator allocator, VkOpaqueCaptureDescriptorDataCreateInfoEXT... structs) {
         NativeStructArray<VkOpaqueCaptureDescriptorDataCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpaqueCaptureDescriptorDataCreateInfoEXT(segment),
             structs.length

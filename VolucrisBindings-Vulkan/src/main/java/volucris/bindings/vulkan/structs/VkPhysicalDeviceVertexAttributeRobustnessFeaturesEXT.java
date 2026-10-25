@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT> array(Arena arena, VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceVertexAttributeRobustnessFeaturesEXT(segment),
             structs.length

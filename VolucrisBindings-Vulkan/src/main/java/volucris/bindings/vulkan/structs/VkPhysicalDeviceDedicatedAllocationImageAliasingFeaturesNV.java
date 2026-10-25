@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV> array(Arena arena, VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV(segment),
             structs.length

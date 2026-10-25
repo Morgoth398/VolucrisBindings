@@ -6,6 +6,7 @@ package volucris.bindings.stb.image;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -55,8 +56,8 @@ public final class StbImageIoCallbacks
 	    this(Arena.ofAuto());
 	}
 	
-	public StbImageIoCallbacks(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StbImageIoCallbacks(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StbImageIoCallbacks(MemorySegment segment) {
@@ -129,18 +130,18 @@ public final class StbImageIoCallbacks
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StbImageIoCallbacks> array(Arena arena, int count) {
+    public static NativeStructArray<StbImageIoCallbacks> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StbImageIoCallbacks(segment),
             count
         );
     }
     
-    public static NativeStructArray<StbImageIoCallbacks> array(Arena arena, StbImageIoCallbacks... structs) {
+    public static NativeStructArray<StbImageIoCallbacks> array(SegmentAllocator allocator, StbImageIoCallbacks... structs) {
         NativeStructArray<StbImageIoCallbacks> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StbImageIoCallbacks(segment),
             structs.length

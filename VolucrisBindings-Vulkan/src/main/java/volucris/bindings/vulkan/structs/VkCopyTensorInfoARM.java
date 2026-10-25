@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -72,8 +73,8 @@ public final class VkCopyTensorInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCopyTensorInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCopyTensorInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCopyTensorInfoARM(MemorySegment segment) {
@@ -181,18 +182,18 @@ public final class VkCopyTensorInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCopyTensorInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkCopyTensorInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyTensorInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCopyTensorInfoARM> array(Arena arena, VkCopyTensorInfoARM... structs) {
+    public static NativeStructArray<VkCopyTensorInfoARM> array(SegmentAllocator allocator, VkCopyTensorInfoARM... structs) {
         NativeStructArray<VkCopyTensorInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyTensorInfoARM(segment),
             structs.length

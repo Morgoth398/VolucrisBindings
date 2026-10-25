@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkCopyAccelerationStructureInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCopyAccelerationStructureInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCopyAccelerationStructureInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCopyAccelerationStructureInfoKHR(MemorySegment segment) {
@@ -161,18 +162,18 @@ public final class VkCopyAccelerationStructureInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCopyAccelerationStructureInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkCopyAccelerationStructureInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyAccelerationStructureInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCopyAccelerationStructureInfoKHR> array(Arena arena, VkCopyAccelerationStructureInfoKHR... structs) {
+    public static NativeStructArray<VkCopyAccelerationStructureInfoKHR> array(SegmentAllocator allocator, VkCopyAccelerationStructureInfoKHR... structs) {
         NativeStructArray<VkCopyAccelerationStructureInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyAccelerationStructureInfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDevicePresentBarrierFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDevicePresentBarrierFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDevicePresentBarrierFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDevicePresentBarrierFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDevicePresentBarrierFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDevicePresentBarrierFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDevicePresentBarrierFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePresentBarrierFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDevicePresentBarrierFeaturesNV> array(Arena arena, VkPhysicalDevicePresentBarrierFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDevicePresentBarrierFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDevicePresentBarrierFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDevicePresentBarrierFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePresentBarrierFeaturesNV(segment),
             structs.length

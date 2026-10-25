@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -81,8 +82,8 @@ public final class VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(MemorySegment segment) {
@@ -195,18 +196,18 @@ public final class VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT> array(Arena arena, VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT(segment),
             structs.length

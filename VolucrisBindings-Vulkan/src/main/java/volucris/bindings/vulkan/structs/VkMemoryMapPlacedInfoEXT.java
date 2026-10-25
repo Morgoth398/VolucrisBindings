@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkMemoryMapPlacedInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMemoryMapPlacedInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMemoryMapPlacedInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMemoryMapPlacedInfoEXT(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkMemoryMapPlacedInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMemoryMapPlacedInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMemoryMapPlacedInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryMapPlacedInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMemoryMapPlacedInfoEXT> array(Arena arena, VkMemoryMapPlacedInfoEXT... structs) {
+    public static NativeStructArray<VkMemoryMapPlacedInfoEXT> array(SegmentAllocator allocator, VkMemoryMapPlacedInfoEXT... structs) {
         NativeStructArray<VkMemoryMapPlacedInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryMapPlacedInfoEXT(segment),
             structs.length

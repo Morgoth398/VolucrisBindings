@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkVideoEncodeH264SessionParametersFeedbackInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeH264SessionParametersFeedbackInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeH264SessionParametersFeedbackInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeH264SessionParametersFeedbackInfoKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkVideoEncodeH264SessionParametersFeedbackInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeH264SessionParametersFeedbackInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeH264SessionParametersFeedbackInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeH264SessionParametersFeedbackInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeH264SessionParametersFeedbackInfoKHR> array(Arena arena, VkVideoEncodeH264SessionParametersFeedbackInfoKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeH264SessionParametersFeedbackInfoKHR> array(SegmentAllocator allocator, VkVideoEncodeH264SessionParametersFeedbackInfoKHR... structs) {
         NativeStructArray<VkVideoEncodeH264SessionParametersFeedbackInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeH264SessionParametersFeedbackInfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT> array(Arena arena, VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceAttachmentFeedbackLoopDynamicStateFeaturesEXT(segment),
             structs.length

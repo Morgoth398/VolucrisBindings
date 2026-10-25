@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR> array(Arena arena, VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceVideoEncodeQuantizationMapFeaturesKHR(segment),
             structs.length

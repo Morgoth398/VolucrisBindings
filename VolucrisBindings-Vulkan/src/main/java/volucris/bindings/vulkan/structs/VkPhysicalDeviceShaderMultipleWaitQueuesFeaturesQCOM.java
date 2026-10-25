@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM> array(Arena arena, VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(segment),
             structs.length

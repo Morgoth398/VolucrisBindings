@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -85,8 +86,8 @@ public final class VkRenderPassMultiviewCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassMultiviewCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassMultiviewCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassMultiviewCreateInfo(MemorySegment segment) {
@@ -214,18 +215,18 @@ public final class VkRenderPassMultiviewCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassMultiviewCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassMultiviewCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassMultiviewCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassMultiviewCreateInfo> array(Arena arena, VkRenderPassMultiviewCreateInfo... structs) {
+    public static NativeStructArray<VkRenderPassMultiviewCreateInfo> array(SegmentAllocator allocator, VkRenderPassMultiviewCreateInfo... structs) {
         NativeStructArray<VkRenderPassMultiviewCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassMultiviewCreateInfo(segment),
             structs.length

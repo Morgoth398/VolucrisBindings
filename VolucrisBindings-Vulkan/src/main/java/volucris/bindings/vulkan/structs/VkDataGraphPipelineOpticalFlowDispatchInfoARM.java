@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkDataGraphPipelineOpticalFlowDispatchInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineOpticalFlowDispatchInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineOpticalFlowDispatchInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineOpticalFlowDispatchInfoARM(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkDataGraphPipelineOpticalFlowDispatchInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineOpticalFlowDispatchInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineOpticalFlowDispatchInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineOpticalFlowDispatchInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineOpticalFlowDispatchInfoARM> array(Arena arena, VkDataGraphPipelineOpticalFlowDispatchInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineOpticalFlowDispatchInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineOpticalFlowDispatchInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineOpticalFlowDispatchInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineOpticalFlowDispatchInfoARM(segment),
             structs.length

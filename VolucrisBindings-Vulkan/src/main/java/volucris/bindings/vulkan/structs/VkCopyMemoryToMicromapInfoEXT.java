@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -68,8 +69,8 @@ public final class VkCopyMemoryToMicromapInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCopyMemoryToMicromapInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCopyMemoryToMicromapInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCopyMemoryToMicromapInfoEXT(MemorySegment segment) {
@@ -164,18 +165,18 @@ public final class VkCopyMemoryToMicromapInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCopyMemoryToMicromapInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkCopyMemoryToMicromapInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyMemoryToMicromapInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCopyMemoryToMicromapInfoEXT> array(Arena arena, VkCopyMemoryToMicromapInfoEXT... structs) {
+    public static NativeStructArray<VkCopyMemoryToMicromapInfoEXT> array(SegmentAllocator allocator, VkCopyMemoryToMicromapInfoEXT... structs) {
         NativeStructArray<VkCopyMemoryToMicromapInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyMemoryToMicromapInfoEXT(segment),
             structs.length

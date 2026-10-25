@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -62,8 +63,8 @@ public final class VkVideoEncodeQuantizationMapInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeQuantizationMapInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeQuantizationMapInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeQuantizationMapInfoKHR(MemorySegment segment) {
@@ -148,18 +149,18 @@ public final class VkVideoEncodeQuantizationMapInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeQuantizationMapInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeQuantizationMapInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeQuantizationMapInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeQuantizationMapInfoKHR> array(Arena arena, VkVideoEncodeQuantizationMapInfoKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeQuantizationMapInfoKHR> array(SegmentAllocator allocator, VkVideoEncodeQuantizationMapInfoKHR... structs) {
         NativeStructArray<VkVideoEncodeQuantizationMapInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeQuantizationMapInfoKHR(segment),
             structs.length

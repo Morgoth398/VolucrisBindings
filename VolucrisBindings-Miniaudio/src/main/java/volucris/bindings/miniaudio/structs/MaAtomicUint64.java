@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -40,8 +41,8 @@ public final class MaAtomicUint64
 	    this(Arena.ofAuto());
 	}
 	
-	public MaAtomicUint64(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaAtomicUint64(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaAtomicUint64(MemorySegment segment) {
@@ -79,18 +80,18 @@ public final class MaAtomicUint64
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaAtomicUint64> array(Arena arena, int count) {
+    public static NativeStructArray<MaAtomicUint64> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicUint64(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaAtomicUint64> array(Arena arena, MaAtomicUint64... structs) {
+    public static NativeStructArray<MaAtomicUint64> array(SegmentAllocator allocator, MaAtomicUint64... structs) {
         NativeStructArray<MaAtomicUint64> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicUint64(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -65,8 +66,8 @@ public final class VkLayerSettingEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkLayerSettingEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkLayerSettingEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkLayerSettingEXT(MemorySegment segment) {
@@ -75,8 +76,8 @@ public final class VkLayerSettingEXT
 	}
 
     /// @see #pLayerName()
-    public VkLayerSettingEXT pLayerName(Arena arena, String pLayerName) {
-    	P_LAYER_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pLayerName));
+    public VkLayerSettingEXT pLayerName(SegmentAllocator allocator, String pLayerName) {
+    	P_LAYER_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pLayerName));
     	return this;
     }
     
@@ -90,8 +91,8 @@ public final class VkLayerSettingEXT
     }
     
     /// @see #pSettingName()
-    public VkLayerSettingEXT pSettingName(Arena arena, String pSettingName) {
-    	P_SETTING_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pSettingName));
+    public VkLayerSettingEXT pSettingName(SegmentAllocator allocator, String pSettingName) {
+    	P_SETTING_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pSettingName));
     	return this;
     }
     
@@ -159,18 +160,18 @@ public final class VkLayerSettingEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkLayerSettingEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkLayerSettingEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLayerSettingEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkLayerSettingEXT> array(Arena arena, VkLayerSettingEXT... structs) {
+    public static NativeStructArray<VkLayerSettingEXT> array(SegmentAllocator allocator, VkLayerSettingEXT... structs) {
         NativeStructArray<VkLayerSettingEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLayerSettingEXT(segment),
             structs.length

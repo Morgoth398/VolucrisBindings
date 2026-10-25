@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceSubgroupSizeControlFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceSubgroupSizeControlFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceSubgroupSizeControlFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceSubgroupSizeControlFeatures(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceSubgroupSizeControlFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSubgroupSizeControlFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceSubgroupSizeControlFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSubgroupSizeControlFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSubgroupSizeControlFeatures> array(Arena arena, VkPhysicalDeviceSubgroupSizeControlFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceSubgroupSizeControlFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceSubgroupSizeControlFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceSubgroupSizeControlFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSubgroupSizeControlFeatures(segment),
             structs.length

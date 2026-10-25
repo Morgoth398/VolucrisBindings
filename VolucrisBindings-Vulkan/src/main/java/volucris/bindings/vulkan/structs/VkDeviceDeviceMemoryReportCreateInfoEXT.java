@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkDeviceDeviceMemoryReportCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceDeviceMemoryReportCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceDeviceMemoryReportCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceDeviceMemoryReportCreateInfoEXT(MemorySegment segment) {
@@ -161,18 +162,18 @@ public final class VkDeviceDeviceMemoryReportCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceDeviceMemoryReportCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceDeviceMemoryReportCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceDeviceMemoryReportCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceDeviceMemoryReportCreateInfoEXT> array(Arena arena, VkDeviceDeviceMemoryReportCreateInfoEXT... structs) {
+    public static NativeStructArray<VkDeviceDeviceMemoryReportCreateInfoEXT> array(SegmentAllocator allocator, VkDeviceDeviceMemoryReportCreateInfoEXT... structs) {
         NativeStructArray<VkDeviceDeviceMemoryReportCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceDeviceMemoryReportCreateInfoEXT(segment),
             structs.length

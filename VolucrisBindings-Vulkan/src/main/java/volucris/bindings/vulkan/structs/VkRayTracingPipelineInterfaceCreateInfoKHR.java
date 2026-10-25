@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkRayTracingPipelineInterfaceCreateInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRayTracingPipelineInterfaceCreateInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRayTracingPipelineInterfaceCreateInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRayTracingPipelineInterfaceCreateInfoKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkRayTracingPipelineInterfaceCreateInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRayTracingPipelineInterfaceCreateInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkRayTracingPipelineInterfaceCreateInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRayTracingPipelineInterfaceCreateInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRayTracingPipelineInterfaceCreateInfoKHR> array(Arena arena, VkRayTracingPipelineInterfaceCreateInfoKHR... structs) {
+    public static NativeStructArray<VkRayTracingPipelineInterfaceCreateInfoKHR> array(SegmentAllocator allocator, VkRayTracingPipelineInterfaceCreateInfoKHR... structs) {
         NativeStructArray<VkRayTracingPipelineInterfaceCreateInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRayTracingPipelineInterfaceCreateInfoKHR(segment),
             structs.length

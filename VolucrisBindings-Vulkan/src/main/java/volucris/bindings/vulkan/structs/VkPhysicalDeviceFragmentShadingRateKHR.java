@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkPhysicalDeviceFragmentShadingRateKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentShadingRateKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentShadingRateKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentShadingRateKHR(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkPhysicalDeviceFragmentShadingRateKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRateKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRateKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShadingRateKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRateKHR> array(Arena arena, VkPhysicalDeviceFragmentShadingRateKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRateKHR> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentShadingRateKHR... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentShadingRateKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShadingRateKHR(segment),
             structs.length

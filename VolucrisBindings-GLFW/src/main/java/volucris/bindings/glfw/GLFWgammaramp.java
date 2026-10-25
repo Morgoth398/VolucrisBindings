@@ -6,6 +6,7 @@ package volucris.bindings.glfw;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -72,8 +73,8 @@ public final class GLFWgammaramp
 	    this(Arena.ofAuto());
 	}
 	
-	public GLFWgammaramp(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public GLFWgammaramp(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public GLFWgammaramp(MemorySegment segment) {

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkLatencySleepModeInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkLatencySleepModeInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkLatencySleepModeInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkLatencySleepModeInfoNV(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkLatencySleepModeInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkLatencySleepModeInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkLatencySleepModeInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLatencySleepModeInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkLatencySleepModeInfoNV> array(Arena arena, VkLatencySleepModeInfoNV... structs) {
+    public static NativeStructArray<VkLatencySleepModeInfoNV> array(SegmentAllocator allocator, VkLatencySleepModeInfoNV... structs) {
         NativeStructArray<VkLatencySleepModeInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLatencySleepModeInfoNV(segment),
             structs.length

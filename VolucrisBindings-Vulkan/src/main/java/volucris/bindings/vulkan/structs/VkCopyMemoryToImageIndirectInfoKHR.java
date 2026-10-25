@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -83,8 +84,8 @@ public final class VkCopyMemoryToImageIndirectInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCopyMemoryToImageIndirectInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCopyMemoryToImageIndirectInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCopyMemoryToImageIndirectInfoKHR(MemorySegment segment) {
@@ -214,18 +215,18 @@ public final class VkCopyMemoryToImageIndirectInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCopyMemoryToImageIndirectInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkCopyMemoryToImageIndirectInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyMemoryToImageIndirectInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCopyMemoryToImageIndirectInfoKHR> array(Arena arena, VkCopyMemoryToImageIndirectInfoKHR... structs) {
+    public static NativeStructArray<VkCopyMemoryToImageIndirectInfoKHR> array(SegmentAllocator allocator, VkCopyMemoryToImageIndirectInfoKHR... structs) {
         NativeStructArray<VkCopyMemoryToImageIndirectInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyMemoryToImageIndirectInfoKHR(segment),
             structs.length

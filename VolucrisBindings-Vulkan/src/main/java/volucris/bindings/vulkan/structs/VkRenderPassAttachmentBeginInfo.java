@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkRenderPassAttachmentBeginInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassAttachmentBeginInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassAttachmentBeginInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassAttachmentBeginInfo(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkRenderPassAttachmentBeginInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassAttachmentBeginInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassAttachmentBeginInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassAttachmentBeginInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassAttachmentBeginInfo> array(Arena arena, VkRenderPassAttachmentBeginInfo... structs) {
+    public static NativeStructArray<VkRenderPassAttachmentBeginInfo> array(SegmentAllocator allocator, VkRenderPassAttachmentBeginInfo... structs) {
         NativeStructArray<VkRenderPassAttachmentBeginInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassAttachmentBeginInfo(segment),
             structs.length

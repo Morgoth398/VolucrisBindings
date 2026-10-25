@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -88,8 +89,8 @@ public final class MaResourceManagerDataBufferNode
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerDataBufferNode(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerDataBufferNode(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerDataBufferNode(MemorySegment segment) {
@@ -239,18 +240,18 @@ public final class MaResourceManagerDataBufferNode
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerDataBufferNode> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerDataBufferNode> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataBufferNode(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerDataBufferNode> array(Arena arena, MaResourceManagerDataBufferNode... structs) {
+    public static NativeStructArray<MaResourceManagerDataBufferNode> array(SegmentAllocator allocator, MaResourceManagerDataBufferNode... structs) {
         NativeStructArray<MaResourceManagerDataBufferNode> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataBufferNode(segment),
             structs.length

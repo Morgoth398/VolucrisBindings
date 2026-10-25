@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceDiscardRectanglePropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDiscardRectanglePropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDiscardRectanglePropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDiscardRectanglePropertiesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceDiscardRectanglePropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDiscardRectanglePropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDiscardRectanglePropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDiscardRectanglePropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDiscardRectanglePropertiesEXT> array(Arena arena, VkPhysicalDeviceDiscardRectanglePropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDiscardRectanglePropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceDiscardRectanglePropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceDiscardRectanglePropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDiscardRectanglePropertiesEXT(segment),
             structs.length

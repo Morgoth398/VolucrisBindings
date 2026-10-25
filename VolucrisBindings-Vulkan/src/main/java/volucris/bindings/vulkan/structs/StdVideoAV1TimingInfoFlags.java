@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoAV1TimingInfoFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoAV1TimingInfoFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoAV1TimingInfoFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoAV1TimingInfoFlags(MemorySegment segment) {
@@ -87,18 +88,18 @@ public final class StdVideoAV1TimingInfoFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoAV1TimingInfoFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoAV1TimingInfoFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1TimingInfoFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoAV1TimingInfoFlags> array(Arena arena, StdVideoAV1TimingInfoFlags... structs) {
+    public static NativeStructArray<StdVideoAV1TimingInfoFlags> array(SegmentAllocator allocator, StdVideoAV1TimingInfoFlags... structs) {
         NativeStructArray<StdVideoAV1TimingInfoFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1TimingInfoFlags(segment),
             structs.length

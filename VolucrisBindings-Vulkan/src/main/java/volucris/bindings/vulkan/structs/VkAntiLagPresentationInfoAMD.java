@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkAntiLagPresentationInfoAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAntiLagPresentationInfoAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAntiLagPresentationInfoAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAntiLagPresentationInfoAMD(MemorySegment segment) {
@@ -136,18 +137,18 @@ public final class VkAntiLagPresentationInfoAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAntiLagPresentationInfoAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkAntiLagPresentationInfoAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAntiLagPresentationInfoAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAntiLagPresentationInfoAMD> array(Arena arena, VkAntiLagPresentationInfoAMD... structs) {
+    public static NativeStructArray<VkAntiLagPresentationInfoAMD> array(SegmentAllocator allocator, VkAntiLagPresentationInfoAMD... structs) {
         NativeStructArray<VkAntiLagPresentationInfoAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAntiLagPresentationInfoAMD(segment),
             structs.length

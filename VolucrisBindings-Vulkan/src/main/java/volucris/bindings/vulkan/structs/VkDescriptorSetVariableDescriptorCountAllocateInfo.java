@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkDescriptorSetVariableDescriptorCountAllocateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorSetVariableDescriptorCountAllocateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorSetVariableDescriptorCountAllocateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorSetVariableDescriptorCountAllocateInfo(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkDescriptorSetVariableDescriptorCountAllocateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountAllocateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountAllocateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetVariableDescriptorCountAllocateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountAllocateInfo> array(Arena arena, VkDescriptorSetVariableDescriptorCountAllocateInfo... structs) {
+    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountAllocateInfo> array(SegmentAllocator allocator, VkDescriptorSetVariableDescriptorCountAllocateInfo... structs) {
         NativeStructArray<VkDescriptorSetVariableDescriptorCountAllocateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetVariableDescriptorCountAllocateInfo(segment),
             structs.length

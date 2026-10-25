@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV> array(Arena arena, VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(MemorySegment segment) {
@@ -181,18 +182,18 @@ public final class VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT> array(Arena arena, VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCooperativeMatrixMaintenance1FeaturesEXT(segment),
             structs.length

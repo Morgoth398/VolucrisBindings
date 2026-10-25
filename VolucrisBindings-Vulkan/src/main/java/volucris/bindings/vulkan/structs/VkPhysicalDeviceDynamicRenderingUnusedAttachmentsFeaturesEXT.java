@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT> array(Arena arena, VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesEXT(segment),
             structs.length

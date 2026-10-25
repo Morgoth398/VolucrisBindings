@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -88,8 +89,8 @@ public final class VkDeviceMemoryReportCallbackDataEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceMemoryReportCallbackDataEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceMemoryReportCallbackDataEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceMemoryReportCallbackDataEXT(MemorySegment segment) {
@@ -212,18 +213,18 @@ public final class VkDeviceMemoryReportCallbackDataEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceMemoryReportCallbackDataEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceMemoryReportCallbackDataEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceMemoryReportCallbackDataEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceMemoryReportCallbackDataEXT> array(Arena arena, VkDeviceMemoryReportCallbackDataEXT... structs) {
+    public static NativeStructArray<VkDeviceMemoryReportCallbackDataEXT> array(SegmentAllocator allocator, VkDeviceMemoryReportCallbackDataEXT... structs) {
         NativeStructArray<VkDeviceMemoryReportCallbackDataEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceMemoryReportCallbackDataEXT(segment),
             structs.length

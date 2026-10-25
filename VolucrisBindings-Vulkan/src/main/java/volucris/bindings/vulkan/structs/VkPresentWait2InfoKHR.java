@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPresentWait2InfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPresentWait2InfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPresentWait2InfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPresentWait2InfoKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPresentWait2InfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPresentWait2InfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPresentWait2InfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentWait2InfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPresentWait2InfoKHR> array(Arena arena, VkPresentWait2InfoKHR... structs) {
+    public static NativeStructArray<VkPresentWait2InfoKHR> array(SegmentAllocator allocator, VkPresentWait2InfoKHR... structs) {
         NativeStructArray<VkPresentWait2InfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentWait2InfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceRayQueryFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRayQueryFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRayQueryFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRayQueryFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceRayQueryFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRayQueryFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRayQueryFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRayQueryFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRayQueryFeaturesKHR> array(Arena arena, VkPhysicalDeviceRayQueryFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRayQueryFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceRayQueryFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceRayQueryFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRayQueryFeaturesKHR(segment),
             structs.length

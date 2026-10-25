@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT> array(Arena arena, VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRasterizationOrderAttachmentAccessFeaturesEXT(segment),
             structs.length

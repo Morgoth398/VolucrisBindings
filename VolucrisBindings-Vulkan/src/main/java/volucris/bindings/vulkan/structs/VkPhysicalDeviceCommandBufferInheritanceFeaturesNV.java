@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceCommandBufferInheritanceFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceCommandBufferInheritanceFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCommandBufferInheritanceFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceCommandBufferInheritanceFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCommandBufferInheritanceFeaturesNV> array(Arena arena, VkPhysicalDeviceCommandBufferInheritanceFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceCommandBufferInheritanceFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceCommandBufferInheritanceFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceCommandBufferInheritanceFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCommandBufferInheritanceFeaturesNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkSparseImageOpaqueMemoryBindInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSparseImageOpaqueMemoryBindInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSparseImageOpaqueMemoryBindInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSparseImageOpaqueMemoryBindInfo(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkSparseImageOpaqueMemoryBindInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSparseImageOpaqueMemoryBindInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkSparseImageOpaqueMemoryBindInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSparseImageOpaqueMemoryBindInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSparseImageOpaqueMemoryBindInfo> array(Arena arena, VkSparseImageOpaqueMemoryBindInfo... structs) {
+    public static NativeStructArray<VkSparseImageOpaqueMemoryBindInfo> array(SegmentAllocator allocator, VkSparseImageOpaqueMemoryBindInfo... structs) {
         NativeStructArray<VkSparseImageOpaqueMemoryBindInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSparseImageOpaqueMemoryBindInfo(segment),
             structs.length

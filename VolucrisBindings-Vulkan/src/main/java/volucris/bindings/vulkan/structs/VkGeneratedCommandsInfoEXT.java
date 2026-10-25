@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -104,8 +105,8 @@ public final class VkGeneratedCommandsInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkGeneratedCommandsInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkGeneratedCommandsInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkGeneratedCommandsInfoEXT(MemorySegment segment) {
@@ -268,18 +269,18 @@ public final class VkGeneratedCommandsInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkGeneratedCommandsInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkGeneratedCommandsInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGeneratedCommandsInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkGeneratedCommandsInfoEXT> array(Arena arena, VkGeneratedCommandsInfoEXT... structs) {
+    public static NativeStructArray<VkGeneratedCommandsInfoEXT> array(SegmentAllocator allocator, VkGeneratedCommandsInfoEXT... structs) {
         NativeStructArray<VkGeneratedCommandsInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGeneratedCommandsInfoEXT(segment),
             structs.length

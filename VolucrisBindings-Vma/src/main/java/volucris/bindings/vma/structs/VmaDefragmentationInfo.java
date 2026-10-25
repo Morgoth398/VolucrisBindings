@@ -6,6 +6,7 @@ package volucris.bindings.vma.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VmaDefragmentationInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VmaDefragmentationInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VmaDefragmentationInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VmaDefragmentationInfo(MemorySegment segment) {
@@ -207,18 +208,18 @@ public final class VmaDefragmentationInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VmaDefragmentationInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VmaDefragmentationInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaDefragmentationInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VmaDefragmentationInfo> array(Arena arena, VmaDefragmentationInfo... structs) {
+    public static NativeStructArray<VmaDefragmentationInfo> array(SegmentAllocator allocator, VmaDefragmentationInfo... structs) {
         NativeStructArray<VmaDefragmentationInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaDefragmentationInfo(segment),
             structs.length

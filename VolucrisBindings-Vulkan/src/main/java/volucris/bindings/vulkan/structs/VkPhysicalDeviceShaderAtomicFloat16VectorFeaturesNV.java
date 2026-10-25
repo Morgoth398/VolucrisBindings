@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> array(Arena arena, VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderAtomicFloat16VectorFeaturesNV(segment),
             structs.length

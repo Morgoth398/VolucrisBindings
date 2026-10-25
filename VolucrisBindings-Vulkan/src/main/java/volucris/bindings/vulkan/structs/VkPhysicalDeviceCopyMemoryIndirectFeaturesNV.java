@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceCopyMemoryIndirectFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceCopyMemoryIndirectFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCopyMemoryIndirectFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceCopyMemoryIndirectFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceCopyMemoryIndirectFeaturesNV> array(Arena arena, VkPhysicalDeviceCopyMemoryIndirectFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceCopyMemoryIndirectFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceCopyMemoryIndirectFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceCopyMemoryIndirectFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceCopyMemoryIndirectFeaturesNV(segment),
             structs.length

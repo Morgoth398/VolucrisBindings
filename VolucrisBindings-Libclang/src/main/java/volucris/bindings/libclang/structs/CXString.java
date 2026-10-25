@@ -6,6 +6,7 @@ package volucris.bindings.libclang.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class CXString
 	    this(Arena.ofAuto());
 	}
 	
-	public CXString(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public CXString(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public CXString(MemorySegment segment) {

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.unions;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -50,8 +51,8 @@ public final class VkDeviceOrHostAddressKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceOrHostAddressKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceOrHostAddressKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceOrHostAddressKHR(MemorySegment segment) {
@@ -104,18 +105,18 @@ public final class VkDeviceOrHostAddressKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceOrHostAddressKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceOrHostAddressKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceOrHostAddressKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceOrHostAddressKHR> array(Arena arena, VkDeviceOrHostAddressKHR... structs) {
+    public static NativeStructArray<VkDeviceOrHostAddressKHR> array(SegmentAllocator allocator, VkDeviceOrHostAddressKHR... structs) {
         NativeStructArray<VkDeviceOrHostAddressKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceOrHostAddressKHR(segment),
             structs.length

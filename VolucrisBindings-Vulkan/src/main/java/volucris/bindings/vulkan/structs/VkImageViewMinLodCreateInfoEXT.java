@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkImageViewMinLodCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageViewMinLodCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageViewMinLodCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageViewMinLodCreateInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkImageViewMinLodCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageViewMinLodCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageViewMinLodCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageViewMinLodCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageViewMinLodCreateInfoEXT> array(Arena arena, VkImageViewMinLodCreateInfoEXT... structs) {
+    public static NativeStructArray<VkImageViewMinLodCreateInfoEXT> array(SegmentAllocator allocator, VkImageViewMinLodCreateInfoEXT... structs) {
         NativeStructArray<VkImageViewMinLodCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageViewMinLodCreateInfoEXT(segment),
             structs.length

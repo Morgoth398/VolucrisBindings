@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkGeometryAABBNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkGeometryAABBNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkGeometryAABBNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkGeometryAABBNV(MemorySegment segment) {
@@ -170,18 +171,18 @@ public final class VkGeometryAABBNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkGeometryAABBNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkGeometryAABBNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGeometryAABBNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkGeometryAABBNV> array(Arena arena, VkGeometryAABBNV... structs) {
+    public static NativeStructArray<VkGeometryAABBNV> array(SegmentAllocator allocator, VkGeometryAABBNV... structs) {
         NativeStructArray<VkGeometryAABBNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGeometryAABBNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkPipelineBinaryKeyKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineBinaryKeyKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineBinaryKeyKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineBinaryKeyKHR(MemorySegment segment) {
@@ -136,18 +137,18 @@ public final class VkPipelineBinaryKeyKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineBinaryKeyKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineBinaryKeyKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineBinaryKeyKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineBinaryKeyKHR> array(Arena arena, VkPipelineBinaryKeyKHR... structs) {
+    public static NativeStructArray<VkPipelineBinaryKeyKHR> array(SegmentAllocator allocator, VkPipelineBinaryKeyKHR... structs) {
         NativeStructArray<VkPipelineBinaryKeyKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineBinaryKeyKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -83,8 +84,8 @@ public final class VkAttachmentDescription
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAttachmentDescription(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAttachmentDescription(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAttachmentDescription(MemorySegment segment) {
@@ -202,18 +203,18 @@ public final class VkAttachmentDescription
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAttachmentDescription> array(Arena arena, int count) {
+    public static NativeStructArray<VkAttachmentDescription> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAttachmentDescription(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAttachmentDescription> array(Arena arena, VkAttachmentDescription... structs) {
+    public static NativeStructArray<VkAttachmentDescription> array(SegmentAllocator allocator, VkAttachmentDescription... structs) {
         NativeStructArray<VkAttachmentDescription> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAttachmentDescription(segment),
             structs.length

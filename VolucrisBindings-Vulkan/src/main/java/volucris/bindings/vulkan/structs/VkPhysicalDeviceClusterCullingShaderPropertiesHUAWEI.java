@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -72,8 +73,8 @@ public final class VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(MemorySegment segment) {
@@ -166,18 +167,18 @@ public final class VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI> array(Arena arena, VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI... structs) {
+    public static NativeStructArray<VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI> array(SegmentAllocator allocator, VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI... structs) {
         NativeStructArray<VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceClusterCullingShaderPropertiesHUAWEI(segment),
             structs.length

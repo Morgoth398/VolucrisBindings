@@ -6,6 +6,7 @@ package volucris.bindings.msdfgen;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -61,8 +62,8 @@ public final class MsdfMultichannelConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MsdfMultichannelConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MsdfMultichannelConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MsdfMultichannelConfig(MemorySegment segment) {
@@ -140,18 +141,18 @@ public final class MsdfMultichannelConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MsdfMultichannelConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MsdfMultichannelConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MsdfMultichannelConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MsdfMultichannelConfig> array(Arena arena, MsdfMultichannelConfig... structs) {
+    public static NativeStructArray<MsdfMultichannelConfig> array(SegmentAllocator allocator, MsdfMultichannelConfig... structs) {
         NativeStructArray<MsdfMultichannelConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MsdfMultichannelConfig(segment),
             structs.length

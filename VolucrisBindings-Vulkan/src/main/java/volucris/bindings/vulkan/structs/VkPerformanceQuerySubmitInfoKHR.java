@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPerformanceQuerySubmitInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPerformanceQuerySubmitInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPerformanceQuerySubmitInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPerformanceQuerySubmitInfoKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPerformanceQuerySubmitInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPerformanceQuerySubmitInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPerformanceQuerySubmitInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceQuerySubmitInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPerformanceQuerySubmitInfoKHR> array(Arena arena, VkPerformanceQuerySubmitInfoKHR... structs) {
+    public static NativeStructArray<VkPerformanceQuerySubmitInfoKHR> array(SegmentAllocator allocator, VkPerformanceQuerySubmitInfoKHR... structs) {
         NativeStructArray<VkPerformanceQuerySubmitInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceQuerySubmitInfoKHR(segment),
             structs.length

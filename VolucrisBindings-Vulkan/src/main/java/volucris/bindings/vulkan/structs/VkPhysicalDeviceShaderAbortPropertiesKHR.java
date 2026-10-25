@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkPhysicalDeviceShaderAbortPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderAbortPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderAbortPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderAbortPropertiesKHR(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkPhysicalDeviceShaderAbortPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderAbortPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderAbortPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderAbortPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderAbortPropertiesKHR> array(Arena arena, VkPhysicalDeviceShaderAbortPropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderAbortPropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceShaderAbortPropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceShaderAbortPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderAbortPropertiesKHR(segment),
             structs.length

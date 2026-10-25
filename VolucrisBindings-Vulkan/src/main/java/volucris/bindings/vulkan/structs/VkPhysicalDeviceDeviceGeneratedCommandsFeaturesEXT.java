@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT> array(Arena arena, VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDeviceGeneratedCommandsFeaturesEXT(segment),
             structs.length

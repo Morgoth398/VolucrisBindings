@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -66,8 +67,8 @@ public final class MaPulsewaveConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaPulsewaveConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaPulsewaveConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaPulsewaveConfig(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class MaPulsewaveConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaPulsewaveConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaPulsewaveConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaPulsewaveConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaPulsewaveConfig> array(Arena arena, MaPulsewaveConfig... structs) {
+    public static NativeStructArray<MaPulsewaveConfig> array(SegmentAllocator allocator, MaPulsewaveConfig... structs) {
         NativeStructArray<MaPulsewaveConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaPulsewaveConfig(segment),
             structs.length

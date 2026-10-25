@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceInlineUniformBlockFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceInlineUniformBlockFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceInlineUniformBlockFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceInlineUniformBlockFeatures(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceInlineUniformBlockFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceInlineUniformBlockFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceInlineUniformBlockFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceInlineUniformBlockFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceInlineUniformBlockFeatures> array(Arena arena, VkPhysicalDeviceInlineUniformBlockFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceInlineUniformBlockFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceInlineUniformBlockFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceInlineUniformBlockFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceInlineUniformBlockFeatures(segment),
             structs.length

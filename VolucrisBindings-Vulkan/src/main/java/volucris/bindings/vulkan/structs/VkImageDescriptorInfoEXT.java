@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkImageDescriptorInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageDescriptorInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageDescriptorInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageDescriptorInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkImageDescriptorInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageDescriptorInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageDescriptorInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageDescriptorInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageDescriptorInfoEXT> array(Arena arena, VkImageDescriptorInfoEXT... structs) {
+    public static NativeStructArray<VkImageDescriptorInfoEXT> array(SegmentAllocator allocator, VkImageDescriptorInfoEXT... structs) {
         NativeStructArray<VkImageDescriptorInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageDescriptorInfoEXT(segment),
             structs.length

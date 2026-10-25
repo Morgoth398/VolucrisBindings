@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -51,8 +52,8 @@ public final class VkRenderingEndInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderingEndInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderingEndInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderingEndInfoKHR(MemorySegment segment) {
@@ -105,18 +106,18 @@ public final class VkRenderingEndInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderingEndInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderingEndInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingEndInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderingEndInfoKHR> array(Arena arena, VkRenderingEndInfoKHR... structs) {
+    public static NativeStructArray<VkRenderingEndInfoKHR> array(SegmentAllocator allocator, VkRenderingEndInfoKHR... structs) {
         NativeStructArray<VkRenderingEndInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingEndInfoKHR(segment),
             structs.length

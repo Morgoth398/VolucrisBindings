@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDeviceEventInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceEventInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceEventInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceEventInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDeviceEventInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceEventInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceEventInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceEventInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceEventInfoEXT> array(Arena arena, VkDeviceEventInfoEXT... structs) {
+    public static NativeStructArray<VkDeviceEventInfoEXT> array(SegmentAllocator allocator, VkDeviceEventInfoEXT... structs) {
         NativeStructArray<VkDeviceEventInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceEventInfoEXT(segment),
             structs.length

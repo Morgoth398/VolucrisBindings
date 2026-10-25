@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkPhysicalDeviceDataGraphOperationSupportARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDataGraphOperationSupportARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDataGraphOperationSupportARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDataGraphOperationSupportARM(MemorySegment segment) {
@@ -116,18 +117,18 @@ public final class VkPhysicalDeviceDataGraphOperationSupportARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDataGraphOperationSupportARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDataGraphOperationSupportARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDataGraphOperationSupportARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDataGraphOperationSupportARM> array(Arena arena, VkPhysicalDeviceDataGraphOperationSupportARM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDataGraphOperationSupportARM> array(SegmentAllocator allocator, VkPhysicalDeviceDataGraphOperationSupportARM... structs) {
         NativeStructArray<VkPhysicalDeviceDataGraphOperationSupportARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDataGraphOperationSupportARM(segment),
             structs.length

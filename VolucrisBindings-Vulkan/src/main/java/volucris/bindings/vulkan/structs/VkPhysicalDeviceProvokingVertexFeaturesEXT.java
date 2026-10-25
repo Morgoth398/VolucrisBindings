@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceProvokingVertexFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceProvokingVertexFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceProvokingVertexFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceProvokingVertexFeaturesEXT(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceProvokingVertexFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceProvokingVertexFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceProvokingVertexFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceProvokingVertexFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceProvokingVertexFeaturesEXT> array(Arena arena, VkPhysicalDeviceProvokingVertexFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceProvokingVertexFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceProvokingVertexFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceProvokingVertexFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceProvokingVertexFeaturesEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -49,8 +50,8 @@ public final class StdVideoAV1LoopRestoration
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoAV1LoopRestoration(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoAV1LoopRestoration(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoAV1LoopRestoration(MemorySegment segment) {
@@ -98,18 +99,18 @@ public final class StdVideoAV1LoopRestoration
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoAV1LoopRestoration> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoAV1LoopRestoration> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1LoopRestoration(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoAV1LoopRestoration> array(Arena arena, StdVideoAV1LoopRestoration... structs) {
+    public static NativeStructArray<StdVideoAV1LoopRestoration> array(SegmentAllocator allocator, StdVideoAV1LoopRestoration... structs) {
         NativeStructArray<StdVideoAV1LoopRestoration> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1LoopRestoration(segment),
             structs.length

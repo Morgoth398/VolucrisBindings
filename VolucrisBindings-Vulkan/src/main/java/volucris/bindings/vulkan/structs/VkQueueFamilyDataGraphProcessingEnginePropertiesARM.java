@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkQueueFamilyDataGraphProcessingEnginePropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkQueueFamilyDataGraphProcessingEnginePropertiesARM(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkQueueFamilyDataGraphProcessingEnginePropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphProcessingEnginePropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> array(Arena arena, VkQueueFamilyDataGraphProcessingEnginePropertiesARM... structs) {
+    public static NativeStructArray<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> array(SegmentAllocator allocator, VkQueueFamilyDataGraphProcessingEnginePropertiesARM... structs) {
         NativeStructArray<VkQueueFamilyDataGraphProcessingEnginePropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphProcessingEnginePropertiesARM(segment),
             structs.length

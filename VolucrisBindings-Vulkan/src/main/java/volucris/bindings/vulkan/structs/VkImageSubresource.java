@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkImageSubresource
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageSubresource(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageSubresource(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageSubresource(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkImageSubresource
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageSubresource> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageSubresource> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageSubresource(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageSubresource> array(Arena arena, VkImageSubresource... structs) {
+    public static NativeStructArray<VkImageSubresource> array(SegmentAllocator allocator, VkImageSubresource... structs) {
         NativeStructArray<VkImageSubresource> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageSubresource(segment),
             structs.length

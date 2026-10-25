@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -97,8 +98,8 @@ public final class VkPhysicalDeviceConservativeRasterizationPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceConservativeRasterizationPropertiesEXT(MemorySegment segment) {
@@ -241,18 +242,18 @@ public final class VkPhysicalDeviceConservativeRasterizationPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceConservativeRasterizationPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceConservativeRasterizationPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceConservativeRasterizationPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceConservativeRasterizationPropertiesEXT> array(Arena arena, VkPhysicalDeviceConservativeRasterizationPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceConservativeRasterizationPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceConservativeRasterizationPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceConservativeRasterizationPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceConservativeRasterizationPropertiesEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkGpaDeviceGetClockInfoAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkGpaDeviceGetClockInfoAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkGpaDeviceGetClockInfoAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkGpaDeviceGetClockInfoAMD(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkGpaDeviceGetClockInfoAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkGpaDeviceGetClockInfoAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkGpaDeviceGetClockInfoAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGpaDeviceGetClockInfoAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkGpaDeviceGetClockInfoAMD> array(Arena arena, VkGpaDeviceGetClockInfoAMD... structs) {
+    public static NativeStructArray<VkGpaDeviceGetClockInfoAMD> array(SegmentAllocator allocator, VkGpaDeviceGetClockInfoAMD... structs) {
         NativeStructArray<VkGpaDeviceGetClockInfoAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGpaDeviceGetClockInfoAMD(segment),
             structs.length

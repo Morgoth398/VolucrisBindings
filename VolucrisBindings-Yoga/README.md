@@ -9,9 +9,9 @@ public static void main(String[] args) {
 	Yoga.nodeStyleSetWidth(root, 400);
 	Yoga.nodeStyleSetHeight(root, 200);
 
-	Yoga.nodeStyleSetFlexDirection(root, FlexDirection.FLEX_DIRECTION_ROW);
-	Yoga.nodeStyleSetJustifyContent(root, Justify.JUSTIFY_SPACE_BETWEEN);
-	Yoga.nodeStyleSetAlignItems(root, Align.ALIGN_CENTER);
+	Yoga.nodeStyleSetFlexDirection(root, FlexDirection.YG_FLEX_DIRECTION_ROW);
+	Yoga.nodeStyleSetJustifyContent(root, Justify.YG_JUSTIFY_SPACE_BETWEEN);
+	Yoga.nodeStyleSetAlignItems(root, Align.YG_ALIGN_CENTER);
 
 	for (int i = 0; i < 3; ++i) {
 		YGNode child = Yoga.nodeNew();
@@ -26,7 +26,7 @@ public static void main(String[] args) {
 			root,
 			400,
 			200,
-			Direction.DIRECTION_LTR
+			Direction.YG_DIRECTION_LTR
 	);
 
 	for (int i = 0; i < Yoga.nodeGetChildCount(root); i++) {

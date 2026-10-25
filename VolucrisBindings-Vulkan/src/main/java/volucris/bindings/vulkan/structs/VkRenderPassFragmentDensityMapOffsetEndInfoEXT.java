@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkRenderPassFragmentDensityMapOffsetEndInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassFragmentDensityMapOffsetEndInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkRenderPassFragmentDensityMapOffsetEndInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassFragmentDensityMapOffsetEndInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> array(Arena arena, VkRenderPassFragmentDensityMapOffsetEndInfoEXT... structs) {
+    public static NativeStructArray<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> array(SegmentAllocator allocator, VkRenderPassFragmentDensityMapOffsetEndInfoEXT... structs) {
         NativeStructArray<VkRenderPassFragmentDensityMapOffsetEndInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassFragmentDensityMapOffsetEndInfoEXT(segment),
             structs.length

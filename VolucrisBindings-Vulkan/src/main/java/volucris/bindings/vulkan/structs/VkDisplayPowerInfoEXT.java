@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDisplayPowerInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDisplayPowerInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDisplayPowerInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDisplayPowerInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDisplayPowerInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDisplayPowerInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDisplayPowerInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayPowerInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDisplayPowerInfoEXT> array(Arena arena, VkDisplayPowerInfoEXT... structs) {
+    public static NativeStructArray<VkDisplayPowerInfoEXT> array(SegmentAllocator allocator, VkDisplayPowerInfoEXT... structs) {
         NativeStructArray<VkDisplayPowerInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayPowerInfoEXT(segment),
             structs.length

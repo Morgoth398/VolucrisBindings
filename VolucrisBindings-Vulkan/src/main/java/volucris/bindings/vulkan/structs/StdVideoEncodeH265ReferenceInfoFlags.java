@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoEncodeH265ReferenceInfoFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeH265ReferenceInfoFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeH265ReferenceInfoFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeH265ReferenceInfoFlags(MemorySegment segment) {
@@ -88,18 +89,18 @@ public final class StdVideoEncodeH265ReferenceInfoFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeH265ReferenceInfoFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeH265ReferenceInfoFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH265ReferenceInfoFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeH265ReferenceInfoFlags> array(Arena arena, StdVideoEncodeH265ReferenceInfoFlags... structs) {
+    public static NativeStructArray<StdVideoEncodeH265ReferenceInfoFlags> array(SegmentAllocator allocator, StdVideoEncodeH265ReferenceInfoFlags... structs) {
         NativeStructArray<StdVideoEncodeH265ReferenceInfoFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH265ReferenceInfoFlags(segment),
             structs.length

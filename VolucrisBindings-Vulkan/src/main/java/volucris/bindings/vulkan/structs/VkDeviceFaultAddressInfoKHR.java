@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -54,8 +55,8 @@ public final class VkDeviceFaultAddressInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceFaultAddressInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceFaultAddressInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceFaultAddressInfoKHR(MemorySegment segment) {
@@ -113,18 +114,18 @@ public final class VkDeviceFaultAddressInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceFaultAddressInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceFaultAddressInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceFaultAddressInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceFaultAddressInfoKHR> array(Arena arena, VkDeviceFaultAddressInfoKHR... structs) {
+    public static NativeStructArray<VkDeviceFaultAddressInfoKHR> array(SegmentAllocator allocator, VkDeviceFaultAddressInfoKHR... structs) {
         NativeStructArray<VkDeviceFaultAddressInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceFaultAddressInfoKHR(segment),
             structs.length

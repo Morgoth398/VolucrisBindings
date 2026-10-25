@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkDataGraphPipelineSessionBindPointRequirementsInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineSessionBindPointRequirementsInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineSessionBindPointRequirementsInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineSessionBindPointRequirementsInfoARM(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkDataGraphPipelineSessionBindPointRequirementsInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionBindPointRequirementsInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineSessionBindPointRequirementsInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionBindPointRequirementsInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionBindPointRequirementsInfoARM> array(Arena arena, VkDataGraphPipelineSessionBindPointRequirementsInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineSessionBindPointRequirementsInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineSessionBindPointRequirementsInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineSessionBindPointRequirementsInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionBindPointRequirementsInfoARM(segment),
             structs.length

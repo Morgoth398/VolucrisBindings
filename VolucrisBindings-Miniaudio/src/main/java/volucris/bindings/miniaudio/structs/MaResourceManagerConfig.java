@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -109,8 +110,8 @@ public final class MaResourceManagerConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerConfig(MemorySegment segment) {
@@ -312,18 +313,18 @@ public final class MaResourceManagerConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerConfig> array(Arena arena, MaResourceManagerConfig... structs) {
+    public static NativeStructArray<MaResourceManagerConfig> array(SegmentAllocator allocator, MaResourceManagerConfig... structs) {
         NativeStructArray<MaResourceManagerConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerConfig(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkTextureLODGatherFormatPropertiesAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTextureLODGatherFormatPropertiesAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTextureLODGatherFormatPropertiesAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTextureLODGatherFormatPropertiesAMD(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkTextureLODGatherFormatPropertiesAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTextureLODGatherFormatPropertiesAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkTextureLODGatherFormatPropertiesAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTextureLODGatherFormatPropertiesAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTextureLODGatherFormatPropertiesAMD> array(Arena arena, VkTextureLODGatherFormatPropertiesAMD... structs) {
+    public static NativeStructArray<VkTextureLODGatherFormatPropertiesAMD> array(SegmentAllocator allocator, VkTextureLODGatherFormatPropertiesAMD... structs) {
         NativeStructArray<VkTextureLODGatherFormatPropertiesAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTextureLODGatherFormatPropertiesAMD(segment),
             structs.length

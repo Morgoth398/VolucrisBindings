@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -57,8 +58,8 @@ public final class MaContextCommandWasapi
 	    this(Arena.ofAuto());
 	}
 	
-	public MaContextCommandWasapi(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaContextCommandWasapi(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaContextCommandWasapi(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class MaContextCommandWasapi
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaContextCommandWasapi> array(Arena arena, int count) {
+    public static NativeStructArray<MaContextCommandWasapi> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaContextCommandWasapi(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaContextCommandWasapi> array(Arena arena, MaContextCommandWasapi... structs) {
+    public static NativeStructArray<MaContextCommandWasapi> array(SegmentAllocator allocator, MaContextCommandWasapi... structs) {
         NativeStructArray<MaContextCommandWasapi> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaContextCommandWasapi(segment),
             structs.length
@@ -192,8 +193,8 @@ public final class MaContextCommandWasapi
 		    this(Arena.ofAuto());
 		}
 		
-		public Data(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Data(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Data(MemorySegment segment) {
@@ -272,18 +273,18 @@ public final class MaContextCommandWasapi
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, int count) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, Data... structs) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, Data... structs) {
 	        NativeStructArray<Data> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            structs.length
@@ -330,8 +331,8 @@ public final class MaContextCommandWasapi
 			    this(Arena.ofAuto());
 			}
 			
-			public Quit(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Quit(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Quit(MemorySegment segment) {
@@ -369,18 +370,18 @@ public final class MaContextCommandWasapi
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Quit> array(Arena arena, int count) {
+		    public static NativeStructArray<Quit> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Quit(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Quit> array(Arena arena, Quit... structs) {
+		    public static NativeStructArray<Quit> array(SegmentAllocator allocator, Quit... structs) {
 		        NativeStructArray<Quit> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Quit(segment),
 		            structs.length
@@ -445,8 +446,8 @@ public final class MaContextCommandWasapi
 			    this(Arena.ofAuto());
 			}
 			
-			public CreateAudioClient(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public CreateAudioClient(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public CreateAudioClient(MemorySegment segment) {
@@ -529,18 +530,18 @@ public final class MaContextCommandWasapi
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<CreateAudioClient> array(Arena arena, int count) {
+		    public static NativeStructArray<CreateAudioClient> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new CreateAudioClient(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<CreateAudioClient> array(Arena arena, CreateAudioClient... structs) {
+		    public static NativeStructArray<CreateAudioClient> array(SegmentAllocator allocator, CreateAudioClient... structs) {
 		        NativeStructArray<CreateAudioClient> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new CreateAudioClient(segment),
 		            structs.length
@@ -595,8 +596,8 @@ public final class MaContextCommandWasapi
 			    this(Arena.ofAuto());
 			}
 			
-			public ReleaseAudioClient(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public ReleaseAudioClient(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public ReleaseAudioClient(MemorySegment segment) {
@@ -649,18 +650,18 @@ public final class MaContextCommandWasapi
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<ReleaseAudioClient> array(Arena arena, int count) {
+		    public static NativeStructArray<ReleaseAudioClient> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new ReleaseAudioClient(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<ReleaseAudioClient> array(Arena arena, ReleaseAudioClient... structs) {
+		    public static NativeStructArray<ReleaseAudioClient> array(SegmentAllocator allocator, ReleaseAudioClient... structs) {
 		        NativeStructArray<ReleaseAudioClient> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new ReleaseAudioClient(segment),
 		            structs.length

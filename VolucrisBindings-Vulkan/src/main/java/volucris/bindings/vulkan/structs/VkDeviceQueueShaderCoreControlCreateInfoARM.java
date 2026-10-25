@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDeviceQueueShaderCoreControlCreateInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceQueueShaderCoreControlCreateInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceQueueShaderCoreControlCreateInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceQueueShaderCoreControlCreateInfoARM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDeviceQueueShaderCoreControlCreateInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceQueueShaderCoreControlCreateInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceQueueShaderCoreControlCreateInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceQueueShaderCoreControlCreateInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceQueueShaderCoreControlCreateInfoARM> array(Arena arena, VkDeviceQueueShaderCoreControlCreateInfoARM... structs) {
+    public static NativeStructArray<VkDeviceQueueShaderCoreControlCreateInfoARM> array(SegmentAllocator allocator, VkDeviceQueueShaderCoreControlCreateInfoARM... structs) {
         NativeStructArray<VkDeviceQueueShaderCoreControlCreateInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceQueueShaderCoreControlCreateInfoARM(segment),
             structs.length

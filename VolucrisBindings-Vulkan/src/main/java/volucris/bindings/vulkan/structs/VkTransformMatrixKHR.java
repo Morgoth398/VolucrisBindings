@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class VkTransformMatrixKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTransformMatrixKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTransformMatrixKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTransformMatrixKHR(MemorySegment segment) {
@@ -82,18 +83,18 @@ public final class VkTransformMatrixKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTransformMatrixKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkTransformMatrixKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTransformMatrixKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTransformMatrixKHR> array(Arena arena, VkTransformMatrixKHR... structs) {
+    public static NativeStructArray<VkTransformMatrixKHR> array(SegmentAllocator allocator, VkTransformMatrixKHR... structs) {
         NativeStructArray<VkTransformMatrixKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTransformMatrixKHR(segment),
             structs.length

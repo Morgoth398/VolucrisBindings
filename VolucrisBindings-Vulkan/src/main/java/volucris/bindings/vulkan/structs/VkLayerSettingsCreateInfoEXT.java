@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkLayerSettingsCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkLayerSettingsCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkLayerSettingsCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkLayerSettingsCreateInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkLayerSettingsCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkLayerSettingsCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkLayerSettingsCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLayerSettingsCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkLayerSettingsCreateInfoEXT> array(Arena arena, VkLayerSettingsCreateInfoEXT... structs) {
+    public static NativeStructArray<VkLayerSettingsCreateInfoEXT> array(SegmentAllocator allocator, VkLayerSettingsCreateInfoEXT... structs) {
         NativeStructArray<VkLayerSettingsCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLayerSettingsCreateInfoEXT(segment),
             structs.length

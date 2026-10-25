@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkVideoFormatH265QuantizationMapPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoFormatH265QuantizationMapPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoFormatH265QuantizationMapPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoFormatH265QuantizationMapPropertiesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkVideoFormatH265QuantizationMapPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoFormatH265QuantizationMapPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoFormatH265QuantizationMapPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoFormatH265QuantizationMapPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoFormatH265QuantizationMapPropertiesKHR> array(Arena arena, VkVideoFormatH265QuantizationMapPropertiesKHR... structs) {
+    public static NativeStructArray<VkVideoFormatH265QuantizationMapPropertiesKHR> array(SegmentAllocator allocator, VkVideoFormatH265QuantizationMapPropertiesKHR... structs) {
         NativeStructArray<VkVideoFormatH265QuantizationMapPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoFormatH265QuantizationMapPropertiesKHR(segment),
             structs.length

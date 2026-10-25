@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceSubpassShadingFeaturesHUAWEI
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceSubpassShadingFeaturesHUAWEI
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> array(Arena arena, VkPhysicalDeviceSubpassShadingFeaturesHUAWEI... structs) {
+    public static NativeStructArray<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> array(SegmentAllocator allocator, VkPhysicalDeviceSubpassShadingFeaturesHUAWEI... structs) {
         NativeStructArray<VkPhysicalDeviceSubpassShadingFeaturesHUAWEI> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSubpassShadingFeaturesHUAWEI(segment),
             structs.length

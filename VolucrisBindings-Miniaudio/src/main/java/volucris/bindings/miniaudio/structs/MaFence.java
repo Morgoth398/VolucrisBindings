@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -48,8 +49,8 @@ public final class MaFence
 	    this(Arena.ofAuto());
 	}
 	
-	public MaFence(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaFence(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaFence(MemorySegment segment) {
@@ -102,18 +103,18 @@ public final class MaFence
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaFence> array(Arena arena, int count) {
+    public static NativeStructArray<MaFence> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaFence(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaFence> array(Arena arena, MaFence... structs) {
+    public static NativeStructArray<MaFence> array(SegmentAllocator allocator, MaFence... structs) {
         NativeStructArray<MaFence> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaFence(segment),
             structs.length

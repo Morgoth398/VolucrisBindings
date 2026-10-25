@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPipelineRasterizationProvokingVertexStateCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPipelineRasterizationProvokingVertexStateCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineRasterizationProvokingVertexStateCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineRasterizationProvokingVertexStateCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineRasterizationProvokingVertexStateCreateInfoEXT> array(Arena arena, VkPipelineRasterizationProvokingVertexStateCreateInfoEXT... structs) {
+    public static NativeStructArray<VkPipelineRasterizationProvokingVertexStateCreateInfoEXT> array(SegmentAllocator allocator, VkPipelineRasterizationProvokingVertexStateCreateInfoEXT... structs) {
         NativeStructArray<VkPipelineRasterizationProvokingVertexStateCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRasterizationProvokingVertexStateCreateInfoEXT(segment),
             structs.length

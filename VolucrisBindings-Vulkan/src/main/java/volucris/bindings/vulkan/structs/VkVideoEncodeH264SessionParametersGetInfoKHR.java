@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkVideoEncodeH264SessionParametersGetInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeH264SessionParametersGetInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeH264SessionParametersGetInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeH264SessionParametersGetInfoKHR(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkVideoEncodeH264SessionParametersGetInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeH264SessionParametersGetInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeH264SessionParametersGetInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeH264SessionParametersGetInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeH264SessionParametersGetInfoKHR> array(Arena arena, VkVideoEncodeH264SessionParametersGetInfoKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeH264SessionParametersGetInfoKHR> array(SegmentAllocator allocator, VkVideoEncodeH264SessionParametersGetInfoKHR... structs) {
         NativeStructArray<VkVideoEncodeH264SessionParametersGetInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeH264SessionParametersGetInfoKHR(segment),
             structs.length

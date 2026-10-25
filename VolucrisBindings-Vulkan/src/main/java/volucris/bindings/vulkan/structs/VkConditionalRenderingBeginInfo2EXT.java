@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -67,8 +68,8 @@ public final class VkConditionalRenderingBeginInfo2EXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkConditionalRenderingBeginInfo2EXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkConditionalRenderingBeginInfo2EXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkConditionalRenderingBeginInfo2EXT(MemorySegment segment) {
@@ -158,18 +159,18 @@ public final class VkConditionalRenderingBeginInfo2EXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkConditionalRenderingBeginInfo2EXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkConditionalRenderingBeginInfo2EXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkConditionalRenderingBeginInfo2EXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkConditionalRenderingBeginInfo2EXT> array(Arena arena, VkConditionalRenderingBeginInfo2EXT... structs) {
+    public static NativeStructArray<VkConditionalRenderingBeginInfo2EXT> array(SegmentAllocator allocator, VkConditionalRenderingBeginInfo2EXT... structs) {
         NativeStructArray<VkConditionalRenderingBeginInfo2EXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkConditionalRenderingBeginInfo2EXT(segment),
             structs.length

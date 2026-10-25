@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkBindIndexBufferIndirectCommandNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindIndexBufferIndirectCommandNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindIndexBufferIndirectCommandNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindIndexBufferIndirectCommandNV(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkBindIndexBufferIndirectCommandNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindIndexBufferIndirectCommandNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindIndexBufferIndirectCommandNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindIndexBufferIndirectCommandNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindIndexBufferIndirectCommandNV> array(Arena arena, VkBindIndexBufferIndirectCommandNV... structs) {
+    public static NativeStructArray<VkBindIndexBufferIndirectCommandNV> array(SegmentAllocator allocator, VkBindIndexBufferIndirectCommandNV... structs) {
         NativeStructArray<VkBindIndexBufferIndirectCommandNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindIndexBufferIndirectCommandNV(segment),
             structs.length

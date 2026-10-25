@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkImageDrmFormatModifierListCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageDrmFormatModifierListCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageDrmFormatModifierListCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageDrmFormatModifierListCreateInfoEXT(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkImageDrmFormatModifierListCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageDrmFormatModifierListCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageDrmFormatModifierListCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageDrmFormatModifierListCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageDrmFormatModifierListCreateInfoEXT> array(Arena arena, VkImageDrmFormatModifierListCreateInfoEXT... structs) {
+    public static NativeStructArray<VkImageDrmFormatModifierListCreateInfoEXT> array(SegmentAllocator allocator, VkImageDrmFormatModifierListCreateInfoEXT... structs) {
         NativeStructArray<VkImageDrmFormatModifierListCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageDrmFormatModifierListCreateInfoEXT(segment),
             structs.length

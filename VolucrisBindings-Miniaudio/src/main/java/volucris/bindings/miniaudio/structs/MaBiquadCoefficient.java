@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -52,8 +53,8 @@ public final class MaBiquadCoefficient
 	    this(Arena.ofAuto());
 	}
 	
-	public MaBiquadCoefficient(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaBiquadCoefficient(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaBiquadCoefficient(MemorySegment segment) {
@@ -101,18 +102,18 @@ public final class MaBiquadCoefficient
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaBiquadCoefficient> array(Arena arena, int count) {
+    public static NativeStructArray<MaBiquadCoefficient> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaBiquadCoefficient(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaBiquadCoefficient> array(Arena arena, MaBiquadCoefficient... structs) {
+    public static NativeStructArray<MaBiquadCoefficient> array(SegmentAllocator allocator, MaBiquadCoefficient... structs) {
         NativeStructArray<MaBiquadCoefficient> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaBiquadCoefficient(segment),
             structs.length

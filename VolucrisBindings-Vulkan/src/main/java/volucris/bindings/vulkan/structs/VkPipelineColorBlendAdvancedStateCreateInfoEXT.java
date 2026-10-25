@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPipelineColorBlendAdvancedStateCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineColorBlendAdvancedStateCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineColorBlendAdvancedStateCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineColorBlendAdvancedStateCreateInfoEXT(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPipelineColorBlendAdvancedStateCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineColorBlendAdvancedStateCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineColorBlendAdvancedStateCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineColorBlendAdvancedStateCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineColorBlendAdvancedStateCreateInfoEXT> array(Arena arena, VkPipelineColorBlendAdvancedStateCreateInfoEXT... structs) {
+    public static NativeStructArray<VkPipelineColorBlendAdvancedStateCreateInfoEXT> array(SegmentAllocator allocator, VkPipelineColorBlendAdvancedStateCreateInfoEXT... structs) {
         NativeStructArray<VkPipelineColorBlendAdvancedStateCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineColorBlendAdvancedStateCreateInfoEXT(segment),
             structs.length

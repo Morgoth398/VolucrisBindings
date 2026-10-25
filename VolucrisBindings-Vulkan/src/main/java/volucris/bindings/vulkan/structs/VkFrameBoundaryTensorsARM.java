@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkFrameBoundaryTensorsARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkFrameBoundaryTensorsARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkFrameBoundaryTensorsARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkFrameBoundaryTensorsARM(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkFrameBoundaryTensorsARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkFrameBoundaryTensorsARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkFrameBoundaryTensorsARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkFrameBoundaryTensorsARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkFrameBoundaryTensorsARM> array(Arena arena, VkFrameBoundaryTensorsARM... structs) {
+    public static NativeStructArray<VkFrameBoundaryTensorsARM> array(SegmentAllocator allocator, VkFrameBoundaryTensorsARM... structs) {
         NativeStructArray<VkFrameBoundaryTensorsARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkFrameBoundaryTensorsARM(segment),
             structs.length

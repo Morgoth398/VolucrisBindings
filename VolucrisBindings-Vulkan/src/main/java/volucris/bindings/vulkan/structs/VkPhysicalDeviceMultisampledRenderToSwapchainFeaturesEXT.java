@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT> array(Arena arena, VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultisampledRenderToSwapchainFeaturesEXT(segment),
             structs.length

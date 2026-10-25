@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR> array(Arena arena, VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShaderBarycentricFeaturesKHR(segment),
             structs.length

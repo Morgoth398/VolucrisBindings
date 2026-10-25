@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceRayTracingValidationFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRayTracingValidationFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRayTracingValidationFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRayTracingValidationFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceRayTracingValidationFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRayTracingValidationFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRayTracingValidationFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRayTracingValidationFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRayTracingValidationFeaturesNV> array(Arena arena, VkPhysicalDeviceRayTracingValidationFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRayTracingValidationFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceRayTracingValidationFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceRayTracingValidationFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRayTracingValidationFeaturesNV(segment),
             structs.length

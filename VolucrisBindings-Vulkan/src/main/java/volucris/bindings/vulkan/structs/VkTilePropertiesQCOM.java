@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -66,8 +67,8 @@ public final class VkTilePropertiesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTilePropertiesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTilePropertiesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTilePropertiesQCOM(MemorySegment segment) {
@@ -171,18 +172,18 @@ public final class VkTilePropertiesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTilePropertiesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkTilePropertiesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTilePropertiesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTilePropertiesQCOM> array(Arena arena, VkTilePropertiesQCOM... structs) {
+    public static NativeStructArray<VkTilePropertiesQCOM> array(SegmentAllocator allocator, VkTilePropertiesQCOM... structs) {
         NativeStructArray<VkTilePropertiesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTilePropertiesQCOM(segment),
             structs.length

@@ -18,9 +18,9 @@ public @Nullable NativeStructArray<${pointerType}> ${memberName}(<#if (arrayDept
 }
 <#else>
 /// @see #${memberName}(<#if (arrayDepth!0) gte 1><#list 0..(arrayDepth - 1) as i>int<#sep>, <#sep></#list></#if>)
-public ${className} ${memberName}(<#if isString!false>Arena arena, </#if>${pointerType} ${memberName}<#if (arrayDepth!0) gte 1><#list 0..(arrayDepth - 1) as i>, int index${i}</#list></#if>) {
+public ${className} ${memberName}(<#if isString!false>SegmentAllocator allocator, </#if>${pointerType} ${memberName}<#if (arrayDepth!0) gte 1><#list 0..(arrayDepth - 1) as i>, int index${i}</#list></#if>) {
 	<#if isString!false>
-	${varHandleFieldName}.set(segment, 0L<#if (arrayDepth!0) gte 1><#list 0..(arrayDepth - 1) as i>, index${i}</#list></#if>, arena.allocateFrom(${memberName}));
+	${varHandleFieldName}.set(segment, 0L<#if (arrayDepth!0) gte 1><#list 0..(arrayDepth - 1) as i>, index${i}</#list></#if>, allocator.allocateFrom(${memberName}));
 	<#else>
 	${varHandleFieldName}.set(segment, 0L<#if (arrayDepth!0) gte 1><#list 0..(arrayDepth - 1) as i>, index${i}</#list></#if>, <#if isRawSegment!false>${memberName}<#else>${memberName}.memorySegment()</#if>);
 	</#if>

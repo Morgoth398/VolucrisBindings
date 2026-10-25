@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -98,8 +99,8 @@ public final class MaChannelConverter
 	    this(Arena.ofAuto());
 	}
 	
-	public MaChannelConverter(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaChannelConverter(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaChannelConverter(MemorySegment segment) {
@@ -264,18 +265,18 @@ public final class MaChannelConverter
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaChannelConverter> array(Arena arena, int count) {
+    public static NativeStructArray<MaChannelConverter> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaChannelConverter(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaChannelConverter> array(Arena arena, MaChannelConverter... structs) {
+    public static NativeStructArray<MaChannelConverter> array(SegmentAllocator allocator, MaChannelConverter... structs) {
         NativeStructArray<MaChannelConverter> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaChannelConverter(segment),
             structs.length
@@ -327,8 +328,8 @@ public final class MaChannelConverter
 		    this(Arena.ofAuto());
 		}
 		
-		public Weights(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Weights(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Weights(MemorySegment segment) {
@@ -386,18 +387,18 @@ public final class MaChannelConverter
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Weights> array(Arena arena, int count) {
+	    public static NativeStructArray<Weights> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Weights(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Weights> array(Arena arena, Weights... structs) {
+	    public static NativeStructArray<Weights> array(SegmentAllocator allocator, Weights... structs) {
 	        NativeStructArray<Weights> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Weights(segment),
 	            structs.length

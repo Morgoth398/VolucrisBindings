@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkDepthBiasInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDepthBiasInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDepthBiasInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDepthBiasInfoEXT(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkDepthBiasInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDepthBiasInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDepthBiasInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDepthBiasInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDepthBiasInfoEXT> array(Arena arena, VkDepthBiasInfoEXT... structs) {
+    public static NativeStructArray<VkDepthBiasInfoEXT> array(SegmentAllocator allocator, VkDepthBiasInfoEXT... structs) {
         NativeStructArray<VkDepthBiasInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDepthBiasInfoEXT(segment),
             structs.length

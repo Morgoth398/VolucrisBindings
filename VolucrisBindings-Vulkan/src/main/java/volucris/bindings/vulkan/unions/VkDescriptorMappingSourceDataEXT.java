@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.unions;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -88,8 +89,8 @@ public final class VkDescriptorMappingSourceDataEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorMappingSourceDataEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorMappingSourceDataEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorMappingSourceDataEXT(MemorySegment segment) {
@@ -276,18 +277,18 @@ public final class VkDescriptorMappingSourceDataEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorMappingSourceDataEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorMappingSourceDataEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorMappingSourceDataEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorMappingSourceDataEXT> array(Arena arena, VkDescriptorMappingSourceDataEXT... structs) {
+    public static NativeStructArray<VkDescriptorMappingSourceDataEXT> array(SegmentAllocator allocator, VkDescriptorMappingSourceDataEXT... structs) {
         NativeStructArray<VkDescriptorMappingSourceDataEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorMappingSourceDataEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -69,8 +70,8 @@ public final class VkIndirectCommandsLayoutTokenEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkIndirectCommandsLayoutTokenEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkIndirectCommandsLayoutTokenEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkIndirectCommandsLayoutTokenEXT(MemorySegment segment) {
@@ -160,18 +161,18 @@ public final class VkIndirectCommandsLayoutTokenEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkIndirectCommandsLayoutTokenEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkIndirectCommandsLayoutTokenEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsLayoutTokenEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkIndirectCommandsLayoutTokenEXT> array(Arena arena, VkIndirectCommandsLayoutTokenEXT... structs) {
+    public static NativeStructArray<VkIndirectCommandsLayoutTokenEXT> array(SegmentAllocator allocator, VkIndirectCommandsLayoutTokenEXT... structs) {
         NativeStructArray<VkIndirectCommandsLayoutTokenEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsLayoutTokenEXT(segment),
             structs.length

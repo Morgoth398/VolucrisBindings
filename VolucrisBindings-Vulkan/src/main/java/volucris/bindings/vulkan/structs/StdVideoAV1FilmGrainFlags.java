@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoAV1FilmGrainFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoAV1FilmGrainFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoAV1FilmGrainFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoAV1FilmGrainFlags(MemorySegment segment) {
@@ -90,18 +91,18 @@ public final class StdVideoAV1FilmGrainFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoAV1FilmGrainFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoAV1FilmGrainFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1FilmGrainFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoAV1FilmGrainFlags> array(Arena arena, StdVideoAV1FilmGrainFlags... structs) {
+    public static NativeStructArray<StdVideoAV1FilmGrainFlags> array(SegmentAllocator allocator, StdVideoAV1FilmGrainFlags... structs) {
         NativeStructArray<StdVideoAV1FilmGrainFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1FilmGrainFlags(segment),
             structs.length

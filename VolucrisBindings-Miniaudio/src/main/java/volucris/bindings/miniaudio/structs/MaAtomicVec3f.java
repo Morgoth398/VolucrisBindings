@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -46,8 +47,8 @@ public final class MaAtomicVec3f
 	    this(Arena.ofAuto());
 	}
 	
-	public MaAtomicVec3f(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaAtomicVec3f(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaAtomicVec3f(MemorySegment segment) {
@@ -102,18 +103,18 @@ public final class MaAtomicVec3f
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaAtomicVec3f> array(Arena arena, int count) {
+    public static NativeStructArray<MaAtomicVec3f> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicVec3f(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaAtomicVec3f> array(Arena arena, MaAtomicVec3f... structs) {
+    public static NativeStructArray<MaAtomicVec3f> array(SegmentAllocator allocator, MaAtomicVec3f... structs) {
         NativeStructArray<MaAtomicVec3f> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicVec3f(segment),
             structs.length

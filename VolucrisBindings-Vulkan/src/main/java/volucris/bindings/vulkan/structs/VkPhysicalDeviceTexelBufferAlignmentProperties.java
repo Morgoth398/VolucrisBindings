@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -73,8 +74,8 @@ public final class VkPhysicalDeviceTexelBufferAlignmentProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceTexelBufferAlignmentProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceTexelBufferAlignmentProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceTexelBufferAlignmentProperties(MemorySegment segment) {
@@ -167,18 +168,18 @@ public final class VkPhysicalDeviceTexelBufferAlignmentProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTexelBufferAlignmentProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceTexelBufferAlignmentProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTexelBufferAlignmentProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTexelBufferAlignmentProperties> array(Arena arena, VkPhysicalDeviceTexelBufferAlignmentProperties... structs) {
+    public static NativeStructArray<VkPhysicalDeviceTexelBufferAlignmentProperties> array(SegmentAllocator allocator, VkPhysicalDeviceTexelBufferAlignmentProperties... structs) {
         NativeStructArray<VkPhysicalDeviceTexelBufferAlignmentProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTexelBufferAlignmentProperties(segment),
             structs.length

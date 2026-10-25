@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -82,8 +83,8 @@ public final class VkBuildPartitionedAccelerationStructureInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBuildPartitionedAccelerationStructureInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBuildPartitionedAccelerationStructureInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBuildPartitionedAccelerationStructureInfoNV(MemorySegment segment) {
@@ -203,18 +204,18 @@ public final class VkBuildPartitionedAccelerationStructureInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBuildPartitionedAccelerationStructureInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkBuildPartitionedAccelerationStructureInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBuildPartitionedAccelerationStructureInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBuildPartitionedAccelerationStructureInfoNV> array(Arena arena, VkBuildPartitionedAccelerationStructureInfoNV... structs) {
+    public static NativeStructArray<VkBuildPartitionedAccelerationStructureInfoNV> array(SegmentAllocator allocator, VkBuildPartitionedAccelerationStructureInfoNV... structs) {
         NativeStructArray<VkBuildPartitionedAccelerationStructureInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBuildPartitionedAccelerationStructureInfoNV(segment),
             structs.length

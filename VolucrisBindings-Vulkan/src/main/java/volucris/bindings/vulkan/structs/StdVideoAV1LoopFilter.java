@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -75,8 +76,8 @@ public final class StdVideoAV1LoopFilter
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoAV1LoopFilter(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoAV1LoopFilter(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoAV1LoopFilter(MemorySegment segment) {
@@ -181,18 +182,18 @@ public final class StdVideoAV1LoopFilter
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoAV1LoopFilter> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoAV1LoopFilter> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1LoopFilter(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoAV1LoopFilter> array(Arena arena, StdVideoAV1LoopFilter... structs) {
+    public static NativeStructArray<StdVideoAV1LoopFilter> array(SegmentAllocator allocator, StdVideoAV1LoopFilter... structs) {
         NativeStructArray<StdVideoAV1LoopFilter> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1LoopFilter(segment),
             structs.length

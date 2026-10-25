@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -89,8 +90,8 @@ public final class MaResourceManagerDataSourceConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerDataSourceConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerDataSourceConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerDataSourceConfig(MemorySegment segment) {
@@ -233,18 +234,18 @@ public final class MaResourceManagerDataSourceConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerDataSourceConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerDataSourceConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataSourceConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerDataSourceConfig> array(Arena arena, MaResourceManagerDataSourceConfig... structs) {
+    public static NativeStructArray<MaResourceManagerDataSourceConfig> array(SegmentAllocator allocator, MaResourceManagerDataSourceConfig... structs) {
         NativeStructArray<MaResourceManagerDataSourceConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataSourceConfig(segment),
             structs.length

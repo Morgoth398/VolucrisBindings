@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkCoarseSampleOrderCustomNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCoarseSampleOrderCustomNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCoarseSampleOrderCustomNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCoarseSampleOrderCustomNV(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkCoarseSampleOrderCustomNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCoarseSampleOrderCustomNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkCoarseSampleOrderCustomNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCoarseSampleOrderCustomNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCoarseSampleOrderCustomNV> array(Arena arena, VkCoarseSampleOrderCustomNV... structs) {
+    public static NativeStructArray<VkCoarseSampleOrderCustomNV> array(SegmentAllocator allocator, VkCoarseSampleOrderCustomNV... structs) {
         NativeStructArray<VkCoarseSampleOrderCustomNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCoarseSampleOrderCustomNV(segment),
             structs.length

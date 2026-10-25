@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkDescriptorMappingSourceIndirectAddressEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorMappingSourceIndirectAddressEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorMappingSourceIndirectAddressEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorMappingSourceIndirectAddressEXT(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkDescriptorMappingSourceIndirectAddressEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorMappingSourceIndirectAddressEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorMappingSourceIndirectAddressEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorMappingSourceIndirectAddressEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorMappingSourceIndirectAddressEXT> array(Arena arena, VkDescriptorMappingSourceIndirectAddressEXT... structs) {
+    public static NativeStructArray<VkDescriptorMappingSourceIndirectAddressEXT> array(SegmentAllocator allocator, VkDescriptorMappingSourceIndirectAddressEXT... structs) {
         NativeStructArray<VkDescriptorMappingSourceIndirectAddressEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorMappingSourceIndirectAddressEXT(segment),
             structs.length

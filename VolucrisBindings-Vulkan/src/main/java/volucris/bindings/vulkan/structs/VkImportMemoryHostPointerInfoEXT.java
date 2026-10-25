@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkImportMemoryHostPointerInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImportMemoryHostPointerInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImportMemoryHostPointerInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImportMemoryHostPointerInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkImportMemoryHostPointerInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImportMemoryHostPointerInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkImportMemoryHostPointerInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImportMemoryHostPointerInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImportMemoryHostPointerInfoEXT> array(Arena arena, VkImportMemoryHostPointerInfoEXT... structs) {
+    public static NativeStructArray<VkImportMemoryHostPointerInfoEXT> array(SegmentAllocator allocator, VkImportMemoryHostPointerInfoEXT... structs) {
         NativeStructArray<VkImportMemoryHostPointerInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImportMemoryHostPointerInfoEXT(segment),
             structs.length

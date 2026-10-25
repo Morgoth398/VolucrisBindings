@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceOpticalFlowFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceOpticalFlowFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceOpticalFlowFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceOpticalFlowFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceOpticalFlowFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceOpticalFlowFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceOpticalFlowFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceOpticalFlowFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceOpticalFlowFeaturesNV> array(Arena arena, VkPhysicalDeviceOpticalFlowFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceOpticalFlowFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceOpticalFlowFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceOpticalFlowFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceOpticalFlowFeaturesNV(segment),
             structs.length

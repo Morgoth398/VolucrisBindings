@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkPresentIdKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPresentIdKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPresentIdKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPresentIdKHR(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkPresentIdKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPresentIdKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPresentIdKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentIdKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPresentIdKHR> array(Arena arena, VkPresentIdKHR... structs) {
+    public static NativeStructArray<VkPresentIdKHR> array(SegmentAllocator allocator, VkPresentIdKHR... structs) {
         NativeStructArray<VkPresentIdKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentIdKHR(segment),
             structs.length

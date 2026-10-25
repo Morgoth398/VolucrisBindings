@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -114,8 +115,8 @@ public final class VkShaderCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkShaderCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkShaderCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkShaderCreateInfoEXT(MemorySegment segment) {
@@ -214,8 +215,8 @@ public final class VkShaderCreateInfoEXT
     }
     
     /// @see #pName()
-    public VkShaderCreateInfoEXT pName(Arena arena, String pName) {
-    	P_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pName));
+    public VkShaderCreateInfoEXT pName(SegmentAllocator allocator, String pName) {
+    	P_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pName));
     	return this;
     }
     
@@ -313,18 +314,18 @@ public final class VkShaderCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkShaderCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkShaderCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkShaderCreateInfoEXT> array(Arena arena, VkShaderCreateInfoEXT... structs) {
+    public static NativeStructArray<VkShaderCreateInfoEXT> array(SegmentAllocator allocator, VkShaderCreateInfoEXT... structs) {
         NativeStructArray<VkShaderCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderCreateInfoEXT(segment),
             structs.length

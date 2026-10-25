@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPushConstantBankInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPushConstantBankInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPushConstantBankInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPushConstantBankInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPushConstantBankInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPushConstantBankInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPushConstantBankInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPushConstantBankInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPushConstantBankInfoNV> array(Arena arena, VkPushConstantBankInfoNV... structs) {
+    public static NativeStructArray<VkPushConstantBankInfoNV> array(SegmentAllocator allocator, VkPushConstantBankInfoNV... structs) {
         NativeStructArray<VkPushConstantBankInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPushConstantBankInfoNV(segment),
             structs.length

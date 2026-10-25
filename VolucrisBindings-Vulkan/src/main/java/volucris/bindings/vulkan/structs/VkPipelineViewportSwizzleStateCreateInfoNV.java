@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkPipelineViewportSwizzleStateCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineViewportSwizzleStateCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineViewportSwizzleStateCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineViewportSwizzleStateCreateInfoNV(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkPipelineViewportSwizzleStateCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineViewportSwizzleStateCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineViewportSwizzleStateCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportSwizzleStateCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineViewportSwizzleStateCreateInfoNV> array(Arena arena, VkPipelineViewportSwizzleStateCreateInfoNV... structs) {
+    public static NativeStructArray<VkPipelineViewportSwizzleStateCreateInfoNV> array(SegmentAllocator allocator, VkPipelineViewportSwizzleStateCreateInfoNV... structs) {
         NativeStructArray<VkPipelineViewportSwizzleStateCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportSwizzleStateCreateInfoNV(segment),
             structs.length

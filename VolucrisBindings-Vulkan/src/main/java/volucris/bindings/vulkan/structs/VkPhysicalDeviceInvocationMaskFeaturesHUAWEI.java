@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceInvocationMaskFeaturesHUAWEI
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceInvocationMaskFeaturesHUAWEI
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceInvocationMaskFeaturesHUAWEI> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceInvocationMaskFeaturesHUAWEI> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceInvocationMaskFeaturesHUAWEI> array(Arena arena, VkPhysicalDeviceInvocationMaskFeaturesHUAWEI... structs) {
+    public static NativeStructArray<VkPhysicalDeviceInvocationMaskFeaturesHUAWEI> array(SegmentAllocator allocator, VkPhysicalDeviceInvocationMaskFeaturesHUAWEI... structs) {
         NativeStructArray<VkPhysicalDeviceInvocationMaskFeaturesHUAWEI> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceInvocationMaskFeaturesHUAWEI(segment),
             structs.length

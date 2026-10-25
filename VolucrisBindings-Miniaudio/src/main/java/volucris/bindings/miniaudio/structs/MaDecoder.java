@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -134,8 +135,8 @@ public final class MaDecoder
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDecoder(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDecoder(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDecoder(MemorySegment segment) {
@@ -421,18 +422,18 @@ public final class MaDecoder
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDecoder> array(Arena arena, int count) {
+    public static NativeStructArray<MaDecoder> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDecoder(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDecoder> array(Arena arena, MaDecoder... structs) {
+    public static NativeStructArray<MaDecoder> array(SegmentAllocator allocator, MaDecoder... structs) {
         NativeStructArray<MaDecoder> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDecoder(segment),
             structs.length
@@ -481,8 +482,8 @@ public final class MaDecoder
 		    this(Arena.ofAuto());
 		}
 		
-		public Data(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Data(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Data(MemorySegment segment) {
@@ -544,18 +545,18 @@ public final class MaDecoder
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, int count) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, Data... structs) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, Data... structs) {
 	        NativeStructArray<Data> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            structs.length
@@ -607,8 +608,8 @@ public final class MaDecoder
 			    this(Arena.ofAuto());
 			}
 			
-			public Vfs(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Vfs(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Vfs(MemorySegment segment) {
@@ -666,18 +667,18 @@ public final class MaDecoder
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Vfs> array(Arena arena, int count) {
+		    public static NativeStructArray<Vfs> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Vfs(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Vfs> array(Arena arena, Vfs... structs) {
+		    public static NativeStructArray<Vfs> array(SegmentAllocator allocator, Vfs... structs) {
 		        NativeStructArray<Vfs> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Vfs(segment),
 		            structs.length
@@ -736,8 +737,8 @@ public final class MaDecoder
 			    this(Arena.ofAuto());
 			}
 			
-			public Memory(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Memory(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Memory(MemorySegment segment) {
@@ -800,18 +801,18 @@ public final class MaDecoder
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Memory> array(Arena arena, int count) {
+		    public static NativeStructArray<Memory> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Memory(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Memory> array(Arena arena, Memory... structs) {
+		    public static NativeStructArray<Memory> array(SegmentAllocator allocator, Memory... structs) {
 		        NativeStructArray<Memory> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Memory(segment),
 		            structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkSamplerBorderColorComponentMappingCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSamplerBorderColorComponentMappingCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSamplerBorderColorComponentMappingCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSamplerBorderColorComponentMappingCreateInfoEXT(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkSamplerBorderColorComponentMappingCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSamplerBorderColorComponentMappingCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkSamplerBorderColorComponentMappingCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerBorderColorComponentMappingCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSamplerBorderColorComponentMappingCreateInfoEXT> array(Arena arena, VkSamplerBorderColorComponentMappingCreateInfoEXT... structs) {
+    public static NativeStructArray<VkSamplerBorderColorComponentMappingCreateInfoEXT> array(SegmentAllocator allocator, VkSamplerBorderColorComponentMappingCreateInfoEXT... structs) {
         NativeStructArray<VkSamplerBorderColorComponentMappingCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerBorderColorComponentMappingCreateInfoEXT(segment),
             structs.length

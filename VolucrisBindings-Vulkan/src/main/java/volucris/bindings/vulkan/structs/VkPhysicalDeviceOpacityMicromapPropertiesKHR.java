@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -72,8 +73,8 @@ public final class VkPhysicalDeviceOpacityMicromapPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceOpacityMicromapPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceOpacityMicromapPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceOpacityMicromapPropertiesKHR(MemorySegment segment) {
@@ -166,18 +167,18 @@ public final class VkPhysicalDeviceOpacityMicromapPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceOpacityMicromapPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceOpacityMicromapPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceOpacityMicromapPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceOpacityMicromapPropertiesKHR> array(Arena arena, VkPhysicalDeviceOpacityMicromapPropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceOpacityMicromapPropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceOpacityMicromapPropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceOpacityMicromapPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceOpacityMicromapPropertiesKHR(segment),
             structs.length

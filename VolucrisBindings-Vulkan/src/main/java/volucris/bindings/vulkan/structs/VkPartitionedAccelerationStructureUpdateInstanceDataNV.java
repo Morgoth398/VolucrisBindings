@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkPartitionedAccelerationStructureUpdateInstanceDataNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPartitionedAccelerationStructureUpdateInstanceDataNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPartitionedAccelerationStructureUpdateInstanceDataNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPartitionedAccelerationStructureUpdateInstanceDataNV(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkPartitionedAccelerationStructureUpdateInstanceDataNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureUpdateInstanceDataNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureUpdateInstanceDataNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureUpdateInstanceDataNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureUpdateInstanceDataNV> array(Arena arena, VkPartitionedAccelerationStructureUpdateInstanceDataNV... structs) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureUpdateInstanceDataNV> array(SegmentAllocator allocator, VkPartitionedAccelerationStructureUpdateInstanceDataNV... structs) {
         NativeStructArray<VkPartitionedAccelerationStructureUpdateInstanceDataNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureUpdateInstanceDataNV(segment),
             structs.length

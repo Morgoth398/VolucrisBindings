@@ -6,6 +6,7 @@ package volucris.bindings.libclang.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -52,8 +53,8 @@ public final class CXIdxObjCProtocolRefInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public CXIdxObjCProtocolRefInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public CXIdxObjCProtocolRefInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public CXIdxObjCProtocolRefInfo(MemorySegment segment) {

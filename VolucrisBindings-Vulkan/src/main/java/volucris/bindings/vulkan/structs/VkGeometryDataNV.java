@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -45,8 +46,8 @@ public final class VkGeometryDataNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkGeometryDataNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkGeometryDataNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkGeometryDataNV(MemorySegment segment) {
@@ -108,18 +109,18 @@ public final class VkGeometryDataNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkGeometryDataNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkGeometryDataNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGeometryDataNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkGeometryDataNV> array(Arena arena, VkGeometryDataNV... structs) {
+    public static NativeStructArray<VkGeometryDataNV> array(SegmentAllocator allocator, VkGeometryDataNV... structs) {
         NativeStructArray<VkGeometryDataNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGeometryDataNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkInitializePerformanceApiInfoINTEL
 	    this(Arena.ofAuto());
 	}
 	
-	public VkInitializePerformanceApiInfoINTEL(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkInitializePerformanceApiInfoINTEL(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkInitializePerformanceApiInfoINTEL(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkInitializePerformanceApiInfoINTEL
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkInitializePerformanceApiInfoINTEL> array(Arena arena, int count) {
+    public static NativeStructArray<VkInitializePerformanceApiInfoINTEL> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkInitializePerformanceApiInfoINTEL(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkInitializePerformanceApiInfoINTEL> array(Arena arena, VkInitializePerformanceApiInfoINTEL... structs) {
+    public static NativeStructArray<VkInitializePerformanceApiInfoINTEL> array(SegmentAllocator allocator, VkInitializePerformanceApiInfoINTEL... structs) {
         NativeStructArray<VkInitializePerformanceApiInfoINTEL> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkInitializePerformanceApiInfoINTEL(segment),
             structs.length

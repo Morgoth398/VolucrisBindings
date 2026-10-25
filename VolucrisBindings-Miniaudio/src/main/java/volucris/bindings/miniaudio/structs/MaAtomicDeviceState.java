@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -40,8 +41,8 @@ public final class MaAtomicDeviceState
 	    this(Arena.ofAuto());
 	}
 	
-	public MaAtomicDeviceState(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaAtomicDeviceState(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaAtomicDeviceState(MemorySegment segment) {
@@ -79,18 +80,18 @@ public final class MaAtomicDeviceState
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaAtomicDeviceState> array(Arena arena, int count) {
+    public static NativeStructArray<MaAtomicDeviceState> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicDeviceState(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaAtomicDeviceState> array(Arena arena, MaAtomicDeviceState... structs) {
+    public static NativeStructArray<MaAtomicDeviceState> array(SegmentAllocator allocator, MaAtomicDeviceState... structs) {
         NativeStructArray<MaAtomicDeviceState> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicDeviceState(segment),
             structs.length

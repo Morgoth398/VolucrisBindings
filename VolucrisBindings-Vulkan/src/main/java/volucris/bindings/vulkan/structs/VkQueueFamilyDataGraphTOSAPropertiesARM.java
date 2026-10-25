@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -79,8 +80,8 @@ public final class VkQueueFamilyDataGraphTOSAPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkQueueFamilyDataGraphTOSAPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkQueueFamilyDataGraphTOSAPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkQueueFamilyDataGraphTOSAPropertiesARM(MemorySegment segment) {
@@ -193,18 +194,18 @@ public final class VkQueueFamilyDataGraphTOSAPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphTOSAPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkQueueFamilyDataGraphTOSAPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphTOSAPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphTOSAPropertiesARM> array(Arena arena, VkQueueFamilyDataGraphTOSAPropertiesARM... structs) {
+    public static NativeStructArray<VkQueueFamilyDataGraphTOSAPropertiesARM> array(SegmentAllocator allocator, VkQueueFamilyDataGraphTOSAPropertiesARM... structs) {
         NativeStructArray<VkQueueFamilyDataGraphTOSAPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphTOSAPropertiesARM(segment),
             structs.length

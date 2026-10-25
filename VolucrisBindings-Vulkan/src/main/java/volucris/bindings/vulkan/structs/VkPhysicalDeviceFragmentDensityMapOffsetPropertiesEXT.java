@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> array(Arena arena, VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMapOffsetPropertiesEXT(segment),
             structs.length

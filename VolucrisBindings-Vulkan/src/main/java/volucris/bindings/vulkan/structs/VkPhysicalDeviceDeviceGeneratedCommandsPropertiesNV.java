@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -97,8 +98,8 @@ public final class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(MemorySegment segment) {
@@ -241,18 +242,18 @@ public final class VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> array(Arena arena, VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> array(SegmentAllocator allocator, VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV... structs) {
         NativeStructArray<VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV(segment),
             structs.length

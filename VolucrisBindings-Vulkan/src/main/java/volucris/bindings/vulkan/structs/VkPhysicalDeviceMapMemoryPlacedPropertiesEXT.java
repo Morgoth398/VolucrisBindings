@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkPhysicalDeviceMapMemoryPlacedPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkPhysicalDeviceMapMemoryPlacedPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMapMemoryPlacedPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMapMemoryPlacedPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMapMemoryPlacedPropertiesEXT> array(Arena arena, VkPhysicalDeviceMapMemoryPlacedPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMapMemoryPlacedPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceMapMemoryPlacedPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceMapMemoryPlacedPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMapMemoryPlacedPropertiesEXT(segment),
             structs.length

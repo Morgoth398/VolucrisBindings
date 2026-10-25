@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT> array(Arena arena, VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkPushDataInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPushDataInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPushDataInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPushDataInfoEXT(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkPushDataInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPushDataInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPushDataInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPushDataInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPushDataInfoEXT> array(Arena arena, VkPushDataInfoEXT... structs) {
+    public static NativeStructArray<VkPushDataInfoEXT> array(SegmentAllocator allocator, VkPushDataInfoEXT... structs) {
         NativeStructArray<VkPushDataInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPushDataInfoEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT> array(Arena arena, VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSubgroupPartitionedFeaturesEXT(segment),
             structs.length

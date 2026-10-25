@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkImageFormatListCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageFormatListCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageFormatListCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageFormatListCreateInfo(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkImageFormatListCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageFormatListCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageFormatListCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageFormatListCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageFormatListCreateInfo> array(Arena arena, VkImageFormatListCreateInfo... structs) {
+    public static NativeStructArray<VkImageFormatListCreateInfo> array(SegmentAllocator allocator, VkImageFormatListCreateInfo... structs) {
         NativeStructArray<VkImageFormatListCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageFormatListCreateInfo(segment),
             structs.length

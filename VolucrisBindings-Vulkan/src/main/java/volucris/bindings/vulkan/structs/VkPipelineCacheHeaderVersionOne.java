@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -63,8 +64,8 @@ public final class VkPipelineCacheHeaderVersionOne
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineCacheHeaderVersionOne(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineCacheHeaderVersionOne(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineCacheHeaderVersionOne(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkPipelineCacheHeaderVersionOne
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineCacheHeaderVersionOne> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineCacheHeaderVersionOne> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCacheHeaderVersionOne(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineCacheHeaderVersionOne> array(Arena arena, VkPipelineCacheHeaderVersionOne... structs) {
+    public static NativeStructArray<VkPipelineCacheHeaderVersionOne> array(SegmentAllocator allocator, VkPipelineCacheHeaderVersionOne... structs) {
         NativeStructArray<VkPipelineCacheHeaderVersionOne> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCacheHeaderVersionOne(segment),
             structs.length

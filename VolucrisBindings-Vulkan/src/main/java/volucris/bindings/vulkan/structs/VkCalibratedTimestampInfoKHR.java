@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkCalibratedTimestampInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCalibratedTimestampInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCalibratedTimestampInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCalibratedTimestampInfoKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkCalibratedTimestampInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCalibratedTimestampInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkCalibratedTimestampInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCalibratedTimestampInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCalibratedTimestampInfoKHR> array(Arena arena, VkCalibratedTimestampInfoKHR... structs) {
+    public static NativeStructArray<VkCalibratedTimestampInfoKHR> array(SegmentAllocator allocator, VkCalibratedTimestampInfoKHR... structs) {
         NativeStructArray<VkCalibratedTimestampInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCalibratedTimestampInfoKHR(segment),
             structs.length

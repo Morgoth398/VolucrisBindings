@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkDescriptorGetTensorInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorGetTensorInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorGetTensorInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorGetTensorInfoARM(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkDescriptorGetTensorInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorGetTensorInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorGetTensorInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorGetTensorInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorGetTensorInfoARM> array(Arena arena, VkDescriptorGetTensorInfoARM... structs) {
+    public static NativeStructArray<VkDescriptorGetTensorInfoARM> array(SegmentAllocator allocator, VkDescriptorGetTensorInfoARM... structs) {
         NativeStructArray<VkDescriptorGetTensorInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorGetTensorInfoARM(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class VkIndirectCommandsVertexBufferTokenEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkIndirectCommandsVertexBufferTokenEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkIndirectCommandsVertexBufferTokenEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkIndirectCommandsVertexBufferTokenEXT(MemorySegment segment) {
@@ -82,18 +83,18 @@ public final class VkIndirectCommandsVertexBufferTokenEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkIndirectCommandsVertexBufferTokenEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkIndirectCommandsVertexBufferTokenEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsVertexBufferTokenEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkIndirectCommandsVertexBufferTokenEXT> array(Arena arena, VkIndirectCommandsVertexBufferTokenEXT... structs) {
+    public static NativeStructArray<VkIndirectCommandsVertexBufferTokenEXT> array(SegmentAllocator allocator, VkIndirectCommandsVertexBufferTokenEXT... structs) {
         NativeStructArray<VkIndirectCommandsVertexBufferTokenEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsVertexBufferTokenEXT(segment),
             structs.length

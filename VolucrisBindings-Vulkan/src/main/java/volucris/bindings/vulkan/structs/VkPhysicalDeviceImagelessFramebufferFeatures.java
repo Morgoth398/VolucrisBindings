@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceImagelessFramebufferFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceImagelessFramebufferFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceImagelessFramebufferFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceImagelessFramebufferFeatures(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceImagelessFramebufferFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceImagelessFramebufferFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceImagelessFramebufferFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceImagelessFramebufferFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceImagelessFramebufferFeatures> array(Arena arena, VkPhysicalDeviceImagelessFramebufferFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceImagelessFramebufferFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceImagelessFramebufferFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceImagelessFramebufferFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceImagelessFramebufferFeatures(segment),
             structs.length

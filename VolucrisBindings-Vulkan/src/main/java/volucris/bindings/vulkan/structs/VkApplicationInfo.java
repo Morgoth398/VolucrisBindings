@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkApplicationInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkApplicationInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkApplicationInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkApplicationInfo(MemorySegment segment) {
@@ -112,8 +113,8 @@ public final class VkApplicationInfo
     }
     
     /// @see #pApplicationName()
-    public VkApplicationInfo pApplicationName(Arena arena, String pApplicationName) {
-    	P_APPLICATION_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pApplicationName));
+    public VkApplicationInfo pApplicationName(SegmentAllocator allocator, String pApplicationName) {
+    	P_APPLICATION_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pApplicationName));
     	return this;
     }
     
@@ -137,8 +138,8 @@ public final class VkApplicationInfo
     }
     
     /// @see #pEngineName()
-    public VkApplicationInfo pEngineName(Arena arena, String pEngineName) {
-    	P_ENGINE_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pEngineName));
+    public VkApplicationInfo pEngineName(SegmentAllocator allocator, String pEngineName) {
+    	P_ENGINE_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pEngineName));
     	return this;
     }
     
@@ -191,18 +192,18 @@ public final class VkApplicationInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkApplicationInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkApplicationInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkApplicationInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkApplicationInfo> array(Arena arena, VkApplicationInfo... structs) {
+    public static NativeStructArray<VkApplicationInfo> array(SegmentAllocator allocator, VkApplicationInfo... structs) {
         NativeStructArray<VkApplicationInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkApplicationInfo(segment),
             structs.length

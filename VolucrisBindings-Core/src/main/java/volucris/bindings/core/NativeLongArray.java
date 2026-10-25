@@ -1,19 +1,19 @@
 package volucris.bindings.core;
 
-import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 
 public class NativeLongArray {
 
 	private final MemorySegment segment;
 
-	public NativeLongArray(Arena arena, long... values) {
-		segment = arena.allocateFrom(ValueLayout.JAVA_LONG, values);
+	public NativeLongArray(SegmentAllocator allocator, long... values) {
+		segment = allocator.allocateFrom(ValueLayout.JAVA_LONG, values);
 	}
 
-	public NativeLongArray(Arena arena, int count) {
-		segment = arena.allocate(ValueLayout.JAVA_LONG, count);
+	public NativeLongArray(SegmentAllocator allocator, int count) {
+		segment = allocator.allocate(ValueLayout.JAVA_LONG, count);
 	}
 
 	public NativeLongArray(MemorySegment segment) {

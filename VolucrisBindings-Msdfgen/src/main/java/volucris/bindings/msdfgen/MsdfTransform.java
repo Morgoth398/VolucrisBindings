@@ -6,6 +6,7 @@ package volucris.bindings.msdfgen;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -46,8 +47,8 @@ public final class MsdfTransform
 	    this(Arena.ofAuto());
 	}
 	
-	public MsdfTransform(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MsdfTransform(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MsdfTransform(MemorySegment segment) {
@@ -126,18 +127,18 @@ public final class MsdfTransform
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MsdfTransform> array(Arena arena, int count) {
+    public static NativeStructArray<MsdfTransform> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MsdfTransform(segment),
             count
         );
     }
     
-    public static NativeStructArray<MsdfTransform> array(Arena arena, MsdfTransform... structs) {
+    public static NativeStructArray<MsdfTransform> array(SegmentAllocator allocator, MsdfTransform... structs) {
         NativeStructArray<MsdfTransform> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MsdfTransform(segment),
             structs.length

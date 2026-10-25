@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkExternalMemoryAcquireUnmodifiedEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkExternalMemoryAcquireUnmodifiedEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkExternalMemoryAcquireUnmodifiedEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkExternalMemoryAcquireUnmodifiedEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkExternalMemoryAcquireUnmodifiedEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkExternalMemoryAcquireUnmodifiedEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkExternalMemoryAcquireUnmodifiedEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalMemoryAcquireUnmodifiedEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkExternalMemoryAcquireUnmodifiedEXT> array(Arena arena, VkExternalMemoryAcquireUnmodifiedEXT... structs) {
+    public static NativeStructArray<VkExternalMemoryAcquireUnmodifiedEXT> array(SegmentAllocator allocator, VkExternalMemoryAcquireUnmodifiedEXT... structs) {
         NativeStructArray<VkExternalMemoryAcquireUnmodifiedEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalMemoryAcquireUnmodifiedEXT(segment),
             structs.length

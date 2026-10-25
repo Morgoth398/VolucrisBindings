@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkVideoDecodeAV1DpbSlotInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoDecodeAV1DpbSlotInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoDecodeAV1DpbSlotInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoDecodeAV1DpbSlotInfoKHR(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkVideoDecodeAV1DpbSlotInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoDecodeAV1DpbSlotInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoDecodeAV1DpbSlotInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoDecodeAV1DpbSlotInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoDecodeAV1DpbSlotInfoKHR> array(Arena arena, VkVideoDecodeAV1DpbSlotInfoKHR... structs) {
+    public static NativeStructArray<VkVideoDecodeAV1DpbSlotInfoKHR> array(SegmentAllocator allocator, VkVideoDecodeAV1DpbSlotInfoKHR... structs) {
         NativeStructArray<VkVideoDecodeAV1DpbSlotInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoDecodeAV1DpbSlotInfoKHR(segment),
             structs.length

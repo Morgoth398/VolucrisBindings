@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkPipelineExecutableInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineExecutableInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineExecutableInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineExecutableInfoKHR(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkPipelineExecutableInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineExecutableInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineExecutableInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineExecutableInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineExecutableInfoKHR> array(Arena arena, VkPipelineExecutableInfoKHR... structs) {
+    public static NativeStructArray<VkPipelineExecutableInfoKHR> array(SegmentAllocator allocator, VkPipelineExecutableInfoKHR... structs) {
         NativeStructArray<VkPipelineExecutableInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineExecutableInfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -89,8 +90,8 @@ public final class MaLinearResampler
 	    this(Arena.ofAuto());
 	}
 	
-	public MaLinearResampler(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaLinearResampler(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaLinearResampler(MemorySegment segment) {
@@ -251,18 +252,18 @@ public final class MaLinearResampler
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaLinearResampler> array(Arena arena, int count) {
+    public static NativeStructArray<MaLinearResampler> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLinearResampler(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaLinearResampler> array(Arena arena, MaLinearResampler... structs) {
+    public static NativeStructArray<MaLinearResampler> array(SegmentAllocator allocator, MaLinearResampler... structs) {
         NativeStructArray<MaLinearResampler> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLinearResampler(segment),
             structs.length
@@ -314,8 +315,8 @@ public final class MaLinearResampler
 		    this(Arena.ofAuto());
 		}
 		
-		public X0(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public X0(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public X0(MemorySegment segment) {
@@ -373,18 +374,18 @@ public final class MaLinearResampler
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<X0> array(Arena arena, int count) {
+	    public static NativeStructArray<X0> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new X0(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<X0> array(Arena arena, X0... structs) {
+	    public static NativeStructArray<X0> array(SegmentAllocator allocator, X0... structs) {
 	        NativeStructArray<X0> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new X0(segment),
 	            structs.length
@@ -438,8 +439,8 @@ public final class MaLinearResampler
 		    this(Arena.ofAuto());
 		}
 		
-		public X1(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public X1(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public X1(MemorySegment segment) {
@@ -497,18 +498,18 @@ public final class MaLinearResampler
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<X1> array(Arena arena, int count) {
+	    public static NativeStructArray<X1> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new X1(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<X1> array(Arena arena, X1... structs) {
+	    public static NativeStructArray<X1> array(SegmentAllocator allocator, X1... structs) {
 	        NativeStructArray<X1> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new X1(segment),
 	            structs.length

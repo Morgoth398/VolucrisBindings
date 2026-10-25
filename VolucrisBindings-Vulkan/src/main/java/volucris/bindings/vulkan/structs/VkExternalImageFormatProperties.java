@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -58,8 +59,8 @@ public final class VkExternalImageFormatProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkExternalImageFormatProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkExternalImageFormatProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkExternalImageFormatProperties(MemorySegment segment) {
@@ -129,18 +130,18 @@ public final class VkExternalImageFormatProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkExternalImageFormatProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkExternalImageFormatProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalImageFormatProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkExternalImageFormatProperties> array(Arena arena, VkExternalImageFormatProperties... structs) {
+    public static NativeStructArray<VkExternalImageFormatProperties> array(SegmentAllocator allocator, VkExternalImageFormatProperties... structs) {
         NativeStructArray<VkExternalImageFormatProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalImageFormatProperties(segment),
             structs.length

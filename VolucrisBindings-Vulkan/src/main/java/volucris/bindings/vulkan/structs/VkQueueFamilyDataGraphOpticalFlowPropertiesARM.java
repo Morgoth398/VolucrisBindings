@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -91,8 +92,8 @@ public final class VkQueueFamilyDataGraphOpticalFlowPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkQueueFamilyDataGraphOpticalFlowPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkQueueFamilyDataGraphOpticalFlowPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkQueueFamilyDataGraphOpticalFlowPropertiesARM(MemorySegment segment) {
@@ -225,18 +226,18 @@ public final class VkQueueFamilyDataGraphOpticalFlowPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphOpticalFlowPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkQueueFamilyDataGraphOpticalFlowPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphOpticalFlowPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphOpticalFlowPropertiesARM> array(Arena arena, VkQueueFamilyDataGraphOpticalFlowPropertiesARM... structs) {
+    public static NativeStructArray<VkQueueFamilyDataGraphOpticalFlowPropertiesARM> array(SegmentAllocator allocator, VkQueueFamilyDataGraphOpticalFlowPropertiesARM... structs) {
         NativeStructArray<VkQueueFamilyDataGraphOpticalFlowPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphOpticalFlowPropertiesARM(segment),
             structs.length

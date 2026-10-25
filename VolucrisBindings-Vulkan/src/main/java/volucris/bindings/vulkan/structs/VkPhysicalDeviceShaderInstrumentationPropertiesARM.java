@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceShaderInstrumentationPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderInstrumentationPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderInstrumentationPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderInstrumentationPropertiesARM(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceShaderInstrumentationPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderInstrumentationPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderInstrumentationPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderInstrumentationPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderInstrumentationPropertiesARM> array(Arena arena, VkPhysicalDeviceShaderInstrumentationPropertiesARM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderInstrumentationPropertiesARM> array(SegmentAllocator allocator, VkPhysicalDeviceShaderInstrumentationPropertiesARM... structs) {
         NativeStructArray<VkPhysicalDeviceShaderInstrumentationPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderInstrumentationPropertiesARM(segment),
             structs.length

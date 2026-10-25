@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -49,8 +50,8 @@ public final class VkPresentTimeGOOGLE
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPresentTimeGOOGLE(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPresentTimeGOOGLE(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPresentTimeGOOGLE(MemorySegment segment) {
@@ -98,18 +99,18 @@ public final class VkPresentTimeGOOGLE
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPresentTimeGOOGLE> array(Arena arena, int count) {
+    public static NativeStructArray<VkPresentTimeGOOGLE> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentTimeGOOGLE(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPresentTimeGOOGLE> array(Arena arena, VkPresentTimeGOOGLE... structs) {
+    public static NativeStructArray<VkPresentTimeGOOGLE> array(SegmentAllocator allocator, VkPresentTimeGOOGLE... structs) {
         NativeStructArray<VkPresentTimeGOOGLE> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentTimeGOOGLE(segment),
             structs.length

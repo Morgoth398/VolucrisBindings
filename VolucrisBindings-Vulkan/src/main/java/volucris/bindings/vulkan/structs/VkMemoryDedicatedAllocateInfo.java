@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkMemoryDedicatedAllocateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMemoryDedicatedAllocateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMemoryDedicatedAllocateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMemoryDedicatedAllocateInfo(MemorySegment segment) {
@@ -145,18 +146,18 @@ public final class VkMemoryDedicatedAllocateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMemoryDedicatedAllocateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkMemoryDedicatedAllocateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryDedicatedAllocateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMemoryDedicatedAllocateInfo> array(Arena arena, VkMemoryDedicatedAllocateInfo... structs) {
+    public static NativeStructArray<VkMemoryDedicatedAllocateInfo> array(SegmentAllocator allocator, VkMemoryDedicatedAllocateInfo... structs) {
         NativeStructArray<VkMemoryDedicatedAllocateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryDedicatedAllocateInfo(segment),
             structs.length

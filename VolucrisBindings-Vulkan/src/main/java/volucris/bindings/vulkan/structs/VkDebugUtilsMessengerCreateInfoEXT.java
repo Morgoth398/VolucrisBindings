@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkDebugUtilsMessengerCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDebugUtilsMessengerCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDebugUtilsMessengerCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDebugUtilsMessengerCreateInfoEXT(MemorySegment segment) {
@@ -191,18 +192,18 @@ public final class VkDebugUtilsMessengerCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDebugUtilsMessengerCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDebugUtilsMessengerCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsMessengerCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDebugUtilsMessengerCreateInfoEXT> array(Arena arena, VkDebugUtilsMessengerCreateInfoEXT... structs) {
+    public static NativeStructArray<VkDebugUtilsMessengerCreateInfoEXT> array(SegmentAllocator allocator, VkDebugUtilsMessengerCreateInfoEXT... structs) {
         NativeStructArray<VkDebugUtilsMessengerCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsMessengerCreateInfoEXT(segment),
             structs.length

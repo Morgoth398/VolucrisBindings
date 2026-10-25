@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -68,8 +69,8 @@ public final class VkViewport
 	    this(Arena.ofAuto());
 	}
 	
-	public VkViewport(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkViewport(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkViewport(MemorySegment segment) {
@@ -157,18 +158,18 @@ public final class VkViewport
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkViewport> array(Arena arena, int count) {
+    public static NativeStructArray<VkViewport> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkViewport(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkViewport> array(Arena arena, VkViewport... structs) {
+    public static NativeStructArray<VkViewport> array(SegmentAllocator allocator, VkViewport... structs) {
         NativeStructArray<VkViewport> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkViewport(segment),
             structs.length

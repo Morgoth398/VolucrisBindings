@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDisplaySurfaceStereoCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDisplaySurfaceStereoCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDisplaySurfaceStereoCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDisplaySurfaceStereoCreateInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDisplaySurfaceStereoCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDisplaySurfaceStereoCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkDisplaySurfaceStereoCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplaySurfaceStereoCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDisplaySurfaceStereoCreateInfoNV> array(Arena arena, VkDisplaySurfaceStereoCreateInfoNV... structs) {
+    public static NativeStructArray<VkDisplaySurfaceStereoCreateInfoNV> array(SegmentAllocator allocator, VkDisplaySurfaceStereoCreateInfoNV... structs) {
         NativeStructArray<VkDisplaySurfaceStereoCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplaySurfaceStereoCreateInfoNV(segment),
             structs.length

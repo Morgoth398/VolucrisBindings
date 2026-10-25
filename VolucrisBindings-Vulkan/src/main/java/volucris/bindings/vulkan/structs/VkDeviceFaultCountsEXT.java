@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkDeviceFaultCountsEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceFaultCountsEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceFaultCountsEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceFaultCountsEXT(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkDeviceFaultCountsEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceFaultCountsEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceFaultCountsEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceFaultCountsEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceFaultCountsEXT> array(Arena arena, VkDeviceFaultCountsEXT... structs) {
+    public static NativeStructArray<VkDeviceFaultCountsEXT> array(SegmentAllocator allocator, VkDeviceFaultCountsEXT... structs) {
         NativeStructArray<VkDeviceFaultCountsEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceFaultCountsEXT(segment),
             structs.length

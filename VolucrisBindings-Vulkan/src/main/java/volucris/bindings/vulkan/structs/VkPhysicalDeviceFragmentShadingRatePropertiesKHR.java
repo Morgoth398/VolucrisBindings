@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -135,8 +136,8 @@ public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentShadingRatePropertiesKHR(MemorySegment segment) {
@@ -380,18 +381,18 @@ public final class VkPhysicalDeviceFragmentShadingRatePropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRatePropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRatePropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShadingRatePropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRatePropertiesKHR> array(Arena arena, VkPhysicalDeviceFragmentShadingRatePropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShadingRatePropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentShadingRatePropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentShadingRatePropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShadingRatePropertiesKHR(segment),
             structs.length

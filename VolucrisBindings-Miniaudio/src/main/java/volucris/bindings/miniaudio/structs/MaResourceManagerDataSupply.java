@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -50,8 +51,8 @@ public final class MaResourceManagerDataSupply
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerDataSupply(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerDataSupply(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerDataSupply(MemorySegment segment) {
@@ -106,18 +107,18 @@ public final class MaResourceManagerDataSupply
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerDataSupply> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerDataSupply> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataSupply(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerDataSupply> array(Arena arena, MaResourceManagerDataSupply... structs) {
+    public static NativeStructArray<MaResourceManagerDataSupply> array(SegmentAllocator allocator, MaResourceManagerDataSupply... structs) {
         NativeStructArray<MaResourceManagerDataSupply> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataSupply(segment),
             structs.length
@@ -170,8 +171,8 @@ public final class MaResourceManagerDataSupply
 		    this(Arena.ofAuto());
 		}
 		
-		public Backend(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Backend(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Backend(MemorySegment segment) {
@@ -250,18 +251,18 @@ public final class MaResourceManagerDataSupply
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Backend> array(Arena arena, int count) {
+	    public static NativeStructArray<Backend> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Backend(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Backend> array(Arena arena, Backend... structs) {
+	    public static NativeStructArray<Backend> array(SegmentAllocator allocator, Backend... structs) {
 	        NativeStructArray<Backend> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Backend(segment),
 	            structs.length
@@ -313,8 +314,8 @@ public final class MaResourceManagerDataSupply
 			    this(Arena.ofAuto());
 			}
 			
-			public Encoded(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Encoded(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Encoded(MemorySegment segment) {
@@ -367,18 +368,18 @@ public final class MaResourceManagerDataSupply
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Encoded> array(Arena arena, int count) {
+		    public static NativeStructArray<Encoded> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Encoded(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Encoded> array(Arena arena, Encoded... structs) {
+		    public static NativeStructArray<Encoded> array(SegmentAllocator allocator, Encoded... structs) {
 		        NativeStructArray<Encoded> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Encoded(segment),
 		            structs.length
@@ -453,8 +454,8 @@ public final class MaResourceManagerDataSupply
 			    this(Arena.ofAuto());
 			}
 			
-			public Decoded(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Decoded(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Decoded(MemorySegment segment) {
@@ -547,18 +548,18 @@ public final class MaResourceManagerDataSupply
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Decoded> array(Arena arena, int count) {
+		    public static NativeStructArray<Decoded> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Decoded(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Decoded> array(Arena arena, Decoded... structs) {
+		    public static NativeStructArray<Decoded> array(SegmentAllocator allocator, Decoded... structs) {
 		        NativeStructArray<Decoded> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Decoded(segment),
 		            structs.length
@@ -618,8 +619,8 @@ public final class MaResourceManagerDataSupply
 			    this(Arena.ofAuto());
 			}
 			
-			public DecodedPaged(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public DecodedPaged(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public DecodedPaged(MemorySegment segment) {
@@ -684,18 +685,18 @@ public final class MaResourceManagerDataSupply
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<DecodedPaged> array(Arena arena, int count) {
+		    public static NativeStructArray<DecodedPaged> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new DecodedPaged(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<DecodedPaged> array(Arena arena, DecodedPaged... structs) {
+		    public static NativeStructArray<DecodedPaged> array(SegmentAllocator allocator, DecodedPaged... structs) {
 		        NativeStructArray<DecodedPaged> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new DecodedPaged(segment),
 		            structs.length

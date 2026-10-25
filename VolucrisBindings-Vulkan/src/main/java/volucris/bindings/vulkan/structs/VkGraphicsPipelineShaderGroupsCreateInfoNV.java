@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -74,8 +75,8 @@ public final class VkGraphicsPipelineShaderGroupsCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkGraphicsPipelineShaderGroupsCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkGraphicsPipelineShaderGroupsCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkGraphicsPipelineShaderGroupsCreateInfoNV(MemorySegment segment) {
@@ -178,18 +179,18 @@ public final class VkGraphicsPipelineShaderGroupsCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkGraphicsPipelineShaderGroupsCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkGraphicsPipelineShaderGroupsCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGraphicsPipelineShaderGroupsCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkGraphicsPipelineShaderGroupsCreateInfoNV> array(Arena arena, VkGraphicsPipelineShaderGroupsCreateInfoNV... structs) {
+    public static NativeStructArray<VkGraphicsPipelineShaderGroupsCreateInfoNV> array(SegmentAllocator allocator, VkGraphicsPipelineShaderGroupsCreateInfoNV... structs) {
         NativeStructArray<VkGraphicsPipelineShaderGroupsCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGraphicsPipelineShaderGroupsCreateInfoNV(segment),
             structs.length

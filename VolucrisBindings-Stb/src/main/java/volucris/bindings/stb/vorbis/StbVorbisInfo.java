@@ -6,6 +6,7 @@ package volucris.bindings.stb.vorbis;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -65,8 +66,8 @@ public final class StbVorbisInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public StbVorbisInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StbVorbisInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StbVorbisInfo(MemorySegment segment) {
@@ -154,18 +155,18 @@ public final class StbVorbisInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StbVorbisInfo> array(Arena arena, int count) {
+    public static NativeStructArray<StbVorbisInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StbVorbisInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<StbVorbisInfo> array(Arena arena, StbVorbisInfo... structs) {
+    public static NativeStructArray<StbVorbisInfo> array(SegmentAllocator allocator, StbVorbisInfo... structs) {
         NativeStructArray<StbVorbisInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StbVorbisInfo(segment),
             structs.length

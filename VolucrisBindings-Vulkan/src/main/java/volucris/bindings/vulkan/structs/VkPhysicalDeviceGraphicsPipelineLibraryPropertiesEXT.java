@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT> array(Arena arena, VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceGraphicsPipelineLibraryPropertiesEXT(segment),
             structs.length

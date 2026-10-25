@@ -6,6 +6,7 @@ package volucris.bindings.assimp.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -59,8 +60,8 @@ public final class AiMetadata
 	    this(Arena.ofAuto());
 	}
 	
-	public AiMetadata(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public AiMetadata(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public AiMetadata(MemorySegment segment) {

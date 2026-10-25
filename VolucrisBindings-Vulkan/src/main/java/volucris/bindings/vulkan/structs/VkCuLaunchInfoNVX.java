@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -113,8 +114,8 @@ public final class VkCuLaunchInfoNVX
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCuLaunchInfoNVX(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCuLaunchInfoNVX(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCuLaunchInfoNVX(MemorySegment segment) {
@@ -302,18 +303,18 @@ public final class VkCuLaunchInfoNVX
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCuLaunchInfoNVX> array(Arena arena, int count) {
+    public static NativeStructArray<VkCuLaunchInfoNVX> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCuLaunchInfoNVX(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCuLaunchInfoNVX> array(Arena arena, VkCuLaunchInfoNVX... structs) {
+    public static NativeStructArray<VkCuLaunchInfoNVX> array(SegmentAllocator allocator, VkCuLaunchInfoNVX... structs) {
         NativeStructArray<VkCuLaunchInfoNVX> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCuLaunchInfoNVX(segment),
             structs.length

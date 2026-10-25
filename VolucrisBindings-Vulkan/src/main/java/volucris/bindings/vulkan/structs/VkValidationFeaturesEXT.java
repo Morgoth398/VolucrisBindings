@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -74,8 +75,8 @@ public final class VkValidationFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkValidationFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkValidationFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkValidationFeaturesEXT(MemorySegment segment) {
@@ -178,18 +179,18 @@ public final class VkValidationFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkValidationFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkValidationFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkValidationFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkValidationFeaturesEXT> array(Arena arena, VkValidationFeaturesEXT... structs) {
+    public static NativeStructArray<VkValidationFeaturesEXT> array(SegmentAllocator allocator, VkValidationFeaturesEXT... structs) {
         NativeStructArray<VkValidationFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkValidationFeaturesEXT(segment),
             structs.length

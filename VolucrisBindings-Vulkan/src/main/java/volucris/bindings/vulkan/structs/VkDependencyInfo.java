@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -88,8 +89,8 @@ public final class VkDependencyInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDependencyInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDependencyInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDependencyInfo(MemorySegment segment) {
@@ -227,18 +228,18 @@ public final class VkDependencyInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDependencyInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDependencyInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDependencyInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDependencyInfo> array(Arena arena, VkDependencyInfo... structs) {
+    public static NativeStructArray<VkDependencyInfo> array(SegmentAllocator allocator, VkDependencyInfo... structs) {
         NativeStructArray<VkDependencyInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDependencyInfo(segment),
             structs.length

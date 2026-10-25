@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -131,8 +132,8 @@ public final class VkSamplerCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSamplerCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSamplerCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSamplerCreateInfo(MemorySegment segment) {
@@ -345,18 +346,18 @@ public final class VkSamplerCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSamplerCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkSamplerCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSamplerCreateInfo> array(Arena arena, VkSamplerCreateInfo... structs) {
+    public static NativeStructArray<VkSamplerCreateInfo> array(SegmentAllocator allocator, VkSamplerCreateInfo... structs) {
         NativeStructArray<VkSamplerCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerCreateInfo(segment),
             structs.length

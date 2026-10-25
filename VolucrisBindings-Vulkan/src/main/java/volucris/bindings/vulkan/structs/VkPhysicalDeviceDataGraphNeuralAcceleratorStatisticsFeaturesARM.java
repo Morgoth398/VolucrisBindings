@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesA
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesA
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM> array(Arena arena, VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM> array(SegmentAllocator allocator, VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM... structs) {
         NativeStructArray<VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesARM(segment),
             structs.length

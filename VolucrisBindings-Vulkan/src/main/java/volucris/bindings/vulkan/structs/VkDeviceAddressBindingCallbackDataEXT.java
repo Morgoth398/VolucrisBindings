@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -73,8 +74,8 @@ public final class VkDeviceAddressBindingCallbackDataEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceAddressBindingCallbackDataEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceAddressBindingCallbackDataEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceAddressBindingCallbackDataEXT(MemorySegment segment) {
@@ -167,18 +168,18 @@ public final class VkDeviceAddressBindingCallbackDataEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceAddressBindingCallbackDataEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceAddressBindingCallbackDataEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceAddressBindingCallbackDataEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceAddressBindingCallbackDataEXT> array(Arena arena, VkDeviceAddressBindingCallbackDataEXT... structs) {
+    public static NativeStructArray<VkDeviceAddressBindingCallbackDataEXT> array(SegmentAllocator allocator, VkDeviceAddressBindingCallbackDataEXT... structs) {
         NativeStructArray<VkDeviceAddressBindingCallbackDataEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceAddressBindingCallbackDataEXT(segment),
             structs.length

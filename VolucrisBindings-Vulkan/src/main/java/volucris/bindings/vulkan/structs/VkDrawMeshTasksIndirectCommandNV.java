@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkDrawMeshTasksIndirectCommandNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDrawMeshTasksIndirectCommandNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDrawMeshTasksIndirectCommandNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDrawMeshTasksIndirectCommandNV(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkDrawMeshTasksIndirectCommandNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDrawMeshTasksIndirectCommandNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkDrawMeshTasksIndirectCommandNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDrawMeshTasksIndirectCommandNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDrawMeshTasksIndirectCommandNV> array(Arena arena, VkDrawMeshTasksIndirectCommandNV... structs) {
+    public static NativeStructArray<VkDrawMeshTasksIndirectCommandNV> array(SegmentAllocator allocator, VkDrawMeshTasksIndirectCommandNV... structs) {
         NativeStructArray<VkDrawMeshTasksIndirectCommandNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDrawMeshTasksIndirectCommandNV(segment),
             structs.length

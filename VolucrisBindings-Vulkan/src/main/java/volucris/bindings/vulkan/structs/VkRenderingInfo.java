@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -92,8 +93,8 @@ public final class VkRenderingInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderingInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderingInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderingInfo(MemorySegment segment) {
@@ -248,18 +249,18 @@ public final class VkRenderingInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderingInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderingInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderingInfo> array(Arena arena, VkRenderingInfo... structs) {
+    public static NativeStructArray<VkRenderingInfo> array(SegmentAllocator allocator, VkRenderingInfo... structs) {
         NativeStructArray<VkRenderingInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingInfo(segment),
             structs.length

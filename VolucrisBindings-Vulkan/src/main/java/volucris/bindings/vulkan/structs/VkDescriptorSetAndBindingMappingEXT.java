@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -83,8 +84,8 @@ public final class VkDescriptorSetAndBindingMappingEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorSetAndBindingMappingEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorSetAndBindingMappingEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorSetAndBindingMappingEXT(MemorySegment segment) {
@@ -204,18 +205,18 @@ public final class VkDescriptorSetAndBindingMappingEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorSetAndBindingMappingEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorSetAndBindingMappingEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetAndBindingMappingEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorSetAndBindingMappingEXT> array(Arena arena, VkDescriptorSetAndBindingMappingEXT... structs) {
+    public static NativeStructArray<VkDescriptorSetAndBindingMappingEXT> array(SegmentAllocator allocator, VkDescriptorSetAndBindingMappingEXT... structs) {
         NativeStructArray<VkDescriptorSetAndBindingMappingEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetAndBindingMappingEXT(segment),
             structs.length

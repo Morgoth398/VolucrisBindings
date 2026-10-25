@@ -6,6 +6,7 @@ package volucris.bindings.par;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class ParShapesMesh
 	    this(Arena.ofAuto());
 	}
 	
-	public ParShapesMesh(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public ParShapesMesh(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public ParShapesMesh(MemorySegment segment) {
@@ -198,18 +199,18 @@ public final class ParShapesMesh
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<ParShapesMesh> array(Arena arena, int count) {
+    public static NativeStructArray<ParShapesMesh> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new ParShapesMesh(segment),
             count
         );
     }
     
-    public static NativeStructArray<ParShapesMesh> array(Arena arena, ParShapesMesh... structs) {
+    public static NativeStructArray<ParShapesMesh> array(SegmentAllocator allocator, ParShapesMesh... structs) {
         NativeStructArray<ParShapesMesh> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new ParShapesMesh(segment),
             structs.length

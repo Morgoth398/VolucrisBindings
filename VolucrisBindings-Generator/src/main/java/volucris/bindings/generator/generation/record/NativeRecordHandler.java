@@ -2,6 +2,7 @@ package volucris.bindings.generator.generation.record;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -166,6 +167,8 @@ public class NativeRecordHandler {
 							)
 					)
 			);
+			
+			clazz.addImport(SegmentAllocator.class.getCanonicalName());
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

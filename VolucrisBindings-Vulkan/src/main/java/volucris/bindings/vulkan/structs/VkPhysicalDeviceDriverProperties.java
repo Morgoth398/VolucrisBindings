@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -72,8 +73,8 @@ public final class VkPhysicalDeviceDriverProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDriverProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDriverProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDriverProperties(MemorySegment segment) {
@@ -181,18 +182,18 @@ public final class VkPhysicalDeviceDriverProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDriverProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDriverProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDriverProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDriverProperties> array(Arena arena, VkPhysicalDeviceDriverProperties... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDriverProperties> array(SegmentAllocator allocator, VkPhysicalDeviceDriverProperties... structs) {
         NativeStructArray<VkPhysicalDeviceDriverProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDriverProperties(segment),
             structs.length

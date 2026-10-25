@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkDataGraphPipelineShaderModuleCreateInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineShaderModuleCreateInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineShaderModuleCreateInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineShaderModuleCreateInfoARM(MemorySegment segment) {
@@ -127,8 +128,8 @@ public final class VkDataGraphPipelineShaderModuleCreateInfoARM
     }
     
     /// @see #pName()
-    public VkDataGraphPipelineShaderModuleCreateInfoARM pName(Arena arena, String pName) {
-    	P_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pName));
+    public VkDataGraphPipelineShaderModuleCreateInfoARM pName(SegmentAllocator allocator, String pName) {
+    	P_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pName));
     	return this;
     }
     
@@ -201,18 +202,18 @@ public final class VkDataGraphPipelineShaderModuleCreateInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineShaderModuleCreateInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineShaderModuleCreateInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineShaderModuleCreateInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineShaderModuleCreateInfoARM> array(Arena arena, VkDataGraphPipelineShaderModuleCreateInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineShaderModuleCreateInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineShaderModuleCreateInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineShaderModuleCreateInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineShaderModuleCreateInfoARM(segment),
             structs.length

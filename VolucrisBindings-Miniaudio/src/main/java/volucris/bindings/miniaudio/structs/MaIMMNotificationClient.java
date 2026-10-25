@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -53,8 +54,8 @@ public final class MaIMMNotificationClient
 	    this(Arena.ofAuto());
 	}
 	
-	public MaIMMNotificationClient(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaIMMNotificationClient(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaIMMNotificationClient(MemorySegment segment) {
@@ -122,18 +123,18 @@ public final class MaIMMNotificationClient
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaIMMNotificationClient> array(Arena arena, int count) {
+    public static NativeStructArray<MaIMMNotificationClient> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaIMMNotificationClient(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaIMMNotificationClient> array(Arena arena, MaIMMNotificationClient... structs) {
+    public static NativeStructArray<MaIMMNotificationClient> array(SegmentAllocator allocator, MaIMMNotificationClient... structs) {
         NativeStructArray<MaIMMNotificationClient> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaIMMNotificationClient(segment),
             structs.length

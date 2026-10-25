@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkSwapchainLatencyCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSwapchainLatencyCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSwapchainLatencyCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSwapchainLatencyCreateInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkSwapchainLatencyCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSwapchainLatencyCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkSwapchainLatencyCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainLatencyCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSwapchainLatencyCreateInfoNV> array(Arena arena, VkSwapchainLatencyCreateInfoNV... structs) {
+    public static NativeStructArray<VkSwapchainLatencyCreateInfoNV> array(SegmentAllocator allocator, VkSwapchainLatencyCreateInfoNV... structs) {
         NativeStructArray<VkSwapchainLatencyCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainLatencyCreateInfoNV(segment),
             structs.length

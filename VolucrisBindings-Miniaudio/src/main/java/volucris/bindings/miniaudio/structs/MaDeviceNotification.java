@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -54,8 +55,8 @@ public final class MaDeviceNotification
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDeviceNotification(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDeviceNotification(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDeviceNotification(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class MaDeviceNotification
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDeviceNotification> array(Arena arena, int count) {
+    public static NativeStructArray<MaDeviceNotification> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceNotification(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDeviceNotification> array(Arena arena, MaDeviceNotification... structs) {
+    public static NativeStructArray<MaDeviceNotification> array(SegmentAllocator allocator, MaDeviceNotification... structs) {
         NativeStructArray<MaDeviceNotification> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceNotification(segment),
             structs.length
@@ -193,8 +194,8 @@ public final class MaDeviceNotification
 		    this(Arena.ofAuto());
 		}
 		
-		public Data(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Data(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Data(MemorySegment segment) {
@@ -290,18 +291,18 @@ public final class MaDeviceNotification
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, int count) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, Data... structs) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, Data... structs) {
 	        NativeStructArray<Data> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            structs.length
@@ -348,8 +349,8 @@ public final class MaDeviceNotification
 			    this(Arena.ofAuto());
 			}
 			
-			public Started(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Started(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Started(MemorySegment segment) {
@@ -387,18 +388,18 @@ public final class MaDeviceNotification
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Started> array(Arena arena, int count) {
+		    public static NativeStructArray<Started> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Started(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Started> array(Arena arena, Started... structs) {
+		    public static NativeStructArray<Started> array(SegmentAllocator allocator, Started... structs) {
 		        NativeStructArray<Started> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Started(segment),
 		            structs.length
@@ -447,8 +448,8 @@ public final class MaDeviceNotification
 			    this(Arena.ofAuto());
 			}
 			
-			public Stopped(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Stopped(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Stopped(MemorySegment segment) {
@@ -486,18 +487,18 @@ public final class MaDeviceNotification
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Stopped> array(Arena arena, int count) {
+		    public static NativeStructArray<Stopped> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Stopped(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Stopped> array(Arena arena, Stopped... structs) {
+		    public static NativeStructArray<Stopped> array(SegmentAllocator allocator, Stopped... structs) {
 		        NativeStructArray<Stopped> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Stopped(segment),
 		            structs.length
@@ -546,8 +547,8 @@ public final class MaDeviceNotification
 			    this(Arena.ofAuto());
 			}
 			
-			public Rerouted(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Rerouted(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Rerouted(MemorySegment segment) {
@@ -585,18 +586,18 @@ public final class MaDeviceNotification
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Rerouted> array(Arena arena, int count) {
+		    public static NativeStructArray<Rerouted> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Rerouted(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Rerouted> array(Arena arena, Rerouted... structs) {
+		    public static NativeStructArray<Rerouted> array(SegmentAllocator allocator, Rerouted... structs) {
 		        NativeStructArray<Rerouted> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Rerouted(segment),
 		            structs.length
@@ -645,8 +646,8 @@ public final class MaDeviceNotification
 			    this(Arena.ofAuto());
 			}
 			
-			public Interruption(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Interruption(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Interruption(MemorySegment segment) {
@@ -684,18 +685,18 @@ public final class MaDeviceNotification
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Interruption> array(Arena arena, int count) {
+		    public static NativeStructArray<Interruption> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Interruption(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Interruption> array(Arena arena, Interruption... structs) {
+		    public static NativeStructArray<Interruption> array(SegmentAllocator allocator, Interruption... structs) {
 		        NativeStructArray<Interruption> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Interruption(segment),
 		            structs.length

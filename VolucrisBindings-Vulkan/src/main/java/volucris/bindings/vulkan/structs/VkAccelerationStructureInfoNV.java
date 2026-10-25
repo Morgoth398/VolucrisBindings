@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -76,8 +77,8 @@ public final class VkAccelerationStructureInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureInfoNV(MemorySegment segment) {
@@ -185,18 +186,18 @@ public final class VkAccelerationStructureInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureInfoNV> array(Arena arena, VkAccelerationStructureInfoNV... structs) {
+    public static NativeStructArray<VkAccelerationStructureInfoNV> array(SegmentAllocator allocator, VkAccelerationStructureInfoNV... structs) {
         NativeStructArray<VkAccelerationStructureInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureInfoNV(segment),
             structs.length

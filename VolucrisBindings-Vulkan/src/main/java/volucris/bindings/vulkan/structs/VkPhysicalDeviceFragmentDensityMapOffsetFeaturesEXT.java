@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT> array(Arena arena, VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMapOffsetFeaturesEXT(segment),
             structs.length

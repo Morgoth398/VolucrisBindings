@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkVideoEncodeH264FrameSizeKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeH264FrameSizeKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeH264FrameSizeKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeH264FrameSizeKHR(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkVideoEncodeH264FrameSizeKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeH264FrameSizeKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeH264FrameSizeKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeH264FrameSizeKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeH264FrameSizeKHR> array(Arena arena, VkVideoEncodeH264FrameSizeKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeH264FrameSizeKHR> array(SegmentAllocator allocator, VkVideoEncodeH264FrameSizeKHR... structs) {
         NativeStructArray<VkVideoEncodeH264FrameSizeKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeH264FrameSizeKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT> array(Arena arena, VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRayTracingInvocationReorderFeaturesEXT(segment),
             structs.length

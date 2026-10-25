@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkCuFunctionCreateInfoNVX
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCuFunctionCreateInfoNVX(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCuFunctionCreateInfoNVX(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCuFunctionCreateInfoNVX(MemorySegment segment) {
@@ -111,8 +112,8 @@ public final class VkCuFunctionCreateInfoNVX
     }
     
     /// @see #pName()
-    public VkCuFunctionCreateInfoNVX pName(Arena arena, String pName) {
-    	P_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pName));
+    public VkCuFunctionCreateInfoNVX pName(SegmentAllocator allocator, String pName) {
+    	P_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pName));
     	return this;
     }
     
@@ -145,18 +146,18 @@ public final class VkCuFunctionCreateInfoNVX
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCuFunctionCreateInfoNVX> array(Arena arena, int count) {
+    public static NativeStructArray<VkCuFunctionCreateInfoNVX> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCuFunctionCreateInfoNVX(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCuFunctionCreateInfoNVX> array(Arena arena, VkCuFunctionCreateInfoNVX... structs) {
+    public static NativeStructArray<VkCuFunctionCreateInfoNVX> array(SegmentAllocator allocator, VkCuFunctionCreateInfoNVX... structs) {
         NativeStructArray<VkCuFunctionCreateInfoNVX> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCuFunctionCreateInfoNVX(segment),
             structs.length

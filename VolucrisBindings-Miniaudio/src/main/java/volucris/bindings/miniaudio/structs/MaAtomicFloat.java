@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -40,8 +41,8 @@ public final class MaAtomicFloat
 	    this(Arena.ofAuto());
 	}
 	
-	public MaAtomicFloat(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaAtomicFloat(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaAtomicFloat(MemorySegment segment) {
@@ -79,18 +80,18 @@ public final class MaAtomicFloat
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaAtomicFloat> array(Arena arena, int count) {
+    public static NativeStructArray<MaAtomicFloat> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicFloat(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaAtomicFloat> array(Arena arena, MaAtomicFloat... structs) {
+    public static NativeStructArray<MaAtomicFloat> array(SegmentAllocator allocator, MaAtomicFloat... structs) {
         NativeStructArray<MaAtomicFloat> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAtomicFloat(segment),
             structs.length

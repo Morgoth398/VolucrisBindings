@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkDataGraphPipelineCompilerControlCreateInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineCompilerControlCreateInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineCompilerControlCreateInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineCompilerControlCreateInfoARM(MemorySegment segment) {
@@ -91,8 +92,8 @@ public final class VkDataGraphPipelineCompilerControlCreateInfoARM
     }
     
     /// @see #pVendorOptions()
-    public VkDataGraphPipelineCompilerControlCreateInfoARM pVendorOptions(Arena arena, String pVendorOptions) {
-    	P_VENDOR_OPTIONS_HANDLE.set(segment, 0L, arena.allocateFrom(pVendorOptions));
+    public VkDataGraphPipelineCompilerControlCreateInfoARM pVendorOptions(SegmentAllocator allocator, String pVendorOptions) {
+    	P_VENDOR_OPTIONS_HANDLE.set(segment, 0L, allocator.allocateFrom(pVendorOptions));
     	return this;
     }
     
@@ -125,18 +126,18 @@ public final class VkDataGraphPipelineCompilerControlCreateInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineCompilerControlCreateInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineCompilerControlCreateInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineCompilerControlCreateInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineCompilerControlCreateInfoARM> array(Arena arena, VkDataGraphPipelineCompilerControlCreateInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineCompilerControlCreateInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineCompilerControlCreateInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineCompilerControlCreateInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineCompilerControlCreateInfoARM(segment),
             structs.length

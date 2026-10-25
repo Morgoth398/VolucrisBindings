@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkWriteDescriptorSetPartitionedAccelerationStructureNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkWriteDescriptorSetPartitionedAccelerationStructureNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkWriteDescriptorSetPartitionedAccelerationStructureNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkWriteDescriptorSetPartitionedAccelerationStructureNV(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkWriteDescriptorSetPartitionedAccelerationStructureNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkWriteDescriptorSetPartitionedAccelerationStructureNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkWriteDescriptorSetPartitionedAccelerationStructureNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkWriteDescriptorSetPartitionedAccelerationStructureNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkWriteDescriptorSetPartitionedAccelerationStructureNV> array(Arena arena, VkWriteDescriptorSetPartitionedAccelerationStructureNV... structs) {
+    public static NativeStructArray<VkWriteDescriptorSetPartitionedAccelerationStructureNV> array(SegmentAllocator allocator, VkWriteDescriptorSetPartitionedAccelerationStructureNV... structs) {
         NativeStructArray<VkWriteDescriptorSetPartitionedAccelerationStructureNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkWriteDescriptorSetPartitionedAccelerationStructureNV(segment),
             structs.length

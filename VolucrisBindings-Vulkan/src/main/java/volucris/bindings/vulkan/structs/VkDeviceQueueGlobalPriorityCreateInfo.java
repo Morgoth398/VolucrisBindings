@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDeviceQueueGlobalPriorityCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceQueueGlobalPriorityCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceQueueGlobalPriorityCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceQueueGlobalPriorityCreateInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDeviceQueueGlobalPriorityCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceQueueGlobalPriorityCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceQueueGlobalPriorityCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceQueueGlobalPriorityCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceQueueGlobalPriorityCreateInfo> array(Arena arena, VkDeviceQueueGlobalPriorityCreateInfo... structs) {
+    public static NativeStructArray<VkDeviceQueueGlobalPriorityCreateInfo> array(SegmentAllocator allocator, VkDeviceQueueGlobalPriorityCreateInfo... structs) {
         NativeStructArray<VkDeviceQueueGlobalPriorityCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceQueueGlobalPriorityCreateInfo(segment),
             structs.length

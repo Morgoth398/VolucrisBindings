@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkRenderPassCreationControlEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassCreationControlEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassCreationControlEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassCreationControlEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkRenderPassCreationControlEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassCreationControlEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassCreationControlEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassCreationControlEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassCreationControlEXT> array(Arena arena, VkRenderPassCreationControlEXT... structs) {
+    public static NativeStructArray<VkRenderPassCreationControlEXT> array(SegmentAllocator allocator, VkRenderPassCreationControlEXT... structs) {
         NativeStructArray<VkRenderPassCreationControlEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassCreationControlEXT(segment),
             structs.length

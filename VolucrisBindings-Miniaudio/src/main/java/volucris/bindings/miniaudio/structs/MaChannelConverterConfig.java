@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -80,8 +81,8 @@ public final class MaChannelConverterConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaChannelConverterConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaChannelConverterConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaChannelConverterConfig(MemorySegment segment) {
@@ -204,18 +205,18 @@ public final class MaChannelConverterConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaChannelConverterConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaChannelConverterConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaChannelConverterConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaChannelConverterConfig> array(Arena arena, MaChannelConverterConfig... structs) {
+    public static NativeStructArray<MaChannelConverterConfig> array(SegmentAllocator allocator, MaChannelConverterConfig... structs) {
         NativeStructArray<MaChannelConverterConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaChannelConverterConfig(segment),
             structs.length

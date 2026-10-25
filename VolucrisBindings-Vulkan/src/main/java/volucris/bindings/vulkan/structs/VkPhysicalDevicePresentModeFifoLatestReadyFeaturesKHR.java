@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR> array(Arena arena, VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePresentModeFifoLatestReadyFeaturesKHR(segment),
             structs.length

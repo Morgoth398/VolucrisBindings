@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPipelineCoverageReductionStateCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineCoverageReductionStateCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineCoverageReductionStateCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineCoverageReductionStateCreateInfoNV(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPipelineCoverageReductionStateCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineCoverageReductionStateCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineCoverageReductionStateCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCoverageReductionStateCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineCoverageReductionStateCreateInfoNV> array(Arena arena, VkPipelineCoverageReductionStateCreateInfoNV... structs) {
+    public static NativeStructArray<VkPipelineCoverageReductionStateCreateInfoNV> array(SegmentAllocator allocator, VkPipelineCoverageReductionStateCreateInfoNV... structs) {
         NativeStructArray<VkPipelineCoverageReductionStateCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCoverageReductionStateCreateInfoNV(segment),
             structs.length

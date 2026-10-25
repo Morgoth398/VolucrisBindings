@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -51,8 +52,8 @@ public final class VkBaseOutStructure
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBaseOutStructure(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBaseOutStructure(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBaseOutStructure(MemorySegment segment) {
@@ -105,18 +106,18 @@ public final class VkBaseOutStructure
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBaseOutStructure> array(Arena arena, int count) {
+    public static NativeStructArray<VkBaseOutStructure> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBaseOutStructure(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBaseOutStructure> array(Arena arena, VkBaseOutStructure... structs) {
+    public static NativeStructArray<VkBaseOutStructure> array(SegmentAllocator allocator, VkBaseOutStructure... structs) {
         NativeStructArray<VkBaseOutStructure> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBaseOutStructure(segment),
             structs.length

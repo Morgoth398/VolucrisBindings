@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkMicromapUsageEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMicromapUsageEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMicromapUsageEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMicromapUsageEXT(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkMicromapUsageEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMicromapUsageEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMicromapUsageEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMicromapUsageEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMicromapUsageEXT> array(Arena arena, VkMicromapUsageEXT... structs) {
+    public static NativeStructArray<VkMicromapUsageEXT> array(SegmentAllocator allocator, VkMicromapUsageEXT... structs) {
         NativeStructArray<VkMicromapUsageEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMicromapUsageEXT(segment),
             structs.length

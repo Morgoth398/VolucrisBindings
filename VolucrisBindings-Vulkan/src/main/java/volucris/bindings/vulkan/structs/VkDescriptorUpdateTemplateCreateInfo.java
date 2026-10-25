@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -94,8 +95,8 @@ public final class VkDescriptorUpdateTemplateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorUpdateTemplateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorUpdateTemplateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorUpdateTemplateCreateInfo(MemorySegment segment) {
@@ -243,18 +244,18 @@ public final class VkDescriptorUpdateTemplateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorUpdateTemplateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorUpdateTemplateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorUpdateTemplateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorUpdateTemplateCreateInfo> array(Arena arena, VkDescriptorUpdateTemplateCreateInfo... structs) {
+    public static NativeStructArray<VkDescriptorUpdateTemplateCreateInfo> array(SegmentAllocator allocator, VkDescriptorUpdateTemplateCreateInfo... structs) {
         NativeStructArray<VkDescriptorUpdateTemplateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorUpdateTemplateCreateInfo(segment),
             structs.length

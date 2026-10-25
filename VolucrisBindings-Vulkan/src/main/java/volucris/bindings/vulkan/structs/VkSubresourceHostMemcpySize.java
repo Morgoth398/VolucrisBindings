@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkSubresourceHostMemcpySize
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSubresourceHostMemcpySize(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSubresourceHostMemcpySize(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSubresourceHostMemcpySize(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkSubresourceHostMemcpySize
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSubresourceHostMemcpySize> array(Arena arena, int count) {
+    public static NativeStructArray<VkSubresourceHostMemcpySize> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubresourceHostMemcpySize(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSubresourceHostMemcpySize> array(Arena arena, VkSubresourceHostMemcpySize... structs) {
+    public static NativeStructArray<VkSubresourceHostMemcpySize> array(SegmentAllocator allocator, VkSubresourceHostMemcpySize... structs) {
         NativeStructArray<VkSubresourceHostMemcpySize> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubresourceHostMemcpySize(segment),
             structs.length

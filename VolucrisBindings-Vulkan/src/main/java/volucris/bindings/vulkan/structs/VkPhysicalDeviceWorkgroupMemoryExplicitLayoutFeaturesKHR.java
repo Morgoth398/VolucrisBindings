@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR> array(Arena arena, VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKHR(segment),
             structs.length

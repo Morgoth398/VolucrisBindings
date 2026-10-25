@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkPipelineIndirectDeviceAddressInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineIndirectDeviceAddressInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineIndirectDeviceAddressInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineIndirectDeviceAddressInfoNV(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkPipelineIndirectDeviceAddressInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineIndirectDeviceAddressInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineIndirectDeviceAddressInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineIndirectDeviceAddressInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineIndirectDeviceAddressInfoNV> array(Arena arena, VkPipelineIndirectDeviceAddressInfoNV... structs) {
+    public static NativeStructArray<VkPipelineIndirectDeviceAddressInfoNV> array(SegmentAllocator allocator, VkPipelineIndirectDeviceAddressInfoNV... structs) {
         NativeStructArray<VkPipelineIndirectDeviceAddressInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineIndirectDeviceAddressInfoNV(segment),
             structs.length

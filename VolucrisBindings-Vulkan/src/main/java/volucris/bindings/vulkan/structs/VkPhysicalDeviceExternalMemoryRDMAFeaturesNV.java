@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceExternalMemoryRDMAFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceExternalMemoryRDMAFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExternalMemoryRDMAFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceExternalMemoryRDMAFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExternalMemoryRDMAFeaturesNV> array(Arena arena, VkPhysicalDeviceExternalMemoryRDMAFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceExternalMemoryRDMAFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceExternalMemoryRDMAFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceExternalMemoryRDMAFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExternalMemoryRDMAFeaturesNV(segment),
             structs.length

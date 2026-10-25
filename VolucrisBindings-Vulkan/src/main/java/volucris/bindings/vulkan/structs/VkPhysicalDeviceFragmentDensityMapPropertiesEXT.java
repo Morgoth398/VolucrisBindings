@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -67,8 +68,8 @@ public final class VkPhysicalDeviceFragmentDensityMapPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentDensityMapPropertiesEXT(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPhysicalDeviceFragmentDensityMapPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMapPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapPropertiesEXT> array(Arena arena, VkPhysicalDeviceFragmentDensityMapPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMapPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentDensityMapPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentDensityMapPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMapPropertiesEXT(segment),
             structs.length

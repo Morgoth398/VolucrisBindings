@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -76,8 +77,8 @@ public final class VkDisplayPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDisplayPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDisplayPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDisplayPropertiesKHR(MemorySegment segment) {
@@ -103,8 +104,8 @@ public final class VkDisplayPropertiesKHR
     }
     
     /// @see #displayName()
-    public VkDisplayPropertiesKHR displayName(Arena arena, String displayName) {
-    	DISPLAY_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(displayName));
+    public VkDisplayPropertiesKHR displayName(SegmentAllocator allocator, String displayName) {
+    	DISPLAY_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(displayName));
     	return this;
     }
     
@@ -199,18 +200,18 @@ public final class VkDisplayPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDisplayPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDisplayPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDisplayPropertiesKHR> array(Arena arena, VkDisplayPropertiesKHR... structs) {
+    public static NativeStructArray<VkDisplayPropertiesKHR> array(SegmentAllocator allocator, VkDisplayPropertiesKHR... structs) {
         NativeStructArray<VkDisplayPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayPropertiesKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -90,8 +91,8 @@ public final class VkClusterAccelerationStructureCommandsInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkClusterAccelerationStructureCommandsInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkClusterAccelerationStructureCommandsInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkClusterAccelerationStructureCommandsInfoNV(MemorySegment segment) {
@@ -252,18 +253,18 @@ public final class VkClusterAccelerationStructureCommandsInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureCommandsInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkClusterAccelerationStructureCommandsInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureCommandsInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureCommandsInfoNV> array(Arena arena, VkClusterAccelerationStructureCommandsInfoNV... structs) {
+    public static NativeStructArray<VkClusterAccelerationStructureCommandsInfoNV> array(SegmentAllocator allocator, VkClusterAccelerationStructureCommandsInfoNV... structs) {
         NativeStructArray<VkClusterAccelerationStructureCommandsInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureCommandsInfoNV(segment),
             structs.length

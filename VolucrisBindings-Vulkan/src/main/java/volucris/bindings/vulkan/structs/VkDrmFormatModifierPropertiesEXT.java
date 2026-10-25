@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkDrmFormatModifierPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDrmFormatModifierPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDrmFormatModifierPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDrmFormatModifierPropertiesEXT(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkDrmFormatModifierPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDrmFormatModifierPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDrmFormatModifierPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDrmFormatModifierPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDrmFormatModifierPropertiesEXT> array(Arena arena, VkDrmFormatModifierPropertiesEXT... structs) {
+    public static NativeStructArray<VkDrmFormatModifierPropertiesEXT> array(SegmentAllocator allocator, VkDrmFormatModifierPropertiesEXT... structs) {
         NativeStructArray<VkDrmFormatModifierPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDrmFormatModifierPropertiesEXT(segment),
             structs.length

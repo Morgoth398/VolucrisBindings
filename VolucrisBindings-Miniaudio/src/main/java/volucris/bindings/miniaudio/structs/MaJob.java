@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -62,8 +63,8 @@ public final class MaJob
 	    this(Arena.ofAuto());
 	}
 	
-	public MaJob(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaJob(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaJob(MemorySegment segment) {
@@ -145,18 +146,18 @@ public final class MaJob
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaJob> array(Arena arena, int count) {
+    public static NativeStructArray<MaJob> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaJob(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaJob> array(Arena arena, MaJob... structs) {
+    public static NativeStructArray<MaJob> array(SegmentAllocator allocator, MaJob... structs) {
         NativeStructArray<MaJob> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaJob(segment),
             structs.length
@@ -208,8 +209,8 @@ public final class MaJob
 		    this(Arena.ofAuto());
 		}
 		
-		public Toc(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Toc(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Toc(MemorySegment segment) {
@@ -264,18 +265,18 @@ public final class MaJob
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Toc> array(Arena arena, int count) {
+	    public static NativeStructArray<Toc> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Toc(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Toc> array(Arena arena, Toc... structs) {
+	    public static NativeStructArray<Toc> array(SegmentAllocator allocator, Toc... structs) {
 	        NativeStructArray<Toc> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Toc(segment),
 	            structs.length
@@ -332,8 +333,8 @@ public final class MaJob
 			    this(Arena.ofAuto());
 			}
 			
-			public Breakup(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Breakup(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Breakup(MemorySegment segment) {
@@ -391,18 +392,18 @@ public final class MaJob
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Breakup> array(Arena arena, int count) {
+		    public static NativeStructArray<Breakup> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Breakup(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Breakup> array(Arena arena, Breakup... structs) {
+		    public static NativeStructArray<Breakup> array(SegmentAllocator allocator, Breakup... structs) {
 		        NativeStructArray<Breakup> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Breakup(segment),
 		            structs.length
@@ -458,8 +459,8 @@ public final class MaJob
 		    this(Arena.ofAuto());
 		}
 		
-		public Data(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Data(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Data(MemorySegment segment) {
@@ -538,18 +539,18 @@ public final class MaJob
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, int count) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Data> array(Arena arena, Data... structs) {
+	    public static NativeStructArray<Data> array(SegmentAllocator allocator, Data... structs) {
 	        NativeStructArray<Data> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Data(segment),
 	            structs.length
@@ -606,8 +607,8 @@ public final class MaJob
 			    this(Arena.ofAuto());
 			}
 			
-			public Custom(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Custom(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Custom(MemorySegment segment) {
@@ -670,18 +671,18 @@ public final class MaJob
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Custom> array(Arena arena, int count) {
+		    public static NativeStructArray<Custom> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Custom(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Custom> array(Arena arena, Custom... structs) {
+		    public static NativeStructArray<Custom> array(SegmentAllocator allocator, Custom... structs) {
 		        NativeStructArray<Custom> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Custom(segment),
 		            structs.length
@@ -760,8 +761,8 @@ public final class MaJob
 			    this(Arena.ofAuto());
 			}
 			
-			public ResourceManager(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public ResourceManager(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public ResourceManager(MemorySegment segment) {
@@ -942,18 +943,18 @@ public final class MaJob
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<ResourceManager> array(Arena arena, int count) {
+		    public static NativeStructArray<ResourceManager> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new ResourceManager(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<ResourceManager> array(Arena arena, ResourceManager... structs) {
+		    public static NativeStructArray<ResourceManager> array(SegmentAllocator allocator, ResourceManager... structs) {
 		        NativeStructArray<ResourceManager> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new ResourceManager(segment),
 		            structs.length
@@ -1041,8 +1042,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public LoadDataBufferNode(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public LoadDataBufferNode(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public LoadDataBufferNode(MemorySegment segment) {
@@ -1200,18 +1201,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<LoadDataBufferNode> array(Arena arena, int count) {
+			    public static NativeStructArray<LoadDataBufferNode> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new LoadDataBufferNode(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<LoadDataBufferNode> array(Arena arena, LoadDataBufferNode... structs) {
+			    public static NativeStructArray<LoadDataBufferNode> array(SegmentAllocator allocator, LoadDataBufferNode... structs) {
 			        NativeStructArray<LoadDataBufferNode> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new LoadDataBufferNode(segment),
 			            structs.length
@@ -1275,8 +1276,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public FreeDataBufferNode(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public FreeDataBufferNode(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public FreeDataBufferNode(MemorySegment segment) {
@@ -1364,18 +1365,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<FreeDataBufferNode> array(Arena arena, int count) {
+			    public static NativeStructArray<FreeDataBufferNode> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new FreeDataBufferNode(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<FreeDataBufferNode> array(Arena arena, FreeDataBufferNode... structs) {
+			    public static NativeStructArray<FreeDataBufferNode> array(SegmentAllocator allocator, FreeDataBufferNode... structs) {
 			        NativeStructArray<FreeDataBufferNode> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new FreeDataBufferNode(segment),
 			            structs.length
@@ -1444,8 +1445,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public PageDataBufferNode(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public PageDataBufferNode(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public PageDataBufferNode(MemorySegment segment) {
@@ -1548,18 +1549,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<PageDataBufferNode> array(Arena arena, int count) {
+			    public static NativeStructArray<PageDataBufferNode> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new PageDataBufferNode(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<PageDataBufferNode> array(Arena arena, PageDataBufferNode... structs) {
+			    public static NativeStructArray<PageDataBufferNode> array(SegmentAllocator allocator, PageDataBufferNode... structs) {
 			        NativeStructArray<PageDataBufferNode> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new PageDataBufferNode(segment),
 			            structs.length
@@ -1654,8 +1655,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public LoadDataBuffer(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public LoadDataBuffer(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public LoadDataBuffer(MemorySegment segment) {
@@ -1808,18 +1809,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<LoadDataBuffer> array(Arena arena, int count) {
+			    public static NativeStructArray<LoadDataBuffer> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new LoadDataBuffer(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<LoadDataBuffer> array(Arena arena, LoadDataBuffer... structs) {
+			    public static NativeStructArray<LoadDataBuffer> array(SegmentAllocator allocator, LoadDataBuffer... structs) {
 			        NativeStructArray<LoadDataBuffer> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new LoadDataBuffer(segment),
 			            structs.length
@@ -1878,8 +1879,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public FreeDataBuffer(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public FreeDataBuffer(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public FreeDataBuffer(MemorySegment segment) {
@@ -1952,18 +1953,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<FreeDataBuffer> array(Arena arena, int count) {
+			    public static NativeStructArray<FreeDataBuffer> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new FreeDataBuffer(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<FreeDataBuffer> array(Arena arena, FreeDataBuffer... structs) {
+			    public static NativeStructArray<FreeDataBuffer> array(SegmentAllocator allocator, FreeDataBuffer... structs) {
 			        NativeStructArray<FreeDataBuffer> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new FreeDataBuffer(segment),
 			            structs.length
@@ -2037,8 +2038,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public LoadDataStream(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public LoadDataStream(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public LoadDataStream(MemorySegment segment) {
@@ -2151,18 +2152,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<LoadDataStream> array(Arena arena, int count) {
+			    public static NativeStructArray<LoadDataStream> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new LoadDataStream(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<LoadDataStream> array(Arena arena, LoadDataStream... structs) {
+			    public static NativeStructArray<LoadDataStream> array(SegmentAllocator allocator, LoadDataStream... structs) {
 			        NativeStructArray<LoadDataStream> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new LoadDataStream(segment),
 			            structs.length
@@ -2221,8 +2222,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public FreeDataStream(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public FreeDataStream(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public FreeDataStream(MemorySegment segment) {
@@ -2295,18 +2296,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<FreeDataStream> array(Arena arena, int count) {
+			    public static NativeStructArray<FreeDataStream> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new FreeDataStream(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<FreeDataStream> array(Arena arena, FreeDataStream... structs) {
+			    public static NativeStructArray<FreeDataStream> array(SegmentAllocator allocator, FreeDataStream... structs) {
 			        NativeStructArray<FreeDataStream> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new FreeDataStream(segment),
 			            structs.length
@@ -2361,8 +2362,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public PageDataStream(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public PageDataStream(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public PageDataStream(MemorySegment segment) {
@@ -2415,18 +2416,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<PageDataStream> array(Arena arena, int count) {
+			    public static NativeStructArray<PageDataStream> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new PageDataStream(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<PageDataStream> array(Arena arena, PageDataStream... structs) {
+			    public static NativeStructArray<PageDataStream> array(SegmentAllocator allocator, PageDataStream... structs) {
 			        NativeStructArray<PageDataStream> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new PageDataStream(segment),
 			            structs.length
@@ -2480,8 +2481,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public SeekDataStream(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public SeekDataStream(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public SeekDataStream(MemorySegment segment) {
@@ -2534,18 +2535,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<SeekDataStream> array(Arena arena, int count) {
+			    public static NativeStructArray<SeekDataStream> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new SeekDataStream(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<SeekDataStream> array(Arena arena, SeekDataStream... structs) {
+			    public static NativeStructArray<SeekDataStream> array(SegmentAllocator allocator, SeekDataStream... structs) {
 			        NativeStructArray<SeekDataStream> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new SeekDataStream(segment),
 			            structs.length
@@ -2593,8 +2594,8 @@ public final class MaJob
 			    this(Arena.ofAuto());
 			}
 			
-			public Device(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Device(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Device(MemorySegment segment) {
@@ -2639,18 +2640,18 @@ public final class MaJob
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Device> array(Arena arena, int count) {
+		    public static NativeStructArray<Device> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Device(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Device> array(Arena arena, Device... structs) {
+		    public static NativeStructArray<Device> array(SegmentAllocator allocator, Device... structs) {
 		        NativeStructArray<Device> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Device(segment),
 		            structs.length
@@ -2695,8 +2696,8 @@ public final class MaJob
 				    this(Arena.ofAuto());
 				}
 				
-				public Aaudio(Arena arena) {
-				    this(arena.allocate(LAYOUT));
+				public Aaudio(SegmentAllocator allocator) {
+				    this(allocator.allocate(LAYOUT));
 				}
 				
 				public Aaudio(MemorySegment segment) {
@@ -2741,18 +2742,18 @@ public final class MaJob
 			        return new NativeStructArray<>(this);
 			    }
 			    
-			    public static NativeStructArray<Aaudio> array(Arena arena, int count) {
+			    public static NativeStructArray<Aaudio> array(SegmentAllocator allocator, int count) {
 			        return new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new Aaudio(segment),
 			            count
 			        );
 			    }
 			    
-			    public static NativeStructArray<Aaudio> array(Arena arena, Aaudio... structs) {
+			    public static NativeStructArray<Aaudio> array(SegmentAllocator allocator, Aaudio... structs) {
 			        NativeStructArray<Aaudio> array = new NativeStructArray<>(
-			            arena,
+			            allocator,
 			            LAYOUT,
 			            segment -> new Aaudio(segment),
 			            structs.length
@@ -2805,8 +2806,8 @@ public final class MaJob
 					    this(Arena.ofAuto());
 					}
 					
-					public Reroute(Arena arena) {
-					    this(arena.allocate(LAYOUT));
+					public Reroute(SegmentAllocator allocator) {
+					    this(allocator.allocate(LAYOUT));
 					}
 					
 					public Reroute(MemorySegment segment) {
@@ -2859,18 +2860,18 @@ public final class MaJob
 				        return new NativeStructArray<>(this);
 				    }
 				    
-				    public static NativeStructArray<Reroute> array(Arena arena, int count) {
+				    public static NativeStructArray<Reroute> array(SegmentAllocator allocator, int count) {
 				        return new NativeStructArray<>(
-				            arena,
+				            allocator,
 				            LAYOUT,
 				            segment -> new Reroute(segment),
 				            count
 				        );
 				    }
 				    
-				    public static NativeStructArray<Reroute> array(Arena arena, Reroute... structs) {
+				    public static NativeStructArray<Reroute> array(SegmentAllocator allocator, Reroute... structs) {
 				        NativeStructArray<Reroute> array = new NativeStructArray<>(
-				            arena,
+				            allocator,
 				            LAYOUT,
 				            segment -> new Reroute(segment),
 				            structs.length

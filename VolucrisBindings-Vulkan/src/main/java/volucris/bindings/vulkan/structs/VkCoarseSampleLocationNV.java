@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkCoarseSampleLocationNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCoarseSampleLocationNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCoarseSampleLocationNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCoarseSampleLocationNV(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkCoarseSampleLocationNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCoarseSampleLocationNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkCoarseSampleLocationNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCoarseSampleLocationNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCoarseSampleLocationNV> array(Arena arena, VkCoarseSampleLocationNV... structs) {
+    public static NativeStructArray<VkCoarseSampleLocationNV> array(SegmentAllocator allocator, VkCoarseSampleLocationNV... structs) {
         NativeStructArray<VkCoarseSampleLocationNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCoarseSampleLocationNV(segment),
             structs.length

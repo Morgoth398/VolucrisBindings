@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceRobustness2PropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRobustness2PropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRobustness2PropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRobustness2PropertiesKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceRobustness2PropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRobustness2PropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRobustness2PropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRobustness2PropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRobustness2PropertiesKHR> array(Arena arena, VkPhysicalDeviceRobustness2PropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRobustness2PropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceRobustness2PropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceRobustness2PropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRobustness2PropertiesKHR(segment),
             structs.length

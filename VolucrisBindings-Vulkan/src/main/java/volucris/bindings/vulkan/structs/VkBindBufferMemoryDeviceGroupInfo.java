@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkBindBufferMemoryDeviceGroupInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindBufferMemoryDeviceGroupInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindBufferMemoryDeviceGroupInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindBufferMemoryDeviceGroupInfo(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkBindBufferMemoryDeviceGroupInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindBufferMemoryDeviceGroupInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindBufferMemoryDeviceGroupInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindBufferMemoryDeviceGroupInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindBufferMemoryDeviceGroupInfo> array(Arena arena, VkBindBufferMemoryDeviceGroupInfo... structs) {
+    public static NativeStructArray<VkBindBufferMemoryDeviceGroupInfo> array(SegmentAllocator allocator, VkBindBufferMemoryDeviceGroupInfo... structs) {
         NativeStructArray<VkBindBufferMemoryDeviceGroupInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindBufferMemoryDeviceGroupInfo(segment),
             structs.length

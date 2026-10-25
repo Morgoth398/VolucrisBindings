@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class StdVideoEncodeH264RefListModEntry
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeH264RefListModEntry(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeH264RefListModEntry(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeH264RefListModEntry(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class StdVideoEncodeH264RefListModEntry
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeH264RefListModEntry> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeH264RefListModEntry> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH264RefListModEntry(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeH264RefListModEntry> array(Arena arena, StdVideoEncodeH264RefListModEntry... structs) {
+    public static NativeStructArray<StdVideoEncodeH264RefListModEntry> array(SegmentAllocator allocator, StdVideoEncodeH264RefListModEntry... structs) {
         NativeStructArray<StdVideoEncodeH264RefListModEntry> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH264RefListModEntry(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -47,8 +48,8 @@ public final class MaResourceManagerPipelineStageNotification
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerPipelineStageNotification(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerPipelineStageNotification(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerPipelineStageNotification(MemorySegment segment) {
@@ -106,18 +107,18 @@ public final class MaResourceManagerPipelineStageNotification
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerPipelineStageNotification> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerPipelineStageNotification> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerPipelineStageNotification(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerPipelineStageNotification> array(Arena arena, MaResourceManagerPipelineStageNotification... structs) {
+    public static NativeStructArray<MaResourceManagerPipelineStageNotification> array(SegmentAllocator allocator, MaResourceManagerPipelineStageNotification... structs) {
         NativeStructArray<MaResourceManagerPipelineStageNotification> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerPipelineStageNotification(segment),
             structs.length

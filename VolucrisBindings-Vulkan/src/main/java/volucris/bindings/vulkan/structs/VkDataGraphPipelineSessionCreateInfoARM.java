@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkDataGraphPipelineSessionCreateInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineSessionCreateInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineSessionCreateInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineSessionCreateInfoARM(MemorySegment segment) {
@@ -140,18 +141,18 @@ public final class VkDataGraphPipelineSessionCreateInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionCreateInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineSessionCreateInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionCreateInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionCreateInfoARM> array(Arena arena, VkDataGraphPipelineSessionCreateInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineSessionCreateInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineSessionCreateInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineSessionCreateInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionCreateInfoARM(segment),
             structs.length

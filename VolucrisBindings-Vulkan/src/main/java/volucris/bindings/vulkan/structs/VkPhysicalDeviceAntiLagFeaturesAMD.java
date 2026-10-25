@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceAntiLagFeaturesAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceAntiLagFeaturesAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceAntiLagFeaturesAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceAntiLagFeaturesAMD(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceAntiLagFeaturesAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceAntiLagFeaturesAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceAntiLagFeaturesAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceAntiLagFeaturesAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceAntiLagFeaturesAMD> array(Arena arena, VkPhysicalDeviceAntiLagFeaturesAMD... structs) {
+    public static NativeStructArray<VkPhysicalDeviceAntiLagFeaturesAMD> array(SegmentAllocator allocator, VkPhysicalDeviceAntiLagFeaturesAMD... structs) {
         NativeStructArray<VkPhysicalDeviceAntiLagFeaturesAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceAntiLagFeaturesAMD(segment),
             structs.length

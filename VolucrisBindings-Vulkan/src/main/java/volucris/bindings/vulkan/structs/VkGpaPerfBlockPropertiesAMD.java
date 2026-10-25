@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -73,8 +74,8 @@ public final class VkGpaPerfBlockPropertiesAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkGpaPerfBlockPropertiesAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkGpaPerfBlockPropertiesAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkGpaPerfBlockPropertiesAMD(MemorySegment segment) {
@@ -172,18 +173,18 @@ public final class VkGpaPerfBlockPropertiesAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkGpaPerfBlockPropertiesAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkGpaPerfBlockPropertiesAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGpaPerfBlockPropertiesAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkGpaPerfBlockPropertiesAMD> array(Arena arena, VkGpaPerfBlockPropertiesAMD... structs) {
+    public static NativeStructArray<VkGpaPerfBlockPropertiesAMD> array(SegmentAllocator allocator, VkGpaPerfBlockPropertiesAMD... structs) {
         NativeStructArray<VkGpaPerfBlockPropertiesAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkGpaPerfBlockPropertiesAMD(segment),
             structs.length

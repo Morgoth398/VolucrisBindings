@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkPastPresentationTimingInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPastPresentationTimingInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPastPresentationTimingInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPastPresentationTimingInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkPastPresentationTimingInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPastPresentationTimingInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPastPresentationTimingInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPastPresentationTimingInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPastPresentationTimingInfoEXT> array(Arena arena, VkPastPresentationTimingInfoEXT... structs) {
+    public static NativeStructArray<VkPastPresentationTimingInfoEXT> array(SegmentAllocator allocator, VkPastPresentationTimingInfoEXT... structs) {
         NativeStructArray<VkPastPresentationTimingInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPastPresentationTimingInfoEXT(segment),
             structs.length

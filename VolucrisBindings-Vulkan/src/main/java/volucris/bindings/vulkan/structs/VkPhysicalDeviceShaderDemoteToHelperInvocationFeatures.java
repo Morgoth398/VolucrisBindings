@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures> array(Arena arena, VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderDemoteToHelperInvocationFeatures(segment),
             structs.length

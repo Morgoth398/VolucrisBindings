@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL> array(Arena arena, VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL> array(SegmentAllocator allocator, VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL... structs) {
         NativeStructArray<VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderIntegerFunctions2FeaturesINTEL(segment),
             structs.length

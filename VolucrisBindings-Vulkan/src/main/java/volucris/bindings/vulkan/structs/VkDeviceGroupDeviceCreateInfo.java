@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkDeviceGroupDeviceCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceGroupDeviceCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceGroupDeviceCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceGroupDeviceCreateInfo(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkDeviceGroupDeviceCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceGroupDeviceCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceGroupDeviceCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupDeviceCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceGroupDeviceCreateInfo> array(Arena arena, VkDeviceGroupDeviceCreateInfo... structs) {
+    public static NativeStructArray<VkDeviceGroupDeviceCreateInfo> array(SegmentAllocator allocator, VkDeviceGroupDeviceCreateInfo... structs) {
         NativeStructArray<VkDeviceGroupDeviceCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupDeviceCreateInfo(segment),
             structs.length

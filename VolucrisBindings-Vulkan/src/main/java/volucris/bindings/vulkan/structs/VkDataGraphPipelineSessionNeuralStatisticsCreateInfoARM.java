@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM> array(Arena arena, VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionNeuralStatisticsCreateInfoARM(segment),
             structs.length

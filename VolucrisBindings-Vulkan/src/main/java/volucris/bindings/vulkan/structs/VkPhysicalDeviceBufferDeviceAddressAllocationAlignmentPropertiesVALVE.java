@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropert
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropert
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE> array(Arena arena, VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE... structs) {
+    public static NativeStructArray<VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE> array(SegmentAllocator allocator, VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE... structs) {
         NativeStructArray<VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceBufferDeviceAddressAllocationAlignmentPropertiesVALVE(segment),
             structs.length

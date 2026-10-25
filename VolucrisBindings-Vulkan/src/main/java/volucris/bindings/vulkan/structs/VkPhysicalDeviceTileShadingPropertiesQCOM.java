@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -71,8 +72,8 @@ public final class VkPhysicalDeviceTileShadingPropertiesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceTileShadingPropertiesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceTileShadingPropertiesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceTileShadingPropertiesQCOM(MemorySegment segment) {
@@ -179,18 +180,18 @@ public final class VkPhysicalDeviceTileShadingPropertiesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTileShadingPropertiesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceTileShadingPropertiesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTileShadingPropertiesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTileShadingPropertiesQCOM> array(Arena arena, VkPhysicalDeviceTileShadingPropertiesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceTileShadingPropertiesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceTileShadingPropertiesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceTileShadingPropertiesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTileShadingPropertiesQCOM(segment),
             structs.length

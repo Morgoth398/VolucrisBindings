@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -58,8 +59,8 @@ public final class VkExternalBufferProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkExternalBufferProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkExternalBufferProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkExternalBufferProperties(MemorySegment segment) {
@@ -129,18 +130,18 @@ public final class VkExternalBufferProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkExternalBufferProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkExternalBufferProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalBufferProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkExternalBufferProperties> array(Arena arena, VkExternalBufferProperties... structs) {
+    public static NativeStructArray<VkExternalBufferProperties> array(SegmentAllocator allocator, VkExternalBufferProperties... structs) {
         NativeStructArray<VkExternalBufferProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalBufferProperties(segment),
             structs.length

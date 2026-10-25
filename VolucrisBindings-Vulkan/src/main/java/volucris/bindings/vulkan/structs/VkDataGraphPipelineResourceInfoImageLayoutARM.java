@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDataGraphPipelineResourceInfoImageLayoutARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineResourceInfoImageLayoutARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineResourceInfoImageLayoutARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineResourceInfoImageLayoutARM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDataGraphPipelineResourceInfoImageLayoutARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineResourceInfoImageLayoutARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineResourceInfoImageLayoutARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineResourceInfoImageLayoutARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineResourceInfoImageLayoutARM> array(Arena arena, VkDataGraphPipelineResourceInfoImageLayoutARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineResourceInfoImageLayoutARM> array(SegmentAllocator allocator, VkDataGraphPipelineResourceInfoImageLayoutARM... structs) {
         NativeStructArray<VkDataGraphPipelineResourceInfoImageLayoutARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineResourceInfoImageLayoutARM(segment),
             structs.length

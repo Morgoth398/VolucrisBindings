@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceShaderCoreProperties2AMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderCoreProperties2AMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderCoreProperties2AMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderCoreProperties2AMD(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceShaderCoreProperties2AMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderCoreProperties2AMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderCoreProperties2AMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderCoreProperties2AMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderCoreProperties2AMD> array(Arena arena, VkPhysicalDeviceShaderCoreProperties2AMD... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderCoreProperties2AMD> array(SegmentAllocator allocator, VkPhysicalDeviceShaderCoreProperties2AMD... structs) {
         NativeStructArray<VkPhysicalDeviceShaderCoreProperties2AMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderCoreProperties2AMD(segment),
             structs.length

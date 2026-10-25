@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -80,8 +81,8 @@ public final class MaResamplerConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResamplerConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResamplerConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResamplerConfig(MemorySegment segment) {
@@ -206,18 +207,18 @@ public final class MaResamplerConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResamplerConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaResamplerConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResamplerConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResamplerConfig> array(Arena arena, MaResamplerConfig... structs) {
+    public static NativeStructArray<MaResamplerConfig> array(SegmentAllocator allocator, MaResamplerConfig... structs) {
         NativeStructArray<MaResamplerConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResamplerConfig(segment),
             structs.length
@@ -264,8 +265,8 @@ public final class MaResamplerConfig
 		    this(Arena.ofAuto());
 		}
 		
-		public Linear(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Linear(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Linear(MemorySegment segment) {
@@ -303,18 +304,18 @@ public final class MaResamplerConfig
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Linear> array(Arena arena, int count) {
+	    public static NativeStructArray<Linear> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Linear(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Linear> array(Arena arena, Linear... structs) {
+	    public static NativeStructArray<Linear> array(SegmentAllocator allocator, Linear... structs) {
 	        NativeStructArray<Linear> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Linear(segment),
 	            structs.length

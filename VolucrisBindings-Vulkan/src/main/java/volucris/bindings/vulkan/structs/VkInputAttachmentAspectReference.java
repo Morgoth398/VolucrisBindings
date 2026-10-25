@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkInputAttachmentAspectReference
 	    this(Arena.ofAuto());
 	}
 	
-	public VkInputAttachmentAspectReference(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkInputAttachmentAspectReference(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkInputAttachmentAspectReference(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkInputAttachmentAspectReference
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkInputAttachmentAspectReference> array(Arena arena, int count) {
+    public static NativeStructArray<VkInputAttachmentAspectReference> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkInputAttachmentAspectReference(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkInputAttachmentAspectReference> array(Arena arena, VkInputAttachmentAspectReference... structs) {
+    public static NativeStructArray<VkInputAttachmentAspectReference> array(SegmentAllocator allocator, VkInputAttachmentAspectReference... structs) {
         NativeStructArray<VkInputAttachmentAspectReference> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkInputAttachmentAspectReference(segment),
             structs.length

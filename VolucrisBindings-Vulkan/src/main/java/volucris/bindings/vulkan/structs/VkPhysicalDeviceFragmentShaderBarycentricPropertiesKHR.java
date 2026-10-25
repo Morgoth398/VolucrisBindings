@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR> array(Arena arena, VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShaderBarycentricPropertiesKHR(segment),
             structs.length

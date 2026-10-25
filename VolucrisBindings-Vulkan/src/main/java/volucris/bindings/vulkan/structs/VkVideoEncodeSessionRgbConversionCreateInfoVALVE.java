@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkVideoEncodeSessionRgbConversionCreateInfoVALVE
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeSessionRgbConversionCreateInfoVALVE(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeSessionRgbConversionCreateInfoVALVE(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeSessionRgbConversionCreateInfoVALVE(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkVideoEncodeSessionRgbConversionCreateInfoVALVE
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeSessionRgbConversionCreateInfoVALVE> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeSessionRgbConversionCreateInfoVALVE> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeSessionRgbConversionCreateInfoVALVE(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeSessionRgbConversionCreateInfoVALVE> array(Arena arena, VkVideoEncodeSessionRgbConversionCreateInfoVALVE... structs) {
+    public static NativeStructArray<VkVideoEncodeSessionRgbConversionCreateInfoVALVE> array(SegmentAllocator allocator, VkVideoEncodeSessionRgbConversionCreateInfoVALVE... structs) {
         NativeStructArray<VkVideoEncodeSessionRgbConversionCreateInfoVALVE> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeSessionRgbConversionCreateInfoVALVE(segment),
             structs.length

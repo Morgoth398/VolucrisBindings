@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkBufferDeviceAddressInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBufferDeviceAddressInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBufferDeviceAddressInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBufferDeviceAddressInfo(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkBufferDeviceAddressInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBufferDeviceAddressInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkBufferDeviceAddressInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBufferDeviceAddressInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBufferDeviceAddressInfo> array(Arena arena, VkBufferDeviceAddressInfo... structs) {
+    public static NativeStructArray<VkBufferDeviceAddressInfo> array(SegmentAllocator allocator, VkBufferDeviceAddressInfo... structs) {
         NativeStructArray<VkBufferDeviceAddressInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBufferDeviceAddressInfo(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -45,8 +46,8 @@ public final class MaJobQueueConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaJobQueueConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaJobQueueConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaJobQueueConfig(MemorySegment segment) {
@@ -94,18 +95,18 @@ public final class MaJobQueueConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaJobQueueConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaJobQueueConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaJobQueueConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaJobQueueConfig> array(Arena arena, MaJobQueueConfig... structs) {
+    public static NativeStructArray<MaJobQueueConfig> array(SegmentAllocator allocator, MaJobQueueConfig... structs) {
         NativeStructArray<MaJobQueueConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaJobQueueConfig(segment),
             structs.length

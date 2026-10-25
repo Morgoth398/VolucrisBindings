@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -72,8 +73,8 @@ public final class VkMemoryMarkerInfoAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMemoryMarkerInfoAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMemoryMarkerInfoAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMemoryMarkerInfoAMD(MemorySegment segment) {
@@ -173,18 +174,18 @@ public final class VkMemoryMarkerInfoAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMemoryMarkerInfoAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkMemoryMarkerInfoAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryMarkerInfoAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMemoryMarkerInfoAMD> array(Arena arena, VkMemoryMarkerInfoAMD... structs) {
+    public static NativeStructArray<VkMemoryMarkerInfoAMD> array(SegmentAllocator allocator, VkMemoryMarkerInfoAMD... structs) {
         NativeStructArray<VkMemoryMarkerInfoAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMemoryMarkerInfoAMD(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -76,8 +77,8 @@ public final class VkPipelineShaderStageCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineShaderStageCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineShaderStageCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineShaderStageCreateInfo(MemorySegment segment) {
@@ -146,8 +147,8 @@ public final class VkPipelineShaderStageCreateInfo
     }
     
     /// @see #pName()
-    public VkPipelineShaderStageCreateInfo pName(Arena arena, String pName) {
-    	P_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pName));
+    public VkPipelineShaderStageCreateInfo pName(SegmentAllocator allocator, String pName) {
+    	P_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pName));
     	return this;
     }
     
@@ -195,18 +196,18 @@ public final class VkPipelineShaderStageCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineShaderStageCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineShaderStageCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineShaderStageCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineShaderStageCreateInfo> array(Arena arena, VkPipelineShaderStageCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineShaderStageCreateInfo> array(SegmentAllocator allocator, VkPipelineShaderStageCreateInfo... structs) {
         NativeStructArray<VkPipelineShaderStageCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineShaderStageCreateInfo(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class VkVertexInputAttributeDescription
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVertexInputAttributeDescription(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVertexInputAttributeDescription(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVertexInputAttributeDescription(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class VkVertexInputAttributeDescription
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVertexInputAttributeDescription> array(Arena arena, int count) {
+    public static NativeStructArray<VkVertexInputAttributeDescription> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVertexInputAttributeDescription(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVertexInputAttributeDescription> array(Arena arena, VkVertexInputAttributeDescription... structs) {
+    public static NativeStructArray<VkVertexInputAttributeDescription> array(SegmentAllocator allocator, VkVertexInputAttributeDescription... structs) {
         NativeStructArray<VkVertexInputAttributeDescription> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVertexInputAttributeDescription(segment),
             structs.length

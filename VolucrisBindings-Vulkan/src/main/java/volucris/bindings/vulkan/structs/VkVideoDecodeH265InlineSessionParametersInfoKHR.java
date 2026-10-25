@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkVideoDecodeH265InlineSessionParametersInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoDecodeH265InlineSessionParametersInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoDecodeH265InlineSessionParametersInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoDecodeH265InlineSessionParametersInfoKHR(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkVideoDecodeH265InlineSessionParametersInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoDecodeH265InlineSessionParametersInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoDecodeH265InlineSessionParametersInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoDecodeH265InlineSessionParametersInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoDecodeH265InlineSessionParametersInfoKHR> array(Arena arena, VkVideoDecodeH265InlineSessionParametersInfoKHR... structs) {
+    public static NativeStructArray<VkVideoDecodeH265InlineSessionParametersInfoKHR> array(SegmentAllocator allocator, VkVideoDecodeH265InlineSessionParametersInfoKHR... structs) {
         NativeStructArray<VkVideoDecodeH265InlineSessionParametersInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoDecodeH265InlineSessionParametersInfoKHR(segment),
             structs.length

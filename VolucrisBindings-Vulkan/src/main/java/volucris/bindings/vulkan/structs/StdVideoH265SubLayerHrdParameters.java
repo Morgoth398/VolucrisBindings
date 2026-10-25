@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -63,8 +64,8 @@ public final class StdVideoH265SubLayerHrdParameters
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH265SubLayerHrdParameters(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH265SubLayerHrdParameters(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH265SubLayerHrdParameters(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class StdVideoH265SubLayerHrdParameters
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH265SubLayerHrdParameters> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH265SubLayerHrdParameters> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265SubLayerHrdParameters(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH265SubLayerHrdParameters> array(Arena arena, StdVideoH265SubLayerHrdParameters... structs) {
+    public static NativeStructArray<StdVideoH265SubLayerHrdParameters> array(SegmentAllocator allocator, StdVideoH265SubLayerHrdParameters... structs) {
         NativeStructArray<StdVideoH265SubLayerHrdParameters> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265SubLayerHrdParameters(segment),
             structs.length

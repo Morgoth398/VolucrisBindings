@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -50,8 +51,8 @@ public final class VkIndirectCommandsStreamNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkIndirectCommandsStreamNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkIndirectCommandsStreamNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkIndirectCommandsStreamNV(MemorySegment segment) {
@@ -104,18 +105,18 @@ public final class VkIndirectCommandsStreamNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkIndirectCommandsStreamNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkIndirectCommandsStreamNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsStreamNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkIndirectCommandsStreamNV> array(Arena arena, VkIndirectCommandsStreamNV... structs) {
+    public static NativeStructArray<VkIndirectCommandsStreamNV> array(SegmentAllocator allocator, VkIndirectCommandsStreamNV... structs) {
         NativeStructArray<VkIndirectCommandsStreamNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsStreamNV(segment),
             structs.length

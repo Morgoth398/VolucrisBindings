@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -90,8 +91,8 @@ public final class MaResampler
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResampler(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResampler(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResampler(MemorySegment segment) {
@@ -246,18 +247,18 @@ public final class MaResampler
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResampler> array(Arena arena, int count) {
+    public static NativeStructArray<MaResampler> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResampler(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResampler> array(Arena arena, MaResampler... structs) {
+    public static NativeStructArray<MaResampler> array(SegmentAllocator allocator, MaResampler... structs) {
         NativeStructArray<MaResampler> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResampler(segment),
             structs.length
@@ -302,8 +303,8 @@ public final class MaResampler
 		    this(Arena.ofAuto());
 		}
 		
-		public State(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public State(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public State(MemorySegment segment) {
@@ -348,18 +349,18 @@ public final class MaResampler
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<State> array(Arena arena, int count) {
+	    public static NativeStructArray<State> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new State(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<State> array(Arena arena, State... structs) {
+	    public static NativeStructArray<State> array(SegmentAllocator allocator, State... structs) {
 	        NativeStructArray<State> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new State(segment),
 	            structs.length

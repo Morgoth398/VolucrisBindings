@@ -6,6 +6,7 @@ package volucris.bindings.assimp.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -101,8 +102,8 @@ public final class AiNodeAnim
 	    this(Arena.ofAuto());
 	}
 	
-	public AiNodeAnim(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public AiNodeAnim(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public AiNodeAnim(MemorySegment segment) {

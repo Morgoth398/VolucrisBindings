@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -57,8 +58,8 @@ public final class VkImageResolve
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageResolve(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageResolve(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageResolve(MemorySegment segment) {
@@ -171,18 +172,18 @@ public final class VkImageResolve
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageResolve> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageResolve> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageResolve(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageResolve> array(Arena arena, VkImageResolve... structs) {
+    public static NativeStructArray<VkImageResolve> array(SegmentAllocator allocator, VkImageResolve... structs) {
         NativeStructArray<VkImageResolve> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageResolve(segment),
             structs.length

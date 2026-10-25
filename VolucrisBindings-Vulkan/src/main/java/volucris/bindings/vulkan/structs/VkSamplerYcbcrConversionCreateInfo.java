@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -93,8 +94,8 @@ public final class VkSamplerYcbcrConversionCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSamplerYcbcrConversionCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSamplerYcbcrConversionCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSamplerYcbcrConversionCreateInfo(MemorySegment segment) {
@@ -234,18 +235,18 @@ public final class VkSamplerYcbcrConversionCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSamplerYcbcrConversionCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkSamplerYcbcrConversionCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerYcbcrConversionCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSamplerYcbcrConversionCreateInfo> array(Arena arena, VkSamplerYcbcrConversionCreateInfo... structs) {
+    public static NativeStructArray<VkSamplerYcbcrConversionCreateInfo> array(SegmentAllocator allocator, VkSamplerYcbcrConversionCreateInfo... structs) {
         NativeStructArray<VkSamplerYcbcrConversionCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerYcbcrConversionCreateInfo(segment),
             structs.length

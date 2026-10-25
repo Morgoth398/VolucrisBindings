@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkVideoEncodeFeedback2CapabilitiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeFeedback2CapabilitiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeFeedback2CapabilitiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeFeedback2CapabilitiesKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkVideoEncodeFeedback2CapabilitiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeFeedback2CapabilitiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeFeedback2CapabilitiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeFeedback2CapabilitiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeFeedback2CapabilitiesKHR> array(Arena arena, VkVideoEncodeFeedback2CapabilitiesKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeFeedback2CapabilitiesKHR> array(SegmentAllocator allocator, VkVideoEncodeFeedback2CapabilitiesKHR... structs) {
         NativeStructArray<VkVideoEncodeFeedback2CapabilitiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeFeedback2CapabilitiesKHR(segment),
             structs.length

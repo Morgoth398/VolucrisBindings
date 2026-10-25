@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -50,8 +51,8 @@ public final class MaDeviceJobThreadConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDeviceJobThreadConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDeviceJobThreadConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDeviceJobThreadConfig(MemorySegment segment) {
@@ -109,18 +110,18 @@ public final class MaDeviceJobThreadConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDeviceJobThreadConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaDeviceJobThreadConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceJobThreadConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDeviceJobThreadConfig> array(Arena arena, MaDeviceJobThreadConfig... structs) {
+    public static NativeStructArray<MaDeviceJobThreadConfig> array(SegmentAllocator allocator, MaDeviceJobThreadConfig... structs) {
         NativeStructArray<MaDeviceJobThreadConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceJobThreadConfig(segment),
             structs.length

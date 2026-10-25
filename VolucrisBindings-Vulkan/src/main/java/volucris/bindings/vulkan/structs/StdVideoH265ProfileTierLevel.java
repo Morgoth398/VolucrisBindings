@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -54,8 +55,8 @@ public final class StdVideoH265ProfileTierLevel
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH265ProfileTierLevel(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH265ProfileTierLevel(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH265ProfileTierLevel(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class StdVideoH265ProfileTierLevel
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH265ProfileTierLevel> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH265ProfileTierLevel> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265ProfileTierLevel(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH265ProfileTierLevel> array(Arena arena, StdVideoH265ProfileTierLevel... structs) {
+    public static NativeStructArray<StdVideoH265ProfileTierLevel> array(SegmentAllocator allocator, StdVideoH265ProfileTierLevel... structs) {
         NativeStructArray<StdVideoH265ProfileTierLevel> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265ProfileTierLevel(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -90,8 +91,8 @@ public final class VkBindDescriptorSetsInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindDescriptorSetsInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindDescriptorSetsInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindDescriptorSetsInfo(MemorySegment segment) {
@@ -229,18 +230,18 @@ public final class VkBindDescriptorSetsInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindDescriptorSetsInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindDescriptorSetsInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindDescriptorSetsInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindDescriptorSetsInfo> array(Arena arena, VkBindDescriptorSetsInfo... structs) {
+    public static NativeStructArray<VkBindDescriptorSetsInfo> array(SegmentAllocator allocator, VkBindDescriptorSetsInfo... structs) {
         NativeStructArray<VkBindDescriptorSetsInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindDescriptorSetsInfo(segment),
             structs.length

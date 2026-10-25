@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPhysicalDeviceSchedulingControlsDispatchParametersPropertie
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPhysicalDeviceSchedulingControlsDispatchParametersPropertie
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM> array(Arena arena, VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM> array(SegmentAllocator allocator, VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM... structs) {
         NativeStructArray<VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSchedulingControlsDispatchParametersPropertiesARM(segment),
             structs.length

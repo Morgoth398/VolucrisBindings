@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -74,8 +75,8 @@ public final class VkBindImageMemoryDeviceGroupInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindImageMemoryDeviceGroupInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindImageMemoryDeviceGroupInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindImageMemoryDeviceGroupInfo(MemorySegment segment) {
@@ -178,18 +179,18 @@ public final class VkBindImageMemoryDeviceGroupInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindImageMemoryDeviceGroupInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindImageMemoryDeviceGroupInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindImageMemoryDeviceGroupInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindImageMemoryDeviceGroupInfo> array(Arena arena, VkBindImageMemoryDeviceGroupInfo... structs) {
+    public static NativeStructArray<VkBindImageMemoryDeviceGroupInfo> array(SegmentAllocator allocator, VkBindImageMemoryDeviceGroupInfo... structs) {
         NativeStructArray<VkBindImageMemoryDeviceGroupInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindImageMemoryDeviceGroupInfo(segment),
             structs.length

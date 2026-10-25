@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -168,8 +169,8 @@ public final class MaSpatializer
 	    this(Arena.ofAuto());
 	}
 	
-	public MaSpatializer(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaSpatializer(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaSpatializer(MemorySegment segment) {
@@ -500,18 +501,18 @@ public final class MaSpatializer
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaSpatializer> array(Arena arena, int count) {
+    public static NativeStructArray<MaSpatializer> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaSpatializer(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaSpatializer> array(Arena arena, MaSpatializer... structs) {
+    public static NativeStructArray<MaSpatializer> array(SegmentAllocator allocator, MaSpatializer... structs) {
         NativeStructArray<MaSpatializer> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaSpatializer(segment),
             structs.length

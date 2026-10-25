@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceExtendedDynamicState3PropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceExtendedDynamicState3PropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExtendedDynamicState3PropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceExtendedDynamicState3PropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExtendedDynamicState3PropertiesEXT> array(Arena arena, VkPhysicalDeviceExtendedDynamicState3PropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceExtendedDynamicState3PropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceExtendedDynamicState3PropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceExtendedDynamicState3PropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExtendedDynamicState3PropertiesEXT(segment),
             structs.length

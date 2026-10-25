@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -105,8 +106,8 @@ public final class VkSurfaceCapabilities2EXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSurfaceCapabilities2EXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSurfaceCapabilities2EXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSurfaceCapabilities2EXT(MemorySegment segment) {
@@ -290,18 +291,18 @@ public final class VkSurfaceCapabilities2EXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSurfaceCapabilities2EXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkSurfaceCapabilities2EXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSurfaceCapabilities2EXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSurfaceCapabilities2EXT> array(Arena arena, VkSurfaceCapabilities2EXT... structs) {
+    public static NativeStructArray<VkSurfaceCapabilities2EXT> array(SegmentAllocator allocator, VkSurfaceCapabilities2EXT... structs) {
         NativeStructArray<VkSurfaceCapabilities2EXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSurfaceCapabilities2EXT(segment),
             structs.length

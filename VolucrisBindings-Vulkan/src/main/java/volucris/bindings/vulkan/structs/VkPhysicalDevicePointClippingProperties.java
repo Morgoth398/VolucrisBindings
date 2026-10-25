@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDevicePointClippingProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDevicePointClippingProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDevicePointClippingProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDevicePointClippingProperties(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDevicePointClippingProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDevicePointClippingProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDevicePointClippingProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePointClippingProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDevicePointClippingProperties> array(Arena arena, VkPhysicalDevicePointClippingProperties... structs) {
+    public static NativeStructArray<VkPhysicalDevicePointClippingProperties> array(SegmentAllocator allocator, VkPhysicalDevicePointClippingProperties... structs) {
         NativeStructArray<VkPhysicalDevicePointClippingProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePointClippingProperties(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE> array(Arena arena, VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE> array(SegmentAllocator allocator, VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE... structs) {
         NativeStructArray<VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderMixedFloatDotProductFeaturesVALVE(segment),
             structs.length

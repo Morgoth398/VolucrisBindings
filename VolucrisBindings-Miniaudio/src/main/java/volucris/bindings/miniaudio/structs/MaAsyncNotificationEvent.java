@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -48,8 +49,8 @@ public final class MaAsyncNotificationEvent
 	    this(Arena.ofAuto());
 	}
 	
-	public MaAsyncNotificationEvent(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaAsyncNotificationEvent(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaAsyncNotificationEvent(MemorySegment segment) {
@@ -109,18 +110,18 @@ public final class MaAsyncNotificationEvent
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaAsyncNotificationEvent> array(Arena arena, int count) {
+    public static NativeStructArray<MaAsyncNotificationEvent> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAsyncNotificationEvent(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaAsyncNotificationEvent> array(Arena arena, MaAsyncNotificationEvent... structs) {
+    public static NativeStructArray<MaAsyncNotificationEvent> array(SegmentAllocator allocator, MaAsyncNotificationEvent... structs) {
         NativeStructArray<MaAsyncNotificationEvent> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaAsyncNotificationEvent(segment),
             structs.length

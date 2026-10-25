@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -73,8 +74,8 @@ public final class VkStencilOpState
 	    this(Arena.ofAuto());
 	}
 	
-	public VkStencilOpState(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkStencilOpState(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkStencilOpState(MemorySegment segment) {
@@ -172,18 +173,18 @@ public final class VkStencilOpState
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkStencilOpState> array(Arena arena, int count) {
+    public static NativeStructArray<VkStencilOpState> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkStencilOpState(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkStencilOpState> array(Arena arena, VkStencilOpState... structs) {
+    public static NativeStructArray<VkStencilOpState> array(SegmentAllocator allocator, VkStencilOpState... structs) {
         NativeStructArray<VkStencilOpState> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkStencilOpState(segment),
             structs.length

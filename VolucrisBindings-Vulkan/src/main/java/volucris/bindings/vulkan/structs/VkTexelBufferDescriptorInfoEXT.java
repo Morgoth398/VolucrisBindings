@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkTexelBufferDescriptorInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTexelBufferDescriptorInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTexelBufferDescriptorInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTexelBufferDescriptorInfoEXT(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkTexelBufferDescriptorInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTexelBufferDescriptorInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkTexelBufferDescriptorInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTexelBufferDescriptorInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTexelBufferDescriptorInfoEXT> array(Arena arena, VkTexelBufferDescriptorInfoEXT... structs) {
+    public static NativeStructArray<VkTexelBufferDescriptorInfoEXT> array(SegmentAllocator allocator, VkTexelBufferDescriptorInfoEXT... structs) {
         NativeStructArray<VkTexelBufferDescriptorInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTexelBufferDescriptorInfoEXT(segment),
             structs.length

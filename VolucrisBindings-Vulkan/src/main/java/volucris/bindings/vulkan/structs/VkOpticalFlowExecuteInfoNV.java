@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkOpticalFlowExecuteInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOpticalFlowExecuteInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOpticalFlowExecuteInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOpticalFlowExecuteInfoNV(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkOpticalFlowExecuteInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOpticalFlowExecuteInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkOpticalFlowExecuteInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpticalFlowExecuteInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOpticalFlowExecuteInfoNV> array(Arena arena, VkOpticalFlowExecuteInfoNV... structs) {
+    public static NativeStructArray<VkOpticalFlowExecuteInfoNV> array(SegmentAllocator allocator, VkOpticalFlowExecuteInfoNV... structs) {
         NativeStructArray<VkOpticalFlowExecuteInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpticalFlowExecuteInfoNV(segment),
             structs.length

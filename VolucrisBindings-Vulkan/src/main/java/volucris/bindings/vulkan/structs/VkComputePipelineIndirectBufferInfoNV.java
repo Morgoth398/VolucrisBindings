@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkComputePipelineIndirectBufferInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkComputePipelineIndirectBufferInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkComputePipelineIndirectBufferInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkComputePipelineIndirectBufferInfoNV(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkComputePipelineIndirectBufferInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkComputePipelineIndirectBufferInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkComputePipelineIndirectBufferInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkComputePipelineIndirectBufferInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkComputePipelineIndirectBufferInfoNV> array(Arena arena, VkComputePipelineIndirectBufferInfoNV... structs) {
+    public static NativeStructArray<VkComputePipelineIndirectBufferInfoNV> array(SegmentAllocator allocator, VkComputePipelineIndirectBufferInfoNV... structs) {
         NativeStructArray<VkComputePipelineIndirectBufferInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkComputePipelineIndirectBufferInfoNV(segment),
             structs.length

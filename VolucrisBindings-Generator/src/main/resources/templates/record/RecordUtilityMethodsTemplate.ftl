@@ -18,18 +18,18 @@ public NativeStructArray<${className}> asArray() {
     return new NativeStructArray<>(this);
 }
 
-public static NativeStructArray<${className}> array(Arena arena, int count) {
+public static NativeStructArray<${className}> array(SegmentAllocator allocator, int count) {
     return new NativeStructArray<>(
-        arena,
+        allocator,
         LAYOUT,
         segment -> new ${className}(segment),
         count
     );
 }
 
-public static NativeStructArray<${className}> array(Arena arena, ${className}... structs) {
+public static NativeStructArray<${className}> array(SegmentAllocator allocator, ${className}... structs) {
     NativeStructArray<${className}> array = new NativeStructArray<>(
-        arena,
+        allocator,
         LAYOUT,
         segment -> new ${className}(segment),
         structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VkVideoEncodeAV1QIndexKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeAV1QIndexKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeAV1QIndexKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeAV1QIndexKHR(MemorySegment segment) {
@@ -112,18 +113,18 @@ public final class VkVideoEncodeAV1QIndexKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeAV1QIndexKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeAV1QIndexKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeAV1QIndexKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeAV1QIndexKHR> array(Arena arena, VkVideoEncodeAV1QIndexKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeAV1QIndexKHR> array(SegmentAllocator allocator, VkVideoEncodeAV1QIndexKHR... structs) {
         NativeStructArray<VkVideoEncodeAV1QIndexKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeAV1QIndexKHR(segment),
             structs.length

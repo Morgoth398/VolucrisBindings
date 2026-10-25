@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -134,8 +135,8 @@ public final class MaEngineNode
 	    this(Arena.ofAuto());
 	}
 	
-	public MaEngineNode(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaEngineNode(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaEngineNode(MemorySegment segment) {
@@ -429,18 +430,18 @@ public final class MaEngineNode
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaEngineNode> array(Arena arena, int count) {
+    public static NativeStructArray<MaEngineNode> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaEngineNode(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaEngineNode> array(Arena arena, MaEngineNode... structs) {
+    public static NativeStructArray<MaEngineNode> array(SegmentAllocator allocator, MaEngineNode... structs) {
         NativeStructArray<MaEngineNode> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaEngineNode(segment),
             structs.length
@@ -497,8 +498,8 @@ public final class MaEngineNode
 		    this(Arena.ofAuto());
 		}
 		
-		public FadeSettings(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public FadeSettings(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public FadeSettings(MemorySegment segment) {
@@ -594,18 +595,18 @@ public final class MaEngineNode
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<FadeSettings> array(Arena arena, int count) {
+	    public static NativeStructArray<FadeSettings> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new FadeSettings(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<FadeSettings> array(Arena arena, FadeSettings... structs) {
+	    public static NativeStructArray<FadeSettings> array(SegmentAllocator allocator, FadeSettings... structs) {
 	        NativeStructArray<FadeSettings> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new FadeSettings(segment),
 	            structs.length

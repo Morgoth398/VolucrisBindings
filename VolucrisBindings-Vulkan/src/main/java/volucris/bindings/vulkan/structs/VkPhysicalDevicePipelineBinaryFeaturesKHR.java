@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDevicePipelineBinaryFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDevicePipelineBinaryFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDevicePipelineBinaryFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDevicePipelineBinaryFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDevicePipelineBinaryFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDevicePipelineBinaryFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDevicePipelineBinaryFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePipelineBinaryFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDevicePipelineBinaryFeaturesKHR> array(Arena arena, VkPhysicalDevicePipelineBinaryFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDevicePipelineBinaryFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDevicePipelineBinaryFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDevicePipelineBinaryFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDevicePipelineBinaryFeaturesKHR(segment),
             structs.length

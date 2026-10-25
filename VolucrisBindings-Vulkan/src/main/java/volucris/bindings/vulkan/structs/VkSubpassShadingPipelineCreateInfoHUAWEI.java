@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkSubpassShadingPipelineCreateInfoHUAWEI
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSubpassShadingPipelineCreateInfoHUAWEI(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSubpassShadingPipelineCreateInfoHUAWEI(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSubpassShadingPipelineCreateInfoHUAWEI(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkSubpassShadingPipelineCreateInfoHUAWEI
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSubpassShadingPipelineCreateInfoHUAWEI> array(Arena arena, int count) {
+    public static NativeStructArray<VkSubpassShadingPipelineCreateInfoHUAWEI> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassShadingPipelineCreateInfoHUAWEI(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSubpassShadingPipelineCreateInfoHUAWEI> array(Arena arena, VkSubpassShadingPipelineCreateInfoHUAWEI... structs) {
+    public static NativeStructArray<VkSubpassShadingPipelineCreateInfoHUAWEI> array(SegmentAllocator allocator, VkSubpassShadingPipelineCreateInfoHUAWEI... structs) {
         NativeStructArray<VkSubpassShadingPipelineCreateInfoHUAWEI> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassShadingPipelineCreateInfoHUAWEI(segment),
             structs.length

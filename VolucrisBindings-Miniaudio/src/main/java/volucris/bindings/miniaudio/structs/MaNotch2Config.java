@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -68,8 +69,8 @@ public final class MaNotch2Config
 	    this(Arena.ofAuto());
 	}
 	
-	public MaNotch2Config(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaNotch2Config(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaNotch2Config(MemorySegment segment) {
@@ -147,18 +148,18 @@ public final class MaNotch2Config
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaNotch2Config> array(Arena arena, int count) {
+    public static NativeStructArray<MaNotch2Config> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaNotch2Config(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaNotch2Config> array(Arena arena, MaNotch2Config... structs) {
+    public static NativeStructArray<MaNotch2Config> array(SegmentAllocator allocator, MaNotch2Config... structs) {
         NativeStructArray<MaNotch2Config> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaNotch2Config(segment),
             structs.length

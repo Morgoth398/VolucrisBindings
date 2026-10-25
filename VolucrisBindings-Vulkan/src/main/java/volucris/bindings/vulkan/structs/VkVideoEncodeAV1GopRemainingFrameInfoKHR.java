@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkVideoEncodeAV1GopRemainingFrameInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeAV1GopRemainingFrameInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeAV1GopRemainingFrameInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeAV1GopRemainingFrameInfoKHR(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkVideoEncodeAV1GopRemainingFrameInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeAV1GopRemainingFrameInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeAV1GopRemainingFrameInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeAV1GopRemainingFrameInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeAV1GopRemainingFrameInfoKHR> array(Arena arena, VkVideoEncodeAV1GopRemainingFrameInfoKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeAV1GopRemainingFrameInfoKHR> array(SegmentAllocator allocator, VkVideoEncodeAV1GopRemainingFrameInfoKHR... structs) {
         NativeStructArray<VkVideoEncodeAV1GopRemainingFrameInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeAV1GopRemainingFrameInfoKHR(segment),
             structs.length

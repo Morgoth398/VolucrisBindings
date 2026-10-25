@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -68,8 +69,8 @@ public final class VkShaderModuleCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkShaderModuleCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkShaderModuleCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkShaderModuleCreateInfo(MemorySegment segment) {
@@ -157,18 +158,18 @@ public final class VkShaderModuleCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkShaderModuleCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkShaderModuleCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderModuleCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkShaderModuleCreateInfo> array(Arena arena, VkShaderModuleCreateInfo... structs) {
+    public static NativeStructArray<VkShaderModuleCreateInfo> array(SegmentAllocator allocator, VkShaderModuleCreateInfo... structs) {
         NativeStructArray<VkShaderModuleCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderModuleCreateInfo(segment),
             structs.length

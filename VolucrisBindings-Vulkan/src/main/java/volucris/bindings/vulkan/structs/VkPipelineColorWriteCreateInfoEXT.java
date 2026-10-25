@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkPipelineColorWriteCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineColorWriteCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineColorWriteCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineColorWriteCreateInfoEXT(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkPipelineColorWriteCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineColorWriteCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineColorWriteCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineColorWriteCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineColorWriteCreateInfoEXT> array(Arena arena, VkPipelineColorWriteCreateInfoEXT... structs) {
+    public static NativeStructArray<VkPipelineColorWriteCreateInfoEXT> array(SegmentAllocator allocator, VkPipelineColorWriteCreateInfoEXT... structs) {
         NativeStructArray<VkPipelineColorWriteCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineColorWriteCreateInfoEXT(segment),
             structs.length

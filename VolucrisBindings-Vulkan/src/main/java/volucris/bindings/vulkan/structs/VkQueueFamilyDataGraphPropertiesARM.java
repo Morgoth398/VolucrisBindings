@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -61,8 +62,8 @@ public final class VkQueueFamilyDataGraphPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkQueueFamilyDataGraphPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkQueueFamilyDataGraphPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkQueueFamilyDataGraphPropertiesARM(MemorySegment segment) {
@@ -149,18 +150,18 @@ public final class VkQueueFamilyDataGraphPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkQueueFamilyDataGraphPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkQueueFamilyDataGraphPropertiesARM> array(Arena arena, VkQueueFamilyDataGraphPropertiesARM... structs) {
+    public static NativeStructArray<VkQueueFamilyDataGraphPropertiesARM> array(SegmentAllocator allocator, VkQueueFamilyDataGraphPropertiesARM... structs) {
         NativeStructArray<VkQueueFamilyDataGraphPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyDataGraphPropertiesARM(segment),
             structs.length

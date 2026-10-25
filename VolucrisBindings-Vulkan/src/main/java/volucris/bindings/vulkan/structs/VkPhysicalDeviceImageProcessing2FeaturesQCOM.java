@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceImageProcessing2FeaturesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceImageProcessing2FeaturesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceImageProcessing2FeaturesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceImageProcessing2FeaturesQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceImageProcessing2FeaturesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceImageProcessing2FeaturesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceImageProcessing2FeaturesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceImageProcessing2FeaturesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceImageProcessing2FeaturesQCOM> array(Arena arena, VkPhysicalDeviceImageProcessing2FeaturesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceImageProcessing2FeaturesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceImageProcessing2FeaturesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceImageProcessing2FeaturesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceImageProcessing2FeaturesQCOM(segment),
             structs.length

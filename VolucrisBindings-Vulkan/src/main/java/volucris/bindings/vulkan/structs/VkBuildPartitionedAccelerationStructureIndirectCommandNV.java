@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -54,8 +55,8 @@ public final class VkBuildPartitionedAccelerationStructureIndirectCommandNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBuildPartitionedAccelerationStructureIndirectCommandNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBuildPartitionedAccelerationStructureIndirectCommandNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBuildPartitionedAccelerationStructureIndirectCommandNV(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkBuildPartitionedAccelerationStructureIndirectCommandNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBuildPartitionedAccelerationStructureIndirectCommandNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkBuildPartitionedAccelerationStructureIndirectCommandNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBuildPartitionedAccelerationStructureIndirectCommandNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBuildPartitionedAccelerationStructureIndirectCommandNV> array(Arena arena, VkBuildPartitionedAccelerationStructureIndirectCommandNV... structs) {
+    public static NativeStructArray<VkBuildPartitionedAccelerationStructureIndirectCommandNV> array(SegmentAllocator allocator, VkBuildPartitionedAccelerationStructureIndirectCommandNV... structs) {
         NativeStructArray<VkBuildPartitionedAccelerationStructureIndirectCommandNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBuildPartitionedAccelerationStructureIndirectCommandNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkImageStencilUsage2CreateInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageStencilUsage2CreateInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageStencilUsage2CreateInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageStencilUsage2CreateInfoKHR(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkImageStencilUsage2CreateInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageStencilUsage2CreateInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageStencilUsage2CreateInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageStencilUsage2CreateInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageStencilUsage2CreateInfoKHR> array(Arena arena, VkImageStencilUsage2CreateInfoKHR... structs) {
+    public static NativeStructArray<VkImageStencilUsage2CreateInfoKHR> array(SegmentAllocator allocator, VkImageStencilUsage2CreateInfoKHR... structs) {
         NativeStructArray<VkImageStencilUsage2CreateInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageStencilUsage2CreateInfoKHR(segment),
             structs.length

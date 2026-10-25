@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -58,8 +59,8 @@ public final class MaLog
 	    this(Arena.ofAuto());
 	}
 	
-	public MaLog(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaLog(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaLog(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class MaLog
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaLog> array(Arena arena, int count) {
+    public static NativeStructArray<MaLog> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLog(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaLog> array(Arena arena, MaLog... structs) {
+    public static NativeStructArray<MaLog> array(SegmentAllocator allocator, MaLog... structs) {
         NativeStructArray<MaLog> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLog(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -83,8 +84,8 @@ public final class VkVideoFormatPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoFormatPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoFormatPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoFormatPropertiesKHR(MemorySegment segment) {
@@ -204,18 +205,18 @@ public final class VkVideoFormatPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoFormatPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoFormatPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoFormatPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoFormatPropertiesKHR> array(Arena arena, VkVideoFormatPropertiesKHR... structs) {
+    public static NativeStructArray<VkVideoFormatPropertiesKHR> array(SegmentAllocator allocator, VkVideoFormatPropertiesKHR... structs) {
         NativeStructArray<VkVideoFormatPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoFormatPropertiesKHR(segment),
             structs.length

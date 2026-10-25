@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -51,8 +52,8 @@ public final class VkShaderInstrumentationCreateInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkShaderInstrumentationCreateInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkShaderInstrumentationCreateInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkShaderInstrumentationCreateInfoARM(MemorySegment segment) {
@@ -105,18 +106,18 @@ public final class VkShaderInstrumentationCreateInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkShaderInstrumentationCreateInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkShaderInstrumentationCreateInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderInstrumentationCreateInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkShaderInstrumentationCreateInfoARM> array(Arena arena, VkShaderInstrumentationCreateInfoARM... structs) {
+    public static NativeStructArray<VkShaderInstrumentationCreateInfoARM> array(SegmentAllocator allocator, VkShaderInstrumentationCreateInfoARM... structs) {
         NativeStructArray<VkShaderInstrumentationCreateInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderInstrumentationCreateInfoARM(segment),
             structs.length

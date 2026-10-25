@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -73,8 +74,8 @@ public final class VkHostImageLayoutTransitionInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkHostImageLayoutTransitionInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkHostImageLayoutTransitionInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkHostImageLayoutTransitionInfo(MemorySegment segment) {
@@ -179,18 +180,18 @@ public final class VkHostImageLayoutTransitionInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkHostImageLayoutTransitionInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkHostImageLayoutTransitionInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkHostImageLayoutTransitionInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkHostImageLayoutTransitionInfo> array(Arena arena, VkHostImageLayoutTransitionInfo... structs) {
+    public static NativeStructArray<VkHostImageLayoutTransitionInfo> array(SegmentAllocator allocator, VkHostImageLayoutTransitionInfo... structs) {
         NativeStructArray<VkHostImageLayoutTransitionInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkHostImageLayoutTransitionInfo(segment),
             structs.length

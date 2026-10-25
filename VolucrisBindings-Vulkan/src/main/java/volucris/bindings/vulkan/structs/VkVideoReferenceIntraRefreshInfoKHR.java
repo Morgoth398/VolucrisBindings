@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkVideoReferenceIntraRefreshInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoReferenceIntraRefreshInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoReferenceIntraRefreshInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoReferenceIntraRefreshInfoKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkVideoReferenceIntraRefreshInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoReferenceIntraRefreshInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoReferenceIntraRefreshInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoReferenceIntraRefreshInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoReferenceIntraRefreshInfoKHR> array(Arena arena, VkVideoReferenceIntraRefreshInfoKHR... structs) {
+    public static NativeStructArray<VkVideoReferenceIntraRefreshInfoKHR> array(SegmentAllocator allocator, VkVideoReferenceIntraRefreshInfoKHR... structs) {
         NativeStructArray<VkVideoReferenceIntraRefreshInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoReferenceIntraRefreshInfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -42,8 +43,8 @@ public final class MaDelayNode
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDelayNode(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDelayNode(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDelayNode(MemorySegment segment) {
@@ -105,18 +106,18 @@ public final class MaDelayNode
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDelayNode> array(Arena arena, int count) {
+    public static NativeStructArray<MaDelayNode> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDelayNode(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDelayNode> array(Arena arena, MaDelayNode... structs) {
+    public static NativeStructArray<MaDelayNode> array(SegmentAllocator allocator, MaDelayNode... structs) {
         NativeStructArray<MaDelayNode> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDelayNode(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoVP9LoopFilterFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoVP9LoopFilterFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoVP9LoopFilterFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoVP9LoopFilterFlags(MemorySegment segment) {
@@ -88,18 +89,18 @@ public final class StdVideoVP9LoopFilterFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoVP9LoopFilterFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoVP9LoopFilterFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoVP9LoopFilterFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoVP9LoopFilterFlags> array(Arena arena, StdVideoVP9LoopFilterFlags... structs) {
+    public static NativeStructArray<StdVideoVP9LoopFilterFlags> array(SegmentAllocator allocator, StdVideoVP9LoopFilterFlags... structs) {
         NativeStructArray<StdVideoVP9LoopFilterFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoVP9LoopFilterFlags(segment),
             structs.length

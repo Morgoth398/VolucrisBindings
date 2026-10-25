@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -143,8 +144,8 @@ public final class MaContext
 	    this(Arena.ofAuto());
 	}
 	
-	public MaContext(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaContext(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaContext(MemorySegment segment) {
@@ -470,18 +471,18 @@ public final class MaContext
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaContext> array(Arena arena, int count) {
+    public static NativeStructArray<MaContext> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaContext(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaContext> array(Arena arena, MaContext... structs) {
+    public static NativeStructArray<MaContext> array(SegmentAllocator allocator, MaContext... structs) {
         NativeStructArray<MaContext> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaContext(segment),
             structs.length
@@ -578,8 +579,8 @@ public final class MaContext
 		    this(Arena.ofAuto());
 		}
 		
-		public Wasapi(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Wasapi(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Wasapi(MemorySegment segment) {
@@ -768,18 +769,18 @@ public final class MaContext
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Wasapi> array(Arena arena, int count) {
+	    public static NativeStructArray<Wasapi> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Wasapi(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Wasapi> array(Arena arena, Wasapi... structs) {
+	    public static NativeStructArray<Wasapi> array(SegmentAllocator allocator, Wasapi... structs) {
 	        NativeStructArray<Wasapi> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Wasapi(segment),
 	            structs.length
@@ -853,8 +854,8 @@ public final class MaContext
 		    this(Arena.ofAuto());
 		}
 		
-		public Dsound(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Dsound(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Dsound(MemorySegment segment) {
@@ -972,18 +973,18 @@ public final class MaContext
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Dsound> array(Arena arena, int count) {
+	    public static NativeStructArray<Dsound> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Dsound(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Dsound> array(Arena arena, Dsound... structs) {
+	    public static NativeStructArray<Dsound> array(SegmentAllocator allocator, Dsound... structs) {
 	        NativeStructArray<Dsound> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Dsound(segment),
 	            structs.length
@@ -1117,8 +1118,8 @@ public final class MaContext
 		    this(Arena.ofAuto());
 		}
 		
-		public Winmm(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Winmm(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Winmm(MemorySegment segment) {
@@ -1416,18 +1417,18 @@ public final class MaContext
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Winmm> array(Arena arena, int count) {
+	    public static NativeStructArray<Winmm> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Winmm(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Winmm> array(Arena arena, Winmm... structs) {
+	    public static NativeStructArray<Winmm> array(SegmentAllocator allocator, Winmm... structs) {
 	        NativeStructArray<Winmm> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Winmm(segment),
 	            structs.length
@@ -1567,8 +1568,8 @@ public final class MaContext
 		    this(Arena.ofAuto());
 		}
 		
-		public Jack(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Jack(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Jack(MemorySegment segment) {
@@ -1876,18 +1877,18 @@ public final class MaContext
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Jack> array(Arena arena, int count) {
+	    public static NativeStructArray<Jack> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Jack(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Jack> array(Arena arena, Jack... structs) {
+	    public static NativeStructArray<Jack> array(SegmentAllocator allocator, Jack... structs) {
 	        NativeStructArray<Jack> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Jack(segment),
 	            structs.length
@@ -1936,8 +1937,8 @@ public final class MaContext
 		    this(Arena.ofAuto());
 		}
 		
-		public Null_backend(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Null_backend(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Null_backend(MemorySegment segment) {
@@ -1975,18 +1976,18 @@ public final class MaContext
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Null_backend> array(Arena arena, int count) {
+	    public static NativeStructArray<Null_backend> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Null_backend(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Null_backend> array(Arena arena, Null_backend... structs) {
+	    public static NativeStructArray<Null_backend> array(SegmentAllocator allocator, Null_backend... structs) {
 	        NativeStructArray<Null_backend> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Null_backend(segment),
 	            structs.length
@@ -2111,8 +2112,8 @@ public final class MaContext
 		    this(Arena.ofAuto());
 		}
 		
-		public Win32(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Win32(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Win32(MemorySegment segment) {
@@ -2375,18 +2376,18 @@ public final class MaContext
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Win32> array(Arena arena, int count) {
+	    public static NativeStructArray<Win32> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Win32(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Win32> array(Arena arena, Win32... structs) {
+	    public static NativeStructArray<Win32> array(SegmentAllocator allocator, Win32... structs) {
 	        NativeStructArray<Win32> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Win32(segment),
 	            structs.length

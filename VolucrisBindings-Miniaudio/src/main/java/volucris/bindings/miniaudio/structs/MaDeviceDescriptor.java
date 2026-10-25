@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -84,8 +85,8 @@ public final class MaDeviceDescriptor
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDeviceDescriptor(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDeviceDescriptor(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDeviceDescriptor(MemorySegment segment) {
@@ -208,18 +209,18 @@ public final class MaDeviceDescriptor
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDeviceDescriptor> array(Arena arena, int count) {
+    public static NativeStructArray<MaDeviceDescriptor> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceDescriptor(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDeviceDescriptor> array(Arena arena, MaDeviceDescriptor... structs) {
+    public static NativeStructArray<MaDeviceDescriptor> array(SegmentAllocator allocator, MaDeviceDescriptor... structs) {
         NativeStructArray<MaDeviceDescriptor> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceDescriptor(segment),
             structs.length

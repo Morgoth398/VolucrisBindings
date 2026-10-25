@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkImageStencilUsageCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageStencilUsageCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageStencilUsageCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageStencilUsageCreateInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkImageStencilUsageCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageStencilUsageCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageStencilUsageCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageStencilUsageCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageStencilUsageCreateInfo> array(Arena arena, VkImageStencilUsageCreateInfo... structs) {
+    public static NativeStructArray<VkImageStencilUsageCreateInfo> array(SegmentAllocator allocator, VkImageStencilUsageCreateInfo... structs) {
         NativeStructArray<VkImageStencilUsageCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageStencilUsageCreateInfo(segment),
             structs.length

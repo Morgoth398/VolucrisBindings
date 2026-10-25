@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR> array(Arena arena, VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceComputeShaderDerivativesPropertiesKHR(segment),
             structs.length

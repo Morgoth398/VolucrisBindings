@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class StdVideoEncodeH265WeightTableFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeH265WeightTableFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeH265WeightTableFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeH265WeightTableFlags(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class StdVideoEncodeH265WeightTableFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeH265WeightTableFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeH265WeightTableFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH265WeightTableFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeH265WeightTableFlags> array(Arena arena, StdVideoEncodeH265WeightTableFlags... structs) {
+    public static NativeStructArray<StdVideoEncodeH265WeightTableFlags> array(SegmentAllocator allocator, StdVideoEncodeH265WeightTableFlags... structs) {
         NativeStructArray<StdVideoEncodeH265WeightTableFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH265WeightTableFlags(segment),
             structs.length

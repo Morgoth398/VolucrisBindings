@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkRenderPassStripeInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderPassStripeInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderPassStripeInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderPassStripeInfoARM(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkRenderPassStripeInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderPassStripeInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderPassStripeInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassStripeInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderPassStripeInfoARM> array(Arena arena, VkRenderPassStripeInfoARM... structs) {
+    public static NativeStructArray<VkRenderPassStripeInfoARM> array(SegmentAllocator allocator, VkRenderPassStripeInfoARM... structs) {
         NativeStructArray<VkRenderPassStripeInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderPassStripeInfoARM(segment),
             structs.length

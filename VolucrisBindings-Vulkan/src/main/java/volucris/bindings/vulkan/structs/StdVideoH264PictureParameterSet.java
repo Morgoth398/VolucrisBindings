@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -96,8 +97,8 @@ public final class StdVideoH264PictureParameterSet
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH264PictureParameterSet(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH264PictureParameterSet(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH264PictureParameterSet(MemorySegment segment) {
@@ -247,18 +248,18 @@ public final class StdVideoH264PictureParameterSet
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH264PictureParameterSet> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH264PictureParameterSet> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH264PictureParameterSet(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH264PictureParameterSet> array(Arena arena, StdVideoH264PictureParameterSet... structs) {
+    public static NativeStructArray<StdVideoH264PictureParameterSet> array(SegmentAllocator allocator, StdVideoH264PictureParameterSet... structs) {
         NativeStructArray<StdVideoH264PictureParameterSet> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH264PictureParameterSet(segment),
             structs.length

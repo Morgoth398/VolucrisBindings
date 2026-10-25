@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -69,8 +70,8 @@ public final class VkDeviceGroupPresentInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceGroupPresentInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceGroupPresentInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceGroupPresentInfoKHR(MemorySegment segment) {
@@ -158,18 +159,18 @@ public final class VkDeviceGroupPresentInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceGroupPresentInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceGroupPresentInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupPresentInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceGroupPresentInfoKHR> array(Arena arena, VkDeviceGroupPresentInfoKHR... structs) {
+    public static NativeStructArray<VkDeviceGroupPresentInfoKHR> array(SegmentAllocator allocator, VkDeviceGroupPresentInfoKHR... structs) {
         NativeStructArray<VkDeviceGroupPresentInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupPresentInfoKHR(segment),
             structs.length

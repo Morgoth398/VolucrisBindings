@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkDirectDriverLoadingListLUNARG
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDirectDriverLoadingListLUNARG(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDirectDriverLoadingListLUNARG(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDirectDriverLoadingListLUNARG(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkDirectDriverLoadingListLUNARG
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDirectDriverLoadingListLUNARG> array(Arena arena, int count) {
+    public static NativeStructArray<VkDirectDriverLoadingListLUNARG> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDirectDriverLoadingListLUNARG(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDirectDriverLoadingListLUNARG> array(Arena arena, VkDirectDriverLoadingListLUNARG... structs) {
+    public static NativeStructArray<VkDirectDriverLoadingListLUNARG> array(SegmentAllocator allocator, VkDirectDriverLoadingListLUNARG... structs) {
         NativeStructArray<VkDirectDriverLoadingListLUNARG> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDirectDriverLoadingListLUNARG(segment),
             structs.length

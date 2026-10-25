@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -38,8 +39,8 @@ public final class MaSplitterNode
 	    this(Arena.ofAuto());
 	}
 	
-	public MaSplitterNode(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaSplitterNode(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaSplitterNode(MemorySegment segment) {
@@ -84,18 +85,18 @@ public final class MaSplitterNode
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaSplitterNode> array(Arena arena, int count) {
+    public static NativeStructArray<MaSplitterNode> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaSplitterNode(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaSplitterNode> array(Arena arena, MaSplitterNode... structs) {
+    public static NativeStructArray<MaSplitterNode> array(SegmentAllocator allocator, MaSplitterNode... structs) {
         NativeStructArray<MaSplitterNode> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaSplitterNode(segment),
             structs.length

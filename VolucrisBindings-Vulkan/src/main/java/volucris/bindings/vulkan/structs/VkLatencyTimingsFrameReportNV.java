@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -121,8 +122,8 @@ public final class VkLatencyTimingsFrameReportNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkLatencyTimingsFrameReportNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkLatencyTimingsFrameReportNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkLatencyTimingsFrameReportNV(MemorySegment segment) {
@@ -315,18 +316,18 @@ public final class VkLatencyTimingsFrameReportNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkLatencyTimingsFrameReportNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkLatencyTimingsFrameReportNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLatencyTimingsFrameReportNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkLatencyTimingsFrameReportNV> array(Arena arena, VkLatencyTimingsFrameReportNV... structs) {
+    public static NativeStructArray<VkLatencyTimingsFrameReportNV> array(SegmentAllocator allocator, VkLatencyTimingsFrameReportNV... structs) {
         NativeStructArray<VkLatencyTimingsFrameReportNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkLatencyTimingsFrameReportNV(segment),
             structs.length

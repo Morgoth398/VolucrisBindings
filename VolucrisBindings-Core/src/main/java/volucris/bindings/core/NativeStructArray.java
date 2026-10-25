@@ -1,7 +1,7 @@
 package volucris.bindings.core;
 
-import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.GroupLayout;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -17,8 +17,10 @@ public class NativeStructArray<T extends Struct<T>> {
 	private final T[] cache;
 
 	@SuppressWarnings("unchecked")
-	public NativeStructArray(Arena arena, GroupLayout layout, Function<MemorySegment, T> factory, int count) {
-		this.segment = arena.allocate(layout, count);
+	public NativeStructArray(
+			SegmentAllocator allocator, GroupLayout layout, Function<MemorySegment, T> factory, int count
+	) {
+		this.segment = allocator.allocate(layout, count);
 		this.layout = layout;
 		this.factory = factory;
 

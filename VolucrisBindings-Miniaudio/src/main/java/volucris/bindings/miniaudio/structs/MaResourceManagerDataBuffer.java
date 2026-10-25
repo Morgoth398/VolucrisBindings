@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -98,8 +99,8 @@ public final class MaResourceManagerDataBuffer
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerDataBuffer(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerDataBuffer(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerDataBuffer(MemorySegment segment) {
@@ -278,18 +279,18 @@ public final class MaResourceManagerDataBuffer
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerDataBuffer> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerDataBuffer> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataBuffer(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerDataBuffer> array(Arena arena, MaResourceManagerDataBuffer... structs) {
+    public static NativeStructArray<MaResourceManagerDataBuffer> array(SegmentAllocator allocator, MaResourceManagerDataBuffer... structs) {
         NativeStructArray<MaResourceManagerDataBuffer> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataBuffer(segment),
             structs.length
@@ -342,8 +343,8 @@ public final class MaResourceManagerDataBuffer
 		    this(Arena.ofAuto());
 		}
 		
-		public Connector(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Connector(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Connector(MemorySegment segment) {
@@ -422,18 +423,18 @@ public final class MaResourceManagerDataBuffer
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Connector> array(Arena arena, int count) {
+	    public static NativeStructArray<Connector> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Connector(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Connector> array(Arena arena, Connector... structs) {
+	    public static NativeStructArray<Connector> array(SegmentAllocator allocator, Connector... structs) {
 	        NativeStructArray<Connector> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Connector(segment),
 	            structs.length

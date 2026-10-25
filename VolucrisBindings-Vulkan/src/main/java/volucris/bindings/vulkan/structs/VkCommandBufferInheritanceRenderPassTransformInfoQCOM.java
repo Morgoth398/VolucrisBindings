@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkCommandBufferInheritanceRenderPassTransformInfoQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCommandBufferInheritanceRenderPassTransformInfoQCOM(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkCommandBufferInheritanceRenderPassTransformInfoQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCommandBufferInheritanceRenderPassTransformInfoQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkCommandBufferInheritanceRenderPassTransformInfoQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCommandBufferInheritanceRenderPassTransformInfoQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCommandBufferInheritanceRenderPassTransformInfoQCOM> array(Arena arena, VkCommandBufferInheritanceRenderPassTransformInfoQCOM... structs) {
+    public static NativeStructArray<VkCommandBufferInheritanceRenderPassTransformInfoQCOM> array(SegmentAllocator allocator, VkCommandBufferInheritanceRenderPassTransformInfoQCOM... structs) {
         NativeStructArray<VkCommandBufferInheritanceRenderPassTransformInfoQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCommandBufferInheritanceRenderPassTransformInfoQCOM(segment),
             structs.length

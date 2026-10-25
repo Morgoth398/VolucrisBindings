@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class StdVideoEncodeAV1ExtensionHeader
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeAV1ExtensionHeader(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeAV1ExtensionHeader(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeAV1ExtensionHeader(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class StdVideoEncodeAV1ExtensionHeader
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeAV1ExtensionHeader> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeAV1ExtensionHeader> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeAV1ExtensionHeader(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeAV1ExtensionHeader> array(Arena arena, StdVideoEncodeAV1ExtensionHeader... structs) {
+    public static NativeStructArray<StdVideoEncodeAV1ExtensionHeader> array(SegmentAllocator allocator, StdVideoEncodeAV1ExtensionHeader... structs) {
         NativeStructArray<StdVideoEncodeAV1ExtensionHeader> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeAV1ExtensionHeader(segment),
             structs.length

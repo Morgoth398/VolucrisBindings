@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT> array(Arena arena, VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT(segment),
             structs.length

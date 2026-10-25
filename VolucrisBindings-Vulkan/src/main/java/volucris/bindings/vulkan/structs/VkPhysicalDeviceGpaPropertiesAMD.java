@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkPhysicalDeviceGpaPropertiesAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceGpaPropertiesAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceGpaPropertiesAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceGpaPropertiesAMD(MemorySegment segment) {
@@ -186,18 +187,18 @@ public final class VkPhysicalDeviceGpaPropertiesAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceGpaPropertiesAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceGpaPropertiesAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceGpaPropertiesAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceGpaPropertiesAMD> array(Arena arena, VkPhysicalDeviceGpaPropertiesAMD... structs) {
+    public static NativeStructArray<VkPhysicalDeviceGpaPropertiesAMD> array(SegmentAllocator allocator, VkPhysicalDeviceGpaPropertiesAMD... structs) {
         NativeStructArray<VkPhysicalDeviceGpaPropertiesAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceGpaPropertiesAMD(segment),
             structs.length

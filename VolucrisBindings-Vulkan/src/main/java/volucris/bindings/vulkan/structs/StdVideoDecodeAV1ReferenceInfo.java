@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -65,8 +66,8 @@ public final class StdVideoDecodeAV1ReferenceInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoDecodeAV1ReferenceInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoDecodeAV1ReferenceInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoDecodeAV1ReferenceInfo(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class StdVideoDecodeAV1ReferenceInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoDecodeAV1ReferenceInfo> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoDecodeAV1ReferenceInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoDecodeAV1ReferenceInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoDecodeAV1ReferenceInfo> array(Arena arena, StdVideoDecodeAV1ReferenceInfo... structs) {
+    public static NativeStructArray<StdVideoDecodeAV1ReferenceInfo> array(SegmentAllocator allocator, StdVideoDecodeAV1ReferenceInfo... structs) {
         NativeStructArray<StdVideoDecodeAV1ReferenceInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoDecodeAV1ReferenceInfo(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceShaderSubgroupRotateFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderSubgroupRotateFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderSubgroupRotateFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderSubgroupRotateFeatures(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceShaderSubgroupRotateFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupRotateFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupRotateFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSubgroupRotateFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupRotateFeatures> array(Arena arena, VkPhysicalDeviceShaderSubgroupRotateFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderSubgroupRotateFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceShaderSubgroupRotateFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceShaderSubgroupRotateFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderSubgroupRotateFeatures(segment),
             structs.length

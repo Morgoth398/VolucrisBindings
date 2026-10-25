@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkPerformanceOverrideInfoINTEL
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPerformanceOverrideInfoINTEL(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPerformanceOverrideInfoINTEL(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPerformanceOverrideInfoINTEL(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkPerformanceOverrideInfoINTEL
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPerformanceOverrideInfoINTEL> array(Arena arena, int count) {
+    public static NativeStructArray<VkPerformanceOverrideInfoINTEL> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceOverrideInfoINTEL(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPerformanceOverrideInfoINTEL> array(Arena arena, VkPerformanceOverrideInfoINTEL... structs) {
+    public static NativeStructArray<VkPerformanceOverrideInfoINTEL> array(SegmentAllocator allocator, VkPerformanceOverrideInfoINTEL... structs) {
         NativeStructArray<VkPerformanceOverrideInfoINTEL> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceOverrideInfoINTEL(segment),
             structs.length

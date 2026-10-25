@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -42,8 +43,8 @@ public final class MaPagedAudioBufferConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaPagedAudioBufferConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaPagedAudioBufferConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaPagedAudioBufferConfig(MemorySegment segment) {
@@ -86,18 +87,18 @@ public final class MaPagedAudioBufferConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaPagedAudioBufferConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaPagedAudioBufferConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaPagedAudioBufferConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaPagedAudioBufferConfig> array(Arena arena, MaPagedAudioBufferConfig... structs) {
+    public static NativeStructArray<MaPagedAudioBufferConfig> array(SegmentAllocator allocator, MaPagedAudioBufferConfig... structs) {
         NativeStructArray<MaPagedAudioBufferConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaPagedAudioBufferConfig(segment),
             structs.length

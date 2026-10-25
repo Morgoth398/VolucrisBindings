@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -71,8 +72,8 @@ public final class MaNoise
 	    this(Arena.ofAuto());
 	}
 	
-	public MaNoise(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaNoise(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaNoise(MemorySegment segment) {
@@ -193,18 +194,18 @@ public final class MaNoise
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaNoise> array(Arena arena, int count) {
+    public static NativeStructArray<MaNoise> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaNoise(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaNoise> array(Arena arena, MaNoise... structs) {
+    public static NativeStructArray<MaNoise> array(SegmentAllocator allocator, MaNoise... structs) {
         NativeStructArray<MaNoise> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaNoise(segment),
             structs.length
@@ -253,8 +254,8 @@ public final class MaNoise
 		    this(Arena.ofAuto());
 		}
 		
-		public State(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public State(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public State(MemorySegment segment) {
@@ -316,18 +317,18 @@ public final class MaNoise
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<State> array(Arena arena, int count) {
+	    public static NativeStructArray<State> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new State(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<State> array(Arena arena, State... structs) {
+	    public static NativeStructArray<State> array(SegmentAllocator allocator, State... structs) {
 	        NativeStructArray<State> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new State(segment),
 	            structs.length
@@ -384,8 +385,8 @@ public final class MaNoise
 			    this(Arena.ofAuto());
 			}
 			
-			public Pink(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Pink(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Pink(MemorySegment segment) {
@@ -458,18 +459,18 @@ public final class MaNoise
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Pink> array(Arena arena, int count) {
+		    public static NativeStructArray<Pink> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Pink(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Pink> array(Arena arena, Pink... structs) {
+		    public static NativeStructArray<Pink> array(SegmentAllocator allocator, Pink... structs) {
 		        NativeStructArray<Pink> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Pink(segment),
 		            structs.length
@@ -518,8 +519,8 @@ public final class MaNoise
 			    this(Arena.ofAuto());
 			}
 			
-			public Brownian(Arena arena) {
-			    this(arena.allocate(LAYOUT));
+			public Brownian(SegmentAllocator allocator) {
+			    this(allocator.allocate(LAYOUT));
 			}
 			
 			public Brownian(MemorySegment segment) {
@@ -562,18 +563,18 @@ public final class MaNoise
 		        return new NativeStructArray<>(this);
 		    }
 		    
-		    public static NativeStructArray<Brownian> array(Arena arena, int count) {
+		    public static NativeStructArray<Brownian> array(SegmentAllocator allocator, int count) {
 		        return new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Brownian(segment),
 		            count
 		        );
 		    }
 		    
-		    public static NativeStructArray<Brownian> array(Arena arena, Brownian... structs) {
+		    public static NativeStructArray<Brownian> array(SegmentAllocator allocator, Brownian... structs) {
 		        NativeStructArray<Brownian> array = new NativeStructArray<>(
-		            arena,
+		            allocator,
 		            LAYOUT,
 		            segment -> new Brownian(segment),
 		            structs.length

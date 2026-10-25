@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class VkViewportSwizzleNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkViewportSwizzleNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkViewportSwizzleNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkViewportSwizzleNV(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class VkViewportSwizzleNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkViewportSwizzleNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkViewportSwizzleNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkViewportSwizzleNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkViewportSwizzleNV> array(Arena arena, VkViewportSwizzleNV... structs) {
+    public static NativeStructArray<VkViewportSwizzleNV> array(SegmentAllocator allocator, VkViewportSwizzleNV... structs) {
         NativeStructArray<VkViewportSwizzleNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkViewportSwizzleNV(segment),
             structs.length

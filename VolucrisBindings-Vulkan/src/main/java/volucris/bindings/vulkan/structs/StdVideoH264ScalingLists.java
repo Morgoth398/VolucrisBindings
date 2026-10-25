@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class StdVideoH264ScalingLists
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH264ScalingLists(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH264ScalingLists(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH264ScalingLists(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class StdVideoH264ScalingLists
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH264ScalingLists> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH264ScalingLists> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH264ScalingLists(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH264ScalingLists> array(Arena arena, StdVideoH264ScalingLists... structs) {
+    public static NativeStructArray<StdVideoH264ScalingLists> array(SegmentAllocator allocator, StdVideoH264ScalingLists... structs) {
         NativeStructArray<StdVideoH264ScalingLists> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH264ScalingLists(segment),
             structs.length

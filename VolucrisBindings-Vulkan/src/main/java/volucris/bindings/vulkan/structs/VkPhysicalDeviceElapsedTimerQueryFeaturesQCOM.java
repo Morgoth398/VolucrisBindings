@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM> array(Arena arena, VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(segment),
             structs.length

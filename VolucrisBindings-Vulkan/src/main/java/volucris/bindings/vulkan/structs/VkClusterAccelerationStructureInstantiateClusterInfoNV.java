@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -59,8 +60,8 @@ public final class VkClusterAccelerationStructureInstantiateClusterInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkClusterAccelerationStructureInstantiateClusterInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkClusterAccelerationStructureInstantiateClusterInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkClusterAccelerationStructureInstantiateClusterInfoNV(MemorySegment segment) {
@@ -140,18 +141,18 @@ public final class VkClusterAccelerationStructureInstantiateClusterInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureInstantiateClusterInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkClusterAccelerationStructureInstantiateClusterInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureInstantiateClusterInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkClusterAccelerationStructureInstantiateClusterInfoNV> array(Arena arena, VkClusterAccelerationStructureInstantiateClusterInfoNV... structs) {
+    public static NativeStructArray<VkClusterAccelerationStructureInstantiateClusterInfoNV> array(SegmentAllocator allocator, VkClusterAccelerationStructureInstantiateClusterInfoNV... structs) {
         NativeStructArray<VkClusterAccelerationStructureInstantiateClusterInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClusterAccelerationStructureInstantiateClusterInfoNV(segment),
             structs.length

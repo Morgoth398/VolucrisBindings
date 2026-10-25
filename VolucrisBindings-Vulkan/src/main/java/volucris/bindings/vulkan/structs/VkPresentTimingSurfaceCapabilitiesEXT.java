@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkPresentTimingSurfaceCapabilitiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPresentTimingSurfaceCapabilitiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPresentTimingSurfaceCapabilitiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPresentTimingSurfaceCapabilitiesEXT(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPresentTimingSurfaceCapabilitiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPresentTimingSurfaceCapabilitiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPresentTimingSurfaceCapabilitiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentTimingSurfaceCapabilitiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPresentTimingSurfaceCapabilitiesEXT> array(Arena arena, VkPresentTimingSurfaceCapabilitiesEXT... structs) {
+    public static NativeStructArray<VkPresentTimingSurfaceCapabilitiesEXT> array(SegmentAllocator allocator, VkPresentTimingSurfaceCapabilitiesEXT... structs) {
         NativeStructArray<VkPresentTimingSurfaceCapabilitiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPresentTimingSurfaceCapabilitiesEXT(segment),
             structs.length

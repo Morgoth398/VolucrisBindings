@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -571,8 +572,8 @@ public final class VkPhysicalDeviceLimits
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceLimits(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceLimits(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceLimits(MemorySegment segment) {
@@ -1660,18 +1661,18 @@ public final class VkPhysicalDeviceLimits
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceLimits> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceLimits> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceLimits(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceLimits> array(Arena arena, VkPhysicalDeviceLimits... structs) {
+    public static NativeStructArray<VkPhysicalDeviceLimits> array(SegmentAllocator allocator, VkPhysicalDeviceLimits... structs) {
         NativeStructArray<VkPhysicalDeviceLimits> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceLimits(segment),
             structs.length

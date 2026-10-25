@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkQueueFamilyCheckpointProperties2NV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkQueueFamilyCheckpointProperties2NV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkQueueFamilyCheckpointProperties2NV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkQueueFamilyCheckpointProperties2NV(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkQueueFamilyCheckpointProperties2NV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkQueueFamilyCheckpointProperties2NV> array(Arena arena, int count) {
+    public static NativeStructArray<VkQueueFamilyCheckpointProperties2NV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyCheckpointProperties2NV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkQueueFamilyCheckpointProperties2NV> array(Arena arena, VkQueueFamilyCheckpointProperties2NV... structs) {
+    public static NativeStructArray<VkQueueFamilyCheckpointProperties2NV> array(SegmentAllocator allocator, VkQueueFamilyCheckpointProperties2NV... structs) {
         NativeStructArray<VkQueueFamilyCheckpointProperties2NV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkQueueFamilyCheckpointProperties2NV(segment),
             structs.length

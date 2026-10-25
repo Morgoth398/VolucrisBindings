@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -106,8 +107,8 @@ public final class VkDebugUtilsMessengerCallbackDataEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDebugUtilsMessengerCallbackDataEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDebugUtilsMessengerCallbackDataEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDebugUtilsMessengerCallbackDataEXT(MemorySegment segment) {
@@ -151,8 +152,8 @@ public final class VkDebugUtilsMessengerCallbackDataEXT
     }
     
     /// @see #pMessageIdName()
-    public VkDebugUtilsMessengerCallbackDataEXT pMessageIdName(Arena arena, String pMessageIdName) {
-    	P_MESSAGE_ID_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pMessageIdName));
+    public VkDebugUtilsMessengerCallbackDataEXT pMessageIdName(SegmentAllocator allocator, String pMessageIdName) {
+    	P_MESSAGE_ID_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pMessageIdName));
     	return this;
     }
     
@@ -176,8 +177,8 @@ public final class VkDebugUtilsMessengerCallbackDataEXT
     }
     
     /// @see #pMessage()
-    public VkDebugUtilsMessengerCallbackDataEXT pMessage(Arena arena, String pMessage) {
-    	P_MESSAGE_HANDLE.set(segment, 0L, arena.allocateFrom(pMessage));
+    public VkDebugUtilsMessengerCallbackDataEXT pMessage(SegmentAllocator allocator, String pMessage) {
+    	P_MESSAGE_HANDLE.set(segment, 0L, allocator.allocateFrom(pMessage));
     	return this;
     }
     
@@ -285,18 +286,18 @@ public final class VkDebugUtilsMessengerCallbackDataEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDebugUtilsMessengerCallbackDataEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDebugUtilsMessengerCallbackDataEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsMessengerCallbackDataEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDebugUtilsMessengerCallbackDataEXT> array(Arena arena, VkDebugUtilsMessengerCallbackDataEXT... structs) {
+    public static NativeStructArray<VkDebugUtilsMessengerCallbackDataEXT> array(SegmentAllocator allocator, VkDebugUtilsMessengerCallbackDataEXT... structs) {
         NativeStructArray<VkDebugUtilsMessengerCallbackDataEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsMessengerCallbackDataEXT(segment),
             structs.length

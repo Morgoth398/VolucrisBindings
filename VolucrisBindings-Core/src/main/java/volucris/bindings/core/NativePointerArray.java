@@ -1,7 +1,7 @@
 package volucris.bindings.core;
 
-import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,21 +12,21 @@ public class NativePointerArray {
 
 	private final MemorySegment segment;
 
-	public NativePointerArray(Arena arena, int count) {
-		segment = arena.allocate(UNBOUNDED_ADDRESS, count);
+	public NativePointerArray(SegmentAllocator allocator, int count) {
+		segment = allocator.allocate(UNBOUNDED_ADDRESS, count);
 	}
 
-	public NativePointerArray(Arena arena, MemorySegment pointer) {
-		segment = arena.allocateFrom(UNBOUNDED_ADDRESS, pointer);
+	public NativePointerArray(SegmentAllocator allocator, MemorySegment pointer) {
+		segment = allocator.allocateFrom(UNBOUNDED_ADDRESS, pointer);
 	}
-	
-	public NativePointerArray(Arena arena, MemorySegment... pointers) {
-		segment = arena.allocate(UNBOUNDED_ADDRESS, pointers.length);
-		
+
+	public NativePointerArray(SegmentAllocator allocator, MemorySegment... pointers) {
+		segment = allocator.allocate(UNBOUNDED_ADDRESS, pointers.length);
+
 		for (int i = 0; i < pointers.length; i++)
 			set(i, pointers[i]);
 	}
-	
+
 	public MemorySegment get(int index) {
 		return segment.getAtIndex(UNBOUNDED_ADDRESS, index);
 	}
@@ -50,15 +50,15 @@ public class NativePointerArray {
 		);
 		return this;
 	}
-	
-	public NativePointerArray setStrings(Arena arena, int index, Collection<String> strings) {
+
+	public NativePointerArray setStrings(SegmentAllocator allocator, int index, Collection<String> strings) {
 		for (String string : strings)
-			setString(arena, index++, string);
+			setString(allocator, index++, string);
 		return this;
 	}
-	
-	public NativePointerArray setString(Arena arena, int index, String value) {
-		segment.setAtIndex(UNBOUNDED_ADDRESS, index, arena.allocateFrom(value));
+
+	public NativePointerArray setString(SegmentAllocator allocator, int index, String value) {
+		segment.setAtIndex(UNBOUNDED_ADDRESS, index, allocator.allocateFrom(value));
 		return this;
 	}
 
@@ -69,7 +69,7 @@ public class NativePointerArray {
 		}
 		return list;
 	}
-	
+
 	public String getString(int index) {
 		return segment.getAtIndex(UNBOUNDED_ADDRESS, index).getString(0);
 	}

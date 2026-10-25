@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDescriptorPoolInlineUniformBlockCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorPoolInlineUniformBlockCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorPoolInlineUniformBlockCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorPoolInlineUniformBlockCreateInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDescriptorPoolInlineUniformBlockCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorPoolInlineUniformBlockCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorPoolInlineUniformBlockCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorPoolInlineUniformBlockCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorPoolInlineUniformBlockCreateInfo> array(Arena arena, VkDescriptorPoolInlineUniformBlockCreateInfo... structs) {
+    public static NativeStructArray<VkDescriptorPoolInlineUniformBlockCreateInfo> array(SegmentAllocator allocator, VkDescriptorPoolInlineUniformBlockCreateInfo... structs) {
         NativeStructArray<VkDescriptorPoolInlineUniformBlockCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorPoolInlineUniformBlockCreateInfo(segment),
             structs.length

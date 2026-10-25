@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderImageFootprintFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderImageFootprintFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderImageFootprintFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderImageFootprintFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderImageFootprintFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderImageFootprintFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderImageFootprintFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderImageFootprintFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderImageFootprintFeaturesNV> array(Arena arena, VkPhysicalDeviceShaderImageFootprintFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderImageFootprintFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceShaderImageFootprintFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceShaderImageFootprintFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderImageFootprintFeaturesNV(segment),
             structs.length

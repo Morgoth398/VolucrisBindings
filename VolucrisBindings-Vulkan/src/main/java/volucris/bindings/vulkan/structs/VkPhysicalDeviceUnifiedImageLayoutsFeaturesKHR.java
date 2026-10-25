@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> array(Arena arena, VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceUnifiedImageLayoutsFeaturesKHR(segment),
             structs.length

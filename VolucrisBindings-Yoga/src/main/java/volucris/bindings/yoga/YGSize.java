@@ -6,6 +6,7 @@ package volucris.bindings.yoga;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -45,8 +46,8 @@ public final class YGSize
 	    this(Arena.ofAuto());
 	}
 	
-	public YGSize(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public YGSize(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public YGSize(MemorySegment segment) {
@@ -94,18 +95,18 @@ public final class YGSize
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<YGSize> array(Arena arena, int count) {
+    public static NativeStructArray<YGSize> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new YGSize(segment),
             count
         );
     }
     
-    public static NativeStructArray<YGSize> array(Arena arena, YGSize... structs) {
+    public static NativeStructArray<YGSize> array(SegmentAllocator allocator, YGSize... structs) {
         NativeStructArray<YGSize> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new YGSize(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkDataGraphPipelineSessionMemoryRequirementsInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineSessionMemoryRequirementsInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineSessionMemoryRequirementsInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineSessionMemoryRequirementsInfoARM(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkDataGraphPipelineSessionMemoryRequirementsInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionMemoryRequirementsInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineSessionMemoryRequirementsInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionMemoryRequirementsInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSessionMemoryRequirementsInfoARM> array(Arena arena, VkDataGraphPipelineSessionMemoryRequirementsInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineSessionMemoryRequirementsInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineSessionMemoryRequirementsInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineSessionMemoryRequirementsInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSessionMemoryRequirementsInfoARM(segment),
             structs.length

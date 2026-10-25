@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -63,8 +64,8 @@ public final class VkBindTransformFeedbackBuffer2InfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindTransformFeedbackBuffer2InfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindTransformFeedbackBuffer2InfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindTransformFeedbackBuffer2InfoEXT(MemorySegment segment) {
@@ -144,18 +145,18 @@ public final class VkBindTransformFeedbackBuffer2InfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindTransformFeedbackBuffer2InfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindTransformFeedbackBuffer2InfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindTransformFeedbackBuffer2InfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindTransformFeedbackBuffer2InfoEXT> array(Arena arena, VkBindTransformFeedbackBuffer2InfoEXT... structs) {
+    public static NativeStructArray<VkBindTransformFeedbackBuffer2InfoEXT> array(SegmentAllocator allocator, VkBindTransformFeedbackBuffer2InfoEXT... structs) {
         NativeStructArray<VkBindTransformFeedbackBuffer2InfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindTransformFeedbackBuffer2InfoEXT(segment),
             structs.length

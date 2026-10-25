@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class VkShaderInstrumentationMetricDataHeaderARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkShaderInstrumentationMetricDataHeaderARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkShaderInstrumentationMetricDataHeaderARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkShaderInstrumentationMetricDataHeaderARM(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class VkShaderInstrumentationMetricDataHeaderARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkShaderInstrumentationMetricDataHeaderARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkShaderInstrumentationMetricDataHeaderARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderInstrumentationMetricDataHeaderARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkShaderInstrumentationMetricDataHeaderARM> array(Arena arena, VkShaderInstrumentationMetricDataHeaderARM... structs) {
+    public static NativeStructArray<VkShaderInstrumentationMetricDataHeaderARM> array(SegmentAllocator allocator, VkShaderInstrumentationMetricDataHeaderARM... structs) {
         NativeStructArray<VkShaderInstrumentationMetricDataHeaderARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkShaderInstrumentationMetricDataHeaderARM(segment),
             structs.length

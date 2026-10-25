@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPipelineFragmentDensityMapLayeredCreateInfoVALVE
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> array(Arena arena, VkPipelineFragmentDensityMapLayeredCreateInfoVALVE... structs) {
+    public static NativeStructArray<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> array(SegmentAllocator allocator, VkPipelineFragmentDensityMapLayeredCreateInfoVALVE... structs) {
         NativeStructArray<VkPipelineFragmentDensityMapLayeredCreateInfoVALVE> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineFragmentDensityMapLayeredCreateInfoVALVE(segment),
             structs.length

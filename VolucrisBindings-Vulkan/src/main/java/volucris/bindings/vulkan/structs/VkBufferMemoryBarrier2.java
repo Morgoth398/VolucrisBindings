@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -96,8 +97,8 @@ public final class VkBufferMemoryBarrier2
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBufferMemoryBarrier2(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBufferMemoryBarrier2(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBufferMemoryBarrier2(MemorySegment segment) {
@@ -245,18 +246,18 @@ public final class VkBufferMemoryBarrier2
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBufferMemoryBarrier2> array(Arena arena, int count) {
+    public static NativeStructArray<VkBufferMemoryBarrier2> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBufferMemoryBarrier2(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBufferMemoryBarrier2> array(Arena arena, VkBufferMemoryBarrier2... structs) {
+    public static NativeStructArray<VkBufferMemoryBarrier2> array(SegmentAllocator allocator, VkBufferMemoryBarrier2... structs) {
         NativeStructArray<VkBufferMemoryBarrier2> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBufferMemoryBarrier2(segment),
             structs.length

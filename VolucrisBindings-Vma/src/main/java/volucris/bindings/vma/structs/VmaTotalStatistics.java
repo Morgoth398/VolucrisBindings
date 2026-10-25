@@ -6,6 +6,7 @@ package volucris.bindings.vma.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -53,8 +54,8 @@ public final class VmaTotalStatistics
 	    this(Arena.ofAuto());
 	}
 	
-	public VmaTotalStatistics(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VmaTotalStatistics(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VmaTotalStatistics(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VmaTotalStatistics
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VmaTotalStatistics> array(Arena arena, int count) {
+    public static NativeStructArray<VmaTotalStatistics> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaTotalStatistics(segment),
             count
         );
     }
     
-    public static NativeStructArray<VmaTotalStatistics> array(Arena arena, VmaTotalStatistics... structs) {
+    public static NativeStructArray<VmaTotalStatistics> array(SegmentAllocator allocator, VmaTotalStatistics... structs) {
         NativeStructArray<VmaTotalStatistics> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaTotalStatistics(segment),
             structs.length

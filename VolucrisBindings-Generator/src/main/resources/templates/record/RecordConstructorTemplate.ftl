@@ -2,8 +2,8 @@ public ${className}() {
     this(Arena.ofAuto());
 }
 
-public ${className}(Arena arena) {
-    this(arena.allocate(${layoutFieldName}));
+public ${className}(SegmentAllocator allocator) {
+    this(allocator.allocate(${layoutFieldName}));
 }
 
 public ${className}(MemorySegment segment) {

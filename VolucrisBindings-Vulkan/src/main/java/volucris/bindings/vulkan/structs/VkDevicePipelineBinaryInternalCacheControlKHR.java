@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDevicePipelineBinaryInternalCacheControlKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDevicePipelineBinaryInternalCacheControlKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDevicePipelineBinaryInternalCacheControlKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDevicePipelineBinaryInternalCacheControlKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDevicePipelineBinaryInternalCacheControlKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDevicePipelineBinaryInternalCacheControlKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDevicePipelineBinaryInternalCacheControlKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDevicePipelineBinaryInternalCacheControlKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDevicePipelineBinaryInternalCacheControlKHR> array(Arena arena, VkDevicePipelineBinaryInternalCacheControlKHR... structs) {
+    public static NativeStructArray<VkDevicePipelineBinaryInternalCacheControlKHR> array(SegmentAllocator allocator, VkDevicePipelineBinaryInternalCacheControlKHR... structs) {
         NativeStructArray<VkDevicePipelineBinaryInternalCacheControlKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDevicePipelineBinaryInternalCacheControlKHR(segment),
             structs.length

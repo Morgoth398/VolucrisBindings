@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -171,8 +172,8 @@ public final class StdVideoH265SequenceParameterSetVui
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH265SequenceParameterSetVui(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH265SequenceParameterSetVui(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH265SequenceParameterSetVui(MemorySegment segment) {
@@ -472,18 +473,18 @@ public final class StdVideoH265SequenceParameterSetVui
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH265SequenceParameterSetVui> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH265SequenceParameterSetVui> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265SequenceParameterSetVui(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH265SequenceParameterSetVui> array(Arena arena, StdVideoH265SequenceParameterSetVui... structs) {
+    public static NativeStructArray<StdVideoH265SequenceParameterSetVui> array(SegmentAllocator allocator, StdVideoH265SequenceParameterSetVui... structs) {
         NativeStructArray<StdVideoH265SequenceParameterSetVui> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265SequenceParameterSetVui(segment),
             structs.length

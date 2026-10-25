@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM> array(Arena arena, VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(segment),
             structs.length

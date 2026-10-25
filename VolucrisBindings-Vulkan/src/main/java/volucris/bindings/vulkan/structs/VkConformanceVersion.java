@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class VkConformanceVersion
 	    this(Arena.ofAuto());
 	}
 	
-	public VkConformanceVersion(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkConformanceVersion(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkConformanceVersion(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class VkConformanceVersion
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkConformanceVersion> array(Arena arena, int count) {
+    public static NativeStructArray<VkConformanceVersion> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkConformanceVersion(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkConformanceVersion> array(Arena arena, VkConformanceVersion... structs) {
+    public static NativeStructArray<VkConformanceVersion> array(SegmentAllocator allocator, VkConformanceVersion... structs) {
         NativeStructArray<VkConformanceVersion> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkConformanceVersion(segment),
             structs.length

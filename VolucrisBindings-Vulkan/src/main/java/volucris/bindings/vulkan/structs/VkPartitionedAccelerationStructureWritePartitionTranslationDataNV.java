@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkPartitionedAccelerationStructureWritePartitionTranslationDa
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkPartitionedAccelerationStructureWritePartitionTranslationDa
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureWritePartitionTranslationDataNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureWritePartitionTranslationDataNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPartitionedAccelerationStructureWritePartitionTranslationDataNV> array(Arena arena, VkPartitionedAccelerationStructureWritePartitionTranslationDataNV... structs) {
+    public static NativeStructArray<VkPartitionedAccelerationStructureWritePartitionTranslationDataNV> array(SegmentAllocator allocator, VkPartitionedAccelerationStructureWritePartitionTranslationDataNV... structs) {
         NativeStructArray<VkPartitionedAccelerationStructureWritePartitionTranslationDataNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPartitionedAccelerationStructureWritePartitionTranslationDataNV(segment),
             structs.length

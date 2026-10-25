@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -78,8 +79,8 @@ public final class MaVfsCallbacks
 	    this(Arena.ofAuto());
 	}
 	
-	public MaVfsCallbacks(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaVfsCallbacks(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaVfsCallbacks(MemorySegment segment) {
@@ -227,18 +228,18 @@ public final class MaVfsCallbacks
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaVfsCallbacks> array(Arena arena, int count) {
+    public static NativeStructArray<MaVfsCallbacks> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaVfsCallbacks(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaVfsCallbacks> array(Arena arena, MaVfsCallbacks... structs) {
+    public static NativeStructArray<MaVfsCallbacks> array(SegmentAllocator allocator, MaVfsCallbacks... structs) {
         NativeStructArray<MaVfsCallbacks> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaVfsCallbacks(segment),
             structs.length

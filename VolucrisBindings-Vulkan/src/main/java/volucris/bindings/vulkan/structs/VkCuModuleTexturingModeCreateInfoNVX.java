@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkCuModuleTexturingModeCreateInfoNVX
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCuModuleTexturingModeCreateInfoNVX(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCuModuleTexturingModeCreateInfoNVX(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCuModuleTexturingModeCreateInfoNVX(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkCuModuleTexturingModeCreateInfoNVX
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCuModuleTexturingModeCreateInfoNVX> array(Arena arena, int count) {
+    public static NativeStructArray<VkCuModuleTexturingModeCreateInfoNVX> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCuModuleTexturingModeCreateInfoNVX(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCuModuleTexturingModeCreateInfoNVX> array(Arena arena, VkCuModuleTexturingModeCreateInfoNVX... structs) {
+    public static NativeStructArray<VkCuModuleTexturingModeCreateInfoNVX> array(SegmentAllocator allocator, VkCuModuleTexturingModeCreateInfoNVX... structs) {
         NativeStructArray<VkCuModuleTexturingModeCreateInfoNVX> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCuModuleTexturingModeCreateInfoNVX(segment),
             structs.length

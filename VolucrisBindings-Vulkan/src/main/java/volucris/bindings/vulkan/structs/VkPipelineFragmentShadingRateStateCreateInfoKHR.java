@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -62,8 +63,8 @@ public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineFragmentShadingRateStateCreateInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineFragmentShadingRateStateCreateInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineFragmentShadingRateStateCreateInfoKHR(MemorySegment segment) {
@@ -143,18 +144,18 @@ public final class VkPipelineFragmentShadingRateStateCreateInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineFragmentShadingRateStateCreateInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(Arena arena, VkPipelineFragmentShadingRateStateCreateInfoKHR... structs) {
+    public static NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array(SegmentAllocator allocator, VkPipelineFragmentShadingRateStateCreateInfoKHR... structs) {
         NativeStructArray<VkPipelineFragmentShadingRateStateCreateInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineFragmentShadingRateStateCreateInfoKHR(segment),
             structs.length

@@ -1,19 +1,19 @@
 package volucris.bindings.core;
 
-import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 
 public class NativeDoubleArray {
 
 	private final MemorySegment segment;
 
-	public NativeDoubleArray(Arena arena, double... values) {
-		segment = arena.allocateFrom(ValueLayout.JAVA_DOUBLE, values);
+	public NativeDoubleArray(SegmentAllocator allocator, double... values) {
+		segment = allocator.allocateFrom(ValueLayout.JAVA_DOUBLE, values);
 	}
 
-	public NativeDoubleArray(Arena arena, int count) {
-		segment = arena.allocate(ValueLayout.JAVA_DOUBLE, count);
+	public NativeDoubleArray(SegmentAllocator allocator, int count) {
+		segment = allocator.allocate(ValueLayout.JAVA_DOUBLE, count);
 	}
 
 	public NativeDoubleArray(MemorySegment segment) {

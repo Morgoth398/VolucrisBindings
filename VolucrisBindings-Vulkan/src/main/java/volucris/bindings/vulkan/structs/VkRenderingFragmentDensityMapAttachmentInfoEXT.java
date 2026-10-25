@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkRenderingFragmentDensityMapAttachmentInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRenderingFragmentDensityMapAttachmentInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRenderingFragmentDensityMapAttachmentInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRenderingFragmentDensityMapAttachmentInfoEXT(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkRenderingFragmentDensityMapAttachmentInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRenderingFragmentDensityMapAttachmentInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkRenderingFragmentDensityMapAttachmentInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingFragmentDensityMapAttachmentInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRenderingFragmentDensityMapAttachmentInfoEXT> array(Arena arena, VkRenderingFragmentDensityMapAttachmentInfoEXT... structs) {
+    public static NativeStructArray<VkRenderingFragmentDensityMapAttachmentInfoEXT> array(SegmentAllocator allocator, VkRenderingFragmentDensityMapAttachmentInfoEXT... structs) {
         NativeStructArray<VkRenderingFragmentDensityMapAttachmentInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRenderingFragmentDensityMapAttachmentInfoEXT(segment),
             structs.length

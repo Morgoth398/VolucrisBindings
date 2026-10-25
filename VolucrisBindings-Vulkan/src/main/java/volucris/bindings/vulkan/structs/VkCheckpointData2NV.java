@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkCheckpointData2NV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCheckpointData2NV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCheckpointData2NV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCheckpointData2NV(MemorySegment segment) {
@@ -140,18 +141,18 @@ public final class VkCheckpointData2NV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCheckpointData2NV> array(Arena arena, int count) {
+    public static NativeStructArray<VkCheckpointData2NV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCheckpointData2NV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCheckpointData2NV> array(Arena arena, VkCheckpointData2NV... structs) {
+    public static NativeStructArray<VkCheckpointData2NV> array(SegmentAllocator allocator, VkCheckpointData2NV... structs) {
         NativeStructArray<VkCheckpointData2NV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCheckpointData2NV(segment),
             structs.length

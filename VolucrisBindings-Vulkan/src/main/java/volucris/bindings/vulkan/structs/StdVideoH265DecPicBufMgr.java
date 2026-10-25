@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -54,8 +55,8 @@ public final class StdVideoH265DecPicBufMgr
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH265DecPicBufMgr(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH265DecPicBufMgr(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH265DecPicBufMgr(MemorySegment segment) {
@@ -113,18 +114,18 @@ public final class StdVideoH265DecPicBufMgr
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH265DecPicBufMgr> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH265DecPicBufMgr> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265DecPicBufMgr(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH265DecPicBufMgr> array(Arena arena, StdVideoH265DecPicBufMgr... structs) {
+    public static NativeStructArray<StdVideoH265DecPicBufMgr> array(SegmentAllocator allocator, StdVideoH265DecPicBufMgr... structs) {
         NativeStructArray<StdVideoH265DecPicBufMgr> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265DecPicBufMgr(segment),
             structs.length

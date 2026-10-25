@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -69,8 +70,8 @@ public final class VkAttachmentSampleCountInfoAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAttachmentSampleCountInfoAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAttachmentSampleCountInfoAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAttachmentSampleCountInfoAMD(MemorySegment segment) {
@@ -158,18 +159,18 @@ public final class VkAttachmentSampleCountInfoAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAttachmentSampleCountInfoAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkAttachmentSampleCountInfoAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAttachmentSampleCountInfoAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAttachmentSampleCountInfoAMD> array(Arena arena, VkAttachmentSampleCountInfoAMD... structs) {
+    public static NativeStructArray<VkAttachmentSampleCountInfoAMD> array(SegmentAllocator allocator, VkAttachmentSampleCountInfoAMD... structs) {
         NativeStructArray<VkAttachmentSampleCountInfoAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAttachmentSampleCountInfoAMD(segment),
             structs.length

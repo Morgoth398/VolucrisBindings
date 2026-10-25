@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceExternalSemaphoreInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceExternalSemaphoreInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceExternalSemaphoreInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceExternalSemaphoreInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceExternalSemaphoreInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExternalSemaphoreInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceExternalSemaphoreInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExternalSemaphoreInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExternalSemaphoreInfo> array(Arena arena, VkPhysicalDeviceExternalSemaphoreInfo... structs) {
+    public static NativeStructArray<VkPhysicalDeviceExternalSemaphoreInfo> array(SegmentAllocator allocator, VkPhysicalDeviceExternalSemaphoreInfo... structs) {
         NativeStructArray<VkPhysicalDeviceExternalSemaphoreInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExternalSemaphoreInfo(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -73,8 +74,8 @@ public final class MaLinearResamplerConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaLinearResamplerConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaLinearResamplerConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaLinearResamplerConfig(MemorySegment segment) {
@@ -162,18 +163,18 @@ public final class MaLinearResamplerConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaLinearResamplerConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaLinearResamplerConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLinearResamplerConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaLinearResamplerConfig> array(Arena arena, MaLinearResamplerConfig... structs) {
+    public static NativeStructArray<MaLinearResamplerConfig> array(SegmentAllocator allocator, MaLinearResamplerConfig... structs) {
         NativeStructArray<MaLinearResamplerConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaLinearResamplerConfig(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -111,8 +112,8 @@ public final class VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(MemorySegment segment) {
@@ -285,18 +286,18 @@ public final class VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> array(Arena arena, VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderAtomicFloat2FeaturesEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkMultiDrawInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMultiDrawInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMultiDrawInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMultiDrawInfoEXT(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkMultiDrawInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMultiDrawInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMultiDrawInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultiDrawInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMultiDrawInfoEXT> array(Arena arena, VkMultiDrawInfoEXT... structs) {
+    public static NativeStructArray<VkMultiDrawInfoEXT> array(SegmentAllocator allocator, VkMultiDrawInfoEXT... structs) {
         NativeStructArray<VkMultiDrawInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultiDrawInfoEXT(segment),
             structs.length

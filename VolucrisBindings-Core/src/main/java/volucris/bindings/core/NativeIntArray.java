@@ -1,19 +1,19 @@
 package volucris.bindings.core;
 
-import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.ValueLayout;
 
 public class NativeIntArray {
 
 	private final MemorySegment segment;
 
-	public NativeIntArray(Arena arena, int... values) {
-		segment = arena.allocateFrom(ValueLayout.JAVA_INT, values);
+	public NativeIntArray(SegmentAllocator allocator, int... values) {
+		segment = allocator.allocateFrom(ValueLayout.JAVA_INT, values);
 	}
 
-	public NativeIntArray(Arena arena, int count) {
-		segment = arena.allocate(ValueLayout.JAVA_INT, count);
+	public NativeIntArray(SegmentAllocator allocator, int count) {
+		segment = allocator.allocate(ValueLayout.JAVA_INT, count);
 	}
 
 	public NativeIntArray(MemorySegment segment) {
@@ -39,13 +39,13 @@ public class NativeIntArray {
 		);
 		return this;
 	}
-	
+
 	public NativeIntArray fill(int index, int count, int value) {
 		for (int i = 0; i < count; i++)
 			set(index + i, value);
 		return this;
 	}
-	
+
 	public NativeIntArray set(int dstIndex, int srcIndex, int count, int... values) {
 		long dstOffset = dstIndex * ValueLayout.JAVA_INT.byteSize();
 		MemorySegment.copy(values, srcIndex, segment, ValueLayout.JAVA_INT, dstOffset, count);

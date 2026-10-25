@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkSetLatencyMarkerInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSetLatencyMarkerInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSetLatencyMarkerInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSetLatencyMarkerInfoNV(MemorySegment segment) {
@@ -136,18 +137,18 @@ public final class VkSetLatencyMarkerInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSetLatencyMarkerInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkSetLatencyMarkerInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSetLatencyMarkerInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSetLatencyMarkerInfoNV> array(Arena arena, VkSetLatencyMarkerInfoNV... structs) {
+    public static NativeStructArray<VkSetLatencyMarkerInfoNV> array(SegmentAllocator allocator, VkSetLatencyMarkerInfoNV... structs) {
         NativeStructArray<VkSetLatencyMarkerInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSetLatencyMarkerInfoNV(segment),
             structs.length

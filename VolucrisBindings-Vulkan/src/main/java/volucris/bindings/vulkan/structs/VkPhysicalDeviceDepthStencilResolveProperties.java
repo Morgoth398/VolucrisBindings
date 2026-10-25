@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkPhysicalDeviceDepthStencilResolveProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDepthStencilResolveProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDepthStencilResolveProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDepthStencilResolveProperties(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPhysicalDeviceDepthStencilResolveProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDepthStencilResolveProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDepthStencilResolveProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDepthStencilResolveProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDepthStencilResolveProperties> array(Arena arena, VkPhysicalDeviceDepthStencilResolveProperties... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDepthStencilResolveProperties> array(SegmentAllocator allocator, VkPhysicalDeviceDepthStencilResolveProperties... structs) {
         NativeStructArray<VkPhysicalDeviceDepthStencilResolveProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDepthStencilResolveProperties(segment),
             structs.length

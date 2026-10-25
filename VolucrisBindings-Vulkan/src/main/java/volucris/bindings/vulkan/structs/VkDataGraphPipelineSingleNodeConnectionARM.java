@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkDataGraphPipelineSingleNodeConnectionARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineSingleNodeConnectionARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineSingleNodeConnectionARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineSingleNodeConnectionARM(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkDataGraphPipelineSingleNodeConnectionARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSingleNodeConnectionARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineSingleNodeConnectionARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSingleNodeConnectionARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineSingleNodeConnectionARM> array(Arena arena, VkDataGraphPipelineSingleNodeConnectionARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineSingleNodeConnectionARM> array(SegmentAllocator allocator, VkDataGraphPipelineSingleNodeConnectionARM... structs) {
         NativeStructArray<VkDataGraphPipelineSingleNodeConnectionARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineSingleNodeConnectionARM(segment),
             structs.length

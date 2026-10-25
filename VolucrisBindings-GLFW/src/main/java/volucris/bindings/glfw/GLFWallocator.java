@@ -6,6 +6,7 @@ package volucris.bindings.glfw;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -70,8 +71,8 @@ public final class GLFWallocator
 	    this(Arena.ofAuto());
 	}
 	
-	public GLFWallocator(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public GLFWallocator(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public GLFWallocator(MemorySegment segment) {

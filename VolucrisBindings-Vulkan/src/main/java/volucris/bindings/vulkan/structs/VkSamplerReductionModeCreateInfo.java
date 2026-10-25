@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkSamplerReductionModeCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSamplerReductionModeCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSamplerReductionModeCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSamplerReductionModeCreateInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkSamplerReductionModeCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSamplerReductionModeCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkSamplerReductionModeCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerReductionModeCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSamplerReductionModeCreateInfo> array(Arena arena, VkSamplerReductionModeCreateInfo... structs) {
+    public static NativeStructArray<VkSamplerReductionModeCreateInfo> array(SegmentAllocator allocator, VkSamplerReductionModeCreateInfo... structs) {
         NativeStructArray<VkSamplerReductionModeCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerReductionModeCreateInfo(segment),
             structs.length

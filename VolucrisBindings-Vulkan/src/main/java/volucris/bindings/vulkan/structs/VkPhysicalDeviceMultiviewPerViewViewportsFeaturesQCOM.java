@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM> array(Arena arena, VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM(segment),
             structs.length

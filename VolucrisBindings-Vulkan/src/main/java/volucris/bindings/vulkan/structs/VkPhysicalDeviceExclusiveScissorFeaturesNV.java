@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceExclusiveScissorFeaturesNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceExclusiveScissorFeaturesNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceExclusiveScissorFeaturesNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceExclusiveScissorFeaturesNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceExclusiveScissorFeaturesNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExclusiveScissorFeaturesNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceExclusiveScissorFeaturesNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExclusiveScissorFeaturesNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExclusiveScissorFeaturesNV> array(Arena arena, VkPhysicalDeviceExclusiveScissorFeaturesNV... structs) {
+    public static NativeStructArray<VkPhysicalDeviceExclusiveScissorFeaturesNV> array(SegmentAllocator allocator, VkPhysicalDeviceExclusiveScissorFeaturesNV... structs) {
         NativeStructArray<VkPhysicalDeviceExclusiveScissorFeaturesNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExclusiveScissorFeaturesNV(segment),
             structs.length

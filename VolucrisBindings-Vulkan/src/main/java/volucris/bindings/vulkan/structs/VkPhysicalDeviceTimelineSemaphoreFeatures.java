@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceTimelineSemaphoreFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceTimelineSemaphoreFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceTimelineSemaphoreFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceTimelineSemaphoreFeatures(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceTimelineSemaphoreFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTimelineSemaphoreFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceTimelineSemaphoreFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTimelineSemaphoreFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceTimelineSemaphoreFeatures> array(Arena arena, VkPhysicalDeviceTimelineSemaphoreFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceTimelineSemaphoreFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceTimelineSemaphoreFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceTimelineSemaphoreFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceTimelineSemaphoreFeatures(segment),
             structs.length

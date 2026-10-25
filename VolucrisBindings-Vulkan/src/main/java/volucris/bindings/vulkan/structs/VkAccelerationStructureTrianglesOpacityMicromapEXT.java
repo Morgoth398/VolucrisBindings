@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -94,8 +95,8 @@ public final class VkAccelerationStructureTrianglesOpacityMicromapEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureTrianglesOpacityMicromapEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureTrianglesOpacityMicromapEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureTrianglesOpacityMicromapEXT(MemorySegment segment) {
@@ -250,18 +251,18 @@ public final class VkAccelerationStructureTrianglesOpacityMicromapEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureTrianglesOpacityMicromapEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapEXT> array(Arena arena, VkAccelerationStructureTrianglesOpacityMicromapEXT... structs) {
+    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapEXT> array(SegmentAllocator allocator, VkAccelerationStructureTrianglesOpacityMicromapEXT... structs) {
         NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureTrianglesOpacityMicromapEXT(segment),
             structs.length

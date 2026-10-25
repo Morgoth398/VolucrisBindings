@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -87,8 +88,8 @@ public final class VkPipelineMultisampleStateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineMultisampleStateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineMultisampleStateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineMultisampleStateCreateInfo(MemorySegment segment) {
@@ -216,18 +217,18 @@ public final class VkPipelineMultisampleStateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineMultisampleStateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineMultisampleStateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineMultisampleStateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineMultisampleStateCreateInfo> array(Arena arena, VkPipelineMultisampleStateCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineMultisampleStateCreateInfo> array(SegmentAllocator allocator, VkPipelineMultisampleStateCreateInfo... structs) {
         NativeStructArray<VkPipelineMultisampleStateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineMultisampleStateCreateInfo(segment),
             structs.length

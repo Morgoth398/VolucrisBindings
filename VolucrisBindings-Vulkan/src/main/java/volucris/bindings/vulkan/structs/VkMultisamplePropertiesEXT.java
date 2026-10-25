@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkMultisamplePropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMultisamplePropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMultisamplePropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMultisamplePropertiesEXT(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkMultisamplePropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMultisamplePropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkMultisamplePropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultisamplePropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMultisamplePropertiesEXT> array(Arena arena, VkMultisamplePropertiesEXT... structs) {
+    public static NativeStructArray<VkMultisamplePropertiesEXT> array(SegmentAllocator allocator, VkMultisamplePropertiesEXT... structs) {
         NativeStructArray<VkMultisamplePropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultisamplePropertiesEXT(segment),
             structs.length

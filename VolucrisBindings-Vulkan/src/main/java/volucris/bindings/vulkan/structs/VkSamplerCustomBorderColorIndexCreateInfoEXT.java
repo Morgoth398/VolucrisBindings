@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkSamplerCustomBorderColorIndexCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSamplerCustomBorderColorIndexCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSamplerCustomBorderColorIndexCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSamplerCustomBorderColorIndexCreateInfoEXT(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkSamplerCustomBorderColorIndexCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSamplerCustomBorderColorIndexCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkSamplerCustomBorderColorIndexCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerCustomBorderColorIndexCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSamplerCustomBorderColorIndexCreateInfoEXT> array(Arena arena, VkSamplerCustomBorderColorIndexCreateInfoEXT... structs) {
+    public static NativeStructArray<VkSamplerCustomBorderColorIndexCreateInfoEXT> array(SegmentAllocator allocator, VkSamplerCustomBorderColorIndexCreateInfoEXT... structs) {
         NativeStructArray<VkSamplerCustomBorderColorIndexCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSamplerCustomBorderColorIndexCreateInfoEXT(segment),
             structs.length

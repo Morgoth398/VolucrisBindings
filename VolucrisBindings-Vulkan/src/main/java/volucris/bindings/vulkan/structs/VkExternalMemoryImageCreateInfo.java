@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkExternalMemoryImageCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkExternalMemoryImageCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkExternalMemoryImageCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkExternalMemoryImageCreateInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkExternalMemoryImageCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkExternalMemoryImageCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkExternalMemoryImageCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalMemoryImageCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkExternalMemoryImageCreateInfo> array(Arena arena, VkExternalMemoryImageCreateInfo... structs) {
+    public static NativeStructArray<VkExternalMemoryImageCreateInfo> array(SegmentAllocator allocator, VkExternalMemoryImageCreateInfo... structs) {
         NativeStructArray<VkExternalMemoryImageCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkExternalMemoryImageCreateInfo(segment),
             structs.length

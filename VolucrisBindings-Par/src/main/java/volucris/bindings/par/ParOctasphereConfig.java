@@ -6,6 +6,7 @@ package volucris.bindings.par;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -70,8 +71,8 @@ public final class ParOctasphereConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public ParOctasphereConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public ParOctasphereConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public ParOctasphereConfig(MemorySegment segment) {
@@ -169,18 +170,18 @@ public final class ParOctasphereConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<ParOctasphereConfig> array(Arena arena, int count) {
+    public static NativeStructArray<ParOctasphereConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new ParOctasphereConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<ParOctasphereConfig> array(Arena arena, ParOctasphereConfig... structs) {
+    public static NativeStructArray<ParOctasphereConfig> array(SegmentAllocator allocator, ParOctasphereConfig... structs) {
         NativeStructArray<ParOctasphereConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new ParOctasphereConfig(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX> array(Arena arena, VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX> array(SegmentAllocator allocator, VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX... structs) {
         NativeStructArray<VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX(segment),
             structs.length

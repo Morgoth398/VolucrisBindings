@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkTensorFormatPropertiesARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTensorFormatPropertiesARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTensorFormatPropertiesARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTensorFormatPropertiesARM(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkTensorFormatPropertiesARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTensorFormatPropertiesARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkTensorFormatPropertiesARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTensorFormatPropertiesARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTensorFormatPropertiesARM> array(Arena arena, VkTensorFormatPropertiesARM... structs) {
+    public static NativeStructArray<VkTensorFormatPropertiesARM> array(SegmentAllocator allocator, VkTensorFormatPropertiesARM... structs) {
         NativeStructArray<VkTensorFormatPropertiesARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTensorFormatPropertiesARM(segment),
             structs.length

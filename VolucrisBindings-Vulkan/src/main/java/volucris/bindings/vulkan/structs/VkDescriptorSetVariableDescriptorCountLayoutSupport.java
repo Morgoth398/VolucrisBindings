@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDescriptorSetVariableDescriptorCountLayoutSupport
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorSetVariableDescriptorCountLayoutSupport(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorSetVariableDescriptorCountLayoutSupport(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorSetVariableDescriptorCountLayoutSupport(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDescriptorSetVariableDescriptorCountLayoutSupport
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountLayoutSupport> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountLayoutSupport> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetVariableDescriptorCountLayoutSupport(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountLayoutSupport> array(Arena arena, VkDescriptorSetVariableDescriptorCountLayoutSupport... structs) {
+    public static NativeStructArray<VkDescriptorSetVariableDescriptorCountLayoutSupport> array(SegmentAllocator allocator, VkDescriptorSetVariableDescriptorCountLayoutSupport... structs) {
         NativeStructArray<VkDescriptorSetVariableDescriptorCountLayoutSupport> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetVariableDescriptorCountLayoutSupport(segment),
             structs.length

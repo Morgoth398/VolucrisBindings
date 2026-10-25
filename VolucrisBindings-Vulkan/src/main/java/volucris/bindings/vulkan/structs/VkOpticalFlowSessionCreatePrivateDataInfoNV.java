@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkOpticalFlowSessionCreatePrivateDataInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOpticalFlowSessionCreatePrivateDataInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOpticalFlowSessionCreatePrivateDataInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOpticalFlowSessionCreatePrivateDataInfoNV(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkOpticalFlowSessionCreatePrivateDataInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOpticalFlowSessionCreatePrivateDataInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkOpticalFlowSessionCreatePrivateDataInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpticalFlowSessionCreatePrivateDataInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOpticalFlowSessionCreatePrivateDataInfoNV> array(Arena arena, VkOpticalFlowSessionCreatePrivateDataInfoNV... structs) {
+    public static NativeStructArray<VkOpticalFlowSessionCreatePrivateDataInfoNV> array(SegmentAllocator allocator, VkOpticalFlowSessionCreatePrivateDataInfoNV... structs) {
         NativeStructArray<VkOpticalFlowSessionCreatePrivateDataInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpticalFlowSessionCreatePrivateDataInfoNV(segment),
             structs.length

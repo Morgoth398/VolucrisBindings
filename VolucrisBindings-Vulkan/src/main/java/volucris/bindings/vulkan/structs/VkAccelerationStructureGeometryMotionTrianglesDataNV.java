@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkAccelerationStructureGeometryMotionTrianglesDataNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureGeometryMotionTrianglesDataNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureGeometryMotionTrianglesDataNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureGeometryMotionTrianglesDataNV(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkAccelerationStructureGeometryMotionTrianglesDataNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureGeometryMotionTrianglesDataNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureGeometryMotionTrianglesDataNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureGeometryMotionTrianglesDataNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureGeometryMotionTrianglesDataNV> array(Arena arena, VkAccelerationStructureGeometryMotionTrianglesDataNV... structs) {
+    public static NativeStructArray<VkAccelerationStructureGeometryMotionTrianglesDataNV> array(SegmentAllocator allocator, VkAccelerationStructureGeometryMotionTrianglesDataNV... structs) {
         NativeStructArray<VkAccelerationStructureGeometryMotionTrianglesDataNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureGeometryMotionTrianglesDataNV(segment),
             structs.length

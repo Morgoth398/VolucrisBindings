@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkDisplayModeProperties2KHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDisplayModeProperties2KHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDisplayModeProperties2KHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDisplayModeProperties2KHR(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkDisplayModeProperties2KHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDisplayModeProperties2KHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDisplayModeProperties2KHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayModeProperties2KHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDisplayModeProperties2KHR> array(Arena arena, VkDisplayModeProperties2KHR... structs) {
+    public static NativeStructArray<VkDisplayModeProperties2KHR> array(SegmentAllocator allocator, VkDisplayModeProperties2KHR... structs) {
         NativeStructArray<VkDisplayModeProperties2KHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayModeProperties2KHR(segment),
             structs.length

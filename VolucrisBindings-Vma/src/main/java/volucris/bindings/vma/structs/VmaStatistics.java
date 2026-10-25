@@ -6,6 +6,7 @@ package volucris.bindings.vma.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -61,8 +62,8 @@ public final class VmaStatistics
 	    this(Arena.ofAuto());
 	}
 	
-	public VmaStatistics(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VmaStatistics(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VmaStatistics(MemorySegment segment) {
@@ -152,18 +153,18 @@ public final class VmaStatistics
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VmaStatistics> array(Arena arena, int count) {
+    public static NativeStructArray<VmaStatistics> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaStatistics(segment),
             count
         );
     }
     
-    public static NativeStructArray<VmaStatistics> array(Arena arena, VmaStatistics... structs) {
+    public static NativeStructArray<VmaStatistics> array(SegmentAllocator allocator, VmaStatistics... structs) {
         NativeStructArray<VmaStatistics> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaStatistics(segment),
             structs.length

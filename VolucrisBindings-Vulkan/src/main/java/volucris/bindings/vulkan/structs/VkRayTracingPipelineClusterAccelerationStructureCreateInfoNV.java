@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV> array(Arena arena, VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV... structs) {
+    public static NativeStructArray<VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV> array(SegmentAllocator allocator, VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV... structs) {
         NativeStructArray<VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkRayTracingPipelineClusterAccelerationStructureCreateInfoNV(segment),
             structs.length

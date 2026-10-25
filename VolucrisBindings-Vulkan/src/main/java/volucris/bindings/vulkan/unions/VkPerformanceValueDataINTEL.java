@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.unions;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -65,8 +66,8 @@ public final class VkPerformanceValueDataINTEL
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPerformanceValueDataINTEL(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPerformanceValueDataINTEL(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPerformanceValueDataINTEL(MemorySegment segment) {
@@ -115,8 +116,8 @@ public final class VkPerformanceValueDataINTEL
     }
     
     /// @see #valueString()
-    public VkPerformanceValueDataINTEL valueString(Arena arena, String valueString) {
-    	VALUE_STRING_HANDLE.set(segment, 0L, arena.allocateFrom(valueString));
+    public VkPerformanceValueDataINTEL valueString(SegmentAllocator allocator, String valueString) {
+    	VALUE_STRING_HANDLE.set(segment, 0L, allocator.allocateFrom(valueString));
     	return this;
     }
     
@@ -149,18 +150,18 @@ public final class VkPerformanceValueDataINTEL
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPerformanceValueDataINTEL> array(Arena arena, int count) {
+    public static NativeStructArray<VkPerformanceValueDataINTEL> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceValueDataINTEL(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPerformanceValueDataINTEL> array(Arena arena, VkPerformanceValueDataINTEL... structs) {
+    public static NativeStructArray<VkPerformanceValueDataINTEL> array(SegmentAllocator allocator, VkPerformanceValueDataINTEL... structs) {
         NativeStructArray<VkPerformanceValueDataINTEL> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPerformanceValueDataINTEL(segment),
             structs.length

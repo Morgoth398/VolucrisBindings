@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkPipelinePropertiesIdentifierEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelinePropertiesIdentifierEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelinePropertiesIdentifierEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelinePropertiesIdentifierEXT(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkPipelinePropertiesIdentifierEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelinePropertiesIdentifierEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelinePropertiesIdentifierEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelinePropertiesIdentifierEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelinePropertiesIdentifierEXT> array(Arena arena, VkPipelinePropertiesIdentifierEXT... structs) {
+    public static NativeStructArray<VkPipelinePropertiesIdentifierEXT> array(SegmentAllocator allocator, VkPipelinePropertiesIdentifierEXT... structs) {
         NativeStructArray<VkPipelinePropertiesIdentifierEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelinePropertiesIdentifierEXT(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkClearDepthStencilValue
 	    this(Arena.ofAuto());
 	}
 	
-	public VkClearDepthStencilValue(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkClearDepthStencilValue(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkClearDepthStencilValue(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkClearDepthStencilValue
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkClearDepthStencilValue> array(Arena arena, int count) {
+    public static NativeStructArray<VkClearDepthStencilValue> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClearDepthStencilValue(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkClearDepthStencilValue> array(Arena arena, VkClearDepthStencilValue... structs) {
+    public static NativeStructArray<VkClearDepthStencilValue> array(SegmentAllocator allocator, VkClearDepthStencilValue... structs) {
         NativeStructArray<VkClearDepthStencilValue> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkClearDepthStencilValue(segment),
             structs.length

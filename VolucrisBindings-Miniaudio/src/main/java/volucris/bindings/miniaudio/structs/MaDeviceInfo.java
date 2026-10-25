@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -60,8 +61,8 @@ public final class MaDeviceInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDeviceInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDeviceInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDeviceInfo(MemorySegment segment) {
@@ -157,18 +158,18 @@ public final class MaDeviceInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDeviceInfo> array(Arena arena, int count) {
+    public static NativeStructArray<MaDeviceInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDeviceInfo> array(Arena arena, MaDeviceInfo... structs) {
+    public static NativeStructArray<MaDeviceInfo> array(SegmentAllocator allocator, MaDeviceInfo... structs) {
         NativeStructArray<MaDeviceInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceInfo(segment),
             structs.length
@@ -230,8 +231,8 @@ public final class MaDeviceInfo
 		    this(Arena.ofAuto());
 		}
 		
-		public NativeDataFormats(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public NativeDataFormats(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public NativeDataFormats(MemorySegment segment) {
@@ -299,18 +300,18 @@ public final class MaDeviceInfo
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<NativeDataFormats> array(Arena arena, int count) {
+	    public static NativeStructArray<NativeDataFormats> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new NativeDataFormats(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<NativeDataFormats> array(Arena arena, NativeDataFormats... structs) {
+	    public static NativeStructArray<NativeDataFormats> array(SegmentAllocator allocator, NativeDataFormats... structs) {
 	        NativeStructArray<NativeDataFormats> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new NativeDataFormats(segment),
 	            structs.length

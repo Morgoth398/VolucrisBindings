@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkImageViewCaptureDescriptorDataInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageViewCaptureDescriptorDataInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageViewCaptureDescriptorDataInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageViewCaptureDescriptorDataInfoEXT(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkImageViewCaptureDescriptorDataInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageViewCaptureDescriptorDataInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageViewCaptureDescriptorDataInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageViewCaptureDescriptorDataInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageViewCaptureDescriptorDataInfoEXT> array(Arena arena, VkImageViewCaptureDescriptorDataInfoEXT... structs) {
+    public static NativeStructArray<VkImageViewCaptureDescriptorDataInfoEXT> array(SegmentAllocator allocator, VkImageViewCaptureDescriptorDataInfoEXT... structs) {
         NativeStructArray<VkImageViewCaptureDescriptorDataInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageViewCaptureDescriptorDataInfoEXT(segment),
             structs.length

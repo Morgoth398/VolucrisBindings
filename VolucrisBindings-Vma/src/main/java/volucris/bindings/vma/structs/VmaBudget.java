@@ -6,6 +6,7 @@ package volucris.bindings.vma.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VmaBudget
 	    this(Arena.ofAuto());
 	}
 	
-	public VmaBudget(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VmaBudget(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VmaBudget(MemorySegment segment) {
@@ -145,18 +146,18 @@ public final class VmaBudget
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VmaBudget> array(Arena arena, int count) {
+    public static NativeStructArray<VmaBudget> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaBudget(segment),
             count
         );
     }
     
-    public static NativeStructArray<VmaBudget> array(Arena arena, VmaBudget... structs) {
+    public static NativeStructArray<VmaBudget> array(SegmentAllocator allocator, VmaBudget... structs) {
         NativeStructArray<VmaBudget> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaBudget(segment),
             structs.length

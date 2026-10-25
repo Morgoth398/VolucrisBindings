@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> array(Arena arena, VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceComputeShaderDerivativesFeaturesKHR(segment),
             structs.length

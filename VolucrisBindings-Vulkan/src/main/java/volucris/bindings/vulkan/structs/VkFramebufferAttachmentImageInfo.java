@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -87,8 +88,8 @@ public final class VkFramebufferAttachmentImageInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkFramebufferAttachmentImageInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkFramebufferAttachmentImageInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkFramebufferAttachmentImageInfo(MemorySegment segment) {
@@ -216,18 +217,18 @@ public final class VkFramebufferAttachmentImageInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkFramebufferAttachmentImageInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkFramebufferAttachmentImageInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkFramebufferAttachmentImageInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkFramebufferAttachmentImageInfo> array(Arena arena, VkFramebufferAttachmentImageInfo... structs) {
+    public static NativeStructArray<VkFramebufferAttachmentImageInfo> array(SegmentAllocator allocator, VkFramebufferAttachmentImageInfo... structs) {
         NativeStructArray<VkFramebufferAttachmentImageInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkFramebufferAttachmentImageInfo(segment),
             structs.length

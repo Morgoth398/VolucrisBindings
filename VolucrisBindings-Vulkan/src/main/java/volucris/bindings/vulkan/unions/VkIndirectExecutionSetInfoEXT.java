@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.unions;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -50,8 +51,8 @@ public final class VkIndirectExecutionSetInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkIndirectExecutionSetInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkIndirectExecutionSetInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkIndirectExecutionSetInfoEXT(MemorySegment segment) {
@@ -109,18 +110,18 @@ public final class VkIndirectExecutionSetInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkIndirectExecutionSetInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkIndirectExecutionSetInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectExecutionSetInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkIndirectExecutionSetInfoEXT> array(Arena arena, VkIndirectExecutionSetInfoEXT... structs) {
+    public static NativeStructArray<VkIndirectExecutionSetInfoEXT> array(SegmentAllocator allocator, VkIndirectExecutionSetInfoEXT... structs) {
         NativeStructArray<VkIndirectExecutionSetInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectExecutionSetInfoEXT(segment),
             structs.length

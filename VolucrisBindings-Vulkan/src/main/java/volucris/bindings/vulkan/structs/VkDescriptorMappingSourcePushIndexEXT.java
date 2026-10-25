@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -91,8 +92,8 @@ public final class VkDescriptorMappingSourcePushIndexEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorMappingSourcePushIndexEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorMappingSourcePushIndexEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorMappingSourcePushIndexEXT(MemorySegment segment) {
@@ -225,18 +226,18 @@ public final class VkDescriptorMappingSourcePushIndexEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorMappingSourcePushIndexEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorMappingSourcePushIndexEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorMappingSourcePushIndexEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorMappingSourcePushIndexEXT> array(Arena arena, VkDescriptorMappingSourcePushIndexEXT... structs) {
+    public static NativeStructArray<VkDescriptorMappingSourcePushIndexEXT> array(SegmentAllocator allocator, VkDescriptorMappingSourcePushIndexEXT... structs) {
         NativeStructArray<VkDescriptorMappingSourcePushIndexEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorMappingSourcePushIndexEXT(segment),
             structs.length

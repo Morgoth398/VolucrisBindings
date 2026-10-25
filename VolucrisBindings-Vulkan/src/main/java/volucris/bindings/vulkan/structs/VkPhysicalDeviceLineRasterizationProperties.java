@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceLineRasterizationProperties
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceLineRasterizationProperties(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceLineRasterizationProperties(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceLineRasterizationProperties(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceLineRasterizationProperties
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceLineRasterizationProperties> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceLineRasterizationProperties> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceLineRasterizationProperties(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceLineRasterizationProperties> array(Arena arena, VkPhysicalDeviceLineRasterizationProperties... structs) {
+    public static NativeStructArray<VkPhysicalDeviceLineRasterizationProperties> array(SegmentAllocator allocator, VkPhysicalDeviceLineRasterizationProperties... structs) {
         NativeStructArray<VkPhysicalDeviceLineRasterizationProperties> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceLineRasterizationProperties(segment),
             structs.length

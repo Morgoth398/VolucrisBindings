@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -83,8 +84,8 @@ public final class VkIndirectExecutionSetShaderInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkIndirectExecutionSetShaderInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkIndirectExecutionSetShaderInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkIndirectExecutionSetShaderInfoEXT(MemorySegment segment) {
@@ -212,18 +213,18 @@ public final class VkIndirectExecutionSetShaderInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkIndirectExecutionSetShaderInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkIndirectExecutionSetShaderInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectExecutionSetShaderInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkIndirectExecutionSetShaderInfoEXT> array(Arena arena, VkIndirectExecutionSetShaderInfoEXT... structs) {
+    public static NativeStructArray<VkIndirectExecutionSetShaderInfoEXT> array(SegmentAllocator allocator, VkIndirectExecutionSetShaderInfoEXT... structs) {
         NativeStructArray<VkIndirectExecutionSetShaderInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectExecutionSetShaderInfoEXT(segment),
             structs.length

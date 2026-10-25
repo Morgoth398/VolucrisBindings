@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkIndirectCommandsExecutionSetTokenEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkIndirectCommandsExecutionSetTokenEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkIndirectCommandsExecutionSetTokenEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkIndirectCommandsExecutionSetTokenEXT(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkIndirectCommandsExecutionSetTokenEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkIndirectCommandsExecutionSetTokenEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkIndirectCommandsExecutionSetTokenEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsExecutionSetTokenEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkIndirectCommandsExecutionSetTokenEXT> array(Arena arena, VkIndirectCommandsExecutionSetTokenEXT... structs) {
+    public static NativeStructArray<VkIndirectCommandsExecutionSetTokenEXT> array(SegmentAllocator allocator, VkIndirectCommandsExecutionSetTokenEXT... structs) {
         NativeStructArray<VkIndirectCommandsExecutionSetTokenEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkIndirectCommandsExecutionSetTokenEXT(segment),
             structs.length

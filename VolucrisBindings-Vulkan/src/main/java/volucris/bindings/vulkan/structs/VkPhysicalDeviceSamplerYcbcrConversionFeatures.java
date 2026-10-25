@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceSamplerYcbcrConversionFeatures
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceSamplerYcbcrConversionFeatures(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceSamplerYcbcrConversionFeatures(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceSamplerYcbcrConversionFeatures(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceSamplerYcbcrConversionFeatures
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSamplerYcbcrConversionFeatures> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceSamplerYcbcrConversionFeatures> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSamplerYcbcrConversionFeatures(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceSamplerYcbcrConversionFeatures> array(Arena arena, VkPhysicalDeviceSamplerYcbcrConversionFeatures... structs) {
+    public static NativeStructArray<VkPhysicalDeviceSamplerYcbcrConversionFeatures> array(SegmentAllocator allocator, VkPhysicalDeviceSamplerYcbcrConversionFeatures... structs) {
         NativeStructArray<VkPhysicalDeviceSamplerYcbcrConversionFeatures> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceSamplerYcbcrConversionFeatures(segment),
             structs.length

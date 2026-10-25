@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkPipelineTessellationStateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineTessellationStateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineTessellationStateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineTessellationStateCreateInfo(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkPipelineTessellationStateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineTessellationStateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineTessellationStateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineTessellationStateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineTessellationStateCreateInfo> array(Arena arena, VkPipelineTessellationStateCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineTessellationStateCreateInfo> array(SegmentAllocator allocator, VkPipelineTessellationStateCreateInfo... structs) {
         NativeStructArray<VkPipelineTessellationStateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineTessellationStateCreateInfo(segment),
             structs.length

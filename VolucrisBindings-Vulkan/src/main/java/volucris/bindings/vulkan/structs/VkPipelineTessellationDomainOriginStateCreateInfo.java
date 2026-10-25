@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPipelineTessellationDomainOriginStateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineTessellationDomainOriginStateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineTessellationDomainOriginStateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineTessellationDomainOriginStateCreateInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPipelineTessellationDomainOriginStateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineTessellationDomainOriginStateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineTessellationDomainOriginStateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineTessellationDomainOriginStateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineTessellationDomainOriginStateCreateInfo> array(Arena arena, VkPipelineTessellationDomainOriginStateCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineTessellationDomainOriginStateCreateInfo> array(SegmentAllocator allocator, VkPipelineTessellationDomainOriginStateCreateInfo... structs) {
         NativeStructArray<VkPipelineTessellationDomainOriginStateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineTessellationDomainOriginStateCreateInfo(segment),
             structs.length

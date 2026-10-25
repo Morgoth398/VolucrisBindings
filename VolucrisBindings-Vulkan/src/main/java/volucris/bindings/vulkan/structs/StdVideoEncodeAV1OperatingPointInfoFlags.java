@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoEncodeAV1OperatingPointInfoFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeAV1OperatingPointInfoFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeAV1OperatingPointInfoFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeAV1OperatingPointInfoFlags(MemorySegment segment) {
@@ -89,18 +90,18 @@ public final class StdVideoEncodeAV1OperatingPointInfoFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeAV1OperatingPointInfoFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeAV1OperatingPointInfoFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeAV1OperatingPointInfoFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeAV1OperatingPointInfoFlags> array(Arena arena, StdVideoEncodeAV1OperatingPointInfoFlags... structs) {
+    public static NativeStructArray<StdVideoEncodeAV1OperatingPointInfoFlags> array(SegmentAllocator allocator, StdVideoEncodeAV1OperatingPointInfoFlags... structs) {
         NativeStructArray<StdVideoEncodeAV1OperatingPointInfoFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeAV1OperatingPointInfoFlags(segment),
             structs.length

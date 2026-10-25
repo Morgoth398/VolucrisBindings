@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.util.function.Consumer;
 import volucris.bindings.core.NativeStructArray;
@@ -57,8 +58,8 @@ public final class VkImageCopy
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageCopy(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageCopy(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageCopy(MemorySegment segment) {
@@ -171,18 +172,18 @@ public final class VkImageCopy
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageCopy> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageCopy> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageCopy(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageCopy> array(Arena arena, VkImageCopy... structs) {
+    public static NativeStructArray<VkImageCopy> array(SegmentAllocator allocator, VkImageCopy... structs) {
         NativeStructArray<VkImageCopy> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageCopy(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkPhysicalDeviceExternalMemoryHostPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceExternalMemoryHostPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceExternalMemoryHostPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceExternalMemoryHostPropertiesEXT(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkPhysicalDeviceExternalMemoryHostPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExternalMemoryHostPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceExternalMemoryHostPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExternalMemoryHostPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceExternalMemoryHostPropertiesEXT> array(Arena arena, VkPhysicalDeviceExternalMemoryHostPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceExternalMemoryHostPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceExternalMemoryHostPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceExternalMemoryHostPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceExternalMemoryHostPropertiesEXT(segment),
             structs.length

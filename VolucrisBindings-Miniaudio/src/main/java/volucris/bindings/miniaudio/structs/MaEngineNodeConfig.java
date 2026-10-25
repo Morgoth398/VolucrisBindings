@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -94,8 +95,8 @@ public final class MaEngineNodeConfig
 	    this(Arena.ofAuto());
 	}
 	
-	public MaEngineNodeConfig(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaEngineNodeConfig(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaEngineNodeConfig(MemorySegment segment) {
@@ -245,18 +246,18 @@ public final class MaEngineNodeConfig
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaEngineNodeConfig> array(Arena arena, int count) {
+    public static NativeStructArray<MaEngineNodeConfig> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaEngineNodeConfig(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaEngineNodeConfig> array(Arena arena, MaEngineNodeConfig... structs) {
+    public static NativeStructArray<MaEngineNodeConfig> array(SegmentAllocator allocator, MaEngineNodeConfig... structs) {
         NativeStructArray<MaEngineNodeConfig> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaEngineNodeConfig(segment),
             structs.length

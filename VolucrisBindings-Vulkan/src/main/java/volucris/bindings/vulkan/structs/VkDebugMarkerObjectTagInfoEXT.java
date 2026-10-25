@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkDebugMarkerObjectTagInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDebugMarkerObjectTagInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDebugMarkerObjectTagInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDebugMarkerObjectTagInfoEXT(MemorySegment segment) {
@@ -186,18 +187,18 @@ public final class VkDebugMarkerObjectTagInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDebugMarkerObjectTagInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDebugMarkerObjectTagInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugMarkerObjectTagInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDebugMarkerObjectTagInfoEXT> array(Arena arena, VkDebugMarkerObjectTagInfoEXT... structs) {
+    public static NativeStructArray<VkDebugMarkerObjectTagInfoEXT> array(SegmentAllocator allocator, VkDebugMarkerObjectTagInfoEXT... structs) {
         NativeStructArray<VkDebugMarkerObjectTagInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugMarkerObjectTagInfoEXT(segment),
             structs.length

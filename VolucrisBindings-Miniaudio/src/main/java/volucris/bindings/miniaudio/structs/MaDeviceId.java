@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -113,8 +114,8 @@ public final class MaDeviceId
 	    this(Arena.ofAuto());
 	}
 	
-	public MaDeviceId(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaDeviceId(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaDeviceId(MemorySegment segment) {
@@ -299,18 +300,18 @@ public final class MaDeviceId
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaDeviceId> array(Arena arena, int count) {
+    public static NativeStructArray<MaDeviceId> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceId(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaDeviceId> array(Arena arena, MaDeviceId... structs) {
+    public static NativeStructArray<MaDeviceId> array(SegmentAllocator allocator, MaDeviceId... structs) {
         NativeStructArray<MaDeviceId> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaDeviceId(segment),
             structs.length
@@ -367,8 +368,8 @@ public final class MaDeviceId
 		    this(Arena.ofAuto());
 		}
 		
-		public Custom(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Custom(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Custom(MemorySegment segment) {
@@ -431,18 +432,18 @@ public final class MaDeviceId
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Custom> array(Arena arena, int count) {
+	    public static NativeStructArray<Custom> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Custom(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Custom> array(Arena arena, Custom... structs) {
+	    public static NativeStructArray<Custom> array(SegmentAllocator allocator, Custom... structs) {
 	        NativeStructArray<Custom> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Custom(segment),
 	            structs.length

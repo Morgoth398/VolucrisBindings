@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkPhysicalDeviceMeshShaderFeaturesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMeshShaderFeaturesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMeshShaderFeaturesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMeshShaderFeaturesEXT(MemorySegment segment) {
@@ -181,18 +182,18 @@ public final class VkPhysicalDeviceMeshShaderFeaturesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMeshShaderFeaturesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMeshShaderFeaturesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMeshShaderFeaturesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMeshShaderFeaturesEXT> array(Arena arena, VkPhysicalDeviceMeshShaderFeaturesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMeshShaderFeaturesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceMeshShaderFeaturesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceMeshShaderFeaturesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMeshShaderFeaturesEXT(segment),
             structs.length

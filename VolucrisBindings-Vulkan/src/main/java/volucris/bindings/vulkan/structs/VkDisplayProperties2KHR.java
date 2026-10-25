@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -57,8 +58,8 @@ public final class VkDisplayProperties2KHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDisplayProperties2KHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDisplayProperties2KHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDisplayProperties2KHR(MemorySegment segment) {
@@ -128,18 +129,18 @@ public final class VkDisplayProperties2KHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDisplayProperties2KHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDisplayProperties2KHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayProperties2KHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDisplayProperties2KHR> array(Arena arena, VkDisplayProperties2KHR... structs) {
+    public static NativeStructArray<VkDisplayProperties2KHR> array(SegmentAllocator allocator, VkDisplayProperties2KHR... structs) {
         NativeStructArray<VkDisplayProperties2KHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayProperties2KHR(segment),
             structs.length

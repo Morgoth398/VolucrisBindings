@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG> array(Arena arena, VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG... structs) {
+    public static NativeStructArray<VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG> array(SegmentAllocator allocator, VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG... structs) {
         NativeStructArray<VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceRelaxedLineRasterizationFeaturesIMG(segment),
             structs.length

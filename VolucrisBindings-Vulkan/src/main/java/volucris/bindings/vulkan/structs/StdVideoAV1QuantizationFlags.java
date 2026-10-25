@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoAV1QuantizationFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoAV1QuantizationFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoAV1QuantizationFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoAV1QuantizationFlags(MemorySegment segment) {
@@ -88,18 +89,18 @@ public final class StdVideoAV1QuantizationFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoAV1QuantizationFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoAV1QuantizationFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1QuantizationFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoAV1QuantizationFlags> array(Arena arena, StdVideoAV1QuantizationFlags... structs) {
+    public static NativeStructArray<StdVideoAV1QuantizationFlags> array(SegmentAllocator allocator, StdVideoAV1QuantizationFlags... structs) {
         NativeStructArray<StdVideoAV1QuantizationFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoAV1QuantizationFlags(segment),
             structs.length

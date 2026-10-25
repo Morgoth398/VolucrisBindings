@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -85,8 +86,8 @@ public final class VkInstanceCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkInstanceCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkInstanceCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkInstanceCreateInfo(MemorySegment segment) {
@@ -214,18 +215,18 @@ public final class VkInstanceCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkInstanceCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkInstanceCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkInstanceCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkInstanceCreateInfo> array(Arena arena, VkInstanceCreateInfo... structs) {
+    public static NativeStructArray<VkInstanceCreateInfo> array(SegmentAllocator allocator, VkInstanceCreateInfo... structs) {
         NativeStructArray<VkInstanceCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkInstanceCreateInfo(segment),
             structs.length

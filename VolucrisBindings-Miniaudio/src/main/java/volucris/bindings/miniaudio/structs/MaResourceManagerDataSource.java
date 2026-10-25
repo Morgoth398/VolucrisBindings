@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.foreign.UnionLayout;
 import java.lang.invoke.VarHandle;
@@ -58,8 +59,8 @@ public final class MaResourceManagerDataSource
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResourceManagerDataSource(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResourceManagerDataSource(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResourceManagerDataSource(MemorySegment segment) {
@@ -134,18 +135,18 @@ public final class MaResourceManagerDataSource
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResourceManagerDataSource> array(Arena arena, int count) {
+    public static NativeStructArray<MaResourceManagerDataSource> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataSource(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResourceManagerDataSource> array(Arena arena, MaResourceManagerDataSource... structs) {
+    public static NativeStructArray<MaResourceManagerDataSource> array(SegmentAllocator allocator, MaResourceManagerDataSource... structs) {
         NativeStructArray<MaResourceManagerDataSource> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResourceManagerDataSource(segment),
             structs.length
@@ -194,8 +195,8 @@ public final class MaResourceManagerDataSource
 		    this(Arena.ofAuto());
 		}
 		
-		public Backend(Arena arena) {
-		    this(arena.allocate(LAYOUT));
+		public Backend(SegmentAllocator allocator) {
+		    this(allocator.allocate(LAYOUT));
 		}
 		
 		public Backend(MemorySegment segment) {
@@ -257,18 +258,18 @@ public final class MaResourceManagerDataSource
 	        return new NativeStructArray<>(this);
 	    }
 	    
-	    public static NativeStructArray<Backend> array(Arena arena, int count) {
+	    public static NativeStructArray<Backend> array(SegmentAllocator allocator, int count) {
 	        return new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Backend(segment),
 	            count
 	        );
 	    }
 	    
-	    public static NativeStructArray<Backend> array(Arena arena, Backend... structs) {
+	    public static NativeStructArray<Backend> array(SegmentAllocator allocator, Backend... structs) {
 	        NativeStructArray<Backend> array = new NativeStructArray<>(
-	            arena,
+	            allocator,
 	            LAYOUT,
 	            segment -> new Backend(segment),
 	            structs.length

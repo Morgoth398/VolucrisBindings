@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -63,8 +64,8 @@ public final class StdVideoEncodeH264RefPicMarkingEntry
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeH264RefPicMarkingEntry(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeH264RefPicMarkingEntry(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeH264RefPicMarkingEntry(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class StdVideoEncodeH264RefPicMarkingEntry
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeH264RefPicMarkingEntry> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeH264RefPicMarkingEntry> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH264RefPicMarkingEntry(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeH264RefPicMarkingEntry> array(Arena arena, StdVideoEncodeH264RefPicMarkingEntry... structs) {
+    public static NativeStructArray<StdVideoEncodeH264RefPicMarkingEntry> array(SegmentAllocator allocator, StdVideoEncodeH264RefPicMarkingEntry... structs) {
         NativeStructArray<StdVideoEncodeH264RefPicMarkingEntry> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH264RefPicMarkingEntry(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -89,8 +90,8 @@ public final class VkCommandBufferInheritanceRenderingInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCommandBufferInheritanceRenderingInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCommandBufferInheritanceRenderingInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCommandBufferInheritanceRenderingInfo(MemorySegment segment) {
@@ -218,18 +219,18 @@ public final class VkCommandBufferInheritanceRenderingInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCommandBufferInheritanceRenderingInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkCommandBufferInheritanceRenderingInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCommandBufferInheritanceRenderingInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCommandBufferInheritanceRenderingInfo> array(Arena arena, VkCommandBufferInheritanceRenderingInfo... structs) {
+    public static NativeStructArray<VkCommandBufferInheritanceRenderingInfo> array(SegmentAllocator allocator, VkCommandBufferInheritanceRenderingInfo... structs) {
         NativeStructArray<VkCommandBufferInheritanceRenderingInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCommandBufferInheritanceRenderingInfo(segment),
             structs.length

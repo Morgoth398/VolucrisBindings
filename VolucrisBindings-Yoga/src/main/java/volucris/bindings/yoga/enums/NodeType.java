@@ -5,7 +5,7 @@ package volucris.bindings.yoga.enums;
 
 public final class NodeType {
 
-    public static final int NODE_TYPE_DEFAULT = 0;
-    public static final int NODE_TYPE_TEXT = 1;
+    public static final int YG_NODE_TYPE_DEFAULT = 0;
+    public static final int YG_NODE_TYPE_TEXT = 1;
 
 }

@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -55,8 +56,8 @@ public final class MaWaveform
 	    this(Arena.ofAuto());
 	}
 	
-	public MaWaveform(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaWaveform(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaWaveform(MemorySegment segment) {
@@ -138,18 +139,18 @@ public final class MaWaveform
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaWaveform> array(Arena arena, int count) {
+    public static NativeStructArray<MaWaveform> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaWaveform(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaWaveform> array(Arena arena, MaWaveform... structs) {
+    public static NativeStructArray<MaWaveform> array(SegmentAllocator allocator, MaWaveform... structs) {
         NativeStructArray<MaWaveform> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaWaveform(segment),
             structs.length

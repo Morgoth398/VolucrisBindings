@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -73,8 +74,8 @@ public final class StdVideoEncodeH265LongTermRefPics
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoEncodeH265LongTermRefPics(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoEncodeH265LongTermRefPics(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoEncodeH265LongTermRefPics(MemorySegment segment) {
@@ -172,18 +173,18 @@ public final class StdVideoEncodeH265LongTermRefPics
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoEncodeH265LongTermRefPics> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoEncodeH265LongTermRefPics> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH265LongTermRefPics(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoEncodeH265LongTermRefPics> array(Arena arena, StdVideoEncodeH265LongTermRefPics... structs) {
+    public static NativeStructArray<StdVideoEncodeH265LongTermRefPics> array(SegmentAllocator allocator, StdVideoEncodeH265LongTermRefPics... structs) {
         NativeStructArray<StdVideoEncodeH265LongTermRefPics> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoEncodeH265LongTermRefPics(segment),
             structs.length

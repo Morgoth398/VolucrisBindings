@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkDataGraphPipelineBuiltinModelCreateInfoQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineBuiltinModelCreateInfoQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineBuiltinModelCreateInfoQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineBuiltinModelCreateInfoQCOM(MemorySegment segment) {
@@ -125,18 +126,18 @@ public final class VkDataGraphPipelineBuiltinModelCreateInfoQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineBuiltinModelCreateInfoQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineBuiltinModelCreateInfoQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineBuiltinModelCreateInfoQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineBuiltinModelCreateInfoQCOM> array(Arena arena, VkDataGraphPipelineBuiltinModelCreateInfoQCOM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineBuiltinModelCreateInfoQCOM> array(SegmentAllocator allocator, VkDataGraphPipelineBuiltinModelCreateInfoQCOM... structs) {
         NativeStructArray<VkDataGraphPipelineBuiltinModelCreateInfoQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineBuiltinModelCreateInfoQCOM(segment),
             structs.length

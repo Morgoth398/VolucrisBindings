@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPipelineRasterizationConservativeStateCreateInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineRasterizationConservativeStateCreateInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineRasterizationConservativeStateCreateInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineRasterizationConservativeStateCreateInfoEXT(MemorySegment segment) {
@@ -151,18 +152,18 @@ public final class VkPipelineRasterizationConservativeStateCreateInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineRasterizationConservativeStateCreateInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineRasterizationConservativeStateCreateInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRasterizationConservativeStateCreateInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineRasterizationConservativeStateCreateInfoEXT> array(Arena arena, VkPipelineRasterizationConservativeStateCreateInfoEXT... structs) {
+    public static NativeStructArray<VkPipelineRasterizationConservativeStateCreateInfoEXT> array(SegmentAllocator allocator, VkPipelineRasterizationConservativeStateCreateInfoEXT... structs) {
         NativeStructArray<VkPipelineRasterizationConservativeStateCreateInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRasterizationConservativeStateCreateInfoEXT(segment),
             structs.length

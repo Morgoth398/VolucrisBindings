@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkPipelineViewportStateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineViewportStateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineViewportStateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineViewportStateCreateInfo(MemorySegment segment) {
@@ -191,18 +192,18 @@ public final class VkPipelineViewportStateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineViewportStateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineViewportStateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportStateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineViewportStateCreateInfo> array(Arena arena, VkPipelineViewportStateCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineViewportStateCreateInfo> array(SegmentAllocator allocator, VkPipelineViewportStateCreateInfo... structs) {
         NativeStructArray<VkPipelineViewportStateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportStateCreateInfo(segment),
             structs.length

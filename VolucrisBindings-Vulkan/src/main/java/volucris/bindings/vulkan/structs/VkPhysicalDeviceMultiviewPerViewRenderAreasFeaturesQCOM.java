@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> array(Arena arena, VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM... structs) {
+    public static NativeStructArray<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> array(SegmentAllocator allocator, VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM... structs) {
         NativeStructArray<VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceMultiviewPerViewRenderAreasFeaturesQCOM(segment),
             structs.length

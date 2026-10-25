@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -78,8 +79,8 @@ public final class VkAccelerationStructureTrianglesOpacityMicromapKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureTrianglesOpacityMicromapKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureTrianglesOpacityMicromapKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureTrianglesOpacityMicromapKHR(MemorySegment segment) {
@@ -187,18 +188,18 @@ public final class VkAccelerationStructureTrianglesOpacityMicromapKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureTrianglesOpacityMicromapKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapKHR> array(Arena arena, VkAccelerationStructureTrianglesOpacityMicromapKHR... structs) {
+    public static NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapKHR> array(SegmentAllocator allocator, VkAccelerationStructureTrianglesOpacityMicromapKHR... structs) {
         NativeStructArray<VkAccelerationStructureTrianglesOpacityMicromapKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureTrianglesOpacityMicromapKHR(segment),
             structs.length

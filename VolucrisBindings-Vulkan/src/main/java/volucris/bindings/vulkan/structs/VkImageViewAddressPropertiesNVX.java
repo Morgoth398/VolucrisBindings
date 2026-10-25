@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkImageViewAddressPropertiesNVX
 	    this(Arena.ofAuto());
 	}
 	
-	public VkImageViewAddressPropertiesNVX(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkImageViewAddressPropertiesNVX(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkImageViewAddressPropertiesNVX(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkImageViewAddressPropertiesNVX
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkImageViewAddressPropertiesNVX> array(Arena arena, int count) {
+    public static NativeStructArray<VkImageViewAddressPropertiesNVX> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageViewAddressPropertiesNVX(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkImageViewAddressPropertiesNVX> array(Arena arena, VkImageViewAddressPropertiesNVX... structs) {
+    public static NativeStructArray<VkImageViewAddressPropertiesNVX> array(SegmentAllocator allocator, VkImageViewAddressPropertiesNVX... structs) {
         NativeStructArray<VkImageViewAddressPropertiesNVX> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkImageViewAddressPropertiesNVX(segment),
             structs.length

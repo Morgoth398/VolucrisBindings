@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkSemaphoreTypeCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSemaphoreTypeCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSemaphoreTypeCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSemaphoreTypeCreateInfo(MemorySegment segment) {
@@ -136,18 +137,18 @@ public final class VkSemaphoreTypeCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSemaphoreTypeCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkSemaphoreTypeCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSemaphoreTypeCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSemaphoreTypeCreateInfo> array(Arena arena, VkSemaphoreTypeCreateInfo... structs) {
+    public static NativeStructArray<VkSemaphoreTypeCreateInfo> array(SegmentAllocator allocator, VkSemaphoreTypeCreateInfo... structs) {
         NativeStructArray<VkSemaphoreTypeCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSemaphoreTypeCreateInfo(segment),
             structs.length

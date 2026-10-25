@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -63,8 +64,8 @@ public final class VkColorBlendAdvancedEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkColorBlendAdvancedEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkColorBlendAdvancedEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkColorBlendAdvancedEXT(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkColorBlendAdvancedEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkColorBlendAdvancedEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkColorBlendAdvancedEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkColorBlendAdvancedEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkColorBlendAdvancedEXT> array(Arena arena, VkColorBlendAdvancedEXT... structs) {
+    public static NativeStructArray<VkColorBlendAdvancedEXT> array(SegmentAllocator allocator, VkColorBlendAdvancedEXT... structs) {
         NativeStructArray<VkColorBlendAdvancedEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkColorBlendAdvancedEXT(segment),
             structs.length

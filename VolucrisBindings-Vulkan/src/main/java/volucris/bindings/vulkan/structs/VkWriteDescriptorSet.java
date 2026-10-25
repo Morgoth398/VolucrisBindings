@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -92,8 +93,8 @@ public final class VkWriteDescriptorSet
 	    this(Arena.ofAuto());
 	}
 	
-	public VkWriteDescriptorSet(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkWriteDescriptorSet(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkWriteDescriptorSet(MemorySegment segment) {
@@ -246,18 +247,18 @@ public final class VkWriteDescriptorSet
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkWriteDescriptorSet> array(Arena arena, int count) {
+    public static NativeStructArray<VkWriteDescriptorSet> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkWriteDescriptorSet(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkWriteDescriptorSet> array(Arena arena, VkWriteDescriptorSet... structs) {
+    public static NativeStructArray<VkWriteDescriptorSet> array(SegmentAllocator allocator, VkWriteDescriptorSet... structs) {
         NativeStructArray<VkWriteDescriptorSet> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkWriteDescriptorSet(segment),
             structs.length

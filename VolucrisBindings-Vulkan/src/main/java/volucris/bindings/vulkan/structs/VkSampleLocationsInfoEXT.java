@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -72,8 +73,8 @@ public final class VkSampleLocationsInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSampleLocationsInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSampleLocationsInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSampleLocationsInfoEXT(MemorySegment segment) {
@@ -178,18 +179,18 @@ public final class VkSampleLocationsInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSampleLocationsInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkSampleLocationsInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSampleLocationsInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSampleLocationsInfoEXT> array(Arena arena, VkSampleLocationsInfoEXT... structs) {
+    public static NativeStructArray<VkSampleLocationsInfoEXT> array(SegmentAllocator allocator, VkSampleLocationsInfoEXT... structs) {
         NativeStructArray<VkSampleLocationsInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSampleLocationsInfoEXT(segment),
             structs.length

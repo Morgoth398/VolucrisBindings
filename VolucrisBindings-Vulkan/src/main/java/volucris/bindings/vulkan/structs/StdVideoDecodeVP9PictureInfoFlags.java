@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoDecodeVP9PictureInfoFlags
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoDecodeVP9PictureInfoFlags(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoDecodeVP9PictureInfoFlags(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoDecodeVP9PictureInfoFlags(MemorySegment segment) {
@@ -94,18 +95,18 @@ public final class StdVideoDecodeVP9PictureInfoFlags
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoDecodeVP9PictureInfoFlags> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoDecodeVP9PictureInfoFlags> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoDecodeVP9PictureInfoFlags(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoDecodeVP9PictureInfoFlags> array(Arena arena, StdVideoDecodeVP9PictureInfoFlags... structs) {
+    public static NativeStructArray<StdVideoDecodeVP9PictureInfoFlags> array(SegmentAllocator allocator, StdVideoDecodeVP9PictureInfoFlags... structs) {
         NativeStructArray<StdVideoDecodeVP9PictureInfoFlags> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoDecodeVP9PictureInfoFlags(segment),
             structs.length

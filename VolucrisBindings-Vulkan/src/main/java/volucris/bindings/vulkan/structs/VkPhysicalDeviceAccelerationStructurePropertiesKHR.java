@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -92,8 +93,8 @@ public final class VkPhysicalDeviceAccelerationStructurePropertiesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceAccelerationStructurePropertiesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceAccelerationStructurePropertiesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceAccelerationStructurePropertiesKHR(MemorySegment segment) {
@@ -226,18 +227,18 @@ public final class VkPhysicalDeviceAccelerationStructurePropertiesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceAccelerationStructurePropertiesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceAccelerationStructurePropertiesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceAccelerationStructurePropertiesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceAccelerationStructurePropertiesKHR> array(Arena arena, VkPhysicalDeviceAccelerationStructurePropertiesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceAccelerationStructurePropertiesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceAccelerationStructurePropertiesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceAccelerationStructurePropertiesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceAccelerationStructurePropertiesKHR(segment),
             structs.length

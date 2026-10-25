@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> array(Arena arena, VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM... structs) {
+    public static NativeStructArray<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> array(SegmentAllocator allocator, VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM... structs) {
         NativeStructArray<VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkMultiviewPerViewRenderAreasRenderPassBeginInfoQCOM(segment),
             structs.length

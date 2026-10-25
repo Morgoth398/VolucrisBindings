@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -64,8 +65,8 @@ public final class VkSparseImageMemoryRequirements
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSparseImageMemoryRequirements(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSparseImageMemoryRequirements(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSparseImageMemoryRequirements(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkSparseImageMemoryRequirements
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSparseImageMemoryRequirements> array(Arena arena, int count) {
+    public static NativeStructArray<VkSparseImageMemoryRequirements> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSparseImageMemoryRequirements(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSparseImageMemoryRequirements> array(Arena arena, VkSparseImageMemoryRequirements... structs) {
+    public static NativeStructArray<VkSparseImageMemoryRequirements> array(SegmentAllocator allocator, VkSparseImageMemoryRequirements... structs) {
         NativeStructArray<VkSparseImageMemoryRequirements> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSparseImageMemoryRequirements(segment),
             structs.length

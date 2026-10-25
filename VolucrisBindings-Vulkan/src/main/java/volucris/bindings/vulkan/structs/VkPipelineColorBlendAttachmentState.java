@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -78,8 +79,8 @@ public final class VkPipelineColorBlendAttachmentState
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineColorBlendAttachmentState(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineColorBlendAttachmentState(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineColorBlendAttachmentState(MemorySegment segment) {
@@ -187,18 +188,18 @@ public final class VkPipelineColorBlendAttachmentState
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineColorBlendAttachmentState> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineColorBlendAttachmentState> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineColorBlendAttachmentState(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineColorBlendAttachmentState> array(Arena arena, VkPipelineColorBlendAttachmentState... structs) {
+    public static NativeStructArray<VkPipelineColorBlendAttachmentState> array(SegmentAllocator allocator, VkPipelineColorBlendAttachmentState... structs) {
         NativeStructArray<VkPipelineColorBlendAttachmentState> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineColorBlendAttachmentState(segment),
             structs.length

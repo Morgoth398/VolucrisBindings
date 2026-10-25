@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -77,8 +78,8 @@ public final class VkAcquireNextImageInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAcquireNextImageInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAcquireNextImageInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAcquireNextImageInfoKHR(MemorySegment segment) {
@@ -196,18 +197,18 @@ public final class VkAcquireNextImageInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAcquireNextImageInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkAcquireNextImageInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAcquireNextImageInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAcquireNextImageInfoKHR> array(Arena arena, VkAcquireNextImageInfoKHR... structs) {
+    public static NativeStructArray<VkAcquireNextImageInfoKHR> array(SegmentAllocator allocator, VkAcquireNextImageInfoKHR... structs) {
         NativeStructArray<VkAcquireNextImageInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAcquireNextImageInfoKHR(segment),
             structs.length

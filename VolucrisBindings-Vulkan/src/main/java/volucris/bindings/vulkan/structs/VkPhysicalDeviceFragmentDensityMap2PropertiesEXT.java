@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPhysicalDeviceFragmentDensityMap2PropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT> array(Arena arena, VkPhysicalDeviceFragmentDensityMap2PropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceFragmentDensityMap2PropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceFragmentDensityMap2PropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceFragmentDensityMap2PropertiesEXT(segment),
             structs.length

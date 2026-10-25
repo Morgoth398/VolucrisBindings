@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkDeviceGroupRenderPassBeginInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceGroupRenderPassBeginInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceGroupRenderPassBeginInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceGroupRenderPassBeginInfo(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkDeviceGroupRenderPassBeginInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceGroupRenderPassBeginInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceGroupRenderPassBeginInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupRenderPassBeginInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceGroupRenderPassBeginInfo> array(Arena arena, VkDeviceGroupRenderPassBeginInfo... structs) {
+    public static NativeStructArray<VkDeviceGroupRenderPassBeginInfo> array(SegmentAllocator allocator, VkDeviceGroupRenderPassBeginInfo... structs) {
         NativeStructArray<VkDeviceGroupRenderPassBeginInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceGroupRenderPassBeginInfo(segment),
             structs.length

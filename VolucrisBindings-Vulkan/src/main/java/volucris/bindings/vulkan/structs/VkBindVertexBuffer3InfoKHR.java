@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -69,8 +70,8 @@ public final class VkBindVertexBuffer3InfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkBindVertexBuffer3InfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkBindVertexBuffer3InfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkBindVertexBuffer3InfoKHR(MemorySegment segment) {
@@ -160,18 +161,18 @@ public final class VkBindVertexBuffer3InfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkBindVertexBuffer3InfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkBindVertexBuffer3InfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindVertexBuffer3InfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkBindVertexBuffer3InfoKHR> array(Arena arena, VkBindVertexBuffer3InfoKHR... structs) {
+    public static NativeStructArray<VkBindVertexBuffer3InfoKHR> array(SegmentAllocator allocator, VkBindVertexBuffer3InfoKHR... structs) {
         NativeStructArray<VkBindVertexBuffer3InfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkBindVertexBuffer3InfoKHR(segment),
             structs.length

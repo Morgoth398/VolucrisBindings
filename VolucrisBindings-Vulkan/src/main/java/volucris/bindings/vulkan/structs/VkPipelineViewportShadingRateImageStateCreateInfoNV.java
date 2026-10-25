@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkPipelineViewportShadingRateImageStateCreateInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineViewportShadingRateImageStateCreateInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineViewportShadingRateImageStateCreateInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineViewportShadingRateImageStateCreateInfoNV(MemorySegment segment) {
@@ -155,18 +156,18 @@ public final class VkPipelineViewportShadingRateImageStateCreateInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineViewportShadingRateImageStateCreateInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineViewportShadingRateImageStateCreateInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportShadingRateImageStateCreateInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineViewportShadingRateImageStateCreateInfoNV> array(Arena arena, VkPipelineViewportShadingRateImageStateCreateInfoNV... structs) {
+    public static NativeStructArray<VkPipelineViewportShadingRateImageStateCreateInfoNV> array(SegmentAllocator allocator, VkPipelineViewportShadingRateImageStateCreateInfoNV... structs) {
         NativeStructArray<VkPipelineViewportShadingRateImageStateCreateInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineViewportShadingRateImageStateCreateInfoNV(segment),
             structs.length

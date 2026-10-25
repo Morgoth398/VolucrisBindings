@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR> array(Arena arena, VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceInternallySynchronizedQueuesFeaturesKHR(segment),
             structs.length

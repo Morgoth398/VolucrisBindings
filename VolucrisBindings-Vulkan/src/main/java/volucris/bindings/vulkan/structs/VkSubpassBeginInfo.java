@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkSubpassBeginInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSubpassBeginInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSubpassBeginInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSubpassBeginInfo(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkSubpassBeginInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSubpassBeginInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkSubpassBeginInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassBeginInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSubpassBeginInfo> array(Arena arena, VkSubpassBeginInfo... structs) {
+    public static NativeStructArray<VkSubpassBeginInfo> array(SegmentAllocator allocator, VkSubpassBeginInfo... structs) {
         NativeStructArray<VkSubpassBeginInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSubpassBeginInfo(segment),
             structs.length

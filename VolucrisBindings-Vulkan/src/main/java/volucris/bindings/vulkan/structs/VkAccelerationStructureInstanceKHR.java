@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -59,8 +60,8 @@ public final class VkAccelerationStructureInstanceKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureInstanceKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureInstanceKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureInstanceKHR(MemorySegment segment) {
@@ -145,18 +146,18 @@ public final class VkAccelerationStructureInstanceKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureInstanceKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureInstanceKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureInstanceKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureInstanceKHR> array(Arena arena, VkAccelerationStructureInstanceKHR... structs) {
+    public static NativeStructArray<VkAccelerationStructureInstanceKHR> array(SegmentAllocator allocator, VkAccelerationStructureInstanceKHR... structs) {
         NativeStructArray<VkAccelerationStructureInstanceKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureInstanceKHR(segment),
             structs.length

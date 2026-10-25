@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkOpticalFlowImageFormatInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOpticalFlowImageFormatInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOpticalFlowImageFormatInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOpticalFlowImageFormatInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkOpticalFlowImageFormatInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOpticalFlowImageFormatInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkOpticalFlowImageFormatInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpticalFlowImageFormatInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOpticalFlowImageFormatInfoNV> array(Arena arena, VkOpticalFlowImageFormatInfoNV... structs) {
+    public static NativeStructArray<VkOpticalFlowImageFormatInfoNV> array(SegmentAllocator allocator, VkOpticalFlowImageFormatInfoNV... structs) {
         NativeStructArray<VkOpticalFlowImageFormatInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOpticalFlowImageFormatInfoNV(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkDebugUtilsObjectNameInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDebugUtilsObjectNameInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDebugUtilsObjectNameInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDebugUtilsObjectNameInfoEXT(MemorySegment segment) {
@@ -122,8 +123,8 @@ public final class VkDebugUtilsObjectNameInfoEXT
     }
     
     /// @see #pObjectName()
-    public VkDebugUtilsObjectNameInfoEXT pObjectName(Arena arena, String pObjectName) {
-    	P_OBJECT_NAME_HANDLE.set(segment, 0L, arena.allocateFrom(pObjectName));
+    public VkDebugUtilsObjectNameInfoEXT pObjectName(SegmentAllocator allocator, String pObjectName) {
+    	P_OBJECT_NAME_HANDLE.set(segment, 0L, allocator.allocateFrom(pObjectName));
     	return this;
     }
     
@@ -156,18 +157,18 @@ public final class VkDebugUtilsObjectNameInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDebugUtilsObjectNameInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDebugUtilsObjectNameInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsObjectNameInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDebugUtilsObjectNameInfoEXT> array(Arena arena, VkDebugUtilsObjectNameInfoEXT... structs) {
+    public static NativeStructArray<VkDebugUtilsObjectNameInfoEXT> array(SegmentAllocator allocator, VkDebugUtilsObjectNameInfoEXT... structs) {
         NativeStructArray<VkDebugUtilsObjectNameInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDebugUtilsObjectNameInfoEXT(segment),
             structs.length

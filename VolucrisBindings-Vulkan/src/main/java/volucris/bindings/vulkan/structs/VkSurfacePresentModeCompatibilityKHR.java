@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkSurfacePresentModeCompatibilityKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSurfacePresentModeCompatibilityKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSurfacePresentModeCompatibilityKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSurfacePresentModeCompatibilityKHR(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkSurfacePresentModeCompatibilityKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSurfacePresentModeCompatibilityKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkSurfacePresentModeCompatibilityKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSurfacePresentModeCompatibilityKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSurfacePresentModeCompatibilityKHR> array(Arena arena, VkSurfacePresentModeCompatibilityKHR... structs) {
+    public static NativeStructArray<VkSurfacePresentModeCompatibilityKHR> array(SegmentAllocator allocator, VkSurfacePresentModeCompatibilityKHR... structs) {
         NativeStructArray<VkSurfacePresentModeCompatibilityKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSurfacePresentModeCompatibilityKHR(segment),
             structs.length

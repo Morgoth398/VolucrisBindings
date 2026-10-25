@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkAttachmentReferenceStencilLayout
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAttachmentReferenceStencilLayout(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAttachmentReferenceStencilLayout(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAttachmentReferenceStencilLayout(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkAttachmentReferenceStencilLayout
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAttachmentReferenceStencilLayout> array(Arena arena, int count) {
+    public static NativeStructArray<VkAttachmentReferenceStencilLayout> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAttachmentReferenceStencilLayout(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAttachmentReferenceStencilLayout> array(Arena arena, VkAttachmentReferenceStencilLayout... structs) {
+    public static NativeStructArray<VkAttachmentReferenceStencilLayout> array(SegmentAllocator allocator, VkAttachmentReferenceStencilLayout... structs) {
         NativeStructArray<VkAttachmentReferenceStencilLayout> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAttachmentReferenceStencilLayout(segment),
             structs.length

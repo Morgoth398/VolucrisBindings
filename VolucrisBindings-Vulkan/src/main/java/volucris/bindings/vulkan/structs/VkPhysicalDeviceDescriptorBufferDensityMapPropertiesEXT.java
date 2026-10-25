@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT> array(Arena arena, VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT... structs) {
+    public static NativeStructArray<VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT> array(SegmentAllocator allocator, VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT... structs) {
         NativeStructArray<VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT(segment),
             structs.length

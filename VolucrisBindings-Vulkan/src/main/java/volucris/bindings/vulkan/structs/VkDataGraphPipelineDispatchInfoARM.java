@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkDataGraphPipelineDispatchInfoARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDataGraphPipelineDispatchInfoARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDataGraphPipelineDispatchInfoARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDataGraphPipelineDispatchInfoARM(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkDataGraphPipelineDispatchInfoARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDataGraphPipelineDispatchInfoARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkDataGraphPipelineDispatchInfoARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineDispatchInfoARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDataGraphPipelineDispatchInfoARM> array(Arena arena, VkDataGraphPipelineDispatchInfoARM... structs) {
+    public static NativeStructArray<VkDataGraphPipelineDispatchInfoARM> array(SegmentAllocator allocator, VkDataGraphPipelineDispatchInfoARM... structs) {
         NativeStructArray<VkDataGraphPipelineDispatchInfoARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDataGraphPipelineDispatchInfoARM(segment),
             structs.length

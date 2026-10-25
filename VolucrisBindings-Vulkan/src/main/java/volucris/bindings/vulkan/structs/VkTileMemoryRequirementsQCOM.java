@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -61,8 +62,8 @@ public final class VkTileMemoryRequirementsQCOM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTileMemoryRequirementsQCOM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTileMemoryRequirementsQCOM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTileMemoryRequirementsQCOM(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VkTileMemoryRequirementsQCOM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTileMemoryRequirementsQCOM> array(Arena arena, int count) {
+    public static NativeStructArray<VkTileMemoryRequirementsQCOM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTileMemoryRequirementsQCOM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTileMemoryRequirementsQCOM> array(Arena arena, VkTileMemoryRequirementsQCOM... structs) {
+    public static NativeStructArray<VkTileMemoryRequirementsQCOM> array(SegmentAllocator allocator, VkTileMemoryRequirementsQCOM... structs) {
         NativeStructArray<VkTileMemoryRequirementsQCOM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTileMemoryRequirementsQCOM(segment),
             structs.length

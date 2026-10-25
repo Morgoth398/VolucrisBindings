@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -83,8 +84,8 @@ public final class VkTensorDescriptionARM
 	    this(Arena.ofAuto());
 	}
 	
-	public VkTensorDescriptionARM(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkTensorDescriptionARM(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkTensorDescriptionARM(MemorySegment segment) {
@@ -207,18 +208,18 @@ public final class VkTensorDescriptionARM
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkTensorDescriptionARM> array(Arena arena, int count) {
+    public static NativeStructArray<VkTensorDescriptionARM> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTensorDescriptionARM(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkTensorDescriptionARM> array(Arena arena, VkTensorDescriptionARM... structs) {
+    public static NativeStructArray<VkTensorDescriptionARM> array(SegmentAllocator allocator, VkTensorDescriptionARM... structs) {
         NativeStructArray<VkTensorDescriptionARM> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkTensorDescriptionARM(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR> array(Arena arena, VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR... structs) {
+    public static NativeStructArray<VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR> array(SegmentAllocator allocator, VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR... structs) {
         NativeStructArray<VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPhysicalDeviceShaderRelaxedExtendedInstructionFeaturesKHR(segment),
             structs.length

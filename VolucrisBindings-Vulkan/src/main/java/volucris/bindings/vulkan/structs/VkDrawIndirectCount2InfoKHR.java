@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import java.util.function.Consumer;
@@ -77,8 +78,8 @@ public final class VkDrawIndirectCount2InfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDrawIndirectCount2InfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDrawIndirectCount2InfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDrawIndirectCount2InfoKHR(MemorySegment segment) {
@@ -195,18 +196,18 @@ public final class VkDrawIndirectCount2InfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDrawIndirectCount2InfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDrawIndirectCount2InfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDrawIndirectCount2InfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDrawIndirectCount2InfoKHR> array(Arena arena, VkDrawIndirectCount2InfoKHR... structs) {
+    public static NativeStructArray<VkDrawIndirectCount2InfoKHR> array(SegmentAllocator allocator, VkDrawIndirectCount2InfoKHR... structs) {
         NativeStructArray<VkDrawIndirectCount2InfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDrawIndirectCount2InfoKHR(segment),
             structs.length

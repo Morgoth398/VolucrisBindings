@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkDescriptorPoolSize
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorPoolSize(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorPoolSize(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorPoolSize(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkDescriptorPoolSize
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorPoolSize> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorPoolSize> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorPoolSize(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorPoolSize> array(Arena arena, VkDescriptorPoolSize... structs) {
+    public static NativeStructArray<VkDescriptorPoolSize> array(SegmentAllocator allocator, VkDescriptorPoolSize... structs) {
         NativeStructArray<VkDescriptorPoolSize> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorPoolSize(segment),
             structs.length

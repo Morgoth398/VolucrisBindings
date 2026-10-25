@@ -6,6 +6,7 @@ package volucris.bindings.vma.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -54,8 +55,8 @@ public final class VmaDefragmentationPassMoveInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VmaDefragmentationPassMoveInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VmaDefragmentationPassMoveInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VmaDefragmentationPassMoveInfo(MemorySegment segment) {
@@ -135,18 +136,18 @@ public final class VmaDefragmentationPassMoveInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VmaDefragmentationPassMoveInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VmaDefragmentationPassMoveInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaDefragmentationPassMoveInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VmaDefragmentationPassMoveInfo> array(Arena arena, VmaDefragmentationPassMoveInfo... structs) {
+    public static NativeStructArray<VmaDefragmentationPassMoveInfo> array(SegmentAllocator allocator, VmaDefragmentationPassMoveInfo... structs) {
         NativeStructArray<VmaDefragmentationPassMoveInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VmaDefragmentationPassMoveInfo(segment),
             structs.length

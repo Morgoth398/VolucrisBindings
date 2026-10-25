@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -66,8 +67,8 @@ public final class VkFormatProperties3
 	    this(Arena.ofAuto());
 	}
 	
-	public VkFormatProperties3(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkFormatProperties3(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkFormatProperties3(MemorySegment segment) {
@@ -150,18 +151,18 @@ public final class VkFormatProperties3
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkFormatProperties3> array(Arena arena, int count) {
+    public static NativeStructArray<VkFormatProperties3> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkFormatProperties3(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkFormatProperties3> array(Arena arena, VkFormatProperties3... structs) {
+    public static NativeStructArray<VkFormatProperties3> array(SegmentAllocator allocator, VkFormatProperties3... structs) {
         NativeStructArray<VkFormatProperties3> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkFormatProperties3(segment),
             structs.length

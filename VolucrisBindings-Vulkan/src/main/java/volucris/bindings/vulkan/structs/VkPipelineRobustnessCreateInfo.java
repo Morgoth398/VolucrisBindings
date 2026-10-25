@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -71,8 +72,8 @@ public final class VkPipelineRobustnessCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineRobustnessCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineRobustnessCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineRobustnessCreateInfo(MemorySegment segment) {
@@ -165,18 +166,18 @@ public final class VkPipelineRobustnessCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineRobustnessCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineRobustnessCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRobustnessCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineRobustnessCreateInfo> array(Arena arena, VkPipelineRobustnessCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineRobustnessCreateInfo> array(SegmentAllocator allocator, VkPipelineRobustnessCreateInfo... structs) {
         NativeStructArray<VkPipelineRobustnessCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineRobustnessCreateInfo(segment),
             structs.length

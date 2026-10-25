@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -84,8 +85,8 @@ public final class VkSetDescriptorBufferOffsetsInfoEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSetDescriptorBufferOffsetsInfoEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSetDescriptorBufferOffsetsInfoEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSetDescriptorBufferOffsetsInfoEXT(MemorySegment segment) {
@@ -213,18 +214,18 @@ public final class VkSetDescriptorBufferOffsetsInfoEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSetDescriptorBufferOffsetsInfoEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkSetDescriptorBufferOffsetsInfoEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSetDescriptorBufferOffsetsInfoEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSetDescriptorBufferOffsetsInfoEXT> array(Arena arena, VkSetDescriptorBufferOffsetsInfoEXT... structs) {
+    public static NativeStructArray<VkSetDescriptorBufferOffsetsInfoEXT> array(SegmentAllocator allocator, VkSetDescriptorBufferOffsetsInfoEXT... structs) {
         NativeStructArray<VkSetDescriptorBufferOffsetsInfoEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSetDescriptorBufferOffsetsInfoEXT(segment),
             structs.length

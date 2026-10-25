@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkDisplayNativeHdrSurfaceCapabilitiesAMD
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDisplayNativeHdrSurfaceCapabilitiesAMD(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDisplayNativeHdrSurfaceCapabilitiesAMD(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDisplayNativeHdrSurfaceCapabilitiesAMD(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkDisplayNativeHdrSurfaceCapabilitiesAMD
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDisplayNativeHdrSurfaceCapabilitiesAMD> array(Arena arena, int count) {
+    public static NativeStructArray<VkDisplayNativeHdrSurfaceCapabilitiesAMD> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayNativeHdrSurfaceCapabilitiesAMD(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDisplayNativeHdrSurfaceCapabilitiesAMD> array(Arena arena, VkDisplayNativeHdrSurfaceCapabilitiesAMD... structs) {
+    public static NativeStructArray<VkDisplayNativeHdrSurfaceCapabilitiesAMD> array(SegmentAllocator allocator, VkDisplayNativeHdrSurfaceCapabilitiesAMD... structs) {
         NativeStructArray<VkDisplayNativeHdrSurfaceCapabilitiesAMD> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDisplayNativeHdrSurfaceCapabilitiesAMD(segment),
             structs.length

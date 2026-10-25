@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -56,8 +57,8 @@ public final class VkPipelineCreateFlags2CreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineCreateFlags2CreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineCreateFlags2CreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineCreateFlags2CreateInfo(MemorySegment segment) {
@@ -120,18 +121,18 @@ public final class VkPipelineCreateFlags2CreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineCreateFlags2CreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineCreateFlags2CreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCreateFlags2CreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineCreateFlags2CreateInfo> array(Arena arena, VkPipelineCreateFlags2CreateInfo... structs) {
+    public static NativeStructArray<VkPipelineCreateFlags2CreateInfo> array(SegmentAllocator allocator, VkPipelineCreateFlags2CreateInfo... structs) {
         NativeStructArray<VkPipelineCreateFlags2CreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineCreateFlags2CreateInfo(segment),
             structs.length

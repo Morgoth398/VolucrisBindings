@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkDescriptorSetBindingReferenceVALVE
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDescriptorSetBindingReferenceVALVE(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDescriptorSetBindingReferenceVALVE(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDescriptorSetBindingReferenceVALVE(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkDescriptorSetBindingReferenceVALVE
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDescriptorSetBindingReferenceVALVE> array(Arena arena, int count) {
+    public static NativeStructArray<VkDescriptorSetBindingReferenceVALVE> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetBindingReferenceVALVE(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDescriptorSetBindingReferenceVALVE> array(Arena arena, VkDescriptorSetBindingReferenceVALVE... structs) {
+    public static NativeStructArray<VkDescriptorSetBindingReferenceVALVE> array(SegmentAllocator allocator, VkDescriptorSetBindingReferenceVALVE... structs) {
         NativeStructArray<VkDescriptorSetBindingReferenceVALVE> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDescriptorSetBindingReferenceVALVE(segment),
             structs.length

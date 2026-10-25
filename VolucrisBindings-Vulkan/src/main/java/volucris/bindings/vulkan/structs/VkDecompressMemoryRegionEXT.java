@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -58,8 +59,8 @@ public final class VkDecompressMemoryRegionEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDecompressMemoryRegionEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDecompressMemoryRegionEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDecompressMemoryRegionEXT(MemorySegment segment) {
@@ -127,18 +128,18 @@ public final class VkDecompressMemoryRegionEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDecompressMemoryRegionEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkDecompressMemoryRegionEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDecompressMemoryRegionEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDecompressMemoryRegionEXT> array(Arena arena, VkDecompressMemoryRegionEXT... structs) {
+    public static NativeStructArray<VkDecompressMemoryRegionEXT> array(SegmentAllocator allocator, VkDecompressMemoryRegionEXT... structs) {
         NativeStructArray<VkDecompressMemoryRegionEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDecompressMemoryRegionEXT(segment),
             structs.length

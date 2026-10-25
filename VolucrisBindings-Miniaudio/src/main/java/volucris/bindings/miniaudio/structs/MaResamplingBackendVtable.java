@@ -6,6 +6,7 @@ package volucris.bindings.miniaudio.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -88,8 +89,8 @@ public final class MaResamplingBackendVtable
 	    this(Arena.ofAuto());
 	}
 	
-	public MaResamplingBackendVtable(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public MaResamplingBackendVtable(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public MaResamplingBackendVtable(MemorySegment segment) {
@@ -267,18 +268,18 @@ public final class MaResamplingBackendVtable
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<MaResamplingBackendVtable> array(Arena arena, int count) {
+    public static NativeStructArray<MaResamplingBackendVtable> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResamplingBackendVtable(segment),
             count
         );
     }
     
-    public static NativeStructArray<MaResamplingBackendVtable> array(Arena arena, MaResamplingBackendVtable... structs) {
+    public static NativeStructArray<MaResamplingBackendVtable> array(SegmentAllocator allocator, MaResamplingBackendVtable... structs) {
         NativeStructArray<MaResamplingBackendVtable> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new MaResamplingBackendVtable(segment),
             structs.length

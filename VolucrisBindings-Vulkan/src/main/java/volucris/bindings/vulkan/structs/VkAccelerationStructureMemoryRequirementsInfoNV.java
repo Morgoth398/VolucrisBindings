@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkAccelerationStructureMemoryRequirementsInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkAccelerationStructureMemoryRequirementsInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkAccelerationStructureMemoryRequirementsInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkAccelerationStructureMemoryRequirementsInfoNV(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkAccelerationStructureMemoryRequirementsInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkAccelerationStructureMemoryRequirementsInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkAccelerationStructureMemoryRequirementsInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureMemoryRequirementsInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkAccelerationStructureMemoryRequirementsInfoNV> array(Arena arena, VkAccelerationStructureMemoryRequirementsInfoNV... structs) {
+    public static NativeStructArray<VkAccelerationStructureMemoryRequirementsInfoNV> array(SegmentAllocator allocator, VkAccelerationStructureMemoryRequirementsInfoNV... structs) {
         NativeStructArray<VkAccelerationStructureMemoryRequirementsInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkAccelerationStructureMemoryRequirementsInfoNV(segment),
             structs.length

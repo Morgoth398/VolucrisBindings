@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -48,8 +49,8 @@ public final class VkXYColorEXT
 	    this(Arena.ofAuto());
 	}
 	
-	public VkXYColorEXT(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkXYColorEXT(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkXYColorEXT(MemorySegment segment) {
@@ -97,18 +98,18 @@ public final class VkXYColorEXT
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkXYColorEXT> array(Arena arena, int count) {
+    public static NativeStructArray<VkXYColorEXT> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkXYColorEXT(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkXYColorEXT> array(Arena arena, VkXYColorEXT... structs) {
+    public static NativeStructArray<VkXYColorEXT> array(SegmentAllocator allocator, VkXYColorEXT... structs) {
         NativeStructArray<VkXYColorEXT> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkXYColorEXT(segment),
             structs.length

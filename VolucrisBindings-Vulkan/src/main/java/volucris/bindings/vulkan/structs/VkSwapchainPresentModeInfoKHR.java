@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -63,8 +64,8 @@ public final class VkSwapchainPresentModeInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkSwapchainPresentModeInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkSwapchainPresentModeInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkSwapchainPresentModeInfoKHR(MemorySegment segment) {
@@ -142,18 +143,18 @@ public final class VkSwapchainPresentModeInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkSwapchainPresentModeInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkSwapchainPresentModeInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainPresentModeInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkSwapchainPresentModeInfoKHR> array(Arena arena, VkSwapchainPresentModeInfoKHR... structs) {
+    public static NativeStructArray<VkSwapchainPresentModeInfoKHR> array(SegmentAllocator allocator, VkSwapchainPresentModeInfoKHR... structs) {
         NativeStructArray<VkSwapchainPresentModeInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkSwapchainPresentModeInfoKHR(segment),
             structs.length

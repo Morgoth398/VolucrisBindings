@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -62,8 +63,8 @@ public final class VkCopyDeviceMemoryInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkCopyDeviceMemoryInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkCopyDeviceMemoryInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkCopyDeviceMemoryInfoKHR(MemorySegment segment) {
@@ -141,18 +142,18 @@ public final class VkCopyDeviceMemoryInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkCopyDeviceMemoryInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkCopyDeviceMemoryInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyDeviceMemoryInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkCopyDeviceMemoryInfoKHR> array(Arena arena, VkCopyDeviceMemoryInfoKHR... structs) {
+    public static NativeStructArray<VkCopyDeviceMemoryInfoKHR> array(SegmentAllocator allocator, VkCopyDeviceMemoryInfoKHR... structs) {
         NativeStructArray<VkCopyDeviceMemoryInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkCopyDeviceMemoryInfoKHR(segment),
             structs.length

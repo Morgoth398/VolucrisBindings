@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -43,8 +44,8 @@ public final class StdVideoH265PredictorPaletteEntries
 	    this(Arena.ofAuto());
 	}
 	
-	public StdVideoH265PredictorPaletteEntries(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public StdVideoH265PredictorPaletteEntries(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public StdVideoH265PredictorPaletteEntries(MemorySegment segment) {
@@ -82,18 +83,18 @@ public final class StdVideoH265PredictorPaletteEntries
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<StdVideoH265PredictorPaletteEntries> array(Arena arena, int count) {
+    public static NativeStructArray<StdVideoH265PredictorPaletteEntries> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265PredictorPaletteEntries(segment),
             count
         );
     }
     
-    public static NativeStructArray<StdVideoH265PredictorPaletteEntries> array(Arena arena, StdVideoH265PredictorPaletteEntries... structs) {
+    public static NativeStructArray<StdVideoH265PredictorPaletteEntries> array(SegmentAllocator allocator, StdVideoH265PredictorPaletteEntries... structs) {
         NativeStructArray<StdVideoH265PredictorPaletteEntries> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new StdVideoH265PredictorPaletteEntries(segment),
             structs.length

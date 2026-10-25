@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -67,8 +68,8 @@ public final class VkPipelineDynamicStateCreateInfo
 	    this(Arena.ofAuto());
 	}
 	
-	public VkPipelineDynamicStateCreateInfo(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkPipelineDynamicStateCreateInfo(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkPipelineDynamicStateCreateInfo(MemorySegment segment) {
@@ -156,18 +157,18 @@ public final class VkPipelineDynamicStateCreateInfo
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkPipelineDynamicStateCreateInfo> array(Arena arena, int count) {
+    public static NativeStructArray<VkPipelineDynamicStateCreateInfo> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineDynamicStateCreateInfo(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkPipelineDynamicStateCreateInfo> array(Arena arena, VkPipelineDynamicStateCreateInfo... structs) {
+    public static NativeStructArray<VkPipelineDynamicStateCreateInfo> array(SegmentAllocator allocator, VkPipelineDynamicStateCreateInfo... structs) {
         NativeStructArray<VkPipelineDynamicStateCreateInfo> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkPipelineDynamicStateCreateInfo(segment),
             structs.length

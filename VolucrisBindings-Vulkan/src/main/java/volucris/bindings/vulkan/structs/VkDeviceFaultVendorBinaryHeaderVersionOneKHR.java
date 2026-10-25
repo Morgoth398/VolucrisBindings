@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import volucris.bindings.core.NativeStructArray;
@@ -93,8 +94,8 @@ public final class VkDeviceFaultVendorBinaryHeaderVersionOneKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkDeviceFaultVendorBinaryHeaderVersionOneKHR(MemorySegment segment) {
@@ -232,18 +233,18 @@ public final class VkDeviceFaultVendorBinaryHeaderVersionOneKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkDeviceFaultVendorBinaryHeaderVersionOneKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkDeviceFaultVendorBinaryHeaderVersionOneKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceFaultVendorBinaryHeaderVersionOneKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkDeviceFaultVendorBinaryHeaderVersionOneKHR> array(Arena arena, VkDeviceFaultVendorBinaryHeaderVersionOneKHR... structs) {
+    public static NativeStructArray<VkDeviceFaultVendorBinaryHeaderVersionOneKHR> array(SegmentAllocator allocator, VkDeviceFaultVendorBinaryHeaderVersionOneKHR... structs) {
         NativeStructArray<VkDeviceFaultVendorBinaryHeaderVersionOneKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkDeviceFaultVendorBinaryHeaderVersionOneKHR(segment),
             structs.length

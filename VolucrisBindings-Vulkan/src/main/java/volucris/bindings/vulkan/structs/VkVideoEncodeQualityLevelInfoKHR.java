@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkVideoEncodeQualityLevelInfoKHR
 	    this(Arena.ofAuto());
 	}
 	
-	public VkVideoEncodeQualityLevelInfoKHR(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkVideoEncodeQualityLevelInfoKHR(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkVideoEncodeQualityLevelInfoKHR(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkVideoEncodeQualityLevelInfoKHR
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkVideoEncodeQualityLevelInfoKHR> array(Arena arena, int count) {
+    public static NativeStructArray<VkVideoEncodeQualityLevelInfoKHR> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeQualityLevelInfoKHR(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkVideoEncodeQualityLevelInfoKHR> array(Arena arena, VkVideoEncodeQualityLevelInfoKHR... structs) {
+    public static NativeStructArray<VkVideoEncodeQualityLevelInfoKHR> array(SegmentAllocator allocator, VkVideoEncodeQualityLevelInfoKHR... structs) {
         NativeStructArray<VkVideoEncodeQualityLevelInfoKHR> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkVideoEncodeQualityLevelInfoKHR(segment),
             structs.length

@@ -6,6 +6,7 @@ package volucris.bindings.vulkan.structs;
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemoryLayout;
 import java.lang.foreign.MemorySegment;
+import java.lang.foreign.SegmentAllocator;
 import java.lang.foreign.StructLayout;
 import java.lang.invoke.VarHandle;
 import org.jspecify.annotations.Nullable;
@@ -57,8 +58,8 @@ public final class VkOutOfBandQueueTypeInfoNV
 	    this(Arena.ofAuto());
 	}
 	
-	public VkOutOfBandQueueTypeInfoNV(Arena arena) {
-	    this(arena.allocate(LAYOUT));
+	public VkOutOfBandQueueTypeInfoNV(SegmentAllocator allocator) {
+	    this(allocator.allocate(LAYOUT));
 	}
 	
 	public VkOutOfBandQueueTypeInfoNV(MemorySegment segment) {
@@ -121,18 +122,18 @@ public final class VkOutOfBandQueueTypeInfoNV
         return new NativeStructArray<>(this);
     }
     
-    public static NativeStructArray<VkOutOfBandQueueTypeInfoNV> array(Arena arena, int count) {
+    public static NativeStructArray<VkOutOfBandQueueTypeInfoNV> array(SegmentAllocator allocator, int count) {
         return new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOutOfBandQueueTypeInfoNV(segment),
             count
         );
     }
     
-    public static NativeStructArray<VkOutOfBandQueueTypeInfoNV> array(Arena arena, VkOutOfBandQueueTypeInfoNV... structs) {
+    public static NativeStructArray<VkOutOfBandQueueTypeInfoNV> array(SegmentAllocator allocator, VkOutOfBandQueueTypeInfoNV... structs) {
         NativeStructArray<VkOutOfBandQueueTypeInfoNV> array = new NativeStructArray<>(
-            arena,
+            allocator,
             LAYOUT,
             segment -> new VkOutOfBandQueueTypeInfoNV(segment),
             structs.length
