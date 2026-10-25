@@ -16,6 +16,9 @@ on:
       - '.github/workflows/*_Build.yaml'
       - '**/natives/**'
 
+env:
+  EXECUTABLE: VolucrisBindings-Examples/target/VolucrisBindings-Examples-1.0.0-jar-with-dependencies.jar
+
 jobs:
   Linux_x64:
     runs-on: ubuntu-latest
@@ -29,6 +32,15 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Setup Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb libx11-6 libxrandr2 libxinerama1 libxcursor1 libxi6
+    - name: Run examples
+      run: >
+        xvfb-run -a -s "-screen 0 1280x720x24"
+        $JAVA_HOME/bin/java --enable-preview --enable-native-access=ALL-UNNAMED -jar
+        ${{ env.EXECUTABLE }}
 
   Linux_Arm64:
     runs-on: ubuntu-24.04-arm
@@ -42,6 +54,15 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Setup Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb libx11-6 libxrandr2 libxinerama1 libxcursor1 libxi6
+    - name: Run examples
+      run: >
+        xvfb-run -a -s "-screen 0 1280x720x24"
+        $JAVA_HOME/bin/java --enable-preview --enable-native-access=ALL-UNNAMED -jar
+        ${{ env.EXECUTABLE }} --exclude=FastNoise2
 
   macOS_Arm64:
     runs-on: macos-26
@@ -55,6 +76,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Run examples
+      run: $JAVA_HOME/bin/java -XstartOnFirstThread --enable-preview --enable-native-access=ALL-UNNAMED -jar ${{ env.EXECUTABLE }}
           
   macOS_x64:
     runs-on: macos-26-intel
@@ -68,6 +91,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Run examples
+      run: $JAVA_HOME/bin/java -XstartOnFirstThread --enable-preview --enable-native-access=ALL-UNNAMED -jar ${{ env.EXECUTABLE }}
 
   Windows_x64:
     runs-on: windows-2025
@@ -81,4 +106,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      shell: bash
+    - name: Run examples
+      run: $JAVA_HOME/bin/java --enable-preview --enable-native-access=ALL-UNNAMED -jar ${{ env.EXECUTABLE }}
       shell: bash

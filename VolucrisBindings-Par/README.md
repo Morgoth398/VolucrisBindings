@@ -10,7 +10,7 @@ public static void main(String[] args) {
 		NativeFloatArray rotationAxis = new NativeFloatArray(arena, 3);
 		rotationAxis.set(0, 1);
 		rotationAxis.set(1, 0);
-		rotationAxis.set(3, 0);
+		rotationAxis.set(2, 0);
 		
 		ParShapes.scale(parMesh, 5, 5, 5);
 		ParShapes.rotate(parMesh, (float) Math.toRadians(50), rotationAxis);

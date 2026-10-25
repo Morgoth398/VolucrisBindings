@@ -93,6 +93,7 @@
 		<module>VolucrisBindings-Yoga</module>
 		<module>VolucrisBindings-Libclang</module>
 		<module>VolucrisBindings-Miniaudio</module>
+		<module>VolucrisBindings-Examples</module>
 	</modules>
 	<properties>
 		<revision>2.1.0</revision>

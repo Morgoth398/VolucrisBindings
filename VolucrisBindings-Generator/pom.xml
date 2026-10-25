@@ -13,17 +13,6 @@
 		<lwjgl.windows.natives>natives-windows</lwjgl.windows.natives>
 		<lwjgl.linux.natives>natives-linux</lwjgl.linux.natives>
 	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.lwjgl</groupId>
-				<artifactId>lwjgl-bom</artifactId>
-				<version>${lwjgl.version}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>dev.morgoth398</groupId>
