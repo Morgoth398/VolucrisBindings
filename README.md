@@ -16,7 +16,7 @@ Due to the introduction of [restricted methods](https://docs.oracle.com/en/java/
 For examples on how to use each bindings see the `README.md` in the respective module.
 
 # Building The Project
-1. Download [Java 26](https://www.oracle.com/de/java/technologies/downloads/)
+1. Download [Java 26](https://adoptium.net/temurin/releases?version=26&mode=filter&os=any&arch=any)
 2. Download the sources or clone the repo
 
 ### Using The Terminal
