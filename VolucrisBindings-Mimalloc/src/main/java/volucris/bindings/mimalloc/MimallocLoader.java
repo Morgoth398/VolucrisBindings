@@ -13,26 +13,26 @@ public class MimallocLoader {
 	
 	public static void loadNativeLibrary() {
 		if (IS_WINDOWS) {
-			NativeLibraryLoader.loadLibrary("natives/", "mimalloc-redirect");
+			NativeLibraryLoader.loadLibrary("natives", "mimalloc-redirect");
 		}
 		
-		NativeLibraryLoader.loadLibrary("natives/release/", "mimalloc");
+		NativeLibraryLoader.loadLibrary("natives/release", "mimalloc");
 	}
 	
 	public static void loadDebugNativeLibrary() {
 		if (IS_WINDOWS) {
-			NativeLibraryLoader.loadLibrary("natives/", "mimalloc-redirect");
+			NativeLibraryLoader.loadLibrary("natives", "mimalloc-redirect");
 		}
 		
-		NativeLibraryLoader.loadLibrary("natives/debug/", "mimalloc-debug");
+		NativeLibraryLoader.loadLibrary("natives/debug", "mimalloc-debug");
 	}
 	
 	public static void loadSecureNativeLibrary() {
 		if (IS_WINDOWS) {
-			NativeLibraryLoader.loadLibrary("natives/", "mimalloc-redirect");
+			NativeLibraryLoader.loadLibrary("natives", "mimalloc-redirect");
 		}
 		
-		NativeLibraryLoader.loadLibrary("natives/secure/", "mimalloc-secure");
+		NativeLibraryLoader.loadLibrary("natives/secure", "mimalloc-secure");
 	}
 	
 }
