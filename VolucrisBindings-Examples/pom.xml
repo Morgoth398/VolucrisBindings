@@ -62,10 +62,6 @@
 		</dependency>
 		<dependency>
 			<groupId>dev.morgoth398</groupId>
-			<artifactId>VolucrisBindings-OpenGL</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>dev.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Par</artifactId>
 		</dependency>
 		<dependency>
@@ -74,11 +70,11 @@
 		</dependency>
 		<dependency>
 			<groupId>dev.morgoth398</groupId>
-			<artifactId>VolucrisBindings-Vulkan</artifactId>
+			<artifactId>VolucrisBindings-Yoga</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>dev.morgoth398</groupId>
-			<artifactId>VolucrisBindings-Yoga</artifactId>
+			<artifactId>VolucrisBindings-Mimalloc</artifactId>
 		</dependency>
 	</dependencies>
 </project>

@@ -1,0 +1,25 @@
+callbacks:
+  - name: mi_deferred_free_fun
+    package-name: volucris.bindings.mimalloc
+    directory: src/main/java/volucris/bindings/mimalloc
+    imports:
+  - name: mi_output_fun
+    package-name: volucris.bindings.mimalloc
+    directory: src/main/java/volucris/bindings/mimalloc
+    imports:
+  - name: mi_error_fun
+    package-name: volucris.bindings.mimalloc
+    directory: src/main/java/volucris/bindings/mimalloc
+    imports:
+  - name: mi_block_visit_fun
+    package-name: volucris.bindings.mimalloc
+    directory: src/main/java/volucris/bindings/mimalloc
+    imports:
+  - name: mi_heap_visit_fun
+    package-name: volucris.bindings.mimalloc
+    directory: src/main/java/volucris/bindings/mimalloc
+    imports:
+  - name: mi_commit_fun_t
+    package-name: volucris.bindings.mimalloc
+    directory: src/main/java/volucris/bindings/mimalloc
+    imports:

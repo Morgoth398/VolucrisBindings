@@ -58,6 +58,7 @@ If you are using the Eclipse IDE, you do not need to build the project explicitl
 | [Yoga](https://github.com/react/yoga) | 3.2.1 | Yoga is an embeddable and performant flexbox layout engine |
 | [Libclang](https://github.com/llvm/llvm-project) | 23.1.3 | The C Interface to Clang provides a relatively small API that exposes facilities for parsing source code into an abstract syntax tree (AST), loading already-parsed ASTs, traversing the AST, associating physical source locations with elements within the AST, and other facilities that support Clang-based development tools. |
 | [Miniaudio](https://github.com/mackron/miniaudio) | 0.11.25 | Audio playback and capture library written in C, in a single source file. |
+| [Mimalloc](https://github.com/microsoft/mimalloc) | 3.6.0 | Mimalloc is a compact general purpose allocator with excellent performance. |
 
 # Other Bindings
 | Library | Bindings | Version | Notes |

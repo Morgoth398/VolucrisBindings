@@ -20,7 +20,8 @@ public class Main {
 				new Example("StbImageWrite", new StbImageWriteExample()),
 				new Example("StbImage", new StbImageExample()),
 				new Example("StbVorbis", new StbVorbisExample()),
-				new Example("Yoga", new YogaExample())
+				new Example("Yoga", new YogaExample()),
+				new Example("Mimalloc", new MimallocExample())
 		);
 
 	    Set<String> excluded = new HashSet<>();

@@ -1,0 +1,56 @@
+class-description:
+  name: Mimalloc
+  package-name: volucris.bindings.mimalloc
+  directory: src/main/java/volucris/bindings/mimalloc
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - mi_
+excluded-function-name-prefixes:
+  - mi_wsize_from_size
+  - mi_malloc_csize
+  - mi_zalloc_csize
+  - mi_theap_malloc_csize
+  - mi_theap_zalloc_csize
+  - mi_free_csize
+  - mi_free_csize_nonnull
+  - mi_free_csize_aligned
+  - mi_free_csize_aligned_nonnull
+
+  - mi_option_get
+  - mi_option_get_clamp
+  - mi_option_set
+  - mi_option_set_default
+
+  - mi_deferred_free_fun
+  - mi_output_fun
+  - mi_error_fun
+  - mi_block_visit_fun
+  - mi_heap_visit_fun
+  - mi_commit_fun_t
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+native-function-pointers:

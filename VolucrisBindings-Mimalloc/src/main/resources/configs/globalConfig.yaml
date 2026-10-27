@@ -1,0 +1,17 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    mi_deferred_free_fun: MiDeferredFreeFun
+    mi_output_fun: MiOutputFun
+    mi_error_fun: MiErrorFun
+    mi_block_visit_fun: MiBlockVisitFun
+    mi_heap_visit_fun: MiHeapVisitFun
+    mi_commit_fun_t: MiCommitFunT
+
+    mi_option_e: MiOption
+
+    mi_heap_s: MiHeap
+    mi_theap_s: MiTHeap
+    mi_heap_area_s: MiHeapArea
+    mi_subproc_id_t: MiSubprocId
