@@ -50,7 +50,7 @@ public class NativeFunction implements AbstractNativeFunction {
 
 				final boolean isFunctionPointer = ParsingUtils.isFunctionPointer(argumentCursor, cursorResult, typeResult);
 
-				if (isFunctionPointer) {
+				if (isFunctionPointer) {					
 					if (ParsingUtils.isFunctionPointerInlined(cursorResult)) {
 						parameters.add(
 								new FunctionPointerParameter(

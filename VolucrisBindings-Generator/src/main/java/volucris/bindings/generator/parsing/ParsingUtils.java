@@ -142,6 +142,11 @@ public final class ParsingUtils {
 		}
 
 		switch (type.kind()) {
+			case CXTypeKind.CX_TYPE_ATTRIBUTED -> {
+				CXType modifiedType = ClangIndex.clang_Type_getModifiedType(arena, type);
+
+				return isFunctionPointer(arena, modifiedType, cursorResult, typeResult);
+			}
 			case CXTypeKind.CX_TYPE_L_VALUE_REFERENCE,
 					CXTypeKind.CX_TYPE_R_VALUE_REFERENCE,
 					CXTypeKind.CX_TYPE_POINTER,
@@ -352,14 +357,14 @@ public final class ParsingUtils {
 	) {
 		try (Arena arena = Arena.ofConfined()) {
 			List<Integer> internalDimensions = new ArrayList<Integer>();
-			
+
 			CXType type = ClangIndex.clang_getCursorType(arena, cursor);
 
 			while (isArray(type.kind())) {
 				long elementCount = ClangIndex.clang_getArraySize(type);
 
 				type = ClangIndex.clang_getArrayElementType(arena, type);
-				
+
 				internalDimensions.add((int) elementCount);
 			}
 
@@ -380,19 +385,21 @@ public final class ParsingUtils {
 
 			cursorResult.set(typeDeclaration);
 			dimensions.addAll(internalDimensions);
-			
+
 			return true;
 		}
 	}
 
 	private static boolean isArray(int typeKind) {
-	    return switch (typeKind) {
-	        case CXTypeKind.CX_TYPE_INCOMPLETE_ARRAY,
-	             CXTypeKind.CX_TYPE_CONSTANT_ARRAY,
-	             CXTypeKind.CX_TYPE_VARIABLE_ARRAY,
-	             CXTypeKind.CX_TYPE_DEPENDENT_SIZED_ARRAY -> true;
-	        default -> false;
-	    };
+		return switch (typeKind) {
+			case CXTypeKind.CX_TYPE_INCOMPLETE_ARRAY,
+					CXTypeKind.CX_TYPE_CONSTANT_ARRAY,
+					CXTypeKind.CX_TYPE_VARIABLE_ARRAY,
+					CXTypeKind.CX_TYPE_DEPENDENT_SIZED_ARRAY -> {
+				yield true;
+			}
+			default -> false;
+		};
 	}
 
 }

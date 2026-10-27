@@ -67,6 +67,10 @@ public class NativeType {
 			type = ClangIndex.clang_Type_getNamedType(arena, type);
 		}
 
+		while (type.kind() == CXTypeKind.CX_TYPE_ATTRIBUTED) {
+			type = ClangIndex.clang_Type_getModifiedType(arena, type);
+		}
+		
 		switch (type.kind()) {
 			case CXTypeKind.CX_TYPE_L_VALUE_REFERENCE,
 					CXTypeKind.CX_TYPE_R_VALUE_REFERENCE,
