@@ -76,5 +76,9 @@
 			<groupId>dev.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Mimalloc</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>dev.morgoth398</groupId>
+			<artifactId>VolucrisBindings-Rpmalloc</artifactId>
+		</dependency>
 	</dependencies>
 </project>

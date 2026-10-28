@@ -1,0 +1,27 @@
+callbacks:
+  - name: rpmalloc_interface_t_memory_map
+    package-name: volucris.bindings.rpmalloc
+    directory: src/main/java/volucris/bindings/rpmalloc
+    imports:
+  - name: rpmalloc_interface_t_memory_commit
+    package-name: volucris.bindings.rpmalloc
+    directory: src/main/java/volucris/bindings/rpmalloc
+    imports:
+  - name: rpmalloc_interface_t_memory_decommit
+    package-name: volucris.bindings.rpmalloc
+    directory: src/main/java/volucris/bindings/rpmalloc
+    imports:
+  - name: rpmalloc_interface_t_memory_unmap
+    package-name: volucris.bindings.rpmalloc
+    directory: src/main/java/volucris/bindings/rpmalloc
+    imports:
+  - name: rpmalloc_interface_t_map_fail_callback
+    package-name: volucris.bindings.rpmalloc
+    directory: src/main/java/volucris/bindings/rpmalloc
+    imports:
+  - name: rpmalloc_interface_t_error_callback
+    package-name: volucris.bindings.rpmalloc
+    directory: src/main/java/volucris/bindings/rpmalloc
+    imports:
+    string-parameters:
+      - message

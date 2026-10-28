@@ -59,6 +59,7 @@ If you are using the Eclipse IDE, you do not need to build the project explicitl
 | [Libclang](https://github.com/llvm/llvm-project) | 23.1.3 | The C Interface to Clang provides a relatively small API that exposes facilities for parsing source code into an abstract syntax tree (AST), loading already-parsed ASTs, traversing the AST, associating physical source locations with elements within the AST, and other facilities that support Clang-based development tools. |
 | [Miniaudio](https://github.com/mackron/miniaudio) | 0.11.25 | Audio playback and capture library written in C, in a single source file. |
 | [Mimalloc](https://github.com/microsoft/mimalloc) | 3.6.0 | Mimalloc is a compact general purpose allocator with excellent performance. |
+| [Rpmalloc](https://github.com/mjansson/rpmalloc) | 2.0.1 | Public domain cross platform lock free thread caching 16-byte aligned memory allocator implemented in C. |
 
 # Other Bindings
 | Library | Bindings | Version | Notes |

@@ -21,7 +21,8 @@ public class Main {
 				new Example("StbImage", new StbImageExample()),
 				new Example("StbVorbis", new StbVorbisExample()),
 				new Example("Yoga", new YogaExample()),
-				new Example("Mimalloc", new MimallocExample())
+				new Example("Mimalloc", new MimallocExample()),
+				new Example("Rpmalloc", new RpmallocExample())
 		);
 
 	    Set<String> excluded = new HashSet<>();

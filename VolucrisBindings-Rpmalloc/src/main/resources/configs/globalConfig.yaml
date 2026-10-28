@@ -1,0 +1,15 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    rpmalloc_global_statistics_t: RpmallocGlobalStatistics
+    rpmalloc_thread_statistics_t: RpmallocThreadStatistics
+    rpmalloc_interface_t: RpmallocInterface
+    rpmalloc_config_t: RpmallocConfig
+
+    rpmalloc_interface_t_memory_map: RpmallocMemoryMap
+    rpmalloc_interface_t_memory_commit: RpmallocMemoryCommit
+    rpmalloc_interface_t_memory_decommit: RpmallocMemoryDecommit
+    rpmalloc_interface_t_memory_unmap: RpmallocMemoryUnmap
+    rpmalloc_interface_t_map_fail_callback: RpmallocFailCallback
+    rpmalloc_interface_t_error_callback: RpmallocErrorCallback

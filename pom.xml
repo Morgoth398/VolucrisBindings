@@ -95,6 +95,7 @@
 		<module>VolucrisBindings-Miniaudio</module>
 		<module>VolucrisBindings-Examples</module>
 		<module>VolucrisBindings-Mimalloc</module>
+		<module>VolucrisBindings-Rpmalloc</module>
 	</modules>
 	<properties>
 		<revision>2.1.0</revision>
@@ -174,6 +175,11 @@
 			<dependency>
 				<groupId>dev.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Mimalloc</artifactId>
+				<version>${revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>dev.morgoth398</groupId>
+				<artifactId>VolucrisBindings-Rpmalloc</artifactId>
 				<version>${revision}</version>
 			</dependency>
 		</dependencies>
