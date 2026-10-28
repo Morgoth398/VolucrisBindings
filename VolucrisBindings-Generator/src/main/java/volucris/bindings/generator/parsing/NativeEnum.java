@@ -8,11 +8,14 @@ import java.util.List;
 
 import org.jspecify.annotations.Nullable;
 
+import volucris.bindings.core.NativeIntArray;
+import volucris.bindings.core.NativePointerArray;
 import volucris.bindings.libclang.CXCursorVisitor;
 import volucris.bindings.libclang.ClangIndex;
 import volucris.bindings.libclang.enums.CXCursorKind;
 import volucris.bindings.libclang.enums.CXVisitorResult;
 import volucris.bindings.libclang.structs.CXCursor;
+import volucris.bindings.libclang.structs.CXSourceLocation;
 import volucris.bindings.libclang.structs.CXString;
 
 public class NativeEnum {
@@ -23,10 +26,26 @@ public class NativeEnum {
 	private final List<NativeEnumConstant> constants;
 
 	public NativeEnum(String name, CXCursor cursor) {
-		this.name = name;
 		this.constants = new ArrayList<NativeEnumConstant>();
 
 		try (Arena arena = Arena.ofConfined()) {
+			
+			if (ClangIndex.clang_Cursor_isAnonymous(cursor) != 0) {
+				CXSourceLocation sourceLocation = ClangIndex.clang_getCursorLocation(arena, cursor);
+
+				NativePointerArray file = new NativePointerArray(arena, 1);
+
+				NativeIntArray line = new NativeIntArray(arena, 1);
+				NativeIntArray column = new NativeIntArray(arena, 1);
+				NativeIntArray offset = new NativeIntArray(arena, 1);
+
+				ClangIndex.clang_getSpellingLocation(sourceLocation, file, line, column, offset);
+
+				this.name = "$anon$" + line.get(0) + ":" + column.get(0);
+			} else {
+				this.name = name;
+			}
+			
 			CXString rawCommentText = ClangIndex.clang_Cursor_getRawCommentText(arena, cursor);
 			comment = ParsingUtils.getCommentText(rawCommentText);
 			ClangIndex.clang_disposeString(rawCommentText);
