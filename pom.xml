@@ -96,6 +96,7 @@
 		<module>VolucrisBindings-Examples</module>
 		<module>VolucrisBindings-Mimalloc</module>
 		<module>VolucrisBindings-Rpmalloc</module>
+		<module>VolucrisBindings-Meshoptimizer</module>
 	</modules>
 	<properties>
 		<revision>2.1.0</revision>
@@ -180,6 +181,11 @@
 			<dependency>
 				<groupId>dev.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Rpmalloc</artifactId>
+				<version>${revision}</version>
+			</dependency>
+			<dependency>
+				<groupId>dev.morgoth398</groupId>
+				<artifactId>VolucrisBindings-Meshoptimizer</artifactId>
 				<version>${revision}</version>
 			</dependency>
 		</dependencies>

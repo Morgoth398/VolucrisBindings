@@ -1,0 +1,21 @@
+naming:
+  strip-prefixes:
+  strip-postfixes:
+  type-renames:
+    meshopt_EncodeExpMode: MeshOptEncodeExpMode
+    $anon$466:1: MeshOptSimplificationOptions
+    $anon$491:1: MeshOptSimplifyVertex
+    $anon$933:1: MeshOptTangentOptions
+    $anon$975:1: MeshOptRemeshingFlags
+
+    meshopt_Stream: MeshoptStream
+    meshopt_VertexCacheStatistics: MeshoptVertexCacheStatistics
+    meshopt_VertexFetchStatistics: MeshoptVertexFetchStatistics
+    meshopt_OverdrawStatistics: MeshoptOverdrawStatistics
+    meshopt_CoverageStatistics: MeshoptCoverageStatistics
+    meshopt_Meshlet: MeshoptMeshlet
+    meshopt_Bounds: MeshoptBounds
+
+    meshopt_setAllocator_allocate: MeshoptAllocateFunction
+    meshopt_setAllocator_deallocate: MeshoptDeallocateFunction
+    meshopt_generateVertexRemapCustom_callback: MeshoptVertexRemapCallback

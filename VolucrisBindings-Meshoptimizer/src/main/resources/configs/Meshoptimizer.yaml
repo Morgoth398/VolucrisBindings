@@ -1,0 +1,101 @@
+class-description:
+  name: Meshoptimizer
+  package-name: volucris.bindings.meshoptimizer
+  directory: src/main/java/volucris/bindings/meshoptimizer
+  is-static: true
+  parent:
+  interfaces: []
+  is-sealed: false
+  permits: []
+  is-abstract: false
+  is-final: true
+  instance-parameter:
+
+imports:
+static-imports:
+
+macro-name-prefixes:
+excluded-macro-name-prefixes:
+macro-names:
+excluded-macro-names:
+
+symbol-prefixes:
+
+symbols:
+
+function-name-prefixes:
+  - meshopt_
+excluded-function-name-prefixes:
+function-name-postfixes:
+excluded-function-name-postfixes:
+
+constructors:
+struct:
+native-functions:
+  - name: meshopt_generateVertexRemap
+    nullable-parameters: 
+      - indices
+  - name: meshopt_generateVertexRemapMulti
+    nullable-parameters:
+      - indices
+    struct-arrays:
+      - streams
+  - name: meshopt_generateVertexRemapCustom
+    nullable-parameters:
+      - indices
+      - callback
+  - name: meshopt_remapIndexBuffer
+    nullable-parameters:
+      - indices
+  - name: meshopt_filterIndexBufferMulti
+    struct-arrays:
+      - streams
+  - name: meshopt_generateShadowIndexBufferMulti
+    struct-arrays:
+      - streams
+  - name: meshopt_encodeMeshlet
+    nullable-parameters:
+      - vertices
+  - name: meshopt_decodeMeshletRaw
+    nullable-parameters:
+      - vertices
+  - name: meshopt_simplify
+    nullable-parameters:
+      - result_error
+  - name: meshopt_simplifyWithAttributes
+    nullable-parameters:
+      - vertex_lock
+      - result_error
+  - name: meshopt_simplifyWithUpdate
+    nullable-parameters:
+      - vertex_lock
+      - result_error
+  - name: meshopt_simplifySloppy
+    nullable-parameters:
+      - vertex_lock
+      - result_error
+  - name: meshopt_simplifyPoints
+    nullable-parameters:
+      - vertex_colors
+  - name: meshopt_buildMeshlets
+    struct-arrays:
+      - meshlets
+  - name: meshopt_buildMeshletsScan
+    struct-arrays:
+      - meshlets
+  - name: meshopt_buildMeshletsFlex
+    struct-arrays:
+      - meshlets
+  - name: meshopt_buildMeshletsSpatial
+    struct-arrays:
+      - meshlets
+  - name: meshopt_computeSphereBounds
+    nullable-parameters:
+      - radii
+  - name: meshopt_generateTangents
+    nullable-parameters:
+      - indices
+  - name: meshopt_remesh
+    nullable-parameters:
+      - destination
+native-function-pointers:

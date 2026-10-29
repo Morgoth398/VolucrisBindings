@@ -1,0 +1,5 @@
+package-name: volucris.bindings.meshoptimizer.enums
+directory: src/main/java/volucris/bindings/meshoptimizer/enums
+generate-all: true
+transform-constants-names: true
+configs:

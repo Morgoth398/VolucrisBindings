@@ -66,7 +66,7 @@ public class GLFWExample implements Runnable {
 			
 			while (GLFW.glfwWindowShouldClose(window) != GLFW.GLFW_TRUE) {
 				
-				if (GLFW.glfwGetTime() > 5)
+				if (GLFW.glfwGetTime() > 2)
 					GLFW.glfwSetWindowShouldClose(window, GLFW.GLFW_TRUE);
 				
 				GLFW.glfwPollEvents();

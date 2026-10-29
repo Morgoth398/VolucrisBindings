@@ -22,7 +22,8 @@ public class Main {
 				new Example("StbVorbis", new StbVorbisExample()),
 				new Example("Yoga", new YogaExample()),
 				new Example("Mimalloc", new MimallocExample()),
-				new Example("Rpmalloc", new RpmallocExample())
+				new Example("Rpmalloc", new RpmallocExample()),
+				new Example("Meshoptimizer", new MeshoptimizerExample())
 		);
 
 	    Set<String> excluded = new HashSet<>();

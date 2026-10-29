@@ -60,6 +60,7 @@ If you are using the Eclipse IDE, you do not need to build the project explicitl
 | [Miniaudio](https://github.com/mackron/miniaudio) | 0.11.25 | Audio playback and capture library written in C, in a single source file. |
 | [Mimalloc](https://github.com/microsoft/mimalloc) | 3.6.0 | Mimalloc is a compact general purpose allocator with excellent performance. |
 | [Rpmalloc](https://github.com/mjansson/rpmalloc) | 2.0.1 | Public domain cross platform lock free thread caching 16-byte aligned memory allocator implemented in C. |
+| [Meshoptimizer](https://github.com/zeux/meshoptimizer) | 1.3 | Mesh optimization library that makes meshes smaller and faster to render |
 
 # Other Bindings
 | Library | Bindings | Version | Notes |

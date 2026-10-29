@@ -1,0 +1,13 @@
+callbacks:
+  - name: meshopt_setAllocator_allocate
+    package-name: volucris.bindings.meshoptimizer
+    directory: src/main/java/volucris/bindings/meshoptimizer
+    imports:
+  - name: meshopt_setAllocator_deallocate
+    package-name: volucris.bindings.meshoptimizer
+    directory: src/main/java/volucris/bindings/meshoptimizer
+    imports:
+  - name: meshopt_generateVertexRemapCustom_callback
+    package-name: volucris.bindings.meshoptimizer
+    directory: src/main/java/volucris/bindings/meshoptimizer
+    imports:
