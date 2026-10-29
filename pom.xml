@@ -124,7 +124,7 @@
 		<module>VolucrisBindings-Meshoptimizer</module>
 	</modules>
 	<properties>
-		<revision>2.1.0</revision>
+		<revision>2.2.0</revision>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
