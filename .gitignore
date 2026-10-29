@@ -45,3 +45,5 @@ VolucrisBindings-Test/
 /natives/
 */natives/
 **/natives/clang/
+
+.flattened-pom.xml
