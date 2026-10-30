@@ -3,9 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>dev.morgoth398</groupId>
+		<groupId>io.github.morgoth398</groupId>
 		<artifactId>VolucrisBindings</artifactId>
 		<version>${revision}</version>
 	</parent>
 	<artifactId>VolucrisBindings-Core</artifactId>
+	
+	<name>${project.artifactId}</name>
+	<description>The core module needed for all volucris bindings.</description>
 </project>

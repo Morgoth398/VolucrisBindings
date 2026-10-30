@@ -2,10 +2,42 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>dev.morgoth398</groupId>
+	<groupId>io.github.morgoth398</groupId>
 	<artifactId>VolucrisBindings</artifactId>
 	<version>${revision}</version>
 	<packaging>pom</packaging>
+
+	<name>VolucrisBindings</name>
+	<description>
+		Java Bindings for various C/C++ libraries using the Java FFM
+		API
+	</description>
+	<url>https://github.com/Morgoth398/VolucrisBindings</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Morgoth398</name>
+			<email>132191387+Morgoth398@users.noreply.github.com</email>
+		</developer>
+	</developers>
+
+	<scm child.scm.connection.inherit.append.path="false"
+		child.scm.developerConnection.inherit.append.path="false"
+		child.scm.url.inherit.append.path="false">
+		<connection>scm:git:git://github.com/Morgoth398/VolucrisBindings.git</connection>
+		<developerConnection>
+			scm:git:ssh://github.com/Morgoth398/VolucrisBindings.git
+		</developerConnection>
+		<url>https://github.com/Morgoth398/VolucrisBindings</url>
+	</scm>
+
 	<build>
 		<resources>
 			<resource>
@@ -101,6 +133,36 @@
 					</execution>
 				</executions>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.2.8</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.12.0</version>
+				<extensions>true</extensions>
+				<configuration>
+					<publishingServerId>central</publishingServerId>
+					<autoPublish>false</autoPublish>
+					<excludeArtifacts>
+						<excludeArtifact>VolucrisBindings-Examples</excludeArtifact>
+					</excludeArtifacts>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 	<modules>
@@ -124,92 +186,92 @@
 		<module>VolucrisBindings-Meshoptimizer</module>
 	</modules>
 	<properties>
-		<revision>2.2.0</revision>
+		<revision>3.0.0</revision>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Core</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Generator</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-GLFW</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-OpenGL</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Vulkan</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Vma</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Stb</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-FastNoise2</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Assimp</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Msdfgen</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Par</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Yoga</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Libclang</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Miniaudio</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Mimalloc</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Rpmalloc</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
-				<groupId>dev.morgoth398</groupId>
+				<groupId>io.github.morgoth398</groupId>
 				<artifactId>VolucrisBindings-Meshoptimizer</artifactId>
 				<version>${revision}</version>
 			</dependency>

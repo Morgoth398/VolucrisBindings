@@ -15,6 +15,28 @@ Due to the introduction of [restricted methods](https://docs.oracle.com/en/java/
 
 For examples on how to use each bindings see the `README.md` in the respective module.
 
+# Including The Project
+```xml
+<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>io.github.morgoth398</groupId>
+			<artifactId>VolucrisBindings</artifactId>
+			<version>3.0.0</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
+```
+and for every module that should be included
+```xml
+<dependency>
+	<groupId>io.github.morgoth398</groupId>
+	<artifactId>Module-Name</artifactId>
+</dependency>
+```
+
 # Building The Project
 1. Download [Java 26](https://adoptium.net/temurin/releases?version=26&mode=filter&os=any&arch=any)
 2. Download the sources or clone the repo

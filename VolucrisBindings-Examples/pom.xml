@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>dev.morgoth398</groupId>
+		<groupId>io.github.morgoth398</groupId>
 		<artifactId>VolucrisBindings</artifactId>
 		<version>${revision}</version>
 	</parent>
@@ -41,47 +41,47 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Assimp</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-FastNoise2</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Miniaudio</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Msdfgen</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-GLFW</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Par</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Stb</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Yoga</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Mimalloc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Rpmalloc</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>dev.morgoth398</groupId>
+			<groupId>io.github.morgoth398</groupId>
 			<artifactId>VolucrisBindings-Meshoptimizer</artifactId>
 		</dependency>
 	</dependencies>
