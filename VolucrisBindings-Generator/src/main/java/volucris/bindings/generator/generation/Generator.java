@@ -31,6 +31,7 @@ import volucris.bindings.generator.config.ClassConfig.StructDescription;
 import volucris.bindings.generator.config.ClassConfig.Symbol;
 import volucris.bindings.generator.config.ClassConfig.SymbolPrefix;
 import volucris.bindings.generator.config.EnumsConfig.EnumConfig;
+import volucris.bindings.generator.generation.constructors.Constructor;
 import volucris.bindings.generator.generation.constructors.MemorySegmentConstructor;
 import volucris.bindings.generator.generation.constructors.PrivateConstructor;
 import volucris.bindings.generator.generation.fields.FunctionField;
@@ -163,12 +164,24 @@ public class Generator {
 			if (!clazz.getDescription().getIsStatic()) {
 				clazz.addField(new MemorySegmentField(Modifier.PRIVATE, Modifier.FINAL));
 
-				clazz.addConstructor(
-						new MemorySegmentConstructor(
-								clazz.getDescription().getName(),
-								clazz.getDescription().getParentHasSegmentConstructor()
-						)
-				);
+				if (classConfig.getCustomConstructorCode() == null) {
+					clazz.addConstructor(
+							new MemorySegmentConstructor(
+									clazz.getDescription().getName(),
+									clazz.getDescription().getParentHasSegmentConstructor()
+							)
+					);
+				} else {
+					try {
+						Template customConstructorTemplate = CONFIG.getTemplate(classConfig.getCustomConstructorCode());
+
+						clazz.addConstructor(
+								new Constructor(customConstructorTemplate, Map.of("className", clazz.getClazzName()))
+						);
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				}
 
 				clazz.addMethod(new MemorySegmentMethod());
 			} else {
