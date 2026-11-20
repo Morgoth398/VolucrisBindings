@@ -27,6 +27,7 @@ public abstract class ${className} {
     static {
         CACHE = new HashMap<>();
 
+        <#if valueLayouts?has_content>
         <#if hasReturnType>
         DESCRIPTION = FunctionDescriptor.of(
             ${returnTypeLayout}, 
@@ -37,6 +38,13 @@ public abstract class ${className} {
             ${layout}<#sep>, </#sep>
             </#list>
         );
+        <#else>
+        <#if hasReturnType>
+        DESCRIPTION = FunctionDescriptor.of(${returnTypeLayout});
+        <#else>
+        <#stop "Invalid callback signature for ${className}. The callback has neither a return type nor any parameters.">
+        </#if>
+        </#if>
 
         try {
             HANDLE = MethodHandles.lookup().findVirtual(${className}.class, "invoke", DESCRIPTION.toMethodType());
@@ -56,13 +64,17 @@ public abstract class ${className} {
     }
 
     <#if addTypedMethod>
+    <#if valueLayouts?has_content>
     public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> invoke(
         <#list parameters as parameter>
         <#if parameter.isPrimitive()>${parameter.type}<#else>MemorySegment</#if> ${parameter.name}<#sep>,</#sep>
         </#list>
     ) {
+    <#else>
+    public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> invoke() {
+    </#if>
         <#if hasReturnType>
-        return invoke(
+        return invoke<#if onlyPrimitveParameters>2</#if>(
         <#else>
         invoke(
         </#if>
@@ -82,7 +94,7 @@ public abstract class ${className} {
         )<#if hasReturnType && !(returnType.isPrimitive() || returnType.isRawSegment())>.memorySegment()</#if>;
     }
 
-    public<#if !hasReturnType> void<#else> <#if returnType.isStructArray()>NativeStructArray<${returnType.type}><#else>${returnType.type}</#if></#if> invoke(
+    public<#if !hasReturnType> void<#else> <#if returnType.isStructArray()>NativeStructArray<${returnType.type}><#else>${returnType.type}</#if></#if> invoke<#if onlyPrimitveParameters>2</#if>(
         <#list parameters as parameter>
         <#if parameter.isStructArray()>NativeStructArray<${parameter.type}> <#else>${parameter.type} </#if>${parameter.name}<#sep>,</#sep>
         </#list>
@@ -92,11 +104,15 @@ public abstract class ${className} {
         );
     };
     <#else>
+    <#if valueLayouts?has_content>
     public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> invoke(
         <#list parameters as parameter>
         <#if parameter.isPrimitive()>${parameter.type}<#else>MemorySegment</#if> ${parameter.name}<#sep>,</#sep>
         </#list>
     ) {
+    <#else>
+    public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> invoke() {
+    </#if>
         throw new UnsupportedOperationException(
             "Override either the typed or raw callback method in ${className}."
         );

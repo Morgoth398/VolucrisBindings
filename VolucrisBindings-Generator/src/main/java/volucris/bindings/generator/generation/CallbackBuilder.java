@@ -20,6 +20,7 @@ import freemarker.template.Template;
 import volucris.bindings.generator.config.GlobalConfig;
 import volucris.bindings.generator.generation.methods.FunctionLoadingBuilder;
 import volucris.bindings.generator.generation.methods.NativeFunctionMethod;
+import volucris.bindings.generator.generation.methods.NativeFunctionMethod.ParameterInfo;
 import volucris.bindings.generator.generation.methods.NativeFunctionMethod.ReturnTypeInfo;
 import volucris.bindings.core.MemoryStack;
 import volucris.bindings.generator.config.CallbacksConfig.CallbackConfig;
@@ -135,6 +136,7 @@ public class CallbackBuilder {
 		dataModel.put("staticImports", staticImports.stream().sorted(String::compareTo).toList());
 		dataModel.put("packageName", callbackConfig.getPackageName());
 		dataModel.put("addTypedMethod", addTypeMethod);
+		dataModel.put("onlyPrimitveParameters", nativeFunctionBuilder.getParameterInfos().stream().allMatch(ParameterInfo::isPrimitive));
 		dataModel.put("javadoc", javadoc);
 
 		return dataModel;
