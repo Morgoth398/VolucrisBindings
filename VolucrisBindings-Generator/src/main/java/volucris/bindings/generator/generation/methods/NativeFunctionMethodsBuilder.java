@@ -3,6 +3,7 @@ package volucris.bindings.generator.generation.methods;
 import java.lang.foreign.Arena;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -102,16 +103,16 @@ public class NativeFunctionMethodsBuilder {
 		NativeFunctionMethod.Builder functionMethodBuilder = new NativeFunctionMethod.Builder(
 				rawMethodName, methodName, field, nativeFunction, functionDescription, globalConfig
 		);
-		
+
 		functionMethodBuilder.setJavadoc(getRawMethodJavadoc(nativeFunction.getComment()));
-		
+
 		methods.add(functionMethodBuilder.build(rawMethodTemplate, true));
-		
+
 		if (!addTypeMethod)
 			return Collections.unmodifiableList(methods);
 
 		functionMethodBuilder.setJavadoc(getTypedMethodJavadoc(rawMethodName));
-		
+
 		methods.add(functionMethodBuilder.build(typedMethodTemplate, false));
 
 		return Collections.unmodifiableList(methods);
@@ -130,7 +131,7 @@ public class NativeFunctionMethodsBuilder {
 
 		return stringBuilder.toString();
 	}
-	
+
 	private String getTypedMethodJavadoc(String rawMethodName) {
 		StringBuilder stringBuilder = new StringBuilder();
 
@@ -138,9 +139,13 @@ public class NativeFunctionMethodsBuilder {
 
 		return stringBuilder.toString();
 	}
-	
+
 	public Constructor asConstructor(
-			String className, String destructorFunctionName, Template template, boolean parentSegmentConstructor
+			String className,
+			String destructorFunctionName,
+			Template template,
+			boolean parentSegmentConstructor,
+			@Nullable String parentConversionFunction
 	) {
 		if (!specifiedAsConstructor)
 			throw new RuntimeException("Function was not specified to be called in a cosntructor.");
@@ -151,7 +156,7 @@ public class NativeFunctionMethodsBuilder {
 				rawMethodName, className, field, nativeFunction, functionDescription, globalConfig
 		);
 		functionMethodBuilder.setJavadoc(getTypedMethodJavadoc(rawMethodName));
-		
+
 		ReturnTypeInfo returnTypeInfo = functionMethodBuilder.getReturnTypeInfo();
 
 		if (!returnTypeInfo.isPointer() && !returnTypeInfo.isRawSegment() && !returnTypeInfo.isStructArray()) {
@@ -164,9 +169,12 @@ public class NativeFunctionMethodsBuilder {
 				globalConfig, destructorFunctionName, true
 		);
 
-		Method method = functionMethodBuilder.build(
-				template, Map.of("destructor", destructorMethodName, "parentConstructorCall", parentSegmentConstructor), false
-		);
+		Map<String, Object> dataModel = new HashMap<>();
+		dataModel.put("destructor", destructorMethodName);
+		dataModel.put("parentConstructorCall", parentSegmentConstructor);
+		dataModel.put("parentConversionFunction", parentConversionFunction);
+		
+		Method method = functionMethodBuilder.build(template, dataModel, false);
 
 		List<String> requiredImports = new ArrayList<>(method.getRequiredImports());
 		requiredImports.add(Arena.class.getCanonicalName());

@@ -39,7 +39,7 @@ public ${methodName}(
 
 	this.segment = segment.reinterpret(arena, s -> ${destructor}(s));
 	<#if parentConstructorCall!false>
-	super(segment);
+	super(<#if parentConversionFunction??>${parentConversionFunction}(segment)<#else>segment</#if>);
 	</#if>
 }
 <#else>
@@ -56,7 +56,7 @@ public ${methodName}(Arena arena) {
 
 	this.segment = segment.reinterpret(arena, s -> ${destructor}(s));
 	<#if parentConstructorCall!false>
-	super(segment);
+	super(<#if parentConversionFunction??>${parentConversionFunction}(segment)<#else>segment</#if>);
 	</#if>
 }
 </#if>

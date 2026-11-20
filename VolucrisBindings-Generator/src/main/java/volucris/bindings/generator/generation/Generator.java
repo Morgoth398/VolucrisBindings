@@ -168,7 +168,8 @@ public class Generator {
 					clazz.addConstructor(
 							new MemorySegmentConstructor(
 									clazz.getDescription().getName(),
-									clazz.getDescription().getParentHasSegmentConstructor()
+									clazz.getDescription().getParentHasSegmentConstructor(),
+									clazz.getDescription().getParentConversionFunction()
 							)
 					);
 				} else {
@@ -509,7 +510,8 @@ public class Generator {
 								clazz.getDescription().getName(),
 								destructor,
 								constructorTemplate,
-								clazz.getDescription().getParentHasSegmentConstructor()
+								clazz.getDescription().getParentHasSegmentConstructor(),
+								clazz.getDescription().getParentConversionFunction()
 						)
 				);
 			} catch (Exception e) {

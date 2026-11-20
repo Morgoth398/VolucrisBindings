@@ -4,8 +4,9 @@ class-description:
   directory: src/test/ouput # Some valid folder
   is-static: true # Private constructor, all methods static.
   static-native-methods: false # Allows to make all native methods static. When the class contains a struct the property 'is-static' is automatically disabled and then this should be used.
-  parent-class: null
-  parent-has-segment-constructor: false # If the parent-class has a constructor that takes a memory segment that needs to be called
+  parent: null
+  parent-has-segment-constructor: false # If the parent has a constructor that takes a memory segment that needs to be called
+  parent-conversion-function: someName # If this classes segment needs to be converted before being passed to the parent, the neccessary function can be listed here. The function must be static
   interfaces: []
   is-sealed: false
   permits: []
