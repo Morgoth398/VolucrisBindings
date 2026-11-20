@@ -42,6 +42,7 @@ import volucris.bindings.generator.generation.fields.macro.MacroFloatField;
 import volucris.bindings.generator.generation.fields.macro.MacroIntField;
 import volucris.bindings.generator.generation.fields.macro.MacroLongField;
 import volucris.bindings.generator.generation.fields.macro.MacroStringField;
+import volucris.bindings.generator.generation.methods.CleanupFunctionMethod;
 import volucris.bindings.generator.generation.methods.FunctionLoadingBuilder;
 import volucris.bindings.generator.generation.methods.MemorySegmentMethod;
 import volucris.bindings.generator.generation.methods.NativeFunctionMethodsBuilder;
@@ -162,7 +163,10 @@ public class Generator {
 			new NativeRecordHandler(clazz, structDescription, nativeRecord, globalConfig);
 		} else {
 			if (!clazz.getDescription().getIsStatic()) {
-				clazz.addField(new MemorySegmentField(Modifier.PRIVATE, Modifier.FINAL));
+				if (clazz.getDescription().getCleanupFunction() != null)
+					clazz.addField(new MemorySegmentField(Modifier.PRIVATE));
+				else
+					clazz.addField(new MemorySegmentField(Modifier.PRIVATE, Modifier.FINAL));
 
 				if (classConfig.getCustomConstructorCode() == null) {
 					clazz.addConstructor(
@@ -188,6 +192,10 @@ public class Generator {
 			} else {
 				clazz.addConstructor(new PrivateConstructor(clazz.getDescription().getName()));
 			}
+		}
+
+		if (clazz.getDescription().getCleanupFunction() != null) {
+			clazz.addMethod(new CleanupFunctionMethod(clazz.getDescription().getCleanupFunction(), globalConfig));
 		}
 
 		try {
@@ -459,6 +467,9 @@ public class Generator {
 
 		// Search if the function is specified as a destructor.
 		boolean destructorMethod = classConfig.getConstructors().stream().anyMatch(c -> {
+			if (c.getDestructor() == null)
+				return false;
+
 			return c.getDestructor().equals(nativeFunction.getName());
 		});
 
@@ -497,8 +508,8 @@ public class Generator {
 		if (constructorDescription != null) {
 
 			String destructor = constructorDescription.getDestructor();
-			if (destructor == null || destructor.isBlank())
-				throw new RuntimeException("Constructor function needs a destructor function method!");
+//			if (destructor == null || destructor.isBlank())
+//				throw new RuntimeException("Constructor function needs a destructor function method!");
 
 			try {
 				Template constructorTemplate = constructorDescription.getTemplate() != null

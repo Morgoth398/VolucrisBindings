@@ -18,6 +18,7 @@ class-description:
   additional-instance-parameters: [] #If on instance parameter is not enough.
   raw-method-template: some/valid/path/ # A custom raw method template
   typed-method-template: some/valid/path/
+  cleanup-function: SomeName # If non null adds an additional method `attachCleanupFunction` to this class
 
 imports:
   - first

@@ -37,9 +37,15 @@ public ${methodName}(
 	if (segment.equals(MemorySegment.NULL))
 		throw new NullPointerException("Created segment is NULL.");
 
-	this.segment = segment.reinterpret(arena, s -> ${destructor}(s));
 	<#if parentConstructorCall!false>
-	super(<#if parentConversionFunction??>${parentConversionFunction}(segment)<#else>segment</#if>);
+	super(<#if parentConversionFunction?has_content>${parentConversionFunction}(segment)<#else>segment</#if>);
+	
+	</#if>
+	<#if destructor??>
+	this.segment = segment.reinterpret(arena, s -> ${destructor}(s));
+	<#else>
+	this.segment = segment.reinterpret(arena, null);
+	attachCleanupFunction(arena);
 	</#if>
 }
 <#else>
@@ -54,9 +60,15 @@ public ${methodName}(Arena arena) {
 	if (segment.equals(MemorySegment.NULL))
 		throw new NullPointerException("Created segment is NULL.");
 
-	this.segment = segment.reinterpret(arena, s -> ${destructor}(s));
 	<#if parentConstructorCall!false>
-	super(<#if parentConversionFunction??>${parentConversionFunction}(segment)<#else>segment</#if>);
+	super(<#if parentConversionFunction?has_content>${parentConversionFunction}(segment)<#else>segment</#if>);
+	
+	</#if>
+	<#if destructor??>
+	this.segment = segment.reinterpret(arena, s -> ${destructor}(s));
+	<#else>
+	this.segment = segment.reinterpret(arena, null);
+	attachCleanupFunction(arena);
 	</#if>
 }
 </#if>

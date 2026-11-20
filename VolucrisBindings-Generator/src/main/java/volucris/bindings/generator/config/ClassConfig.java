@@ -164,6 +164,7 @@ public class ClassConfig {
 		private String rawMethodTemplate;
 		private String typedMethodTemplate;
 		private String parentConversionFunction;
+		private String cleanupFunction;
 
 		private boolean isStatic;
 		private boolean isSealed;
@@ -209,6 +210,10 @@ public class ClassConfig {
 
 		public String getParentConversionFunction() {
 			return parentConversionFunction;
+		}
+		
+		public String getCleanupFunction() {
+			return cleanupFunction;
 		}
 		
 		public boolean getIsStatic() {

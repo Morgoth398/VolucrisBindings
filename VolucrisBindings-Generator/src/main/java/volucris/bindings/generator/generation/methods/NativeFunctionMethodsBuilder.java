@@ -165,15 +165,15 @@ public class NativeFunctionMethodsBuilder {
 			throw new RuntimeException(m1 + m2);
 		}
 
-		String destructorMethodName = GeneratorUtils.stripPrefixesAndPostfixes(
-				globalConfig, destructorFunctionName, true
-		);
+		String destructorMethodName = destructorFunctionName == null
+				? null
+				: GeneratorUtils.stripPrefixesAndPostfixes(globalConfig, destructorFunctionName, true);
 
 		Map<String, Object> dataModel = new HashMap<>();
 		dataModel.put("destructor", destructorMethodName);
 		dataModel.put("parentConstructorCall", parentSegmentConstructor);
 		dataModel.put("parentConversionFunction", parentConversionFunction);
-		
+
 		Method method = functionMethodBuilder.build(template, dataModel, false);
 
 		List<String> requiredImports = new ArrayList<>(method.getRequiredImports());
