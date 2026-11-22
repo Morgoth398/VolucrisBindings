@@ -39,6 +39,8 @@ public class NativeFunctionMethod extends Method {
 			requiredImports.addAll(builder.rawMethodRequiredImports);
 		else
 			requiredImports.addAll(builder.typedMethodRequiredImports);
+		
+		requiredImports.addAll(builder.additionalImports);
 	}
 
 	public static class Builder {
@@ -49,6 +51,7 @@ public class NativeFunctionMethod extends Method {
 
 		private final Set<String> rawMethodRequiredImports;
 		private final Set<String> typedMethodRequiredImports;
+		private final Set<String> additionalImports;
 
 		private ReturnTypeInfo returnTypeInfo;
 
@@ -72,6 +75,7 @@ public class NativeFunctionMethod extends Method {
 			this.parameterInfos = new ArrayList<ParameterInfo>();
 			this.typedMethodRequiredImports = new HashSet<String>();
 			this.rawMethodRequiredImports = new HashSet<String>();
+			this.additionalImports = new HashSet<String>();
 
 			Optional<NativeType> returnType = nativeFunction.getReturnType();
 
@@ -176,8 +180,10 @@ public class NativeFunctionMethod extends Method {
 
 					if (declaredAsStructArray)
 						typedMethodRequiredImports.add(NativeStructArray.class.getCanonicalName());
-
+					
 					typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
+					
+					GeneratorUtils.checkImportsRegistry(typeName, globalConfig, additionalImports);
 				} else if (typeKind == NativeTypeKind.FUNCTION_POINTER) {
 					isFunctionPointer = true;
 					
@@ -193,8 +199,10 @@ public class NativeFunctionMethod extends Method {
 				}
 			} else if (type.typeKind() == NativeTypeKind.RECORD) {
 				isRecord = true;
-
+				
 				typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
+				
+				GeneratorUtils.checkImportsRegistry(typeName, globalConfig, additionalImports);
 			} else {
 				throw new RuntimeException("Unsupported parameter type kind " + typeKind);
 			}
@@ -263,6 +271,8 @@ public class NativeFunctionMethod extends Method {
 					isStructArray = declaredAsStructArray;
 
 					typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
+					
+					GeneratorUtils.checkImportsRegistry(typeName, globalConfig, additionalImports);
 				} else if (typeKind == NativeTypeKind.FUNCTION_POINTER) {
 					isFunctionPointer = true;
 
@@ -281,6 +291,8 @@ public class NativeFunctionMethod extends Method {
 				isRecord = true;
 
 				typeName = GeneratorUtils.transformName(globalConfig, type.typeName(), false);
+				
+				GeneratorUtils.checkImportsRegistry(typeName, globalConfig, additionalImports);
 			} else {
 				throw new RuntimeException("Return type kind is not supproted " + typeKind);
 			}

@@ -1,5 +1,8 @@
 package volucris.bindings.generator.generation;
 
+import java.util.Map;
+import java.util.Set;
+
 import org.jspecify.annotations.Nullable;
 import volucris.bindings.generator.config.GlobalConfig;
 import volucris.bindings.generator.parsing.NativeTypeKind;
@@ -119,6 +122,14 @@ public final class GeneratorUtils {
 
 	public static String makeFirstCharacterLowerCase(String string) {
 		return Character.toLowerCase(string.charAt(0)) + string.substring(1);
+	}
+	
+	public static void checkImportsRegistry(String typeName, GlobalConfig globalConfig, Set<String> target) {
+		Map<String, String> registry = globalConfig.getImportsRegistry();
+		
+		if (registry.containsKey(typeName)) {
+			target.add(registry.get(typeName));
+		}
 	}
 	
 }

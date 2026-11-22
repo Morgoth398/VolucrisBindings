@@ -6,3 +6,6 @@ naming:
     - _T # One Postfix
   type-renames:
     someOriginalName: someTypeReplacement
+
+imports-registry:
+  typeName : some.package.name.typeName

@@ -22,8 +22,8 @@ import volucris.bindings.generator.generation.methods.Method;
 
 public class Clazz {
 
-	private final Set<String> imports;
-	private final Set<String> staticImports;
+	protected final Set<String> imports;
+	protected final Set<String> staticImports;
 
 	private final List<Field> fields;
 

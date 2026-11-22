@@ -81,6 +81,14 @@ public class TopLevelClazz extends Clazz {
 		return classDescription;
 	}
 
+	@Override
+	public List<String> getImports() {
+		return imports.stream()
+				.filter(element -> !element.startsWith(classDescription.getPackageName()))
+				.sorted()
+				.toList();
+	}
+	
 	public String getPackageName() {
 		return classDescription.getPackageName();
 	}
