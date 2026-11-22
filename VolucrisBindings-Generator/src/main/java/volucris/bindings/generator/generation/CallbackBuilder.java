@@ -120,7 +120,7 @@ public class CallbackBuilder {
 		imports.addAll(
 				nativeFunctionBuilder.getAdditionalImports()
 						.stream()
-						.filter(element -> !element.startsWith(callbackConfig.getPackageName()))
+						.filter(element -> !GeneratorUtils.isInPackage(element, callbackConfig.getPackageName()))
 						.toList()
 		);
 

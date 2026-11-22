@@ -132,4 +132,13 @@ public final class GeneratorUtils {
 		}
 	}
 	
+	public static boolean isInPackage(String qualifiedName, String packageName) {
+		int lastDot = qualifiedName.lastIndexOf('.');
+		
+		if (lastDot < 0)
+			return false;
+
+		return qualifiedName.substring(0, lastDot).equals(packageName);
+	}
+	
 }

@@ -84,7 +84,7 @@ public class TopLevelClazz extends Clazz {
 	@Override
 	public List<String> getImports() {
 		return imports.stream()
-				.filter(element -> !element.startsWith(classDescription.getPackageName()))
+				.filter(element -> !GeneratorUtils.isInPackage(element, classDescription.getPackageName()))
 				.sorted()
 				.toList();
 	}
