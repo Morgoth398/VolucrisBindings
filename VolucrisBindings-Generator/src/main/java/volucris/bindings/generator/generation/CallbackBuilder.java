@@ -20,7 +20,6 @@ import freemarker.template.Template;
 import volucris.bindings.generator.config.GlobalConfig;
 import volucris.bindings.generator.generation.methods.FunctionLoadingBuilder;
 import volucris.bindings.generator.generation.methods.NativeFunctionMethod;
-import volucris.bindings.generator.generation.methods.NativeFunctionMethod.ParameterInfo;
 import volucris.bindings.generator.generation.methods.NativeFunctionMethod.ReturnTypeInfo;
 import volucris.bindings.core.MemoryStack;
 import volucris.bindings.generator.config.CallbacksConfig.CallbackConfig;
@@ -94,8 +93,8 @@ public class CallbackBuilder {
 
 	public Map<String, Object> getDataModel() {
 		ReturnTypeInfo returnTypeInfo = nativeFunctionBuilder.getReturnTypeInfo();
-		
-		boolean recordReturnType = returnTypeInfo != null &&  returnTypeInfo.isRecord();
+
+		boolean recordReturnType = returnTypeInfo != null && returnTypeInfo.isRecord();
 
 		Set<String> imports = new HashSet<String>();
 		imports.add(Nullable.class.getCanonicalName());
@@ -115,9 +114,15 @@ public class CallbackBuilder {
 		if (recordReturnType)
 			imports.remove(SegmentAllocator.class.getCanonicalName());
 		imports.remove(MemoryStack.class.getCanonicalName());
-		
+
 		imports.addAll(nativeFunctionBuilder.getRawMethodRequiredImports());
 		imports.addAll(callbackConfig.getImports());
+		imports.addAll(
+				nativeFunctionBuilder.getAdditionalImports()
+						.stream()
+						.filter(element -> !element.startsWith(callbackConfig.getPackageName()))
+						.toList()
+		);
 
 		Set<String> staticImports = new HashSet<String>();
 		staticImports.addAll(functionLoadingBuilder.getRequiredStaticImports());
@@ -136,7 +141,12 @@ public class CallbackBuilder {
 		dataModel.put("staticImports", staticImports.stream().sorted(String::compareTo).toList());
 		dataModel.put("packageName", callbackConfig.getPackageName());
 		dataModel.put("addTypedMethod", addTypeMethod);
-		dataModel.put("onlyPrimitveParameters", nativeFunctionBuilder.getParameterInfos().stream().allMatch(ParameterInfo::isPrimitive));
+		dataModel.put(
+				"onlyPrimitiveOrRawSegmentParameters",
+				nativeFunctionBuilder.getParameterInfos().stream().allMatch(param -> {
+					return param.isPrimitive() || param.isRawSegment();
+				})
+		);
 		dataModel.put("javadoc", javadoc);
 
 		return dataModel;

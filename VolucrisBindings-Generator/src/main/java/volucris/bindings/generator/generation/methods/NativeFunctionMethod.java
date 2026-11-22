@@ -349,6 +349,10 @@ public class NativeFunctionMethod extends Method {
 			return Collections.unmodifiableSet(rawMethodRequiredImports);
 		}
 		
+		public Set<String> getAdditionalImports() {
+			return Collections.unmodifiableSet(additionalImports);
+		}
+		
 		public boolean hasNullableParameters() {
 			return parameterInfos.stream().anyMatch(ParameterInfo::isNullable);
 		}

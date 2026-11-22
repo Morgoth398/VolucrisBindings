@@ -65,16 +65,16 @@ public abstract class ${className} {
 
     <#if addTypedMethod>
     <#if valueLayouts?has_content>
-    public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> invoke(
+    public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> <#if onlyPrimitiveOrRawSegmentParameters>n</#if>invoke(
         <#list parameters as parameter>
         <#if parameter.isPrimitive()>${parameter.type}<#else>MemorySegment</#if> ${parameter.name}<#sep>,</#sep>
         </#list>
     ) {
     <#else>
-    public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> invoke() {
+    public<#if !hasReturnType> void<#else><#if returnType.isPrimitive()> ${returnType.type}<#else> MemorySegment</#if></#if> <#if onlyPrimitiveOrRawSegmentParameters>n</#if>invoke() {
     </#if>
         <#if hasReturnType>
-        return invoke<#if onlyPrimitveParameters>2</#if>(
+        return invoke(
         <#else>
         invoke(
         </#if>
@@ -94,7 +94,7 @@ public abstract class ${className} {
         )<#if hasReturnType && !(returnType.isPrimitive() || returnType.isRawSegment())>.memorySegment()</#if>;
     }
 
-    public<#if !hasReturnType> void<#else> <#if returnType.isStructArray()>NativeStructArray<${returnType.type}><#else>${returnType.type}</#if></#if> invoke<#if onlyPrimitveParameters>2</#if>(
+    public<#if !hasReturnType> void<#else> <#if returnType.isStructArray()>NativeStructArray<${returnType.type}><#else>${returnType.type}</#if></#if> invoke(
         <#list parameters as parameter>
         <#if parameter.isStructArray()>NativeStructArray<${parameter.type}> <#else>${parameter.type} </#if>${parameter.name}<#sep>,</#sep>
         </#list>
