@@ -47,7 +47,7 @@ public abstract class ${className} {
         </#if>
 
         try {
-            HANDLE = MethodHandles.lookup().findVirtual(${className}.class, "invoke", DESCRIPTION.toMethodType());
+            HANDLE = MethodHandles.lookup().findVirtual(${className}.class, "<#if addTypedMethod && onlyPrimitiveOrRawSegmentParameters>n</#if>invoke", DESCRIPTION.toMethodType());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
